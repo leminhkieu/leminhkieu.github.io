@@ -1,0 +1,162 @@
+---
+layout: main
+title: 
+tagline: 
+---
+ 
+<!-- Main -->
+<div id="main" class="wrapper style1">
+    <section class="container">
+
+        <div class="row">
+   
+            <!-- Content -->
+            <div class="2u">
+                <ul class="style">
+                    <li>
+                        <img src="./assets/images/nick.jpg" alt="Picture of Nick" 
+                             style="width:100%; border-radius:10px;"/>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="10u">
+                <ul class="style">
+                    <li>
+                        I am a Professor of Spatial Science at the 
+                        <a href="http://www.geog.leeds.ac.uk/research/csap/">Centre for Spatial Analysis and Policy</a> 
+                        at the School of Geography, <a href="http://leeds.ac.uk/">University of Leeds</a>, UK. 
+                        I have a PhD in Geography and undergraduate degrees in Computer Science (BSc) 
+                        and Multidiciplinary Informatics (MSc). For contact details, please see my
+                        <a href="http://www.geog.leeds.ac.uk/people/n.malleson/">School of Geography</a> web page.
+                    </li>
+                    <li>
+                        Most of my research focuses on the development of computer models that help us to understand
+                        social phenomena. I have a particular interest in simulations of crime patterns 
+                        (the topic of my <a href="http://www.geog.leeds.ac.uk/fileadmin/documents/peoplepages/n.malleson/thesis-final.pdf">PhD thesis</a>),
+                        and in models that can be used to describe the flows of people around cities. More recently,
+                        I have become in interested in how we can use 'big data', agent-based modelling, and
+                        smart cities initiatives to reduce the impacts of phenomena like pollution or crime.
+                        For more details, see my <a href="./research.html">current projects</a>.
+                    </li>
+                    
+                    <li>I am currently leading two research projects: <a "http://surf.leeds.ac.uk/">SURF</a>
+                        and <a href="https://dust.leeds.ac.uk/">DUST</a> (<i>funded by the European Research Council</i>).</li>
+                </ul>
+            </div>
+            
+            <!-- Twitter timeline (can't get this to lay out correctly) 
+            <div class="4u">
+                <a class="twitter-timeline" href="https://twitter.com/nickmalleson?ref_src=twsrc%5Etfw">Tweets by nickmalleson</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            -->
+            
+
+            
+        </div>
+        
+        <div class="row">
+                
+            <!-- Content -->
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="{{ site.baseurl }}/publications.html">
+                            <span  style="background-color: #009900;" class="fa fa-book"></span></a>
+                        <h3><a href="{{ site.baseurl }}/publications.html">Publications</a></h3><br/><br/>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="{{ site.baseurl }}/research.html"><span class="fa fa-flask"></span></a>
+                        <h3><a href="{{ site.baseurl }}/research.html">Research Projects</a></h3><br/><br/>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="{{ site.baseurl }}/teaching.html"><span class="fa fa-university"></span></a>
+                        <h3><a href="{{ site.baseurl }}/teaching.html">Teaching</a></h3><br/><br/>
+                    </li>
+                </ul>
+            </div>
+            
+            
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="{{ site.baseurl }}/cv.html"><span class="fa fa-user"></span></a>
+                        <h3><a href="{{ site.baseurl }}/cv.html">CV and Contact</a></h3><br/><br/>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="{{ site.baseurl }}/blog.html"><span class="fa fa-newspaper-o "></span></a>
+                        <h3><a href="{{ site.baseurl }}/blog.html">Research Blog</a></h3><br/><br/>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="{{ site.baseurl }}/presentations.html">
+                            <span class="fa fa-book"></span></a>
+                        <h3><a href="{{ site.baseurl }}/presentations.html">Presentations</a></h3><br/><br/>
+                    </li>
+                </ul>
+            </div>
+        
+            <!-- CONTACT
+            <div class="4u">
+                <ul class="style">
+                    <li>
+                        <a href="http://geog.leeds.ac.uk/people/n.malleson/"><span class="fa fa-user "></span></a>
+                        <h3><a href="https://environment.leeds.ac.uk/geography/staff/1069/dr-nick-malleson">Contact</a></h3>
+                        
+                    </li>
+
+                </ul>
+            </div>
+            -->
+        
+        
+
+        </div>
+    </section>
+    
+   
+    <!-- Recent posts -->
+    
+    
+    
+    <section class="container">
+        
+        <header class="major">
+            <br/><h2>Recent posts</h2>
+        </header>
+        
+        
+        <div class="row">
+
+            {% for post in site.posts offset: 0 limit: 6 %}
+            <div class="4u">
+                <a href="{{ post.url }}">{{ post.title }}</a><br/>
+                {{ post.date | date: "%-d %B %Y"  }}
+                
+            </div>		
+            {% endfor %}
+
+        </div>
+    </section>
+    
+</div>
+
