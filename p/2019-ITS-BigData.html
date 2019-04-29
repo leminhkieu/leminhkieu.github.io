@@ -14,7 +14,7 @@
 
 
 
-		<title>Big Data and Dynamic Simulation Models</title>
+		<title>Big Data and Dynamic Simulation of Cities</title>
 
 
 		<link rel="stylesheet" href="reveal/css/reveal.css">
@@ -22,7 +22,6 @@
 		<link rel="stylesheet" href="reveal/css/theme/white.css">
 
         
-
         <!-- Some extra bits added by Nick -->
 
         <link rel="stylesheet" href="reveal/css/nick.css">
@@ -59,6 +58,11 @@
 
 			<div class="slides">
 
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
                                   
                 <section class="title" id="title" data-background-image="../figures/virtual_city.jpeg">
 
@@ -89,13 +93,18 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://urban-analytics.github.io/dust/presentations.html">https://urban-analytics.github.io/dust/presentations.html</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ITS-BigData.html">https://leminhkieu.github.io/p/2019-ITS-BigData.html</a></h4>
 
                     </div>
 
                 </section>
-
                 
+                    <!-- *****************************************************************
+
+                     ************* acknowledgements **************************
+
+                     ***************************************************************** -->
+ 
 
                 <section id="acknowledgements" data-background-image="../figures/shutterstock_788457058-small.jpg">
 
@@ -107,9 +116,9 @@
 
                         <p>Luke Archer &amp; Kevin Minors, Data Science Interns, Leeds Institute for Data Analytics</p>
 
-                        <p><a href="http://www.nickmalleson.co.uk/">Nick Malleson</a>, School of Geography</p>
-
                         <p><a href="https://www1.maths.leeds.ac.uk/~jaward/">Jon Ward</a>, School of Mathematics</p>
+
+                        <p><a href="http://www.nickmalleson.co.uk/">Nick Malleson</a>, School of Geography</p>
 
                         <p><a href="https://environment.leeds.ac.uk/geography/staff/1046/professor-alison-heppenstall">
 
@@ -123,13 +132,9 @@
 
                 
 
-                                  
-
-                
-
                   <!-- *****************************************************************
 
-                     ************* Intro to modelling and ABM **************************
+                     ************* Challenges to city simulation **************************
 
                      ***************************************************************** -->
 
@@ -148,8 +153,7 @@
                     </figure>
 
 
-
-                    <h2>Difficult to model cities</h2>
+                    <h2>Challenges to city simulation</h2>
 
                     <p>Extremely complex systems</p>
 
@@ -160,23 +164,29 @@
                     <p class="l2">"Computationally convenient".</p>
 
                     <p class="l2">But cannot capture non-linear, complex systems.</p>
-
-                    <p>Agent-Based Modelling is better?</p>
+                    
+                    <p>Unprecendented access to data about individuals (Big Data)</p>
 
                 </section>
 
-        
+                  <!-- *****************************************************************
+
+                     ************* Intro to modelling and ABM **************************
+
+                     ***************************************************************** -->
 
                 
-
                 <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
 
                          data-background-video-loop="loop">
 
-                    
-
                 </section>
 
+                  <!-- *****************************************************************
+
+                     ************* problems with ABMs **************************
+
+                     ***************************************************************** -->
                 
 
                 <section id="prob-divergence" 
@@ -212,32 +222,6 @@
                 </section>
 
                 
-
-                
-
-                
-
-                <section id="enkf-darsos_diagram">
-
-                    
-
-                    <h2>Ensemble Kalman Filter (EnKF)</h2>
-
-                    <figure>
-
-                        <img data-src="../figures/paper_figures/darsos-fig2a.png"/>
-
-                        <figcaption>
-
-                            Ward, J., A. Evans, N. Malleson (2016) Dynamic calibration of agent-based models using data assimilation. <i>Royal Society Open Science</i>. 3:150703. (open access). [DOI: <a href="https://dx.doi.org/10.1098/rsos.150703">10.1098/rsos.150703</a>]
-
-                        </figcaption>
-
-                    </figure>                
-
-                </section>
-
-   
                 <section id="pf-bussim-pf-video">
 
                     <h2>Bus Simulation with a Particle Filter</h2>
@@ -252,9 +236,7 @@
 
                 </section>
 
-                
-
-                
+               
 
                 <section id="stationsim-video">
 
@@ -268,11 +250,7 @@
 
                 </section>
 
-
-
-                
-
-                
+               
 
                 <section id="pf-stationsim2-a" data-transition="fade">
 
@@ -295,11 +273,6 @@
                          alt="Animation of bus simulation with data assimilation" />
 
                 </section>
-
-                
-
-                
-
 
 
                 <section id="dynamicsimulation-whatnext" data-background-image="../figures/the-roaming-platypus-310824-unsplash-small.jpg">
@@ -336,10 +309,7 @@
 
                 </section>
 
-                
-
-                
-
+   
                 <section id="moreinformation1" data-transition="fade" data-background-image="https://erc.europa.eu/sites/default/files/content/pages/images/DUST_illustration_copyright-Shutterstock.jpg">
 
                     <div class="whitebackground2">
@@ -370,8 +340,6 @@
 
                         <p class="l2">Developing methods that can be used to better understand uncertainty in individual-level models of cities</p>
 
-                        
-
                         <p>Bringing the Social City to the Smart City</p>
 
                         <p class="l2"><a href="https://alisonheppenstall.co.uk/research/bringing-the-social-city-to-the-smart-city/">https://alisonheppenstall.co.uk/research/bringing-the-social-city-to-the-smart-city/</a></p>
@@ -385,59 +353,10 @@
                 </section>
 
                 
-
-                <section id="moreinformation2" data-transition="fade" data-background-image="https://erc.europa.eu/sites/default/files/content/pages/images/DUST_illustration_copyright-Shutterstock.jpg">
-
-                    <div class="whitebackground2">
-
-                        <h2>For more information about what we're doing</h2>
-
-                        <p>AAMAS presentation:</p>
-
-                        <p class="l2"><a href="./2018-07-15-abmus-da.html">Understanding Input Data Requirements and Quantifying Uncertainty for Successfully Modelling ‘Smart’ Cities</a>. Presentation to the 3rd International Workshop on Agent-Based Modelling of Urban Systems (<a href="http://modelling-urban-systems.com/abmus2018">ABMUS</a>), part of the International Conference on Autonomous Agents and Multiagent Systems (<a href="http://celweb.vuse.vanderbilt.edu/aamas18/home/">AAMAS 2018</a>). 10-15 July, Stockholm. <a href="./2018-07-15-abmus-da-abstract.pdf">Full abstract (pdf)</a>.</p>
-
-                    </div>
-
-                </section>
-
-                
-
-                <section id="dust_job" data-background-image="https://erc.europa.eu/sites/default/files/content/pages/images/DUST_illustration_copyright-Shutterstock.jpg">
-
-                    <div class="whitebackground2">
-
-                        <h2>Now Recruiting: <br/>Simulating Urban Systems</h2>
-
-                        
-
-                        <p>Post-doctoral Research Fellow (grade 7)</p>
-
-                        <p>Full time, 3 years</p>
-
-                        <p>Application deadline: April 2019</p>
-
-                        <p><a href="https://jobs.leeds.ac.uk/Vacancy.aspx?ref=ENVGE1089">https://jobs.leeds.ac.uk/Vacancy.aspx?ref=ENVGE1089</a></p>
-
-                        
-
-                    </div>
-
-                
-
-                </section>
-
-                
-
                 <section class="title" id="thanks" data-background-image="../figures/virtual_city.jpeg">
 
+  
                     <div class="whitebackground2">
-
-                        <a href="https://europa.eu/european-union/index_en">
-
-                            <img style="float:left;padding:10px 50px 10px 50px;width:70px; height:auto;" src="../figures/LOGO_EU.jpg"/>
-
-                        </a>
-
 
 
                         <a href="http://www.leeds.ac.uk/">
@@ -446,37 +365,31 @@
 
                         </a>
 
-                        <h5>A Blueprint for Urban Analytics<br/>12-13 April, Newcastle University</h5>
+                        <h5>RAMETS Big Data Workshop<br/>2nd May, University of Leeds</h5>
 
 
 
                         <hr/>
 
-                        <h2>Dynamic Simulation Models, Data Assimilation &amp; Uncertainty</h2>
+                        <h2>Big Data and Dynamic Simulation Models</h2>
 
                         <hr/>
 
-                        <h3>Nick Malleson</h3>
+                        <h3>Minh Kieu</h3>
 
-                        <h4>Professor of Spatial Science</h4>
+                        <!-- <h4>Research Fellow</h4> -->
 
-                        <h4>School of Geography, University of Leeds, UK</h4>
+                        <h4>Leeds Institute of Data Analytics, University of Leeds</h4>
 
                         <hr/>
 
-                        <h4><a href="http://nickmalleson.co.uk">nickmalleson.co.uk</a></h4>
-
-                        <h4 style="text-align:center">These slides:<br/><a href="https://urban-analytics.github.io/dust/presentations.html">https://urban-analytics.github.io/dust/presentations.html</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ITS-BigData.html">https://leminhkieu.github.io/p/2019-ITS-BigData.html</a></h4>
 
                     </div>
 
                 </section>
 
-                
-
-                
-
-                
+              
 
 			</div>
 
