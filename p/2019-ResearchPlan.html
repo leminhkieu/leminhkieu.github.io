@@ -1,0 +1,461 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>My research plan</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/beige.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/virtual_city.jpeg">
+
+                    <div class="whitebackground2">
+
+
+                        <a href="http://www.leeds.ac.uk/">
+
+                            <img style="float:right;padding:10px;width:150px; height:auto;" src="../figures/uol_logo.gif"/>
+
+                        </a>
+
+                        <h5>Interview for Departmental Research Lecturer<br/>16th May, Oxford University</h5>
+
+                       <hr/>
+
+                        <h2>My research plan</h2>
+
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Leeds Institute of Data Analytics, University of Leeds</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ResearchPlan.html">https://leminhkieu.github.io/p/2019-ResearchPlan.html</a></h4>
+
+                    </div>
+
+                </section>
+
+                  <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     ***************************************************************** -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/Minh-its.jpg" 
+
+                             alt="My presentation at MaaS18" />
+
+                        <figcaption>Photo taken at the MaaS18 Conference in Sydney
+
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h2>About me</h2>
+
+                    <p>Focus on</p>
+
+                    <p class="l2">Transport simulation</p>
+
+                    <p class="l2">Machine Learning / Artificial Intelligence</p>
+
+                    <p>Leadership: AGILE project management</p>
+                    <p>Publication track record: 360 citations, h-index 11</p>
+                    <p>A track record of obtaining research funding and under development proposals </p>
+                    <p>Teaching experience</p>
+                    
+                </section>                
+
+                <!-- *****************************************************************
+
+                     ************* research problem **************************
+
+                     ***************************************************************** -->
+                
+
+                <section id="problem" 
+
+                         data-background-video="../videos/data-platform.mp4" 
+
+                         data-background-video-muted 
+
+                         data-background-video-loop="loop">
+
+
+                      <div class="whitebackground fragment">
+
+                            <h2>Reponsive policy making</h2>
+                            <p>The growing uncertainty in cities are forcing urban policy makers to make faster, more frequent and shorter-term decisions.</p>
+                            <p>Big Data supports this reponsive policy making practice </p>
+
+                        </div>
+                
+
+                </section>
+               
+                  <!-- *****************************************************************
+
+                     ************* Research plan **********************************
+
+                     ***************************************************************** -->
+
+                <section id="whydifficult1" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/attribution/people-time-square-small.jpg" 
+
+                             alt="picture of people in time square" />
+
+                        <figcaption>Photo by <a href="https://unsplash.com/photos/slapbg2mejw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Meriç Dağlı]</a> on <a href="https://unsplash.com/search/photos/people-crowd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h2>City simulation</h2>
+
+                    <p>Extremely complex systems</p>
+
+                    <p>Interactions between individuals are key</p>
+
+                    <p>Aggregate models are unsuitable</p>
+
+                    <p class="l2">"Computationally convenient".</p>
+
+                    <p class="l2">But cannot capture non-linear, complex systems.</p>
+                    
+                    <p>Unprecendented access to data about individuals (Big Data)</p>
+
+                </section>
+                
+                
+                  <!-- *****************************************************************
+
+                     ************* Intro to modelling and ABM ********************
+
+                     ***************************************************************** -->
+
+                
+                <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
+
+                         data-background-video-loop="loop">
+
+                </section>
+                              
+
+                  <!-- *****************************************************************
+
+                     ************* problems with ABMs **************************
+
+                     ***************************************************************** -->
+                
+
+                <section id="prob-divergence" 
+
+                         data-background-video="../videos/skylines_bus_stop.mp4" 
+
+                         data-background-video-muted 
+
+                         data-background-video-loop="loop">
+
+                    
+
+
+                        <div class="whitebackground fragment">
+
+                            <h2>Computationally expensive</h2>
+                            <p>MATSIM Singapore takes 2 days to implement on a cluster of 4 supercomputers</p>
+                       </div>
+                    
+                       <div class="whitebackground fragment">
+
+                            <h2>Uncertainty</h2>
+
+                            <p>The reality is dynamic: Non-linear models predict near future well, but diverge over time.   </p>
+                            <p>The reality is stochastic: No set of parameters would perfectly explain the real system.   </p>
+
+                        </div>
+
+                </section>
+                
+
+                   <!-- *****************************************************************
+
+                     ************* Emulator *******************
+
+                     ***************************************************************** -->
+  
+                <section id="solution1" data-background-image="../figures/the-roaming-platypus-310824-unsplash-small.jpg">
+
+                    <h2>Solution: Emulator </h2>
+                    
+                    <div class="whitebackground fragment">
+                    <figure>
+                        <img data-src="../figures/emulator.png"/>
+                            </figure>
+                        </div>
+                    
+                    <div class="whitebackground fragment">
+                     <figure>
+                        <img data-src="../figures/dynamic-emulator.png"/>
+                             </figure>
+                        </div>
+                </section>                
+                
+
+                 <!-- *****************************************************************
+
+                     ************* BusSim model video*****************
+
+                     ***************************************************************** -->
+    
+                 <section id="pf-bussim-video">
+
+                    <h2>Bus Simulation</h2>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/bussim-video.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+
+                </section>         
+                  
+                 <!-- *****************************************************************
+
+                     ************* Crowd simulation model video*****************
+
+                     ***************************************************************** -->
+    
+                 <section id="pf-bussim-video">
+
+                    <h2>Crowd Simulation</h2>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/JCrowdSimulator.mov" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+
+                </section>         
+                
+                
+                  <!-- *****************************************************************
+
+                     ************* Emulation results *******************
+
+                     ***************************************************************** -->
+  
+                <section id="emulation-results">
+
+                    <h2>Prediction from Emulator versus synthetic data </h2>
+                   
+                    <figure>
+                        <img data-src="../figures/emulator_result.png"/>
+                            </figure>
+                    
+                </section>                
+                   
+                  <!-- *****************************************************************
+
+                     ************* Pilot study **************************
+
+                     ***************************************************************** -->
+  
+                <section id="Pilot">
+
+                    <h2>Making impacts with a pilot study</h2>
+                    <p>Clean Air Charging Zone in Leeds</p>
+                    <figure>
+                        <img data-src="../figures/clean-air-charging.png"/>
+                            </figure>
+                    
+                </section>        
+                
+                
+                   <!-- *************************************************
+
+                     ************* Fit with Transport Studies Unit **********************
+                   **************************************** -->
+                  
+                <section id="Fit1" data-background-image="../figures/shutterstock_615414464-small.jpg">
+
+                        <div class="whitebackground2 fragment">
+
+                        <p>Fit with TSU: Machine Learning</p>
+                      
+                        <p class="l3">Facilitate a more data-driven and quantitative approach to transport problems.</p>
+                            
+                        <p class="l3">Visualisations from data will support research across the team, and strengthen the communications with policy makers and stakeholders.</p>
+                        </div>                  
+                        <div class="whitebackground2 fragment">
+                        <p>Fit with TSU: City simulation (especially Agent-based modelling)</p>
+
+                        <p class="l3">Faciliate a strong internal collaboration with other team members to evaluate future ideas, plans and policy on a 'digital twin' of a real system</p>
+                        <p class="l3">Socio-technical systems and Smart cities initiative</p>
+                        <p class="l3">Simulation of cities in the Global South</p>
+                         </div> 
+                    
+                        <div class="whitebackground2 fragment">
+                        <p>Fit with TSU: Coordinate team work</p>
+
+                        <p class="l3">Adapted AGILE management for academia</p>
+                        </div>  
+                    
+
+                </section>
+
+  
+
+                
+              <section class="title" id="thanks" data-background-image="../figures/virtual_city.jpeg">
+
+                    <div class="whitebackground2">
+
+
+                        <a href="http://www.leeds.ac.uk/">
+
+                            <img style="float:right;padding:10px;width:150px; height:auto;" src="../figures/uol_logo.gif"/>
+
+                        </a>
+
+                        <h5>Interview for Departmental Research Lecturer<br/>16th May, Oxford University</h5>
+
+                       <hr/>
+
+                        <h2>My research plan</h2>
+
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Leeds Institute of Data Analytics, University of Leeds</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ResearchPlan.html">https://leminhkieu.github.io/p/2019-ResearchPlan.html</a></h4>
+
+                    </div>
+
+                </section>
+
+              
+
+			</div>
+
+		</div>
+
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
