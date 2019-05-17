@@ -14,7 +14,7 @@
 
 
 
-		<title>Big Data and Dynamic Simulation of Cities</title>
+		<title>Data Driven Cities</title>
 
 
 		<link rel="stylesheet" href="reveal/css/reveal.css">
@@ -75,7 +75,7 @@
 
                         </a>
 
-                        <h5>CDRC Data Partner Forum<br/>2nd May, University of Leeds</h5>
+                        <h5>CDRC Data Partner Forum<br/>21st May, University of Leeds</h5>
 
                         <hr/>
 
@@ -186,6 +186,11 @@
                     <img src="../figures/traffic-watch-annotation.png"
 
                          alt="TrafficWatch annotation" />
+                   
+                   	<aside class="notes">
+		          - Natural Language Processing: Flag out and classify words in Tweets that may be related to a traffic incidents
+                  - Can be used as a first point of info before later confirmation through traffic data. 
+	               </aside>
 
                 </section>  
                 
@@ -202,7 +207,7 @@
                     <div class="whitebackground fragment">
 
 
-                    <h2>Spatial and Behavioural Features</h2>
+                    <h2>Spatial Segmentation of Public Transport Passengers using Smart Card data</h2>
 
                         <p>Spatial feature: Home location</p>
 
@@ -211,9 +216,14 @@
                         <p class="l2">Train usage.</p>
                         <p class="l2">Randomness of travel behaviour.</p>
                         <p class="l2">Frequency of transfers.</p>
-
+  	             
                     </div>               
                 
+                    <aside class="notes">
+		          - Challenge: Data of multiple units and many dimensions
+                  - Potentially thousands of spatial clusters
+	               </aside>
+                    
                 </section>    
                 
  
@@ -231,7 +241,12 @@
                     <img src="../figures/passenger-segmentation-1.png"
                             style="width:700px;"
                          alt="passenger-segmentation-1" />
-
+                   
+                   
+                   <aside class="notes">
+		          - Results from Classical algorithms are not useful
+	               </aside>
+                   
                 </section>  
 
                 
@@ -244,11 +259,15 @@
  
                <section id="passenger-segmentation-2" data-transition="fade">
 
-                    <h2>Affinity Propagation Algorithms</h2>
+                    <h2>Affinity Propagation algorithm</h2>
 
                     <img src="../figures/passenger-segmentation-2.png"
                             style="width:700px;"
                          alt="passenger-segmentation-2" />
+                   
+                   <aside class="notes">
+		          - the Affinity Progation algorithm aims to group data points by finding data points that are representative of other points, or data points that are most similar to points surrounding them
+	               </aside>
 
                 </section> 
             
@@ -266,6 +285,11 @@
                     <img src="../figures/passenger-segmentation-results.png"
                             style="width:300px;"
                          alt="passenger-segmentation-3" />
+                   
+                   <aside class="notes">
+		          - On the top figure: A tourist area (Northern Beaches in Sydney) with limited public transport coverage
+                    - Bottom figure:    
+	               </aside>
 
                 </section>      
                 
@@ -283,6 +307,12 @@
                     <img src="../figures/travel-speed-prediction.png"
                             style="width:600px;"
                          alt="travel speed prediction" />
+                   
+                   <aside class="notes">
+		          - This slide is just to show a snapshot of the results: the left hand side figure is real data from Google Travel Time and the right hand side is our prediction using Neural Network
+                       - The time series show the predicted travel speed (Green) and real travel speed (Navy)
+                       - Showing more details in the next few slides
+	               </aside>
 
                 </section>                  
                 
@@ -302,24 +332,12 @@
                             style="width:1000px;"
                          alt="travel speed prediction 1" />
 
+                   <aside class="notes">
+		          - Data from surrounding sections and previous hour are used to form a long vector of input data for the Neural Network
+	               </aside>
+                   
                 </section>    
                 
-         <!-- *****************************************************************
-
-                     ************* Travel speed prediction 2  *****************
-
-                     ***************************************************************** -->
-                
- 
-               <section id="travel-speed-prediction-2" data-transition="fade">
-
-                    <h2>Work flow</h2>
-
-                    <img src="../figures/travel-speed-prediction-2.png"
-                            style="width:1400px;"
-                         alt="travel speed prediction 2" />
-
-                </section>    
                 
         <!-- *****************************************************************
 
@@ -335,6 +353,10 @@
                     <img src="../figures/travel-speed-prediction-3.png"
                             style="width:1400px;"
                          alt="travel speed prediction 3" />
+                   
+                   <aside class="notes">
+		          - The type of Neural Network we used is called Convolution Neural Networks, and it's a Deep Learning method
+	               </aside>
 
                 </section>   
                 
@@ -643,7 +665,7 @@
 
                         </a>
 
-                        <h5>CDRC Data Partner Forum<br/>2nd May, University of Leeds</h5>
+                        <h5>CDRC Data Partner Forum<br/>21st May, University of Leeds</h5>
 
                         <hr/>
 
