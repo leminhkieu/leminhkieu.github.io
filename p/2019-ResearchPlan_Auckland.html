@@ -1,0 +1,991 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>My research plan</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Data-driven cities: bringing together machine learning and city simulation</h2>
+
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>University of Leeds</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ResearchPlan.html">https://leminhkieu.github.io/p/2019-ResearchPlan.html</a></h4>
+
+                    </div>
+
+                </section>
+
+              <!-- *****************************************************************
+
+                     ************* Agenda *******************
+
+                     ***************************************************************** -->
+  
+           <section id="agenda" data-transition="fade" data-background-image="../figures/shutterstock_615414464-small.jpg">
+               
+               <div class="whitebackground2">
+             <h2>Agenda </h2>
+                    
+                <p>My background</p>
+                <p class="l2">How do I fit the role?</p>
+                <p>My research plan</p>
+                <p class="l2">How does the plan fit to the role?</p>
+                <p>What do I think the Transportation Engineering Programme should look like?</p>
+                </div>
+                </section>                
+                                
+                
+                  <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     ***************************************************************** -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/Minh-its.jpg" 
+
+                             alt="My presentation at MaaS18" />
+
+                        <figcaption>Photo taken at the MaaS18 Conference in Sydney
+
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h2>Education</h2>
+                     
+                    
+
+                    <p >- BSc of Civil Engineering from Hanoi University of Transport and Communications, Vietnam</p>
+                    
+                    <p>- MSc of Intelligent Transport Systems from Linkoping University, Sweden</p>
+                    
+                    <p class="l2">Young researcher award at EASTS 2011</p>
+                    <p class="l2">A few other scholarships</p>
+                    
+                    <p>- PhD of Transportation Engineering from Queensland University of Technology, Australia</p>
+                    
+                    <p class="l2">Thesis:"Ultilising Big Transit Data for Transfer Coordination"</p>
+                    
+                </section>                
+
+                <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     ***************************************************************** -->
+
+                <section id="aboutme2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/data61.jpg" 
+
+                             alt="Data61" />
+
+                        <figcaption>The team at Data61, CSIRO.
+
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h2>Experience</h2>
+                       
+                    
+                
+                    <p>- From 2018: Research Fellow at University of Leeds, UK</p>
+                    
+                    <p>- 2016-2018: Research Scientist at Data61, CSIRO, Australia</p>
+                    
+                    <p>- 2011-2016: PhD Student, Research Assistant and Research Associate at Queensland University of Technology, Australia</p>
+               
+                </section>  
+                
+ 
+                   <!-- ******************************
+
+                     ************* Admin Experience *************
+
+                     ***************************************************************** -->
+  
+                <section id="admin" data-transition="fade" data-background-image="../figures/shutterstock_788457058-small.jpg">
+                  
+                        <div class="whitebackground2">
+                      <h2>Admin experience</h2>
+
+                        <a href="https://erc.europa.eu/">
+
+                            <img class="right" style="width:100px;" data-src="../figures/LOGO_ERC.jpg" alt="ESRC Logo"/>
+
+                        </a>
+
+                        <p>1. AGILE Scrum Master: (<a href="http://dust.leeds.ac.uk">DUST</a>)</p>
+
+                        <p class="l2"><a href="http://dust.leeds.ac.uk/">http://dust.leeds.ac.uk/</a></p>
+                        <a href="http://www.ifaamas.org/">
+
+                            <img class="right" style="width:100px;" data-src="../figures/LOGO_IFAAMAS.jpg" alt="AAMAS Logo"/>
+
+                        </a>  
+                        <p>2. Chair: International Workshop on Agent-Based Modelling of Urban Simulation (ABMUS) </p>
+                        <p class="l2"><a href="http://www.ifaamas.org/">http://www.ifaamas.org/</a></p>
+                        <a href="https://www.turing.ac.uk/">
+
+                            <img class="right" style="width:100px;" data-src="../figures/LOGO_TURING.png" alt="Turing Logo"/>
+
+                        </a>
+                         <p>3. Organiser: Alan Turing Institute's Data Study Group</p>
+                       <p class="l2"><a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">turing.ac.uk</a></p>
+                    </div>
+                     </section>    
+                
+
+              <!-- ******************************
+
+                     ************* Awards & Scholarships *************
+
+                     ***************************************************************** 
+  
+                <section id="awards" data-transition="fade" data-background-image="../figures/shutterstock_615414464-small.jpg">
+                  
+                        <div class="whitebackground2">
+                      <h2>Awards and Scholarships</h2>
+
+                       
+                            <p class="l2">1. Travel grant, the Alan Turing Institute and Newton Fund   
+                            <p class="l2">2. Young Tall Poppy Science Awards Nomination </p>
+                        
+                        <p class="l2">3. Research visit travel grant, Swinburne University</p>
+                        <p class="l2">4. Outstanding Higher Research Award, QUT</p>
+                            
+                    <p class="l2">5. Falcuty of Science and Engineering Scholarship, QUT</p>
+                    <p class="l2">6. Sparbanksstiftelsen Alfas stipendiefond, Linkoping University</p>
+                            
+                            <p class="l2">7. Sparbanksstiftelsen Alpha International Scholarship, Swedbank Sweden</p>
+                            
+                            <p class="l2">8. Outstanding young researcher award, EASTS 2011</p>
+                            
+                            <p class="l2">9. Wala och Folke Danielssons fond scholarship, Linkoping University</p>
+                    
+                    </div>
+                     </section>   -->
+                
+                
+                    <!-- ******************************
+
+                     ************* Teaching Map *************
+
+                     ***************************************************************** -->
+  
+                <section id="teachingmap" data-background-image="../figures/shutterstock_788458099-small.jpg">
+                  
+                    <div class="whitebackground2">
+                        <h2>Teaching experience</h2>
+                        <p>What I have been teaching:</p>
+                        
+                        <p class="l2">2011: Tutor in Traffic Safety Audit (Linkoping University)</p>
+                        <p class="l2">2017: Guest lecturer in Transport Network Modelling (University of Canterbury)</p>
+                        <p class="l2">2018 - now: Lecturer in Geocomputation (University of Leeds)</p>
+                        <p class="l2">2018 - now: Lecturer in Predictive Analytics (University of Leeds)</p>
+                        
+                        <p>What Transport Engineering modules that I can teach:</p>
+                        
+                        <p class="l2">Highway Safety Operations</p>
+                        <p class="l2">Planning and Managing Transport</p>
+                        <p class="l2">Traffic Systems Design</p>
+                        <p class="l2">Planning and Design of Transport Facilities</p>
+                        <p class="l2">Highway and Transportation Design</p>
+                    </div>
+                     </section>    
+                
+                
+                       <!-- *****************************************************************
+
+                     ************* research problem **************************
+
+                     ***************************************************************** -->
+                
+
+                <section id="problem" 
+
+                         data-background-video="../videos/data-platform.mp4" 
+
+                         data-background-video-muted 
+
+                         data-background-video-loop="loop">
+
+
+                      <div class="whitebackground2 fragment">
+
+                            <h2>Reponsive policy making</h2>
+                            <p>The growing uncertainty in cities are forcing urban policy makers to make faster, more frequent and shorter-term decisions.</p>
+                            <p>Big Data supports this reponsive policy making practice </p>
+
+                        </div>
+                
+
+                </section>
+   
+                 <!-- ******************************
+
+                     ************* Funding *************
+
+                     ************************************************** -->
+  
+             <section id="funding" data-transition="fade" data-background-image="https://erc.europa.eu/sites/default/files/content/pages/images/DUST_illustration_copyright-Shutterstock.jpg">
+
+                    <div class="whitebackground2">
+  
+                        <h2>My research projects</h2>
+                       <a href="https://erc.europa.eu/">
+
+                            <img class="right" style="width:80px;" data-src="../figures/LOGO_ERC.jpg" alt="ESRC Logo"/>
+
+                        </a>
+
+
+   
+                        <p>1. Data Assimilation for Agent-Based Models (<a href="http://dust.leeds.ac.uk">dust</a>)</p>
+
+                        <a href="https://www.turing.ac.uk/research/research-projects/uncertainty-agent-based-models-smart-city-forecasts/">
+
+                            <img class="right" style="width:80px;" data-src="../figures/LOGO_TURING.png" alt="Turing Logo"/>
+
+                        </a>
+
+                        <p>2. Dynamic Emulators of Agent-Based Models</p>
+
+        
+                        <a href="https://www.thebritishacademy.ac.uk/programmes/urban-infrastructures-well-being/">
+
+                            <img class="right" style="width:80px;" data-src="../figures/logo-BA.png" alt="BA Logo"/>
+
+                        </a>
+
+                        <p>3. Urban Transport Modelling for Sustainable Well-being in Hanoi</p>
+                        <img class="right" style="width:60px;" data-src="../figures/LOGO_UCDavis.jpg" alt="UC Logo"/>
+                            <img class="right" style="width:60px;" data-src="../figures/LOGO_ohiostate.jpeg" alt="UC2 Logo"/>
+                        <p>4. Impacts of future transport modes on active travel and  health</p>
+ 
+                        <a href="https://www.mbie.govt.nz/">
+
+                            <img class="right" style="width:200px;" data-src="../figures/LOGO_MBIE.png" alt="MBIE Logo"/>
+
+                        </a>
+                        <img class="right" style="width:60px;" data-src="../figures/LOGO_UC.png" alt="UC3 Logo"/>
+                      
+                       <p>5. Smart Urban Transport Systems Management using Big Data</p>
+
+                 </div>
+
+                </section>         
+                
+             <!-- ************************************************************
+                *********************** VISION **********************************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/auckland_mov.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="Context-UrbanFlows">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>How do science support policy makers?</h3>
+                        
+                        <p>We need a platform to evaluate future policies:</p>
+                        
+                        <p class="l2">Transport – how to reduce congestion?</p>
+                        <p class="l2">Pollution – who is being exposed? Where are the hotspots?</p>
+                        <p class="l2">Economy – can we attract more people to our city centre?</p>
+                        <p class="l2">Health - can we encourage more active travel?</p>
+                        
+                        <p>Data of individuals are key to explain the urban dynamics</p>
+                        
+                    </div>
+                </section>
+       <!-- ************************************************************
+                *********************** DATA ************************************
+                ************************************************************ -->
+    
+                <section id="Data-Twitter">
+                    <h2>Potential Urban Flow Data: Social Media</h2>
+                    <figure>
+                        <img data-src="../figures/traffic-watch-annotation.png" alt="Traffic watch"/>
+                        
+                    </figure>
+                </section>
+                
+                
+                <section id="Data-MobilePhones">
+                    <figure class="right">
+                        <figcaption>Evaluating aggregate mobile phone population accuracy</figcaption>
+                        <img data-src="../figures/paper_figures/census_mobile-correlation-map.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    </figure>
+                    <h2>Urban Flow Data: Mobile data</h2>
+                    <p>Large population coverage</p>
+                    <img class="left" data-src="../figures/paper_figures/census_mobile-correlation.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    <p>Private, unknown methodology, privacy concerns, coarse resolution (?)</p>
+                </section>
+                
+             <!--
+                <section id="Data-Geo-Apps">
+                    <img class="right" data-src="../figures/traces.jpg" alt="Traces of movement from a smart-phone app" />
+                    <h2>Urban Flow Data</h2>
+                    <h3>GPS data from Taxi, Uber, or Buses</h3>
+                    <p>Movement / location data are becoming ubiquitous</p>
+                    <p>Great potential for understanding urban dynamics</p>
+                </section> -->
+                
+            <!-- *****************************************************************
+
+                     ************* Travel speed prediction  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="travel-speed-prediction" data-transition="fade">
+
+                    <h2>Urban Flow Data: Google Travel time</h2>
+                
+                    <img src="../figures/travel-speed-prediction.png"
+                            style="width:600px;"
+                         alt="travel speed prediction" />
+                   
+                   <aside class="notes">
+		          - This slide is just to show a snapshot of the results: the left hand side figure is real data from Google Travel Time and the right hand side is our prediction using Neural Network
+                       - The time series show the predicted travel speed (Green) and real travel speed (Navy)
+                       - Showing more details in the next few slides
+	               </aside>
+
+                </section> 
+                
+                
+           <!-- *****************************************************************
+
+                     ************* Passenger Segmentation -3  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="passenger-segmentation-3" data-transition="fade">
+
+                    <h2>Urban Flow Data: Smart Card data</h2>
+
+                    <img src="../figures/passenger-segmentation-results.png"
+                            style="width:300px;"
+                         alt="passenger-segmentation-3" />
+                   
+                   <aside class="notes">
+		          - On the top figure: A tourist area (Northern Beaches in Sydney) with limited public transport coverage
+                    - Bottom figure:    
+	               </aside>
+
+                </section>                   
+                
+                <section id="Data-Issues">
+                    <h2>Urban Flow Data: Summary</h2>
+                    <div id="columns">
+                        <div class="left column">
+                            <h3>Difficulties</h3>
+                            <p>Skewness</p>
+                            <p class="l2">Prolific users distort patterns</p>
+                            <p>Spatial accuracy</p>
+                            <p class="l2">Missing data </p>
+                            <p>Bias</p>
+                            <p class="l2">E.g. Choose a number between 1, 2, 3 and 4</p>
+                            <p>Complicated!!</p>
+                            <p class="l2">Messy, and "too big for Excel"</p>
+                        </div>
+                        <div class="right column">
+                            <h3>Benefits</h3>
+                            <p>Volume</p>
+                            <p class="l2">Potential for large sub-samples</p>
+                            <p>Velocity</p>
+                            <p class="l2">Streaming / regularly updated</p>
+                            <p class="l2">Potential for dynamic models</p>
+                            <div class="fragment">
+                                <h3 >Need to consolidate diverse sources</h3>
+                                <h3>Solution: Agent-Based Modelling ?</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                 
+                <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
+                         data-background-video-loop="loop">
+                </section>
+
+                 <!-- *****************************************************************
+
+                     ************* problems with ABMs **************************
+
+                     ***************************************************************** -->
+                
+
+                <section id="prob-divergence" data-background-image="../figures/skylines-day2.jpg"
+
+                       >
+
+                        <div class="whitebackground2 fragment2">
+
+                            <h2>Uncertainty</h2>
+
+                            <p>The reality is dynamic: Non-linear models predict near future well, but diverge over time.   </p>
+                            <p>The reality is stochastic: No set of parameters would perfectly explain the real system.   </p>
+
+                        </div>
+
+                        <div class="whitebackground2 fragment">
+
+                            <p>There is no systematic mechanism to incorporate new data into agent-based models</p>
+
+                        </div>
+
+                </section>
+                 
+                
+            <!-- *******************************************************
+
+                     ************* Data Assimilation **************************
+
+                     ***************************************************************** -->                
+               <section id="how_DA_works" data-transition="fade">
+
+                    <h2>1. Data Assimilation for Agent-Based Models: 5-years ERC Horizon 2020 project -- Research Team Leader </h2>
+
+                    <img src="../figures/data-assimilation.png"
+
+                         alt="DA" />
+
+                        <div class="whitebackground">
+
+                            <p>Improve estimates of the true system state by combining noisy, real-world observations and model estimates of the system state</p>
+
+                        </div>
+
+                </section>   
+                
+                 <!-- *****************************************************************
+
+                     ************* BusSim model video*****************
+
+                     ***************************************************************** -->
+    
+                 <section id="bussim-video">
+
+                    <h2>Bus Simulation</h2>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/bussim-video.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+
+                </section>                   
+                
+                <!-- *****************************************************************
+
+                     ************* PF on bussim **************************
+
+                     ***************************************************************** -->
+  
+                
+                <section id="pf-bussim-video">
+
+                    <h2>Bus Simulation with a Particle Filter</h2>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/bussim-pf-video.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+             </section>                
+                   
+                <!-- *******************************************************
+
+                     ************* problems with ABMs **************************
+
+                     ***************************************************************** -->
+                
+
+                <section id="prob-computation-time" 
+
+                         data-background-video="../videos/matsim-singapore.mp4" 
+
+                         data-background-video-muted 
+
+                         data-background-video-loop="loop">
+
+         
+                        <div class="whitebackground2 fragment">
+
+                            <h2>Computationally expensive</h2>
+                            <p>MATSIM Singapore takes 2 days to implement on a cluster of 4 supercomputers</p>
+                       </div>
+                 
+
+                </section>     
+                   <!-- *****************************************************************
+
+                     ************* Emulator *******************
+
+                     ***************************************************************** -->
+  
+                <section id="solution1" data-background-image="../figures/the-roaming-platypus-310824-unsplash-small.jpg">
+
+                        <div class="whitebackground">
+                    <h2>2. Dynamic Emulators of Agent-Based Models: Funding proposal due by October 2019 -- Principal Investigator</h2>
+                    <figure>
+                        <img data-src="../figures/emulator.png"/>
+                            </figure>
+                        </div>
+                    
+                    <div class="whitebackground fragment">
+                     <figure>
+                        <img data-src="../figures/dynamic-emulator.png"/>
+                             </figure>
+                        </div>
+                    
+        
+                </section>                
+                
+             
+                 <!-- *****************************************************************
+
+                     ************* Crowd simulation model video*****************
+
+                     ***************************************************************** -->
+    
+                 <section id="crowd-video">
+
+                    <h2>Crowd Simulation</h2>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/JCrowdSimulator.mov" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+                    </video>
+              </section>         
+
+               <!-- *****************************************************************
+
+                     *************Emulator results*****************
+
+                     ***************************************************************** -->
+                  
+                
+                    <section id="emulator-results">
+
+                        <h2>Emulation results</h2>
+                        
+                        <figure>
+                        <img data-src="../figures/emulator_result.png"/>
+                            </figure>
+                        
+                         </section>   
+               
+                  <!-- *****************************************************************
+
+                     ************* Pilot study **************************
+
+                     ***************************************************************** -->
+  
+                <section id="Pilot">
+
+                    <h2>Making impacts with a pilot study</h2>
+                    <p>Clean Air Charging Zone in Leeds</p>
+                    <figure>
+                        <img data-src="../figures/clean-air-charging.png"/>
+                            </figure>
+                    
+                </section>        
+                
+                
+             <!-- **************************************************
+
+                     ************* THe vietnam project *******************
+
+                     ***************************************************************** -->
+  
+                <section id="vietnam-project" data-background-image="../figures/hanoi-old-quarter.jpg">
+
+                    
+                    <div class="whitebackground2 fragment">
+                    <h2> 3. Urban Transport Modelling for Sustainable Well-being in Hanoi: Proposal submitted to the Bristish Academy -- Co-Investigator </h2>
+                        
+                    <figure>
+                        <img data-src="../figures/Vietnam-project.png"/>
+                            </figure>
+                        </div>
+                    
+                </section>      
+                
+               <!-- **************************************************
+
+                     ************* THe AV project *******************
+
+                     ***************************************************************** -->
+  
+                <section id="AV-project" data-background-image="../figures/AV.jpg">
+
+                    
+                    <div class="whitebackground2 fragment">
+                    <h2> 4. Impacts of future transport modes on health -- Collaborative research </h2>
+                        
+                    <p>
+                        The impacts of Autonomous Vehicles on human health is currently unknown </p>
+                    <p>
+                        We need to model population demographics, activities, behaviors, and mobility in order to properly understand how Autonomous Vehicles affects health.</p>
+                        </div>
+                    
+                </section>    
+                
+                
+                <!-- **************************************************
+
+                     ************* THe NZ project *******************
+
+                     ***************************************************************** -->
+  
+                <section id="NZ-project" data-background-image="../figures/smart-city.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h2> 5. Smart Urban Transport Systems Management using Big Data -- Key researcher </h2>
+                        
+                    <p>
+                        Large 5-year proposal for funding from the MBIE, led by University of Canterbury </p>
+                     
+                        <p class="l2">Improve the design and operations of transport systems by utilising the data and technology under connected environment. </p>
+                        
+                        
+                        </div>
+                    
+                </section>  
+                
+                
+               <!-- *****************************************************************
+
+                     ************* Fit of my research plan *******************
+
+                     ***************************************************************** -->
+  
+                <section id="plan-fit" data-background-image="../figures/the-roaming-platypus-310824-unsplash-small.jpg">
+
+                    <h2>How do my research fit to the role?</h2>
+                    
+                    <div class="whitebackground fragment">
+                    <figure>
+                        <img style="width:700px;" data-src="../figures/research_map_auckland.png"/>
+                            </figure>
+                        </div>
+                    
+                </section>     
+                
+                
+                <!-- ******************************
+
+                     ************* Research Map *************
+
+                     ***************************************************************** -->
+  
+                <section id="researchmap" data-background-image="../figures/the-roaming-platypus-310824-unsplash-small.jpg">
+         
+                    <div class="whitebackground">
+                        <h2>My fit to the role: Research </h2>
+                    <figure>
+                        <img data-src="../figures/auckland_withoutme.png"/>
+                            </figure>
+                        </div>
+                    
+                    <div class="whitebackground fragment">
+                     <figure>
+                        <img data-src="../figures/auckland_withme.png"/>
+                             </figure>
+                        </div>
+                </section>                
+                              
+                 <!-- ***********************************************
+
+                     ************* What transportation engineering program should look like? *******************************************
+
+                     ************************************************** -->
+  
+                <section id="trans-eng-1" data-background-image="../figures/auckland-background.jpg">
+         
+                    <div class="whitebackground2">
+                        <h2>My views of what the Transportation Engineering programme should look like.</h2>
+                    </div>
+                   </section> 
+   
+                  <!-- **********************************************
+
+                     ************* Traffic Simulation Module ****************
+                     ************************************************** -->
+  
+                <section id="module-traffic-sim">
+         
+                        <h2>1. Principles of Transport Modelling and Simulation.</h2>
+                        
+                        <h3>What can be made to improve the transport systems?</h3>
+                        
+                       <img class="right" style="width:400px;" data-src="../figures/traffic-simulation.jpg" alt="traffic-sim"/>
+
+                        
+                        <p>Understand the 4-step demand modelling</p>
+                        <p>Knowing different types of traffic simulation and when to use each</p>
+                        <p>Lab session on traffic simulation</p>
+                  
+                    </section> 
+  
+                     <!-- **********************************************
+
+                     ************* Predictive Analytics Module ****************
+                     ************************************************** -->
+  
+                <section id="module-predictive">
+         
+                         <h2>2. Transport Data Collection and Analytics.</h2>
+                    
+                        <h3>How do we solve traffic problems using data science?</h3>
+                    
+                          <img class="right" style="width:400px;" data-src="../figures/transport-data-collection.png" alt="traffic-data"/>
+                        
+                        <p>Familiar with tools for data science</p>
+                        <p>Programming for data science: Python, R</p>
+                        <p>Field session on data collection</p>
+                        <p>Lab session on storing, cleansing, analysing and visualisation of the collected data</p>
+                </section>   
+                
+                    <!-- **********************************************
+
+                     ************* Machine Learning for Transport Module ****************
+                     ************************************************** -->
+  
+                <section id="module-ML-transport">
+         
+                         <h2>3. Machine Learning and Artificial Intelligence for Transportation.</h2>
+                    
+                        <h3>What is an effective Machine Learning approach look like for a transport problem?</h3>
+                                      
+                        <p>Understand different algorithms in Machine Learning.</p>
+                        <p>How to effectively implement them in Python or R.</p>
+                        <p>What are the common applications of Machine Learning/AI for Transportation problems</p>
+                        <p>Project-based learning to solve transport problems with Machine Learning. </p>
+                </section>                    
+                
+                    <!-- **********************************************
+
+                     ************* Other Module ****************
+                     ************************************************** -->
+  
+                <section id="module-others" data-transition="fade" data-background-image="../figures/skylines-day1.jpg">
+                        <div class="whitebackground2">
+                        <h2>Other modules</h2>
+                    
+                        <p>Public Transport Planning and Management</p>
+                        <p>Road and Traffic Safety Audit</p>
+                        <p>Future Transport Systems and Mobilities </p>
+                    </div>
+                </section>                   
+                
+                  <!-- **********************************************
+
+                     ************* Integration ****************
+                     ************************************************** -->
+  
+                <section id="integration">
+         
+                        <h2>Integration between Undergraduate and Postgraduate Transport Studies</h2>
+                    
+                    <ul>
+                            <li>Transport-related modules from the 2nd year until the end of the Master Program</li>
+                            <li>Develop skills for deep transport knowledge in year 3 (programming, optimisation, etc), plus some transport modules</li>
+                              <li>Deeper and more complicated transport modules in the Master program</li>
+                    </ul>    
+                    
+                          
+                </section>                   
+
+                  <!-- **********************************************
+
+                     ************* Summary ****************
+                     ************************************************** -->
+  
+                <section id="summary">
+         
+                         <h2>Conclusion</h2>
+                                  
+                        <p>Teaching: Civil Engineering and Transportation Background</p>
+                        <p>Research: Focus on Machine Learning and City Simulation: </p>
+                        <p>Funding: $450,000 in funding as PI</p>
+                        <p>Project management: Experience with large research projects</p>
+                        <p>Services: Rich admin and leadership experience</p>
+                </section>                      
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+
+                        <a href="http://www.leeds.ac.uk/">
+
+                            <img style="float:right;padding:10px;width:150px; height:auto;" src="../figures/uol_logo.gif"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Data-driven cities: bringing together machine learning and city simulation</h2>
+
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ResearchPlan.html">https://leminhkieu.github.io/p/2019-ResearchPlan.html</a></h4>
+
+                    </div>
+
+                </section>
+            </div>
+
+		</div>
+
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
