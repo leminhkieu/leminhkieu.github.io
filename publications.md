@@ -65,26 +65,16 @@ tagline:
 <!-- Skip to: [Peer-Reviewed Journal Articles](#papers), [Book Chapters](#chapters), [Articles in Conferece Proceedings](#proceedings), [Working Papers](#workingpapers), [PhD Thesis](#thesis). -->
 
 
-### Book
-
-Crooks, A, **N. Malleson**, E. Manley, A. Heppenstall (2019) _[Agent-Based Modelling and Geographical Information Systems](https://www.abmgis.org/)_. Sage.
-
 ### <a name="papers"></a>Peer-Reviewed Journal Articles
 
 #### 2019 
 
-Crols, T., and **N. Malleson** (2019) Quantifying the Ambient Population Using Hourly Population Footfall Data and an Agent-Based Model of Daily Mobility. _GeoInformatica_ (online first). DOI: [10.1007/s10707-019-00346-1](https://doi.org/10.1007/s10707-019-00346-1). [[Open access](https://doi.org/10.1007/s10707-019-00346-1)]. 
+Nguyen, H.; Bentley, C.; **Kieu, L.M.** ; Fu, Y.; Cai, C. (2019) "A Deep Learning System for Travel Speed Predictions on Multiple Arterial Road Segments", _Transportation Research Record: Journal of the Transportation Research Board_ , DOI: [10.1177/0361198119838508](https://doi.org/10.1177/0361198119838508)[[PDF](./papers/Nguyen2019.pdf)]
 
-Addis, N., A. Evans, and **N. Malleson** (2019) Exploring the Practices of Steal-to-Order Burglars: A Different Brand of Offender? _Security Journal_ (online first). DOI: [10.1057/s41284-019-00174-w](https://doi.org/10.1057/s41284-019-00174-w). [[PDF](./papers/2019-addis-security-steal2order.pdf)]
-
-
-Yu, Rui, A.J. Evans and **N. Malleson** (2019) An agent-based model for assessing grazing strategies and institutional arrangements in Zeku, China. _Agricultural Systems_ 171: 135–142. DOI:[10.1016/j.agsy.2019.02.004](https://doi.org/10.1016/j.agsy.2019.02.004). [[PDF](./papers/2019-Rui_ABM_Grazing.pdf)].
-
-
-**Malleson, N** (2019) Building Temporal Dynamism into Applied GIS Research. _Applied Spatial Analysis and Policy_ (Online first). (Introduction to the 2015 GIS Research UK Special Issue). [DOI: 10.1007/s12061-019-09291-w](https://doi.org/10.1007/s12061-019-09291-w). [[PDF](./papers/2019-GIRSUK-ASAP.pdf)]. 
 
 #### 2018
 
+**Kieu, L.M.**; Cai, C. (2018) "Stochastic collective model of public transport passenger arrival process", IET Journal of Intelligent Transport Systems,12,9,1027-1035,2018,The Institution of Engineering and Technology, DOI:
 
 Gulma, U.L., A. Evans, A. Heppenstall, **N. Malleson** (2018) Diversity and burglary: Do community differences matter? _Transactions in GIS_ 23 (2): 181-202. DOI: [10.1111/tgis.12511](http://dx.doi.org/10.1111/tgis.12511) [[PDF](./papers/2018-Diversity-Gulma-TGIS.pdf)]
 

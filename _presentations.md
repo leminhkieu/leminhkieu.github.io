@@ -1,9 +1,9 @@
 ---
-author: nick
+author: Minh
 comments: false
 date: 2012-01-22 21:16:18+00:00
 layout: page
-link: http://nickmalleson.co.uk/presentations/
+link: 
 slug: presentations
 title: Selected Presentations
 wordpress_id: 84

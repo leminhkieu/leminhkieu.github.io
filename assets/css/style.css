@@ -83,8 +83,8 @@ body, input, select, textarea {
 }
 
 a {
-    /* color: #3ac984; */
-    color: #6ca0e8;
+    color: #3ac984; 
+   /* color: #6ca0e8; */
     text-decoration: underline;
 }
 
@@ -399,8 +399,8 @@ ul {
         width: 80px;
         height: 80px;
         margin-right: 1em;
-        /* background: #3ac984; */
-        background: #6ca0e8;
+        background: #3ac984; 
+        /*background: #6ca0e8;*/
         line-height: 80px;
         text-align: center;
         border-radius: 10px;
@@ -536,7 +536,7 @@ input[type="button"],
 
 #header {
     /* background: #222222; */
-    background: #6ca0e8;
+    background: #3ac984;
     /* Show the header image: */
     /*background: #333333 url("../images/head_image.jpg") no-repeat;*/
     background-size: cover;
