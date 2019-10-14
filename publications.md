@@ -73,7 +73,7 @@ tagline:
 
 Malleson, N.; Minors, K.; **Kieu, L.M.**; Ward, J.; West, A.; Heppenstall, A. (2019) "Simulating Crowds in Real Time with Agent-Based Modelling and a Particle Filter",arXiv preprint arXiv:1909.09397. [[PDF](./papers/Nguyen2019.pdf)]
 
-**Kieu, L.M.**; Ngoduy, D.; Malleson, N.; Chung, E. (2019) "A stochastic schedule-following simulation model of bus routes", 7, 1, 1588-1610. [[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.**; Ngoduy, D.; Malleson, N.; Chung, E. (2019) "A stochastic schedule-following simulation model of bus routes", Transportmetrica B: Transport Dynamics, 7, 1, 1588-1610. [[PDF](./papers/Nguyen2019.pdf)]
 
 Nguyen, H.; Bentley, C.; **Kieu, L.M.** ; Fu, Y.; Cai, C. (2019) "A Deep Learning System for Travel Speed Predictions on Multiple Arterial Road Segments", _Transportation Research Record: Journal of the Transportation Research Board_ , DOI: [10.1177/0361198119838508](https://doi.org/10.1177/0361198119838508)[[PDF](./papers/Nguyen2019.pdf)]
 
