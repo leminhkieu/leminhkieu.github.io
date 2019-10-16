@@ -84,7 +84,7 @@
 
                         <hr/>
 
-                        <h3>Minh Kieu</h3>
+                        <h3>Minh Kieu, Nick Malleson, Alison Heppenstall, Jon Ward</h3>
 
                         <h4>University of Leeds</h4>
                         
@@ -359,8 +359,10 @@
                 ************* StationSim **************************
                 ***************************************************************** -->                
                                
-                <section id="example2" >
+                <section id="example2" data-background-image="../figures/Backgrounds/crowd.jpg">
                     
+                    <div class="whitebackground2">
+                        
                     <h2>Example 2<br/>Crowd Simulation</h2>
                     <a href="https://github.com/Urban-Analytics/dust/tree/master/Projects/ABM_DA/stationsim">
 
@@ -374,6 +376,8 @@
                     <p class="l3">Track some individuals?</p>
                     <p class="l3">Just aggregate counts (e.g. number of people passing a footfall camera)</p>
                     <p>Case study: a simple, hypothetical train station (<i>Station Sim</i>)</p>
+                        
+                    </div>
                 </section>
                 
            <!-- *******************************************************
@@ -435,7 +439,9 @@
                 ************* Emulator **************************
                 ***************************************************************** -->                
                                
-                <section id="example3" >
+                <section id="example3" data-background-image="../figures/Backgrounds/data.jpg">
+                    
+                    <div class="whitebackground2">
                     
                     <h2>Example 3<br/>Emulators of Agent-Based Models</h2>
                    <a href="https://github.com/leminhkieu/jCrowdSimulator">
@@ -447,6 +453,7 @@
                     <p class="l2">What methods are suitable?</p>
                     <p class="l2">How good these surrogate models need to be?</p>
                     <p>Case study: <i>Station Sim</i> but using Social Force Model</p>
+                    </div>
                 </section>
                      
                      <!-- *******************************************************
@@ -472,14 +479,14 @@
                      ***************************************************************** -->                 
                  
                  <section id="StationSim-emulator" data-transition="fade">
-                    <h2>Emulator of StationSim model</h2>
+                    
                     <img style="float:centre;padding:5px;width:700px; height:auto;" src="../figures/DUST/stationsimsocialforce.png"
                          alt="StationSim-Analysis-Emulator" />
                      
                      <p>Emulator to enable the use of ABMs in real-time</p>
                     <p class="l2">Input: Aggregated pedestrian counts at each gate</p>
                     <p class="l2">Output: Mean Social Force at each gate</p>
-                     <p>Run the ABM multiple times to train the Emulator</p>
+                     <p>Run the ABM multiple times <i>with different demand</i> to train the Emulator</p>
                     
                 </section>
                 
