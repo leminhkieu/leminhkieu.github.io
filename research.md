@@ -16,105 +16,88 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://dust.leeds.ac.uk/"><span style="background-color: #009900;" class="fa fa-user"></span></a>
+                <a href="http://dust.leeds.ac.uk/"><span style="background-color: #9900;" class="fa fa-user"></span></a>
                 <h3><a href="http://dust.leeds.ac.uk/">DUST</a></h3>
                 Data Assimilation for Agent-Based Models: Applications to Civil Emergencies
             </li>
-            <li style="font-size: small; line-height: 20px;">This 5-year research project, which is being funded by the European Research Council, will develop dynamic data assimilation methods for use in agent-based modelss. <a href="http://dust.leeds.ac.uk/">More information</a>.</li>
+            <li style="font-size: small; line-height: 20px;">This 5-year research project, which is being funded by the European Research Council," will develop dynamic data assimilation methods for use in agent-based modelss. <a href=""http://dust.leeds.ac.uk/"">More information</a>."</li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://surf.leeds.ac.uk/"><span style="background-color: #009900;" class="fa fa-user"></span></a>
-                <h3><a href="http://surf.leeds.ac.uk/">surf</a></h3>
-                Simulating Urban Flows
+                <a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups"><span style="background-color: #9900;" class="fa fa-user,"></span></a>
+                <h3><a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">GreenRadio</a></h3>
+                Using AI for energy saving on Mobile towers
             </li>
-            <li style="font-size: small; line-height: 20px;">The aim of surf is to create a simulation that is capable of modelling the individual movements of people in an urban environment as they undertake their daily routine activities. Ultimately, the results will be used to quantify the impacts of levels of crime and pollution on citizens. <a href="http://surf.leeds.ac.uk/">More information</a>.</li>
+            <li style="font-size: small; line-height: 20px;">The ultimate aim of this challenge is to know when to turn off radio-cells to save power,"we want to optimise shutdown of radio-cells in order to maximise power saved, while minimizing negative impact on the customer's network experience"</li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://cdrc.ac.uk/"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
-                <h3><a href="http://cdrc.ac.uk/">CDRC</a></h3>
-                Consumer Data Research Centre
+                <a href=""><span style="background-color: #;" class="fa "></span></a>
+                <h3><a href=""></a></h3>
+                
             </li>
-            <li style="font-size: small; line-height: 20px;">The aim of the CDRC is to work with organisations to open up their data to our trusted researchers to provide solutions that drive economic growth and improve our society. <a href="http://cdrc.ac.uk/">More information</a>.</li>
+            <li style="font-size: small; line-height: 20px;"></li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://n8prp.org.uk/"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
-                <h3><a href="http://n8prp.org.uk/">N8 PRP</a></h3>
-                N8 Policing Research Partnership: Data Analytics
+                <a href=""><span style="background-color: #;" class="fa "></span></a>
+                <h3><a href=""></a></h3>
+                
             </li>
-            <li style="font-size: small; line-height: 20px;">The Data Analytics strand will collaborate with police and academic partners to support data sharing, analysis, and use. <a href="http://n8prp.org.uk/">More information</a>.</li>
+            <li style="font-size: small; line-height: 20px;"></li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://lida.leeds.ac.uk/"><span style="background-color: #009900;" class="fa fa-user"></span></a>
-                <h3><a href="http://lida.leeds.ac.uk/"></a></h3>
-                Understanding Input Data Requirements for Successfully Modelling Cities
+                <a href=""><span style="background-color: #;" class="fa "></span></a>
+                <h3><a href=""></a></h3>
+                
             </li>
-            <li style="font-size: small; line-height: 20px;">The aim of this project is to explore the uncertainty associated with an individual-level model of pedestrian movements in a city. Specifically, we want to better understand how much information about the real world is needed to be able to create an accurate model of pedestrian movement. More information coming soon.</li>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
-    </div>
-</section>
-<h2>Completed Projects</h2>
-<section class="container">
-    <div class="row">
-
-    <div class="6u">
-        <ul class="style">
-            <li>
-                <a href="http://habitsdata.org/"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
-                <h3><a href="http://habitsdata.org/">HABITS</a></h3>
-                Improved policy to mitigate pollutant and inactivity related health burdens through new big data
-            </li>
-            <li style="font-size: small; line-height: 20px;">The aim of the HABITS project is to design improved policy to mitigate pollutant and inactivity related health burdens through new big data opportunities. <a href="http://habitsdata.org/">More information</a>.</li>
+            <li style="font-size: small; line-height: 20px;"></li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="https://geocrimedata.blogspot.co.uk/"><span style="background-color: #009900;" class="fa fa-user"></span></a>
-                <h3><a href="https://geocrimedata.blogspot.co.uk/">GeoCrimeData</a></h3>
-                Exploring Geospatial Data for Crime Analysis
+                <a href=""><span style="background-color: #;" class="fa "></span></a>
+                <h3><a href="">__PREVIOUS__</a></h3>
+                
             </li>
-            <li style="font-size: small; line-height: 20px;">A project that explored methods for using existing geospatial data and making it useful for crime analysis. Funded as part of the JISC GeoSpatial Infrastructure programme. <a href="https://geocrimedata.blogspot.co.uk/">More information</a>.</li>
+            <li style="font-size: small; line-height: 20px;"></li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://www.itrc.org.uk/"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
-                <h3><a href="http://www.itrc.org.uk/">ITRC</a></h3>
-                Infrastructure Technology Research Consortium
+                <a href="http://adait.io/inno-pii.html"><span style="background-color: #fa-book;" class="fa "></span></a>
+                <h3><a href="http://adait.io/inno-pii.html">PII</a></h3>
+                NSW Premier's Innovation Initiative
             </li>
-            <li style="font-size: small; line-height: 20px;">ITRC is a consortium of seven leading UK universities, investigating ways to improve the performance of infrastructure systems in the UK and around the world. Our research is helping businesses and policymakers to explore the risk of infrastructure failure and the long term benefits of investments and policies to improve infrastructure systems.</li>
+            <li style="font-size: small; line-height: 20px;">"The NSW Premier's Innovation Initiative is a significant opportunity for the NSW Government to engage with business, community and other non-government stakeholders to help us deliver services to the people of NSW","Under this initiative, Data61 has partnered with the NSW Government to compile data from Opal, GPS devices, traffic signals, and buses to provide better information for the Transport Management Centre to alert road users of congestion incidents and provide information about alternatives.", 6ca0e8</li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://www.law.leeds.ac.uk/research/projects/an-exploratory-knowledge-platform-for-policing"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
-                <h3><a href="http://www.law.leeds.ac.uk/research/projects/an-exploratory-knowledge-platform-for-policing">KEOS</a></h3>
-                An Exploratory Knowledge Exchange Platform for Policing
+                <a href="https://www.transport.nsw.gov.au/data-and-research/nsw-future-mobility-prospectus/nsw-future-mobility-case-studies/procurement-as-3"><span style="background-color: #9900;" class="fa fa-user"></span></a>
+                <h3><a href="https://www.transport.nsw.gov.au/data-and-research/nsw-future-mobility-prospectus/nsw-future-mobility-case-studies/procurement-as-3">Keoride</a></h3>
+                NSW OnDemand Transport
             </li>
-            <li style="font-size: small; line-height: 20px;">This collaborative project will draw together a large dataset of over 10 years police recorded crime data and conduct a large-scale spatio-temporal data analysis in an attempt to identify clusters and explain differences in the distribution of acquisitive crimes across cities in West Yorkshire.</li>
+            <li style="font-size: small; line-height: 20px;">"I work with industrial partner Keolis Downer to deliver a mobility-as-a-service On-Demand Transport system in Northern Beaches, NSW."</li>
             <li>&nbsp;</li>
         </ul>
     </div>
