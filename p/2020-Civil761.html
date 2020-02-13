@@ -1,0 +1,477 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Part 4 projects</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Introduction to Intelligent Transport Systems</h2>
+                        <h3>Civil 761: Planning and Design of Transport Facilities</h3>
+
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761.html">https://leminhkieu.github.io/p/2020-Civil761.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/my_pics/minh.jpg"
+                             alt="Minh picture" />
+                    
+                    </figure>
+
+
+                    <h2>Minh Kieu</h2>
+                    
+                    <p> From 2020: Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
+                     
+                    <p> 2018-2019: Research Fellow at the University of Leeds, UK </p>
+                    <p> 2016-2018: Research Scientist at the Data61, CSIRO, Australia </p>
+                    <p> 2011- 2016: PhD Research at the Queensland University of Technology, Australia </p>
+                    <p> 2009- 2011: Master in Intelligent Transport System, Linkoping University, Sweden </p>
+                    
+                </section>       
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: Understand the..</h2>
+                    
+                    <p>	Benefits of Intelligent Transport Systems (ITS) </p>
+                    <p>	Common ITS achitechtures </p>
+                    <p>	Data collection technologies in transport systems</p>
+                    
+                    
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                    <p> 1. Problems in the transport sector</p>
+                    <p>	2. Benefits of Intelligent Transport Systems (ITS) </p>
+                    <p>	3. Common ITS achitechtures </p>
+                    <p>	4. Connected, Autonomous and Electric vehicles</p>
+                    <p>	5. Sensors for traffic detection </p>
+                    <p>	6. Data collection systems</p>
+                    
+                    </div>
+                </section>                    
+
+           <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is Intelligent Transport Systems (ITS) ?</h3>
+                        
+                        <p>Application	of	well-established	technologies</p>
+                        
+                        <p class="l2">communication, control, electronics, computer hardware and computer software</p>
+                        
+                        <p>in order to increase</p>
+                        
+                        <p class="l2">the safety</p>
+                        <p class="l2">the efficiency</p>
+                        
+                        <p>of transportation systems</p>
+                        
+                    </div>
+                </section>
+                
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/auckland_mov.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="problem1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Traffic congestion</h3>
+                        
+                        <p>Economical cost:</p>
+                        
+                        <p class="l2">Auckland's congested roads costed our economy over $1.25 billion in lost productivity (NZTA, 2013)</p>
+                        
+                        <p>Social cost:</p>
+                        
+                        <p class="l2">Emergency access and evacuation</p>
+                        <p class="l2">Road users stress and anxiety</p>
+                        
+                    </div>
+                </section>
+                
+                
+     
+            <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams!</h3>
+
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+		            <p class="l2">Source: NZIER (2017),Benefits from Auckland road decongestion </p>
+
+                </section> 
+                
+ 
+               <!-- ******************************************************
+                *********************** Traffic safety ***********************
+                ************************************************************ -->
+
+                <section id="safety" data-transition="fade">                  
+                    
+                    <video controls autoplay
+
+                                src="../videos/road-safety.mp4" 
+                                width="1600"
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <h3>Traffic safety problems</h3>
+                        
+                        <p>Who was at fault?</p>
+                        
+                        <p>How technologies can help?</p>
+                        
+                   </div>  
+                    
+                </section> 
+                 <!-- *************** ITS intro  ************************** -->
+  
+               <section id="its-intro" data-background-image="../figures/teaching/its-systems.jpg">   
+                   
+                   <div class="whitebackground1 fragment">
+                       
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                       </div> 
+
+                </section> 
+
+                <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="its-users" data-background-image="../figures/backgrounds/AV.jpg">   
+                   
+                   <div class="whitebackground2 fragment">
+                       <h3>ITS User Services</h3>
+                        
+                        <p>Information systems </p>
+                       
+                        <p>ITS traffic systems </p>
+                       
+                        <p>Autonomous and Connected Vehicles</p>
+                       
+                        <p>Payment systems</p>
+                       
+                        
+                       </div> 
+
+                </section> 
+                
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="ATIS" >   
+                   
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ATIS.jpg"
+                             style="width:1200px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                   <div class="whitebackground1">
+                       <h3>Advanced Traveller Information Systems (ATIS)</h3>
+                        
+                        <p>Objective: give information about the transportation system to the driver to make key decisions </p>
+                       
+                        <p class="l2">Pre-trip information </p>
+                       <p class="l2">Route guidance</p>
+                       <p class="l2">Post-trip analysis </p>
+                       
+                       </div> 
+
+                </section>           
+                
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="ITS-safety" >   
+                   
+                      <video controls autoplay
+
+                                src="../videos/collision-avoidance.mp4" 
+                                width="1600"
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <h3>ITS traffic safety systems, for example:</h3>
+                        
+                        <p>Anti-lock Braking System (ABS), collision avoidance, driver alert, lane centering etc. </p>
+                   </div>  
+
+                    </section>  
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV1" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2 fragment">
+                       <h3>Autonomous vehicles </h3>
+                        
+                        <p>Use technology to partially or entirely replace the human driver in navigating a vehicle while avoiding road hazards and responding to traffic conditions. </p>
+                       
+                        <p>They rely on: </p>
+                        
+                        <p class="l2">Sensors: radar, LIDAR, cameras, etc </p>
+                       <p class="l2">Complex algorithms, machine learning models</p>
+                       <p class="l2">Powerful processors </p>
+                        
+                        <p>to detect traffic lights, read road signs, track other vehicles, and look for pedestrians.</p>
+                       
+                         <p class="l2">More to read: <a href="https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles"> https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles </a> </p>
+                       
+                       </div>              
+                   
+                </section>   
+                
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV2" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2">
+                       <h3>Are we already 'driving' autonomous vehicles? </h3>
+                        
+                        <p>New Zealand has adopted the International Standard J3016 as developed by the Society of Automotive Engineers (SAE).</p>
+                       
+                     <figure class="centre" >
+
+                        <img data-src="../figures/teaching/SAE-Levels.jpg"
+                             style="width:700px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                       
+                       </div>              
+                   
+                </section>                      
+                
+                   <!-- Automation Level
+
+Description
+
+Level 0
+
+No automation
+
+Levels 1 & 2
+
+Also known as ‘partially automated’, these vehicles have limited automated features that may assist the driver with speed or steering control. Examples include; lane-keep assist or adaptive cruise control, pre-emptive braking, lane centring, parking assist, driver observation & alerts, steering, acceleration, and deceleration.
+
+Level 3
+
+Also known as ‘conditionally automated’, these vehicles manage speed and steering control, and are also responsible for monitoring the road environment, requiring the human driver to perform a ‘fall back’ role. An example could be roadway monitoring.
+
+Level 4
+
+Also known as ‘highly automated’, these vehicles are capable of operating in some driving modes, in certain environments, without a human ready to take control. These driving modes may be limited by factors such as speed, weather conditions, or access to high quality digital mapping. An example could be an autonomous shuttle operating on defined routes.
+
+Level 5
+
+Also known as ‘fully automated’, these vehicles are capable of operating in all driving modes and are truly ‘driverless’. The vehicle does not require a human driver to take back the control of the driving task, and it may have no steering wheel or pedals. An example could be a ‘robo-taxis’. -->
+                
+                
+                
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h3><a href="https://leminhkieu.github.io">https://leminhkieu.github.io</a></h3>
+                        
+                        
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>minh.kieu@auckland.ac.nz</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761.html">https://leminhkieu.github.io/p/2020-Civil761.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
