@@ -84,6 +84,12 @@
 
                         <hr/>
 
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+                        
                         <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Monash-visit.html">https://leminhkieu.github.io/p/2020-Monash-visit.html</a></h4>
 
                     </div>
@@ -91,29 +97,20 @@
                 </section>
 
                 
-                <!-- ************** About me ************* -->
+                   <section id="acknowledgements" data-background-image="../figures/backgrounds/shutterstock_788457058-small.jpg">
+                    <div class="whitebackground2">
 
-                <section id="aboutme" data-transition="fade">
-
-                    <figure class="right">
-
-                        <img data-src="../figures/my-pics/minh.jpg"
-                             alt="Minh picture" />
-                    
-                    </figure>
-
-
-                    <h2>Minh Kieu</h2>
-                    
-                    <p> From 2020: Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
-                     
-                    <p> 2018-2019: Research Fellow at the University of Leeds, UK </p>
-                    <p> 2016-2018: Research Scientist at the Data61, CSIRO, Australia </p>
-                    <p> 2011- 2016: PhD Research at the Queensland University of Technology, Australia </p>
-                    
-                </section>       
- 
-                
+                    <h2>Acknowledgements</h2>
+                        
+                        <p><a href="https://people.csiro.au/N/H/Hoang-Nguyen">Dr Hoang Nguyen</a>, Data61, CSIRO</p>
+                        <p><a href="https://www.uts.edu.au/staff/yuming.ou">Dr Yuming Ou</a>, University Technology Sydney</p>
+                        <p><a href="https://environment.leeds.ac.uk/geography/staff/1069/dr-nick-malleson">
+                            Prof Nicolas Malleson</a>, University of Leeds</p>
+                        <p><a href="https://www.turing.ac.uk/people/researchers/eric-daub">
+                            Dr Eric Daub</a>, Alan Turing Institute</p>
+                    </div>
+                </section>
+              
              <!-- ************************************************************
                 *********************** VISION **********************************
                 ************************************************************ -->
@@ -197,7 +194,7 @@
                    <p class="l2">Kieu et al. (2014) Passenger Segmentation Using Smart Card Data. IEEE Transactions of Intelligent Transport Systems 16 (3), 1537 - 1548</p>
                 </section>                   
                 
-                <section id="Data-Issues">
+                <section id="Data-Issues" >
                     <h2>Big Data in cities: Summary</h2>
                     <div id="columns">
                         <div class="left column">
@@ -219,13 +216,42 @@
                             <p class="l2">Streaming / regularly updated</p>
                             <p class="l2">Potential for dynamic models</p>
                             <div class="fragment">
+                                <h3>Need to consolidate data from multiple sources</h3>
                                 <h3>Require models that can represent complex systems</h3>
-                                <h3>Cities are built from the bottom up</h3>
-                                <p class="l2">Agent-based models</p>
+                               
                             </div>
                         </div>
                     </div>
                 </section>
+                
+                    <section id="whydifficult1" data-transition="fade">
+                    <figure class="right">
+                        <img data-src="../figures/side-graphics/congestion.jpg" 
+                             alt="picture of people in time square" />
+                        
+                    </figure>
+
+                    <h2>Why is it difficult to model  urban systems?</h2>
+                    <p>Extremely complex system:</p>
+                    <p class="l2">Attributes of the environment (e.g. individual houses, pubs, transport hubs, parks, etc.).</p>
+                    <p class="l2">Personal characteristics (heterogeneity).</p>
+                    <p class="l2">Features of the local community.</p>
+                    <p class="l2">Physical layout of the neighbourhood (e.g. street networks).</p>
+                </section>
+                
+                <section id="whydifficult2" data-transition="fade">
+                    <figure class="right">
+                        <img data-src="../figures/side-graphics/congestion.jpg" 
+                             alt="picture of people in time square" />
+                        
+                    </figure>
+
+                    <h2>Why is it difficult to model urban systems?</h2>
+                    <p>Traditional approaches often work at large scales, struggle to predict local effects</p>
+                    <p class="l2">Computationally convenient</p>
+                    <p class="l2">But cities are built from the bottom up</p>
+                </section>
+
                 
                  
                 <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
@@ -239,7 +265,7 @@
 
                         <div class="whitebackground2 fragment2">
 
-                            <h2>Uncertainty</h2>
+                            <h2>Issues in Agent-based modelling: Divergence</h2>
 
                             <p>The reality is dynamic: Complex models may explain cities, but diverge over time.   </p>
                             <p>The reality is stochastic: No set of parameters would perfectly explain the real system.   </p>
@@ -258,14 +284,11 @@
                <section id="how_DA_works3" data-transition="fade">
 
                     <h2>Data Assimilation</h2>
+                   <p class="l2">Improve estimates of the true system state by combining noisy, real-world observations and model estimates</p>
 
                     <img src="../figures/DUST/step_3.png"
-
                          alt="DA" />
-
                         <div class="whitebackground">
-
-                            <p>Improve estimates of the true system state by combining noisy, real-world observations and model estimates of the system state</p>
 
                         </div>
 
@@ -368,7 +391,7 @@
                 ************* StationSim **************************
                 ***************************************************************** -->                
                                
-                <section id="example2" data-background-image="../figures/Backgrounds/crowd.jpg">
+                <section id="example2" data-background-image="../figures/backgrounds/pedestrian.jpg">
                     
                     <div class="whitebackground2">
                         
@@ -413,28 +436,32 @@
                     
                 </section>
    
-           <!-- *******************************************************
-                     ************* StationSim video **************************
-                     ***************************************************************** -->                 
-                
-                <section id="stationsim-video-socialforce">
-                    <h2>StationSim with Helbing's Social Force model</h2>
-                    <video controls width="80%" height="auto" autoplay loop>
-                        <source src="../videos/JCrowdSimulator_480.mov" type="video/mp4"/>
-                         Your browser does not support the video tag.
-                    </video>
-                </section>
-                                 
-    
                 <section id="stationsim-video-UKF">
-                    <h2>Prediction of Observed vs Unobserved Agents</h2>
+                    <h2>StationSim with Unscented Kalman Filter</h2>
+                    <p>Prediction of Observed vs Unobserved Agents</p>
                     <video controls width="80%" height="auto">
                         <source src="../videos/pairwise_gif_30GIF.mp4" type="video/mp4"/>
                          Your browser does not support the video tag.
                     </video>
                 </section>
                 
+  
+        <!-- ********** DUST framework *************** -->                
+               <section id="challenges" data-transition="fade" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg"> >
+                   
+                   
+                    <div class="whitebackground2">
+
+                            <h2>Challenges</h2>
+
+                            <p>Data assimilation can change the model's states but not the underlying rules </p>
+                            <p>Many data assimilation methods still require the implementation of multiple model instances</p>
+
+                        </div>
+
+                </section>    
                 
+                              
                 
                 
              <!-- *****************************************************************
@@ -445,40 +472,32 @@
                     
                     <div class="whitebackground2">
                     
-                    <h2>Example 3<br/>Emulators of Agent-Based Models</h2>
+                    <h2><br/>Emulators of Agent-Based Models</h2>
                    <a href="https://github.com/leminhkieu/jCrowdSimulator">
                             <img style="float:right;padding:5px;width:400px; height:auto;" src="../figures/DUST/stationsimsocialforce.png"/>
                         </a>
 
-                    <p>Context: ABMs are generally too expensive to run in real-time</p>
-                    <p class="l2">Can we build another model to represent the ABM in real-time?</p>
+                    <p>How to run multiple instances of ABMs with little computation burden?</p>
+                    <p class="l2">Can we build another model to represent the ABM ?</p>
                     <p class="l2">What methods are suitable?</p>
                     <p class="l2">How good these surrogate models need to be?</p>
                     <p>Case study: <i>Station Sim</i> but using Social Force Model</p>
                     </div>
                 </section>
                      
-      
-                
-                
-                
-                
-                
-                     <!-- *******************************************************
-                     ************* Emulator framework **************************
+        
+                <!-- *******************************************************
+                     ************* StationSim video **************************
                      ***************************************************************** -->                 
-                 
-                 <section id="StationSim-emulator" data-transition="fade">
-                    
-                    <img style="float:centre;padding:5px;width:700px; height:auto;" src="../figures/DUST/emulator.png"
-                         alt="StationSim-Analysis-Emulator" />
-                     
-                     <p>Emulator to enable the use of ABMs in real-time</p>
-                    <p class="l2">Input: Aggregated pedestrian counts at each gate</p>
-                    <p class="l2">Output: Mean Social Force at each gate</p>
-                     <p>Run the ABM multiple times <i>with different demand</i> to train the Emulator</p>
-                    
-                </section>
+                
+                <section id="stationsim-video-socialforce">
+                    <h2>StationSim with Helbing's Social Force model</h2>
+                    <video controls width="80%" height="auto" autoplay loop>
+                        <source src="../videos/JCrowdSimulator_480.mov" type="video/mp4"/>
+                         Your browser does not support the video tag.
+                    </video>
+                </section>                
+                
                 
                      <!-- *******************************************************
                      ************* Emulator Results **************************
@@ -486,90 +505,40 @@
                  
                 
                <section id="Emulator-results2" data-transition="fade">
-                     <h2>Emulator of StationSim model: Random Forest Regression</h2>
-                    <img style="float:centre;padding:5px;width:670px; height:auto;"
+                     <h3>Emulator of StationSim model: Random Forest Regression</h3>
+                    <img style="float:centre;padding:5px;width:800px; height:auto;"
                          src="../figures/DUST/Emulator-Random-Forest.png"
                          alt="Emulator-Analysis2" />
                 </section>                  
                 
-                
-             <!-- **************************************************
-
-                     ************* THe vietnam project *******************
-
-                     ***************************************************************** -->
-  
-                <section id="vietnam-project" data-background-image="../figures/hanoi-old-quarter.jpg">
-
-                    
-                    <div class="whitebackground2 fragment">
-                    <h2> 3. Urban Transport Modelling for Sustainable Well-being in Hanoi: Proposal submitted to the Bristish Academy -- Co-Investigator </h2>
-                        
-                    <figure>
-                        <img data-src="../figures/Vietnam-project.png"/>
-                            </figure>
-                        </div>
-                    
-                </section>      
-                
-               <!-- **************************************************
-
-                     ************* THe AV project *******************
-
-                     ***************************************************************** -->
-  
-                <section id="AV-project" data-background-image="../figures/AV.jpg">
-
-                    
-                    <div class="whitebackground2 fragment">
-                    <h2> 4. Impacts of future transport modes on health -- Collaborative research </h2>
-                        
-                    <p>
-                        The impacts of Autonomous Vehicles on human health is currently unknown </p>
-                    <p>
-                        We need to model population demographics, activities, behaviors, and mobility in order to properly understand how Autonomous Vehicles affects health.</p>
-                        </div>
-                    
-                </section>    
-                
-                
-                <!-- **************************************************
-
-                     ************* THe NZ project *******************
-
-                     ***************************************************************** -->
-  
-                <section id="NZ-project" data-background-image="../figures/smart-city.jpg">
-
-                    
-                    <div class="whitebackground2">
-                    <h2> 5. Smart Urban Transport Systems Management using Big Data -- Key researcher </h2>
-                        
-                    <p>
-                        Large 5-year proposal for funding from the MBIE, led by University of Canterbury </p>
-                     
-                        <p class="l2">Improve the design and operations of transport systems by utilising the data and technology under connected environment. </p>
-                        
-                        
-                        </div>
-                    
+                   
+               <section id="Emulator-results3" data-transition="fade">
+                     <h3>Emulator of StationSim model: Gaussian Process</h3>
+                    <img style="float:centre;padding:5px;width:1200px; height:auto;"
+                         src="../figures/paper-figures/Emulator-5.png"
+                         alt="Emulator-Analysis2" />
+                   <img style="float:centre;padding:5px;width:1200px; height:auto;"
+                         src="../figures/paper-figures/Emulator-7.png"
+                         alt="Emulator-Analysis2" />
+                   
                 </section>  
                 
-        
+       
                <!-- *****************************************************
 
                      ************* Thanks **************************
 
                      ***************************************************************** -->
                                   
-                <section class="title" id="thanks" data-background-image="../figures/title-city.jpg">
+                <section class="title" id="thanks" data-background-image="../figures/backgrounds/auckland-background.jpg">
+
 
                     <div class="whitebackground2">
 
 
-                        <a href="http://www.leeds.ac.uk/">
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
 
-                            <img style="float:right;padding:10px;width:150px; height:auto;" src="../figures/uol_logo.gif"/>
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
 
                         </a>
 
@@ -589,7 +558,7 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2019-ResearchPlan.html">https://leminhkieu.github.io/p/2019-ResearchPlan.html</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Monash-visit.html">https://leminhkieu.github.io/p/2020-Monash-visit.html</a></h4>
 
                     </div>
 
