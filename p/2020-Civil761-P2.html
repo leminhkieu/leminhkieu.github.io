@@ -1,0 +1,1030 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil761-ITS</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Introduction to Intelligent Transport Systems</h2>
+                        <h3>Civil 761: Planning and Design of Transport Facilities</h3>
+
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P2.html">https://leminhkieu.github.io/p/2020-Civil761-P2.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/my-pics/minh.jpg"
+                             alt="Minh picture" />
+                    
+                    </figure>
+
+
+                    <h2>Minh Kieu</h2>
+                    
+                    <p> From 2020: Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
+                     
+                    <p> 2018-2019: Research Fellow at the University of Leeds, UK </p>
+                    <p> 2016-2018: Research Scientist at the Data61, CSIRO, Australia </p>
+                    <p> 2011- 2016: PhD Research at the Queensland University of Technology, Australia </p>
+                    <p> 2009- 2011: Master in Intelligent Transport System, Linkoping University, Sweden </p>
+                    
+                </section>       
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: Understand the..</h2>
+                    
+                    <p>	Benefits of Intelligent Transport Systems (ITS) </p>
+                    <p>	Common ITS achitechtures </p>
+                    <p>	Data collection technologies in transport systems</p>
+                    
+                    
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                    <p> 1. Problems in the transport sector</p>
+                    <p>	2. ITS User services </p>
+                    <p>	3. ITS Management services</p>
+                    <p>	4. Benefits of Intelligent Transport Systems (ITS) </p>
+                    <p>	5. Data and Smart Cities</p>
+                    <p>	6. Recap</p>
+                    
+                    </div>
+                </section>                    
+
+           <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is Intelligent Transport Systems (ITS) ?</h3>
+                        
+                        <p>Application	of	well-established	technologies</p>
+                        
+                        <p class="l2">communication, control, electronics, computer hardware and computer software</p>
+                        
+                        <p>in order to increase</p>
+                        
+                        <p class="l2">the safety</p>
+                        <p class="l2">the efficiency</p>
+                        
+                        <p>of transportation systems</p>
+                        
+                    </div>
+                </section>
+                
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/auckland_mov.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="problem1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Traffic congestion</h3>
+                        
+                        <p>Economical cost:</p>
+                        
+                        <p class="l2">Auckland's congested roads costed our economy over $1.25 billion in lost productivity (NZTA, 2013)</p>
+                        
+                        <p>Social cost:</p>
+                        
+                        <p class="l2">Emergency access and evacuation</p>
+                        <p class="l2">Road users stress and anxiety</p>
+                        
+                    </div>
+                </section>
+                
+                
+     
+            <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams!</h3>
+
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+		            <p class="l2">Source: NZIER (2017),Benefits from Auckland road decongestion </p>
+
+                </section> 
+                
+ 
+               <!-- ******************************************************
+                *********************** Traffic safety ***********************
+                ************************************************************ -->
+
+                <section id="safety" data-transition="fade">                  
+                    
+                    <video controls
+
+                                src="../videos/road-safety.mp4" 
+                                
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <h3>Traffic safety problems</h3>
+                        
+                        <p>Who was at fault?</p>
+                        
+                   </div>  
+                    
+                </section> 
+                
+            <!-- *************** QUIZ: How technologies can help? ************************** -->
+  
+               <section id="QUIZ1" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+                
+                
+                 <!-- *************** ITS intro  ************************** -->
+  
+               <section id="its-intro" data-background-image="../figures/teaching/its-systems.jpg">   
+                   
+                   <div class="whitebackground1 fragment">
+                       
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                       </div> 
+                </section> 
+
+                
+                <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="its-users" data-background-image="../figures/backgrounds/AV.jpg">   
+                   
+                   <div class="whitebackground2">
+                       <h3>ITS User Services</h3>
+                        
+                        <p>Information systems </p>
+                       
+                        <p>Traffic safety systems </p>
+                       
+                        <p>Autonomous and Connected Vehicles</p>
+                       
+                        <p>Payment systems</p>
+                       
+                        
+                       </div> 
+
+                </section> 
+                
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="ATIS" >   
+                   
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ATIS.jpg"
+                             style="width:1200px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                   <div class="whitebackground1">
+                       <h3>ITS User Service 1: Advanced Traveller Information Systems (ATIS)</h3>
+                        
+                        <p>Objective: give information about the transportation system to the driver to make key decisions </p>
+                       
+                        <p class="l2">Pre-trip information </p>
+                       <p class="l2">Route guidance</p>
+                       <p class="l2">Post-trip analysis </p>
+                       
+                       </div> 
+
+                </section>           
+                
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="ITS-safety" >   
+                   
+                      <video controls autoplay
+
+                                src="../videos/collision-avoidance.mp4" 
+                                                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <h3>ITS User Service 2: ITS traffic safety systems, for example:</h3>
+                        
+                        <p class="l2">Anti-lock Braking System (ABS), collision avoidance, driver alert, lane centering etc. </p>
+                   </div>  
+
+               </section>  
+                
+                  <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="ITS-safety-ecall" data-background-image="../figures/teaching/ecall.png">  
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>eCall: Automated messaging to emergency services </h3>
+                        
+                        <p class="l2">Mandatory system on all new European cars from 2018</p>
+                        <p class="l2">Automated message following a crash</p>
+                        <p class="l2">Precice crash location</p>
+                        <p class="l2">Only activated after a serious accident</p>
+                   </div>  
+
+                    </section>                
+                
+                  
+           <!-- *******      eCall is a European initiative intended to bring rapid assistance to motorists involved in a collision anywhere in the European Union. eCall was made mandatory in all new cars sold within the EU from April 2018  *** -->
+                
+                
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV1" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2 fragment">
+                       <h3>ITS User Service 3: Autonomous vehicles </h3>
+                        
+                        <p>Use technology to partially or entirely replace the human driver in navigating a vehicle while avoiding road hazards and responding to traffic conditions. </p>
+                       
+                        <p>They rely on: </p>
+                        
+                        <p class="l2">Sensors: radar, LIDAR, cameras, etc </p>
+                       <p class="l2">Complex algorithms, machine learning models</p>
+                       <p class="l2">Powerful processors </p>
+                        
+                        <p>to detect traffic lights, read road signs, track other vehicles, and look for pedestrians.</p>
+                       
+                         <p class="l2">More to read: <a href="https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles"> https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles </a> </p>
+                       
+                       </div>              
+                   
+                </section>   
+                
+                
+                           
+                <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="its-manage2" >   
+                   
+                       <video controls autoplay
+
+                                src="../videos/AV-intersection.mp4" 
+                                
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                   
+                   
+                </section>       
+                
+                
+                
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV2" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2">
+                       <h3>Are we already 'driving' autonomous vehicles? </h3>
+                        
+                        <p>New Zealand has adopted the International Standard J3016 as developed by the Society of Automotive Engineers (SAE).</p>
+                       
+                     <figure class="centre" >
+
+                        <img data-src="../figures/teaching/SAE-Levels.jpg"
+                             style="width:700px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                       
+                       </div>              
+                   
+                </section>                      
+                
+                   <!-- Automation Level
+
+Description
+
+Level 0
+
+No automation
+
+Levels 1 & 2
+
+Also known as ‘partially automated’, these vehicles have limited automated features that may assist the driver with speed or steering control. Examples include; lane-keep assist or adaptive cruise control, pre-emptive braking, lane centring, parking assist, driver observation & alerts, steering, acceleration, and deceleration.
+
+Level 3
+
+Also known as ‘conditionally automated’, these vehicles manage speed and steering control, and are also responsible for monitoring the road environment, requiring the human driver to perform a ‘fall back’ role. An example could be roadway monitoring.
+
+Level 4
+
+Also known as ‘highly automated’, these vehicles are capable of operating in some driving modes, in certain environments, without a human ready to take control. These driving modes may be limited by factors such as speed, weather conditions, or access to high quality digital mapping. An example could be an autonomous shuttle operating on defined routes.
+
+Level 5
+
+Also known as ‘fully automated’, these vehicles are capable of operating in all driving modes and are truly ‘driverless’. The vehicle does not require a human driver to take back the control of the driving task, and it may have no steering wheel or pedals. An example could be a ‘robo-taxis’. -->
+                
+              <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="payments" data-background-image="../figures/backgrounds/shutterstock_788457058-small.jpg">  
+                   
+                    <div class="whitebackground2">
+                       <h3>ITS User Service 4: Payment systems</h3>
+                        
+                        <p>Public Transport Smart Card (e.g. AT Hop Card) </p>
+                        
+                        <p>Mobile phone payment</p>
+                       
+                        <p>Electronic Toll Collection</p>
+                         
+                       </div>              
+                   
+                </section>   
+                
+                         
+             <!-- *************** QUIZ ************************** -->
+  
+               <section id="QUIZ2" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+                
+                <!-- *************** ITS intro 2  ************************** -->
+  
+               <section id="its-intro-2" data-background-image="../figures/teaching/its-systems.jpg">   
+                   
+                   <div class="whitebackground1 fragment">
+                       
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-users.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                       </div> 
+                </section> 
+                
+                
+                <!-- *************** ITS management 1  ************************** -->
+  
+               <section id="its-manage1" data-background-image="../figures/teaching/traffic-management-centre.png">   
+                   
+                   <div class="whitebackground2 fragment">
+                        <h3>ITS Management Services</h3>
+                        
+                        <p>Traffic control</p>
+                       
+                        <p>Incident management</p>
+                        
+                        <p>Travel demand management</p>
+                       
+                        <p>New mobility options</p>
+                       
+                        
+                       </div> 
+                </section>                 
+                
+                
+                
+                <!-- *************** ITS management 1  ************************** -->
+  
+               <section id="its-manage2" data-background-image="../figures/backgrounds/skylines-night1.jpg">   
+                   
+                   <div class="whitebackground2">
+                        <h3>ITS Management Service 1: Traffic control</h3>
+                       
+                        <p>Variable message signs</p>
+                        
+                        <p>Ramp metering system</p>
+                       
+                        <p>Adaptive & Connected Traffic Signal systems (e.g. SCATS)</p>
+
+                        <p>Traffic control using Autonomous Vehicles</p>
+                       
+                        
+                       </div> 
+                </section>     
+                
+                
+               <!-- *********** ITS Variable signs **************** -->
+  
+               <section id="its-variable1" data-background-image="../figures/teaching/variable-speed.jpg">   
+                   
+               <div class="whitebackground2">
+                       <h3>Variable message signs</h3>
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/variable-sign.jpg"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                   
+                                    <figure class="centre" >
+
+                        <img data-src="../figures/teaching/variable-speed-limit.jpg"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                   
+                       </div> 
+                </section>    
+                
+              <!-- *********** ITS Variable signs 2**************** -->
+  
+               <section id="its-variable2" data-background-image="../figures/teaching/variable-speed.jpg">   
+                   
+               <div class="whitebackground2">
+                        <h3>Variable message signs</h3>
+                       
+                        <p>Inform road users about specific temporary events and real-time traffic conditions</p>
+                        
+                        <p>Benefits: reducing stress, anxiety and increasing traffic safety</p>
+                       
+                        <p>Main challenge: difficult to measure the benefits, implementation cost</p>
+
+                   
+                       </div> 
+                </section>       
+
+               <!-- *********** ITS Ramp metering  ***************** -->
+  
+               <section id="its-ramp" data-background-image="../figures/teaching/ramp-metering.jpg">   
+                   
+               <div class="whitebackground2 fragment">
+                       <h3>Ramp metering</h3>
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ramp-metering-comparison.gif"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                       </div> 
+                </section>     
+               
+                               
+             <!-- *************** ITS management 3 ************************** -->
+  
+               <section id="its-manage3" data-background-image="../figures/teaching/auckland-signal.jpg">   
+                   
+               <div class="whitebackground2">
+                        <h3>Traffic Signal: Why can't we be more efficient?</h3>
+                       
+                        <p>Traffic signal is not fully adaptive to the demand</p>
+                        
+                        <p>Vehicles take time to speed up, slow down (phantom traffic jam)</p>
+                                               
+                       </div>                       
+
+                   
+                </section>                   
+  
+                
+             <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="its-manage4" data-background-image="../figures/teaching/SCATS.png">   
+                   
+               <div class="whitebackground2 fragment">
+                        <h3>Traffic Signal: Adaptive Traffic Signal Control</h3>
+                        
+                        <p>Phase settings (e.g. green time) are adaptively defined </p>
+                       
+                        <p>Intersections are often coordinated</p>
+                        
+                        <p>Most popular system is the Sydney Coordinated Adaptive Traffic System (SCATS)</p>
+                                               
+                       </div>                       
+
+                   
+                </section>                   
+                
+              
+                <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="AV-control" >   
+                   
+                    <div class="whitebackground2">
+                        <h3>Traffic control with AV</h3>
+                        
+                   </div>  
+                       <video controls autoplay
+
+                                src="../videos/AV-control.mp4" 
+                                
+                                >
+                         Your browser does not support the video tag.
+
+                    </video>
+                </section>             
+
+               <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="incident1" data-background-image="../figures/teaching/DSS.jpg">      
+                   
+                    <div class="whitebackground2">
+                        <h3>ITS Management Service 2: Incident management</h3>
+                        
+                        <p>Traffic Management Centres </p>
+                        
+                        <p>Signal priority system</p>
+                        
+                        <p>Decision Support Systems</p>
+                       
+                   </div>  
+        
+                </section>                  
+
+              <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management1" data-background-image="../figures/backgrounds/grass-left.jpg">      
+                   
+                    <div class="whitebackground2">
+                        <h3>ITS Management Service 3: Travel Demand Management</h3>
+                        
+                        <p>Applications of technologies to reduce or redistribute travel demand</p>
+                        
+                        <p class="l2">Changing mode choice</p>
+                        
+                        <p class="l2">Changing departure time and location choice</p>
+                        
+                       
+                   </div>  
+        
+                </section>  
+                
+           <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management2" data-background-image="../figures/teaching/bus-bike-car.jpg">      
+                   
+                    <div class="whitebackground2 fragment">
+                        <h3>Travel Demand Management: Changing mode choice</h3>
+                        
+                        <p>Integrating with User systems such as travellers' information</p>
+                        
+                        <p>Bus priority systems</p>
+                        
+                        <p>Assisted active transport modes (e.g. electric bike)</p>
+                       
+                   </div>  
+        
+                </section>    
+
+          <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management3" data-background-image="../figures/projects/clean-air-charging.png">      
+                   
+                    <div class="whitebackground2 fragment">
+                        <h3>Travel Demand Management: Changing departure time and location choice </h3>
+                        
+                        <p>Congestion charging or cordon congestion toll</p>
+                        
+                        <p>Example: Clean Air Charging Zone in Leeds, UK</p>
+                       
+                   </div>  
+        
+                </section>                    
+ 
+         <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management3" data-background-image="../figures/teaching/MAAS.png">      
+                   
+                    <div class="whitebackground2 fragment">
+                         <h3>ITS Management Service 4: New mobility options</h3>
+                        
+                        <p>Sharing modes: Bike sharing, car sharing, carpooling</p>
+                        
+                        <p>On-demand transport</p>
+                        
+                        <p>Mobility-as-a-service</p>
+                       
+                   </div>  
+        
+                </section>                       
+
+             <!-- *************** ITS flowchart ************************** -->
+  
+               <section id="endof3" >    
+                   
+                         <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-full.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+        
+                </section>  
+                
+         <!-- *************** ITS role  ************************** -->
+  
+               <section id="its-intro" data-background-image="../figures/teaching/ITS-benefits.png">   
+                   
+                    <div class="whitebackground2 fragment">
+                        <p>Source: <a href="https://www.nzta.govt.nz/assets/resources/intelligent-transport-systems/docs/nz-transport-agency-intelligent-transport-systems.pdf"> NZTA (2014) NZ Transport Agency position statement
+                            on intelligent transport systems: 
+                           Responding to the opportunities </a> </p>
+                  
+                    </div>  
+                </section>       
+                
+                
+            <!-- *************** QUIZ 3 which are NOT true about traffic management ************************** -->
+  
+               <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                         
+                
+             <!-- *************** ITS data ************************** -->
+  
+               <section id="data1" data-background-image="../figures/teaching/traffic-management-centre.png">      
+                   
+                  <div class="whitebackground1">
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-data.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                      </div>  
+                </section>      
+                
+            <!-- *************** ITS data ************************** -->
+  
+               <section id="data2" data-background-image="../figures/teaching/traffic-management-centre.png">      
+                      <div class="whitebackground2 ">
+                         <h3>Data in ITS</h3>
+                        
+                        <p>Collective data: data from multiple users</p>
+                        
+                        <p>Individual data</p>
+                        
+                        <p>Data analytics</p>
+                       
+                   </div>          
+                </section>                                     
+ 
+                
+                
+            <!-- *************** ITS data ************************** -->
+  
+               <section id="data3" > 
+                      <div class="whitebackground2 ">
+                         <h3>Data in ITS: Collective data</h3>
+                          
+                          
+                        <p class="l2">Loop detectors</p>
+                        
+                        <p class="l2">Public transport data: Automatic Vehicle Location, Automatic Passenger Counter</p>
+                        
+                        <p class="l2">CCTV cameras, drones</p>
+                          
+                  <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                          
+                   </div>          
+                </section>    
+                
+
+          <!-- *************** ITS data ************************** -->
+  
+               <section id="data4" data-background-image="../figures/backgrounds/shutterstock_788457058-small.jpg">  
+                      <div class="whitebackground2 " >
+                         <h3>Data in ITS: Individual data</h3>
+                          
+                          
+                        <p class="l2">Travel surveys</p>  
+                      
+                        <p class="l2">Smart Card </p>
+                        
+                        <p class="l2">Bluetooth/Wifi </p>
+                        
+                        <p class="l2">Mobile phone </p>
+                          
+                        <p class="l2">Social Network</p>  
+                          
+                   </div>          
+                </section>    
+                
+          <!-- *************** ITS data ************************** -->
+  
+               <section id="data5" >
+                   
+                   <h3>Individual data: Travel surveys</h3> 
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/travel-survey.jpg"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                    
+                    <p class="l2">One of the most traditional data collection techniques</p>
+                        
+                        <p class="l2">Flexible, but expensive and limited</p>
+                          
+                </section>                    
+                
+           <!-- *************** QUIZ 4: who is in this survey? ************************** -->
+  
+               <section id="QUIZ4" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section>                 
+                
+           <!-- *************** ITS data ************************** -->
+  
+               <section id="data6" >
+                   
+                   <h3>Individual data: Smart Card</h3> 
+                   <figure class="centre" >
+
+                        <img data-src="../figures/paper-figures/smart-card.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                    
+                    <p class="l2">Main purpose: fare collection </p>
+                        
+                        <p class="l2">Shows individual travel patterns and behaviours</p>
+                          
+                </section>                 
+                
+         <!-- *************** ITS data ************************** -->
+  
+               <section id="data7" data-background-image="../figures/teaching/bluetooth.png"> 
+                   
+                   <div class="whitebackground2 " >
+                   <h3>Individual data: Bluetooth/Wifi</h3> 
+                  
+                    
+                    <p class="l2">Travel time </p>
+                        
+                        <p class="l2">Origins/Destination</p>
+                          
+                   </div>
+                </section>                   
+
+            <!-- *************** ITS data ************************** -->    
+                <section id="Data-MobilePhones">
+                    <figure class="right">
+                        <figcaption>Evaluating aggregate mobile phone population accuracy</figcaption>
+                        <img data-src="../figures/teaching/census_mobile-correlation-map.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    </figure>
+                    <h2>Individual data: Mobile data</h2>
+                    <p>Large population coverage</p>
+                    <img class="left" data-src="../figures/teaching/census_mobile-correlation.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    <p>Privacy concerns or coarse resolution</p>
+                </section>         
+                
+                
+                   <!-- ************************************************************
+                *********************** DATA ************************************
+                ************************************************************ -->
+    
+                <section id="Data-Twitter">
+                    <h2>Individual data: Social Media</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/traffic-watch-annotation.png" alt="Traffic watch"/>
+                        
+                    </figure>
+                </section>
+                
+                
+            <!-- *************** ITS data ************************** -->
+  
+               <section id="data-fusion" >
+                   
+                   <h3>Individual data: Data fusion</h3> 
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/Uber-AV.gif"
+                             style="width:800px;"
+                             alt="UberAV" />
+                    
+                    </figure>
+                    
+                    <p class="l2">Integrating data from multiple sources </p>
+                        
+                </section>                             
+                
+          <!-- *************** QUIZ 5 challenges of using mobile phone data ******************* -->
+  
+               <section id="QUIZ5" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+              <!-- *************** ITS data ************************** -->
+  
+               <section id="Recap" data-background-image="../figures/teaching/traffic-management-centre.png">      
+                   
+                  <div class="whitebackground1">
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-data.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                      </div> 
+                    </section> 
+                
+             <!-- *************** QUIZ ************************** -->
+  
+               <section id="QUIZ6" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P2.html">https://leminhkieu.github.io/p/2020-Civil761-P2.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
