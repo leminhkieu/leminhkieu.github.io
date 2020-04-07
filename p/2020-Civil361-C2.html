@@ -5,52 +5,40 @@
 	<head>
 
 		<meta charset="utf-8">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
         <meta name="author" content="Minh Kieu">
-
         <meta name="keywords" content="big data, urban dynamics">
-
-
-
-		<title>Civil361-Traffic Engineering 2-Chapter 2</title>
-
-
-		<link rel="stylesheet" href="reveal/css/reveal.css">
-
-		<link rel="stylesheet" href="reveal/css/theme/white.css">
-
         
+		<title>Civil361-Traffic Engineering 2-Chapter 2</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
         <!-- Some extra bits added by Nick -->
-
         <link rel="stylesheet" href="reveal/css/nick.css">
-
-
-
 		<!-- Theme used for syntax highlighting of code -->
-
 		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
 
-
-
-		<!-- Printing and PDF exports -->
-
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
 		<script>
-
 			var link = document.createElement( 'link' );
-
 			link.rel = 'stylesheet';
-
 			link.type = 'text/css';
-
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
-
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-
 		</script>
-    
-
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
 	</head>
 
 	<body>
@@ -119,78 +107,7 @@
                     
                 </section>       
                 
-                  <!-- ************** Learning outcomes ************* -->
-
-                <section id="outcomes" data-transition="fade">
-
-                    <figure class="right">
-
-                        <img data-src="../figures/teaching/learning-outcomes.jpg"
-                             alt=" " />
-                    
-                    </figure>
-                    <h2>Learning outcomes: Understand the..</h2>
-                    
-                    <p>	1. Benefits of Intelligent Transport Systems (ITS) </p>
-                    <p>	2. Common ITS achitechtures </p>
-                    
-                  <aside class="notes">
-		          - There are only two aimed learning outcomes of this lectures
-	               </aside>                    
-                    
-                </section>                
-
-                <!-- ***************** Agenda ************************* -->
-
-                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
-                    
-                    <div class="whitebackground2">
-                    
-                    
-                    <h2>Agenda</h2>
-                    
-                    <p> 1. Problems in the transport sector</p>
-                    <p>	2. ITS User services </p>
-                    <p>	3. ITS Management services</p>
-                    <p>	4. Benefits of Intelligent Transport Systems (ITS) </p>
-                    <p>	5. Recap</p>
-                    
-                    </div>
-                    
-                    <aside class="notes">
-		          - We will start with identifying the existing problems in the transport sector, especially in NZ
-	               </aside>                  
-                    
-                </section>                    
-
-           <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What are Intelligent Transport Systems (ITS) ?</h3>
-                        
-                        <p>Application	of	well-established	technologies</p>
-                        
-                        <p class="l2">communication, control, electronics, computer hardware and computer software</p>
-                        
-                        <p>in order to increase</p>
-                        
-                        <p class="l2">the safety</p>
-                        <p class="l2">the efficiency</p>
-                        
-                        <p>of transportation systems</p>
-                        
-                    </div>
-                    
-                  <aside class="notes">
-		          - First, let's define Intelligent Transport Systems
-	               </aside>                    
-                </section>
-                
-                
-             <!-- ******************************************************
+                      <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
@@ -212,16 +129,7 @@
                         
                     </div>
                     
-                  <aside class="notes">
-		          - Auckland is expanding rapidly in both population and infrastructures: more transportation supply such as new roads, new public transport services but at the same time a lot more demand from new apartment buildings, and new shopping centres 
-                    - Click: Traffic congestion and their costs
-	               </aside>                    
-                    
-                </section>
-                
-                
-     
-            <!-- ********************************************************
+                           <!-- ********************************************************
 
                      ************* Auckland congestion  *****************
 
@@ -245,38 +153,506 @@
 	               </aside>                   
                    
                 </section> 
+                    
+                </section>
                 
- 
-               <!-- ******************************************************
-                *********************** Traffic safety ***********************
-                ************************************************************ -->
+                  <!-- ************** Learning outcomes ************* -->
 
-                <section id="safety" data-transition="fade">                  
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
                     
-                    <video controls
-
-                                src="../videos/road-safety.mp4" 
-                                
-                                >
-                        
-                         Your browser does not support the video tag.
-
-                    </video>
+                    </figure>
+                    <h2>Learning outcomes: </h2>
                     
-                    <div class="whitebackground2">
-                        <h3>Traffic safety problems</h3>
-                        
-                        <p>Who was at fault?</p>
-                        
-                   </div> 
+                    <p>	1. Understanding the traffic flow theory </p>
+                    <p>	2. The classes of traffic flow models</p>
+                    <p>	3. How to model intersections</p>
+                    <p>	4. How to solve some traffic flow problems</p>
                     
                   <aside class="notes">
-		       *** Another problem is traffic safety: with more motorways and higher speed limits, crashes are more severe
-                 *** The increase in the number of motor vehicles may lead to more accidents
-                      *** now I want you to watch this video and think for yourself: who was at fault in this situation?
-	               </aside>   
+		          - There are only two aimed learning outcomes of this lectures
+	               </aside>                    
                     
-                </section> 
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                    <p> 1. Introduction to traffic flow theory</p>
+                    <p>	2. Traffic flow models</p>
+                    <p>	3. Unsignalized intersections</p>
+                    <p>	4. Examples and problems </p>
+                    <p>	5. Recap</p>
+                    
+                    </div>
+                    
+                    <aside class="notes">
+                    ***Introduction to traffic flow theory                
+                    -Traffic flow variables
+                    -Traffic stream characteristics
+                    -Traffic stream models
+                    -Fundamental diagram of traffic flow
+                    ***Traffic flow models
+                    -Macroscopic models
+                    -Microscopic models
+                    -Mesoscopic models
+                    ***Unsignalized intersections
+                    -Gap acceptance model
+                    -Headway distributions
+                    -Delay to minor flow 
+                    -Absorption capacity of major stream
+                    ***Examples and problems
+	               </aside>                  
+                    
+                </section>   
+                
+            
+   
+
+           <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow'?</h3>
+                        
+                        <p>Traffic flow is the study of interactions between travellers  (including pedestrians, cyclists, drivers, and their vehicles) and infrastructure  (including highways, signage, and traffic control devices)</p>
+                        
+                        <p>with the aim of  understanding and developing an optimal transport network for an efficient  movement of people and goods with minimal traffic congestion. </p>
+                 
+                    </div>
+                         
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="theory" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow theory'?</h3>
+                        
+                        <p>Traffic flow theory involves the development of mathematical relationships  among the three primary elements of a traffic stream namely flow, density and  speed.</p>
+                        
+                        <p class="l2"> Read more:<br/><a href="https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html">https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html</a> </p>
+                            
+                        
+                        <p>These relationships help traffic engineers in planning, design and operation to determine:</p>
+                        
+                        <p class="l2">reasons for traffic congestion</p>
+                        <p class="l2">bottlenecks in the transport network</p>
+                        <p class="l2">delay experienced by travellers.</p>
+                        <p class="l2">changes in performance of road networks due to road improvement  measures.</p>
+                        
+                    </div>
+                         
+                </section>
+                
+              
+                       <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="flow" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is the 'flow' in flow-density-speed relationship?</h3>
+                        
+                        <p>The total number of vehicles passing a given point in a given time. Traffic flow is expressed as vehicles per hour (veh/hr) </p>
+                        
+                        \[\begin{aligned}
+					Flow(q) \quad q = \frac{N}{T} \ (veh/hr) \\
+					
+					\end{aligned} \]
+                        
+                        
+                        <p>Traffic flow data can be collected by:</p>
+                        
+                        <p class="l2">manual counting of vehicles</p>
+                        <p class="l2">traffic counting devices</p>
+                        <p class="l2">loop detectors</p>
+                        <p class="l2">big data e.g. mobile phone data, etc</p>
+                        
+                    </div>
+                         
+                </section>
+                
+                
+                  
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="density" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'density'?</h3>
+                        
+                    <p class="l2">The average number of vehicles that occupy one mile or one kilometer of road space (veh/km) </p>
+                        
+                        \[\begin{aligned}
+					Density(k) \quad k = \frac{N}{L} \ (veh/km) \\
+					\end{aligned} \]
+                        
+                    
+                        
+                     <p class="l2">   Space occupancy $O_s$: percentage length of highway occupied by vehicles</p>
+                        
+                        \[\begin{aligned}
+					Space Occupancy(O_s) \quad O_s = \frac{\sum_{i=1}^N{h_i}}{L} \\
+					\end{aligned} \]
+                        
+                       <p class="l2"> Space headway $\bar{s}$ distance between the same points of two consecutive vehicles following each other </p>
+                        
+                        
+                        \[\begin{aligned}
+					Spacing(\bar{s}) \quad \bar{s} = \frac{L}{N} = \frac{1}{k} \\
+					\end{aligned} \]
+                        
+                        
+                    </div>
+                         
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
+                        
+                    <p>There are two ways to measure speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        
+                          \[\begin{aligned}
+					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
+					\end{aligned} \]
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                    
+                 ***   Space Mean Speed = harmonic mean speed
+                        
+                    ***    Time-mean speed is associated with a single point along a roadway over time,
+whereas the space-mean speed is associated with a specified length of roadway.
+Use space-mean speeds when reducing and analyzing travel time data.
+                        
+                     </aside>  
+                    
+                </section>
+                
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed2" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10, find the time mean speed and space mean speed.</p>
+                        
+                         <p>There are two ways to measure speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        
+                          \[\begin{aligned}
+					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
+					\end{aligned} \]
+                        
+                    </div>
+                </section>
+                
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+             
+                <section id="speed3" >                     
+                   
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
+                        
+                     <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{50+40+30+20+10}{5} = 30 \ km/h  \\
+					\end{aligned} \]
+                        
+                         <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                          \[\begin{aligned}
+					v_s = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}} = \frac{5}{1/50+1/40+1/30+1/20+1/10} = 28.9 \ km/h \\
+					\end{aligned} \]
+                        
+                     
+                </section>
+            
+
+                
+                      <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="diagram1" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 1: Flow-density relationship</h3>
+                       
+                        <img class="centre" src="../figures/teaching/flow-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                        <p> Some characteristics of an ideal flow-density relationship</p>
+                        
+                     <p class="l2">When the density is zero, flow will also be zero,since there is no vehicles on the road.</p>
+                         <p class="l2">When the number of vehicles gradually increases the density as well as flow increases.</p>
+                        <p class="l2">Jam density: When more and more vehicles are added, it reaches a situation where vehicles can't move.</p>
+                       <p class="l2">Critical density: some density between zero density and jam density, when the flow is maximum.</p>
+                    </div>
+                       <aside class="notes">
+		          The point O refers to the case with zero density and zero flow. The point B refers to the maximum flow and the corresponding density is $k_{max}$. The point C refers to the maximum density $k_{jam}$ and the corresponding flow is zero. OA is the tangent drawn to the parabola at O, and the slope of the line OA gives the mean free flow speed, ie the speed with which a vehicle can travel when there is no flow. It can also be noted that points D and E correspond to same flow but has two different densities. Further, the slope of the line OD gives the mean speed at density $k_1$ and slope of the line OE will give mean speed at density $k_2$. Clearly the speed at density $k_1$ will be higher since there are less number of vehicles on the road.
+               
+	               </aside> 
+                </section>
+                
+                  <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="diagram2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                   
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 2: Speed-density relationship</h3>
+                       
+                        <img class="centre" src="../figures/teaching/speed-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                        <p> Some characteristics of an ideal Speed-density relationship</p>
+                        
+                     <p class="l2">Speed will be maximum, referred to as the free flow speed</p>
+                         <p class="l2">Density is maximum, the speed will be zero.</p>
+                        
+                    </div>
+                     <aside class="notes">
+		          The most simple assumption is that this variation of speed with density is linear as shown by the solid line in figure 4. Corresponding to the zero density, vehicles will be flowing with their desire speed, or free flow speed. When the density is jam density, the speed of the vehicles becomes zero.
+	               </aside> 
+                </section>
+                
+                
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+               <section id="diagram3" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow 3: Speed-flow relationship</h3>
+                       
+                        <img class="centre" src="../figures/teaching/speed-flow.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                        <p> Some characteristics of an ideal flow-density relationship</p>
+                        
+                     <p class="l2">The flow is zero either because there is no vehicles or there are too many vehicles so that they cannot move.</p>
+                         <p class="l2">At maximum flow, the speed will be in between zero and free flow speed.</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         The flow is zero either because there is no vehicles or there are too many vehicles so that they cannot move. At maximum flow, the speed will be in between zero and free flow speed. 
+	               </aside>                    
+                    
+                </section>
+                
+                <!-- ******************************************************
+                *********************** diagram4 ***********************
+                ************************************************************ -->
+
+               <section id="diagram4" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
+                       <img class="centre" src="../figures/teaching/fundamental.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         THe same relationship can be found with some noise
+	               </aside>                    
+                    
+                </section>
+     
+                  <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="diagram5" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
+                       <img class="centre" src="../figures/teaching/fundamental-3d.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="diagram6" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
+                       <img class="centre" src="../figures/teaching/fundamental-key.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+           
+                  <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models" data-background-image="../figures/Backgrounds/data.jpg">                 
+                    
+                   <div class="whitebackground2"> 
+                   <h3>Traffic modelling</h3>
+                     <p>A mathematical representation of real-world traffic, usually, but not restricted to, road traffic.</p>
+                    <p>Traffic models can help to objectively answer important questions, such as:</p>   
+                       <p class="l2">What is the potential impact of land use development and/or transport infrastructure on traffic patterns ?</p>   
+                       <p class="l2">What will be the levels of congestion on the road network ?</p>   
+                       <p class="l2">What measures may be appropriate to mitigate potential adverse effects ?</p>   
+                       <p class="l2">How can infrastructure projects and packages be designed to maximise benefits ?</p>   
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+    
+                   <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Classes of traffic models</h3>
+                       <img class="centre" src="../figures/teaching/traffic-models.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
+                         <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-macro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="macro">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Macroscopic models</h3>
+                        
+                        <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
+                        
+                        <p class="l2">describe both the system entities and their interactions at a high level of  detail.</p>
+                        
+                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
+
+                        
+                    </div>
+                    </section>
+                    
+                         <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-micro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="micro">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Microscopic models</h3>
+                        
+                        <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
+                        
+                        <p class="l2">describe the system entities, their activities and interactions at a low level of details</p>
+                        
+                        <p>are efficient and so applicable to large network and real-time simulation</p>
+                        
+                    </div>
+                </section>
+                    <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-meso.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="meso">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Mesoscopic models</h3>
+                        
+                        <p>Individual vehicles may be presented but not as details as microscopic models</p>
+                        
+                        <p class="l2">less computationally expensive to run, but more detailed than macroscopic models</p>
+                        
+                        <p>Capable of modelling the traffic on the large scale</p>
+                        
+                    </div>
+                
+                </section>
                 
             <!-- *************** QUIZ: How technologies can help? ************************** -->
   

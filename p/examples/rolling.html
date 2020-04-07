@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Big Data - Using Hadoop and Map Reduce</title>
+
+        <meta name="description" content="An introduction to Big Data using Hadoop and Map Reduce">
+        <meta name="author" content="Rod Xavier Bondoc">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="lib/css/style.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Big Data</h1>
+                    <h4>Using Hadoop and Map Reduce</h4>
+                    <p>
+                        <small>By <a href="http://ph.linkedin.com/in/rodxavierbondoc/">Rod Xavier Bondoc</a> / <a href="http://twitter.com/rodxavier14">@rodxavier14</a></small>
+                    </p>
+                    <p>
+                        <small>University of the Philippines - Diliman | 22 February 2014 | <a href="https://twitter.com/search?q=%23UPACMBigData">#UPACMBigData</a></small>
+                    </p>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is Big Data?</h2>
+                    </section>
+                    <section>
+                        <h4>According to Webopedia,</h4>
+                        <blockquote cite="http://www.webopedia.com/TERM/B/big_data.html">
+                            &ldquo;Big data is a buzzword, or catch-phrase, used to describe a massive volume of both structured and unstructured data 
+                            that is so large that it's difficult to process using traditional database and software techniques.&rdquo;
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h4>According to Oracle,</h4>
+                        <blockquote cite="http://www.oracle.com/us/technologies/big-data/index.html">
+                            &ldquo;Big data is the electricity of the 21st century—a new kind of power that transforms 
+                            everything it touches in business, government, and private life.&rdquo;
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h4>According to IBM,</h4>
+                        <img class="stretch" width="300" height="300" src="lib/img/data_graph.jpg" alt="data_graph">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What can be considered as Big Data?</h2>
+                    </section>
+                    <section>
+                        <h3>Mobile Data</h3>
+                        <img class="stretch" width="600" height="400" src="lib/img/cellsite.gif" alt="cellsite">
+                    </section>
+                    <section>
+                        <h3>Server Logs</h3>
+                        <img class="stretch" width="600" height="400" src="lib/img/server_logs.png" alt="server_logs">
+                    </section>
+                    <section>
+                        <h3>User Behavior</h3>
+                        <img class="stretch" width="600" height="400" src="lib/img/recommendation.png" alt="recommendations">
+                    </section>
+                </section>
+                <section>
+                    <h2>3Vs of Big Data</h2>
+                    <ol>
+                        <li class="fragment">Volume</li>
+                        <li class="fragment">Variety</li>
+                        <li class="fragment">Velocity</li>
+                    </ol>
+                </section>
+                <section>
+                    <section>
+                        <h2>Volume</h2>
+                        <p class="fragment">This refers to the size of the data.</p>
+                    </section>
+                    <section>
+                        <p>The price to store data has dropped over the years.</p>
+                        <img class="stretch fragment" width="600" height="400" src="lib/img/cost_storage.jpg" alt="cost_storage">
+                        <p class="fragment">BUT, we want to store data reliably.</p>
+                    </section>
+                    <section>
+                        <p>That's why we have Storage Area Networks(SANs)</p>
+                        <img class="stretch" width="600" height="400" src="lib/img/storage_area_network.gif" alt="storage_area_network">
+                        <p class="fragment">BUT, SANs can also cause problems.</p>
+                    </section>
+                    <section>
+                        <h3>Problems with SANs</h3>
+                        <ul>
+                            <li class="fragment">Expensive</li>
+                            <li class="fragment">Slow Streaming of data across a network</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Variety</h2>
+                        <p class="fragment">This refers to the fact that data come from different sources in a variety of formats.</p>
+                    </section>
+                    <section>
+                        <p>Data come in different formats.</p>
+                        <p class="fragment">We are working with structured, semi-structured and non-structured data.</p>
+                        <img class="stretch fragment" width="600" height="400" src="lib/img/credit_card.jpg" alt="credit_card">
+                    </section>
+                    <section>
+                        <p>We don't want to throw away any data.</p>
+                        <img class="stretch fragment" width="600" height="400" src="lib/img/call.png" alt="call">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Velocity</h2>
+                        <p class="fragment">This refers to the speed in which the data is created.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Hadoop</h2>
+                        <p class="fragment">An open-source framework for large-scale data storage and data processing.</p>
+                    </section>
+                    <section>
+                        <h3>History of Hadoop</h3>
+                        <video class="stretch" data-autoplay src="lib/vid/history.flv"></video>
+                    </section>
+                    <section>
+                        <h3>Why Hadoop?</h3>
+                        <video class="stretch" data-autoplay src="lib/vid/name.flv"></video>
+                    </section>
+                    <section>
+                        <h3>How does Hadoop work?</h3>
+                        <img class="stretch fragment" width="600" height="400" src="lib/img/hadoop_concept.png" alt="hadoop_concept">
+                    </section>
+                    <section>
+                        <h3>Hadoop Ecosystem</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="fragment" data-fragment-index="3">Pig</td>
+                                    <td class="fragment" data-fragment-index="3">Hive</td>
+                                    <td class="fragment" colspan="2" data-fragment-index="4">SELECT * FROM ...</td>
+                                </tr>
+                                <tr>
+                                    <td class="fragment" colspan="2" data-fragment-index="2">Map Reduce</td>
+                                    <td class="fragment" data-fragment-index="5">Impala</td>
+                                    <td class="fragment" data-fragment-index="6">HBase</td>
+                                </tr>
+                                <tr>
+                                    <td class="fragment" colspan="3" data-fragment-index="1">Hadoop Distributed File System(HDFS)</td>
+                                </tr>
+                            </tbody>
+                            <p class="fragment" data-fragment-index="7">Sqoop, Hue, Oozie, Mahout</p>
+                        </table>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Let's setup our Hadoop Environment!</h3>
+                        <p class="fragment">We'll be using Cloudera's hadoop distribution</p>
+                    </section>
+                    <section>
+                        <p>Open your VirtualBox and create a new VM.</p>
+                        <img class="stretch fragment" width="600" height="400" src="lib/img/new.png" alt="new">
+                    </section>
+                    <section>
+                        <img class="stretch" width="600" height="400" src="lib/img/vm_name.png" alt="vm_name">
+                    </section>
+                    <section>
+                        <img class="stretch" width="600" height="400" src="lib/img/ram.png" alt="ram">
+                    </section>
+                    <section>
+                        <img class="stretch" width="600" height="400" src="lib/img/vm_disk.png" alt="vm_disk">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Hadoop Distributed File System(HDFS)</h2>
+                        <p class="fragment">This is similar to a regular filesystem.</p>
+                    </section>
+                    <section>
+                        <p>However...</p>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/hdfs_blocks.png" alt="hdfs_blocks">
+                    </section>
+                    <section>
+                        <h3>How does HDFS work?</h3>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/nodes.png" alt="hdfs_blocks">
+                    </section>
+                    <section>
+                        <h3>HDFS Demo</h3>
+                        <p class="fragment">You will notice that most HDFS commands are similar to UNIX commands.</p>
+                        <pre class="fragment"><code data-trim contenteditable></code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Map Reduce</h2>
+                        <p class="fragment">This is a programming model for processing large datasets using parallel and distributed algorithms in a cluster.</p>
+                    </section>
+                    <section>
+                        <p>A real-world scenario</p>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/sm.jpg" alt="sm">
+                    </section>
+                    <section>
+                        <h3>Mappers and Reducers</h3>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/mapreduce.png" alt="mapreduce">
+                    </section>
+                    <section>
+                        <h3>Daemons of MapReduce</h3>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/jobtracker.png" alt="jobtracker">
+                    </section>
+                    <section>
+                        <h3>How to run a MapReduce job?</h3>
+                        <pre class="fragment"><code data-trim contenteditable>
+hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-
+streaming-2.0.0-mr1-cdh4.1.1.jar -mapper mapper.py -reducer reducer.py 
+-file mapper.py -file reducer.py -input input -output output
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Example</h2>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/sample_data.png" alt="sample_data">
+                    </section>
+                    <section>
+                        <h3>Writing our Mapper code</h3>
+                        <pre class="fragment"><code data-trim contenteditable></code></pre>
+                    </section>
+                    <section>
+                        <h3>Writing our Reducer code</h3>
+                        <pre class="fragment"><code data-trim contenteditable></code></pre>
+                    </section>
+                    <section>
+                        <h3>Testing our code</h3>
+                        <p class="fragment">We don't want to test the code on the whole dataset.</p>
+                        <p class="fragment">Testing our mapper code</p>
+                        <pre class="fragment"><code data-trim contenteditable>
+cat test.txt | ./mapper.py
+                        </code></pre>
+                        <p class="fragment">Testing our reducer code</p>
+                        <pre class="fragment"><code data-trim contenteditable>
+cat test.txt | ./mapper.py | sort | ./reducer.py
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>A shortcut for running a MapReduce job</h3>
+                        <pre class="fragment"><code data-trim contenteditable>
+hs mapper.py reducer.py input output
+                        </code></pre>
+                    </section>
+                    <section>
+                        <p>Wait! There's more...</p>
+                        <p class="fragment">Hadoop provides a web-based interface for the job tracker. It is running on port 50030.</p>
+                        <img class="fragment stretch" width="600" height="400" src="lib/img/browser.png" alt="browser">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h3>Map Reduce Design Patterns</h3>
+                    <ul>
+                        <li class="fragment">Filtering Patterns</li>
+                        <li class="fragment">Summarization Patterns</li>
+                        <li class="fragment">Structural Patterns</li>
+                    </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Filtering Patterns</h2>
+                        <p class="fragment">These are patterns that don't change records.</p>
+                        <p class="fragment">These are patterns that only get a subset of the data.</p>
+                    </section>
+                    <section>
+                        <h3>Examples</h3>
+                        <ul>
+                            <li class="fragments">Top N</li>
+                            <li class="fragments">Random Sampling</li>
+                            <li class="fragments">Simple Filter</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Summarization Patterns</h2>
+                        <p class="fragment">These patterns produce a summarized view of the data.</p>
+                    </section>
+                    <section>
+                        <h3>Examples</h3>
+                        <ul>
+                            <li class="fragment">Numerical Summarization</li>
+                            <li class="fragment">Inverted Index</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Structural Patterns</h2>
+                    </section>
+                </section>
+                <section>
+                    <h1>Questions?</h1>
+                </section>
+                <section>
+                    <h1>Thank you!</h1>
+                    <p>Disclaimer: Not all images and videos are mine. Sources may be found in the github repo.</p>
+                </section>
+            </div>
+        </div>
+    
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                slideNumber: true,
+                overview: true,
+
+                theme: 'default', // available themes are in /css/theme
+                transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                parallaxBackgroundImage: 'lib/img/parallax-bg.png',
+                parallaxBackgroundSize: '5461px 2731px',
+
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: null, // null so the clients do not have control of the master presentation
+                    id: '44652b1a2df10bac', // id, obtained from socket.io server
+                    url: '128.199.234.59:1948' // Location of socket.io server
+                },
+                
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    
+                    { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
+                    { src: 'plugin/multiplex/client.js', async: true }
+                    
+                ]
+            });
+		</script>
+    </body>
+</html>
