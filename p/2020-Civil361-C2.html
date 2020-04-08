@@ -410,7 +410,101 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>
             
 
+                   <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models" data-background-image="../figures/Backgrounds/data.jpg">                 
+                    
+                   <div class="whitebackground2"> 
+                   <h3>Traffic modelling</h3>
+                     <p>A mathematical representation of real-world traffic, usually, but not restricted to, road traffic.</p>
+                    <p>Traffic models can help to objectively answer important questions, such as:</p>   
+                       <p class="l2">What is the potential impact of land use development and/or transport infrastructure on traffic patterns ?</p>   
+                       <p class="l2">What will be the levels of congestion on the road network ?</p>   
+                       <p class="l2">What measures may be appropriate to mitigate potential adverse effects ?</p>   
+                       <p class="l2">How can infrastructure projects and packages be designed to maximise benefits ?</p>   
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+    
+                   <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Classes of traffic models</h3>
+                       <img class="centre" src="../figures/teaching/traffic-models.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
                 
+                
+                
+                         <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-macro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="macro">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Macroscopic models</h3>
+                        
+                       <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
+                        
+                        <p class="l2">describe the system entities, their activities and interactions at a low level of details</p>
+                        
+                        <p>are efficient and so applicable to large network and real-time simulation</p>
+                        
+                    </div>
+                    </section>
+                
+             
+                
+                  <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="diagram2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                   
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 1: Speed-density relationship</h3>
+                       
+                        <img class="centre" src="../figures/teaching/speed-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                       
+                        <p class="l2">Greenshields (1935) carried out one of the earliest  recorded works hypothesized a linear relationship between speed and density</p>
+                         
+                        \[\begin{aligned}
+					v = v_f \bigg( 1 - \frac{k}{k_j} \bigg) \\
+					\end{aligned} \]
+                        
+                    </div>
+                     <aside class="notes">
+		            <p class="l2">when density is zero, Speed will be maximum, referred to as the free flow speed</p>
+                         <p class="l2">Density is maximum, the speed will be zero.</p>
+	               </aside> 
+                </section>
+                
+                
+                   
                       <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
                 ************************************************************ -->
@@ -418,7 +512,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
              
                 <section id="diagram1" data-background-image="../figures/Backgrounds/auckland-background.jpg">
                    <div class="whitebackground2">
-                        <h3>Fundamental diagrams of traffic flow 1: Flow-density relationship</h3>
+                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
                        
                         <img class="centre" src="../figures/teaching/flow-density.gif"
                             style="width:300px;"
@@ -437,30 +531,78 @@ Use space-mean speeds when reducing and analyzing travel time data.
 	               </aside> 
                 </section>
                 
-                  <!-- ******************************************************
+                
+                        <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
                 ************************************************************ -->
 
              
-                <section id="diagram2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                   
+                <section id="greenshields" data-background-image="../figures/Backgrounds/auckland-background.jpg">
                    <div class="whitebackground2">
-                        <h3>Fundamental diagrams of traffic flow 2: Speed-density relationship</h3>
+                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
                        
-                        <img class="centre" src="../figures/teaching/speed-density.gif"
+                        
+                       
+                        <p class="l2"> More on Greenshields model of Flow-density</p>
+                        
+                     \[\begin{aligned}
+					q = k v = k v_f \bigg( 1 - \frac{k}{k_j} \bigg) = v_f \bigg( k - \frac{k^2}{k_j} \bigg)  \\
+					\end{aligned} \]
+                       
+                       <img class="right" src="../figures/teaching/flow-density.gif"
                             style="width:300px;"
                          alt="project-1" />
                        
-                        <p> Some characteristics of an ideal Speed-density relationship</p>
-                        
-                     <p class="l2">Speed will be maximum, referred to as the free flow speed</p>
-                         <p class="l2">Density is maximum, the speed will be zero.</p>
-                        
+                       <p class="l2">Note in the figure that the maximum flow rate $q_m$ represents the capacity of the highway. The traffic density that corresponds to this capacity flow rate is critical density $k_m$, and the  corresponding optimum speed is $v_m$</p>
+                       
+                       <p class="l2">They can be estimated by differentiating the above equation and then equating to zero as flow is maximum flow when</p>
+                       
+                        \[\begin{aligned}
+					\frac{dq}{dk} = 0 \\
+					\end{aligned} \]
+                       
+
                     </div>
-                     <aside class="notes">
-		          The most simple assumption is that this variation of speed with density is linear as shown by the solid line in figure 4. Corresponding to the zero density, vehicles will be flowing with their desire speed, or free flow speed. When the density is jam density, the speed of the vehicles becomes zero.
+                       <aside class="notes">
+		        
 	               </aside> 
                 </section>
                 
+                
+                          <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="greenshields2" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
+                       
+                        <p class="l2"> Let's do some maths!</p>
+                   
+                      
+                        \[\begin{aligned}
+					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \\
+					\end{aligned} \]
+                       
+ 
+                       <p class="l2">As the free-flow speed $v_f$ is not equal to zero so: $k_m = \frac{k_j}{2}$</p>
+                       
+                       <p class="l2">Substituting km into speed density relationship at maximum flow condition gives: </p>
+                       
+                        \[\begin{aligned}
+					v_m = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = \frac{v_f}{2} \\
+					\end{aligned} \]
+                       
+                        \[\begin{aligned}
+					q_m = v_f k_m = \frac{v_f k_j}{4} \\
+					\end{aligned} \]
+                       
+                    </div>
+                       <aside class="notes">
+		        
+	               </aside> 
+                </section>
                 
                 
              <!-- ******************************************************
@@ -472,22 +614,52 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow 3: Speed-flow relationship</h3>
                        
-                        <img class="centre" src="../figures/teaching/speed-flow.gif"
+                        <img class="right" src="../figures/teaching/speed-flow.gif"
                             style="width:300px;"
                          alt="project-1" />
                        
-                        <p> Some characteristics of an ideal flow-density relationship</p>
-                        
-                     <p class="l2">The flow is zero either because there is no vehicles or there are too many vehicles so that they cannot move.</p>
-                         <p class="l2">At maximum flow, the speed will be in between zero and free flow speed.</p>
+                    
+                     <p class="l2">The linear speed-density model can be rearranged to the following speed-flow model:</p>
+                         
+                        \[\begin{aligned}
+					k = k_j \bigg( 1 - \frac{v}{v_f} \bigg) \\
+					\end{aligned} \]
+                       
+                        \[\begin{aligned}
+					q = k v = v k_j \bigg( 1 - \frac{v}{v_f} \bigg) = k_j \bigg( 1 - \frac{v^2}{v_f} \bigg) \\
+					\end{aligned} \]
+                       
                         
                     </div>
                     
                   <aside class="notes">
-		         The flow is zero either because there is no vehicles or there are too many vehicles so that they cannot move. At maximum flow, the speed will be in between zero and free flow speed. 
+		          <p class="l2">The flow is zero either because there is no vehicles or there are too many vehicles so that they cannot move.</p>
+                         <p class="l2">At maximum flow, the speed will be in between zero and free flow speed.</p>
+                   </aside>                    
+                    
+                </section>
+                
+                
+                  <!-- ******************************************************
+                *********************** diagram4 ***********************
+                ************************************************************ -->
+
+               <section id="diagram4" >               
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
+                       <img class="centre" src="../figures/teaching/trafficmodel-other.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         Other macroscopic traffic models
 	               </aside>                    
                     
                 </section>
+                
                 
                 <!-- ******************************************************
                 *********************** diagram4 ***********************
@@ -549,70 +721,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     
                 </section>
            
-                  <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="traffic-models" data-background-image="../figures/Backgrounds/data.jpg">                 
-                    
-                   <div class="whitebackground2"> 
-                   <h3>Traffic modelling</h3>
-                     <p>A mathematical representation of real-world traffic, usually, but not restricted to, road traffic.</p>
-                    <p>Traffic models can help to objectively answer important questions, such as:</p>   
-                       <p class="l2">What is the potential impact of land use development and/or transport infrastructure on traffic patterns ?</p>   
-                       <p class="l2">What will be the levels of congestion on the road network ?</p>   
-                       <p class="l2">What measures may be appropriate to mitigate potential adverse effects ?</p>   
-                       <p class="l2">How can infrastructure projects and packages be designed to maximise benefits ?</p>   
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-    
-                   <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="traffic-models2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
-                    
-                   <div class="whitebackground2">
-                   <h3>Classes of traffic models</h3>
-                       <img class="centre" src="../figures/teaching/traffic-models.png"
-                            style="width:600px;"
-                         alt="project-1" />
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                
-                
-                         <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-macro.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="macro">                     
-                    <div class="whitebackground2 fragment">
-                        <h3>Macroscopic models</h3>
-                        
-                        <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
-                        
-                        <p class="l2">describe both the system entities and their interactions at a high level of  detail.</p>
-                        
-                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
-
-                        
-                    </div>
-                    </section>
+               
                     
                          <!-- ******************************************************
                 *********************** Problem 1 ***********************
@@ -625,14 +734,133 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     <div class="whitebackground2 fragment">
                         <h3>Microscopic models</h3>
                         
-                        <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
+                          <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
                         
-                        <p class="l2">describe the system entities, their activities and interactions at a low level of details</p>
+                        <p class="l2">describe both the system entities and their interactions at a high level of  detail.</p>
                         
-                        <p>are efficient and so applicable to large network and real-time simulation</p>
+                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
                         
                     </div>
                 </section>
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro2" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Components of traffic microsimulation packages</h3>
+                       <img class="centre" src="../figures/teaching/microsim-components.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                     
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro3" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Car-following dynamics</h3>
+                       <img class="centre" src="../figures/teaching/car-following.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                        
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro4" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Car-following models</h3>
+                      
+                       <p class="l2">The basic philosophy of car following model is from Newtonian mechanics, where the acceleration may be regarded as the response of a matter to the stimulus it receives in the form of the force it receives from the interaction with other particles in the system. </p>
+
+                       \[\begin{aligned}
+					Response_n \quad \alpha \quad Stimulus_n \\
+					\end{aligned} \]
+                    
+                       
+                       <p class="l2">different theories on car-following have arisen because of the difference in views regarding the nature of the stimulus. The stimulus may be composed of the speed of the vehicle, relative speeds, distance headway etc, and hence, it is not a single variable, but a function and can be represented as </p>
+                    \[\begin{aligned}
+					   
+                       {\ddot  {x}}_{n }(t)={\dot  {v}}_{n }(t) = a_n(t) =F(v_{n }(t),s_{n }(t),v_{{n -1}}(t))
+                       
+					\end{aligned} \]
+ 
+                       <p class="l2">where $F$ is the stimulus function that depends on the speed of the current vehicle, relative position and speed with the front vehicle.</p>
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro5" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Car-following models: Gipps' model (1981) </h3>
+                      
+                       <p class="l2">Gipps' model was defined primarily by one vehicle (noted by subscript n) following another (noted by subscript n-1); reaction time of the following vehicle; the location, speed and acceleration of the following vehicle; and finally, model constants to adjust the model to real-life conditions </p>
+
+                       \[\begin{aligned}
+					 a_{n}(t+\tau)=l_{n}{\frac {\left[v_{n-1}(t)-v_{n}(t)\right]^{k}}{\left[x_{n-1}(t)-x_{n}(t)\right]^{m}}}\\
+					\end{aligned} \]
+                    
+                       
+                       <p class="l2">The following vehicle is limited by two constraints: that it will not exceed its driver’s desired speed and its free acceleration should first increase with speed as engine torque increases then decrease to zero as the desired speed is reached.</p>
+                       
+                    \[\begin{aligned}
+					   
+                       {\displaystyle v_{n}(t+\tau )\leq v_{n}(t)+2.5a_{n}\tau (1-v_{n}/V_{n})(0.025+v_{n}(t)/V_{n})^{1/2}}
+                       
+					\end{aligned} \]
+ 
+                       <p class="l2">And some other constraints. See:<br/><a href="https://www.sciencedirect.com/science/article/pii/0191261581900370">https://www.sciencedirect.com/science/article/pii/0191261581900370</a></p>
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
                     <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
@@ -661,30 +889,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
              </section> 
                 
                 
-                
-                 <!-- *************** ITS intro  ************************** -->
-  
-               <section id="its-intro0" data-background-image="../figures/teaching/its-systems.jpg">   
-                   
-                   <div class="whitebackground1 fragment">
-                       
-                   <figure class="centre" >
-
-                        <img data-src="../figures/teaching/ITS-flowchart.png"
-                             style="width:400px;"
-                             alt="Flow-chart" />
-                    
-                    </figure>
-                       </div> 
-                   
-                  <aside class="notes">
-		         *** This is a graph of common ITS that being used...
-                  *** How do you think they can be classified? 
-                      *** Click: We can classify them into User Services and Management Services
-	               </aside>                   
-                   
-                   
-                </section> 
 
                 
                 <!-- *************** ITS User Services  ************************** -->
