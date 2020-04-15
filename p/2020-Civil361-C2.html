@@ -940,7 +940,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     
                 </section>
                 
-                  <!-- ******************************************************
+                            <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
                 
@@ -971,6 +971,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
 	               </aside>                    
                     
                 </section>
+                
+          
                 
                
                 
@@ -1004,8 +1006,200 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 
                 
                 
+                               
+             <!-- *************** ITS management 3 ************************** -->
+  
+               <section id="its-manage3" data-background-image="../figures/teaching/auckland-signal.jpg">   
+                   
+               <div class="whitebackground2">
+                        <h3>Traffic Signal: Why can't we be more efficient?</h3>
+                       
+                        <p>Traffic signal is not fully adaptive to the demand</p>
+                        
+                        <p>Vehicles take time to speed up, slow down (phantom traffic jam)</p>
+                                               
+                       </div>                       
 
+                   
+                </section>                   
+  
             
+                
+             <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="its-manage4" data-background-image="../figures/teaching/SCATS.png">   
+                   
+               <div class="whitebackground2 fragment">
+                        <h3>Traffic Signal: Adaptive Traffic Signal Control</h3>
+                        
+                        <p>Phase settings (e.g. green time) are adaptively defined </p>
+                       
+                        <p>Intersections are often coordinated</p>
+                        
+                        <p>Most popular system is the Sydney Coordinated Adaptive Traffic System (SCATS)</p>
+                                               
+                       </div>                       
+           
+                </section>                   
+                
+
+                <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="nosignal" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <h3>Unsignalised intersections</h3>
+                        
+                        <p>There are several types:</p>
+                   
+                         <p class="l2">Priority controlled intersections (Stop, Yield)</p>
+                        <p class="l2">Roundabouts</p>
+                        <p class="l2">Unprotected pedestrian crossings </p>
+                   
+                       
+                     
+                        
+                    
+                                               
+                       </div>                       
+           
+                </section>  
+                
+                      <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="nosignal2" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <h3>Unsignalised intersections</h3>
+                 
+                        <p>Gap acceptance models: applicable in situations where vehicles or pedestrians  cross/merge into traffic stream, which requires them to select an acceptance time  gap in the priority traffic stream. </p>
+                        <p>Two major factors that influence the capacity of an unsignalised intersection:</p>
+                   
+                         <p class="l2">Critical gap - a unique time gap acceptable to all drivers at all times.</p>
+                        <p class="l2">Headway distribution - determines the frequency with which gaps of various  size are offered.</p>
+                                               
+                       </div>                       
+           
+                </section>    
+                
+                
+                      <!-- ******************************************************
+                *********************** Traffic safety ***********************
+                ************************************************************ -->
+
+                <section id="safety" data-transition="fade">                  
+                    
+                    <video controls
+
+                                src="../videos/road-safety.mp4" 
+                                
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <p>Unsignalised intersections: Critical gap</p>
+                        
+                        <p class="l2">the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
+                        
+                   </div> 
+                    
+                  <aside class="notes">
+		     To understand more about critical gap, I'd you to watch this video
+	               </aside>   
+                    
+                </section> 
+                
+                
+                   <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="nosignal3" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <h3>Unsignalised intersections: Critical gap</h3>
+                 
+                    <figure class="centre" >
+
+                        <img data-src="../figures/teaching/critical-gap.svgz"
+                             style="width:400px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                   
+                        <p>Rejection curve: Erlang Distribution</p>
+                        <p>Acceptance Curve: Probit Normal Distribution or Logit Exponential Distribution </p>
+                   
+                        </div>                       
+           
+                </section>   
+                
+                  <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="nosignal4" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <h3>Unsignalised intersections: Adams's delay to minor flow (Adams, 1936)</h3>
+                         <p>Major assumptions: </p>
+                            <p class="l2">The traffic flows a Poisson distribution (time between arrivals follows a negative exponential distribution.</p>
+                   <p class="l2">There is no queue on the minor queue</p>
+                   <p class="l2">Decision to merge/cross is straightforward: If the gap is greater than or equal to  'critical gap', then merge/cross</p>
+                   
+                         \[\begin{aligned}
+					   
+                       \bar{W} = \frac{1}{\lambda} (e^{\lambda T} - \lambda T - 1)
+                        
+					\end{aligned} \]
+                   
+                        </div>                       
+           
+                </section>   
+                
+            
+                       <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="nosignal5" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <h3>Unsignalised intersections: Tanner's delay to minor flow (Tanner, 1962)</h3>
+                         <p>Major assumptions: </p>
+                            <p class="l2">For case with minor traffic flow > 200 veh/h</p>
+                   <p class="l2">There is no queue on the minor queue</p>
+                   <p class="l2">Decision to merge/cross is straightforward: If the gap is greater than or equal to  'critical gap', then merge/cross</p>
+                   
+                             
+                     <figure class="centre" >
+
+                        <img data-src="../figures/teaching/Tanner.png"
+                             style="width:600px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                        </div>                       
+           
+                </section>   
+                
+                       <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="nosignal6" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <h3>Unsignalised intersections: Tanner's delay to minor flow (Tanner, 1962)</h3>
+                      
+                     <figure class="centre" >
+
+                        <img data-src="../figures/teaching/Tanner2.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                        </div>                       
+           
+                </section>   
                 
                 
                <!-- *************** ITS User Services  ************************** -->
@@ -1086,43 +1280,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 
                 
                
-                               
-             <!-- *************** ITS management 3 ************************** -->
-  
-               <section id="its-manage3" data-background-image="../figures/teaching/auckland-signal.jpg">   
-                   
-               <div class="whitebackground2">
-                        <h3>Traffic Signal: Why can't we be more efficient?</h3>
-                       
-                        <p>Traffic signal is not fully adaptive to the demand</p>
-                        
-                        <p>Vehicles take time to speed up, slow down (phantom traffic jam)</p>
-                                               
-                       </div>                       
-
-                   
-                </section>                   
-  
-            
-                
-             <!-- *************** ITS management 4 ************************** -->
-  
-               <section id="its-manage4" data-background-image="../figures/teaching/SCATS.png">   
-                   
-               <div class="whitebackground2 fragment">
-                        <h3>Traffic Signal: Adaptive Traffic Signal Control</h3>
-                        
-                        <p>Phase settings (e.g. green time) are adaptively defined </p>
-                       
-                        <p>Intersections are often coordinated</p>
-                        
-                        <p>Most popular system is the Sydney Coordinated Adaptive Traffic System (SCATS)</p>
-                                               
-                       </div>                       
-
-                   
-                </section>                   
-                
                  <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************** -->
   
                <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png">   
