@@ -1182,92 +1182,153 @@ Use space-mean speeds when reducing and analyzing travel time data.
            
                 </section>   
                 
-                       <!-- *************** ITS management 4 ************************** -->
+               <!-- *************** ITS management 4 ************************** -->
   
-               <section id="nosignal6" data-background-image="../figures/Backgrounds/roundabout.png">   
+               <section id="nosignal7" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">   
                    
                <div class="whitebackground2">
-                        <h3>Unsignalised intersections: Tanner's delay to minor flow (Tanner, 1962)</h3>
-                      
-                     <figure class="centre" >
+                        <h3>Headway distribution</h3>
+                  <p> Instead of simply modelling the number of vehicles passing  a specified point on a highway in some time interval (flow),  there is considerable analytic value in modelling the time  between the arrivals of  successive vehicles (headway).</p>
 
-                        <img data-src="../figures/teaching/Tanner2.png"
-                             style="width:800px;"
-                             alt="ATIS" />
-                    
-                    </figure>
+                    <p class="l2"> E.g. Traffic flow is separated by traffic signals</p>
+
+                
+                   
                    
                         </div>                       
            
                 </section>   
                 
                 
-               <!-- *************** ITS User Services  ************************** -->
+                
+                       <!-- *************** ITS management 4 ************************** -->
   
-               <section id="AV1" data-background-image="../figures/teaching/AV.png">  
+               <section id="nosignal8" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">   
                    
-                    <div class="whitebackground2 fragment">
-                       <h3> Autonomous vehicles </h3>
-                        
-                        <p>Use technology to partially or entirely replace the human driver in navigating a vehicle while avoiding road hazards and responding to traffic conditions. </p>
-                       
-                        <p>They rely on: </p>
-                        
-                        <p class="l2">Sensors: radar, LIDAR, cameras, etc </p>
-                       <p class="l2">Complex algorithms, machine learning models</p>
-                       <p class="l2">Powerful processors </p>
-                        
-                        <p>to detect traffic lights, read road signs, track other vehicles, and look for pedestrians.</p>
-                       
-                         <p class="l2">More to read: <a href="https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles"> https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles </a> </p>
-                       
-                       </div>              
+               <div class="whitebackground2">
+                       <h3>Headway distribution: Poisson distribution</h3>
+                             
+                      <p> The most popular distribution for traffic flow is the Poisson distribution</p>
+  
+                    \[\begin{aligned}
+                   \!f(n;\lambda )=P(X=n)={\frac {\lambda t ^{n}e^{-\lambda t }}{n!}},
+                   \end{aligned} \]
                    
-                         <aside class="notes">
-		         *** See Word notes as well
-                  *** 
-	               </aside>   
+                    <p class="l2"> where $P(X=n)$ is the probability of exactly n vehicles arriving within a time interval t </p>
+                   <p class="l2"> $\lambda$ average arrival rate (veh/unit time) </p>
+                   <p class="l2"> $k$ number of vehicles arriving in a specific time interval </p>
                    
+                  <p class="l2"> $t$ duration of the time interval over  which vehicles are counted </p>
+                   
+                       </div>                       
+           
                 </section>   
                 
                 
-                           
-                <!-- *************** ITS management 2 ************************** -->
+                     <!-- *************** ITS management 4 ************************** -->
   
-               <section id="av-intersection" >   
-                       <video controls
-                              src="../videos/AV-intersection.mp4" 
-                                >
-                         Your browser does not support the video tag.
-
-                    </video>
-                </section>       
-                
-                
-                
-               <!-- *************** ITS User Services  ************************** -->
-  
-               <section id="AV2" data-background-image="../figures/teaching/AV.png">  
+               <section id="exp2" >
                    
-                    <div class="whitebackground2">
-                       <h3>Are we already 'driving' autonomous vehicles? </h3>
-                        
-                        <p>New Zealand has adopted the International Standard J3016 as developed by the Society of Automotive Engineers (SAE).</p>
+               <div class="whitebackground2">
+                       <h3>Example 2: Calculation of traffic flow</h3>
+                             
+                      <p> Given a highway with an average traffic flow of 240 veh/hr. Assuming that the flow is free-flowing and follows a Poisson distribution, calculate:</p>
+                         <p class="l2">Probability of there being no vehicles in 6s. 
+                         <p class="l2">Probability of there being 3 vehicle in 6s. 
+                         <p class="l2">What is the cumulative likelihood of seeing fewer than 3 vehicles arrive in 6s?
+                             <p class="l2">What is the propability of having more than 3 vehicles arrive in 6s?
+                         
+                   
+                       </div>                       
+           
+                </section>   
+                
+                
+                       <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="exp2-2" >
+                   
+               <div class="whitebackground2">
+                       <h3>Example 2: Calculation of traffic flow</h3>
+                             
+                      <p> Probability of there being X vehicles in 1 minute. :</p>
+                     
+                   <p class="l2"> $\lambda$ = (240 veh/hr) / (3600 sec/hr) = 0.0667 veh/s </p>
+                   <p class="l2"> $\lambda t $ = 0.0667 veh/s x 6 s = 0.4 veh </p>
                        
-                     <figure class="centre" >
-
-                        <img data-src="../figures/teaching/SAE-Levels.jpg"
-                             style="width:700px;"
-                             alt="ATIS" />
+                    \[\begin{aligned}
+                   P(0)={\frac {0.4^{0}e^{-0.4}}{0!}}=0.67
+                   \end{aligned} \]
+                   
+                    \[\begin{aligned}
+                   P(3)={\frac {0.4^{3}e^{-0.4}}{3!}}=0.007
+                   \end{aligned} \]
+                   
+                   
+                   
+                       </div>                       
+           
+                </section>   
+                
+             <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="exp2-3" >
+                   
+               <div class="whitebackground2">
+                       <h3>Example 2: Calculation of traffic flow</h3>
+                             
+                      <p> The cumulative likelihood of seeing fewer than 3 vehicles arrive in 6s</p>
+                     
+                  
+                 <p>  P(n<3) = P(n=0) + P(n=1) + P(n=2) = 0.67 + 0.27 + 0.05 = 0.99 </p>
+                   
                     
-                    </figure>
-                       
-                       </div>              
-                   <aside class="notes">
-		       *** But what if the vehicles that we are driving nowadays can already be classified as a class of autonomous vehicles?
-                *** See Word notes
-	               </aside>  
-                </section>                      
+                     
+                       </div>                       
+           
+                   
+                   
+                   
+                </section>   
+                
+                 <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="exp2-4" >
+                   
+               <div class="whitebackground2">
+                       <h3>Example 2: Calculation of traffic flow</h3>
+                             
+                      <p> the propability of having 3 or more vehicles arrive in 6s?</p>
+                     
+                  
+                 <p>  P(n>3) = 1 - P(n<3) = 1- 0.99= 0.01 </p>
+                   
+                      <p class="l2"> Limitations: Poisson distribution is most realistic in light traffic conditions only. </p>
+                     
+                       </div>                       
+           
+                </section>   
+                
+                
+                     <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="reading" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">   
+                   
+               <div class="whitebackground2">
+                       <h3>Further readings:</h3>
+                             
+                      <p>  TRB Special Report (2001) Traffic Flow Theory, A State-of-the-Art Report, A  revised version.</p>
+     
+                    <p> TRB Special Report 165 (1975) Traffic Flow Theory, A Monograph.  </p>
+                   <p> Mannering, F.L., Kilareski, W.P. and Washburn, S.S. (2005). Principles of Highway Engineering and Traffic Analysis. 3rd Edition, Wiley.</p>
+                   <p> Ogden K W and Taylor S Y (1996 and reprinted 1999) (Editors). Traffic  Engineering and Management, Monash University, Melbourne, Australia.  </p>
+                       </div>                       
+           
+                </section>   
+                
+                
+          
+                
                 
                
                          
