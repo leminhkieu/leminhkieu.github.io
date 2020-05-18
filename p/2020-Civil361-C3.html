@@ -1,0 +1,463 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil361-Traffic Engineering 2-Chapter 2</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/nick.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 361: Traffic Engineering 2</h3>
+                        
+                        <h2>Chapter 3: MULTILANE HIGHWAY CAPACITY </h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil361-C2.html">http://bit.ly/2020-civil361-C3</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                    <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="capacity" data-background-image="../figures/Backgrounds/car-park.jpg">
+                   <div class="whitebackground2">
+                   <h3>What is 'Capacity'?</h3>
+     
+		            <p>From dictionary: "the maximum amount that something can contain."</p>
+                       
+                    <p class="l2">The capacity of a car park is obviously the maximum number of cars. It can nevertheless be measured relatively  easily. However, the capacity of a particular section of road is not as easily  determined as it depends upon the speed of the traffic and other factors.</p>
+                   
+                   <p class="l2">Vehicle capacity is the maximum number of vehicles that can pass a given point during a specified period under prevailing roadway, traffic, and control conditions. This assumes that there is no influence from downstream traffic operation, such as queues backing into the analysis point.</p>
+                  </div>
+                    
+                </section>
+                
+               
+                      <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="prob" data-background-image="../figures/teaching/HCM.png">                    
+                    <div class="whitebackground2 fragment">
+                        <h3>Highway Capacity Manual</h3>
+                        
+                        <p>The U.S. Highway Capacity Manual, or HCM, is the primary reference for traffic operational analysis, methodologies, and level of service (LOS) concepts in the United States, as well as many other countries. </p>
+                            
+                          <p>  The HCM is a collection of concepts and methods that guide analysts on how to evaluate a particular type of intersection or roadway segment, based on what can be extensive national or international datasets of operational performance. </p>
+
+                        <p class="l2">Define performance measures and describe survey methods for key traffic characteristics.</p>
+                        
+                       <p class="l2">Provide methodologies for estimating and predicting performance measures.</p>
+                        <p class="l2">Explain methodologies at a level of detail such that readers can understand the factors that have an effect on multimodal operation.</p>
+                        
+                    </div>
+                      </section>
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="prob1" data-background-image="../figures/teaching/HCM.png">                    
+                    <div class="whitebackground2">
+                        <h3>Who will need Highway Capacity Manual ?</h3>
+                        
+                        <p>(a) engineers who work inthe field of traffic
+                            operations or highway geometric design and </p>
+                            
+                          <p>(b) transportation planners who
+                            work inthe field of transportation system management. </p>
+                        <h3>How to access the Highway Capacity Manual 2016 (6th edition) ?</h3>
+                         <p>  <a href="https://www.library.auckland.ac.nz/">https://www.library.auckland.ac.nz/</a></p>
+                        
+                        
+                    </div>
+                      </section>
+                
+               
+                
+                
+              
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Introduction to the HCM 2016</p>
+                    <p>	2. Basic concepts in traffic engineering</p>
+                    <p>	3. How to use the HCM</p>
+                    <p>	4. Understand the level of analysis</p>
+                    <p>	4. Factors affecting road capacity</p>
+                    
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                     <p>1. Introduction to the HCM 2016</p>
+                    <p>	2. Types of road facilities and operating  conditions</p>
+                    <p>	3. HCM terminologies and parameters</p>
+                    <p>	4. Level of service (LOS) concept and  service measures</p>
+                    <p>	4. Base or ideal condition</p>
+                    <p>	5. HCM methodology for multilane highway</p>
+                    <p>	6. Level of analysis: operational, design and  planning</p>
+                    <p>	7. Factors affecting capacity: roadway, traffic  and control conditions and technology</p>
+                    <p> 8. Examples and problems</p>
+                    
+                    </div>
+                    
+                </section>   
+                
+            
+   
+
+           <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Introduction to the HCM</h3>
+                        
+                        <p>The first edition in 1950. It quantifies the concept of capacity for transportation facilities</p>
+                        
+                        <p>Three types of highway capacity were defined:</p>
+                        <p class="l2">Practical capacity - reasonable operating conditions </p>
+                        <p class="l2">Possible capacity - maximum, under prevailing conditions</p>
+                        <p class="l2">Ideal capacity - maximum, under ideal conditions.</p>
+
+                        <p> The second edition in 1965, introduced the concept of level of  service (LOS) as a means to quantify the operational quality provided by the  highway/street to the drivers and passengers.</p>
+                        
+                        <p> The latest fifth edition HCM 2016 is intended to encourage analysts and decision  makers to consider all roadway users, as well as a broader range of performance measures, when they assess transportation facilities’ performance.</p>
+                 
+                    </div>
+                         
+                </section>
+                
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM1" data-background-image="../figures/Backgrounds/highway.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>HCM 2010 (5th edition)</h3>
+                        
+                        <p>Integrated multimodal approach is introduced to analyse and evaluate  urban streets from the point of view of automobile drivers, transit passengers,  bicyclists, and pedestrians. For the first time, the effects of cars on bicyclists  and pedestrians are taken into account.</p>
+                        <p>Active traffic management is discussed in relation to both demand and  capacity.</p>
+                        <p>Example applications of its procedures are included to assist users and  software developers in understanding the subtleties of the methodologies.</p>
+                        <p>Tools for generalized service volume tables are provided to assist planners  in quickly sizing future facilities.</p>
+                     
+                    </div>
+                         
+                </section>
+                
+                
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM2" data-background-image="../figures/Backgrounds/highway.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>HCM 2016 (6th edition)</h3>
+                        
+                       
+                  <p>Analysis methodologies for evaluating travel time reliability. These new 
+                tools consider the distribution of travel times over a long period (for 
+                example, an entire year), instead of evaluating a single analysis period, as 
+                was done in previous editions of the HCM.  </p>
+                  <p>Tools for analyzing the operational effects of active traffic and demand 
+                management. Strategies include managed lane facilities and freeway 
+                management policies.  </p>
+                  <p>Enhanced methods for analyzing pedestrian, bicycle, and transit 
+                facilities, as well as their interactions with motor vehicles.  </p> 
+                  <p>New tools for the analysis of alternative interchanges and intersections, 
+                such as diverging diamond interchanges and restricted crossing U-turn 
+                intersections.  </p>
+                  <p>Guidance on the use of simulation and other tools in conjunction with 
+                HCM analyses. The HCM discusses specific cases that may require 
+                alternative tools and simulation and explains how these can assist in 
+                providing performance measures not available from HCM methods or in 
+                analyzing highway designs not addressed within the HCM’s performance 
+                measurement framework.   </p>
+                    </div>
+                         
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM3" data-background-image="../figures/Backgrounds/highway.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Purpose and objectives of the HCM</h3>
+                        
+                        <p>The purpose of the HCM is to provide a set of methodologies, and associated  application procedures, for evaluating the multimodal performance of highway and  street facilities in terms of operational measures and one or more quality-of-service  indicators.</p>
+                        
+                        <p>The objectives of the HCM are to: </p>
+                        <p class="l2"> 1.Define performance measures and describe survey methods for key traffic  characteristics </p>
+                        <p class="l2">2.Provide methodologies for estimating and predicting performance measures, and</p>
+                        <p class="l2">3.Explain methodologies at a level of detail that allows readers to understand the  factors affecting multimodal operation.</p>
+                    </div>
+                </section>
+ 
+                <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM4" data-background-image="../figures/teaching/HCM.png">                        
+                    <div class="whitebackground2">
+                        <h3>Intended use of the HCM</h3>
+                        
+                        <p>The HCM is intended to be used primarily for the analysis areas listed below, to  the extent that they are supported by the individual analysis methodologies.</p>
+                     
+                        <p class="l2"> 1.Level of analysis: operations, design, preliminary engineering, and planning.</p>
+                        <p class="l2">2.Travel modes: automobile (and other motorized vehicles), pedestrian, and  bicycle, plus transit when it is part of a multimodal urban street facility.</p>
+                        <p class="l2">3.Spatial coverage: points, segments, and facilities.</p>
+                        <p class= "l2">4.Temporal coverage: under-saturated and over-saturated facilities </p>
+                        
+                    </div>
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM5" data-background-image="../figures/teaching/HCM.png">                       
+                    <div class="whitebackground2">
+                        <h3>What is included in the HCM?</h3>
+                        
+                        <p>To keep the HCM 2016 at a manageable size, divided into four volumes :</p>
+                     
+                        <p class="l2"> Volume 1: Concepts</p>
+                        <p class="l2">Volume 2: Uninterrupted Flow (10-13.Freeway, 14.Multilane Highway, 15.Two-Lane Highway</p>
+                        <p class="l2">Volume 3: Interrupted Flow (16-18.Urban Street, 19.Signalized Intersections,  20.TWSC Intersections, 21.AWSC Intersections, 22.Roundabouts, 23.  Interchange Ramp Terminals, 24.Off-Street Pedestrian and Bicycle  Facilities)
+
+                        <p class= "l2">Volume 4: Application Guide (only online version) (25-35.Methodological Detail  Supplemental, 36. Concept Supplemental, 37.Active Traffic Demand Management) </p>
+                        
+                    </div>
+                </section>
+                
+                
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM6" data-background-image="../figures/teaching/HCM.png">                       
+                    <div class="whitebackground2">
+                        <h3>What is included in the HCM?</h3>
+                        
+                        <p> Capacity and quality-of-service analyses have generated interest on an 
+                    international scale. The HCM has been translated into several languages, and 
+                    research conducted in numerous countries outside of North America has 
+                    contributed to the development of HCM methodologies. </p>
+                        
+                   <p> Although there is considerable value in the general methods presented, their use 
+                    outside of North America requires an emphasis on calibration of the equations 
+                    and procedures to local conditions 
+                    </p>
+
+                        <p class="l2"> HCM 2010 and 2016 are available only in Imperial units (ft/mile) contrary to HCM 2000, which was available in Metric version as well.</p>
+                       
+                    </div>
+                </section>
+                
+                  
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM7" data-background-image="../figures/teaching/HCM.png">                       
+                    <div class="whitebackground2">
+                        <h3>Road facility types</h3>
+                        
+                        <p> Uninterrupted-Flow Facilities</p>
+                         <p class="l2">These facilities have no fixed elements such as traffic signals that cause delay or  interruption external to the traffic stream.</p>
+                        <p class="l2">Traffic flow conditions are the result of interactions among vehicles in the traffic  stream, and between vehicles and the geometric and environmental  characteristics of the roadway.</p>
+                        <p class="l2">“Uninterrupted flow” describes the type of facility, not the quality of traffic flow  at any given time.
+                            
+                             <p> Interrupted-Flow Facilities</p>
+                         <p class="l2">These facilities have fixed elements that cause periodic interruptions to the traffic  stream, such as traffic signals and stop signs. Urban streets are the most common  form of this kind of facility.</p>
+                        <p class="l2">Exclusive pedestrian and bicycle facilities are also treated as interrupted flow,  since they may occasionally intersect other streets.</p>
+                        <p class="l2">Traffic flow conditions are the result not only of vehicle interactions and the  facility’s geometric characteristics but also of the traffic control used at intersections and the frequency of access points to the facility.
+                            
+                    </div>
+                </section>
+                
+                
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="Op1" data-background-image="../figures/teaching/HCM.png">                       
+                    <div class="whitebackground2">
+                        <h3>Operating conditions</h3>
+                        
+                        <p> Under-saturated flow</p>
+                         <p class="l2">These facilities have no fixed elements such as traffic signals that cause delay or  interruption external to the traffic stream.</p>
+                        <p class="l2">Traffic flow conditions are the result of interactions among vehicles in the traffic  stream, and between vehicles and the geometric and environmental  characteristics of the roadway.</p>
+                        <p class="l2">“Uninterrupted flow” describes the type of facility, not the quality of traffic flow  at any given time.
+                            
+                             <p> Interrupted-Flow Facilities</p>
+                         <p class="l2">These facilities have fixed elements that cause periodic interruptions to the traffic  stream, such as traffic signals and stop signs. Urban streets are the most common  form of this kind of facility.</p>
+                        <p class="l2">Exclusive pedestrian and bicycle facilities are also treated as interrupted flow,  since they may occasionally intersect other streets.</p>
+                        <p class="l2">Traffic flow conditions are the result not only of vehicle interactions and the  facility’s geometric characteristics but also of the traffic control used at intersections and the frequency of access points to the facility.
+                            
+                    </div>
+                </section>
+                
+              
+                
+                 <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************
+  
+               <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> ** -->
+              
+               
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil361-C2.html">http://bit.ly/2020-civil361-C2</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
