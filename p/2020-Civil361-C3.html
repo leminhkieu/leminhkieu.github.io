@@ -478,15 +478,498 @@
                     <div class="whitebackground2 ">
                         <h3>Peak Hour Factor (PHF) </h3>
                             
-                             <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
-                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but  volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
+                             <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
                         
-                        <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
+                          \[\begin{aligned}
+					PHF = \frac{V}{V_{15m} \times 4} \\
+					\end{aligned} \]
                         
-                        <p class="l2">Peak Hourly Volume (PHV) - PHV is the maximum flow observed over any 1 hour period. In urban areas where tidal flows are common, it is usual to have two PHV’s, one for the A.M. and other for P.M. In rural areas it is sufficient to use only one PHV.</p>
+                        <p>Where:</p>
+                        
+                        
+                         <p class="l2">$V$ = Total hourly volume</p>
+                        
+                        <p class="l2"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
+                        
+                        <p class="l2">When PHF is known, a peak flow rate for a peak 15 minute within the analysis hour can be calculated: </p>
+                        
+                         \[\begin{aligned}
+					v = \frac{V}{PHF} \\
+					\end{aligned} \]
                            
                     </div>
                 </section>
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param3" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) : Examples</h3>
+                            
+                             <p>  Example 1: The 15-minute vehicle volumes are relatively constant:
+                        V15 = 190, V30 = 200, V45 = 190, V60 = 190. Calculate PHF:
+                        
+                        </p>
+                        
+                          \[\begin{aligned}
+					PHF = (190 + 200 + 190 + 190) / [(200 x 4)] = 0.96\\
+					\end{aligned} \]
+                        
+                        <p>Example 2: The 15-minute vehicle volumes are more variable: V15 = 175, V30 = 200, V45 = 150, V60 = 125. Calculate PHF:</p>
+                        
+                        \[\begin{aligned}
+					PHF = (175 + 200 + 150 + 125) / [(200 x 4)] = 0.81\\
+					\end{aligned} \]
+                           
+                    </div>
+                </section>
+                
+                      
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed1" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
+                        
+                    <p>There are two ways to measure speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        
+                          \[\begin{aligned}
+					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                    
+                 ***   Space Mean Speed = harmonic mean speed
+                        
+                    ***    Time-mean speed is associated with a single point along a roadway over time,
+                        whereas the space-mean speed is associated with a specified length of roadway.
+                        Use space-mean speeds when reducing and analyzing travel time data.
+                        
+                     </aside>  
+                    
+                </section>
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed2" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>Speed from a spatial point of view</h3>
+                        
+                    <p>Spot speed: the instantaneous speed of a vehicle passing a
+                        point on the roadway. Data represent the speed
+                        characteristics of vehicles passing the site. </p>
+                        
+                        <p class="l2"> Most of the speed cameras measure spot speeds!</p>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+             <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed3" data-background-image="../figures/teaching/spot-speed.png" data-background-size="1200px">                          
+                    <div class="whitebackground fragment">
+                        <h3>Typical use of spot speed</h3>
+                        
+                        <p class="l2">Speed limit enforcements </p>
+                        
+                        <p class="l2">Traffic control planning - speed limits, safe speeds at curves, location for traffic signs, etc. </p>
+                        
+                        <p class="l2">Geometric design - road alignments, stopping sight distance</p>
+                        <p class="l2">Accident analysis</p>
+                        
+                        <p>Measurements: Enoscope, Pneumatic tubes, Video recordings, Speed gun/camera </p>
+                        
+                    </div>
+                    
+                </section>
+                
+                
+                <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed4" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>Journey vs Running speed</h3>
+                        
+                    <p>Journey speed is the distance divided by total journey time.
+                        Total journey time includes all delays due to traffic.</p>
+                        
+                        <p > Running speed is the distance divided by running time, i.e.
+                        total journey time minus delays. (Running time is the
+                        time that the vehicle is actually in motion.)</p>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed5" >                     
+                    <div class="whitebackground2">
+                        <h3>Example 3: Estimate journey vs running speeds</h3>
+                        
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/journey-running.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                        
+                   </div>
+                    
+                </section>
+                
+                   
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="density1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Density</h3>
+                            
+                             <p> Density is the number of vehicles occupying a given length of a lane or roadway at  a particular instant.  </p>
+                        
+                       <p class="l2"> Measuring density directly in the field is difficult. For under-saturated traffic conditions density (D) can be estimated as follows:</p>
+       
+                          \[\begin{aligned}
+					D = \frac{v_p}{S} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                         <p class="l2">$v_p$ = flow rate (veh/h)</p>
+                        
+                        <p class="l2"> $S$ =  average travel speed (km/h) </p>
+                        
+                        <p class="l2">Density is a critical parameter for uninterrupted-flow facilities because it  characterizes the quality of traffic operations. It describes the proximity of vehicles to one another and reflects the freedom to manoeuvre within the traffic stream.</p>
+                       
+                    </div>
+                       
+                  <aside class="notes">
+		              For the computations in HCM, density is averaged over time  and is usually expressed as veh/km or passenger car unit per km. 
+                      Measuring density directly in the field is difficult: it requires a vantage point for photographing, videotaping, or observing significant lengths of highway. Density  can be computed, however, from the average travel speed (S) and flow rate, which  are measured more easily.
+                      
+	               </aside>
+                    
+                </section>
+                
+                
+                
+           <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams: Quality-of-service</h3>
+
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+		            <p class="l2"> Source: NZIER (2017),Benefits from Auckland road decongestion </p>
+                    <p class="l2"> Quality-of-service: Describes how well a transportation facility or service operates  from the traveller's perspective.</p>
+                   <p class="l2"> There are many factors that may influence traveller perceived quality-of-service</p>
+                    
+                </section>
+                
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="LOS1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Quality-of-service: The Level-of-Service concept</h3>
+                            
+                             <p> In HCM 2016, Level of Service (LOS) is a quantitative stratification of a performance measure  or measures that represent quality of service. </p>
+                                 
+                            <p>The LOS concept  facilitates the presentation of results, through the use of a familiar A (best) to F (worst) scale.</p>
+                       
+                        <p> Roadways are not typically  designed to provide LOS A conditions during peak periods, why? </p>
+                        
+                    </div>
+                       
+                  <aside class="notes">
+		              For cost, environmental impact, and other reasons, roadways are not typically  designed to provide LOS A conditions during peak periods, but rather some lower  LOS that reflects a balance between individual traveller's desires and society’s  desires and financial resources. Nevertheless, during low-volume period of the  day, a system element may operate at LOS A.
+	               </aside>
+                    
+                </section>
+                
+                  <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="LOS2" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   
+                   <h3>LOS in HCM 2016: A and B</h3>
+
+                <img class="centre" src="../figures/teaching/LOS-AB.png"
+                            style="width:600px;"
+                         alt="project-1" />
+              
+                </section>
+                
+                       <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="LOS3" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   
+                   <h3>LOS in HCM 2016: C and D</h3>
+
+                <img class="centre" src="../figures/teaching/LOS-CD.png"
+                            style="width:600px;"
+                         alt="project-1" />
+              
+                </section>
+                
+                       <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="LOS4" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   
+                   <h3>LOS in HCM 2016: E and F</h3>
+
+                <img class="centre" src="../figures/teaching/LOS-EF.png"
+                            style="width:600px;"
+                         alt="project-1" />
+              
+                    
+                    
+                </section>
+                
+                
+                
+                   <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+                
+               <section id="LOS5" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   
+                   <h3>LOS in HCM 2016</h3>
+
+                   <p>HCM 2016 contains more detailed  descriptions of the levels of service as  defined for each facility type.</p>
+                   
+                    <img class="centre" src="../figures/teaching/LOS-speed-flow.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                     <aside class="notes">
+		     
+                     Six levels of service as illustrated in the  figure below, are defined for each type of  facility for which analysis procedures are  available. They are given letter designations,  from A to F, with level-of-service A  representing the best operating conditions  and level-of-service F the worst.
+	               </aside>
+                    
+                </section>
+                
+                
+                 <!-- ******* Auckland congestion  *********** -->
+                
+                
+               <section id="servicemeasure1" data-background-image="../figures/Backgrounds/grass.jpg">    
+                   
+                   <h3>Service measures</h3>
+
+               <p>Service measures are performance measures used to define LOS for 
+                   transportation system elements.  </p>
+
+                   	<p class="l2"> should reflect travellers' perceptions </p>
+                    <p class="l2"> should be useful to operating agencies</p>
+                   <p class="l2"> should be directly measurable in the field</p>
+                   <p class="l2"> should be estimable given a set of known or forecast conditions</p>
+                   
+       
+                     <aside class="notes">
+		               Neither LOS nor any other single performance measure tells the full story of  roadway performance. Depending on the particulars of a given analysis such as  queue lengths, demand-to-capacity ratios, average travel speeds, indicators of  safety, quantities of persons and vehicles served, and other performance measures  may be just as or even more important to consider. For this reason, the HCM  provides method for estimating a variety of useful roadway operations  performance measures, and not just methods for determining LOS.
+                         
+                       A facility’s capacity to serve automobile mode reflects the effects of all motorized  vehicles using the facility, including trucks, RVs, motorcycles, and buses. In  contrast, LOS for the automobile mode reflects the perspective of automobile  drivers and passengers, but not necessarily the perspective of other motorized  vehicles users. Although automobiles are usually the dominant motorized vehicle  type on roadways, analysts should use care in interpreting LOS results in special  cases, such as intermodal-terminal access routes, where truck may dominate.
+
+
+	               </aside>
+                    
+                </section>
+                
+                
+                <!-- ******* Auckland congestion  *********** -->
+                <section id="servicemeasure2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">    
+                   
+                   <h3>Service measures: For motorways and multilane highways</h3>
+
+               <p>Although travel speed is a major concern of drivers that relates to service quality, freedom to manoeuvre with in  the traffic stream and proximity to other vehicles are equally noticeable concerns.</p>
+                <p> These qualities are related to the density of the traffic stream. Unlike speed,  density increases as flow increases up to capacity, resulting in a service measure  that is both perceivable by motorists and is sensitive to a broad range of flows.</p>
+
+                   	<p class="l2"> Density is used as the service measure for motorway facilities, basic segments,  ramp junctions, weaving segments, and multilane highway. Density is typically  measured in pc/km/ln. </p>
+            
+                   <aside class="notes">
+		            
+	               </aside>
+                    
+                </section>
+                
+                
+                <!-- ******* Auckland congestion  *********** -->
+                <section id="servicemeasure3" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   
+                   <h3>Service measures: two-lane highways</h3>
+
+                    
+                <p> On two-lane highways, unlike other types of uninterrupted flow facilities, normal traffic flow in one direction influences flow in the other direction. Motorists must adjust their travel speeds as volume increase and the ability to pass declines.</p>
+
+                   	<p class="l2">  Three service measures are used for two-lane highways:  percent time-spent-following, average travel speed, and percent free-flow speed.</p>
+            
+                   <aside class="notes">
+		            
+	               </aside>
+                    
+                </section>            
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="servicemeasure4" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   
+                   <h3>Service measures</h3>
+            
+                <p>  Each level of service represents a range of conditions, as defined by a range in the parameter(s) given below. Thus, level of service is not a discrete condition, but  rather a range of conditions for which boundaries are established. The table below  presents the service measures (namely, performance measures which can be  estimated quantitatively) to determine the LOS for different types of facilities. </p>
+
+                   	 <img class="centre" src="../figures/teaching/service-measures.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                    
+                    
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>            
+                
+                
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="highwaycapacity1" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   
+                   <h3>So now what is 'highway capacity'?</h3>
+            
+                <p>  In general, the capacity of a road facility is defined as the maximum sustainable hourly flow rate at which persons or vehicles reasonable can be expected to  traverse a point or a uniform segment of a lane or roadway during a given time  period under prevailing roadway, environmental, traffic, and control conditions.</p>
+                    
+                    <p>What is a 'base' or 'ideal' condition: In principle, under base or ideal conditions, full speed and capacity can be  achieved. </p>
+
+                  
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>            
+                              
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="highwaycapacity2" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   
+                   <h3>Base or ideal condition</h3>
+            
+                <p class="l2"> Level terrain, with grades not greater than 2%</p>
+                <p class="l2"> 3.6 m lane widths</p>
+                <p class="l2"> 1.8 m lateral clearance (on both sides) between the edge of the travel lanes and  the nearest obstructions or objects at the roadside and in the median</p>
+                <p class="l2"> 100 km/h design speed</p>
+                <p class="l2"> Divided highway</p>
+                <p class="l2"> No access points along the roadway</p>
+                <p class="l2"> Traffic stream composed of all passenger cars (no heavy vehicle)</p>
+                <p class="l2"> Driver population composed of regular users</p>
+                    
+                 
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>                           
+                
+                                
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="highwaycapacity3" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   
+                   <h3>Base or ideal condition</h3>
+            
+                <p >  In many capacity analyses, prevailing conditions are not ideal, and computations of  capacity, service flow rate, or level of service must include adjustments to reflect this. Prevailing conditions are generally categorised as roadway, traffic, or control  conditions.</p>
+                    
+                    
+                <p > Capacities under base or ideal conditions, which are used as a basis for analysis,  are as follows:</p>
+                <p class="l2"> Multi-lane limited access roadways: 2200 pcu/hr/lane.</p>
+                <p class="l2"> Freeway/motorway: 2400 pcu/hr/lane.</p>
+                <p class="l2"> Two-lane, two-way rural highways: 3200 pcu/hr/lane.</p>
+                   
+                 
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>          
+                
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method1" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   
+                   <h3>Capacity of multilane highways</h3>
+            
+                <p > For multilane Highways, HCM addresses capacity and LOS  analysis for uninterrupted-flow segments of surface multilane highways. In  general, uninterrupted flow may exist on a multilane highway if there are 2 mile  (approx. 3.2 km) or more between traffic signals. Where signals are more closely  space, the facility should be analysed as an urban street.</p>
+
+                <p class="l2"> Many multilane highways will have periodic signalized intersection, even if the  average signal spacing is well over 2 mile. In such cases, the multilane highway  segments that are more than 2 mile away from any signalized intersections are  analysed by using the methodology of this chapter. </p>
+                    
+                <p class="l2"> Multilane highways generally have four to six lanes (in both directions) with  posted speed limits between 50 to 100 km/h. These highways may be divided by  one or various median types, may be undivided (with only a centreline separating  the directions of flow), or may have a two way right-turn lane. </p>
+                 
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>                    
+                
+                
+                
+             
+
+
+                
+                
                 
                 
                  <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************
@@ -496,6 +979,11 @@
              </section> ** -->
               
                
+                
+                
+                
+                
+                
                 
                  <!-- *************** Thanks  ************************** -->
                                   
