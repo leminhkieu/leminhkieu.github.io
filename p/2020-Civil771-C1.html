@@ -1,0 +1,881 @@
+<!doctype html>
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil761-ITS</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 771: PLANNING AND MANAGING TRANSPORT</h3>
+                        
+                        <h2>Chapter 1: TRANSPORTATION PLANNING IN PRACTICE</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P1.html">http://bit.ly/2020-civil761</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/my-pics/minh.jpg"
+                             alt="Minh picture" />
+                    
+                    </figure>
+
+
+                    <h2>Minh Kieu</h2>
+                    
+                    <p> From 2020: Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
+                     
+                    <p> 2018-2019: Research Fellow at the University of Leeds, UK </p>
+                    <p> 2016-2018: Research Scientist at the Data61, CSIRO, Australia </p>
+                    <p> 2011- 2016: PhD Research at the Queensland University of Technology, Australia </p>
+                    <p> 2009- 2011: Master in Intelligent Transport System, Linkoping University, Sweden </p>
+
+                  <aside class="notes">
+		          - Self-introduction
+	               </aside>
+                    
+                    
+                </section>       
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. What is transportation engineering</p>
+                    <p>	2. What is transportation planning and managing </p>
+                    <p>	3. An overview of planning and managing transport in NZ </p>
+                    
+                    
+                    <h2>include a summary of the current regulatory framework, the current Government’s policies and initiatives plus some ‘case study’ examples, including ‘best-practice’.  </h2>
+                    
+                    
+                  <aside class="notes">
+		          - There are only two aimed learning outcomes of this lectures
+	               </aside>                    
+                    
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                    <p> 1. Problems in the transport sector</p>
+                    <p>	2. What is Transportation Planning ? </p>
+                    <p>	3. Why do we need transportation planning ?</p>
+                    <p>	4. Classes of transportation planning and management</p>
+                    <p>	5. Recap</p>
+                    
+                    </div>
+                    
+                    <aside class="notes">
+		          - We will start with identifying the existing problems in the transport sector, especially in NZ
+	               </aside>                  
+                    
+                </section>                    
+
+        
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/auckland_mov.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="problem1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Traffic congestion</h3>
+                        
+                        <p>Economical cost:</p>
+                        
+                        <p class="l2">Auckland's congested roads costed our economy over $1.25 billion in lost productivity (NZTA, 2013)</p>
+                        
+                        <p>Social cost:</p>
+                        
+                        <p class="l2">Emergency access and evacuation</p>
+                        <p class="l2">Road users stress and anxiety</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		          - Auckland is expanding rapidly in both population and infrastructures: more transportation supply such as new roads, new public transport services but at the same time a lot more demand from new apartment buildings, and new shopping centres 
+                    - Click: Traffic congestion and their costs
+	               </aside>                    
+                    
+                </section>
+                
+                
+     
+            <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams!</h3>
+
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+		            <p class="l2">Source: NZIER (2017),Benefits from Auckland road decongestion </p>
+
+                  <aside class="notes">
+		          - In fact, the congestion level in Auckland is world-class for its size
+                      
+                      - Analyse the graph...
+	               </aside>                   
+                   
+                </section> 
+                
+ 
+               <!-- ******************************************************
+                *********************** Traffic safety ***********************
+                ************************************************************ -->
+
+                <section id="safety" data-transition="fade">                  
+                    
+                    <video controls
+
+                                src="../videos/road-safety.mp4" 
+                                
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <h3>Traffic safety problems</h3>
+                        
+                        <p>Who was at fault?</p>
+                        
+                   </div> 
+                    
+                  <aside class="notes">
+		       *** Another problem is traffic safety: with more motorways and higher speed limits, crashes are more severe
+                 *** The increase in the number of motor vehicles may lead to more accidents
+                      *** now I want you to watch this video and think for yourself: who was at fault in this situation?
+	               </aside>   
+                    
+                </section> 
+                
+            <!-- *************** QUIZ: How technologies can help? ************************** -->
+  
+               <section id="QUIZ1" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is Transportation Planning ?</h3>
+                        
+                        <p>Transport planning is defined as planning required in the operation, provision and management of facilities and services for the modes of transport </p>
+                        
+                        <p class="l2">to achieve safer, faster, comfortable, convenient, economical and environment-friendly movement of people and goods. </p>
+                        
+                        <p>It is a prediction of usage demand in future travel and to ensure all the necessary facilities and services to cater to that demand. </p>
+                        
+                        <p class="l2"> Transport planning is highly essential in shaping cities, enabling economic activities, promoting community interaction, and enhancing quality of life. </p>
+                        <p class="l2">It is also essential for sustainable development and ensuring safe accessibility at various levels for all individuals.</p>
+                        
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		          - First, let's define ...
+	               </aside>                    
+                </section>
+                
+
+                
+                <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="needs" data-background-image="../figures/Backgrounds/AV.jpg">   
+                   
+                   <div class="whitebackground2">
+                       <h3>The need for transportation planning</h3>
+
+                        <p class="l2">Understand the current transportation system </p>
+                        <p class="l2">Review the existing transportation planning </p>
+                        <p class="l2">Identifying problems and issues in the transportation system </p>
+                        <p class="l2">Finding solutions and considering potential changes that can bring improvement in the current plan and also for the future </p>
+                        <p class="l2">Assess the numerous operational and transport choices </p>
+                        <p class="l2">Finding out the multiple options for transporting goods and people </p>
+                        <p class="l2">Recalling the actual purpose of the transportation planning </p>
+                        <p class="l2">Optimization of the current transport system and its structural design </p>
+
+                       </div> 
+
+                 <aside class="notes">
+		           </aside>                   
+                </section> 
+                
+                  <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="importance" data-background-image="../figures/teaching/auckland-signal.jpg">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Importance of transportation planning</h3>
+                        
+                        <p class="l2">1. Minimizing the impact on climate change</p>
+                        <p class="l2">2. Good choices</p>
+                        <p class="l2">3. Air quality</p>
+                        
+                   </div>  
+                   <aside class="notes">
+		         *** 1. Minimizing the impact on climate change
+                It is a hard fact to face that pollution has increased because of transportation emission. It is the need of the hour to enhance technology so that it can result in cleaner fuels. It should be the priority of people who are involved in transportation planning to upgrade the infrastructure so that people can choose less polluting methods of transportation.
+
+                *** 2. Good choices
+                Proper transportation planning should be inclusive of all the travel modes so that it becomes easier for people to make choices that are good for their health
+
+                *** 3. Air quality
+                The importance of a transportation planning process is that if advanced technology is used creatively, then it will improve the air quality and reduce air pollution
+	               </aside>      
+                   
+                    </section>                
+            
+
+                   <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="importance" data-background-image="../figures/teaching/auckland-signal.jpg">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Objectives of transportation planning</h3>
+                        
+                        <p class="l2">1. Minimizing the impact on climate change</p>
+                        <p class="l2">2. Good choices</p>
+                        <p class="l2">3. Air quality</p>
+                        
+                   </div>  
+                   <aside class="notes">
+		         *** 1. Minimizing the impact on climate change
+                It is a hard fact to face that pollution has increased because of transportation emission. It is the need of the hour to enhance technology so that it can result in cleaner fuels. It should be the priority of people who are involved in transportation planning to upgrade the infrastructure so that people can choose less polluting methods of transportation.
+
+                *** 2. Good choices
+                Proper transportation planning should be inclusive of all the travel modes so that it becomes easier for people to make choices that are good for their health
+
+                *** 3. Air quality
+                The importance of a transportation planning process is that if advanced technology is used creatively, then it will improve the air quality and reduce air pollution
+	               </aside>      
+                   
+                    </section>     
+                
+                
+                
+                
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV1" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2 fragment">
+                       <h3>ITS User Service 3: Autonomous and connected vehicles </h3>
+                        
+                        <p>Use technology to partially or entirely replace the human driver in navigating a vehicle while avoiding road hazards and responding to traffic conditions. </p>
+                       
+                        <p>They rely on: </p>
+                        
+                        <p class="l2">Sensors: radar, LIDAR, cameras, etc </p>
+                       <p class="l2">Complex algorithms, machine learning models</p>
+                       <p class="l2">Powerful processors </p>
+                        
+                        <p>to detect traffic lights, read road signs, track other vehicles, and look for pedestrians.</p>
+                       
+                         <p class="l2">More to read: <a href="https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles"> https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles </a> </p>
+                       
+                       </div>              
+                   
+                         <aside class="notes">
+		         *** See Word notes as well
+                  *** 
+	               </aside>   
+                   
+                </section>   
+                
+                
+                           
+                <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="av-intersection" >   
+                   
+                       <video controls
+
+                                src="../videos/AV-intersection.mp4" 
+                                
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                   
+                   
+                </section>       
+                
+                
+                
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV2" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2">
+                       <h3>Are we already 'driving' autonomous vehicles? </h3>
+                        
+                        <p>New Zealand has adopted the International Standard J3016 as developed by the Society of Automotive Engineers (SAE).</p>
+                       
+                     <figure class="centre" >
+
+                        <img data-src="../figures/teaching/SAE-Levels.jpg"
+                             style="width:700px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                       
+                       </div>              
+                   <aside class="notes">
+		       *** But what if the vehicles that we are driving nowadays can already be classified as a class of autonomous vehicles?
+                *** See Word notes
+	               </aside>  
+                </section>                      
+                
+               
+                
+              <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="payments" data-background-image="../figures/Backgrounds/shutterstock_788457058-small.jpg">  
+                   
+                    <div class="whitebackground2">
+                       <h3>ITS User Service 4: Payment systems</h3>
+                        
+                        <p>Public Transport Smart Card (e.g. AT Hop Card) </p>
+                        
+                        <p>Mobile phone payment( e.g. through NFC -- Google Pay, Apple Pay)</p>
+                       
+                        <p>Electronic Toll Collection</p>
+                       </div>         
+                   
+                         <aside class="notes">
+		       *** Electronic toll collection (ETC) is a wireless system to automatically collect the usage fee or toll charged to vehicles using toll roads, bridges, and tunnels. It is a faster alternative replacing toll booths, where vehicles must stop and the driver manually pays the toll with cash or a card. In most systems, vehicles are equipped with an automated radio transponder device that is connected to a roadside toll reader to register the vehicle's use of the road, and an electronic payment system charges the user the toll. A major advantage is the driver does not have to stop, reducing traffic delays.
+	               </aside>             
+                </section>   
+                
+                         
+             <!-- *************** QUIZ ************************** -->
+  
+               <section id="QUIZ2" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+                
+                <!-- *************** ITS intro 2  ************************** -->
+  
+               <section id="its-intro-2" data-background-image="../figures/teaching/its-systems.jpg">   
+                   
+                   <div class="whitebackground1 fragment">
+                       
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-users.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                       </div> 
+                    <aside class="notes">
+		       *** So we have been talking about User Services in ITS...
+	               </aside>                         
+                   
+                </section> 
+                
+                
+                <!-- *************** ITS management 1  ************************** -->
+  
+               <section id="its-manage1" data-background-image="../figures/teaching/traffic-management-centre.png">   
+                   
+                   <div class="whitebackground2 fragment">
+                        <h3>ITS Management Services</h3>
+                        
+                        <p>Traffic control</p>
+                       
+                        <p>Incident management</p>
+                        
+                        <p>Travel demand management</p>
+                       
+                        <p>New mobility options</p>
+                       
+                        
+                       </div> 
+                </section>                 
+                
+                
+                
+                <!-- *************** ITS management 1  ************************** -->
+  
+               <section id="its-manage2" data-background-image="../figures/Backgrounds/skylines-night1.jpg">   
+                   
+                   <div class="whitebackground2">
+                        <h3>ITS Management Service 1: Traffic control</h3>
+                       
+                        <p>Variable message signs</p>
+                        
+                        <p>Ramp metering system</p>
+                       
+                        <p>Adaptive & Connected Traffic Signal systems (e.g. SCATS)</p>
+
+                        <p>Traffic control using Autonomous Vehicles</p>
+                       
+                        
+                       </div> 
+                </section>     
+                
+                
+               <!-- *********** ITS Variable signs **************** -->
+  
+               <section id="its-variable1" data-background-image="../figures/teaching/variable-speed.jpg">   
+                   
+               <div class="whitebackground2">
+                       <h3>Variable message signs</h3>
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/variable-sign.jpg"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                   
+                                    <figure class="centre" >
+
+                        <img data-src="../figures/teaching/variable-speed-limit.jpg"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                   
+                       </div> 
+                </section>    
+                
+              <!-- *********** ITS Variable signs 2**************** -->
+  
+               <section id="its-variable2" data-background-image="../figures/teaching/variable-speed.jpg">   
+                   
+               <div class="whitebackground2">
+                        <h3>Variable message signs</h3>
+                       
+                        <p>Inform road users about specific temporary events and real-time traffic conditions</p>
+                        
+                        <p>Benefits: reducing stress, anxiety and increasing traffic safety</p>
+                       
+                        <p>Main challenge: difficult to measure the benefits, implementation cost</p>
+
+                   
+                       </div> 
+                </section>       
+
+               <!-- *********** ITS Ramp metering  ***************** -->
+  
+               <section id="its-ramp" data-background-image="../figures/teaching/ramp-metering.jpg">   
+                   
+               <div class="whitebackground2 fragment">
+                       <h3>Ramp metering</h3>
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ramp-metering-comparison.gif"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                       </div> 
+                </section>     
+               
+                               
+             <!-- *************** ITS management 3 ************************** -->
+  
+               <section id="its-manage3" data-background-image="../figures/teaching/auckland-signal.jpg">   
+                   
+               <div class="whitebackground2">
+                        <h3>Traffic Signal: Why can't we be more efficient?</h3>
+                       
+                        <p>Traffic signal is not fully adaptive to the demand</p>
+                        
+                        <p>Vehicles take time to speed up, slow down (phantom traffic jam)</p>
+                                               
+                       </div>                       
+
+                   
+                </section>                   
+  
+            
+                
+             <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="its-manage4" data-background-image="../figures/teaching/SCATS.png">   
+                   
+               <div class="whitebackground2 fragment">
+                        <h3>Traffic Signal: Adaptive Traffic Signal Control</h3>
+                        
+                        <p>Phase settings (e.g. green time) are adaptively defined </p>
+                       
+                        <p>Intersections are often coordinated</p>
+                        
+                        <p>Most popular system is the Sydney Coordinated Adaptive Traffic System (SCATS)</p>
+                                               
+                       </div>                       
+
+                   
+                </section>                   
+                
+                 <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************** -->
+  
+               <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+              
+                <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="AV-control" >   
+                   
+                    <div class="whitebackground2">
+                        <h3>Traffic control with AV</h3>
+                        
+                   </div>  
+                       <video controls autoplay muted
+
+                                src="../videos/AV-control.mp4" 
+                                
+                                >
+                         Your browser does not support the video tag.
+
+                    </video>
+                </section>             
+
+               <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="incident1" data-background-image="../figures/teaching/DSS.jpg">      
+                   
+                    <div class="whitebackground2">
+                        <h3>ITS Management Service 2: Incident management</h3>
+                        
+                        <p>Traffic Management Centres </p>
+                        
+                        <p>Signal priority system</p>
+                        
+                        <p>Decision Support Systems</p>
+                       
+                   </div>  
+        
+                </section>                  
+
+              <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management1" data-background-image="../figures/Backgrounds/grass-left.jpg">      
+                   
+                    <div class="whitebackground2">
+                        <h3>ITS Management Service 3: Travel Demand Management</h3>
+                        
+                        <p>Applications of technologies to reduce or redistribute travel demand</p>
+                        
+                        <p class="l2">Changing mode choice</p>
+                        
+                        <p class="l2">Changing departure time and location choice</p>
+                        
+                       
+                   </div>  
+        
+                </section>  
+                
+           <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management2" data-background-image="../figures/teaching/bus-bike-car.jpg">      
+                   
+                    <div class="whitebackground2 fragment">
+                        <h3>Travel Demand Management: Changing mode choice</h3>
+                        
+                        <p>Integrating with User systems such as travellers' information</p>
+                        
+                        <p>Bus priority systems</p>
+                        
+                        <p>Assisted active transport modes (e.g. electric bike)</p>
+                       
+                   </div>  
+        
+                </section>    
+
+          <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management3" data-background-image="../figures/projects/clean-air-charging.png">      
+                   
+                    <div class="whitebackground2 fragment">
+                        <h3>Travel Demand Management: Changing departure time and location choice </h3>
+                        
+                        <p>Congestion charging or cordon congestion toll</p>
+                        
+                        <p>Example: Clean Air Charging Zone in Leeds, UK</p>
+                       
+                   </div>  
+        
+                </section>                    
+ 
+         <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management4" data-background-image="../figures/teaching/MAAS.png">      
+                   
+                    <div class="whitebackground2 fragment">
+                         <h3>ITS Management Service 4: New mobility options</h3>
+                        
+                        <p>Sharing modes: Bike sharing, car sharing, carpooling</p>
+                        
+                        <p>On-demand transport</p>
+                        
+                        <p>Mobility-as-a-service</p>
+                       
+                   </div>  
+        
+                </section>
+                
+                
+              <!-- *************** QUIZ 4 what are not true about traffic management************************** -->
+  
+               <section id="QUIZ4" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+
+             <!-- *************** ITS flowchart ************************** -->
+  
+               <section id="endof3" >    
+                   
+                         <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-full.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+        
+                </section>  
+                
+         <!-- *************** ITS role  ************************** -->
+  
+               <section id="its-benefits" data-background-image="../figures/teaching/ITS-benefits.png">   
+                   
+                    <div class="whitebackground2 fragment">
+                        <p>Source: <a href="https://www.nzta.govt.nz/assets/resources/intelligent-transport-systems/docs/nz-transport-agency-intelligent-transport-systems.pdf"> NZTA (2014) NZ Transport Agency position statement on intelligent transport systems: Responding to the opportunities </a> </p>
+                  
+                    </div>  
+                </section>       
+                
+   
+        <!-- *************** ITS role  ************************** -->
+  
+               <section id="its-challenges" data-background-image="../figures/Backgrounds/weather1.jpg">   
+                   
+                     <div class="whitebackground2">
+                         <h3>The challenges</h3>
+                        
+                        <p>ITS systems are complex: require strong leadership to address potentially conflicting technologies, standards and perspectives</p>
+                        
+                        <p>Media stories and marketing have generated a lot of interest in
+                            and enthusiasm for vehicle-related intelligent transport systems</p>
+                       
+                   </div>  
+        
+                </section>    
+                
+              
+                
+                 <!-- *************** QUIZ 5 ************************** -->
+  
+               <section id="QUIZ5" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                         
+                
+              <!-- *************** ITS data ************************** -->
+  
+               <section id="Recap" data-background-image="../figures/teaching/traffic-management-centre.png">      
+                   
+                  <div class="whitebackground1">
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/ITS-flowchart-data.png"
+                             style="width:400px;"
+                             alt="Flow-chart" />
+                    
+                    </figure>
+                      </div> 
+                    </section> 
+                
+             <!-- *************** QUIZ ************************** -->
+  
+               <section id="QUIZ6" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> 
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P1.html">https://leminhkieu.github.io/p/2020-Civil761-P1.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
