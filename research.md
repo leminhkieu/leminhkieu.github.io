@@ -26,7 +26,8 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups"><span style="background-color: #009900;" class="fa fa-user,"></span></a>
+                <a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">
+                <span style="background-color: #009900;" class="fa fa-user"></span></a>
                 <h3><a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">GreenRadio</a></h3>
                 Using AI for energy saving on Mobile towers
             </li>
