@@ -67,57 +67,59 @@ tagline:
 
 ### <a name="papers"></a>Peer-Reviewed Journal Articles
 
+#### 2020 
+
+**Kieu, L.M.**; Malleson, N.; Heppenstall, A. (2019) "Dealing with uncertainty in agent-based models for short-term predictions",Royal Society of Open Science, Vol 7, Issue 1, DOI: 10.1098/rsos.191074 [[Open access](https://royalsocietypublishing.org/doi/10.1098/rsos.191074)]
+
+Malleson, N.; Minors, K.; **Kieu, L.M.**; Ward, J.; West, A.; Heppenstall, A. (2019) "Simulating Crowds in Real Time with Agent-Based Modelling and a Particle Filter",Journal of Artificial Societies and Social Simulation 23 ((3)3), DOI:10.18564/jasss.4266 [[Open access](http://jasss.soc.surrey.ac.uk/23/3/3.html)]
+
 #### 2019 
 
-**Kieu, L.M.**; Malleson, N.; Heppenstall, A. (2019) "Dealing with uncertainty in agent-based models for short-term predictions",arXiv preprint arXiv:1908.08288. [[PDF](./papers/Nguyen2019.pdf)]
-
-Malleson, N.; Minors, K.; **Kieu, L.M.**; Ward, J.; West, A.; Heppenstall, A. (2019) "Simulating Crowds in Real Time with Agent-Based Modelling and a Particle Filter",arXiv preprint arXiv:1909.09397. [[PDF](./papers/Nguyen2019.pdf)]
-
-**Kieu, L.M.**; Ngoduy, D.; Malleson, N.; Chung, E. (2019) "A stochastic schedule-following simulation model of bus routes", Transportmetrica B: Transport Dynamics, 7, 1, 1588-1610. [[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.**; Ngoduy, D.; Malleson, N.; Chung, E. (2019) "A stochastic schedule-following simulation model of bus routes", Transportmetrica B: Transport Dynamics, 7, 1, 1588-1610. [[PDF](./papers/Bus2019.pdf)]
 
 Nguyen, H.; Bentley, C.; **Kieu, L.M.** ; Fu, Y.; Cai, C. (2019) "A Deep Learning System for Travel Speed Predictions on Multiple Arterial Road Segments", _Transportation Research Record: Journal of the Transportation Research Board_ , DOI: [10.1177/0361198119838508](https://doi.org/10.1177/0361198119838508)[[PDF](./papers/Nguyen2019.pdf)]
 
-Lomax, N.; Malleson, N.; **Kieu, L.M.** (2019) "Point Pattern Processes and Models", arXiv preprint arXiv:1910.00282 [[PDF](./papers/Nguyen2019.pdf)]
+Lomax, N.; Malleson, N.; **Kieu, L.M.** (2019) "Point Pattern Processes and Models", arXiv preprint arXiv:1910.00282 [[Open Access](https://arxiv.org/abs/1910.00282)]
 
 #### 2018
 
-**Kieu, L.M.**; Cai, C. (2018) "Stochastic collective model of public transport passenger arrival process", IET Journal of Intelligent Transport Systems,12,9,1027-1035, [[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.**; Cai, C. (2018) "Stochastic collective model of public transport passenger arrival process", IET Journal of Intelligent Transport Systems,12,9,1027-1035, [[PDF](./papers/PP2018.pdf)]
 
-**Kieu, L.M.; Ou, Y.; Cai, C. (2018) "Large-scale transit market segmentation with spatial-behavioural features", Transportation Research Part C: Emerging Technologies, 90, 97-113.[[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.; Ou, Y.; Cai, C. (2018) "Large-scale transit market segmentation with spatial-behavioural features", Transportation Research Part C: Emerging Technologies, 90, 97-113.[[PDF](./papers/PassSegment.pdf)]
 
-Nguyen, H.M.D.; **Kieu, L.M.**; Tao, W.; Cai, C. (2018) "Deep Learning Methods in Transportation Domain: A Review.", IET Journal of Intelligent Transport System, 12, 9, 998-1004. [[PDF](./papers/Nguyen2019.pdf)]
+Nguyen, H.M.D.; **Kieu, L.M.**; Tao, W.; Cai, C. (2018) "Deep Learning Methods in Transportation Domain: A Review.", IET Journal of Intelligent Transport System, 12, 9, 998-1004. [[PDF](./papers/Nguyen2018.pdf)]
 
 #### 2017
 
-**Kieu, L.M.**; Bhaskar, A.; Cools, M.; Chung, E. (2017) "An investigation of timed transfer coordination using event-based multi agent simulation", Transportation Research Part C: Emerging Technologies, 81, 363-378. [[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.**; Bhaskar, A.; Cools, M.; Chung, E. (2017) "An investigation of timed transfer coordination using event-based multi agent simulation", Transportation Research Part C: Emerging Technologies, 81, 363-378. 
 
-Sabar, N.R.; **Kieu, L.M.**; Chung, E.; Tsubota, T.; Almeida; P.E.M. (2017) "A memetic algorithm for real world multi-intersection traffic signal optimisation problems", 63, 45-53. [[PDF](./papers/Nguyen2019.pdf)]
+Sabar, N.R.; **Kieu, L.M.**; Chung, E.; Tsubota, T.; Almeida; P.E.M. (2017) "A memetic algorithm for real world multi-intersection traffic signal optimisation problems", 63, 45-53. 
 
 #### 2016
 
-Truong, L. T. ; **Kieu, L.M.**  ; Vu, T. A. (2016) "Spatiotemporal and random parameter panel data models of traffic crash fatalities in Vietnam", Accident Analysis and Prevention, 94. [[PDF](./papers/Nguyen2019.pdf)]
+Truong, L. T. ; **Kieu, L.M.**  ; Vu, T. A. (2016) "Spatiotemporal and random parameter panel data models of traffic crash fatalities in Vietnam", Accident Analysis and Prevention, 94. [[PDF](./papers/Truong2016.pdf)]
 
-**Kieu, L.M.** ; Bhaskar, A. ; Almeida, P.E.M. ; Sabar, N.R. ; Chung, E. (2016) "Transfer demand prediction for timed transfer coordination in public transport operational control", 50, 8, 1972-1989. [[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.** ; Bhaskar, A. ; Almeida, P.E.M. ; Sabar, N.R. ; Chung, E. (2016) "Transfer demand prediction for timed transfer coordination in public transport operational control", 50, 8, 1972-1989. [[PDF](./papers/Transfer2016.pdf)]
 
 #### 2015
 
-**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2015) "A modified density-based scanning algorithm with noise for spatial travel pattern analysis from smart card AFC data", Transportation Research Part C: Emerging Technologies, 58, 193-207. [[PDF](./papers/Nguyen2019.pdf)]  
+**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2015) "A modified density-based scanning algorithm with noise for spatial travel pattern analysis from smart card AFC data", Transportation Research Part C: Emerging Technologies, 58, 193-207. [[PDF](./papers/DBSCAN2015.pdf)]  
 
-**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2015) "Empirical modelling of the relationship between bus and car speeds on signalised urban networks", Transportation Planning and Technology, 38, 4, 465-482. [[PDF](./papers/Nguyen2019.pdf)]  
+**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2015) "Empirical modelling of the relationship between bus and car speeds on signalised urban networks", Transportation Planning and Technology, 38, 4, 465-482. [[PDF](./papers/BusCar2015.pdf)]  
 
 #### 2014
 
-Bhaskar, A. ; **Kieu, L.M.**; Qu, M. ; Nantes, A. ; Miska, M. ; Chung, E. (2014) "Is bus overrepresented in Bluetooth MAC Scanner data? Is MAC-ID really unique?", International Journal of Intelligent Transportation Systems Research, 1-12. [[PDF](./papers/Nguyen2019.pdf)] 
+Bhaskar, A. ; **Kieu, L.M.**; Qu, M. ; Nantes, A. ; Miska, M. ; Chung, E. (2014) "Is bus overrepresented in Bluetooth MAC Scanner data? Is MAC-ID really unique?", International Journal of Intelligent Transportation Systems Research, 1-12. [[PDF](./papers/Bluetooth2014.pdf)] 
 
-Bhaskar, A. ; Tsubota, T. **Kieu, L.M.**; Chung, E. (2014) "Urban traffic state estimation: Fusing point and zone based data", Transportation Research Part C: Emerging Technologies, 48, 120-142. [[PDF](./papers/Nguyen2019.pdf)] 
+Bhaskar, A. ; Tsubota, T. **Kieu, L.M.**; Chung, E. (2014) "Urban traffic state estimation: Fusing point and zone based data", Transportation Research Part C: Emerging Technologies, 48, 120-142. [[PDF](./papers/Urban2014.pdf)] 
 
-**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2014) "Passenger Segmentation Using Smart Card Data", IEEE Transactions of Intelligent Transport Systems, 16, 3, 1537-1548. [[PDF](./papers/Nguyen2019.pdf)]  
+**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2014) "Passenger Segmentation Using Smart Card Data", IEEE Transactions of Intelligent Transport Systems, 16, 3, 1537-1548. [[PDF](./papers/DBSCAN2014.pdf)]  
 
-**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2014) "Public transport travel-time variability definitions and monitoring", ASCE Journal of Transportation Engineering, 141, 1. [[PDF](./papers/Nguyen2019.pdf)]  
+**Kieu, L.M.**; Bhaskar, A.; Chung, E. (2014) "Public transport travel-time variability definitions and monitoring", ASCE Journal of Transportation Engineering, 141, 1. [[PDF](./papers/ASCE2014.pdf)]  
 
 ### <a name="chapters"></a>Book Chapters
 
-**Kieu, L.M.** (2018) "Analytical Modelling of Point Process and Application to Transportation", Book Chapter in Human and Machine Learning: Visible, Explainable, Trustworthy and Transparent, 385-408. Springer International Publishing. [[PDF](./papers/Nguyen2019.pdf)]
+**Kieu, L.M.** (2018) "Analytical Modelling of Point Process and Application to Transportation", Book Chapter in Human and Machine Learning: Visible, Explainable, Trustworthy and Transparent, 385-408. Springer International Publishing. [[PDF](./papers/BookChapter2018.pdf)]
 
 ### <a name="proceedings"></a>Articles in Conferece Proceedings
 
@@ -147,4 +149,4 @@ Bhaskar, A.; **Kieu, L.M.**;  Qu, M. ; Nantes, A. ; Miska, Marc ; Chung, E. (201
 
 ### <a name="thesis"></a>PhD Thesis
 
-**Kieu, L.M.** (2015) "Utilising big transit data for transfer coordination". Queensland University of Technology. [[download](http://www.geog.leeds.ac.uk/fileadmin/documents/peoplepages/n.malleson/thesis-final.pdf)]
+**Kieu, L.M.** (2015) "Utilising big transit data for transfer coordination". Queensland University of Technology. [[PDF](./papers/Thesis.pdf)] 
