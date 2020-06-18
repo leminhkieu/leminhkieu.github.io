@@ -19,14 +19,14 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
                 <h3><a href="http://dust.leeds.ac.uk/">DUST</a></h3>
                 Data Assimilation for Agent-Based Models: Applications to Civil Emergencies
             </li>
-            <li style="font-size: small; line-height: 20px;">This 5-year research project, which is being funded by the European Research Council," will develop dynamic data assimilation methods for use in agent-based modelss. <a href=""http://dust.leeds.ac.uk/"">More information</a>."</li>
+            <li style="font-size: small; line-height: 20px;">This 5-year research project, which is being funded by the European Research Council," will develop dynamic data assimilation methods for use in agent-based models. <a href="http://dust.leeds.ac.uk/">More information</a>."</li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups"><span style="background-color: #9900;" class="fa fa-user,"></span></a>
+                <a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups"><span style="background-color: #009900;" class="fa fa-user,"></span></a>
                 <h3><a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">GreenRadio</a></h3>
                 Using AI for energy saving on Mobile towers
             </li>
@@ -37,28 +37,18 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
     <div class="6u">
         <ul class="style">
             <li>
-                <a href=""><span style="background-color: #;" class="fa "></span></a>
-                <h3><a href="">__PREVIOUS__</a></h3>
-            </li>
-            <li style="font-size: small; line-height: 20px;"></li>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
-    <div class="6u">
-        <ul class="style">
-            <li>
                 <a href="http://adait.io/inno-pii.html"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
                 <h3><a href="http://adait.io/inno-pii.html">PII</a></h3>
                 NSW Premier's Innovation Initiative
             </li>
-            <li style="font-size: small; line-height: 20px;">"The NSW Premier's Innovation Initiative is a significant opportunity for the NSW Government to engage with business, community and other non-government stakeholders to help us deliver services to the people of NSW","Under this initiative, Data61 has partnered with the NSW Government to compile data from Opal, GPS devices, traffic signals, and buses to provide better information for the Transport Management Centre to alert road users of congestion incidents and provide information about alternatives.", 6ca0e8</li>
+            <li style="font-size: small; line-height: 20px;">The NSW Premier's Innovation Initiative is a significant opportunity for the NSW Government to engage with business, community and other non-government stakeholders to help us deliver services to the people of NSW","Under this initiative, Data61 has partnered with the NSW Government to compile data from Opal, GPS devices, traffic signals, and buses to provide better information for the Transport Management Centre to alert road users of congestion incidents and provide information about alternatives.</li>
             <li>&nbsp;</li>
         </ul>
     </div>
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="https://www.transport.nsw.gov.au/data-and-research/nsw-future-mobility-prospectus/nsw-future-mobility-case-studies/procurement-as-3"><span style="background-color: #9900;" class="fa fa-user"></span></a>
+                <a href="https://www.transport.nsw.gov.au/data-and-research/nsw-future-mobility-prospectus/nsw-future-mobility-case-studies/procurement-as-3"><span style="background-color: #009900;" class="fa fa-user"></span></a>
                 <h3><a href="https://www.transport.nsw.gov.au/data-and-research/nsw-future-mobility-prospectus/nsw-future-mobility-case-studies/procurement-as-3">Keoride</a></h3>
                 NSW OnDemand Transport
             </li>
