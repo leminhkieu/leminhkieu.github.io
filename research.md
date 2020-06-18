@@ -12,11 +12,10 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
 <h2>Current Projects</h2>
 <section class="container">
     <div class="row">
-
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://dust.leeds.ac.uk/"><span style="background-color: #9900;" class="fa fa-user"></span></a>
+                <a href="http://dust.leeds.ac.uk/"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
                 <h3><a href="http://dust.leeds.ac.uk/">DUST</a></h3>
                 Data Assimilation for Agent-Based Models: Applications to Civil Emergencies
             </li>
@@ -39,41 +38,7 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
         <ul class="style">
             <li>
                 <a href=""><span style="background-color: #;" class="fa "></span></a>
-                <h3><a href=""></a></h3>
-                
-            </li>
-            <li style="font-size: small; line-height: 20px;"></li>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
-    <div class="6u">
-        <ul class="style">
-            <li>
-                <a href=""><span style="background-color: #;" class="fa "></span></a>
-                <h3><a href=""></a></h3>
-                
-            </li>
-            <li style="font-size: small; line-height: 20px;"></li>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
-    <div class="6u">
-        <ul class="style">
-            <li>
-                <a href=""><span style="background-color: #;" class="fa "></span></a>
-                <h3><a href=""></a></h3>
-                
-            </li>
-            <li style="font-size: small; line-height: 20px;"></li>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
-    <div class="6u">
-        <ul class="style">
-            <li>
-                <a href=""><span style="background-color: #;" class="fa "></span></a>
                 <h3><a href="">__PREVIOUS__</a></h3>
-                
             </li>
             <li style="font-size: small; line-height: 20px;"></li>
             <li>&nbsp;</li>
@@ -82,7 +47,7 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
     <div class="6u">
         <ul class="style">
             <li>
-                <a href="http://adait.io/inno-pii.html"><span style="background-color: #fa-book;" class="fa "></span></a>
+                <a href="http://adait.io/inno-pii.html"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
                 <h3><a href="http://adait.io/inno-pii.html">PII</a></h3>
                 NSW Premier's Innovation Initiative
             </li>
