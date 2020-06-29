@@ -1,0 +1,701 @@
+<!doctype html>
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil761-ITS</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick & Minh -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+          <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+        
+	</head>
+
+	<body>
+        
+        	<div class="reveal">
+
+			<div class="slides">
+         
+
+                
+                   <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/Auckland-plan.mp4"
+                         data-background-video-loop="loop"
+                         id="problem1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Auckland is transforming rapidly</h3>
+                        
+                        <p>Auckland’s city centre is going through a period of rapid transformational change, with substantial investment committed to the area by both the public sector and private developers.</p>
+                        
+                        <p class="l2">America’s Cup and APEC take place here in 2021</p>
+                        
+                        <p class="l2">City Rail Link starts operating in 2024: 54,000 peak-time passengers each hour</p>
+                        
+                        <p>“By 2032 Auckland's city centre will be highly regarded internationally as a centre for business and learning, innovation, entertainment, culture and urban living - all with a distinctly 'Auckland' flavour.”  -  Auckland City Centre Masterplan</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 771: PLANNING AND MANAGING TRANSPORT</h3>
+                        
+                        <h2>Chapter 2: PLANNING AND DESIGN OF STREETS AND ROAD NETWORKS</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil771-C2.html">http://bit.ly/2020-civil771-2</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                  
+                    <!-- ***************** Agenda ************************* -->
+
+                <section id="issues" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Transport is vital for economic development and personal welfare, but…</h2>
+                    
+                    <p class="l2"> 1. Difficult to meet growing demand </p>
+                    <p class="l2">	2. Growing energy consumption and other resources</p>
+                        <p class="l2">	3. Air pollution, emission of GHGs: growing faster than GDP, plus adverse health and social impacts</p>
+                        <p class="l2">	4. Road Safety</p>
+                        <p class="l2">	5. Non‐inclusive development: not all are benefiting</p>
+                     
+                    </div>
+                    
+                    <aside class="notes">
+		            </aside>                  
+                    
+                </section>              
+                
+             
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Why do we need to plan streets and road networks ? </p>
+                    <p>	2. What are the common projects in the planning of streets and road networks?</p>
+                    <p>	3. New technologies in the planning of streets and road networks </p>
+                    
+                   
+                  <aside class="notes">
+		          - There are only two aimed learning outcomes of this lectures
+	               </aside>                    
+                    
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                    <p> 1. Problems on our streets</p>
+                    <p>	2. What can we do to improve our streets and roads?</p>
+                    
+                    <p>	5. Recap</p>
+                    
+                    </div>
+                    
+                    <aside class="notes">
+		          - We will start with identifying the existing problems in the transport sector, especially in NZ
+	               </aside>                  
+                    
+                </section>                    
+
+        
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafalgar.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="lecture">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>How do we plan our streets and roads</h3>
+                        
+                        <p>Obtain sustainable environments combined with convenient accessibility</p>
+                        
+                        <p>Focus:</p>
+                        
+                        <p class="l2">Design of road network</p>
+                        <p class="l2">Sustainability</p>
+                        <p class="l3">New modes of transport</p>
+                        <p class="l3">Active transport</p>
+                        <p class="l3">Transit Oriented Development (TOD)</p>
+                        <p class="l2">Traffic Safety</p>
+                        <p class="l2">Equity and inclusion</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		          - Auckland is expanding rapidly in both population and infrastructures: more transportation supply such as new roads, new public transport services but at the same time a lot more demand from new apartment buildings, and new shopping centres 
+                  
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
+            
+              
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="ORN" data-background-image="../figures/Backgrounds/auckland-2050.png">                     
+                    <div class="whitebackground2">
+                        <h3>Outline Road Network</h3>
+                        
+                        <p>Begin with a plan showing the arrangement, location, type and size of the environmental areas; that is, areas of buildings and/or other development in which a suitable environment is of importance.</p>
+                        
+                        <p class="l2">Transport and land-use planning have a chicken-and-egg relationship </p>
+                        
+                        <p>The outline road network should be planned to provide maximum efficiency  </p>
+                        
+                        <p class="l2"> the hierarchy of roads should be located </p>
+                        
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="ORN2" data-background-image="../figures/Backgrounds/auckland-2050.png">                     
+                    <div class="whitebackground2">
+                        <h3>Outline Road Network</h3>
+                        
+                        <p>From a road function viewpoint there are two essential needs which must be met:</p>
+                        
+                        <p class="l2">‘mobility’ - is concerned with the movement of through traffic and focused on the efficient movement of people and freight</p>
+                        
+                        <p class="l2">‘access’ - relates to the ease with which traffic from land abutting roads can enter or leave the road.</p>
+                        
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                </section>
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="ORN3" data-background-image="../figures/teaching/NZ-roads.png" data-background-size="1000px">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Outline Road Network</h3>
+                        
+                        <p>The One Network Road Classification (ONRC) is a new framework that categorises roads throughout NZ. The ONRC considers the needs of all road users, be they motorists, cyclists or pedestrians.</p>
+                        
+                        <p class="l2">National</p>
+                        <p class="l2">Arterial</p>
+                        <p class="l2">Regional</p>
+                        <p class="l2">Primary collector</p>
+                        <p class="l2">Secondary collector</p>
+                        <p class="l2">Access</p>
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		        This is the first time in the history of New Zealand
+                        that consistent specifications will apply to all public roads from Cape Reinga to the Bluff, depending on what purpose they serve.  
+                      
+                       It will give road users more consistency and certainty about what standard and services to expect on the national road network, including the most appropriate safety features.
+                        It will also help New Zealand to plan, invest in, maintain and operate the road network in a more strategic, consistent and affordable way
+                        throughout the country.
+                      
+	               </aside>                    
+                </section>
+
+                
+                <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="needs" data-background-image="../figures/teaching/auckland-signal.jpg">   
+                   
+                   <div class="whitebackground2">
+                       <h3>Sustainability</h3>
+
+                        <p class="l2">One of Auckland's 2050 Plan priorities is to preserve, protect and care for the natural environment, and what happens in the city centre is an important part of meeting this aspiration.  </p>
+                       
+                        <p class="l2">From waste management and reducing single use plastics to emission-reducing initiatives and making green spaces a priority</p>
+                       
+                       
+                      <p class="l2"> Auckland is one of 98 cities globally to be affiliated with the C40 Cities Climate Leadership Group – a network of major cities committed to tackling climate change, representing over 650 million people and one quarter of the global economy.</p>
+                       
+                        
+                       </div> 
+
+                 <aside class="notes">
+		           </aside>                   
+                </section> 
+                
+                  <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="importance" data-background-image="../figures/teaching/sustainable-transport.jpg" data-background-size="1000px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Sustainable development</h3>
+                        
+                        <p class="l2">is defined under the Resource Management Act 1991 as ‘managing the use, development, and protection of natural and physical resources in a way, or at a rate, which enables people and communities to provide for their social, economic, and cultural wellbeing and for their health and safety …’</p>
+                        
+                        <h3>Sustainable transport planning</h3>
+                        
+                        <p class="l2">Reduction of transport demand</p>
+                        <p class="l2">Promotion/improvement of more energy
+                        efficient and environment friendly transport
+                        modes</p>
+                       
+                    
+                   </div>  
+                   <aside class="notes">
+                   </aside>      
+                   
+                    </section>    
+                
+                
+                  <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="integrated" data-background-image="../figures/teaching/design.jpeg" data-background-size="900px">      
+                   
+                    <div class="whitebackground2 fragment">
+                         <h3>Sustainable transport planning</h3>
+                        
+                        <p>Common thinking: I can't wait for the roads to get widen</p>
+                        
+                        <p>New thinking: Integrated urban design</p>
+                        
+                       
+                   </div>  
+        
+                </section>
+                
+               <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="demand-management3" data-background-image="../figures/projects/clean-air-charging.png">      
+                   
+                    <div class="whitebackground2">
+                        <h3>Sustainable transport planning: Reduction of transport demand</h3>
+                        
+                        
+                        <p class="l2">Modal shift from private to public and active modes of transport (e.g. parking prices, fuel tax, cheap buses)</p>
+                        <p class="l2">Reduce the needs for mobility (e.g. through land use planning, working from home scheme)</p>
+                        <p class="l2">Shifting the demand in time and space (e.g. congestion charging or cordon congestion toll)</p>
+                        
+                        <p class="l3">Example: Clean Air Charging Zone in Leeds, UK</p>
+                       
+                   </div>  
+        
+                </section>        
+                
+                
+                
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/bike-lane-junction.mp4"
+                         data-background-video-loop="loop"
+                         id="bikelane1">                     
+                    <div class="whitebackground2 fragment">
+                       
+                         <p>Bike lanes are not good enough!</p>
+                        
+                        <p>In many big cities, bike lanes are fragmented and often ended when they are needed the most: at junction</p>
+                        
+                        <p class="l2">The Dutch have found a great solution</p>
+                        
+                        <p class="l3">Safer for cyclists and encourage them to cycle more</p>
+                        
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                 <!-- *************** TOD  ************************** -->
+                
+                <section id="TOD">
+              <section id="TOD1" data-background-image="../figures/teaching/TOD1.png" data-background-size="900px"> </section>
+              <section id="TOD2" data-background-image="../figures/teaching/TOD2.png" data-background-size="900px"> </section>
+              <section id="TOD3" data-background-image="../figures/teaching/TOD3.png" data-background-size="900px"> </section>
+            </section>                  
+                        
+                
+                 <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="sharedmobil" data-background-image="../figures/teaching/Shared-Mobility-Principles.jpg" data-background-size="800px">      
+                   
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafalgar.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="lecture2">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>How do we plan our streets and roads</h3>
+                        
+                        
+                        <p class="l2">Design of road network</p>
+                        <p class="l2">Sustainability</p>
+                        <p class="l3">New modes of transport</p>
+                        <p class="l3">Active transport</p>
+                        <p class="l3">Transit Oriented Development (TOD)</p>
+                        <p class="l2"><a>Traffic Safety</a></p>
+                        <p class="l2">Equity and inclusion</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		          - Auckland is expanding rapidly in both population and infrastructures: more transportation supply such as new roads, new public transport services but at the same time a lot more demand from new apartment buildings, and new shopping centres 
+                  
+	               </aside>                    
+                    
+                </section>
+                
+                
+                 
+                
+                  <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="safety" data-background-image="../figures/teaching/its.jpg" >      
+                   
+                    <div class="whitebackground2">
+                         <h3>Planning for traffic safety: the Safe System principles</h3>
+                        
+                        <p> People make mistakes and some crashes are inevitable.</p>
+                        
+                        <p>Our bodies don’t withstand crash forces well.</p>
+                        
+                        <p>System designers and system users must share responsibility for managing crash forces to a level that doesn’t result in death or serious injury.</p>
+                        
+                        <p>We need to strengthen all parts of the system: roads and roadsides, speeds, vehicles and users.</p>
+                        
+                   </div>  
+        
+                </section>
+                
+             
+                
+                   <!-- ************** Learning outcomes ************* -->
+
+                <section id="speed" data-transition="fade">
+                    
+                    <figure class="centre">
+
+                        <img data-src="../figures/teaching/speed-limit.png"
+                             height="800"
+                             />
+                        
+                    </figure>
+                   
+                    <p class="l2">The reasons for high crash rates are many and varied. They include driving behaviour and how the road is engineered but driving speed affects the outcome of every crash.</p>
+                   
+                  <aside class="notes">
+		        
+	               </aside>                    
+                    
+                </section>      
+                
+                
+                     
+                  <!-- *************** ITS management 2 ************************** -->
+  
+               <section id="calming" data-background-image="../figures/teaching/speed-limit.png">      
+                   
+                    <div class="whitebackground2">
+                         <p>Traffic Calming Strategies</p>
+                        
+                        <a href="https://globaldesigningcities.org/publication/global-street-design-guide/designing-streets-people/designing-for-motorists/traffic-calming-strategies/">https://globaldesigningcities.org/publication/global-street-design-guide/designing-streets-people/designing-for-motorists/traffic-calming-strategies/</a>
+                        
+                        <p class= "l3">Lane Narrowing</p>
+                        
+                        <p class= "l3">Buildings and Trees</p>
+                        
+                        
+                        <p class= "l3">Medians and Refuge Islands</p>
+                        <p class= "l3">Mini Roundabouts</p>
+                        <p class= "l3">Speed Humps</p>
+                        
+                        <p class= "l3">Pavement Materials and Appearance</p>
+                        <p class= "l3">Two-Way Streets</p>
+                        <p class= "l3">Signal Progression</p>
+                        <p class= "l3">Diverters</p>
+                        <p class= "l3">Shared Streets</p>
+                   </div>  
+        
+                </section>
+                
+                
+                
+                
+                   <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="ITS-safety-ecall" data-background-image="../figures/teaching/ecall.png">  
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>eCall: Automated messaging to emergency services </h3>
+                        
+                        <p class="l2">Mandatory system on all new European cars from 2018</p>
+                        <p class="l2">Automated message following a crash</p>
+                        <p class="l2">Precice crash location</p>
+                        <p class="l2">Only activated after a serious accident</p>
+                   </div>  
+                   <aside class="notes">
+		         *** There are systems that aims at reducing the severity of crashes as well
+	               </aside>      
+                   
+                    </section>      
+                
+                
+                  <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="AV1" data-background-image="../figures/teaching/AV.png">  
+                   
+                    <div class="whitebackground2 fragment">
+                       <h3>Autonomous and connected vehicles </h3>
+                        
+                        <p>Use technology to partially or entirely replace the human driver in navigating a vehicle while avoiding road hazards and responding to traffic conditions. </p>
+                       
+                        <p>They rely on: </p>
+                        
+                        <p class="l2">Sensors: radar, LIDAR, cameras, etc </p>
+                       <p class="l2">Complex algorithms, machine learning models</p>
+                       <p class="l2">Powerful processors </p>
+                        
+                        <p>to detect traffic lights, read road signs, track other vehicles, and look for pedestrians.</p>
+                       
+                         <p class="l2">More to read: <a href="https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles"> https://www.transport.govt.nz/multi-modal/technology/specific-transport-technologies/road-vehicle/autonomous-vehicles </a> </p>
+                       
+                       </div>              
+                   
+                         <aside class="notes">
+		         *** See Word notes as well
+                  *** 
+	               </aside>   
+                   
+                </section>   
+                
+           <!-- *************** ITS data ************************** -->
+  
+               <section id="data-fusion" >
+                   
+                   <h3>Autonomous and connected vehicles</h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Uber-AV.gif"
+                             style="width:800px;"
+                             alt="UberAV" />
+                    </figure>
+                    
+                </section>     
+                
+                
+                     <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafalgar.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="lecture2">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>How do we plan our streets and roads</h3>
+                        
+                        
+                        <p class="l2">Design of road network</p>
+                        <p class="l2">Sustainability</p>
+                        <p class="l3">New modes of transport</p>
+                        <p class="l3">Active transport</p>
+                        <p class="l3">Transit Oriented Development (TOD)</p>
+                        <p class="l2">Traffic Safety</p>
+                        <p class="l2"><a>Equity and inclusion</a></p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		      
+                  
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P1.html">https://leminhkieu.github.io/p/2020-Civil761-P1.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
