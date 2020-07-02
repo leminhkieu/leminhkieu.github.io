@@ -1,0 +1,1961 @@
+<!doctype html>
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil761-ITS</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick & Minh -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+          <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+        
+	</head>
+
+	<body>
+        
+        	<div class="reveal">
+
+			<div class="slides">
+         
+
+                
+                
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 771: PLANNING AND MANAGING TRANSPORT</h3>
+                        
+                        <h2>Chapter 3: TRAFFIC FLOW, CAPACITY AND LEVELS OF SERVICE</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil771-C3.html">http://bit.ly/2020-civil771-3</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                               
+                       
+              
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Basic concepts in traffic engineering</p>
+                    <p class="l2"> Traffic flow</p>
+                    <p class="l2"> Traffic flow theory</p>
+                    <p class="l2"> Capacity</p>
+                    <p class="l2"> Level of service</p>
+                    <p>	2. Types of traffic models</p>
+                    <p>	3. Introduction to the HCM 2016</p>
+                    <p>	3. How to use the HCM</p>
+                    
+                </section>                
+
+                <!-- ***************** Agenda ************************* -->
+
+                <section id="agenda" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    
+                    <h2>Agenda</h2>
+                    
+                        
+                     <p>1. Introduction to the HCM 2016</p>
+                    <p>	2. Types of road facilities and operating  conditions</p>
+                    <p>	3. HCM terminologies and parameters</p>
+                    <p>	4. Level of service (LOS) concept and  service measures</p>
+                    <p>	4. Base or ideal condition</p>
+                    <p>	5. HCM methodology for multilane highway</p>
+                    <p>	6. Level of analysis: operational, design and  planning</p>
+                    <p>	7. Factors affecting capacity: roadway, traffic  and control conditions and technology</p>
+                    <p> 8. Examples and problems</p>
+                    
+                    </div>
+                    
+                </section>   
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow'?</h3>
+                        
+                        <p>Traffic flow is the study of interactions between travellers  (including pedestrians, cyclists, drivers, and their vehicles) and infrastructure  (including highways, signage, and traffic control devices)</p>
+                        
+                        <p>with the aim of  understanding and developing an optimal transport network for an efficient  movement of people and goods with minimal traffic congestion. </p>
+                 
+                    </div>
+                         
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="theory" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow theory'?</h3>
+                        
+                        <p>Traffic flow theory involves the development of mathematical relationships  among the three primary elements of a traffic stream namely flow, density and  speed.</p>
+                        
+                        <p class="l2"> Read more:<br/><a href="https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html">https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html</a> </p>
+                            
+                        
+                        <p>These relationships help traffic engineers in planning, design and operation to determine:</p>
+                        
+                        <p class="l2">reasons for traffic congestion</p>
+                        <p class="l2">bottlenecks in the transport network</p>
+                        <p class="l2">delay experienced by travellers.</p>
+                        <p class="l2">changes in performance of road networks due to road improvement  measures.</p>
+                        
+                    </div>
+                         
+                </section>
+                
+              
+                       <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="flow" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is the 'flow' in flow-density-speed relationship?</h3>
+                        
+                        <p>The total number of vehicles passing a given point in a given time. Traffic flow is expressed as vehicles per hour (veh/hr) </p>
+                        
+                        \[\begin{aligned}
+					Flow(q) \quad q = \frac{N}{T} \ (veh/hr) \\
+					
+					\end{aligned} \]
+                        
+                        
+                        <p>Traffic flow data can be collected by:</p>
+                        
+                        <p class="l2">manual counting of vehicles</p>
+                        <p class="l2">traffic counting devices</p>
+                        <p class="l2">loop detectors</p>
+                        <p class="l2">big data e.g. mobile phone data, etc</p>
+                        
+                    </div>
+                         
+                </section>
+                
+                
+                  
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="density" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'density'?</h3>
+                        
+                    <p class="l2">The average number of vehicles that occupy one mile or one kilometer of road space (veh/km) </p>
+                        
+                        \[\begin{aligned}
+					Density(k) \quad k = \frac{N}{L} \ (veh/km) \\
+					\end{aligned} \]
+                        
+                    
+                        
+                     <p class="l2">   Space occupancy $O_s$: percentage length of highway occupied by vehicles</p>
+                        
+                        \[\begin{aligned}
+					Space Occupancy(O_s) \quad O_s = \frac{\sum_{i=1}^N{h_i}}{L} \\
+					\end{aligned} \]
+                        
+                       <p class="l2"> Space headway $\bar{s}$ distance between the same points of two consecutive vehicles following each other </p>
+                        
+                        
+                        \[\begin{aligned}
+					Spacing(\bar{s}) \quad \bar{s} = \frac{L}{N} = \frac{1}{k} \\
+					\end{aligned} \]
+                        
+                        
+                    </div>
+                         
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
+                        
+                    <p>There are two ways to measure speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        
+                          \[\begin{aligned}
+					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
+					\end{aligned} \]
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                    
+                 ***   Space Mean Speed = harmonic mean speed
+                        
+                    ***    Time-mean speed is associated with a single point along a roadway over time,
+whereas the space-mean speed is associated with a specified length of roadway.
+Use space-mean speeds when reducing and analyzing travel time data.
+                        
+                     </aside>  
+                    
+                </section>
+                
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed2" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10, find the time mean speed and space mean speed.</p>
+                        
+                         <p>There are two ways to measure speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        
+                          \[\begin{aligned}
+					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
+					\end{aligned} \]
+                        
+                    </div>
+                </section>
+                
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+             
+                <section id="speed3" >                     
+                   
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
+                        
+                     <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{50+40+30+20+10}{5} = 30 \ km/h  \\
+					\end{aligned} \]
+                        
+                         <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                          \[\begin{aligned}
+					v_s = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}} = \frac{5}{1/50+1/40+1/30+1/20+1/10} = 28.9 \ km/h \\
+					\end{aligned} \]
+                        
+                     
+                </section>
+            
+
+                  <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="diagram2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                   
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 1: Speed-density relationship</h3>
+                       
+                        <img class="centre" src="../figures/teaching/speed-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                       
+                        <p class="l2">Greenshields (1935) carried out one of the earliest  recorded works hypothesized a linear relationship between speed and density</p>
+                         
+                        \[\begin{aligned}
+					v = v_f \bigg( 1 - \frac{k}{k_j} \bigg) \\
+					\end{aligned} \]
+                        
+                    </div>
+                     <aside class="notes">
+		            <p class="l2">when density is zero, Speed will be maximum, referred to as the free flow speed</p>
+                         <p class="l2">Density is maximum, the speed will be zero.</p>
+	               </aside> 
+                </section>
+                
+                
+                   
+                      <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="diagram1" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
+                       
+                        <img class="centre" src="../figures/teaching/flow-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                        <p> Some characteristics of an ideal flow-density relationship</p>
+                        
+                     <p class="l2">When the density is zero, flow will also be zero,since there is no vehicles on the road.</p>
+                         <p class="l2">When the number of vehicles gradually increases the density as well as flow increases.</p>
+                        <p class="l2">Jam density: When more and more vehicles are added, it reaches a situation where vehicles can't move.</p>
+                       <p class="l2">Critical density: some density between zero density and jam density, when the flow is maximum.</p>
+                    </div>
+                       <aside class="notes">
+		          The point O refers to the case with zero density and zero flow. The point B refers to the maximum flow and the corresponding density is $k_{max}$. The point C refers to the maximum density $k_{jam}$ and the corresponding flow is zero. OA is the tangent drawn to the parabola at O, and the slope of the line OA gives the mean free flow speed, ie the speed with which a vehicle can travel when there is no flow. It can also be noted that points D and E correspond to same flow but has two different densities. Further, the slope of the line OD gives the mean speed at density $k_1$ and slope of the line OE will give mean speed at density $k_2$. Clearly the speed at density $k_1$ will be higher since there are less number of vehicles on the road.
+               
+	               </aside> 
+                </section>
+                
+                
+                        <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="greenshields" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
+                       
+                        
+                       
+                        <p class="l2"> More on Greenshields model of Flow-density</p>
+                        
+                     \[\begin{aligned}
+					q = k v = k v_f \bigg( 1 - \frac{k}{k_j} \bigg) = v_f \bigg( k - \frac{k^2}{k_j} \bigg)  \\
+					\end{aligned} \]
+                       
+                       <img class="right" src="../figures/teaching/flow-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                       <p class="l2">Note in the figure that the maximum flow rate $q_m$ represents the capacity of the highway. The traffic density that corresponds to this capacity flow rate is critical density $k_m$, and the  corresponding optimum speed is $v_m$</p>
+                       
+                       <p class="l2">They can be estimated by differentiating the above equation and then equating to zero as flow is maximum flow when</p>
+                       
+                        \[\begin{aligned}
+					\frac{dq}{dk} = 0 \\
+					\end{aligned} \]
+                       
+
+                    </div>
+                       <aside class="notes">
+		        
+	               </aside> 
+                </section>
+                
+                
+                          <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="greenshields2" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                   <div class="whitebackground2">
+                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
+                       
+                        <p class="l2"> Let's do some maths!</p>
+                   
+                      
+                        \[\begin{aligned}
+					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \\
+					\end{aligned} \]
+                       
+ 
+                       <p class="l2">As the free-flow speed $v_f$ is not equal to zero so: $k_m = \frac{k_j}{2}$</p>
+                       
+                       <p class="l2">Substituting km into speed density relationship at maximum flow condition gives: </p>
+                       
+                        \[\begin{aligned}
+					v_m = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = \frac{v_f}{2} \\
+					\end{aligned} \]
+                       
+                        \[\begin{aligned}
+					q_m = v_f k_m = \frac{v_f k_j}{4} \\
+					\end{aligned} \]
+                       
+                    </div>
+                       <aside class="notes">
+		        
+	               </aside> 
+                </section>
+                
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+               <section id="diagram3" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow 3: Speed-flow relationship</h3>
+                       
+                        <img class="right" src="../figures/teaching/speed-flow.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                    
+                     <p class="l2">The linear speed-density model can be rearranged to the following speed-flow model:</p>
+                         
+                        \[\begin{aligned}
+					k = k_j \bigg( 1 - \frac{v}{v_f} \bigg) \\
+					\end{aligned} \]
+                       
+                        \[\begin{aligned}
+					q = k v = v k_j \bigg( 1 - \frac{v}{v_f} \bigg) = k_j \bigg( 1 - \frac{v^2}{v_f} \bigg) \\
+					\end{aligned} \]
+                       
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		          <p class="l2">The flow is zero either because there is no vehicles or there are too many vehicles so that they cannot move.</p>
+                         <p class="l2">At maximum flow, the speed will be in between zero and free flow speed.</p>
+                   </aside>                    
+                    
+                </section>
+                
+                
+                  <!-- ******************************************************
+                *********************** diagram4 ***********************
+                ************************************************************ -->
+
+               <section id="diagram4" >               
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
+                       <img class="centre" src="../figures/teaching/trafficmodel-other.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         Other macroscopic traffic models
+	               </aside>                    
+                    
+                </section>
+                
+                
+                <!-- ******************************************************
+                *********************** diagram4 ***********************
+                ************************************************************ -->
+
+               <section id="diagram4" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
+                       <img class="centre" src="../figures/teaching/fundamental.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         THe same relationship can be found with some noise
+	               </aside>                    
+                    
+                </section>
+     
+                  <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="diagram5" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
+                       <img class="centre" src="../figures/teaching/fundamental-3d.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="diagram6" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
+                       <img class="centre" src="../figures/teaching/fundamental-key.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+           
+                    <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models" data-background-image="../figures/Backgrounds/data.jpg">                 
+                    
+                   <div class="whitebackground2"> 
+                   <h3>Traffic modelling</h3>
+                     <p>A mathematical representation of real-world traffic, usually, but not restricted to, road traffic.</p>
+                    <p>Traffic models can help to objectively answer important questions, such as:</p>   
+                       <p class="l2">What is the potential impact of land use development and/or transport infrastructure on traffic patterns ?</p>   
+                       <p class="l2">What will be the levels of congestion on the road network ?</p>   
+                       <p class="l2">What measures may be appropriate to mitigate potential adverse effects ?</p>   
+                       <p class="l2">How can infrastructure projects and packages be designed to maximise benefits ?</p>   
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+    
+                   <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Classes of traffic models</h3>
+                       <img class="centre" src="../figures/teaching/traffic-models.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
+                         <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-macro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="macro">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Macroscopic models</h3>
+                        
+                       <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
+                        
+                        <p class="l2">describe the system entities, their activities and interactions at a low level of details</p>
+                        
+                        <p>are efficient and so applicable to large network and real-time simulation</p>
+                        
+                    </div>
+                    </section>
+                
+                    
+                         <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-micro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="micro">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Microscopic models</h3>
+                        
+                          <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
+                        
+                        <p class="l2">describe both the system entities and their interactions at a high level of  detail.</p>
+                        
+                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
+                        
+                    </div>
+                </section>
+                
+            
+               
+                
+                    <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-meso.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="meso">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Mesoscopic models</h3>
+                        
+                        <p>Individual vehicles may be presented but not as details as microscopic models</p>
+                        
+                        <p class="l2">less computationally expensive to run, but more detailed than macroscopic models</p>
+                        
+                        <p>Capable of modelling the traffic on the large scale</p>
+                        
+                    </div>
+                
+                </section>
+                
+                
+                
+                
+                    <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="capacity" data-background-image="../figures/Backgrounds/car-park.jpg">
+                   <div class="whitebackground2">
+                   <h3>What is 'Capacity'?</h3>
+     
+		            <p>From dictionary: "the maximum amount that something can contain."</p>
+                       
+                    <p class="l2">The capacity of a car park is obviously the maximum number of cars. It can nevertheless be measured relatively  easily. However, the capacity of a particular section of road is not as easily  determined as it depends upon the speed of the traffic and other factors.</p>
+                   
+                   <p class="l2">Vehicle capacity is the maximum number of vehicles that can pass a given point during a specified period under prevailing roadway, traffic, and control conditions. This assumes that there is no influence from downstream traffic operation, such as queues backing into the analysis point.</p>
+                  </div>
+                    
+                </section>
+                
+               
+                      <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="prob" data-background-image="../figures/teaching/HCM.png">                    
+                    <div class="whitebackground2 fragment">
+                        <h3>Highway Capacity Manual</h3>
+                        
+                        <p>The U.S. Highway Capacity Manual, or HCM, is the primary reference for traffic operational analysis, methodologies, and level of service (LOS) concepts in the United States, as well as many other countries. </p>
+                            
+                          <p>  The HCM is a collection of concepts and methods that guide analysts on how to evaluate a particular type of intersection or roadway segment, based on what can be extensive national or international datasets of operational performance. </p>
+
+                        <p class="l2">Define performance measures and describe survey methods for key traffic characteristics.</p>
+                        
+                       <p class="l2">Provide methodologies for estimating and predicting performance measures.</p>
+                        <p class="l2">Explain methodologies at a level of detail such that readers can understand the factors that have an effect on multimodal operation.</p>
+                        
+                    </div>
+                      </section>
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="prob1" data-background-image="../figures/teaching/HCM.png">                    
+                    <div class="whitebackground2">
+                        <h3>Who will need Highway Capacity Manual ?</h3>
+                        
+                        <p>(a) engineers who work inthe field of traffic
+                            operations or highway geometric design and </p>
+                            
+                          <p>(b) transportation planners who
+                            work inthe field of transportation system management. </p>
+                        <h3>How to access the Highway Capacity Manual 2016 (6th edition) ?</h3>
+                         <p>  <a href="https://www.library.auckland.ac.nz/">https://www.library.auckland.ac.nz/</a></p>
+                        
+                        
+                    </div>
+                      </section>
+                
+               
+                
+
+           <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Introduction to the HCM</h3>
+                        
+                        <p>The first edition in 1950. It quantifies the concept of capacity for transportation facilities</p>
+                        
+                        <p>Three types of highway capacity were defined:</p>
+                        <p class="l2">Practical capacity - reasonable operating conditions </p>
+                        <p class="l2">Possible capacity - maximum, under prevailing conditions</p>
+                        <p class="l2">Ideal capacity - maximum, under ideal conditions.</p>
+
+                        <p> The second edition in 1965, introduced the concept of level of  service (LOS) as a means to quantify the operational quality provided by the  highway/street to the drivers and passengers.</p>
+                        
+                        <p> The latest fifth edition HCM 2016 is intended to encourage analysts and decision  makers to consider all roadway users, as well as a broader range of performance measures, when they assess transportation facilities’ performance.</p>
+                 
+                    </div>
+                         
+                </section>
+                
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM1" data-background-image="../figures/Backgrounds/highway.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>HCM 2010 (5th edition)</h3>
+                        
+                        <p>Integrated multimodal approach is introduced to analyse and evaluate  urban streets from the point of view of automobile drivers, transit passengers,  bicyclists, and pedestrians. For the first time, the effects of cars on bicyclists  and pedestrians are taken into account.</p>
+                        <p>Active traffic management is discussed in relation to both demand and  capacity.</p>
+                        <p>Example applications of its procedures are included to assist users and  software developers in understanding the subtleties of the methodologies.</p>
+                        <p>Tools for generalized service volume tables are provided to assist planners  in quickly sizing future facilities.</p>
+                     
+                    </div>
+                         
+                </section>
+                
+                
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM2" data-background-image="../figures/Backgrounds/highway.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>HCM 2016 (6th edition)</h3>
+                        
+                       
+                  <p>Analysis methodologies for evaluating travel time reliability. These new 
+                tools consider the distribution of travel times over a long period (for 
+                example, an entire year), instead of evaluating a single analysis period, as 
+                was done in previous editions of the HCM.  </p>
+                  <p>Tools for analyzing the operational effects of active traffic and demand 
+                management. Strategies include managed lane facilities and freeway 
+                management policies.  </p>
+                  <p>Enhanced methods for analyzing pedestrian, bicycle, and transit 
+                facilities, as well as their interactions with motor vehicles.  </p> 
+                  <p>New tools for the analysis of alternative interchanges and intersections, 
+                such as diverging diamond interchanges and restricted crossing U-turn 
+                intersections.  </p>
+                  <p>Guidance on the use of simulation and other tools in conjunction with 
+                HCM analyses. The HCM discusses specific cases that may require 
+                alternative tools and simulation and explains how these can assist in 
+                providing performance measures not available from HCM methods or in 
+                analyzing highway designs not addressed within the HCM’s performance 
+                measurement framework.   </p>
+                    </div>
+                         
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM3" data-background-image="../figures/Backgrounds/highway.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Purpose and objectives of the HCM</h3>
+                        
+                        <p>The purpose of the HCM is to provide a set of methodologies, and associated  application procedures, for evaluating the multimodal performance of highway and  street facilities in terms of operational measures and one or more quality-of-service  indicators.</p>
+                        
+                        <p>The objectives of the HCM are to: </p>
+                        <p class="l2"> 1.Define performance measures and describe survey methods for key traffic  characteristics </p>
+                        <p class="l2">2.Provide methodologies for estimating and predicting performance measures, and</p>
+                        <p class="l2">3.Explain methodologies at a level of detail that allows readers to understand the  factors affecting multimodal operation.</p>
+                    </div>
+                </section>
+ 
+                <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM4" data-background-image="../figures/teaching/HCM.png">                        
+                    <div class="whitebackground2">
+                        <h3>Intended use of the HCM</h3>
+                        
+                        <p>The HCM is intended to be used primarily for the analysis areas listed below, to  the extent that they are supported by the individual analysis methodologies.</p>
+                     
+                        <p class="l2"> 1.Level of analysis: operations, design, preliminary engineering, and planning.</p>
+                        <p class="l2">2.Travel modes: automobile (and other motorized vehicles), pedestrian, and  bicycle, plus transit when it is part of a multimodal urban street facility.</p>
+                        <p class="l2">3.Spatial coverage: points, segments, and facilities.</p>
+                        <p class= "l2">4.Temporal coverage: under-saturated and over-saturated facilities </p>
+                        
+                    </div>
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM5" data-background-image="../figures/teaching/HCM.png">                       
+                    <div class="whitebackground2">
+                        <h3>What is included in the HCM?</h3>
+                        
+                        <p>To keep the HCM 2016 at a manageable size, divided into four volumes :</p>
+                     
+                        <p class="l2"> Volume 1: Concepts</p>
+                        <p class="l2">Volume 2: Uninterrupted Flow (10-13.Freeway, 14.Multilane Highway, 15.Two-Lane Highway</p>
+                        <p class="l2">Volume 3: Interrupted Flow (16-18.Urban Street, 19.Signalized Intersections,  20.TWSC Intersections, 21.AWSC Intersections, 22.Roundabouts, 23.  Interchange Ramp Terminals, 24.Off-Street Pedestrian and Bicycle  Facilities)
+
+                        <p class= "l2">Volume 4: Application Guide (only online version) (25-35.Methodological Detail  Supplemental, 36. Concept Supplemental, 37.Active Traffic Demand Management) </p>
+                        
+                    </div>
+                </section>
+                
+                
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="HCM6" data-background-image="../figures/teaching/HCM.png">                       
+                    <div class="whitebackground2">
+                        <h3>HCM on an international level</h3>
+                        
+                        <p> Capacity and quality-of-service analyses have generated interest on an international scale.  </p>
+                        
+                   <p> Although there is considerable value in the general methods presented, their use 
+                    outside of North America requires an emphasis on calibration of the equations 
+                    and procedures to local conditions 
+                    </p>
+
+                        <p class="l2"> HCM 2010 and 2016 are available only in Imperial units (ft/mile) contrary to HCM 2000, which was available in Metric version as well.</p>
+                       
+                    </div>
+                </section>
+                
+                  
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="facility1" data-background-image="../figures/Backgrounds/auckland-background.jpg">                       
+                    <div class="whitebackground2">
+                        <h3>Road facility types</h3>
+                        
+                        <p> Uninterrupted-Flow Facilities</p>
+                         <p class="l2">These facilities have no fixed elements such as traffic signals that cause delay or  interruption external to the traffic stream.</p>
+                        <p class="l2">Traffic flow conditions are the result of interactions among vehicles in the traffic  stream, and between vehicles and the geometric and environmental  characteristics of the roadway.</p>
+                        <p class="l2">“Uninterrupted flow” describes the type of facility, not the quality of traffic flow  at any given time.
+                         
+                            
+                    </div>
+                </section>
+                
+                
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="facility2" data-background-image="../figures/Backgrounds/skylines-night1.jpg">                       
+                    <div class="whitebackground2">
+                        <h3>Road facility types</h3>
+                            
+                             <p> Interrupted-Flow Facilities</p>
+                         <p class="l2">These facilities have fixed elements that cause periodic interruptions to the traffic  stream, such as traffic signals and stop signs. Urban streets are the most common form of this kind of facility.</p>
+                        <p class="l2">Exclusive pedestrian and bicycle facilities are also treated as interrupted flow,  since they may occasionally intersect other streets.</p>
+                        <p class="l2">Traffic flow conditions are the result not only of vehicle interactions and the  facility’s geometric characteristics but also of the traffic control used at intersections and the frequency of access points to the facility.
+                            
+                    </div>
+                </section>
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="facility3" data-background-image="../figures/Backgrounds/auckland-traffic-live.png">                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Operating conditions</h3>
+                            
+                             <p> Under-Saturated Flow:</p>
+                         <p class="l2">(a) the arrival flow rate is lower than the capacity of a point or segment</p>
+                        <p class="l2">(b) no residual queue remains from a prior breakdown of the facility, and </p>
+                        <p class="l2">(c) traffic flow is unaffected by downstream conditions.
+
+                            <p >Uninterrupted flow facility: travel speeds within 10% to 20% below the free-flow speed</p>
+                            <p >Interrupted flow facility: travel speed are typically 30% to 65% below the facility’s free-flow  speed in under-saturated conditions</p>
+
+                             <p >Link to the live data: <a href="https://www.tomtom.com/en_gb/traffic-index/auckland-traffic/">https://www.tomtom.com/en_gb/traffic-index/auckland-traffic/</a></p>
+                    </div>
+                </section>
+                
+                
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="facility4" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Operating conditions</h3>
+                            
+                             <p> Over-saturated Flow:</p>
+                         <p class="l2">(a) the arrival flow rate exceeds the capacity of a point or segment</p>
+                        <p class="l2">(b) a queue created from a prior breakdown of a facility has not yet dissipated, or </p>
+                        <p class="l2">(c) traffic flow is affected by downstream conditions.
+
+                            <p >For uninterrupted-flow facilities, over-saturated conditions result from a  bottleneck on the facility. During periods of over-saturation, queues form and  extend backward from the bottleneck point. Traffic speeds and flows drop  significantly as a result of turbulence, and they can vary considerably, depending  on the severity of the bottleneck.</p>
+                           
+                    </div>
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="facility5" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Operating conditions</h3>
+                            
+                             <p> Over-saturated Flow:</p>
+                         <p class="l2">Traffic needs somewhere to discharge to: Over-saturated conditions persists with in the queue until the queue dissipates  after a period of time during which demand flows are less than the capacity of the  bottleneck, allowing the queue to discharge completely.</p>
+                        
+                        <p class="l2"> If an intersection approach or ramp meter cannot accommodate all of its demand,  queues may back into upstream intersections, adversely affecting their  performance. Similarly, if an interchange ramp terminal cannot accommodate all  of its demand, queues may back onto the motorway, adversely affecting its  performance.</p>
+                       
+                           
+                    </div>
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="facility6" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>So what if I can break through? </h3>
+                            
+                             <p> Queue discharge flow</p>
+                         <p class="l2">Traffic is not just about under and over-saturated flow.</p>
+                        
+                        <p class="l2"> Queue discharge flow represents traffic flow that has  just passed through a bottleneck and, in the absence of another bottleneck  downstream, is accelerating back to the facility’s free-flow speed. </p>
+                           
+                    </div>
+                </section>
+                
+                
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Flow parameters </h3>
+                            
+                             <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
+                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but  volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
+                        
+                        <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
+                        
+                        <p class="l2">Peak Hourly Volume (PHV) - PHV is the maximum flow observed over any 1 hour period. In urban areas where tidal flows are common, it is usual to have two PHV’s, one for the A.M. and other for P.M. In rural areas it is sufficient to use only one PHV.</p>
+                           
+                    </div>
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) </h3>
+                            
+                             <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
+                        
+                          \[\begin{aligned}
+					PHF = \frac{V}{V_{15m} \times 4} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                        
+                         <p class="l2">$V$ = Total hourly volume</p>
+                        
+                        <p class="l2"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
+                        
+                        <p class="l2">When PHF is known, a peak flow rate for a peak 15 minute within the analysis hour can be calculated: </p>
+                        
+                         \[\begin{aligned}
+					v = \frac{V}{PHF} \\
+					\end{aligned} \]
+                           
+                    </div>
+                </section>
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param3" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) : Examples</h3>
+                            
+                             <p>  Example 1: The 15-minute vehicle volumes are relatively constant:
+                        V15 = 190, V30 = 200, V45 = 190, V60 = 190. Calculate PHF:
+                        
+                        </p>
+                        
+                          \[\begin{aligned}
+					PHF = (190 + 200 + 190 + 190) / [(200 x 4)] = 0.96\\
+					\end{aligned} \]
+                        
+                        <p>Example 2: The 15-minute vehicle volumes are more variable: V15 = 175, V30 = 200, V45 = 150, V60 = 125. Calculate PHF:</p>
+                        
+                        \[\begin{aligned}
+					PHF = (175 + 200 + 150 + 125) / [(200 x 4)] = 0.81\\
+					\end{aligned} \]
+                           
+                    </div>
+                </section>
+                
+                      
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed1" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
+                        
+                    <p>There are two ways to measure speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        
+                          \[\begin{aligned}
+					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                    
+                 ***   Space Mean Speed = harmonic mean speed
+                        
+                    ***    Time-mean speed is associated with a single point along a roadway over time,
+                        whereas the space-mean speed is associated with a specified length of roadway.
+                        Use space-mean speeds when reducing and analyzing travel time data.
+                        
+                     </aside>  
+                    
+                </section>
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed2" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>Speed from a spatial point of view</h3>
+                        
+                    <p>Spot speed: the instantaneous speed of a vehicle passing a
+                        point on the roadway. Data represent the speed
+                        characteristics of vehicles passing the site. </p>
+                        
+                        <p class="l2"> Most of the speed cameras measure spot speeds!</p>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+             <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed3" data-background-image="../figures/teaching/spot-speed.png" data-background-size="1200px">                          
+                    <div class="whitebackground fragment">
+                        <h3>Typical use of spot speed</h3>
+                        
+                        <p class="l2">Speed limit enforcements </p>
+                        
+                        <p class="l2">Traffic control planning - speed limits, safe speeds at curves, location for traffic signs, etc. </p>
+                        
+                        <p class="l2">Geometric design - road alignments, stopping sight distance</p>
+                        <p class="l2">Accident analysis</p>
+                        
+                        <p>Measurements: Enoscope, Pneumatic tubes, Video recordings, Speed gun/camera </p>
+                        
+                    </div>
+                    
+                </section>
+                
+                
+                <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed4" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>Journey vs Running speed</h3>
+                        
+                    <p>Journey speed is the distance divided by total journey time.
+                        Total journey time includes all delays due to traffic.</p>
+                        
+                        <p > Running speed is the distance divided by running time, i.e.
+                        total journey time minus delays. (Running time is the
+                        time that the vehicle is actually in motion.)</p>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed5" >                     
+                    <div class="whitebackground2">
+                        <h3>Example 3: Estimate journey vs running speeds</h3>
+                        
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/journey-running.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                        
+                   </div>
+                    
+                </section>
+                
+                   
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="density1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Density</h3>
+                            
+                             <p> Density is the number of vehicles occupying a given length of a lane or roadway at  a particular instant.  </p>
+                        
+                       <p class="l2"> Measuring density directly in the field is difficult. For under-saturated traffic conditions density (D) can be estimated as follows:</p>
+       
+                          \[\begin{aligned}
+					D = \frac{v_p}{S} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                         <p class="l2">$v_p$ = flow rate (veh/h)</p>
+                        
+                        <p class="l2"> $S$ =  average travel speed (km/h) </p>
+                        
+                        <p class="l2">Density is a critical parameter for uninterrupted-flow facilities because it  characterizes the quality of traffic operations. It describes the proximity of vehicles to one another and reflects the freedom to manoeuvre within the traffic stream.</p>
+                       
+                    </div>
+                       
+                  <aside class="notes">
+		              For the computations in HCM, density is averaged over time  and is usually expressed as veh/km or passenger car unit per km. 
+                      Measuring density directly in the field is difficult: it requires a vantage point for photographing, videotaping, or observing significant lengths of highway. Density  can be computed, however, from the average travel speed (S) and flow rate, which  are measured more easily.
+                      
+	               </aside>
+                    
+                </section>
+                
+                
+                
+           <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams: Quality-of-service</h3>
+
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+		            <p class="l2"> Source: NZIER (2017),Benefits from Auckland road decongestion </p>
+                    <p class="l2"> Quality-of-service: Describes how well a transportation facility or service operates  from the traveller's perspective.</p>
+                   <p class="l2"> There are many factors that may influence traveller perceived quality-of-service</p>
+                    
+                </section>
+                
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="LOS1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Quality-of-service: The Level-of-Service concept</h3>
+                            
+                             <p> In HCM 2016, Level of Service (LOS) is a quantitative stratification of a performance measure  or measures that represent quality of service. </p>
+                                 
+                            <p>The LOS concept  facilitates the presentation of results, through the use of a familiar A (best) to F (worst) scale.</p>
+                       
+                        <p> Roadways are not typically  designed to provide LOS A conditions during peak periods, why? </p>
+                        
+                    </div>
+                       
+                  <aside class="notes">
+		              For cost, environmental impact, and other reasons, roadways are not typically  designed to provide LOS A conditions during peak periods, but rather some lower  LOS that reflects a balance between individual traveller's desires and society’s  desires and financial resources. Nevertheless, during low-volume period of the  day, a system element may operate at LOS A.
+	               </aside>
+                    
+                </section>
+                
+                  <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="LOS2" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>LOS in HCM 2016: A and B</h3>
+
+                <img class="centre" src="../figures/teaching/LOS-AB.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   </div>
+                </section>
+                
+                       <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="LOS3" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>LOS in HCM 2016: C and D</h3>
+
+                <img class="centre" src="../figures/teaching/LOS-CD.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   </div>
+                </section>
+                
+                       <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="LOS4" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>LOS in HCM 2016: E and F</h3>
+
+                <img class="centre" src="../figures/teaching/LOS-EF.png"
+                            style="width:600px;"
+                         alt="project-1" />
+              
+                   </div>
+                    
+                </section>
+                
+                
+                
+                   <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+                
+               <section id="LOS5" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>LOS in HCM 2016</h3>
+
+                   <p>HCM 2016 contains more detailed  descriptions of the levels of service as  defined for each facility type.</p>
+                   
+                    <img class="centre" src="../figures/teaching/LOS-speed-flow.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                       
+                   </div>
+                     <aside class="notes">
+		     
+                     Six levels of service as illustrated in the  figure below, are defined for each type of  facility for which analysis procedures are  available. They are given letter designations,  from A to F, with level-of-service A  representing the best operating conditions  and level-of-service F the worst.
+	               </aside>
+                    
+                </section>
+                
+                
+                 <!-- ******* Auckland congestion  *********** -->
+                
+                
+               <section id="servicemeasure1" data-background-image="../figures/Backgrounds/grass.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Service measures</h3>
+
+               <p>Service measures are performance measures used to define LOS for 
+                   transportation system elements.  </p>
+
+                   	<p class="l2"> should reflect travellers' perceptions </p>
+                    <p class="l2"> should be useful to operating agencies</p>
+                   <p class="l2"> should be directly measurable in the field</p>
+                   <p class="l2"> should be estimable given a set of known or forecast conditions</p>
+                   </div>
+       
+                     <aside class="notes">
+		               Neither LOS nor any other single performance measure tells the full story of  roadway performance. Depending on the particulars of a given analysis such as  queue lengths, demand-to-capacity ratios, average travel speeds, indicators of  safety, quantities of persons and vehicles served, and other performance measures  may be just as or even more important to consider. For this reason, the HCM  provides method for estimating a variety of useful roadway operations  performance measures, and not just methods for determining LOS.
+                         
+                       A facility’s capacity to serve automobile mode reflects the effects of all motorized  vehicles using the facility, including trucks, RVs, motorcycles, and buses. In  contrast, LOS for the automobile mode reflects the perspective of automobile  drivers and passengers, but not necessarily the perspective of other motorized  vehicles users. Although automobiles are usually the dominant motorized vehicle  type on roadways, analysts should use care in interpreting LOS results in special  cases, such as intermodal-terminal access routes, where truck may dominate.
+
+
+	               </aside>
+                    
+                </section>
+                
+                
+                <!-- ******* Auckland congestion  *********** -->
+                <section id="servicemeasure2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Service measures: For motorways and multilane highways</h3>
+
+               <p>Although travel speed is a major concern of drivers that relates to service quality, freedom to manoeuvre with in  the traffic stream and proximity to other vehicles are equally noticeable concerns.</p>
+                <p> These qualities are related to the density of the traffic stream. Unlike speed,  density increases as flow increases up to capacity, resulting in a service measure  that is both perceivable by motorists and is sensitive to a broad range of flows.</p>
+
+                   	<p class="l2"> Density is used as the service measure for motorway facilities, basic segments,  ramp junctions, weaving segments, and multilane highway. Density is typically  measured in pc/km/ln. </p>
+                    </div>
+                   <aside class="notes">
+		            
+	               </aside>
+                    
+                </section>
+                
+                
+                <!-- ******* Auckland congestion  *********** -->
+                <section id="servicemeasure3" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Service measures: two-lane highways</h3>
+
+                    
+                <p> On two-lane highways, unlike other types of uninterrupted flow facilities, normal traffic flow in one direction influences flow in the other direction. Motorists must adjust their travel speeds as volume increase and the ability to pass declines.</p>
+
+                   	<p class="l2">  Three service measures are used for two-lane highways:  percent time-spent-following, average travel speed, and percent free-flow speed.</p>
+                    </div>
+                   <aside class="notes">
+		            
+	               </aside>
+                    
+                </section>            
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="servicemeasure4" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Service measures</h3>
+            
+                <p>  Each level of service represents a range of conditions, as defined by a range in the parameter(s) given below. Thus, level of service is not a discrete condition, but  rather a range of conditions for which boundaries are established. The table below  presents the service measures (namely, performance measures which can be  estimated quantitatively) to determine the LOS for different types of facilities. </p>
+
+                   	 <img class="centre" src="../figures/teaching/service-measures.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                    
+                    </div>
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>            
+                
+                
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="highwaycapacity1" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>So now what is 'highway capacity'?</h3>
+            
+                <p>  In general, the capacity of a road facility is defined as the maximum sustainable hourly flow rate at which persons or vehicles reasonable can be expected to  traverse a point or a uniform segment of a lane or roadway during a given time  period under prevailing roadway, environmental, traffic, and control conditions.</p>
+                    
+                    <p>What is a 'base' or 'ideal' condition: In principle, under base or ideal conditions, full speed and capacity can be  achieved. </p>
+                    </div>
+                  
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>            
+                              
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="highwaycapacity2" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Base or ideal condition</h3>
+            
+                <p class="l2"> Level terrain, with grades not greater than 2%</p>
+                <p class="l2"> 3.6 m lane widths</p>
+                <p class="l2"> 1.8 m lateral clearance (on both sides) between the edge of the travel lanes and  the nearest obstructions or objects at the roadside and in the median</p>
+                <p class="l2"> 100 km/h design speed</p>
+                <p class="l2"> Divided highway</p>
+                <p class="l2"> No access points along the roadway</p>
+                <p class="l2"> Traffic stream composed of all passenger cars (no heavy vehicle)</p>
+                <p class="l2"> Driver population composed of regular users</p>
+                    
+                    </div>
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>                           
+                
+                                
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="highwaycapacity3" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Base or ideal condition</h3>
+            
+                <p >  In many capacity analyses, prevailing conditions are not ideal, and computations of  capacity, service flow rate, or level of service must include adjustments to reflect this. Prevailing conditions are generally categorised as roadway, traffic, or control  conditions.</p>
+                    
+                    
+                <p > Capacities under base or ideal conditions, which are used as a basis for analysis,  are as follows:</p>
+                <p class="l2"> Multi-lane limited access roadways: 2200 pcu/hr/lane.</p>
+                <p class="l2"> Freeway/motorway: 2400 pcu/hr/lane.</p>
+                <p class="l2"> Two-lane, two-way rural highways: 3200 pcu/hr/lane.</p>
+                   
+                    </div>
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>          
+                
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method1" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Why do we need to estimate core parameters for multilane highways</h3>
+            
+                <p > For multilane Highways, HCM addresses capacity and LOS  analysis for uninterrupted-flow segments of surface multilane highways. In  general, uninterrupted flow may exist on a multilane highway if there are 2 mile  (approx. 3.2 km) or more between traffic signals. Where signals are more closely  space, the facility should be analysed as an urban street.</p>
+
+                <p class="l2"> Many multilane highways will have periodic signalized intersection, even if the  average signal spacing is well over 2 mile. In such cases, the multilane highway  segments that are more than 2 mile away from any signalized intersections are  analysed by using the methodology of this chapter. </p>
+                    
+                <p class="l2"> Multilane highways generally have four to six lanes (in both directions) with  posted speed limits between 50 to 100 km/h. These highways may be divided by  one or various median types, may be undivided (with only a centreline separating  the directions of flow), or may have a two way right-turn lane. </p>
+                    </div>
+                     <aside class="notes">
+            
+	               </aside>
+                    
+                </section>                    
+                
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="method2" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>HCM methodology for multilane highways</h3>
+            
+                <p > This methodology is used to analyse the capacity, LOS, lane requirements, and  impacts of traffic and design features on uninterrupted flow segments of rural and  suburban multilane highways. </p>
+                   <p >  Limitations of Methodology: The methodology presented in this chapter does not  take into account the following conditions:
+                    </p>
+
+                <p class="l2"> The negative impacts of poor weather conditions, traffic accidents or incidents,  railroad crossings, or construction operations; </p>
+                <p class="l2">Interference cause by parking on the shoulders of the multilane highway; </p>
+                <p class="l2">The effect of lane drops and lane additions at the beginning or end of multilane  highway segments; </p>
+                <p class="l2">Possible queuing impacts when a multilane highway segment transitions to a  two-lane highway segment; </p>
+                <p class="l2">Differences between various types of median barriers and the difference  between impacts of a median barrier and a two way right turn lane; </p>
+                <p class="l2">Free-flow speed (FFS) below 70 km/h or higher than 100 km/h; </p>
+                <p class="l2">Significant presence of on-street parking; </p>
+                <p class="l2">Presence of bus stops that have significant use; and </p>
+                <p class="l2">Significant pedestrian activity.</p>
+                    </div>
+                     <aside class="notes">
+                The last three factors are more  representative of an urban or suburban  arterial, but they may also exist on  facilities with more than 2 mile  between traffic signals. When the  factors are present on uninterrupted  flow segments of multilane highways,  the methodology does not deal with  their impact on flow. In addition, this  methodology cannot be applied to  highways with a total of three lanes in  both directions, which should be  analysed as two-lane highways with  periodic passing lanes.
+
+	               </aside>
+                    
+                </section>                   
+                
+             
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method3" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   
+                <h3>  Motorised vehicle core methodology </h3>
+
+                   	 <p>Performance Measures 
+                         The core motorized vehicle methodology generates the following 
+                         performance measures: </p>
+
+                <p class="l2">Capacity,  </p>
+                <p class="l2">Free-flow speed (FFS) </p>
+                <p class="l2">Demand- and volume-to-capacity ratios,</p>
+                <p class="l2">Space mean speed,</p>
+                       <p class="l2">Average density, and </p>
+                <p class="l2">Motorized vehicle LOS. </p>
+                  
+                    </div>
+                     <aside class="notes">
+                        This chapter’s methodology can be used to analyze the capacity, LOS, and lane requirements of basic freeway or multilane highway segments and the effects of design features on their performance. 
+
+	               </aside>
+                    
+                </section>  
+
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method4" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 fragment">
+                <h3>  Description of each step </h3>
+
+                   <p>Step 1: Input Data</p>
+                    <p class="l2">For typical operational analysis, the analyst must specify (with either site-specific  or default values) demand volume; number and width of lanes; left-side and median  lateral clearance; type of median; roadside access points per km; percent of heavy  vehicles, such as trucks, buses and RVs; terrain; and driver population factor.</p>
+        
+                    
+                <p>Step 2: Computer FFS</p>
+                     <p class="l2"> Measure FFS in the field: Only low to moderate traffic conditions. </p>
+                       <p class="l2">Field Measurement: FFS is mean speed of passenger cars measured during periods  of low to moderate flow (up to 1,400 pc/h/ln).</p> 
+                       <p class="l2">For a specific multilane highway  segment, speeds are virtually constant in this range of flow rates. If the FFS can be  field measure, that determination is preferable. If FFS is measured directly, no  adjustment are applied to the measured value.</p>
+                    </div>
+                   <aside class="notes">
+            
+	               </aside>
+                    
+                </section>  
+                
+                     <!-- ******* Auckland congestion  *********** -->
+                <section id="method5" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 fragment">
+                <h3>  Description of each step </h3>
+        
+                <p>  Step 2: Computer FFS (2): It is not possible to make field measurements of FFS for future facilities, and field measurement may not be possible or practical for all existing ones. In such  cases, the segment’s FFS may be estimated by using the following equation, which  is based on the physical characteristics of the segment under study:</p>
+                       
+                       
+                          \[\begin{aligned}
+					FFS = BFFS - f_{LW} - f_{LC} - f_M - f_A \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                         <p class="l2">base FFS of multilane highway segment, km/h)</p>
+                        
+                        <p class="l2"> $f_{LW}$ = adjustment for lane width, km/h  </p>
+                        
+                        <p class="l2">$f_{LC}$ = adjustment for total lateral clearance (TLC), km/h</p>
+                       <p class="l2"> $f_{M}$ = adjustment for median type, km/h  </p>
+                        
+                        <p class="l2">$f_{A} = = adjustment for access point density, km/h</p>
+                       
+                       
+                    </div>
+                   <aside class="notes">
+            
+	               </aside>
+                    
+                </section>  
+                
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method6" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 ">
+                <h3>  Description of each step </h3>
+
+               
+                <p>  Step 2: Computer FFS (3): Adjustments for Lane width</p>
+                       
+                        <img class="centre" src="../figures/teaching/lane-width.png"
+                            style="width:400px;"
+                         alt="project-1" />
+                       
+                    </div>
+                   <aside class="notes">
+            
+	               </aside>
+                    
+                </section>                  
+                    
+                     <!-- ******* Auckland congestion  *********** -->
+                <section id="method7" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 ">
+                <h3>  Description of each step </h3>
+
+                <p>  Step 2: Computer FFS (4): Adjustments for Lateral Clearance</p>
+                       
+                       <p class = "l2"> Distance to fixed objects</p>
+                       
+                          \[\begin{aligned}
+					TLC = LC_L + LC_R \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                         <p class="l2">TLC = total lateral clearance, m</p>
+                        
+                        <p class="l2"> $LC_L$ = lateral clearance on the left side, m </p>
+                        
+                        <p class="l2">$LC_R$ = lateral clearance on the right side, m</p>
+                       <p class="l2"> Note: For undivided highways, the lateral clearance in the centre is always 1.8m -  the median adjustment takes into account the lack of a median.</p>
+                        
+                        <img class="centre" src="../figures/teaching/TLC.png"
+                            style="width:400px;"
+                         alt="project-1" />
+                       
+                    </div>
+                   <aside class="notes">
+            
+	               </aside>
+                    
+                </section>  
+                
+                            <!-- ******* Auckland congestion  *********** -->
+                <section id="method8" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 ">
+                <h3>  Description of each step </h3>
+
+                <p>  Step 2: Computer FFS (5): Adjustments for Lateral Clearance</p>
+                       
+                       <p class = "l2"> Distance to fixed objects</p>
+                       
+                          \[\begin{aligned}
+					TLC = LC_L + LC_R \\
+					\end{aligned} \]
+                        
+                        <img class="centre" src="../figures/teaching/TLC2.png"
+                            style="width:900px;"
+                         alt="project-1" />
+                       
+                    </div>
+                   <aside class="notes">
+            
+	               </aside>
+                    
+                </section>  
+                
+               
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method9" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 ">
+                <h3>  Description of each step </h3>
+
+                <p>  Step 2: Computer FFS (6): Other adjustments </p>
+                       
+                        <img class="centre" src="../figures/teaching/median.png"
+                            style="width:900px;"
+                         alt="project-1" />
+                        <img class="centre" src="../figures/teaching/access-point-density.png"
+                            style="width:900px;"
+                         alt="project-1" />
+                       
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                     <!-- ******* Auckland congestion  *********** -->
+                <section id="method10" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 fragment">
+                <p>  Step 3: Estimate and Adjust Capacity</p>
+                <p class="l2"> c(basic freeway segment) = 2,200 + 10 × ($𝐹𝐹𝑆_{adj}$-50)</p>
+                <p class="l2"> c(multilane highway segment) = 1,900 + 20 × ($𝐹𝐹𝑆_{adj}$-45)</p>       
+                
+                       <p class="l2"> Note: The capacities resulting from application of these equations can never exceed the capacities of the base/ideal conditions described earlier </p>
+     
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                
+                  <!-- ******* Auckland congestion  *********** -->
+                <section id="method11" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 ">
+                <p>  Step 3 (2): Estimate and Adjust Capacity</p>
+                <p> Adjustment to local conditions</p>
+                <p class="l2"> Capacity adjustment for driver population, which is intended to account for the level of unfamiliar drivers in the traffic stream </p>       
+                
+                       <p class="l2"> Turbulence generated from lane drops between two basic segments </p>
+                       
+                        <p class="l2"> Turbulence due to merging, diverging, or weaving maneuvers between two basic segments</p>
+                        <p class="l2"> Turbulence generated from lane drops between two basic segments </p>
+                        <p class="l2"> Capacity reductions due to poor sight distance—for example, due to crest vertical curves or horizontal curves </p>
+                        <p class="l2"> Narrow lane widths or low lateral clearances in addition to the effects on FFS presented in Step 2 </p>
+                        <p class="l2"> Travel through tunnels or across bridges;  </p>
+                        <p class="l2"> Poor pavement conditions; and </p>
+                       <p class="l2"> Friction effects due to roadside features and attractions that cause drivers to increase following headways.  </p>
+                       
+     
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="method12" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 fragment">
+                <p>  Step 4: Adjust Demand Volume</p>
+               
+                <p class="l2"> 
+                       The basic speed-flow curves are based on flow rates in equivalent passenger cars per hour, with the driver population dominated by  regular users of the multilane highway segment. Demand volumes expressed as  vehicles per hour under prevailing conditions must be converted to this basis. The  following equation is used for this adjustment
+                       </p>       
+                
+                       \[\begin{aligned}
+					v_p = \frac{V}{PHF \times N \times f_{HV}} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                         <p class="l2">$v_p$ = demand flow rate under equivalent base conditions (pc/h/ln)</p>
+                        
+                        <p class="l2"> $V$ = demand volume under prevailing conditions (veh/h) </p>
+                        
+                        <p class="l2">$PHF$ = Peak hour factor </p>
+                       
+                       <p class="l2">$N$ = Number of lanes in anaysis direction (ln) </p>
+                       <p class="l2">$f_{HV}$ = adjustment factor for presence of heavy vehicles</p>
+                       
+     
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                        <!-- ******* Auckland congestion  *********** -->
+                <section id="method13" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 ">
+                <p>  Step 4 (2): Adjust Demand Volume</p>
+                       <p>Adjustment for Heavy vehicles</p>
+              
+                       \[\begin{aligned}
+					f_{HV} = \frac{1}{1+P_T(E_T-1)} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                        <p class="l2">$f_{HV}$ = adjustment factor for presence of heavy vehicles</p>
+                        
+                        <p class="l2"> $P_T$ = proportion of HVs in traffic stream </p>
+                        
+                        <p class="l2">$E_T$ = passenger car equivalent of one heavy vehicle in the traffic stream (PCEs) </p>
+                      
+     
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                
+                    <!-- ******* Auckland congestion  *********** -->
+                <section id="method14" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 fragment ">
+                <p>  Step 5: Estimate Speed and Density</p>
+                       <p>At this point in the methodology, the following have been determine:</p>
+              
+                        
+                        <p class="l2">the FFS and appropriate FFS curve for use in the analysis, and</p>
+                        
+                        <p class="l2"> the demand flow rate expressed in passenger cars per hour per lane under equivalent base conditions. </p>
+                        
+                        <p> With the equations specified in Exhibit 12-6 in the HCM , the expected mean speed of the traffic stream can be computed. A graphical solution with Exhibit 12-7 can also be performed. 
+                        After the speed is estimated, the equation below is used to estimate the density of 
+                        the traffic stream: 
+                        </p>
+                       
+                        \[\begin{aligned}
+					D = \frac{v_p}{S} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                        <p class="l2">$S$ = mean speed of traffic stream under base conditions  </p>
+                      
+     
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                 <!-- ******* Auckland congestion  *********** -->
+                <section id="method15" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                   <div class="whitebackground2 fragment ">
+                <p>  Step 6: Determine LOS</p>
+                      <p>LOS Criteria for Basic Freeway 
+                        and Multilane Highway 
+                        Segments 
+                        </p>
+                       
+                        <img class="centre" src="../figures/teaching/LOS-criteria.png"
+                            style="width:900px;"
+                         alt="project-1" />
+                      
+     
+                    </div>
+                   <aside class="notes">
+                   </aside>
+                </section>  
+                
+                
+                 <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************
+  
+               <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png">   
+                   
+             </section> ** -->
+              
+               
+                
+                
+                
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P1.html">https://leminhkieu.github.io/p/2020-Civil761-P1.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
