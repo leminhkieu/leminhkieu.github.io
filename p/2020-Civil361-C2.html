@@ -9,7 +9,7 @@
         <meta name="author" content="Minh Kieu">
         <meta name="keywords" content="big data, urban dynamics">
         
-		<title>Civil361-Traffic Engineering 2-Chapter 2</title>
+		<title>Civil361-Traffic Engineering 2-Chapter 1</title>
         
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/white.css">
@@ -60,7 +60,7 @@
                         
                         <h3>Civil 361: Traffic Engineering 2</h3>
                         
-                        <h2>Chapter 2: FUNDAMENTALS OF TRAFFIC FLOW </h2>
+                        <h2>Chapter 2: TRAFFIC MEASUREMENTS AND STUDIES</h2>
                         
                         <hr/>
 
@@ -79,56 +79,58 @@
                 </section>
                                 
                 
-                <!-- ************** About me ************* -->
+            
+                      <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
 
-                <section id="aboutme" data-transition="fade">
+                <section data-background-video="../videos/auckland_mov.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="problem1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Traffic congestion</h3>
+                        
+                        <p>Economical cost:</p>
+                        
+                        <p class="l2">Auckland's congested roads costed our economy over $1.25 billion in lost productivity (NZTA, 2013)</p>
+                        
+                        <p>Social cost:</p>
+                        
+                        <p class="l2">Emergency access and evacuation</p>
+                        <p class="l2">Road users stress and anxiety</p>
+                        <p class="l2">Environment issues</p>
+                        <p class="l2">Equity and inclusion</p>
+                        
+                    </div>
+                    </section>  
+                           <!-- ********************************************************
 
-                    <figure class="right">
+                     ************* Auckland congestion  *****************
 
-                        <img data-src="../figures/my-pics/minh.jpg"
-                             alt="Minh picture" />
-                    
-                    </figure>
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams!</h3>
 
-
-                    <h2>Minh Kieu</h2>
-                    
-                    <p> From 2020: Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
-                     
-                    <p> 2018-2019: Research Fellow at the University of Leeds, UK </p>
-                    <p> 2016-2018: Research Scientist at the Data61, CSIRO, Australia </p>
-                    <p> 2011- 2016: PhD Research at the Queensland University of Technology, Australia </p>
-                    <p> 2009- 2011: Master in Intelligent Transport System, Linkoping University, Sweden </p>
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+		            <p class="l2">Source: NZIER (2017),Benefits from Auckland road decongestion </p>
 
                   <aside class="notes">
-		          - Self-introduction
-	               </aside>
+		          - In fact, the congestion level in Auckland is world-class for its size
+                      
+                      - Analyse the graph...
+	               </aside>                   
                     
-                    
-                </section>       
+                </section>
                 
-                      <!-- ***************** Agenda ************************* -->
-
-                <section id="issues" data-background-image="../figures/Backgrounds/grass-left.jpg">
-                    
-                    <div class="whitebackground2">
-                    
-                    
-                    <h2>Transport is vital for economic development and personal welfare, but…</h2>
-                    
-                    <p class="l2"> 1. Difficult to meet growing demand </p>
-                    <p class="l2">	2. Growing energy consumption and other resources</p>
-                        <p class="l2">	3. Air pollution, emission of GHGs: growing faster than GDP, plus adverse health and social impacts</p>
-                        <p class="l2">	4. Road Safety</p>
-                        <p class="l2">	5. Non‐inclusive development: not all are benefiting</p>
-                     
-                    </div>
-                    
-                    <aside class="notes">
-		            </aside>                  
-                    
-                </section>     
                 
+        
                   <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes" data-transition="fade">
@@ -141,10 +143,9 @@
                     </figure>
                     <h2>Learning outcomes: </h2>
                     
-                    <p>	1. Understanding the traffic flow theory </p>
-                    <p>	2. The classes of traffic flow models</p>
-                    <p>	3. How to model intersections</p>
-                    <p>	4. How to solve some traffic flow problems</p>
+                    <p>	1. Understanding traffic studies </p>
+                    <p>	2. How to conduct traffic studies</p>
+                    <p>	3. New technological advancements in traffic studies</p>
                     
                   <aside class="notes">
 		          - There are only two aimed learning outcomes of this lectures
@@ -188,25 +189,52 @@
 	               </aside>                  
                     
                 </section>   
-                
             
-   
 
            <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                <section id="def" data-background-image="../figures/Backgrounds/shutterstock_788457058-small.jpg">                     
                     <div class="whitebackground2">
-                        <h3>What is 'traffic flow'?</h3>
+                        <h3>What is 'traffic studies'?</h3>
                         
-                        <p>Traffic flow is the study of interactions between travellers  (including pedestrians, cyclists, drivers, and their vehicles) and infrastructure  (including highways, signage, and traffic control devices)</p>
+                        <p>A traffic study is the collection and analysis of measurable factual data relating to traffic and its characteristics.</p>
                         
-                        <p>with the aim of  understanding and developing an optimal transport network for an efficient  movement of people and goods with minimal traffic congestion. </p>
-                 
+                        <p>Why do we need to collect data? </p>
+                        
+                        <p class="l2">Managing the physical systems (e.g. maintain, repair, operate) </p>
+                        <p class="l2">Investigating trends over time (e.g. forecast future mobility needs)</p>
+                        <p class="l2">Understanding the needs and choice of the public & industry</p>
+                        <p class="l2">Calibrating basic relationships of paramters of transport models</p>
+                        <p class="l2">Accessing potential impacts (Before & After studies)</p>
+                        
                     </div>
                          
                 </section>
+                
+                
+            <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def2" data-background-image="../figures/Backgrounds/shutterstock_788457058-small.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Common variables of traffic studies</h3>
+                        
+                        <p class ="l2">Traffic flow/volume</p>
+                        <p class ="l2">Time/Space headway</p>
+                        <p class ="l2">Time/Space Occupancy</p>
+                        <p class ="l2">Time/Space Mean speed</p>
+                        <p class ="l2">Density</p>
+              
+                    </div>
+                         
+                </section>               
+                
+                
+                
+                
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
