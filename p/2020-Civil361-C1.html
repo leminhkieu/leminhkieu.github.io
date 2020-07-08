@@ -60,7 +60,7 @@
                         
                         <h3>Civil 361: Traffic Engineering 2</h3>
                         
-                        <h2>Chapter 1: TRAFFIC STUDIES AND DATA </h2>
+                        <h2>Chapter 1: TRAFFIC STUDIES </h2>
                         
                         <hr/>
 
@@ -78,32 +78,7 @@
 
                 </section>
                                 
-                 <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/Auckland-plan.mp4"
-                         data-background-video-loop="loop"
-                         id="auckland">                     
-                    <div class="whitebackground2 fragment">
-                        <h3>Auckland is transforming rapidly</h3>
-                        
-                        <p>Auckland’s city centre is going through a period of rapid transformational change, with substantial investment committed to the area by both the public sector and private developers.</p>
-                        
-                        <p class="l2">America’s Cup and APEC take place here in 2021</p>
-                        
-                        <p class="l2">City Rail Link starts operating in 2024: 54,000 peak-time passengers each hour</p>
-                        
-                        <p>“By 2032 Auckland's city centre will be highly regarded internationally as a centre for business and learning, innovation, entertainment, culture and urban living - all with a distinctly 'Auckland' flavour.”  -  Auckland City Centre Masterplan</p>
-                        
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
+               
                       <!-- ***************** Agenda ************************* -->
 
                 <section id="issues" data-background-image="../figures/Backgrounds/grass-left.jpg">
@@ -140,6 +115,7 @@
                     
                     <p>	1. Understanding the fundamental data in traffic studies </p>
                     <p>	2. How to collect those data </p>
+                    <p> 3. Perform basic estimations of traffic variables</p>
                     <p>	3. Traditional vs Big Data</p>
                     <p>	4. How to deal with Big Data</p>
                     
@@ -338,9 +314,9 @@
                       <div class="whitebackground2 ">
                         <h3>How to measure traffic flows</h3>
                         
-                        <p>With loop detectors (and how they contribute to traffic signals!)</p>
+                        <p class= "l2">With loop detectors (and how they contribute to traffic signals!)</p>
                           
-                  <video controls autoplay>
+                  <video controls autoplay muted>
 
                         <source data-src="../videos/loop-signal.mp4" type="video/mp4"/>
 
@@ -348,9 +324,10 @@
 
                     </video>
                           
+                          <p class= "l2">For other traffic detectors, refer to the class notes</p>
+                          
                    </div>          
                 </section>    
-                
                 
                 
                  <!-- ******************************************************
@@ -370,8 +347,71 @@
                 </section>  
             
                 
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Traffic volume studies</h3>
+                            
+                             <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
+                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but  volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
+                        
+                        <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
+                        
+                        <p class="l2">Peak Hourly Volume (PHV) - PHV is the maximum flow observed over any 1 hour period. In urban areas where tidal flows are common, it is usual to have two PHV’s, one for the A.M. and other for P.M. In rural areas it is sufficient to use only one PHV.</p>
+                           
+                    </div>
+                </section>
                 
                 
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="AADT" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3> Traffic volume studies</h3>
+                            
+                             <p> 	Volume: 	The total vehicle flow during an extended period (beyond an hour) and usually 24 hours. </p>
+                         <p class="l2">	Annual Average Daily Traffic (AADT): is the average number of vehicles per day on a road over the year. </p>
+                        
+                        <p class="l2"> Average Daily Traffic (ADT) refers to the average number of vehicles on a road during a 7 day week (or 5 day working week). </p>
+                           
+                    </div>
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) </h3>
+                            
+                             <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
+                        
+                          \[\begin{aligned}
+					PHF = \frac{V}{V_{15m} \times 4} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                        
+                         <p class="l2">$V$ = Total hourly volume</p>
+                        
+                        <p class="l2"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
+                        
+                        <p class="l2">When PHF is known, a peak flow rate for a peak 15 minute within the analysis hour can be calculated: </p>
+                        
+                         \[\begin{aligned}
+					v = \frac{V}{PHF} \\
+					\end{aligned} \]
+                           
+                    </div>
+                </section>
                 
               
                   <!-- ******************************************************
@@ -450,10 +490,7 @@
                          
                 </section>  
                 
-                
-              
-                
-                
+            
                   <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -462,7 +499,7 @@
                     <div class="whitebackground2">
                         <h3>Measurements over a short distance (less than 10 m)</h3>
                         
-                      <p>For instance: using two loop detectors or a human observer to measure speed</p>
+                      <p>For instance: using loop detectors or a human observer to measure speed</p>
                         
                     </div>
                          
@@ -472,13 +509,66 @@
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="speed" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                <section id="speed0" data-background-image="../figures/Backgrounds/street2.jpg">                     
                     <div class="whitebackground2">
                         <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
                         
-                    <p>There are two ways to measure speed: </p>
+                        <p>Spot speed is the instantaneous speed of a vehicle at any specified point. </p>
                         
-                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                  <img data-src="../figures/teaching/single-loop.png"
+                             style="width:700px;"
+                             alt="Flow-chart" />
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                
+                        
+                     </aside>  
+                    
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed1" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
+                        
+                        <p>Spot speed is the instantaneous speed of a vehicle at any specified point. </p>
+                        
+                 
+                        <img data-src="../figures/teaching/double-loop.png"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                    
+                 ***   Space Mean Speed = harmonic mean speed
+                        
+                    ***    Time-mean speed is associated with a single point along a roadway over time,
+                    whereas the space-mean speed is associated with a specified length of roadway.
+                    Use space-mean speeds when reducing and analyzing travel time data.
+                        
+                     </aside>  
+                    
+                </section>
+                
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed2" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        
+                    <p>There are two ways to measure mean speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual spot speed recorded for vehicles passing a point over a selected time period</p>
                         
                          \[\begin{aligned}
 					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
@@ -505,8 +595,6 @@
                     
                 </section>
                 
-                
-                
                       <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -528,8 +616,6 @@
 					v_s = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}} = \frac{5}{1/50+1/40+1/30+1/20+1/10} = 28.9 \ km/h \\
 					\end{aligned} \]    
                      </aside>  
-                    
-                    
                 </section>
             
                 
@@ -562,6 +648,40 @@
                     
                 </section>
                 
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed5" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Speed quartiles</h3>
+                        
+                        <p>85th Percentile Speed</p>
+                        
+                        <p class="l2">Sometimes refer to “critical speed”. </p>
+                        <p class="l2">Drivers exceeding 85th percentile speed are usually considered to be driving faster than is safe. </p>
+                        <p class="l2">Use to establish “maximum speed limit”. </p>
+                        
+                        <p>15th Percentile Speed</p>
+                        
+                        <p class="l2">Vehicles travelling below this value tend to obstruct the flow of traffic, thereby increasing the accident hazard. </p>
+                        <p class="l2">Use to establish “minimum speed limit”.</p>
+                       
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                    
+                 ***   Space Mean Speed = harmonic mean speed
+                        
+                    ***    Time-mean speed is associated with a single point along a roadway over time,
+                    whereas the space-mean speed is associated with a specified length of roadway.
+                    Use space-mean speeds when reducing and analyzing travel time data.
+                        
+                     </aside>  
+                    
+                </section>
+                
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
@@ -574,7 +694,7 @@
                       <p>Density</p>
                         <p class="l2">Space occupancy</p>
                         <p class="l2">Space headway</p>
-                        <p>Travel time</p>
+                    <p>Travel time</p>
                         
                     </div>
                          
@@ -639,12 +759,248 @@
                 </section>
                 
                 
+                
+                      <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
 
-            <!-- *************** QUIZ: ITS recap? **********************
-  
-               <section id="QUIZ1" data-background-image="../figures/teaching/QUIZ.png" data-background-size="900px">     
+             
+                <section id="ex2" >                     
                    
-             </section> **** -->
+                        <p><a>Example 2:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 6 vehicles in a 3000 m  motorway section. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
+                    
+                    
+                      <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                
+                     <aside class="notes">
+                  Refer to the class notes 
+                     </aside>  
+                    
+                    
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+             
+                <section id="ex3" >                     
+                   
+                        <p><a>Example 3:</a> Four vehicles, 6, 7, 8, and 9 m long, are distributed over a length of a freeway lane 200 m long. What is the space occupancy and density?</p>
+                    
+                    
+                      <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                
+                     <aside class="notes">
+                  Refer to the class notes 
+                     </aside>  
+                    
+                    
+                </section>
+                
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="traveltime" data-background-image="../figures/Backgrounds/skylines-day1.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Travel time and Delay studies</h3>
+                        
+                        <p><a>Travel Time:</a> The total time, including stops and delay, to travel from one point to another</p>
+                         <p><a>Delay:</a> The time difference between the actual travel time and the travel time given no impedances.</p>
+                        
+                    </div>
+                         
+                </section>
+                
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="traveltime1" data-background-image="../figures/Backgrounds/skylines-day1.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Travel time and Delay studies</h3>
+                        
+                         <p><a>Type of delay:</a> </p>
+                       
+                        <p class="l2">Fixed delay is the delay to which a vehicle is subjected regardless of the amount of traffic volume and interference present</p>
+                        <p class="l2">Operational delay is the delay caused by interference from other components of the traffic stream.</p>
+                        <p class="l2">Travel time delay is the difference between the actual time required to traverse a section of street or highway and the time corresponding to the average speed of traffic at a point of uncongested flow on the section.</p>
+                        <p class="l2">Stopped time delay is the time a vehicle is actually standing still because of any influencing factor.</p>
+                        
+                    </div>
+                         
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="traveltime2" data-background-image="../figures/Backgrounds/skylines-day1.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Travel time and Delay studies</h3>
+                        
+                         <p><a>Causes of delay:</a> </p>
+                       
+                        <p class="l2">Fixed delay occurs primarily at intersections. This delay is not a result of the flow characteristics of the traffic stream and could occur with only one vehicle travelling in the section e.g. traffic signals, STOP signs, YIELD signs, railroad crossings.</p>
+                        <p class="l2">Operational delay is the result of influences by other traffic. One type of operational delay is caused by other traffic movement that interfere with the stream flow (side frictions), e.g. parking vehicles, turning vehicles, pedestrians, stalled vehicles, double parking, cross traffic, etc, while other type of operational delay is caused by internal frictions within the stream flow, e.g. congestion due to high volume, lack of capacity, merging or weaving manoeuvres.</p>
+                        
+                    </div>
+                         
+                </section>
+                
+                
+                  <!-- *************** ITS data ************************** -->
+  
+               <section id="data7" data-background-image="../figures/teaching/bluetooth.png"> 
+                   
+                   <div class="whitebackground2 " >
+                   <h3>Travel time data collection: Floating vehicle</h3> 
+                  
+                    
+                    <p class="l2">A test car attempts to ‘move’ or ‘float’ in the traffic stream. </p>
+                        
+                        <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                          
+                   </div>
+                </section>  
+                
+                
+                   <!-- *************** ITS data ************************** -->
+  
+               <section id="data-fusion" >
+                   
+                   <h3>Travel time data collection: Connected Vehicles</h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Uber-AV.gif"
+                             style="width:800px;"
+                             alt="UberAV" />
+                    </figure>
+                    <p class="l2">Integrating data from multiple sources </p>
+                </section>      
+                
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="drones" data-background-image="../figures/teaching/bluetooth.png"> 
+                   
+                   <div class="whitebackground2 " >
+                   <h3>Travel time data collection: Video processing </h3> 
+                  
+                        <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                          
+                   </div>
+                </section>  
+                
+                
+                  <!-- *************** ITS data ************************** -->
+  
+               <section id="data7" data-background-image="../figures/teaching/bluetooth.png"> 
+                   
+                   <div class="whitebackground2 " >
+                   <h3>Travel time data collection: Bluetooth/Wifi</h3> 
+                  
+                    <p class="l2">Travel time </p>
+                        
+                        <p class="l2">Origins/Destination</p>
+                          
+                   </div>
+                </section>  
+                
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="area" data-background-image="../figures/teaching/traffic-studies.png">                     
+                    <div class="whitebackground2">
+                        <h3>Measurements at a large area</h3>
+                        
+                        <p>Average values (travel time, speed, etc.)</p>
+                      <p>Origin-Destination Surveys</p>
+                        <p>Big data</p>
+                    
+                    </div>
+                         
+                </section>  
+                
+                
+                <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-meso.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="meso">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Origin-Destination surveys</h3>
+                        
+                        <p>Traditionally done in field or household surveys</p>
+                        
+                        <img data-src="../figures/teaching/OD-studies.jpg"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                        
+                    </div>
+                
+                </section>
+                
+                
+                  <!-- *************** ITS data ************************** -->    
+                <section id="Data-MobilePhones">
+                    <figure class="right">
+                        <figcaption>Evaluating aggregate mobile phone population accuracy</figcaption>
+                        <img data-src="../figures/teaching/census_mobile-correlation-map.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    </figure>
+                    <h2>Telecommunication data as transport data</h2>
+                    <p>Large population coverage</p>
+                    <img class="left" data-src="../figures/teaching/census_mobile-correlation.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    <p>Privacy concerns or coarse resolution</p>
+                </section>         
+                
+                
+                   <!-- ************************************************************
+                *********************** DATA ************************************
+                ************************************************************ -->
+    
+                <section id="Data-Twitter">
+                    <h2>Social Media data</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/traffic-watch-annotation.png" alt="Traffic watch"/>
+                        
+                    </figure>
+                </section>
+                
+        
                    
                        <!-- *************** ITS data ************************** -->
   
@@ -753,15 +1109,6 @@
                 </section> 
                 
       
-             
-                
-      <!-- ******* QUIZ 2: What road tube is for? ******
-  
-               <section id="QUIZ2" data-background-image="../figures/teaching/QUIZ.png" data-background-size="900px">   
-             </section> 
-                *** -->
-                   
-         
                 
                      <!-- *************** ITS data ************************** -->
   
@@ -926,59 +1273,12 @@ Purpose of the survey — With most traditional methods it is necessary to deter
                           
                 </section>                 
                 
-         <!-- *************** ITS data ************************** -->
-  
-               <section id="data7" data-background-image="../figures/teaching/bluetooth.png"> 
-                   
-                   <div class="whitebackground2 " >
-                   <h3>Individual data: Bluetooth/Wifi</h3> 
-                  
-                    
-                    <p class="l2">Travel time </p>
                         
-                        <p class="l2">Origins/Destination</p>
-                          
-                   </div>
-                </section>                   
 
-            <!-- *************** ITS data ************************** -->    
-                <section id="Data-MobilePhones">
-                    <figure class="right">
-                        <figcaption>Evaluating aggregate mobile phone population accuracy</figcaption>
-                        <img data-src="../figures/teaching/census_mobile-correlation-map.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
-                    </figure>
-                    <h2>Individual data: Mobile data</h2>
-                    <p>Large population coverage</p>
-                    <img class="left" data-src="../figures/teaching/census_mobile-correlation.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
-                    <p>Privacy concerns or coarse resolution</p>
-                </section>         
+          
                 
                 
-                   <!-- ************************************************************
-                *********************** DATA ************************************
-                ************************************************************ -->
-    
-                <section id="Data-Twitter">
-                    <h2>Individual data: Social Media</h2>
-                    <figure>
-                        <img data-src="../figures/paper-figures/traffic-watch-annotation.png" alt="Traffic watch"/>
-                        
-                    </figure>
-                </section>
-                
-                
-            <!-- *************** ITS data ************************** -->
-  
-               <section id="data-fusion" >
-                   
-                   <h3>Individual data: Autonomous and Connected Vehicles</h3> 
-                   <figure class="centre" >
-                        <img data-src="../figures/teaching/Uber-AV.gif"
-                             style="width:800px;"
-                             alt="UberAV" />
-                    </figure>
-                    <p class="l2">Integrating data from multiple sources </p>
-                </section>                             
+                                
                 
          <!-- *************** Data-Issues ************************** -->
              
@@ -1058,20 +1358,6 @@ Purpose of the survey — With most traditional methods it is necessary to deter
                 
          
                 
-                <!-- ********* SUpervised vs Unsupervised learning ************* -->
-  
-               <section id="ML1">  
-                    
-                    <h3>Data analytics with machine learning </h3> 
-                   <figure class="centre" >
-                        <img data-src="../figures/teaching/machine-learning.png"
-                             style="width:700px;"
-                             alt="ML" />
-                    </figure>
-                   
-             </section>                 
-                
-       
                 
                       <!-- ******** Travel speed prediction  ******************* -->
                 
