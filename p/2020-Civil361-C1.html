@@ -25,6 +25,7 @@
          Create your own custom Modernizr build: www.modernizr.com/download/ -->
         <!-- Printing and PDF exports -->
 		<script>
+            
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
@@ -38,6 +39,9 @@
   };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
         
 	</head>
 
@@ -546,6 +550,53 @@
                 </section>  
                  
                 
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="timespace" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is a 'Time-Space Diagram'</h3>
+                        
+                        <img data-src="../figures/teaching/time-space.png"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                        
+                         <p class="l2"> Shows the position of individual vehicles in time and in space</p> 
+                         <p class="l2">Useful for understanding traffic flow. These diagrams are especially useful for discussions of shock waves and wave propagation </p>
+                        
+                    </div>
+                         
+                     <aside class="notes">
+                 Typically, time is drawn on the horizontal axis and distance from a reference point on the vertical axis. The trajectories of individual vehicles in motion are portrayed in this diagram by sloping lines, and stationary vehicles are represented by horizontal lines. The slope of the line represents the speed of the vehicle. Curved portions of the trajectories represent vehicles undergoing speed changes such as deceleration.
+                
+                        
+                     </aside>  
+                    
+                </section>  
+                
+                
+                 <!-- *****************************************************************
+
+                     ************* PF on bussim **************************
+
+                     ***************************************************************** -->
+  
+                
+                <section id="pf-bussim-video">
+
+                    <h2>Time-space diagram of vehicles (and the prediction of their position)</h2>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/bussim-pf-video.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+             </section>           
+                
+                
                    <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -943,7 +994,7 @@
                 ************************************************************ -->
 
              
-                <section id="ex3" >                     
+                <section id="ex4" >                     
                    
                         <p><a>Example 4:</a> Four vehicles, 6, 7, 8, and 9 m long, are distributed over a length of a freeway lane 200 m long. What is the space occupancy and density?</p>
                     
@@ -962,6 +1013,31 @@
                     
                     
                 </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+             
+                <section id="ex5" >                     
+                   
+                      <p><a>Example 5:</a> </p>
+                    
+                    
+                     <img data-src="../figures/teaching/example5.png"
+                             style="width:1000px;"
+                             alt="UberAV" />
+                    
+                
+                     <aside class="notes">
+                  Refer to the class notes 
+                     </aside>  
+                    
+                    
+                </section>
+                
+                
                 
                 
                 
@@ -1597,6 +1673,8 @@ Purpose of the survey — With most traditional methods it is necessary to deter
 
 		</div>
 
+         
+                 
 		<script src="reveal/lib/js/head.min.js"></script>
 
 		<script src="reveal/js/reveal.js"></script>
@@ -1607,6 +1685,7 @@ Purpose of the survey — With most traditional methods it is necessary to deter
 			Reveal.initialize({
 
 				history: true,
+                slideNumber: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 
@@ -1625,7 +1704,9 @@ Purpose of the survey — With most traditional methods it is necessary to deter
 			});
 
 		</script>
-
+       
+        
+        
 	</body>
 
 </html>
