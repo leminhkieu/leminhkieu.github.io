@@ -103,9 +103,6 @@
                 </section>
                                 
                                
-                       
-              
-                
                   <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes" data-transition="fade">
@@ -119,65 +116,28 @@
                     <h2>Learning outcomes: </h2>
                     
                     <p>	1. Basic concepts in traffic planning</p>
-                    <p class="l2"> Traffic flow</p>
-                    <p class="l2"> Traffic flow theory</p>
-                    <p class="l2"> Capacity</p>
-                    <p class="l2"> Level of service</p>
-                    <p>	2. Types of traffic models</p>
-                    <p>	3. Introduction to the HCM 2016</p>
-                    <p>	3. How to use the HCM</p>
+                            <p class="l2"> Traffic flow</p>
+                            <p class="l2"> Speed</p>
+                            <p class="l2"> Density</p>
+                    
+                     <p>2. Traffic flow theory</p>
+                    <p>	3. Types of traffic models</p>
+                    <p>	4. Introduction to the HCM 2016</p>
+                            <p class="l2"> Capacity</p>
+                            <p class="l2"> Level of service</p>
+                    
+                    <p>	5. How to use the HCM</p>
                     
                 </section>                
 
              
-                  <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="def" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What is 'traffic flow'?</h3>
-                        
-                        <p>Traffic flow is the study of interactions between travellers  (including pedestrians, cyclists, drivers, and their vehicles) and infrastructure  (including highways, signage, and traffic control devices)</p>
-                        
-                        <p>with the aim of  understanding and developing an optimal transport network for an efficient  movement of people and goods with minimal traffic congestion. </p>
-                 
-                    </div>
-                         
-                </section>
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="theory" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What is 'traffic flow theory'?</h3>
-                        
-                        <p>Traffic flow theory involves the development of mathematical relationships  among the three primary elements of a traffic stream namely flow, density and  speed.</p>
-                        
-                        <p class="l2"> Read more:<br/><a href="https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html">https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html</a> </p>
-                            
-                        
-                        <p>These relationships help traffic engineers in planning, design and operation to determine:</p>
-                        
-                        <p class="l2">reasons for traffic congestion</p>
-                        <p class="l2">bottlenecks in the transport network</p>
-                        <p class="l2">delay experienced by travellers.</p>
-                        <p class="l2">changes in performance of road networks due to road improvement  measures.</p>
-                        
-                    </div>
-                         
-                </section>
-                
-              
                        <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
                 <section id="flow" data-background-image="../figures/Backgrounds/street2.jpg">                     
                     <div class="whitebackground2">
-                        <h3>What is 'flow' ?</h3>
+                        <h3>What is 'traffic flow' ?</h3>
                         
                         <p>The total number of vehicles passing a given point in a given time. Traffic flow is expressed as vehicles per hour (veh/hr) </p>
                         
@@ -198,47 +158,98 @@
                          
                 </section>
                 
-                
-                  
-                 <!-- ******************************************************
+                 
+                   <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="density" data-background-image="../figures/Backgrounds/street2.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What is 'density'?</h3>
+                <section id="param1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Flow parameters </h3>
+                            
+                             <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
+                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but  volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
                         
-                    <p class="l2">The average number of vehicles that occupy one mile or one kilometer of road space (veh/km) </p>
+                        <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
                         
-                        \[\begin{aligned}
-					Density(k) \quad k = \frac{N}{L} \ (veh/km) \\
-					\end{aligned} \]
-                        
-                    
-                        
-                     <p class="l2">   Space occupancy $O_s$: percentage length of highway occupied by vehicles</p>
-                        
-                        \[\begin{aligned}
-					Space Occupancy(O_s) \quad O_s = \frac{\sum_{i=1}^N{h_i}}{L} \\
-					\end{aligned} \]
-                        
-                       <p class="l2"> Space headway $\bar{s}$ distance between the same points of two consecutive vehicles following each other </p>
-                        
-                        
-                        \[\begin{aligned}
-					Spacing(\bar{s}) \quad \bar{s} = \frac{L}{N} = \frac{1}{k} \\
-					\end{aligned} \]
-                        
-                        
+                        <p class="l2">Peak Hourly Volume (PHV) - PHV is the maximum flow observed over any 1 hour period. In urban areas where tidal flows are common, it is usual to have two PHV’s, one for the A.M. and other for P.M. In rural areas it is sufficient to use only one PHV.</p>
+                           
                     </div>
-                         
                 </section>
+                
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="speed" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                <section id="param2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) </h3>
+                            
+                             <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
+                        
+                          \[\begin{aligned}
+					PHF = \frac{V}{V_{15m} \times 4} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                        
+                         <p class="l2">$V$ = Total hourly volume</p>
+                        
+                        <p class="l2"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
+                        
+                        <p class="l2">When PHF is known, a peak flow rate for a peak 15 minute within the analysis hour can be calculated: </p>
+                        
+                         \[\begin{aligned}
+					v = \frac{V}{PHF} \\
+					\end{aligned} \]
+                           
+                    </div>
+                </section>
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="param3" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) : Examples</h3>
+                            
+                             <p>  Example 1: The 15-minute vehicle volumes are relatively constant:
+                        V15 = 190, V30 = 200, V45 = 190, V60 = 190. Calculate PHF:
+                        
+                        </p>
+                        
+                        <p>Example 2: The 15-minute vehicle volumes are more variable: V15 = 175, V30 = 200, V45 = 150, V60 = 125. Calculate PHF:</p>
+                        
+                    </div>
+                    
+                     <aside class="notes">
+                        
+                          \[\begin{aligned}
+					PHF = (190 + 200 + 190 + 190) / [(200 x 4)] = 0.96\\
+					\end{aligned} \]
+                        
+                          
+                        \[\begin{aligned}
+					PHF = (175 + 200 + 150 + 125) / [(200 x 4)] = 0.81\\
+					\end{aligned} \]
+                        
+                     </aside> 
+                    
+                    
+                    
+                </section>
+                
+                
+                
+                  
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed1" data-background-image="../figures/teaching/bluetooth.png">                     
                     <div class="whitebackground2">
                         <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
                         
@@ -256,6 +267,8 @@
 					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
 					\end{aligned} \]
                         
+                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
+                        
                     </div>
                          
                     <aside class="notes">
@@ -264,37 +277,29 @@
                  ***   Space Mean Speed = harmonic mean speed
                         
                     ***    Time-mean speed is associated with a single point along a roadway over time,
-whereas the space-mean speed is associated with a specified length of roadway.
-Use space-mean speeds when reducing and analyzing travel time data.
+                        whereas the space-mean speed is associated with a specified length of roadway.
+                        Use space-mean speeds when reducing and analyzing travel time data.
                         
                      </aside>  
                     
                 </section>
                 
-                
-                      <!-- ******************************************************
+                  <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="speed2" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                <section id="speed2" data-background-image="../figures/teaching/bluetooth.png">                     
                     <div class="whitebackground2">
-                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10, find the time mean speed and space mean speed.</p>
+                        <h3>Speed from a spatial point of view</h3>
                         
-                         <p>There are two ways to measure speed: </p>
+                    <p>Spot speed: the instantaneous speed of a vehicle passing a
+                        point on the roadway. Data represent the speed
+                        characteristics of vehicles passing the site. </p>
                         
-                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        <p class="l2"> Most of the speed cameras measure spot speeds!</p>
                         
-                         \[\begin{aligned}
-					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
-					\end{aligned} \]
-                        
-                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
-                        
-                          \[\begin{aligned}
-					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
-					\end{aligned} \]
-                        
-                    </div>
+                   </div>
+                    
                 </section>
                 
                 
@@ -307,6 +312,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                         <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
                         
+                     <aside class="notes">
+                    
                      <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
                          \[\begin{aligned}
 					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{50+40+30+20+10}{5} = 30 \ km/h  \\
@@ -316,11 +323,234 @@ Use space-mean speeds when reducing and analyzing travel time data.
                           \[\begin{aligned}
 					v_s = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}} = \frac{5}{1/50+1/40+1/30+1/20+1/10} = 28.9 \ km/h \\
 					\end{aligned} \]
-                        
+                        </aside> 
                      
                 </section>
-            
+                
+                
+                
+             <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
 
+                <section id="speed4" data-background-image="../figures/teaching/spot-speed.png" data-background-size="1200px">                          
+                    <div class="whitebackground fragment">
+                        <h3>Typical use of spot speed</h3>
+                        
+                        <p class="l2">Speed limit enforcements </p>
+                        
+                        <p class="l2">Traffic control planning - speed limits, safe speeds at curves, location for traffic signs, etc. </p>
+                        
+                        <p class="l2">Geometric design - road alignments, stopping sight distance</p>
+                        <p class="l2">Accident analysis</p>
+                        
+                        <p>Measurements: Enoscope, Pneumatic tubes, Video recordings, Speed gun/camera </p>
+                        
+                    </div>
+                    
+                </section>
+                
+                
+                <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed5" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>Speed from a temporal point of view: Journey vs Running speed</h3>
+                        
+                    <p>Journey speed is the distance divided by total journey time.
+                        Total journey time includes all delays due to traffic.</p>
+                        
+                        <p > Running speed is the distance divided by running time, i.e.
+                        total journey time minus delays. (Running time is the
+                        time that the vehicle is actually in motion.)</p>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed6" >                     
+                    <div class="whitebackground2">
+                        <h3>Example 4: Estimate journey vs running speeds</h3>
+                        
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/journey-running.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="density" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'density'?</h3>
+                        
+                   <p> Density is the number of vehicles occupying a given length of a lane or roadway at  a particular instant.  </p>
+                        
+                        \[\begin{aligned}
+					Density(k) \quad k = \frac{N}{L} \ (veh/km) \\
+					\end{aligned} \]
+                        
+                    <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    </div>
+                         
+                </section>
+                
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="density1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>How to estimate density?</h3>
+                            
+                       <p class="l2"> Measuring density directly in the field is difficult. For under-saturated traffic conditions density (D) can be estimated as follows:</p>
+       
+                          \[\begin{aligned}
+					D = \frac{v_p}{S} \\
+					\end{aligned} \]
+                        
+                        <p>Where:</p>
+                        
+                         <p class="l2">$v_p$ = flow rate (veh/h)</p>
+                        
+                        <p class="l2"> $S$ =  average travel speed (km/h) </p>
+                        
+                        <p class="l2">Density is a critical parameter for transport planning because it  characterises the quality of traffic operations. It describes the proximity of vehicles to one another and reflects the freedom to manoeuvre within the traffic stream.</p>
+                       
+                    </div>
+                       
+                  <aside class="notes">
+		              Density is often averaged over time  and is usually expressed as veh/km or passenger car unit per km. 
+                      Measuring density directly in the field is difficult: it requires a vantage point for photographing, videotaping, or observing significant lengths of highway. Density  can be computed, however, from the average travel speed (S) and flow rate, which  are measured more easily.
+                      
+	               </aside>
+                    
+                </section>
+                
+                
+                                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/Auckland-plan.mp4"
+                         data-background-video-loop="loop"
+                         id="video1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Auckland is transforming rapidly</h3>
+                        
+                        <p>Auckland’s city centre is going through a period of rapid transformational change, with substantial investment committed to the area by both the public sector and private developers.</p>
+                        
+                        <p class="l2">America’s Cup and APEC take place here in 2021</p>
+                        
+                        <p class="l2">City Rail Link starts operating in 2024: 54,000 peak-time passengers each hour</p>
+                        
+                        <p>“By 2032 Auckland's city centre will be highly regarded internationally as a centre for business and learning, innovation, entertainment, culture and urban living - all with a distinctly 'Auckland' flavour.”  -  Auckland City Centre Masterplan</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="dis12" data-background-image="../figures/teaching/festival.jpg">              
+                    <div class="whitebackground2">
+                        <h3>Group discussion: Auckland Lantern festival</h3>
+                        
+                        <p>Around 200,000 visitors come to Auckland every year for the Lantern festival, bringing great cultural exchange and revenue, but also creating major traffic problems through traffic congestions, traffic incidents, crowdedness in public transport systems and road closures. </p>
+                        
+                        <p class="l2">Where do you think traffic congestion and crowdedness will occur in our roads and public transport systems? Hint: Open Google Map and use Venue locations of the festival in 2019</p>
+                        
+                        <p class="l2">What data would you collect to show the problems?</p>
+                        
+                                  
+                    </div>
+                         
+                </section> 
+                
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes1" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Basic concepts in traffic planning</p>
+                            <p class="l2"> Traffic flow</p>
+                            <p class="l2"> Speed</p>
+                            <p class="l2"> Density</p>
+                    
+                     <p><a>2. Traffic flow theory</a></p>
+                    
+                    <p>3. Types of traffic models</p>
+                    <p>	4. Introduction to the HCM 2016</p>
+                            <p class="l2"> Capacity</p>
+                            <p class="l2"> Level of service</p>
+                    
+                    <p>	5. How to use the HCM</p>
+                    
+                </section> 
+                
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="theory0" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow theory'?</h3>
+                        
+                        <p>Traffic flow theory involves the development of mathematical relationships  among the three primary elements of a traffic stream namely flow, density and  speed.</p>
+                        
+                        <p class="l2"> Read more:<br/><a href="https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html">https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html</a> </p>
+                            
+                        
+                        <p>These relationships help traffic engineers in planning, design and operation to determine:</p>
+                        
+                        <p class="l2">reasons for traffic congestion</p>
+                        <p class="l2">bottlenecks in the transport network</p>
+                        <p class="l2">delay experienced by travellers.</p>
+                        <p class="l2">changes in performance of road networks due to road improvement  measures.</p>
+                        
+                    </div>
+                         
+                </section>
+                
                   <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
                 ************************************************************ -->
@@ -387,7 +617,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
                        
                         
-                       
                         <p class="l2"> More on Greenshields model of Flow-density</p>
                         
                      \[\begin{aligned}
@@ -492,7 +721,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <section id="diagram4" >               
                     
                    <div class="whitebackground2">
-                   <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
+                   <h3>Fundamental diagrams of traffic flow: Other models</h3>
                        <img class="centre" src="../figures/teaching/trafficmodel-other.png"
                             style="width:800px;"
                          alt="project-1" />
@@ -565,6 +794,36 @@ Use space-mean speeds when reducing and analyzing travel time data.
 	               </aside>                    
                     
                 </section>
+                
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Basic concepts in traffic planning</p>
+                            <p class="l2"> Traffic flow</p>
+                            <p class="l2"> Speed</p>
+                            <p class="l2"> Density</p>
+                    
+                     <p>2. Traffic flow theory</p>
+                    
+                    <p>	<a>3. Types of traffic models</a></p>
+                    <p>	4. Introduction to the HCM 2016</p>
+                            <p class="l2"> Capacity</p>
+                            <p class="l2"> Level of service</p>
+                    
+                    <p>	5. How to use the HCM</p>
+                    
+                </section>  
+                
            
                     <!-- ******************************************************
                 *********************** diagram5 ***********************
@@ -651,8 +910,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     </div>
                 </section>
                 
-            
-               
                 
                     <!-- ******************************************************
                 *********************** Problem 1 ***********************
@@ -676,32 +933,57 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>
                 
                 
-                    <!-- ********************************************************
-
-                     ************* Auckland congestion  *****************
-
-                     ***************************************************************** -->
                 
- 
-               <section id="capacity" data-background-image="../figures/Backgrounds/car-park.jpg">
-                   <div class="whitebackground2">
-                   <h3>What is 'Capacity'?</h3>
-     
-		            <p>From dictionary: "the maximum amount that something can contain."</p>
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="dis2" data-background-image="../figures/teaching/festival.jpg">              
+                    <div class="whitebackground2">
+                        <h3>Group discussion: Auckland Lantern festival</h3>
+                        
+                        <p>Around 200,000 visitors come to Auckland every year for the Lantern festival, bringing great cultural exchange and revenue, but also creating major traffic problems through traffic congestions, traffic incidents, crowdedness in public transport systems and road closures. </p>
+                        
+                         <p class="l2">Suppose that you can have the access to a large telecommunication data that shows the locations and trajectories of tens of thousands of people in Auckland during the festival, what would you do with the data to help solving the traffic issues in Auckland during the event? (assume that you have all the technical skills/resources required to do what you want to do but consider the ethical and personal confidentiality issues in your answer)</p>
                        
-                    <p class="l2">The capacity of a car park is obviously the maximum number of cars. It can nevertheless be measured relatively  easily. However, the capacity of a particular section of road is not as easily  determined as it depends upon the speed of the traffic and other factors.</p>
-                   
-                   <p class="l2">Vehicle capacity is the maximum number of vehicles that can pass a given point during a specified period under prevailing roadway, traffic, and control conditions. This assumes that there is no influence from downstream traffic operation, such as queues backing into the analysis point.</p>
-                  </div>
-                    
-                </section>
+                    </div>
+                         
+                </section> 
                 
-               
+                
+                     <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes3" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                     <p>	1. Basic concepts in traffic planning</p>
+                            <p class="l2"> Traffic flow</p>
+                            <p class="l2"> Speed</p>
+                            <p class="l2"> Density</p>
+                    
+                     <p>2. Traffic flow theory</p>
+                    
+                    <p>	3. Types of traffic models</p>
+                    <p>	<a>4. Introduction to the HCM 2016</a></p>
+                            <p class="l2"> Capacity</p>
+                            <p class="l2"> Level of service</p>
+                    
+                    <p>	5. How to use the HCM</p>
+                    
+                </section>  
+                
                       <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
-                <section id="prob" data-background-image="../figures/teaching/HCM.png">                    
+                <section id="prob" data-background-image="../figures/teaching/HCM.png" data-background-size="1000px">                    
                     <div class="whitebackground2 fragment">
                         <h3>Highway Capacity Manual</h3>
                         
@@ -717,15 +999,17 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     </div>
                       </section>
                 
+                
+                
                   <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
-                <section id="prob1" data-background-image="../figures/teaching/HCM.png">                    
+                <section id="prob1" data-background-image="../figures/teaching/HCM.png" data-background-size="1000px">                       
                     <div class="whitebackground2">
                         <h3>Who will need Highway Capacity Manual ?</h3>
                         
-                        <p>(a) engineers who work inthe field of traffic
+                        <p>(a) engineers who work in the field of traffic
                             operations or highway geometric design and </p>
                             
                           <p>(b) transportation planners who
@@ -738,8 +1022,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
                       </section>
                 
                
-                
-
            <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -889,7 +1171,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     </div>
                 </section>
                 
-                  
+                
                     <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -996,241 +1278,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
                            
                     </div>
                 </section>
-                
-                
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="param1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Flow parameters </h3>
-                            
-                             <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
-                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but  volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
-                        
-                        <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
-                        
-                        <p class="l2">Peak Hourly Volume (PHV) - PHV is the maximum flow observed over any 1 hour period. In urban areas where tidal flows are common, it is usual to have two PHV’s, one for the A.M. and other for P.M. In rural areas it is sufficient to use only one PHV.</p>
-                           
-                    </div>
-                </section>
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="param2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Peak Hour Factor (PHF) </h3>
-                            
-                             <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
-                        
-                          \[\begin{aligned}
-					PHF = \frac{V}{V_{15m} \times 4} \\
-					\end{aligned} \]
-                        
-                        <p>Where:</p>
-                        
-                        
-                         <p class="l2">$V$ = Total hourly volume</p>
-                        
-                        <p class="l2"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
-                        
-                        <p class="l2">When PHF is known, a peak flow rate for a peak 15 minute within the analysis hour can be calculated: </p>
-                        
-                         \[\begin{aligned}
-					v = \frac{V}{PHF} \\
-					\end{aligned} \]
-                           
-                    </div>
-                </section>
-                
-                  <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="param3" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Peak Hour Factor (PHF) : Examples</h3>
-                            
-                             <p>  Example 1: The 15-minute vehicle volumes are relatively constant:
-                        V15 = 190, V30 = 200, V45 = 190, V60 = 190. Calculate PHF:
-                        
-                        </p>
-                        
-                          \[\begin{aligned}
-					PHF = (190 + 200 + 190 + 190) / [(200 x 4)] = 0.96\\
-					\end{aligned} \]
-                        
-                        <p>Example 2: The 15-minute vehicle volumes are more variable: V15 = 175, V30 = 200, V45 = 150, V60 = 125. Calculate PHF:</p>
-                        
-                        \[\begin{aligned}
-					PHF = (175 + 200 + 150 + 125) / [(200 x 4)] = 0.81\\
-					\end{aligned} \]
-                           
-                    </div>
-                </section>
-                
-                      
-                      <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed1" data-background-image="../figures/teaching/bluetooth.png">                     
-                    <div class="whitebackground2">
-                        <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
-                        
-                    <p>There are two ways to measure speed: </p>
-                        
-                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
-                        
-                         \[\begin{aligned}
-					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
-					\end{aligned} \]
-                        
-                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
-                        
-                          \[\begin{aligned}
-					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
-					\end{aligned} \]
-                        
-                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
-                        
-                    </div>
-                         
-                    <aside class="notes">
-                  *** Time Mean Speed =  arithmetic average speed
-                    
-                 ***   Space Mean Speed = harmonic mean speed
-                        
-                    ***    Time-mean speed is associated with a single point along a roadway over time,
-                        whereas the space-mean speed is associated with a specified length of roadway.
-                        Use space-mean speeds when reducing and analyzing travel time data.
-                        
-                     </aside>  
-                    
-                </section>
-                
-                  <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed2" data-background-image="../figures/teaching/bluetooth.png">                     
-                    <div class="whitebackground2">
-                        <h3>Speed from a spatial point of view</h3>
-                        
-                    <p>Spot speed: the instantaneous speed of a vehicle passing a
-                        point on the roadway. Data represent the speed
-                        characteristics of vehicles passing the site. </p>
-                        
-                        <p class="l2"> Most of the speed cameras measure spot speeds!</p>
-                        
-                   </div>
-                    
-                </section>
-                
-                
-             <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed3" data-background-image="../figures/teaching/spot-speed.png" data-background-size="1200px">                          
-                    <div class="whitebackground fragment">
-                        <h3>Typical use of spot speed</h3>
-                        
-                        <p class="l2">Speed limit enforcements </p>
-                        
-                        <p class="l2">Traffic control planning - speed limits, safe speeds at curves, location for traffic signs, etc. </p>
-                        
-                        <p class="l2">Geometric design - road alignments, stopping sight distance</p>
-                        <p class="l2">Accident analysis</p>
-                        
-                        <p>Measurements: Enoscope, Pneumatic tubes, Video recordings, Speed gun/camera </p>
-                        
-                    </div>
-                    
-                </section>
-                
-                
-                <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed4" data-background-image="../figures/teaching/bluetooth.png">                     
-                    <div class="whitebackground2">
-                        <h3>Journey vs Running speed</h3>
-                        
-                    <p>Journey speed is the distance divided by total journey time.
-                        Total journey time includes all delays due to traffic.</p>
-                        
-                        <p > Running speed is the distance divided by running time, i.e.
-                        total journey time minus delays. (Running time is the
-                        time that the vehicle is actually in motion.)</p>
-                        
-                   </div>
-                    
-                </section>
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed5" >                     
-                    <div class="whitebackground2">
-                        <h3>Example 3: Estimate journey vs running speeds</h3>
-                        
-                   <figure class="centre" >
-
-                        <img data-src="../figures/teaching/journey-running.png"
-                             style="width:800px;"
-                             alt="ATIS" />
-                    
-                    </figure>
-                        
-                   </div>
-                    
-                </section>
-                
-                   
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="density1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Density</h3>
-                            
-                             <p> Density is the number of vehicles occupying a given length of a lane or roadway at  a particular instant.  </p>
-                        
-                       <p class="l2"> Measuring density directly in the field is difficult. For under-saturated traffic conditions density (D) can be estimated as follows:</p>
-       
-                          \[\begin{aligned}
-					D = \frac{v_p}{S} \\
-					\end{aligned} \]
-                        
-                        <p>Where:</p>
-                        
-                         <p class="l2">$v_p$ = flow rate (veh/h)</p>
-                        
-                        <p class="l2"> $S$ =  average travel speed (km/h) </p>
-                        
-                        <p class="l2">Density is a critical parameter for uninterrupted-flow facilities because it  characterizes the quality of traffic operations. It describes the proximity of vehicles to one another and reflects the freedom to manoeuvre within the traffic stream.</p>
-                       
-                    </div>
-                       
-                  <aside class="notes">
-		              For the computations in HCM, density is averaged over time  and is usually expressed as veh/km or passenger car unit per km. 
-                      Measuring density directly in the field is difficult: it requires a vantage point for photographing, videotaping, or observing significant lengths of highway. Density  can be computed, however, from the average travel speed (S) and flow rate, which  are measured more easily.
-                      
-	               </aside>
-                    
-                </section>
-                
                 
                 
            <!-- ********************************************************
@@ -1357,13 +1404,30 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     
                 </section>
                 
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="dis3" data-background-image="../figures/teaching/festival.jpg">              
+                    <div class="whitebackground2">
+                        <h3>Group discussion: LOS in Auckland </h3>
+                        
+                        <p>Which LOS do you think Auckland is in? </p>
+                        
+                         <p>Which would you choose to improve the LOS in Auckland: improve the road infrastructure (e.g. more roads), or reduce the travel demand?</p>
+                        
+                        <p>How do you achieve that?</p>
+                    
+                    </div>
+                         
+                </section> 
+                
                 
                  <!-- ******* Auckland congestion  *********** -->
                 
-                
                <section id="servicemeasure1" data-background-image="../figures/Backgrounds/grass.jpg">    
                    <div class="whitebackground2 ">
-                   <h3>Service measures</h3>
+                   <h3>Service measures: Measurements of LOS</h3>
 
                <p>Service measures are performance measures used to define LOS for 
                    transportation system elements.  </p>
@@ -1385,39 +1449,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>
                 
                 
-                <!-- ******* Auckland congestion  *********** -->
-                <section id="servicemeasure2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">    
-                   <div class="whitebackground2 ">
-                   <h3>Service measures: For motorways and multilane highways</h3>
-
-               <p>Although travel speed is a major concern of drivers that relates to service quality, freedom to manoeuvre with in  the traffic stream and proximity to other vehicles are equally noticeable concerns.</p>
-                <p> These qualities are related to the density of the traffic stream. Unlike speed,  density increases as flow increases up to capacity, resulting in a service measure  that is both perceivable by motorists and is sensitive to a broad range of flows.</p>
-
-                   	<p class="l2"> Density is used as the service measure for motorway facilities, basic segments,  ramp junctions, weaving segments, and multilane highway. Density is typically  measured in pc/km/ln. </p>
-                    </div>
-                   <aside class="notes">
-		            
-	               </aside>
-                    
-                </section>
-                
-                
-                <!-- ******* Auckland congestion  *********** -->
-                <section id="servicemeasure3" data-background-image="../figures/Backgrounds/highway.jpg">    
-                   <div class="whitebackground2 ">
-                   <h3>Service measures: two-lane highways</h3>
-
-                    
-                <p> On two-lane highways, unlike other types of uninterrupted flow facilities, normal traffic flow in one direction influences flow in the other direction. Motorists must adjust their travel speeds as volume increase and the ability to pass declines.</p>
-
-                   	<p class="l2">  Three service measures are used for two-lane highways:  percent time-spent-following, average travel speed, and percent free-flow speed.</p>
-                    </div>
-                   <aside class="notes">
-		            
-	               </aside>
-                    
-                </section>            
-                
+               
                     <!-- ******* Auckland congestion  *********** -->
                 <section id="servicemeasure4" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
@@ -1437,8 +1469,28 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>            
                 
                 
+                 <!-- ********************************************************
+
+                     ************* Capacity  *****************
+
+                     ***************************************************************** -->
                 
-                    <!-- ******* Auckland congestion  *********** -->
+ 
+               <section id="capacity" data-background-image="../figures/Backgrounds/car-park.jpg">
+                   <div class="whitebackground2">
+                   <h3>What is 'Capacity'?</h3>
+     
+		            <p>From dictionary: "the maximum amount that something can contain."</p>
+                       
+                    <p class="l2">The capacity of a car park is obviously the maximum number of cars. It can nevertheless be measured relatively easily. However, the capacity of a particular section of road is not as easily  determined as it depends upon the speed of the traffic and other factors.</p>
+                   
+                   <p class="l2">Vehicle capacity is the maximum number of vehicles that can pass a given point during a specified period under prevailing roadway, traffic, and control conditions. This assumes that there is no influence from downstream traffic operation, such as queues backing into the analysis point.</p>
+                  </div>
+                    
+                </section>
+                
+                
+                   <!-- ******* Auckland congestion  *********** -->
                 <section id="highwaycapacity1" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    <h3>So now what is 'highway capacity'?</h3>
@@ -1452,8 +1504,9 @@ Use space-mean speeds when reducing and analyzing travel time data.
             
 	               </aside>
                     
-                </section>            
-                              
+                </section>    
+                
+                          
                    <!-- ******* Auckland congestion  *********** -->
                 <section id="highwaycapacity2" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
@@ -1497,41 +1550,68 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>          
                 
                 
+                    <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes4" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                     <p>	1. Basic concepts in traffic planning</p>
+                            <p class="l2"> Traffic flow</p>
+                            <p class="l2"> Speed</p>
+                            <p class="l2"> Density</p>
+                    
+                     <p>2. Traffic flow theory</p>
+                    
+                    <p>	3. Types of traffic models</p>
+                    <p>	4. Introduction to the HCM 2016</p>
+                            <p class="l2"> Capacity</p>
+                            <p class="l2"> Level of service</p>
+                    
+                    <p><a>	5. How to use the HCM</a></p>
+                    
+                </section>  
+                
+                
+                
+                
                     <!-- ******* Auckland congestion  *********** -->
                 <section id="method1" data-background-image="../figures/Backgrounds/highway.jpg">    
-                   <div class="whitebackground2 ">
-                   <h3>Why do we need to estimate core parameters for multilane highways</h3>
-            
-                <p > For multilane Highways, HCM addresses capacity and LOS  analysis for uninterrupted-flow segments of surface multilane highways. In  general, uninterrupted flow may exist on a multilane highway if there are 2 mile  (approx. 3.2 km) or more between traffic signals. Where signals are more closely  space, the facility should be analysed as an urban street.</p>
-
-                <p class="l2"> Many multilane highways will have periodic signalized intersection, even if the  average signal spacing is well over 2 mile. In such cases, the multilane highway  segments that are more than 2 mile away from any signalized intersections are  analysed by using the methodology of this chapter. </p>
-                    
-                <p class="l2"> Multilane highways generally have four to six lanes (in both directions) with  posted speed limits between 50 to 100 km/h. These highways may be divided by  one or various median types, may be undivided (with only a centreline separating  the directions of flow), or may have a two way right-turn lane. </p>
-                    </div>
-                     <aside class="notes">
-            
-	               </aside>
-                    
-                </section>                    
-                
-                   <!-- ******* Auckland congestion  *********** -->
-                <section id="method2" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    <h3>HCM methodology for multilane highways</h3>
             
                 <p > This methodology is used to analyse the capacity, LOS, lane requirements, and  impacts of traffic and design features on uninterrupted flow segments of rural and  suburban multilane highways. </p>
+                 
+                    </div>
+                     <aside class="notes">
+                The last three factors are more  representative of an urban or suburban  arterial, but they may also exist on  facilities with more than 2 mile  between traffic signals. When the  factors are present on uninterrupted  flow segments of multilane highways,  the methodology does not deal with  their impact on flow. In addition, this  methodology cannot be applied to  highways with a total of three lanes in  both directions, which should be  analysed as two-lane highways with  periodic passing lanes.
+
+	               </aside>
+                    
+                </section>           
+                
+                   <!-- ******* Auckland congestion  *********** -->
+                <section id="method2" data-background-image="../figures/Backgrounds/highway.jpg">    
+                   <div class="whitebackground2 ">
+                   
                    <p >  Limitations of Methodology: The methodology presented in this chapter does not  take into account the following conditions:
                     </p>
 
-                <p class="l2"> The negative impacts of poor weather conditions, traffic accidents or incidents,  railroad crossings, or construction operations; </p>
-                <p class="l2">Interference cause by parking on the shoulders of the multilane highway; </p>
-                <p class="l2">The effect of lane drops and lane additions at the beginning or end of multilane  highway segments; </p>
-                <p class="l2">Possible queuing impacts when a multilane highway segment transitions to a  two-lane highway segment; </p>
-                <p class="l2">Differences between various types of median barriers and the difference  between impacts of a median barrier and a two way right turn lane; </p>
-                <p class="l2">Free-flow speed (FFS) below 70 km/h or higher than 100 km/h; </p>
-                <p class="l2">Significant presence of on-street parking; </p>
-                <p class="l2">Presence of bus stops that have significant use; and </p>
-                <p class="l2">Significant pedestrian activity.</p>
+                <p class="l3"> The negative impacts of poor weather conditions, traffic accidents or incidents,  railroad crossings, or construction operations; </p>
+                <p class="l3">Interference cause by parking on the shoulders of the multilane highway; </p>
+                <p class="l3">The effect of lane drops and lane additions at the beginning or end of multilane  highway segments; </p>
+                <p class="l3">Possible queuing impacts when a multilane highway segment transitions to a  two-lane highway segment; </p>
+                <p class="l3">Differences between various types of median barriers and the difference  between impacts of a median barrier and a two way right turn lane; </p>
+                <p class="l3">Free-flow speed (FFS) below 70 km/h or higher than 100 km/h; </p>
+                <p class="l3">Significant presence of on-street parking; </p>
+                <p class="l3">Presence of bus stops that have significant use; and </p>
+                <p class="l3">Significant pedestrian activity.</p>
                     </div>
                      <aside class="notes">
                 The last three factors are more  representative of an urban or suburban  arterial, but they may also exist on  facilities with more than 2 mile  between traffic signals. When the  factors are present on uninterrupted  flow segments of multilane highways,  the methodology does not deal with  their impact on flow. In addition, this  methodology cannot be applied to  highways with a total of three lanes in  both directions, which should be  analysed as two-lane highways with  periodic passing lanes.
@@ -1545,10 +1625,10 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 <section id="method3" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    
-                <h3>  Motorised vehicle core methodology </h3>
+                <h3>  Performance Measures </h3>
 
-                   	 <p>Performance Measures 
-                         The core motorized vehicle methodology generates the following 
+                   	 <p> 
+                         The core motorised vehicle methodology generates the following 
                          performance measures: </p>
 
                 <p class="l2">Capacity,  </p>
@@ -1567,7 +1647,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>  
 
                     <!-- ******* Auckland congestion  *********** -->
-                <section id="method4" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                <section id="method4" data-background-image="../figures/teaching/HCM-method.png" data-background-size="600px">
                    <div class="whitebackground2 fragment">
                 <h3>  Description of each step </h3>
 
@@ -1866,10 +1946,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
               
                
                 
-                
-                
-                
-                
                  <!-- *************** Thanks  ************************** -->
                                   
                 <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
@@ -1912,6 +1988,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
 			Reveal.initialize({
 
 				history: true,
+                slideNumber: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 
