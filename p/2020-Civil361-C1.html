@@ -254,11 +254,7 @@
                    </div>          
                 </section>   
                 
-                  <!-- *************** QUIZ 3: who is in this survey? **************** -->    
-  
-               <section id="QUIZ1" data-background-image="../figures/teaching/QUIZ.png" data-background-size="900px">    
-                   
-             </section>    
+                 
                 
                 
                  <!-- ************** Learning outcomes ************* -->
@@ -339,7 +335,7 @@
                         <h3>Measurements from multiple viewpoints</h3>
                         
                         <p class ="l2">At a point</p>
-                        <p class ="l2">Over a short section: smaller than 100m </p>
+                        <p class ="l2">Over a short section: smaller than 10m </p>
                         <p class ="l2">Over a long section: 100 - 1000m</p>
                         <p class ="l2">Area-based measurements</p>
                        
@@ -420,21 +416,6 @@
                      </aside>  
                 </section>      
                 
-                
-                  <!-- *************** QUIZ 3: who is in this survey? **************** -->    
-  
-               <section id="QUIZ2" data-background-image="../figures/teaching/QUIZ.png" data-background-size="900px">    
-                   
-             </section> 
-                
-                    <!-- *************** ITS data ************************** -->
-  
-               <section id="road-tube" data-background-image="../figures/teaching/road-tube.jpg">     
-                
-                </section>  
-                
-                
-                 
                 
                 
                  <!-- *************** ITS data ************************** -->
@@ -561,6 +542,28 @@
                     </div>
                 </section>
                 
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="PHF" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Peak Hour Factor (PHF) </h3>
+                            
+                         <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
+                        
+                         <img data-src="../figures/teaching/PHF.jpg"
+                             style="width:600px;"
+                             alt="PHF" />
+                           
+                         \[\begin{aligned}
+					PHF = \frac{V}{V_{15m} \times 4} \\
+					\end{aligned} \]
+                    </div>
+                </section>
+                
+                
               
                   <!-- ******************************************************
                 *********************** Definition ***********************
@@ -608,7 +611,7 @@
                         <h3>What is a 'Time-Space Diagram'</h3>
                         
                         <img data-src="../figures/teaching/time-space.png"
-                             style="width:800px;"
+                             style="width:600px;"
                              alt="Flow-chart" />
                         
                          <p class="l2"> Shows the position of individual vehicles in time and in space</p> 
@@ -634,7 +637,7 @@
                 
                 <section id="pf-bussim-video">
 
-                    <h2>Time-space diagram of vehicles (and the prediction of their position)</h2>
+                    <h2>Example: Time-space diagram of buses</h2>
 
                     <video controls autoplay>
 
@@ -674,7 +677,7 @@
                              style="width:800px;"
                              alt="Flow-chart" />
                         
-                         <p> - The proportion of time that a detector is “occupied” or covered, by a vehicle in a defined time period.</p>
+                         <p> - The proportion of time that a detector is “occupied”, by a vehicle in a defined time period.</p>
                         
                           \[\begin{aligned}
 					O_t = \frac{\sum_{i}^N{\delta t_i}}{T}\\
@@ -684,12 +687,6 @@
                     </div>
                          
                 </section>  
-                
-                  <!-- *************** QUIZ 3: who is in this survey? **************** -->    
-  
-               <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png" data-background-size="900px">    
-                   
-             </section> 
                 
                 
                 <!-- ******************************************************
@@ -701,7 +698,7 @@
                         <h3>Measurements from multiple viewpoints</h3>
                         
                         <p class ="l2">At a point</p>
-                        <p class ="l2"><a>Over a short section: smaller than 100m </a></p>
+                        <p class ="l2"><a>Over a short section: smaller than 10m </a></p>
                         <p class ="l2">Over a long section: 100 - 1000m</p>
                         <p class ="l2">Area-based measurements</p>
                        
@@ -749,25 +746,6 @@
                     
                 </section>
                 
-                
-                     <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-             
-                <section id="ex1-speed" >                     
-                   
-                        <p> <a class="bold">Example 1:</a> During a 60-sec period a detector is occupied by vehicles at the following moments: 0.34, 0.38, 0.40, 0.32, and 0.52 sec. Estimate the values of flow (q), spot speeds and space mean speed (vs). Assume that the loop detector length = 4 m and that the average length of vehicles = 6 m.</p>
-                        
-                        <p class="l2">Hints: Calculate effective vehicle length first, then spot speeds, then flow and space mean speed</p>
-                
-                     <aside class="notes">
-                 
-                         
-                     </aside>  
-                </section>
-                
-                
                  <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -786,19 +764,12 @@
                     </div>
                          
                     <aside class="notes">
-                  *** Time Mean Speed =  arithmetic average speed
-                    
-                 ***   Space Mean Speed = harmonic mean speed
-                        
-                    ***    Time-mean speed is associated with a single point along a roadway over time,
-                    whereas the space-mean speed is associated with a specified length of roadway.
-                    Use space-mean speeds when reducing and analyzing travel time data.
                         
                      </aside>  
                     
                 </section>
                 
-                    <!-- ******************************************************
+                 <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
@@ -834,6 +805,27 @@
                     
                 </section>
                 
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+             
+                <section id="ex1-speed" >                     
+                   
+                        <p> <a class="bold">Example 1:</a> During a 60-sec period a detector is occupied by vehicles for the following occupancy time: 0.34, 0.38, 0.40, 0.32, and 0.52 sec. Estimate the values of flow (q), spot speeds and space mean speed (vs). Assume that the loop detector length = 4 m and that the average length of vehicles = 6 m.</p>
+                        
+                        <p class="l2">Hints: Calculate effective vehicle length first, then spot speeds, then flow and space mean speed</p>
+                
+                     <aside class="notes">
+                         <p class="l2">EVL = 4 +6 = 10m</p>
+                         <p class="l2">q = N/T = 5/60*3600 = 300 veh/h</p>
+                          
+                         <p class="l2">speed = EVL/to = 10 / 0.34 = 29.4 m/s</p>
+                         
+                     </aside>  
+                </section>
+                
+            
                       <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -869,7 +861,7 @@
                         <p class="l2">Space mean speed weights slower vehicles more heavily, as they take a longer time to occupy a highway section. As such, $v_s$ is typically lower than $v_t$, in which each vehicle is weighted equally. </p>
                         
                          \[\begin{aligned}
-					v_t = v_s + \frac{\delta^2_s}{v_s} \\
+					v_t = v_s + \frac{\delta^2_{v_s}}{v_s} \\
 					\end{aligned} \]
                         
                     </div>
@@ -897,26 +889,19 @@
                         
                         <p>85th Percentile Speed</p>
                         
-                        <p class="l2">Sometimes refer to “critical speed”. </p>
+                        <p class="l2">Sometimes refer to <a>“critical speed”</a>. </p>
                         <p class="l2">Drivers exceeding 85th percentile speed are usually considered to be driving faster than is safe. </p>
-                        <p class="l2">Use to establish “maximum speed limit”. </p>
+                        <p class="l2">Establish <a>“maximum speed limit”</a>. </p>
                         
                         <p>15th Percentile Speed</p>
                         
                         <p class="l2">Vehicles travelling below this value tend to obstruct the flow of traffic, thereby increasing the accident hazard. </p>
-                        <p class="l2">Use to establish “minimum speed limit”.</p>
+                        <p class="l2">Establish <a>“minimum speed limit”</a>.</p>
                        
                     </div>
                          
                     <aside class="notes">
-                  *** Time Mean Speed =  arithmetic average speed
-                    
-                 ***   Space Mean Speed = harmonic mean speed
-                        
-                    ***    Time-mean speed is associated with a single point along a roadway over time,
-                    whereas the space-mean speed is associated with a specified length of roadway.
-                    Use space-mean speeds when reducing and analyzing travel time data.
-                        
+                       
                      </aside>  
                     
                 </section>
@@ -937,7 +922,7 @@
                         <h3>Measurements from multiple viewpoints</h3>
                         
                         <p class ="l2">At a point</p>
-                        <p class ="l2">Over a short section: smaller than 100m</p>
+                        <p class ="l2">Over a short section: smaller than 10m</p>
                         <p class ="l2"><a>Over a long section: 100 - 1000m</a></p>
                         <p class ="l2">Area-based measurements</p>
                         
@@ -1294,7 +1279,7 @@
   
                <section id="data-fusion" >
                    
-                   <h3>Travel time data collection: Connected Vehicles</h3> 
+                   <h3>Travel time data collection: Autonomous/Connected Vehicles</h3> 
                    <figure class="centre" >
                         <img data-src="../figures/teaching/Uber-AV.gif"
                              style="width:800px;"
@@ -1337,13 +1322,7 @@
                    </div>
                 </section>  
                 
-                 <!-- *************** QUIZ 3: who is in this survey? **************** -->    
-  
-               <section id="QUIZ5" data-background-image="../figures/teaching/QUIZ.png" data-background-size="900px">    
-                   
-             </section>
-                
-                
+               
                  <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -1353,7 +1332,7 @@
                         <h3>Measurements from multiple viewpoints</h3>
                         
                         <p class ="l2">At a point</p>
-                        <p class ="l2">Over a short section: smaller than 100m</p>
+                        <p class ="l2">Over a short section: smaller than 10m</p>
                         <p class ="l2">Over a long section: 100 - 1000m</p>
                         <p class ="l2"><a>Area-based measurements</a></p>
                        
@@ -1809,7 +1788,7 @@ Purpose of the survey — With most traditional methods it is necessary to deter
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil361-C1.html">http://bit.ly/2020-civil361-C1</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil361-C1.html">http://bit.ly/2020-civil361-c1</a></h4>
 
                     </div>
 
