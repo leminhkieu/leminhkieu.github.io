@@ -103,7 +103,7 @@
                 </section>
                                 
                                
-                  <!-- ************** Learning outcomes ************* -->
+                    <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes" data-transition="fade">
 
@@ -121,14 +121,12 @@
                             <p class="l2"> Density</p>
                     
                      <p>2. Traffic flow theory</p>
-                    <p>	3. Types of traffic models</p>
-                    <p>	4. Introduction to the HCM 2016</p>
+                    
+                    <p>	3. Introduction to the HCM 2016</p>
                             <p class="l2"> Capacity</p>
                             <p class="l2"> Level of service</p>
-                    
-                    <p>	5. How to use the HCM</p>
-                    
-                </section>                
+                   
+                </section>             
 
              
                        <!-- ******************************************************
@@ -168,7 +166,7 @@
                         <h3>Flow parameters </h3>
                             
                              <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
-                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but  volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
+                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
                         
                         <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
                         
@@ -178,77 +176,6 @@
                 </section>
                 
                 
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="param2" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Peak Hour Factor (PHF) </h3>
-                            
-                             <p> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
-                        
-                          \[\begin{aligned}
-					PHF = \frac{V}{V_{15m} \times 4} \\
-					\end{aligned} \]
-                        
-                        <p>Where:</p>
-                        
-                        
-                         <p class="l2">$V$ = Total hourly volume</p>
-                        
-                        <p class="l2"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
-                        
-                        <p class="l2">When PHF is known, a peak flow rate for a peak 15 minute within the analysis hour can be calculated: </p>
-                        
-                         \[\begin{aligned}
-					v = \frac{V}{PHF} \\
-					\end{aligned} \]
-                           
-                    </div>
-                </section>
-                
-                  <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="param3" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Peak Hour Factor (PHF) : Examples</h3>
-                            
-                             <p>  Example 1: The 15-minute vehicle volumes are relatively constant:
-                        V15 = 190, V30 = 200, V45 = 190, V60 = 190. Calculate PHF:
-                        
-                        </p>
-                        
-                        <p>Example 2: The 15-minute vehicle volumes are more variable: V15 = 175, V30 = 200, V45 = 150, V60 = 125. Calculate PHF:</p>
-                        
-                    </div>
-                    
-                     <aside class="notes">
-                        
-                          \[\begin{aligned}
-					PHF = (190 + 200 + 190 + 190) / [(200 x 4)] = 0.96\\
-					\end{aligned} \]
-                        
-                          
-                        \[\begin{aligned}
-					PHF = (175 + 200 + 150 + 125) / [(200 x 4)] = 0.81\\
-					\end{aligned} \]
-                        
-                     </aside> 
-                    
-                </section>
-                
-              <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple********************
-  
-               <section id="QUIZ1" data-background-image="../figures/teaching/QUIZ.png" data-background-size="1000px">   
-                   
-             </section>
-              
-              ***** -->
-              
-                  
                   <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -265,13 +192,13 @@
 					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
 					\end{aligned} \]
                         
-                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                        <p class="l2">Space-mean-speed is calculated by dividing the measured distance by the average travel time</p>
                         
                           \[\begin{aligned}
 					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
 					\end{aligned} \]
                         
-                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
+                        <p class="l2">Space means speed is usually smaller than time-mean-speed</p>
                         
                     </div>
                          
@@ -307,36 +234,7 @@
                 </section>
                 
                 
-                      <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
              
-                <section id="speed3" >                     
-                   
-                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
-                        
-                     <aside class="notes">
-                    
-                     <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
-                         \[\begin{aligned}
-					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{50+40+30+20+10}{5} = 30 \ km/h  \\
-					\end{aligned} \]
-                        
-                         <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
-                          \[\begin{aligned}
-					v_s = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}} = \frac{5}{1/50+1/40+1/30+1/20+1/10} = 28.9 \ km/h \\
-					\end{aligned} \]
-                        </aside> 
-                     
-                </section>
-                
-            <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************ ** -->
-  
-               <section id="QUIZ2" data-background-image="../figures/teaching/QUIZ.png" data-background-size="1000px">   
-                   
-             </section>
-                
              <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -358,30 +256,12 @@
                     
                 </section>
                 
-                
-                <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed5" data-background-image="../figures/teaching/bluetooth.png">                     
-                    <div class="whitebackground2">
-                        <h3>Speed from a temporal point of view: Journey vs Running speed</h3>
-                        
-                    <p>Journey speed is the distance divided by total journey time.
-                        Total journey time includes all delays due to traffic.</p>
-                        
-                        <p > Running speed is the distance divided by running time, i.e.
-                        total journey time minus delays. (Running time is the
-                        time that the vehicle is actually in motion.)</p>
-                        
-                   </div>
-                    
-                </section>
+            
                 
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                ********************************************************
 
                 <section id="speed6" >                     
                     <div class="whitebackground2">
@@ -398,7 +278,7 @@
                    </div>
                     
                 </section>
-                
+                **** -->
                 
                  <!-- ******************************************************
                 *********************** Definition ***********************
@@ -461,32 +341,6 @@
                 
                 
                  <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/Auckland-plan.mp4"
-                         data-background-video-loop="loop"
-                         id="video1">                     
-                    <div class="whitebackground2 fragment">
-                        <h3>Auckland is transforming rapidly</h3>
-                        
-                        <p>Auckland’s city centre is going through a period of rapid transformational change, with substantial investment committed to the area by both the public sector and private developers.</p>
-                        
-                        <p class="l2">America’s Cup and APEC take place here in 2021</p>
-                        
-                        <p class="l2">City Rail Link starts operating in 2024: 54,000 peak-time passengers each hour</p>
-                        
-                        <p>“By 2032 Auckland's city centre will be highly regarded internationally as a centre for business and learning, innovation, entertainment, culture and urban living - all with a distinctly 'Auckland' flavour.”  -  Auckland City Centre Masterplan</p>
-                        
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                 <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
@@ -506,7 +360,7 @@
                 </section> 
                 
                 
-                 <!-- ************** Learning outcomes ************* -->
+                  <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes1" data-transition="fade">
 
@@ -525,14 +379,11 @@
                     
                      <p><a>2. Traffic flow theory</a></p>
                     
-                    <p>3. Types of traffic models</p>
-                    <p>	4. Introduction to the HCM 2016</p>
+                    <p>	3. Introduction to the HCM 2016</p>
                             <p class="l2"> Capacity</p>
                             <p class="l2"> Level of service</p>
-                    
-                    <p>	5. How to use the HCM</p>
-                    
-                </section> 
+                   
+                </section>        
                 
                 
                  <!-- ******************************************************
@@ -586,6 +437,30 @@
 	               </aside> 
                 </section>
                 
+                
+                    <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="special" data-background-image="../figures/Backgrounds/street2.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>Special Speed & Density Conditions</h3>
+                        
+                    <p>The discussion of the speed-flow-density relationship mentioned several speed-density conditions. Two of these conditions are extremely significant and have been given special names. </p>
+                        
+                        <p class="l2"><a>Free Flow Speed:</a> This is the mean speed that vehicles will travel on a roadway when the density of vehicles is low. Under low-density conditions, drivers no longer worry about other vehicles. They subsequently proceed at speeds that are controlled by the performance of their vehicles, the conditions of the roadway, and the posted speed limit.</p>
+                        
+                        
+                        <p class="l2"><a>Jam Density:</a> Extremely high densities can bring traffic on a roadway to a complete stop. The density at which traffic stops is called the jam density.</p>
+                       
+                        
+                    </div>
+                         
+                    <aside class="notes">
+                
+                     </aside>  
+                    
+                </section>
                 
                    
                       <!-- ******************************************************
@@ -651,42 +526,6 @@
                 </section>
                 
                 
-                          <!-- ******************************************************
-                ***********************  Fundamental diagrams of traffic flow ***********************
-                ************************************************************ -->
-
-             
-                <section id="greenshields2" data-background-image="../figures/Backgrounds/auckland-background.jpg">
-                   <div class="whitebackground2">
-                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
-                       
-                        <p class="l2"> Let's do some maths!</p>
-                   
-                      
-                        \[\begin{aligned}
-					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \\
-					\end{aligned} \]
-                       
- 
-                       <p class="l2">As the free-flow speed $v_f$ is not equal to zero so: $k_m = \frac{k_j}{2}$</p>
-                       
-                       <p class="l2">Substituting km into speed density relationship at maximum flow condition gives: </p>
-                       
-                        \[\begin{aligned}
-					v_m = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = \frac{v_f}{2} \\
-					\end{aligned} \]
-                       
-                        \[\begin{aligned}
-					q_m = v_f k_m = \frac{v_f k_j}{4} \\
-					\end{aligned} \]
-                       
-                    </div>
-                       <aside class="notes">
-		        
-	               </aside> 
-                </section>
-                
-                
              <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
@@ -721,26 +560,7 @@
                 </section>
                 
                 
-                  <!-- ******************************************************
-                *********************** diagram4 ***********************
-                ************************************************************ -->
-
-               <section id="diagram4" >               
-                    
-                   <div class="whitebackground2">
-                   <h3>Fundamental diagrams of traffic flow: Other models</h3>
-                       <img class="centre" src="../figures/teaching/trafficmodel-other.png"
-                            style="width:800px;"
-                         alt="project-1" />
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         Other macroscopic traffic models
-	               </aside>                    
-                    
-                </section>
-                
+           
                 
                 <!-- ******************************************************
                 *********************** diagram4 ***********************
@@ -803,155 +623,14 @@
                 </section>
                 
                 
-             <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************ ** -->
+             <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple**********************
   
                <section id="QUIZ3" data-background-image="../figures/teaching/QUIZ.png" data-background-size="1000px">   
                    
-             </section>
+             </section> ** ** -->
                 
-                  <!-- ************** Learning outcomes ************* -->
-
-                <section id="outcomes2" data-transition="fade">
-
-                    <figure class="right">
-
-                        <img data-src="../figures/teaching/learning-outcomes.jpg"
-                             alt=" " />
-                    
-                    </figure>
-                    <h2>Learning outcomes: </h2>
-                    
-                    <p>	1. Basic concepts in traffic planning</p>
-                            <p class="l2"> Traffic flow</p>
-                            <p class="l2"> Speed</p>
-                            <p class="l2"> Density</p>
-                    
-                     <p>2. Traffic flow theory</p>
-                    
-                    <p>	<a>3. Types of traffic models</a></p>
-                    <p>	4. Introduction to the HCM 2016</p>
-                            <p class="l2"> Capacity</p>
-                            <p class="l2"> Level of service</p>
-                    
-                    <p>	5. How to use the HCM</p>
-                    
-                </section>  
-                
+               
            
-                    <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="traffic-models" data-background-image="../figures/Backgrounds/data.jpg">                 
-                    
-                   <div class="whitebackground2"> 
-                   <h3>Traffic modelling</h3>
-                     <p>A mathematical representation of real-world traffic, usually, but not restricted to, road traffic.</p>
-                    <p>Traffic models can help to objectively answer important questions, such as:</p>   
-                       <p class="l2">What is the potential impact of land use development and/or transport infrastructure on traffic patterns ?</p>   
-                       <p class="l2">What will be the levels of congestion on the road network ?</p>   
-                       <p class="l2">What measures may be appropriate to mitigate potential adverse effects ?</p>   
-                       <p class="l2">How can infrastructure projects and packages be designed to maximise benefits ?</p>   
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-    
-                   <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="traffic-models2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
-                    
-                   <div class="whitebackground2">
-                   <h3>Classes of traffic models</h3>
-                       <img class="centre" src="../figures/teaching/traffic-models.png"
-                            style="width:600px;"
-                         alt="project-1" />
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                
-                
-                         <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-macro.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="macro">                     
-                    <div class="whitebackground2 fragment">
-                        <h3>Macroscopic models</h3>
-                        
-                       <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
-                        
-                        <p class="l2">describe the system entities, their activities and interactions at a low level of details</p>
-                        
-                        <p>are efficient and so applicable to large network and real-time simulation</p>
-                        
-                    </div>
-                    </section>
-                
-                    
-                         <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-micro.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="micro">                     
-                    <div class="whitebackground2 fragment">
-                        <h3>Microscopic models</h3>
-                        
-                          <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
-                        
-                        <p class="l2">describe both the system entities and their interactions at a high level of  detail.</p>
-                        
-                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
-                        
-                    </div>
-                </section>
-                
-                
-                     <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-meso.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="meso">                     
-                    <div class="whitebackground2 fragment">
-                        <h3>Mesoscopic models</h3>
-                        
-                        <p>Individual vehicles may be presented but not as details as microscopic models</p>
-                        
-                        <p class="l2">less computationally expensive to run, but more detailed than macroscopic models</p>
-                        
-                        <p>Capable of modelling the traffic on the large scale</p>
-                        
-                    </div>
-                
-                </section>
-                
-                
-                <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************ ** -->
-  
-               <section id="QUIZ4" data-background-image="../figures/teaching/QUIZ.png" data-background-size="1000px">   
-                   
-             </section>
-                
                     <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -969,7 +648,7 @@
                 </section> 
                 
                 
-                     <!-- ************** Learning outcomes ************* -->
+                      <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes3" data-transition="fade">
 
@@ -981,21 +660,19 @@
                     </figure>
                     <h2>Learning outcomes: </h2>
                     
-                     <p>	1. Basic concepts in traffic planning</p>
+                    <p>	1. Basic concepts in traffic planning</p>
                             <p class="l2"> Traffic flow</p>
                             <p class="l2"> Speed</p>
                             <p class="l2"> Density</p>
                     
                      <p>2. Traffic flow theory</p>
                     
-                    <p>	3. Types of traffic models</p>
-                    <p>	<a>4. Introduction to the HCM 2016</a></p>
+                    <p>	<a>3. Introduction to the HCM 2016</a></p>
                             <p class="l2"> Capacity</p>
                             <p class="l2"> Level of service</p>
-                    
-                    <p>	5. How to use the HCM</p>
-                    
+                   
                 </section>  
+                
                 
                       <!-- ******************************************************
                 *********************** Problem 1 ***********************
@@ -1066,7 +743,7 @@
                 
                   <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                ******************************************************
 
                 <section id="HCM1" data-background-image="../figures/Backgrounds/highway.jpg">                     
                     <div class="whitebackground2">
@@ -1079,7 +756,7 @@
                      
                     </div>
                          
-                </section>
+                </section>  ****** -->
                 
                 
                      <!-- ******************************************************
@@ -1133,8 +810,7 @@
  
                 <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
-
+                ********************************************************
                 <section id="HCM4" data-background-image="../figures/teaching/HCM.png">                        
                     <div class="whitebackground2">
                         <h3>Intended use of the HCM</h3>
@@ -1147,11 +823,12 @@
                         <p class= "l2">4.Temporal coverage: under-saturated and over-saturated facilities </p>
                         
                     </div>
-                </section>
+                </section>  **** -->
+
                 
                  <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                *****************************************************
 
                 <section id="HCM5" data-background-image="../figures/teaching/HCM.png">                       
                     <div class="whitebackground2">
@@ -1167,7 +844,7 @@
                         
                     </div>
                 </section>
-                
+                ******* -->
                 
                     <!-- ******************************************************
                 *********************** Definition ***********************
@@ -1189,120 +866,11 @@
                     </div>
                 </section>
                 
-                
-                    <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="facility1" data-background-image="../figures/Backgrounds/auckland-background.jpg">                       
-                    <div class="whitebackground2">
-                        <h3>Road facility types</h3>
-                        
-                        <p> Uninterrupted-Flow Facilities</p>
-                         <p class="l2">These facilities have no fixed elements such as traffic signals that cause delay or  interruption external to the traffic stream.</p>
-                        <p class="l2">Traffic flow conditions are the result of interactions among vehicles in the traffic  stream, and between vehicles and the geometric and environmental  characteristics of the roadway.</p>
-                        <p class="l2">“Uninterrupted flow” describes the type of facility, not the quality of traffic flow  at any given time.
-                         
-                            
-                    </div>
-                </section>
-                
-                
-                     <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="facility2" data-background-image="../figures/Backgrounds/skylines-night1.jpg">                       
-                    <div class="whitebackground2">
-                        <h3>Road facility types</h3>
-                            
-                             <p> Interrupted-Flow Facilities</p>
-                         <p class="l2">These facilities have fixed elements that cause periodic interruptions to the traffic  stream, such as traffic signals and stop signs. Urban streets are the most common form of this kind of facility.</p>
-                        <p class="l2">Exclusive pedestrian and bicycle facilities are also treated as interrupted flow,  since they may occasionally intersect other streets.</p>
-                        <p class="l2">Traffic flow conditions are the result not only of vehicle interactions and the  facility’s geometric characteristics but also of the traffic control used at intersections and the frequency of access points to the facility.
-                            
-                    </div>
-                </section>
-                
-                      <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="facility3" data-background-image="../figures/Backgrounds/auckland-traffic-live.png">                       
-                    <div class="whitebackground2 fragment">
-                        <h3>Operating conditions</h3>
-                            
-                             <p> Under-Saturated Flow:</p>
-                         <p class="l2">(a) the arrival flow rate is lower than the capacity of a point or segment</p>
-                        <p class="l2">(b) no residual queue remains from a prior breakdown of the facility, and </p>
-                        <p class="l2">(c) traffic flow is unaffected by downstream conditions.
-
-                            <p >Uninterrupted flow facility: travel speeds within 10% to 20% below the free-flow speed</p>
-                            <p >Interrupted flow facility: travel speed are typically 30% to 65% below the facility’s free-flow  speed in under-saturated conditions</p>
-
-                             <p >Link to the live data: <a href="https://www.tomtom.com/en_gb/traffic-index/auckland-traffic/">https://www.tomtom.com/en_gb/traffic-index/auckland-traffic/</a></p>
-                    </div>
-                </section>
-                
-                
-                     <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="facility4" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 fragment">
-                        <h3>Operating conditions</h3>
-                            
-                             <p> Over-saturated Flow:</p>
-                         <p class="l2">(a) the arrival flow rate exceeds the capacity of a point or segment</p>
-                        <p class="l2">(b) a queue created from a prior breakdown of a facility has not yet dissipated, or </p>
-                        <p class="l2">(c) traffic flow is affected by downstream conditions.
-
-                            <p >For uninterrupted-flow facilities, over-saturated conditions result from a  bottleneck on the facility. During periods of over-saturation, queues form and  extend backward from the bottleneck point. Traffic speeds and flows drop  significantly as a result of turbulence, and they can vary considerably, depending  on the severity of the bottleneck.</p>
-                           
-                    </div>
-                </section>
-                
-                 <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="facility5" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Operating conditions</h3>
-                            
-                             <p> Over-saturated Flow:</p>
-                         <p class="l2">Traffic needs somewhere to discharge to: Over-saturated conditions persists with in the queue until the queue dissipates  after a period of time during which demand flows are less than the capacity of the  bottleneck, allowing the queue to discharge completely.</p>
-                        
-                        <p class="l2"> If an intersection approach or ramp meter cannot accommodate all of its demand,  queues may back into upstream intersections, adversely affecting their  performance. Similarly, if an interchange ramp terminal cannot accommodate all  of its demand, queues may back onto the motorway, adversely affecting its  performance.</p>
-                       
-                           
-                    </div>
-                </section>
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="facility6" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>So what if I can break through? </h3>
-                            
-                             <p> Queue discharge flow</p>
-                         <p class="l2">Traffic is not just about under and over-saturated flow.</p>
-                        
-                        <p class="l2"> Queue discharge flow represents traffic flow that has  just passed through a bottleneck and, in the absence of another bottleneck  downstream, is accelerating back to the facility’s free-flow speed. </p>
-                           
-                    </div>
-                </section>
-                
-                
-                 <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************ ** -->
+                 <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple********************
   
                <section id="QUIZ5" data-background-image="../figures/teaching/QUIZ.png" data-background-size="1000px">   
                    
-             </section>
+             </section>         **** ** -->
                 
            <!-- ********************************************************
 
@@ -1578,38 +1146,8 @@
                 </section>          
                 
                 
-                    <!-- ************** Learning outcomes ************* -->
-
-                <section id="outcomes4" data-transition="fade">
-
-                    <figure class="right">
-
-                        <img data-src="../figures/teaching/learning-outcomes.jpg"
-                             alt=" " />
-                    
-                    </figure>
-                    <h2>Learning outcomes: </h2>
-                    
-                     <p>	1. Basic concepts in traffic planning</p>
-                            <p class="l2"> Traffic flow</p>
-                            <p class="l2"> Speed</p>
-                            <p class="l2"> Density</p>
-                    
-                     <p>2. Traffic flow theory</p>
-                    
-                    <p>	3. Types of traffic models</p>
-                    <p>	4. Introduction to the HCM 2016</p>
-                            <p class="l2"> Capacity</p>
-                            <p class="l2"> Level of service</p>
-                    
-                    <p><a>	5. How to use the HCM</a></p>
-                    
-                </section>  
-                
-                
-                
-                
-                    <!-- ******* Auckland congestion  *********** -->
+               
+                    <!-- ******* Auckland congestion  ********
                 <section id="method1" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    <h3>HCM methodology for multilane highways</h3>
@@ -1622,9 +1160,9 @@
 
 	               </aside>
                     
-                </section>           
+                </section>     *** -->      
                 
-                   <!-- ******* Auckland congestion  *********** -->
+                   <!-- ******* Auckland congestion  *******
                 <section id="method2" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    
@@ -1646,10 +1184,10 @@
 
 	               </aside>
                     
-                </section>                   
+                </section>  **** -->                   
                 
              
-                    <!-- ******* Auckland congestion  *********** -->
+                    <!-- ******* Auckland congestion  *******
                 <section id="method3" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    
@@ -1672,9 +1210,9 @@
 
 	               </aside>
                     
-                </section>  
+                </section>  **** -->
 
-                    <!-- ******* Auckland congestion  *********** -->
+                    <!-- ******* Auckland congestion  *******
                 <section id="method4" data-background-image="../figures/teaching/HCM-method.png" data-background-size="600px">
                    <div class="whitebackground2 fragment">
                 <h3>  Description of each step </h3>
@@ -1692,9 +1230,9 @@
             
 	               </aside>
                     
-                </section>  
+                </section>  **** -->
                 
-                     <!-- ******* Auckland congestion  *********** -->
+                     <!-- ******* Auckland congestion  *******
                 <section id="method5" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 fragment">
                 <h3>  Description of each step </h3>
@@ -1723,10 +1261,10 @@
             
 	               </aside>
                     
-                </section>  
+                </section>  **** -->
                 
                 
-                    <!-- ******* Auckland congestion  *********** -->
+                    <!-- ******* Auckland congestion  ******
                 <section id="method6" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 ">
                 <h3>  Description of each step </h3>
@@ -1743,9 +1281,9 @@
             
 	               </aside>
                     
-                </section>                  
+                </section>     ***** -->             
                     
-                     <!-- ******* Auckland congestion  *********** -->
+                     <!-- ******* Auckland congestion  ********
                 <section id="method7" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 ">
                 <h3>  Description of each step </h3>
@@ -1776,9 +1314,9 @@
             
 	               </aside>
                     
-                </section>  
+                </section>  *** -->
                 
-                            <!-- ******* Auckland congestion  *********** -->
+                            <!-- ******* Auckland congestion  *******
                 <section id="method8" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 ">
                 <h3>  Description of each step </h3>
@@ -1800,10 +1338,10 @@
             
 	               </aside>
                     
-                </section>  
+                </section>  **** -->
                 
                
-                    <!-- ******* Auckland congestion  *********** -->
+                    <!-- ******* Auckland congestion  ********
                 <section id="method9" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 ">
                 <h3>  Description of each step </h3>
@@ -1820,9 +1358,9 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  *** -->
                 
-                     <!-- ******* Auckland congestion  *********** -->
+                     <!-- ******* Auckland congestion  *******
                 <section id="method10" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 fragment">
                 <p>  Step 3: Estimate and Adjust Capacity</p>
@@ -1834,10 +1372,10 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  **** -->
                 
                 
-                  <!-- ******* Auckland congestion  *********** -->
+                  <!-- ******* Auckland congestion  ******
                 <section id="method11" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 ">
                 <p>  Step 3 (2): Estimate and Adjust Capacity</p>
@@ -1858,10 +1396,10 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  ***** -->
                 
                 
-                   <!-- ******* Auckland congestion  *********** -->
+                   <!-- ******* Auckland congestion  *******
                 <section id="method12" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 fragment">
                 <p>  Step 4: Adjust Demand Volume</p>
@@ -1889,9 +1427,9 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  **** -->
                 
-                        <!-- ******* Auckland congestion  *********** -->
+                        <!-- ******* Auckland congestion  *******
                 <section id="method13" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 ">
                 <p>  Step 4 (2): Adjust Demand Volume</p>
@@ -1913,10 +1451,10 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  **** -->
                 
                 
-                    <!-- ******* Auckland congestion  *********** -->
+                    <!-- ******* Auckland congestion  *******
                 <section id="method14" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 fragment ">
                 <p>  Step 5: Estimate Speed and Density</p>
@@ -1944,9 +1482,9 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  **** -->
                 
-                 <!-- ******* Auckland congestion  *********** -->
+                 <!-- ******* Auckland congestion  ********
                 <section id="method15" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
                    <div class="whitebackground2 fragment ">
                 <p>  Step 6: Determine LOS</p>
@@ -1963,7 +1501,7 @@
                     </div>
                    <aside class="notes">
                    </aside>
-                </section>  
+                </section>  *** -->
                 
                 
                  <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************
@@ -1995,7 +1533,7 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil761-P1.html">https://leminhkieu.github.io/p/2020-Civil761-P1.html</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil771-C3.html">http://bit.ly/771-3</a></h4>
 
                     </div>
 
