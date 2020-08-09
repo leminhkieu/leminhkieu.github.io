@@ -1185,7 +1185,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                     <p class="l2"> where $P(X=n)$ is the probability of exactly n vehicles arriving within a time interval t </p>
                    <p class="l2"> $\lambda$ average arrival rate (veh/unit time) </p>
-                   <p class="l2"> $k$ number of vehicles arriving in a specific time interval </p>
+                   <p class="l2"> $X$ number of vehicles arriving in a specific time interval </p>
                    
                   <p class="l2"> $t$ duration of the time interval over  which vehicles are counted </p>
                    
@@ -1291,7 +1291,9 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <div class="whitebackground2">
                        <h3>Example 2: Calculation of traffic flow</h3>
                              
-                      <p> Probability of there being X vehicles in 1 minute. :</p>
+                      \[\begin{aligned}
+                   P(X=n)={\frac {\lambda t ^{n}e^{-\lambda t }}{n!}},
+                   \end{aligned} \]
                      
                    <p class="l2"> $\lambda$ = (240 veh/hr) / (3600 sec/hr) = 0.0667 veh/s </p>
                    <p class="l2"> $\lambda t $ = 0.0667 veh/s x 6 s = 0.4 veh </p>
@@ -1320,7 +1322,9 @@ Use space-mean speeds when reducing and analyzing travel time data.
                       <p> The cumulative likelihood of seeing fewer than 3 vehicles arrive in 6s</p>
                      
                   
-                 <p>  P(n<3) = P(n=0) + P(n=1) + P(n=2) = 0.67 + 0.27 + 0.05 = 0.99 </p>
+                 <p>  $P(n<3) = P(n=0) + P(n=1) + P(n=2) $ </p>
+                     
+                      <p>  $ = 0.67 + 0.27 + 0.05 = 0.99 $ </p>
                    
                       </div>                       
            
@@ -1339,7 +1343,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                       <p> the propability of having 3 or more vehicles arrive in 6s?</p>
                      
                   
-                 <p>  P(n>3) = 1 - P(n<3) = 1- 0.99= 0.01 </p>
+                 <p> $ P(n>3) = 1 - P(n<3) = 1- 0.99= 0.01 $ </p>
                    
                       <p class="l2"> Limitations: Poisson distribution is most realistic in light traffic conditions only. </p>
                      
@@ -1367,12 +1371,17 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                <div class="whitebackground2">
                        <h3>Example 3: Poisson distributed traffic flow</h3>
-                             
+                  
+                   <p class="l2">
+                   \[\begin{aligned}
+                   P(X=n)={\frac {\lambda t ^{n}e^{-\lambda t }}{n!}},
+                   \end{aligned} \]
+                   </p>
                       <p>Solution:</p>
                    <p class="l2"> Mean arrival rate, $\lambda$ =  360 veh/h, or 0.1 veh/s </p>
                    <p class="l2"> With t=20s, the probabilities of having 0,1,2,3 vehicles are: </p>
                    
-                   <p> \[\begin{aligned}
+                   <p class="l2"> \[\begin{aligned}
                    P(0)={\frac {(0.1 \times 20)^{0}e^{-0.1 \times 20}}{0!}}=0.14
                    \end{aligned} \]
                    
