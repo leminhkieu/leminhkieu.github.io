@@ -1211,16 +1211,18 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                          \[\begin{aligned}
 					   
-                       \bar{W} = \frac{1}{\lambda} (e^{\lambda T} - \lambda T - 1)
+                       \bar{W} = \frac{1}{\lambda} (e^{\lambda \alpha} - \lambda \alpha - 1)
                         
 					\end{aligned} \]
+                   
+                    <p class="l2">Adam's Delay equations assume the minor flow has no queue. Use Tanner's delay if the minor flow has significant flow</p>
                    
                         </div>                       
            
                 </section>   
                 
             
-                       <!-- *************** ITS management 4 **********************
+                <!-- *************** ITS management 4 ********************** **** -->
   
                <section id="nosignal5" data-background-image="../figures/Backgrounds/roundabout.png">   
                    
@@ -1228,9 +1230,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         <h3>Unsignalised intersections: Tanner's delay to minor flow (Tanner, 1962)</h3>
                          <p>Major assumptions: </p>
                             <p class="l2">For case with minor traffic flow > 200 veh/h</p>
-                   <p class="l2">There is no queue on the minor queue</p>
-                   <p class="l2">Decision to merge/cross is straightforward: If the gap is greater than or equal to  'critical gap', then merge/cross</p>
-                   
+                   <p class="l2">takes queuing of the minor flow into account.</p>
                              
                      <figure class="centre" >
 
@@ -1242,9 +1242,31 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                         </div>                       
            
-                </section>   
+                </section>  
+                
+                
+                 <!-- *************** ITS management 4 ********************** **** -->
+  
+               <section id="nosignal6" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground2">
+                        <p>Unsignalised intersections: Tanner's graph (Tanner, 1962)</p>
+                             
+                     <figure class="centre" >
 
-                    **** -->
+                        <img data-src="../figures/teaching/Tanner2.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                        </div>                       
+           
+                </section>   
+                
+                
+
+                   
                 
                <!-- *************** ITS management 4 ************************** -->
   
@@ -1411,7 +1433,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                      
                   
                   \[\begin{aligned}
-                   S_a={\frac {\lambda e^{-\alpha t}}{1 - e^{-\beta t}}}
+                   S_a={\frac {\lambda e^{-\alpha \lambda}}{1 - e^{-\beta \lambda}}}
                    \end{aligned} \]
                    
                       <p class="l2">$S_a$ = absorption capacity (veh/s) </p>
@@ -1492,7 +1514,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <div class="whitebackground2">
                        <h3>Problem 3:</h3>
                              
-                      <p>  Traffic data are collected in fifteen 60-seconds intervals at a specific highway  location as shown in the Table. Assuming that the traffic is Poisson distributed and  continues to arrive at the same rate as observed in the first fifteen minutes, what is the probability that six or more vehicles will arrive in each of the next three 60-seconds time intervals (i.e., 12:15 p.m. to 12:16 p.m., 12:16 p.m. to  12:17 p.m., and 12:17 p.m. to 12:18 p.m.)? </p>
+                      <p>  Traffic data are collected in fifteen 60-seconds intervals at a specific highway  location as shown in the Table (in the class note). Assuming that the traffic is Poisson distributed and  continues to arrive at the same rate as observed in the first fifteen minutes, what is the probability that six or more vehicles will arrive in each of the next three 60-seconds time intervals (i.e., 12:15 p.m. to 12:16 p.m., 12:16 p.m. to  12:17 p.m., and 12:17 p.m. to 12:18 p.m.)? </p>
      
                     <!-- ADD the TABLE here! -->
                   
@@ -1538,7 +1560,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <div class="whitebackground2">
                        <h3>Problem 6:</h3>
                              
-                      <p>  During an off-peak period, a minor flow of 100 veh/hr joins a major flow of 300 veh/hr near the beginning of an on-ramp of a motorway. The minor flow of 100 veh/hr is controlled by give-way signs, requires at least 4 secs for the maneuver action to join the major flow. Assuming there is no queuing and that both traffic flows are free-  flowing and random, calculate:</p>
+                      <p>  During an off-peak period, a minor flow of 100 veh/hr joins a major flow of 300 veh/hr near the beginning of an on-ramp of a motorway. The minor flow of 100 veh/hr is controlled by give-way signs, requires at least 4 secs of critical gap to join the major flow. Assuming there is no queuing and that both traffic flows are free-  flowing and random, calculate:</p>
                    
                     <p class="l2">(a) the number of vehicles per hour in the minor flow which are expected to be  delayed </p>
                    <p class="l2">(b) the average delay to the minor flow (hint: using Adam's delay formula)</p>
@@ -1558,7 +1580,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                     <p class="l2">(a) the percentage of time a pedestrian will not be delayed </p>
                    <p class="l2">(b)the number of pedestrians per hour who are delayed in crossing the street</p>
-                   <p class="l2">(c) the total delay to pedestrians wishing to cross the street in pedestrian, in minutes  per hour</p>
+                   <p class="l2">(c) the total delay to pedestrians wishing to cross the street in pedestrian minutes  per hour</p>
               </div>                       
            
                 </section>  
@@ -1576,8 +1598,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     <p class="l2">(a) Assuming exiting  vehicles require a 4 sec initial gap and a 2 sec follow-up gap, calculate the  maximum flow that exit from the car park.
 </p>
                    <p class="l2">(b)Re-determine the above result, if exiting vehicles require a 5 sec initial gap and  a 3 sec follow-up gap</p>
-                   <p class="l2">(c) If the exit flow from the car park is 300 veh/h, calculate the expected average  delay to vehicles exiting, assuming vehicles require a 4-sec initial gap and 2-sec  follow-up gap</p>
-                   <p class="l2">(d) Recalculate (c) assuming vehicles require a 5-sec initial gap and a 3-sec follow-  up gap.</p>
+                   <p class="l2">(c) If the exit flow from the car park is 300 veh/h, use the Tanner's graph to identify the expected average  delay to vehicles exiting, assuming vehicles require a 4-sec initial gap and 2-sec  follow-up gap</p>
+                   <p class="l2">(d) Use the Tanner's graph to reidentify (c) assuming vehicles require a 5-sec initial gap and a 3-sec follow-up gap.</p>
               </div>                       
            
                 </section>  
