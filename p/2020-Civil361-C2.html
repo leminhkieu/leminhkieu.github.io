@@ -1180,7 +1180,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                       
                     \[\begin{aligned}
-                   P(X=n)={\frac {\lambda t ^{n}e^{-\lambda t }}{n!}},
+                   P(X=n)={\frac {(\lambda t) ^{n}e^{-\lambda t }}{n!}},
                    \end{aligned} \]
                    
                     <p class="l2"> where $P(X=n)$ is the probability of exactly n vehicles arriving within a time interval t </p>
@@ -1291,8 +1291,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <div class="whitebackground2">
                        <h3>Example 2: Calculation of traffic flow</h3>
                              
-                      \[\begin{aligned}
-                   P(X=n)={\frac {\lambda t ^{n}e^{-\lambda t }}{n!}},
+                       \[\begin{aligned}
+                   P(X=n)={\frac {(\lambda t) ^{n}e^{-\lambda t }}{n!}},
                    \end{aligned} \]
                      
                    <p class="l2"> $\lambda$ = (240 veh/hr) / (3600 sec/hr) = 0.0667 veh/s </p>
@@ -1374,7 +1374,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                   
                    <p class="l2">
                    \[\begin{aligned}
-                   P(X=n)={\frac {\lambda t ^{n}e^{-\lambda t }}{n!}},
+                   P(X=n)={\frac {(\lambda t) ^{n}e^{-\lambda t }}{n!}},
                    \end{aligned} \]
                    </p>
                       <p>Solution:</p>
@@ -1390,7 +1390,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    \end{aligned} \]</p>
                    
                    <p class="l2"> Similarly, $P(2)=0.27, P(3)=0.18, P(4)=0.09$</p>
-                   <p class="l2"> $P(n<5) = 1 - P(n<5) = 1-0.14 - 0.27 -0.27 - 0.18-0.09 = 0.05$</p>
+                   <p class="l2"> $P(n>5) = 1 - P(n<5) = 1-0.14 - 0.27 -0.27 - 0.18-0.09 = 0.05$</p>
                    
                    
                        </div>                       
