@@ -38,6 +38,19 @@ or otherwise involved in (<span style="background-color: #6ca0e8;" class="fa fa-
     <div class="6u">
         <ul class="style">
             <li>
+                <a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">
+                <span style="background-color: #009900;" class="fa fa-user"></span></a>
+                <h3><a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups">GreenRadio</a></h3>
+                Using AI for energy saving on Mobile towers
+            </li>
+            <li style="font-size: small; line-height: 20px;">The ultimate aim of this challenge is to know when to turn off radio-cells to save power,"we want to optimise shutdown of radio-cells in order to maximise power saved, while minimizing negative impact on the customer's network experience"</li>
+            <li>&nbsp;</li>
+        </ul>
+    </div>
+    <h2>Completed Projects</h2>
+    <div class="6u">
+        <ul class="style">
+            <li>
                 <a href="http://adait.io/inno-pii.html"><span style="background-color: #6ca0e8;" class="fa fa-book"></span></a>
                 <h3><a href="http://adait.io/inno-pii.html">PII</a></h3>
                 NSW Premier's Innovation Initiative
