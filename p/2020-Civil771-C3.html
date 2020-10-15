@@ -156,49 +156,133 @@
                          
                 </section>
                 
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="flow2" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow' ?</h3>
+                        
+                        <img data-src="../figures/teaching/traffic-count.gif"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                 
+                    </div>
+                         
+                </section>  
+                
                  
                    <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="param1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
-                    <div class="whitebackground2 ">
-                        <h3>Flow parameters </h3>
-                            
-                             <p> How to quantify the number of vehicles passing a point or roadway during a given time interval?</p>
-                         <p class="l2">Volume – the total number of vehicles that pass over a given point or section of a  lane or roadway during a given time interval; any time interval can be used, but volume are typically expressed in terms of annual, daily, hourly, or sub-hourly  periods.</p>
+                <section id="flow3" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>How to measure traffic flows</h3>
                         
-                        <p class="l2"> Flow Rate (v) – the equivalent hourly rate at which vehicles pass over a given point  or section of a lane or roadway during a given time interval of less than one hour,  usually 15 minutes. </p>
+                        <p>With human surveyors</p>
                         
-                        <p class="l2">Peak Hourly Volume (PHV) - PHV is the maximum flow observed over any 1 hour period. In urban areas where tidal flows are common, it is usual to have two PHV’s, one for the A.M. and other for P.M. In rural areas it is sufficient to use only one PHV.</p>
-                           
+                        <img data-src="../figures/teaching/traffic-count.jpg"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                        
+                        <p class="l2">Manual counting is usually more expensive per unit time but is used where automatic machine counting is not capable of recording the data in the form required.</p>
+                        
                     </div>
-                </section>
+                         
+                     <aside class="notes">
+                   ***  typically used for intersection counts, occupancy counts and some classification counts.
+                    ****conducted with a surveyor standing by the road, counting and classifying the vehicle as they pass, dividing survey into fixed time periods (usually 15 minutes). It is normal for the surveyor to record only one direction of flow.
+                    ****Manual counts also involve some unique challenges which include coordination of personnel, accurate observation and recording of data in a manner that be easily understood.
+                        
+                     </aside>  
+                </section>      
                 
                 
-                  <!-- ******************************************************
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="traffic-counters" > 
+                      <div class="whitebackground2 ">
+                        <h3>How to measure traffic flows</h3>
+                        
+                        <p>With road tubes</p>
+                          
+                  <video controls autoplay muted>
+
+                        <source data-src="../videos/traffic-counters.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                          
+                   </div>          
+                </section>    
+                
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="traffic-counters2" > 
+                      <div class="whitebackground2 ">
+                        <h3>How to measure traffic flows</h3>
+                        
+                        <p class= "l2">With loop detectors (and how they contribute to traffic signals!)</p>
+                          
+                  <video controls autoplay muted>
+
+                        <source data-src="../videos/loop-signal.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                          
+                          <p class= "l2">For other traffic detectors, refer to the class notes</p>
+                          
+                   </div>          
+                </section>    
+                
+                
+                           <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="speed1" data-background-image="../figures/teaching/bluetooth.png">                     
+                <section id="speed0" data-background-image="../figures/Backgrounds/street2.jpg">                     
                     <div class="whitebackground2">
                         <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
                         
-                    <p>There are two ways to measure speed: </p>
+                        <p>Spot speed is the instantaneous speed of a vehicle at any specified point. </p>
                         
-                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                    </div>
+                         
+                    <aside class="notes">
+                  *** Time Mean Speed =  arithmetic average speed
+                
+                        
+                     </aside>  
+                   </section>      
+            
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="speed2" >               
+                    <div class="whitebackground2">
+                        
+                    <p>There are two ways to estimate the mean speed: </p>
+                        
+                        <p class="l2">Time-mean-speed is calculated from the individual spot speed recorded for vehicles passing a point over a selected time period</p>
                         
                          \[\begin{aligned}
 					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
 					\end{aligned} \]
                         
-                        <p class="l2">Space-mean-speed is calculated by dividing the measured distance by the average travel time</p>
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
                         
                           \[\begin{aligned}
 					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
 					\end{aligned} \]
-                        
-                        <p class="l2">Space means speed is usually smaller than time-mean-speed</p>
                         
                     </div>
                          
@@ -208,78 +292,14 @@
                  ***   Space Mean Speed = harmonic mean speed
                         
                     ***    Time-mean speed is associated with a single point along a roadway over time,
-                        whereas the space-mean speed is associated with a specified length of roadway.
-                        Use space-mean speeds when reducing and analyzing travel time data.
+                    whereas the space-mean speed is associated with a specified length of roadway.
+                    Use space-mean speeds when reducing and analyzing travel time data.
                         
                      </aside>  
                     
                 </section>
                 
-                  <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed2" data-background-image="../figures/teaching/bluetooth.png">                     
-                    <div class="whitebackground2">
-                        <h3>Speed from a spatial point of view</h3>
-                        
-                    <p>Spot speed: the instantaneous speed of a vehicle passing a
-                        point on the roadway. Data represent the speed
-                        characteristics of vehicles passing the site. </p>
-                        
-                        <p class="l2"> Most of the speed cameras measure spot speeds!</p>
-                        
-                   </div>
-                    
-                </section>
-                
-                
-             
-             <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="speed4" data-background-image="../figures/teaching/spot-speed.png" data-background-size="1200px">                          
-                    <div class="whitebackground fragment">
-                        <h3>Typical use of spot speed</h3>
-                        
-                        <p class="l2">Speed limit enforcements </p>
-                        
-                        <p class="l2">Traffic control planning - speed limits, safe speeds at curves, location for traffic signs, etc. </p>
-                        
-                        <p class="l2">Geometric design - road alignments, stopping sight distance</p>
-                        <p class="l2">Accident analysis</p>
-                        
-                        <p>Measurements: Enoscope, Pneumatic tubes, Video recordings, Speed gun/camera </p>
-                        
-                    </div>
-                    
-                </section>
-                
-            
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ********************************************************
-
-                <section id="speed6" >                     
-                    <div class="whitebackground2">
-                        <h3>Example 4: Estimate journey vs running speeds</h3>
-                        
-                   <figure class="centre" >
-
-                        <img data-src="../figures/teaching/journey-running.png"
-                             style="width:800px;"
-                             alt="ATIS" />
-                    
-                    </figure>
-                        
-                   </div>
-                    
-                </section>
-                **** -->
-                
+               
                  <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
@@ -311,7 +331,7 @@
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="density1" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">                       
+                <section id="density1" >                  
                     <div class="whitebackground2 ">
                         <h3>How to estimate density?</h3>
                             
@@ -415,12 +435,12 @@
                 ************************************************************ -->
 
              
-                <section id="diagram2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                   
+                <section id="diagram2">                   
                    <div class="whitebackground2">
                         <h3>Fundamental diagrams of traffic flow 1: Speed-density relationship</h3>
                        
                         <img class="centre" src="../figures/teaching/speed-density.gif"
-                            style="width:300px;"
+                            style="width:400px;"
                          alt="project-1" />
                        
                        
@@ -468,7 +488,7 @@
                 ************************************************************ -->
 
              
-                <section id="diagram1" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                <section id="diagram1" >
                    <div class="whitebackground2">
                         <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
                        
@@ -495,7 +515,7 @@
                 ************************************************************ -->
 
              
-                <section id="greenshields" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                <section id="greenshields" >
                    <div class="whitebackground2">
                         <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
                        
@@ -530,7 +550,7 @@
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
-               <section id="diagram3" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+               <section id="diagram3" >         
                     
                    <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow 3: Speed-flow relationship</h3>
@@ -566,7 +586,7 @@
                 *********************** diagram4 ***********************
                 ************************************************************ -->
 
-               <section id="diagram4" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+               <section id="diagram4" >     
                     
                    <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
@@ -586,7 +606,7 @@
                 *********************** diagram5 ***********************
                 ************************************************************ -->
 
-               <section id="diagram5" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+               <section id="diagram5" >          
                     
                    <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
@@ -606,7 +626,7 @@
                 *********************** diagram5 ***********************
                 ************************************************************ -->
 
-               <section id="diagram6" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+               <section id="diagram6" >              
                     
                    <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
@@ -756,12 +776,12 @@
                      
                     </div>
                          
-                </section>  ****** -->
+                </section>  
                 
                 
-                     <!-- ******************************************************
+                    *****************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                **********************************************************
 
                 <section id="HCM2" data-background-image="../figures/Backgrounds/highway.jpg">                     
                     <div class="whitebackground2">
@@ -788,7 +808,7 @@
                 measurement framework.   </p>
                     </div>
                          
-                </section>
+                </section>  ****** -->
                 
                 
                    <!-- ******************************************************
@@ -969,11 +989,11 @@
                     
                 </section>
                 
-                   <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple************************ ** -->
+                   <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple*******************
   
                <section id="QUIZ6" data-background-image="../figures/teaching/QUIZ.png" data-background-size="1000px">   
                    
-             </section>
+             </section>     ***** ** -->
                 
                    <!-- ********************************************************
 
@@ -1019,7 +1039,7 @@
                 </section> 
                 
                 
-                 <!-- ******* Auckland congestion  *********** -->
+                 <!-- ******* Auckland congestion  *****
                 
                <section id="servicemeasure1" data-background-image="../figures/Backgrounds/grass.jpg">    
                    <div class="whitebackground2 ">
@@ -1046,7 +1066,7 @@
                 
                 
                
-                    <!-- ******* Auckland congestion  *********** -->
+                    <!-- ******* Auckland congestion  ********
                 <section id="servicemeasure4" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    <h3>Service measures</h3>
@@ -1062,7 +1082,7 @@
             
 	               </aside>
                     
-                </section>            
+                </section> ****** -->           
                 
                 
                  <!-- ********************************************************
@@ -1103,7 +1123,7 @@
                 </section>    
                 
                           
-                   <!-- ******* Auckland congestion  *********** -->
+                   <!-- ******* Auckland congestion  *******
                 <section id="highwaycapacity2" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    <h3>Base or ideal condition</h3>
@@ -1122,10 +1142,10 @@
             
 	               </aside>
                     
-                </section>                           
+                </section>        **** -->                   
                 
                                 
-                   <!-- ******* Auckland congestion  *********** -->
+                   <!-- ******* Auckland congestion  *********
                 <section id="highwaycapacity3" data-background-image="../figures/Backgrounds/highway.jpg">    
                    <div class="whitebackground2 ">
                    <h3>Base or ideal condition</h3>
@@ -1143,7 +1163,7 @@
             
 	               </aside>
                     
-                </section>          
+                </section>      *** -->
                 
                 
                
