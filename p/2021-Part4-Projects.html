@@ -1,0 +1,467 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Part 4 projects 2021</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Part 4 projects from Dr Minh Kieu</h2> 
+                           <h4> Bringing together data analytics and simulation in transportation</h4>
+
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <h4>Lecturer</h4> 
+
+                        <h4>Department of Civil and Environmental Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2021-Part4-Projects.html">https://leminhkieu.github.io/p/2021-Part4-Projects.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                  <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     *************************************************************
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/my_pics/minh.jpg"
+                             alt="Minh picture" />
+                    
+                    </figure>
+
+
+                    <h2>About me</h2>
+                    
+                    <p> Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
+                     
+                    <p>Research Interests</p>
+                    <p class="l2">- Agent-Based Modelling: computer simulation of individual agents that are interacting with each other</p>
+                    
+                    <p class="l2">- Machine Learning: models that aims at data analytics, especially Big data</p>
+                    
+                    
+                </section>        **** -->        
+
+                
+                    <!-- *****************************************************************
+
+                     ************* Travel speed prediction  *****************
+
+                     ***********************************************************
+                
+ 
+               <section id="travel-speed-prediction" data-transition="fade">
+                   
+                   <h3>Project 1: Estimating traffic speed from raw Bus GPS data</h3>
+
+                     <img src="../figures/teaching/project1.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                   
+                   
+		            <p class="l2">Data available from Brisbane, Australia</p>
+                    <p class="l2">Approach: Remove the time buses spent at bus stops, then estimate the traffic speed in relation with bus speeds </p>
+                    <p class="l2">Requirements: Moderate programming and data analytics skills </p>
+
+                </section> ****** -->
+                
+                
+     
+            <!-- *****************************************************************
+
+                     ************* ABM train station  *****************
+
+                     *************************************************************
+                
+ 
+               <section id="ABM-train" data-transition="fade">
+                   
+                   <h3>Project 2: Agent-Based Modelling of a train platform</h3>
+
+                    <img src="../figures/teaching/project2.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                   
+		            <p class="l2">Approach: Extend an existing Agent-Based Model (developed by me) to develop a model of a train platform in Auckland </p>
+                    <p class="l2">Requirements: Good object-oriented programming skills, preferably Python</p>
+
+                </section> 
+ 
+                
+                <!-- *****************************************************************
+
+                     ************* ML car following  *****************
+
+                     ************************************************************
+                
+ 
+               <section id="ML-CF" data-transition="fade">
+                   
+                   <h3>Project 3: Deep Learning car-following model</h3>
+
+                    <video controls autoplay>
+
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                   
+                   <p class="l2">Data available from motorways in Germany</p>
+
+		            <p class="l2">Objective: Develop an AI-based car-following model </p>
+                   
+                </section>                 
+                
+                 <!-- *****************************************************************
+
+                     ************* ML car following  *****************
+
+                     ***********************************************************
+                
+ 
+               <section id="ML-CF2" data-transition="fade">
+                   
+                   <h3>Project 3: Deep Learning car-following model</h3>
+
+                    <img class="left" src="../figures/teaching/project3.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+                   
+		            <p class="l2">Approach: Use multiple variables (examples from the figure) to predict the acceleration/speed of a following vehicle</p>
+                    <p class="l2">Requirements: Moderate programming and data science skills, preferably Python</p>
+
+                </section> ****** -->
+                
+                
+                
+                 <!-- *****************************************************************
+
+                     ************* Bike lanes  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p1" data-transition="fade">
+                   
+                   <h3>Project 1: Identify sites for temporary bike lane </h3>
+
+                    <img class="left" src="https://c.files.bbci.co.uk/2B6E/production/_112981111_gettyparklanelondon.jpg"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+                    
+                   <p class="l2">Levels of walking and cycling have increased significantly during the COVID-19 pandemic</p>
+                   
+                     <p class="l2">Pop-up for temporary bike lanes have been a recent initiative</p>
+                   
+                    <p class="l2">E.g: <br/><a href=" https://www.uci.org/news/2020/pop-up-bike-lanes-a-rapidly-growing-transport-solution-prompted-by-coronavirus-pandemic"> https://www.uci.org/news/2020/pop-up-bike-lanes-a-rapidly-growing-transport-solution-prompted-by-coronavirus-pandemic</a></p>
+
+                   
+                  <p class="l2">However, it is challenging to know how we can reshape cities to facilitate safer cycling </p>
+                   
+
+                </section> 
+                
+                
+                  <!-- *****************************************************************
+
+                     ************* Bike lanes  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p1-2" data-transition="fade">
+                   
+                   <h3>Project 1: Identify sites for temporary bike lane </h3>
+
+                    <img class="center" src="https://i2.wp.com/greaterakl.wpengine.com/wp-content/uploads/2012/09/ptchev-uni-route.jpg"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+                     <p class="l2">This project will identify potential roads in Auckland where a part of the roadway can be reserved for a bike lane</p>
+                   
+                    <p class="l2">This will faciliate safer cyclying and encourage more people to cycle</p>
+                   
+                   <p class="l2">Learn & use GIS tools, data analytics and visualisation</p>
+                   
+                
+                </section> 
+                
+                  <!-- *****************************************************************
+
+                     ************* Bike lanes  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p1-3" data-transition="fade">
+                   
+                   <h3>Project 1: Identify sites for temporary bike lane </h3>
+
+                    <img class="center" src="https://www.cyclinguk.org/sites/default/files/styles/hero_desktop/public/media/2020/04/a.jpg"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+                    
+                   <p class="l2">Similar works have been done in the UK but none has been done for New Zealand</p>
+                   
+                    <p class="l2">Rapid Cycleway Prioritisation Tool:<br/><a href="https://www.cyipt.bike/rapid/greater-london/"> https://www.cyipt.bike/rapid/greater-london/</a></p>
+
+            
+                </section> 
+                
+                <!-- *****************************************************************
+
+                     ************* Evacuation on public transport terminals  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p2-1" data-transition="fade">
+                   
+                   <h3>Project 2: Modelling evacuation on public transport terminals </h3>
+
+                    <img class="left" src="https://www.cantene.it/wp-content/uploads/2017/01/pathfinder.png"
+                            style="width:600px;"
+                         alt="project-2" />
+                   
+                   
+                   <p class="l2">A Part IV project in 2020 has developed a simulation model of the Brittomart Station to evaluate evacuation time in various scenarios</p>
+                   
+                   <p class="l2">This project will further develop this model by adding real data from potentially the AT Hop Card data and more scenarios of evacuation </p>
+                   
+                </section> 
+                
+                
+               <section id="p2-2" data-transition="fade">
+                   
+                   <h3>Project 2: Modelling evacuation on public transport terminals </h3>
+
+                    <img class="left" src="https://www.cantene.it/wp-content/uploads/2017/01/pathfinder.png"
+                            style="width:600px;"
+                         alt="project-2" />
+                   
+                   
+                   <p class="l2">Learn how to work with the Pathfinder simulation model, write simple API codes, and visualise the results</p>
+                           
+                            
+                </section> 
+                
+                
+                     <!-- *****************************************************************
+
+                     ************* A digital twin of Auckland: Analyse the impacts of hypothetical changes in road infrastructure  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p3-1" data-transition="fade">
+                   
+                   <h3>Project 3:  A digital twin of Auckland: Analyse the impacts of hypothetical changes in road infrastructure </h3>
+
+                    <img class="center" src="https://github.com/dabreegster/abstreet/raw/master/book/exploring_traffic.gif"
+                            style="width:600px;"
+                         alt="project-3" />
+                   
+                   
+                   <p class="l2">A/B Street is a model/game of city simulation developed for the Seattle road network</p>
+                   
+                   <p class="l2">Link:<br/><a href="https://github.com/dabreegster/abstreet"> https://github.com/dabreegster/abstreet</a></p>
+ 
+                </section> 
+                
+                
+                
+               <section id="p3-2" data-transition="fade">
+                   
+                   <h3>Project 3:  A digital twin of Auckland: Analyse the impacts of hypothetical changes in road infrastructure </h3>
+
+                    <img class="center" src="https://github.com/dabreegster/abstreet/raw/master/book/evaluating_impacts.gif"
+                            style="width:600px;"
+                         alt="project-3" />
+                   
+                   
+                   <p class="l2">This project will adapt this exciting tool for the road network in Auckland and investigate the impacts of changes in road infrastructure to the cars, bikes and pedestrians in Auckland</p>
+                   
+             
+                </section> 
+                
+                           
+               <section id="p3-3" data-transition="fade">
+                   
+                   <h3>Project 3:  A digital twin of Auckland: Analyse the impacts of hypothetical changes in road infrastructure </h3>
+
+                    <img class="center" src="https://github.com/dabreegster/abstreet/raw/master/book/evaluating_impacts.gif"
+                            style="width:600px;"
+                         alt="project-3" />
+                   
+                   
+                   
+                   <p class="l2">Detailed instructions have been provided, but this work still requires a level of programming, problem solving, data analytics and critical thinking to adapt the existing model to Auckland</p>
+                   
+                   <p class="l2"><br/><a href="https://dabreegster.github.io/abstreet/howto/new_city.html"> https://dabreegster.github.io/abstreet/howto/new_city.html</a></p>
+ 
+                </section> 
+                
+                
+                
+                
+                   <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h3><a href="https://leminhkieu.github.io">https://leminhkieu.github.io</a></h3>
+                        
+                        
+
+                     <h4>Lecturer</h4> 
+
+                        <h4>minh.kieu@auckland.ac.nz</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2021-Part4-Projects.html">https://leminhkieu.github.io/p/2021-Part4-Projects.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
