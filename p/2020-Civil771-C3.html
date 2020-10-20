@@ -299,6 +299,30 @@
                     
                 </section>
                 
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+             
+                <section id="speed3" >                     
+                   
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
+                        
+                
+                     <aside class="notes">
+                  <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{50+40+30+20+10}{5} = 30 \ km/h  \\
+					\end{aligned} \]
+                        
+                         <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
+                          \[\begin{aligned}
+					v_s = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}} = \frac{5}{1/50+1/40+1/30+1/20+1/10} = 28.9 \ km/h \\
+					\end{aligned} \]    
+                     </aside>  
+                </section>
+                
+                
                
                  <!-- ******************************************************
                 *********************** Definition ***********************
@@ -642,6 +666,35 @@
                     
                 </section>
                 
+                   <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="ex1" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+                   <div class="whitebackground2">
+                        <h3>Example 2: Greenshield's Model </h3>
+                       
+                       
+                        <p class="l2"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 2000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
+                          
+                    </div>
+                       <aside class="notes">
+                           Speed :
+		        v= vf – vf*k/kj = 100 - 100 * k / 1000 = 100 - 0.1k
+                           
+                           @@@ q = v k = 100k - 0.1k^2, at critical density we have dq/dk = 0
+                           
+                           @@@ dq/dk = 100 - 0.2 k, so, k = 500 = kj/2 half of jam density
+                           
+                           @@@ vm = 100 - 100 * 500 /1000 = 50 kmh = vf/2 half of free flow speed
+                           
+                           @@@ qm = v * k = 50 * 50 = 2500 > 2000 veh/h, so the theoretical value is actually larger than the observed maximum flow, and does not account for the field conditions that influence maximum flow
+                           
+                           
+	               </aside> 
+                </section>
+                
                 
              <!-- *************** QUIZ 3 Which are NOT true about traffic signals? Choose multiple**********************
   
@@ -813,7 +866,7 @@
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                *******************************************************
 
                 <section id="HCM3" data-background-image="../figures/Backgrounds/highway.jpg">                     
                     <div class="whitebackground2">
@@ -826,7 +879,7 @@
                         <p class="l2">2.Provide methodologies for estimating and predicting performance measures, and</p>
                         <p class="l2">3.Explain methodologies at a level of detail that allows readers to understand the  factors affecting multimodal operation.</p>
                     </div>
-                </section>
+                </section>      ***** -->
  
                 <!-- ******************************************************
                 *********************** Definition ***********************
