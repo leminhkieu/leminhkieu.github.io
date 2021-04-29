@@ -1,0 +1,528 @@
+<!doctype html>
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil771</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+          <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h2>Introduction to Transportation Models</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Transport-models.html">https://leminhkieu.github.io/p/Transport-models.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+               
+                    <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="traffic-models2" data-background-image="../figures/Backgrounds/auckland-background.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Classes of traffic models</h3>
+                       <img class="centre" src="../figures/teaching/traffic-models.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                         <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-micro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="micro">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Microscopic models</h3>
+                        
+                          <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
+                        
+                        <p class="l2">describe both the system entities and their interactions at a high level of  detail.</p>
+                        
+                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
+                        
+                    </div>
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro2" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Components of traffic microsimulation packages</h3>
+                       <img class="centre" src="../figures/teaching/microsim-components.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                     
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro3" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Car-following dynamics</h3>
+                       <img class="centre" src="../figures/teaching/car-following.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                       
+                        
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro4" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Car-following models</h3>
+                      
+                       <p class="l2">The basic philosophy of car following model is from Newtonian mechanics, where the acceleration may be regarded as the response of a matter to the stimulus it receives in the form of the force it receives from the interaction with other particles in the system. </p>
+
+                       \[\begin{aligned}
+					Response_n \quad \alpha \quad Stimulus_n \\
+					\end{aligned} \]
+                    
+                       
+                       <p class="l2">different theories on car-following have arisen because of the difference in views regarding the nature of the stimulus. The stimulus may be composed of the speed of the vehicle, relative speeds, distance headway etc, and hence, it is not a single variable, but a function and can be represented as </p>
+                    \[\begin{aligned}
+					   
+                       {\ddot  {x}}_{n }(t)={\dot  {v}}_{n }(t) = a_n(t) =F(v_{n }(t),s_{n }(t),v_{{n -1}}(t))
+                       
+					\end{aligned} \]
+ 
+                       <p class="l2">where $F$ is the stimulus function that depends on the speed of the current vehicle, relative position and speed with the front vehicle.</p>
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ********************************************************
+
+               <section id="micro5" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
+                    
+                   <div class="whitebackground2">
+                   <h3>Car-following models: Gipps' model (1981) </h3>
+                      
+                       <p class="l2">Gipps' model was defined primarily by one vehicle (noted by subscript n) following another (noted by subscript n-1); reaction time of the following vehicle; the location, speed and acceleration of the following vehicle; and finally, model constants to adjust the model to real-life conditions </p>
+
+                       \[\begin{aligned}
+					 a_{n}(t+\tau)=l_{n}{\frac {\left[v_{n-1}(t)-v_{n}(t)\right]^{k}}{\left[x_{n-1}(t)-x_{n}(t)\right]^{m}}}\\
+					\end{aligned} \]
+                    
+                       
+                       <p class="l2">The following vehicle is limited by two constraints: that it will not exceed its driver’s desired speed and its free acceleration should first increase with speed as engine torque increases then decrease to zero as the desired speed is reached.</p>
+                       
+                    \[\begin{aligned}
+					   
+                       {\displaystyle v_{n}(t+\tau )\leq v_{n}(t)+2.5a_{n}\tau (1-v_{n}/V_{n})(0.025+v_{n}(t)/V_{n})^{1/2}}
+                       
+					\end{aligned} \]
+ 
+                       <p class="l2">And some other constraints. See:<br/><a href="https://www.sciencedirect.com/science/article/pii/0191261581900370">https://www.sciencedirect.com/science/article/pii/0191261581900370</a></p>
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+
+                  
+
+                 <!-- ******************************************************
+                *********************** Lane change 1 ***********************
+                *********************************************************
+                
+                 <section id="lanechange1" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Lane-changing model: dynamics</h3>
+                       
+                       <p>Mandatory lane change</p>
+                       <p>Discretionary lane change</p>
+                       <p>Random lane change</p>
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                 <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ********************************************************
+                
+                 <section id="lanechange2" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Lane-changing model: Mandatory lane change</h3>
+                       
+                       <p>To position the vehicle to reach the destination, for instance: </p>
+                       <p class="l2">changing to the proper lane before making the turning
+                            movement at an intersection</p>
+                       
+                       <img class="right" src="../figures/teaching/merging.png"
+                            style="width:500px;"
+                         alt="project-1" />
+                       
+                       <p class="l2">merging to the freeway mainline</p>
+                       <p class="l2">diverging to the deceleration lanes before exiting through offramp</p>
+                       
+                       <p class="l2">Bypass a lane blockage downstream</p>
+                       <p class="l2">Avoid entering a restricted lane </p>
+                      <p class="l2"> Respond to message signs</p>
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                 <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                *********************************************************
+                
+                 <section id="lanechange3" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Lane-changing model: Discretionary lane change</h3>
+                       
+                       <p>Reasons: </p>
+                       <p class="l2">Increase speed </p>
+                        <p class="l2">Bypass a slow or heavy vehicle</p>
+                        <p class="l2">Avoid the lane connected to a ramp</p>
+                       
+                     
+                       <p>Depends on:</p>
+                        <p class="l2">Driver characteristics: Driver aggressiveness, Desired speed, Normal/Maximum Acceleration/Deceleration, Impatience</p>
+                      <p class="l2">External stimuli, e.g Relative speed of the subject vehicle and its leader, candidate leader is making/will make a left/right turn.</p>
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                            <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                **********************************************************
+                
+                 <section id="lanechange4" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
+                    
+                   <div class="whitebackground2">
+                   <h3>Lane-changing and Gap Acceptance </h3>
+                       
+                       <p>Gap Acceptance studies typically used to
+                           assess capacity for merging, crossing,
+                           turning, and for lane change</p>
+                       <p class="l2">Available gaps and their acceptance by
+                           drivers are the two main components for
+                           such studies</p>
+                        <p class="l2">Bypass a slow or heavy vehicle</p>
+                        <p class="l2">Avoid the lane connected to a ramp</p>
+                       
+                     
+                       <p>Depends on:</p>
+                        <p class="l2">Driver characteristics: Driver aggressiveness, Desired speed, Normal/Maximum Acceleration/Deceleration, Impatience</p>
+                      <p class="l2">External stimuli, e.g Relative speed of the subject vehicle and its leader, candidate leader is making/will make a left/right turn.</p>
+                       
+                       
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                    **** -->
+                
+                    <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-meso.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="meso">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Mesoscopic models</h3>
+                        
+                        <p>Individual vehicles may be presented but not as details as microscopic models</p>
+                        
+                        <p class="l2">less computationally expensive to run, but more detailed than macroscopic models</p>
+                        
+                        <p>Capable of modelling the traffic on the large scale</p>
+                        
+                    </div>
+                
+                </section>
+                
+         
+                
+             <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning1" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Conventional Four-step Transportation Planning Modelling </h3>
+                        
+                        <p >Dated back to 1950s and 1960s</p>
+                        <p >Four decision models are the basis of the traditional travel demand model:</p>
+                        
+                        <p class="l2">Trip generation</p>
+                        <p class="l2">Trip distribution</p>
+                        <p class="l2">Modal split</p>
+                        <p class="l2">Traffic assignment.</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>                     
+                
+            
+                <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
+                         data-background-video-loop="loop">
+                    
+                     <div class="whitebackground2 fragment">
+                      
+                        
+                          <p>The ABStreet Game</p>
+                        
+                         <p class="l2"> Windows: 
+                             
+                             <a href="https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_windows_v0_2_39.zip"> https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_windows_v0_2_39.zip </a>
+                             
+                             If the game immediately crashes, it might be a graphics card problem.
+                             </p>
+                            
+                         <p class="l2"> Mac: 
+                             
+                             <a href="https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_mac_v0_2_39.zip"> https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_mac_v0_2_39.zip</a>
+                             
+                             </p>
+                        
+                       
+                        
+                        <p class="l3">Unzip the folder, then run play_abstreet.sh or play_abstreet.bat. On Windows, you'll probably get a warning about running software from an unknown publisher.</p>
+                        
+                         <p class="l2"> On your web browser: 
+                             
+                             <a href="http://abstreet.s3-website.us-east-2.amazonaws.com/0.2.39/abstreet.html"> http://abstreet.s3-website.us-east-2.amazonaws.com/0.2.39/abstreet.html</a>
+                             
+                             </p>
+                        
+                        
+                   </div>  
+                    
+                </section>
+
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                       <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil361-planning.html">http://bit.ly/361-planning</a></h4>
+
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>

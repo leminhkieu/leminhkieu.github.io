@@ -1,0 +1,642 @@
+<!doctype html>
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil361</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+          <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+                        <h3>Civil 361: Traffic Engineering 2</h3>
+                        
+                        <h2>Introduction to Public Transport Planning</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil361-public-transport.html">http://bit.ly/361-public-transport</a></h4>
+
+                    </div>
+
+                </section>
+                              
+                
+                 <!-- ********************************************************
+
+                     ************* Auckland congestion  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="congestion" data-transition="fade">
+                   
+                   <h3>Our world-class traffic jams!</h3>
+
+                <img class="centre" src="../figures/teaching/auckland-congestion.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+                    <p>Auckland's congested roads costed our economy over $1.25 billion in lost productivity (NZTA, 2013)</p>
+                   
+		            <p class="l2">Source: NZIER (2017),Benefits from Auckland road decongestion </p>
+
+                  <aside class="notes">
+		          - In fact, the congestion level in Auckland is world-class for its size
+                      
+                      - Analyse the graph...
+	               </aside>                   
+                   
+                </section> 
+                
+             
+                
+                <section id="problem2" >
+
+                         <img class="right" src="../figures/teaching/traffic-assignment.png"
+                            style="width:400px;"
+                         alt="project-1" />
+                          <p>Recap from last lecture: Traffic Assignment (4th Step in 4-Step Travel Demand Modelling) </p>
+                        
+                         <p> Route choice decisions are a function of travel cost (e.g. travel time, toll) </p>
+                            <p class="l2"> - Travel cost are determined by traffic flow</p>
+                          <p class="l2"> - Traffic flow is a product of route choice decisions</p>
+                    
+                    </section>   
+                
+                  <section id="problem3" >
+                      
+                         <img class="right" src="../figures/teaching/traffic-assignment.png"
+                            style="width:400px;"
+                         alt="project-1" />
+                          <p>Recap from last lecture: Wardrop's principles</p>
+                        
+                         <p class="l2"> 1st Principle: User choose the route that minimises their own travel cost -> <a>User equilibrium</a>  </p>
+                            <p class="l2"> 2nd Principle: Users distribute themselves on the network in such a way that the average travel cost for all users is minimised -> <a>System Optimum</a></p>
+                
+                    </section>   
+                
+               <section id="problem4" data-background-image="../figures/backgrounds/auckland-background.jpg">  
+                         
+                   <div class="whitebackground2">
+                        
+                         <p > Braess' paradox: Building more roads may lead to more traffic congestions ! </p>
+                       
+                        <p > Encouraging people to use more public transport, instead of cars, is the solution </p>
+                       <p class="l2"> Reduce traffic congestion </p>
+                       <p class="l2"> Reduce traffic crashes </p>
+                       <p class="l2"> Reduce emissions from vehicles </p>
+                       
+                   </div>
+                    </section>  
+                
+                 <section id="problem5" data-background-image="../figures/teaching/bus-bike-car.jpg" data-background-size="90%">  
+                    </section>  
+                
+                <section id="problem6" data-background-image="../figures/teaching/congested-congestionfree.jpg" data-background-size="90%">  
+                    </section>  
+                
+                
+                
+                
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                     <p>1. Understand the overal spectrum public transport modes. Evaluate their strengths and weaknesses</p>
+                    <p>	2. Analyse methods to improve public transport systems through transit orientated developments.</p>
+                    <p>	3. Understand mobility-as-a-service. </p>
+                           
+                    
+                </section>                
+
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes2">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p><a>1. Understand the overal spectrum public transport modes. Evaluate their strengths and weaknesses</a></p>
+                    <p>	2. Analyse methods to improve public transport systems through transit orientated developments (TOD). </p>
+                    <p>	3. Understand mobility-as-a-service. </p>
+                     
+                </section>   
+                
+                
+                
+                 <!-- ************** Outcome 1 ************* -->
+                
+                 <section id="types0" data-background-image="../figures/teaching/Civil361/PT-type.jpeg" data-background-size="40%">  
+                
+                 <div class="whitebackground2 fragment ">
+                        
+                       <p>We focus on On-road public transport in this course. It involves the provisions for mainly buses, trams and light rail. The physical components of a system can be classified as:</p>
+                     
+                     <p class="l2"> Vehicles;</p>
+                     <p class="l2"> Right-of-way (ROW);</p>
+                     <p class="l2"> Passenger facilities.</p>
+
+                   </div>
+                
+                </section>
+                
+                       
+                <section id="types2" data-background-image="../figures/teaching/congested-congestionfree.jpg">  
+                     <div class="whitebackground2 ">
+                     <p>Right of way (ROW) is the strip of land on which the PT vehicles operate. There are three board categories, distinguished by the degree of separation from other traffic:</p>
+                     
+                     <p class="l2"> <a>Category (A) Dedicated:</a> 
+                     without grade crossing or any legal 
+                     access by other vehicles or 
+                     pedestrians. Includes tunnels, 
+                     overhead tracks and with over-ride 
+                     at crossing points. 
+                     (e.g. Northern Busway)
+                    </p>
+                     <p class="l2"> <a>Category (B) Dual Mode: </a>physical separation by curbs, barriers or grade separation from other traffic. However, there is at-grade crossing points for other vehicles and pedestrians (e.g. bus lanes with curbs)</p>
+                     <p class="l2"> <a>Category (C) Shared: </a> where PT services share the road with other vehicles (e.g. buses on arterial roads)</p>
+                    
+                     </div>
+                    
+                     <aside class="notes">
+		         In general traffic engineers will be engaged in the design and management of Category B and C ROW – why?? 
+	               </aside>   
+                    
+                    
+                    </section>  
+                
+                 <section id="types4" data-background-image="../figures/teaching/Civil361/PT-spectrum.png" data-background-size="60%">  
+                     
+                    </section>  
+                
+                <section id="types5" >
+                    <h2>Modal comparison: Bus vs Rail </h2>
+                    <div id="columns">
+                        <div class="left column">
+                            
+                            <p>Rail advantages:</p>
+                            <p class="l2">High capacity</p>
+                            <p class="l2">Lower operating costs</p>
+                            <p class="l2">Stronger land use influence</p>
+                            <p class="l2">Fewer negative externalitites</p> 
+                            
+                        </div>
+                        <div class="right column">
+                            
+                            <p>Bus advantages:</p>
+                            <p class="l2">Low capital costs</p>
+                            <p class="l2">Wide network coverage</p>
+                            <p class="l2">Single vehicle trips</p>
+                            <p class="l2">Flexibility</p>
+                            <p class="l2">“Dual mode” nature</p>
+                           
+                        </div>
+                    </div>
+                </section>
+                
+                  <section id="types5-2" >
+                    
+                            <p>Public transport modes: Extended</p>
+                            <p class="l2">Passenger car (e.g. Uber)</p>
+                            <p class="l2">Van</p>
+                            <p class="l2">Minibus</p>
+                            <p class="l2">Normal bus (60-100 passengers)</p>
+                            <p class="l2"><a>Bus Rapid Transit (BRT)</a></p> 
+                            <p class="l2">Monorail</p> 
+                            <p class="l2"><a>Light Rail Transit (LRT)</a></p> 
+                            <p class="l2">Rail Rapid Transit (Metro)</p> 
+                            <p class="l2">Regional Rail (longer trips)</p> 
+                    
+                    </section>  
+                
+                 <section id="types5-3" data-background-image="../figures/teaching/Civil361/BRT.jpeg" data-background-size="80%"> 
+                  </section> 
+                
+                <section id="types5-4" data-background-image="../figures/teaching/Civil361/BRT-types.png" data-background-size="80%"> 
+                  </section> 
+                
+                
+                <section id="types5-5" data-background-image="../figures/teaching/Civil361/BRT_LRT.jpeg" > 
+                    
+                     <div class="whitebackground2 fragment">
+                        
+                        <p class="l2"> Light Rail Transit (LRT) employs a fully segregated and often grade-separated ROW, advanced control systems, but light (hence the name) trains. Always ROW category A and B.  </p>
+                         
+                       <p class="l2"> They are often seen as intermediate between bus and metro systems in terms of both capacity and cost. Everything a BRT system can do, can be performed by a light rail transit (LRT) system in terms of capacity and service levels. The infrastructure cost is more compared to BRT. However, a single driver is required for several units (higher capacity). There is also greater attraction to passengers due to vehicle design and image. </p>
+                      
+                   </div>
+                    
+                    
+                  </section> 
+                
+                
+                  <section id="types6">
+                      <h3>Actual capacity </h3>
+                      
+                      <p>Bus: 70 pass/bus, 5-min headway =  840 pass/hr</p>
+                      
+                      <p>BRT: 200 pass/bus, 5-min headway =  2400 pass/hr</p>
+                      
+                      <p>Light Rail: 2-car trains, 150 pass/car, 2-min headway =  6000 pass/hr</p>
+                      
+                        <p>Rail: 10-car trains, 200 pass/car, 2-min headway =  60,000 pass/hr</p>
+                     
+                    </section>  
+                
+                 <section id="types7" data-background-image="../figures/teaching/Auckland-ridership.png" data-background-size="80%">  
+                </section>
+                
+                 <!-- *************** Outcome 2: TOD  ************************** -->
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="dis1" data-background-image="../figures/backgrounds/shutterstock_788457058-small.jpg">                   
+                    <div class="whitebackground2">
+                        <h3>Group discussion: Public Transport</h3>
+                        
+                        <p >1. From your perspective what are the current issues of public transport in Auckland? </p>
+                       
+                        
+                         <p>2. How do we improve the public transport system in Auckland?</p>
+                       
+                    </div>
+                         
+                </section>    
+                
+                
+                <section id="outcomes3">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>1. Understand the overal spectrum public transport modes. Evaluate their strengths and weaknesses</p>
+                    <p> <a>2. Analyse methods to improve public transport systems through transit orientated developments (TOD). </a>	</p>
+                    <p>	3. Understand mobility-as-a-service. </p>
+                     
+                </section>  
+                
+                  <section id="plan-0" data-background-image="../figures/teaching/PT-modeshare.jpg" data-background-size="45%"> 
+                    
+                     <div class="whitebackground2 fragment">
+                        
+                        <p> Why is public transport so unattractive to many people, compared to cars?  </p>
+                         
+                       <p class="l2"> Cars are often faster </p>
+                          <p class="l2"> Waiting time</p>
+                          <p class="l2"> Flexibility </p>
+                          <p class="l2"> For planners, public transport systems can be quite expensive to develop </p>
+                         
+                         <p>Public transport planning is essential to improve service quality</p>
+                      
+                   </div>
+                    
+                  </section> 
+                
+                
+                  <section id="plan-1" data-background-image="../figures/teaching/Civil361/PT-planning.png" data-background-size="70%">  
+                    </section>  
+                
+                 <section id="plan-1a" data-background-image="../figures/teaching/Civil361/PT-planning.png" data-background-size="70%">  
+                     
+                      <div class="whitebackground2">
+                        
+                        <p class="l2"> Auckland Transport Alignment Project (2021 edition) </p>
+                       <p class="l2"><a href="https://www.transport.govt.nz//assets/Uploads/Report/ATAP_2021-31_Publication.pdf">https://www.transport.govt.nz//assets/Uploads/Report/ATAP_2021-31_Publication.pdf</a> </p>
+                      
+                   </div>
+                
+                    </section> 
+                
+                
+                <section id="TOD">
+              <section id="TOD1" data-background-image="../figures/teaching/TOD1.png" data-background-size="55%"> </section>
+              <section id="TOD2" data-background-image="../figures/teaching/TOD2.png" data-background-size="55%"> </section>
+              <section id="TOD3" data-background-image="../figures/teaching/TOD3.png" data-background-size="55%"> </section>
+            </section>                  
+                        
+                 <section id="plan-2">
+                        <h3>Benefits of Transit Oriented Development (TOD)</h3>
+                        
+                      <p>More public transport ridership. Potential shifting of ridership from private to public transport</p>
+                     
+                     <p>Increse accessibility</p>
+                     
+                     <p>Promote active transport -- health benefits</p>
+                     
+                     <p>Reduces environmental impacts of transportation</p>
+                     
+                     <p>Advance equity in transportation</p>
+                     
+                </section>
+                
+                <section id="plan-3" data-background-image="../figures/teaching/congested-congestionfree.jpg">
+                    
+                    <div class="whitebackground2 ">
+                        <h3>Traffic engineering for on-road public transport</h3>
+                        
+                     <p class="l2"> Infrastructure priority: Funding for public transport, locations of public transport infrastructures
+                    </p>
+                     <p class="l2"> Traffic Signal priority: E.g. more green time for buses </p>
+                     
+                      </div>
+                </section>
+                
+                 <section id="plan-5" data-background-image="../figures/teaching/ideal-street.png">  
+                     <div class="whitebackground2 ">
+                    <p>Infrastructure priority: adopt of traffic engineering measures to prioritise transit vehicles on roads.</p>
+                         
+                     <p class="l2"> Where buses and trams operate in mixed traffic (ROW C), roads need to be designed for reasonable speed and level of safety. 
+                    </p>
+                     <p class="l2"> The location and design of interchanges and terminals. </p>
+                     <p class="l2"> The optimisation of schedules, crews and vehicles for public transport services.</p>
+                    
+                     </div>
+                    
+                  
+                    </section>  
+
+                
+                 <section id="plan-4" >  
+                     <p class="l2"> Traffic Signal priority: E.g. more green time for buses </p>
+                        <video controls autoplay muted>
+
+                        <source data-src="../videos/loop-signal.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                
+                 </section>
+                          
+                
+               
+                
+                   <!-- ************* Outcome 3: MaaS **************************** -->
+
+                
+                 <section id="outcomes5">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>1. Understand the overal spectrum public transport modes. Evaluate their strengths and weaknesses</p>
+                    <p> 2. Analyse methods to improve public transport systems through transit orientated developments (TOD). </p>
+                    <p>	<a>3. Understand mobility-as-a-service. </a></p>
+                     
+                </section>  
+
+               <section id="Maas-0" data-background-image="../figures/teaching/Civil361/evolution.png" data-background-size="85%">  </section>  
+                
+                  <section id="Maas-modes" data-background-image="../figures/teaching/transport-modes.png" data-background-size="85%">  </section>  
+               
+                
+                 <section id="Maas-1" >
+                        
+                     <p>Future of mobility: <a href="https://stfalcon.com/en/blog/post/mobility-as-a-service"> https://stfalcon.com/en/blog/post/mobility-as-a-service</a></p>
+                     
+                     <p> Mobility as a Service (MaaS) is the concept of shifting transportation solutions to an on-demand service.  Maas is the integration of various forms of transport services into a single mobility service accessible on demand. </p>
+                     
+                      <p class="l2"> Instead of individuals owning and operating their own vehicles, MaaS providers offer transport options when and where the user requires them. In much the same way that Netflix and Spotify provide convenient access to TV, movies, and music.   </p>
+                     
+                         
+                       <p class="l2"> To meet a customer’s request, a MaaS operator  facilitates a diverse menu of transport options, be they public transport, ride-, car- or bike-sharing, taxi or car rental/lease, or a combination thereof.  </p>
+                  </section> 
+                
+                
+                 <section id="Maas-2" data-background-image="../figures/teaching/Civil361/Maas-scenario.png" data-background-size="85%">  </section>  
+                
+                 <section id="Maas-3" data-background-image="../figures/teaching/Civil361/Maas-ideal.png" data-background-size="85%">  </section>  
+                
+                 <section id="Maas-4">
+
+                    <figure class="centre">
+
+                        <img data-src="../figures/teaching/Civil361/routing.png"
+                             style="width:800px;"
+                             alt=" " />
+                    
+                    </figure>
+                    <p>Challenges in Maas: </p>
+                    
+                    <p class="l3">1. Multi-modal routing for a large number of travellers</p>
+                      <p class="l3">2. Service coordination and coverage</p>
+                      <p class="l3">3. Data transfer and operation in real-time</p>
+                      <p class="l3">4. Policy dilemma: who should control Maas?</p>
+                     
+                </section>  
+                
+                
+                
+                
+                   <!-- ************** Learning outcomes ************* -->
+
+                <section id="recap0" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Recap: </h2>
+                    
+                       <p>1. Understand the overal spectrum public transport modes. Evaluate their strengths and weaknesses</p>
+                    <p>	2. Analyse methods to improve public transport systems through transit orientated developments.</p>
+                    <p>	3. Understand mobility-as-a-service. </p>
+                   
+                    
+                </section>
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                 <section id="recap-1" data-background-image="../figures/teaching/Civil361/PT-spectrum.png" data-background-size="60%">  
+                     
+                    </section>  
+                
+                   
+                   <!-- *************** ITS User Services  ************************** -->
+  
+                <section id="recap-2">
+              <section id="recap-2-1" data-background-image="../figures/teaching/TOD1.png" data-background-size="55%"> </section>
+              <section id="recap-2-2" data-background-image="../figures/teaching/TOD2.png" data-background-size="55%"> </section>
+              <section id="recap-2-3" data-background-image="../figures/teaching/TOD3.png" data-background-size="55%"> </section>
+            </section>   
+                
+                  <section id="recap-3" data-background-image="../figures/teaching/Civil361/Maas-ideal.png" data-background-size="85%">  </section>  
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                      <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil361-public-transport.html">http://bit.ly/361-public-transport</a></h4>
+
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>

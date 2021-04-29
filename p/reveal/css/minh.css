@@ -91,9 +91,17 @@ body {
 .reveal P.l3 {
     margin-top: 0.2em;
     font-size: 0.7em;
-    padding-left: 8ex;
+    padding-left: 4ex;
     color: #555555;
 }
+
+.reveal P.l4 {
+    margin-top: 0.1em;
+    font-size: 0.6em;
+    padding-left: 2ex;
+    color: #555555;
+}
+
 
 /* For lists: */
 .reveal ul, .reveal ol {

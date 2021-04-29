@@ -1,0 +1,1590 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 759 - Highway and Transportation Design - Highway Surface Drainage</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 759: Highway and Transportation Design</h3>
+                        
+                        <h2>Highway Surface Drainage</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil759-drainage.html">http://bit.ly/759</a></h4>
+
+                    </div>
+
+                </section>
+                                
+               
+                   <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+
+                    <h2>Minh Kieu</h2>
+                    
+                      <p> Lecturer in Transport Analytics at the Department of Civil and Environment Engineering</p>
+                    
+                   <p>These HTML slides can be accessed by:<br/><a href="https://leminhkieu.github.io/p/2021-Civil759.html">http://bit.ly/2021-Civil759</a></p>
+                    <p class="l4">PDF version can be found on Canvas</p>
+                    
+                  
+                     
+                    <p> Office hours: 1 hour after lectures, or contact me via emails </p>
+                    <p class="l4">B401, Room 11.16</p>
+                    <p class="l4">minh.kieu@auckland.ac.nz</p>
+                    
+                </section>       
+                
+                  <!-- ******************************************************
+                *********************** Where rain goes? ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../figures/Teaching/Civil759/where_rain_goes.mp4"
+                         data-background-video-loop="loop"
+                         id="video00">                     
+                    
+                    </section>  
+                
+                
+                    <!-- ************** Learning outcomes ************* -->
+
+                <section id="intro1" data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2">
+                    
+                    <h2>Highway Surface Drainage</h2>
+                     
+                    <p>	To design a structure with the proper capacity to divert or remove water from the roadway and pass collected water under the roadway.</p>
+                    <p>	 Proper roadway drainage is imperative for safety and traffic flow during storm events</p>
+                    
+                    </div>  
+                    
+                      <aside class="notes">
+		                   The design of a hydraulic structure requires knowing how much water is associated with the design storm (hydrology) and calculating the velocity, depth, and type of flow (hydraulics) that must be accounted for in the design
+	               </aside>
+                    
+                   
+                    
+                </section> 
+                
+                
+                   <!-- ************** Without proper drainage ************* -->
+
+                <section id="issue2" data-background-image="../figures/Teaching/Civil759/Drainage_issue2.png" data-background-size="1000px">      
+                </section> 
+                <section id="issue3" data-background-image="../figures/Teaching/Civil759/Drainage_issue3.png" data-background-size="1000px">      
+                </section> 
+                <section id="issue4" data-background-image="../figures/Teaching/Civil759/Drainage_issue4.png" data-background-size="1000px">      
+                </section> 
+                <section id="issue5" data-background-image="../figures/Teaching/Civil759/Drainage_issue5.png" data-background-size="1000px">      
+                </section> 
+                <section id="issue6" data-background-image="../figures/Teaching/Civil759/Drainage_issue6.png" data-background-size="1000px">      
+                </section> 
+                
+                
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/Teaching/Civil759/lvl1.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p> 6. Apply and integrate fundamental knowledge of hydrology and hydraulics, road geometry and surfacing properties <a>to calculate transport surface drainage requirements.</a></p>
+                   
+                     <h3>Assessment: No project, approximately 30% of the Final Exam, mostly calculation-based questions </h3>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>     
+
+              
+                
+              <!-- ************* ************* -->
+
+                <section id="surfwater" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/Teaching/Civil759/lvl2.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                    <p> Road Drainage can be conveniently divided into those relating to the flow of:</p>
+                    <p class ="l2"> Surface Water – concerned with the measures taken to control the movement of water over the ground on and adjacent to the highway; and</p>
+                     <p class ="l2">   Subsurface Water – concerned with the flow of water within soils.
+                        </p>
+                   
+                    <p> We focus on drainage of Surface water on road surface in this paper</p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>     
+
+            
+                 <!-- ********************** -->
+
+                <section id="surfwater2" data-background-image="../figures/Teaching/Civil759/highway_drainage.jpg" >
+
+                  <div class="whitebackground2">
+                    <h>Exercise 1: </h>
+                    
+                    <p>  What are the functions of drainage in the context of a highway?</p>
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>  
+                
+              <!-- ********************** -->
+
+                <section id="surfwater3" data-background-image="../figures/Teaching/Civil759/highway_drainage.jpg" >
+
+                  <div class="whitebackground2">
+                    <h>Exercise 1: </h>
+                    
+                    <p>  What are the functions of drainage in the context of a highway?</p>
+                      
+                      
+                      <p class ="l2"> Take the water off and away from the pavement</p>
+
+                     <p class ="l2">  Accommodate the water on the road – the road becomes a ‘river’ </p>
+                      <p class ="l2"> Accommodate the water crossing the road</p>
+                      <p class ="l2"> Consider different circumstances: Urban vs rural roads, Seal vs unsealed, purpose of drainage</p>
+                      <p class ="l2"> Don’t forget environmental impacts</p>
+                      
+                      
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>  
+                
+                    <section id="cycle" data-background-image="../figures/Teaching/Civil759/Hydro_cycle.png" data-background-size="1200px">      
+                </section> 
+                
+                 <!-- ************* ************* -->
+
+                <section id="surfwater4" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/Teaching/Civil759/lvl3.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                    <p> A surface drainage study can be divided into TWO parts:</p>
+                    <p class ="l2"> HYDROLOGICAL STUDY – First, we must decide the amount of water to be catered for.</p>
+                     <p class ="l2">  HYDRAULIC STUDY – Then we must design the facility to cater for this amount of water. </p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>   
+                
+                
+                 <!-- ************* ************* -->
+
+                <section id="surfwater5" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/Teaching/Civil759/lvl4.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                    <p> Although Hydrology involves the study of the various phases of the hydrologic cycle, including:</p>
+                    <p class ="l2"> Precipitation</p>
+                     <p class ="l2">  Run-off </p>
+                     <p class ="l2">  Infiltration</p>
+                     <p class ="l2">  Evaporation</p>
+                     <p class ="l2">  Condensation </p>
+                     <p> The highway engineer is most interested in:</p>
+                     <p class ="l2"> PRECIPITATION</p>
+                     <p class ="l2"> RUN-OFF</p>
+               
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>     
+                
+                
+                   <section id="Precipitation">   
+                    
+                     <figure class="right">
+
+                        <img data-src="../figures/Teaching/Civil759/lvl4.png"
+                             alt=" " />
+                    
+                    </figure>
+                        
+                     <h2>Calculation of Runoff</h2>
+                     
+                    <p class ="l2">	(The draining away of water from the surface of highway)</p>    
+                        
+                    <h2>Precipitation</h2>
+                     
+                    <p class ="l2">To estimate the amount of runoff water, the engineer must have information regarding the rainfall intensities within the catchment area being studied.</p>
+                    
+                </section>   
+                
+                
+                   <!-- ******************************************************
+                *********************** Runoff ***********************
+                ************************************************************ -->
+
+                
+                 <section id="Runoff-0">   
+                    <h3>Run-off</h3>
+                     <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/runoff.png"
+                             alt=" " />
+                    </figure>
+                     
+                    <p class ="l2">	Ultimately the highway engineer is concerned with the maximum rate of surface run-off from the catchment area.</p>    
+                    <p class ="l2">However, the maximum rate is dependent on a great number of conditions, is never constant over a given catchment area and varies considerably during a single storm.</p>
+                    <p class ="l2">	 So how do we arrive at any one design figure which will take all the previous considerations into account?</p>   
+                    <p class ="l2">	In reality we compromise between adequately meeting the most severe design requirements and still being within the economic scope of the scheme.</p>   
+            </section>  
+                
+                 <section id="Runoff-rational">   
+                    <p>Rational Method</p>
+                     
+                     <p class ="l2"> The Rational Method has been in use in some form or another at least since 1889. It
+                    is not so much that the method itself is judged as being rational, but more than the method relates to the ratio
+                    between rainfall and runoff (which is essentially the runoff coefficient, $C$).  </p> 
+                     
+                     <p class ="l2"> One of the most commonly used procedures for calculating peak flows from small drainages less than 200 acres is the Rational Method. </p> 
+                     
+                     
+                    <p class ="l2">For catchments larger than the areas above, the Rational Method tends to give a
+                        conservative result. Therefore for larger areas a dynamic analysis by computer
+                        modelling using a profiled hyetograph should be used</p>
+                    
+                     
+                     <p class ="l3">We focus on the Rational Method in this course </p>  
+                     
+                     <p class ="l3">Read more:</p>  
+                   
+                     <p class ="l4"><a href="https://www.ccc.govt.nz/assets/Documents/Environment/Water/waterways-guide/21.RainfallAndRunoff.pdf">https://www.ccc.govt.nz/assets/Documents/Environment/Water/waterways-guide/21.RainfallAndRunoff.pdf</a> </p> 
+                     
+                    
+                   
+                     <p class ="l4"><a href="https://www.waternz.org.nz/Attachment?Action=Download&Attachment_id=846">https://www.waternz.org.nz/Attachment?Action=Download&Attachment_id=846</a> </p>
+                     
+                     
+                     
+		         </section>  
+                
+                
+                 <section id="Runoff-1">   
+                    <p>Rational Method</p>
+                     
+                     
+                      \[\begin{aligned}
+                                  Q = 2.78 \times C \times I \times A \\
+                            \end{aligned} \]  
+                     
+                    <p class ="l2">Where: $Q$ = peak flow/discharge in $m^3/sec$ <a>(l/s)</a></p>
+                    <p class ="l2">$C$ = Peak runoff coefficient (dimensionless) </p>  
+                     <p class ="l2">$I$ = average rainfall intensity over the whole catchment in
+                        $mm/hr$ for a duration corresponding to the time of
+                        concentration</p>   
+                     <p class ="l2">$A$ = catchment area in $km^2$ <a>(hectares)</a> </p>   
+                    
+                    <p class ="l2"> <a>Note:</a>	1 $km^2$ = 100 hectares  ;  1 $m^3/sec$ = 1000 l/s   </p>   
+		         </section>  
+                
+                 <section id="Runoff-2">   
+                    <p>Limitations of Rational Method</p>
+                             <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
+                             alt=" " />
+                    </figure>
+                               <p class ="l2">For larger catchment areas the precision is somewhat limited and generally tends to overestimate maximum runoff due to assumptions made in the model.</p>  
+                    <p class ="l2">The method is best suited to urban areas or relatively small catchments (5 – 50 Km2) in rural locations....and well suited to highway surface drainage design.</p>  
+                     
+		         </section>  
+                
+                 <section id="Runoff-assumption">   
+                    <p>Basic Assumptions about Rational Method:</p>
+                             <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
+                             alt=" " />
+                    </figure>
+                               <p class ="l2">Drainage areas are smaller than 300 acres.</p>  
+                    <p class ="l2">Peak flow occurs when the entire catchment is contributing.</p>  
+                      <p class="l2">Rainfall intensity is uniform over a duration of time equal to or greater than the time of concentration.</p>
+                     
+		         </section>  
+                
+            
+                  <section id="Runoff-3">   
+                    <p>In the specialised hydrology of an urban area the assumption that:</p>
+                             <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
+                             alt=" " />
+                    </figure>
+                               <p class ="l2">The design storm produces a uniform rainfall intensity over the entire catchment is valid because of the small catchment area.</p>  
+                    <p class ="l2">The relationship between rainfall intensity and rate of runoff is constant for a particular catchment is related to the coefficient $C$ and is essentially constant as the runoff is from buildings and roads.</p>  
+                      <p class="l2">Also the difficulty in assessing $C$ is solved as the runoff is from buildings and roads, hence  $C ≈ 1$ (impermeable).</p>
+                     
+		         </section>  
+                
+                
+                 <!-- ******************************************************
+                *********************** peak runoff coefficient $C$< ***********************
+                ************************************************************ -->
+                
+                 <section id="Runoff-4">   
+                     
+                     <p>Rational Method</p>
+                     
+                      \[\begin{aligned}
+                                  Q = 2.78 \times C \times I \times A \\
+                            \end{aligned} \]  
+                     
+                     
+                    <p>So how do we have $C$ and $I$?</p>
+                     
+		         </section> 
+                
+                
+                
+                
+                 <section id="Runoff-C1">   
+                    <p>Rational Method: Values of peak runoff coefficient $C$</p>
+                     
+                      \[\begin{aligned}
+                                  Q = 2.78 \times C \times I \times A \\
+                            \end{aligned} \]  
+                     
+                    <p class ="l2">$C$ represents the ratio of runoff to rainfall.</p>
+                    <p class ="l2">If the ground is relatively impervious, more runoff takes place </p>  
+                     <p class ="l2">The percentage of rain water that is available in the form of runoff is known as Impermeability Factors or runoff coefficient </p>   
+                    
+		         </section>  
+                
+            
+                 <section id="Runoff-C2">   
+                    
+                     <p>Rational Method: Values of peak runoff coefficient $C$</p>
+                     
+                     <p class="l2">Impermeability Factors / Runoff Coefficient </p>
+                           
+                                          <figure class="centre">
+                            <img data-src="../figures/Teaching/Civil759/Impermeability.png"
+                             alt=" " />
+                    </figure>
+              
+		         </section>                 
+                
+                 <section id="Runoff-C3">   
+                    <p>Rational Method: Average peak runoff coefficient $C$</p>
+                     <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/runoff.png"
+                             alt=" " />
+                    </figure>
+                     
+                    <p class ="l2">	Let $A_1, A_2,$ ..., $A_n$ = areas of the different surface on the catchment area.</p>    
+                    <p class ="l2">$C_1, C_2,$ ..., $C_n$ = corresponding runoff coefficient for different surfaces</p>
+                    <p class ="l2">	 Average peak runoff coefficient = </p>   
+                    
+                      \[\begin{aligned}
+                                  C_{avg} = \frac{C_1A_1 + C_2A_2+...+C_nA_n}{A_1+A_2+...+A_n} \\
+                            \end{aligned} \]  
+                     
+                </section>  
+                     
+                
+                  <!-- ******************************************************
+                *********************** average rainfall intensity $I$?**************************************** -->
+                
+                <section id="Runoff-5">   
+                     
+                     <p>Rational Method</p>
+                     
+                      \[\begin{aligned}
+                                  Q = 2.78 \times C \times I \times A \\
+                            \end{aligned} \]  
+                     
+                    <p>We now have $C$, how can we find the average rainfall intensity $I$?</p>
+                    
+                     <p>Intensity $I$ depends upon Frequency and Duration of storm</p>
+                    
+		         </section> 
+             
+                
+                
+                 <section id="IDF" >
+                        <figure class="center">
+
+                        <img data-src="../figures/Teaching/Civil759/IDF.png"
+                             alt=" " />
+                    
+                    </figure>
+                        
+                   <a href="https://www.youtube.com/watch?v=yBpW2F_fOXA&ab_channel=WiburWildcat">https://www.youtube.com/watch?v=yBpW2F_fOXA</a>
+                    
+                </section> 
+                
+                
+                <section id="IDF-1" >
+                         <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/runoff.png"
+                             alt=" " />
+                    </figure>
+                        
+                   <p class="l2"> Time of Concentration $T_c$ = Duration of rainfall</p>
+                             <p class="l2">$T_c$ is defined as the time required for the surface runoff from the remotest part of the drainage basin to reach the point under consideration. Or in other words, time required for an entire watershed to contribute to runoff at the point of interest for hydraulic design</p>
+                    
+                     <p class="l2">Note that $T_c$ does not solely depend on the distance to the point of consideration </p>
+                    
+                    
+                </section> 
+                
+                
+                 <section id="IDF-example" >
+                        <figure class="center">
+
+                        <img src="../figures/Teaching/Civil759/IDF_example.png" 
+                             style="width:800px;"
+                             alt=" " />
+                    
+                    </figure>
+                        
+                   <p class="l4"> Note: Frequency = Return Period = Average Recurrence Interval (ARI); Duration = Time of Concentration ($T_c$)</p>
+                    
+                     <p class="l4"> <a>Unit of Intensity is mm/hr </a></p>
+                     
+                </section>
+                
+                  
+                  <section id="IDF2" >
+                        
+                        <img data-src="../figures/Teaching/Civil759/IDF_tauranga.png"
+                             height="100" width="200"
+                             />
+                   
+                        
+                   <a href="https://idc.tauranga.govt.nz/design-standards/ds-5-stormwater/ds-5-appendix-c-rainfall-intensity-curves">https://idc.tauranga.govt.nz/design-standards/ds-5-stormwater/ds-5-appendix-c-rainfall-intensity-curves</a>
+                    
+                </section> 
+                
+                
+                
+                <section id="storm2" data-background-image="../figures/Backgrounds/weather2.jpg" > 
+                             <div class="whitebackground2 ">
+                             <p> Frequency / Return Period / Average Recurrence Interval (ARI)</p>
+                         
+
+                             <p class="l2">The chosen Average Recurrence Interval (ARI) is an economic decision. Typically a 1 in 2 or 1 in 5 year return period is chosen. However, for a motorway a 1 in 10 return period might be justifiable.</p>
+
+                        </div>
+                </section>
+                
+                
+                <section id="IDF-ex">   
+                    
+                  <h5>Exercise 2: Using at the IDF curve in page 20, calculate the rainfall intensities for storm durations of: </h5>
+                     
+                    <p class ="l2">	10 min </p>    
+                     <p class ="l2">	50 min </p>    
+                     <p class ="l2">	100 min </p>    
+                     <p class ="l2">	200 min </p>    
+                     <p class ="l2">	350 min </p>    
+                        
+                    <p >Use an ARI of 5 years</p>
+                    
+                </section>   
+                
+                 <section id="IDF-ex2">   
+                    
+                  <h5>Exercise 2: Using at the IDF curve in page 20, calculate the rainfall intensities for ARIs of: </h5>
+                     
+                    <p class ="l2">	1 year </p>    
+                     <p class ="l2">	5 years </p>    
+                     <p class ="l2">	10 years </p>    
+                     <p class ="l2">	20 years </p>    
+                     <p class ="l2">	50 years </p>    
+                      <p class ="l2">	100 years </p>    
+                     
+                    <p >Use a storm duration of  30 min</p>
+                    
+                </section>  
+                
+                
+                <section id="IDF-question" data-background-image="../figures/Backgrounds/weather2.jpg" > 
+                    <div class="whitebackground2 ">
+                        
+                        
+                        <p>So far we are always given both Time of concentration (or Duration) and Return period (frequency or ARI), in order to estimate the rainfal intensity $I$</p> 
+                        
+                        <p class="l2">In practice, we often don't know the Duration and Frequency of future storms at the design phase of a highway project </p>
+                        
+                    <p>… what will you do then.?</p> 
+                        
+                        <p class="l2"> We know earlier that we can make fairly good assumption for the Frequency as it is an economic decision.</p> 
+                        
+                        <p class="l2"> <a>It's important to make a good estimation for the Time of concentration $T_c$</a></p> 
+                     </div>
+                </section> 
+                
+                
+                   <!-- ******************************************************
+                *********************** Design Storm ***********************
+                ************************************************************ -->
+
+                <section id="storm" data-background-image="../figures/Backgrounds/weather2.jpg" > 
+                             <div class="whitebackground2 ">
+                             <h3> Design Storm</h3>
+                                 
+                                 <p class="l2">Basically, we expect the intensity of storm for the project we are working with, e.g. Kerikeri vs Queenstown, urban vs rural areas</p>
+                                 
+                                 <p class="l2">The design storm is a function of chosen Frequency (return period) and Duration </p>
+                        </div>
+                </section>
+                
+                
+                <section id="storm3" data-background-image="../figures/Backgrounds/weather2.jpg" > 
+                             <div class="whitebackground2 ">
+                             <p> Design Duration</p>
+                                 
+                                 <p class="l2">If we don't know the Time of concentration, we'll need to 'design' or assume one</p>
+                                 
+                         <p class="l2"> From a theoretical
+                                perspective, it is assumed that rainfall Duration exactly
+                                equals catchment time of concentration $T_c$.</p>
+                                 
+                                 
+                             <p class="l2">The rainfall intensity is then can be estimated using that assumed Time of concentration, using the IDF curve</p>
+                                 
+                        </div>
+                </section>
+                
+                <section id="storm4" data-background-image="../figures/Backgrounds/weather2.jpg" > 
+                             <div class="whitebackground2 ">
+                                 
+                                 <p> So, how do we choose a Time of concentration ? </p>
+                                 
+                             <p> Time of Concentration = Duration</p>
+                             <p class="l2">$T_c$ is defined as the time required for the surface runoff from the remotest part of the drainage basin to reach the point under consideration.</p>
+                  
+                        </div>
+                </section>
+               
+                <section id="storm5" data-background-image="../figures/Backgrounds/weather2.jpg" > 
+                             <div class="whitebackground2 ">
+                             <p> Time of Concentration / Duration </p>
+                                 
+                            <p class="l2">Various graphical and formula based methods are available to estimate $T_c$ being estimated using hydraulic equations of flow. For example:</p>
+                                 <p class="l3">Kirpich Formula</p>
+                                 <p class="l3">Kerby’s Equation</p>
+                                 <p class="l3">Friend’s Equation</p>
+                                 <p class="l3">NZTA Equation</p>
+                                 
+                        </div>
+                </section>                
+                
+                
+                 <!-- ******************************************************
+                *********************** Tc Formula ***********************
+                ************************************************************ -->
+
+                <section id="Kirpic" >                    
+                    <div class="whitebackground2 ">
+                        <h3>Kirpich formula for $T_e$: Suitable for rural areas</h3>
+                        
+                             \[\begin{aligned}
+                                T_c = \big(  \frac{0.87 \times L^2}{1000 \times S} \big) ^ {0.385} \\
+                            \end{aligned} \]
+                           
+                         <p class="l2">Where:</p>
+                        <p class="l3"> $0.87$ = calibrating constant </p>
+                        <p class="l3"> $T_c$ = time of concentration in hours </p>
+                         <p class="l3"> $L$ = length of travel (km)</p>
+                         <p class="l3"> $S$ = average slope (m/m)</p>
+                           
+                    </div>
+                </section>
+                
+                <section id="Kerby" >                    
+                    <div class="whitebackground2 ">
+                        <h3>Kerby’s Equation: Kerby (1959)</h3>
+                        
+                             \[\begin{aligned}
+                                T_c = c(L \times n \times s^{-0.5})^{0.467} \\
+                            \end{aligned} \]
+                           
+                         <p class="l2"> for $ L \leq 365$ and where: </p>
+                        
+                        <p class="l3"> $T_c$ = time of concentration in hours </p>
+                         <p class="l3"> $L$ = length of flow (meters)</p>
+                         <p class="l3"> $n$ =   retardance roughness coefficient (smooth
+                         pavements = 0.02, poor grass, bare sod = 0.30,
+                         average grass = 0.40, dense grass = 0.80) </p>
+                        <p class="l3"> $s$ = Slope (m/m)</p>
+                        <p class="l3"> $c$ = 1.44 (when using meters)</p>
+                           
+                    </div>
+                </section>
+
+                <section id="Friend" >                    
+                    <div class="whitebackground2 ">
+                        <h3>Friend’s Equation: suitable for urban and rural residential areas</h3>
+                        
+                             \[\begin{aligned}
+                                T_c = \frac{107 \times n \times L^{0.333}}{S^{0.2}} \\
+                            \end{aligned} \]
+                           
+                         <p class="l2">where: </p>
+                        
+                        <p class="l3"> $T_c$ = overland sheet flow travel time (minutes) </p>
+                         <p class="l3"> $L$ = overland sheet path length (meters)</p>
+                         <p class="l3"> $n$ =   Horton’s roughness value for the surface </p>
+                        
+                        
+                         <p class="l4">Asphalt/concrete: 0.010 – 0.012, 
+                            Bare sand: 0.010 - 0.060,
+                            Bare clay/loam: 0.012 - 0.033,
+                            Gravelled surface: 0.012 – 0.030,
+                            Short grass: 0.100 – 0.200,
+                            Lawns: 0.200 – 0.300,
+                            Pasture: 0.300 – 0.400,
+                            Dense shrubbery: 0.400</p>
+                        
+                        <p class="l3"> $S$ = Slope (%)</p>
+                        
+                      
+                         <p class="l4">Read more: <a href="https://www.ccc.govt.nz/assets/Documents/Environment/Water/waterways-guide/21.RainfallAndRunoff.pdf">https://www.ccc.govt.nz/assets/Documents/Environment/Water/waterways-guide/21.RainfallAndRunoff.pdf</a></p>
+                       
+                      
+                        
+                    </div>
+                </section>
+                
+                <section id="NZTA" >                    
+                    <div class="whitebackground2 ">
+                        <h3>NZTA Equations: for time of flow over a pavement surface in seconds</h3>
+                        
+                             \[\begin{aligned}
+                                T_c = \frac{500 \times n \times l_f^{(2/3)}}{S_f^{(1/3)}} \\
+                            \end{aligned} \]
+                           
+                         <p class="l2">where: </p>
+                        
+                         <p class="l3"> $l_f$ = Flow path length (m)</p>
+                         <p class="l3"> $n$ =   Manning's roughness coefficient (quite similar to Horton's but not exactly identical) </p>
+                        
+                        <p class="l4"><a href="https://www.engineeringtoolbox.com/mannings-roughness-d_799.html">https://www.engineeringtoolbox.com/mannings-roughness-d_799.html</a></p>
+                        
+                        <p class="l3"> $S_f$ = Flow path slope (m/m)</p>
+                      
+                    </div>
+                </section>
+                
+                    
+                
+                
+                
+                 <section id="Runoff-ex" data-background-image="../figures/Teaching/Civil759/ex-runoff.png" data-background-size="60%">      
+                </section> 
+                
+                
+                  <!-- ******************************************************
+                *********************** Surface Water Sheet Flow ***********************
+                ************************************************************ -->
+
+                <section id="Sheet-0" data-background-image="../figures/Backgrounds/Beach.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Surface Water Sheet Flow </h3>
+                      
+                     <figure class="centre">
+
+                        <img data-src="../figures/Teaching/Civil759/lvl4.png"
+                             alt=" " />
+                    
+                    </figure>
+                        
+                    </div>
+                </section>
+                
+                 <section id="Sheet-1" >                 
+                  
+                        <h3>Wet Road Surface vs Conditions for Aquaplaning</h3>
+                      <p class="l2">Although technically a wet road surface occurs when precipitation intensity exceeds 0.1mm/hr we are interested in much higher rainfall intensities (up to 50 mm/hr).</p>
+                     <p class="l2">Aquaplaning occurs when vehicle speeds increase resulting in decreasing contact time, possibly to a stage where there is not enough time to remove the water and make contact with the road surface.</p>
+                        
+                       <video controls>
+
+                        <source data-src="../videos/aquaplaning.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                </section>
+                
+                  <section id="Sheet-2" data-background-image="../figures/Backgrounds/Beach.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Governing Factors for Aquaplaning</h3>
+                      <p class="l2">What are the factors which influence the occurrence of aquaplaning?</p>
+                     </div>
+                </section>
+
+              <section id="Sheet-3" data-background-image="../figures/Backgrounds/Beach.jpg">                       
+                    <div class="whitebackground2 ">
+                        <h3>Aquaplaning: Road Texture</h3>
+                      <p class="l2">Although not widely accepted around the world the road surface should also have a degree of texture.</p>
+                       
+                       <p class="l2">Although not widely accepted around the world the road surface should also have a degree of texture.</p>
+                        
+                        <p class="l2">There are multiple technologies to improve road texture, read more: <a href="https://www.fhwa.dot.gov/publications/research/safety/14065/004.cfm">https://www.fhwa.dot.gov/publications/research/safety/14065/004.cfm</a></p>
+                        
+                     </div>
+                </section>
+               
+                  <!-- ******************************************************
+                *********************** Texture ***********************
+                ************************************************************ -->
+
+                <section id="Texture-0" data-background-image="../figures/Teaching/Civil759/texture.jpeg" data-background-size="40%">     
+                  </section> 
+              
+                  <section id="Texture-1" >                  
+                   
+                         <figure class="centre">
+
+                        <img data-src="../figures/Teaching/Civil759/texture2.jpeg"
+                             alt=" " />
+                    
+                    </figure>
+                        
+                        <p>What do you see?</p>
+                               
+                </section>
+                
+                
+                  <section id="Texture-2" >                  
+                  
+                        <p>Macrotexture is measured by:</p>
+                                 <p class="l2">Sand patch (SP) test (View more here: <a href="https://www.youtube.com/watch?v=OmYfi6JaYgw">https://www.youtube.com/watch?v=OmYfi6JaYgw</a>)</p>
+                        <p class="l2">Sensor measured texture depth (SMTD)</p>
+             
+                </section>
+                
+                 <section id="Texture-QLD" data-background-image="../figures/Teaching/Civil759/texture-values.png" data-background-size="50%">     
+                  </section> 
+                
+                
+                 <section id="Texture-3" >                  
+                   
+                         <figure class="centre">
+
+                        <img data-src="../figures/Teaching/Civil759/tyre2.png"
+                             alt=" " />
+                    
+                    </figure>
+                     
+                               
+                </section>
+                
+                
+                 <section id="Texture-4" >                  
+                   
+                         <figure class="centre">
+
+                        <img data-src="../figures/Teaching/Civil759/tyre3.png">
+                    
+                    </figure>
+                        
+                </section>
+                
+                   <!-- ******************************************************
+                *********************** Calculation ***********************
+                ************************************************************ -->
+                
+                
+                 <section id="cal-0">   
+                    <p>It's important to calculate the water film depths to avoid aquaplanning:</p>
+                             <figure class="centre">
+                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
+                             alt=" " />
+                    </figure>
+                            
+		         </section>  
+                
+                  <section id="cal-1">   
+                    <p>NZTA have adopted the NAASRA (1974) equation to calculate water film depths.</p>
+                            
+                      \[\begin{aligned}
+                               d = 0.046 \frac{(l_f \times I )^{0.5}}{S_f^{0.2}} \\
+                     \end{aligned} \] 
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$d$ =  Depth of flow (mm) at the end of flow path </p>
+                      <p class="l2">$l_f$ =  Flow path length (m) </p>
+                      <p class="l2">$I$ = Rainfall intensity (mm/hr) </p>
+                      <p class="l2">$S_f$ = Flow path slope (m/m) </p>
+                        
+		         </section>  
+                
+                  <section id="cal-2">   
+                      
+                       <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/Cross-longitudinal-slope.png"
+                             alt=" " />
+                       </figure>
+                      
+                    <p>Flow path slope is given by: $S_f = (S_l^2 + S_c^2)^{0.5}$</p>
+                      
+                    <p class="l2">Where: </p>
+                       <p class="l2">$S_l$ =  Longitudinal slope (%)</p>
+                      <p class="l2">$S_c$ =  Cross fall of pavement (%)</p>
+                   
+                       <p>Flow path length is given by: $l_f = W \frac{S_f}{S_c}$</p>
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$W$ = Width of pavement contributing to flow (m)</p>
+                            
+		         </section>  
+                
+                 <section id="cal-3">   
+                    <p>NZTA Design Criteria</p>
+                      
+                    <p class="l2">Critical depth for aquaplaning ranges from 4mm to 10mm. Surface water depth should therefore be restricted to 4mm</p>
+                      <p class="l2">Two year return period is sufficient</p>
+                      <p class="l2">Minimum time of concentration of 5 min should be used</p>
+                
+		         </section>  
+                
+                   <section id="cal-4">   
+                    <p>FHWA Equation </p>
+                            
+                        <p class="l2">The Federal Highway Administration in the US suggest the following equation (converted to SI units) to calculate water film depths. </p>
+                       
+                      \[\begin{aligned}
+                               D = 0.103 \frac{T^{0.11} \times L^{0.43} \times I^{0.59}}{S^{0.42}} - T \\
+                     \end{aligned} \] 
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$D$ =  Water film depth above top of pavement texture (mm) </p>
+                      <p class="l2">$T$ = Average pavement texture depth (mm) </p>
+                      <p class="l2">$I$ = Rainfall intensity (mm/h) </p>
+                      <p class="l2">$L$ = Length of flow path (m) -- similar to $l_f$ in NZTA equation </p>
+                        <p class="l2">$S$ = Slope of flow path (%) -- similar to $S_f$ in NZTA equation but different unit </p>
+                       
+		         </section>  
+                
+                 <section id="cal-4-path">   
+                     
+                     <p>Estimation of drainage path</p>
+                     
+                        <p class="l2">The designer needs to determine the drainage path length by
+                        plotting and assessing the contours on the proposed road surface.</p>
+                       
+                     
+                    <p class="l2">The drainage path is the route taken by rainfall runoff from the
+                        point at which it falls on the carriageway to the carriageway edge</p>
+                     
+                    
+                      <p class="l2">The water depth analysis shall be carried out on the critical
+                    drainage path, i.e. the longest drainage path on the carriageway
+                    within the assessment location.</p>
+                    
+                       <figure class="centre">
+                            <img data-src="../figures/Teaching/Civil759/critical-path.png"
+                             alt=" " />
+                       </figure>
+                     
+                      <p class="l2">In many cases, the equation $l_f = W \frac{S_f}{S_c}$ may be used for simplicity</p>
+                     
+		         </section>  
+                
+                  <section data-background-video="../figures/Teaching/Civil759/Road_Surface_Drainage.mp4"
+                         data-background-video-loop="loop"
+                         id="video02">                     
+                    
+                    </section>  
+                
+                
+                 <section id="cal-5">   
+                        <p>Design criteria specifying maximum water film depth should be adhered to. The following are for <a>Queensland Transport and Main Roads</a>: </p>
+                       
+                     
+                    <p>Design Speed less than 80km/h</p>
+                      <p class="l2">Water film depth no greater than 5mm</p>
+                      <p class="l2">Pavement micro-texture 0.2mm minimum</p>
+                     
+                      <p>Design Speed less than 80-100km/h or higher</p>
+                      <p class="l2">Check for rainfall intensity 50mm/h$^*$</p>
+                      <p class="l2">Water film depth 2.5mm desirable, 4mm maximum</p>
+                      <p class="l2">Pavement micro-texture 0.4mm desirable minimum</p>
+                      <p class="l2">Pavement crossfall 2% to 4%</p>
+                     
+                     <p class="l3"> $^*$ 50 mm/hr results in reduced visibility hence drivers slow down with some drivers starting to reduce speed as low as 25 km/hr. Higher intensities are therefore not practical for design purposes.</p>
+                     
+		         </section>  
+                
+                 <section id="cal-6">   
+                        <p><a>Exercise</a>: Aquaplanning</p>
+                       
+                    <p>Check for aquaplaning on a 10m wide road with crossfall 3% (across the full width) on a longitudinal grade of 4%.  </p>
+                      <p class="l2">The pavement is a dense graded asphalt, the rainfall intensity is 50mm/hr and the design speed is 100 km/hr.</p>
+                     <p>The pavement is a dense graded asphalt (0.8mm texture depth), the rainfall intensity is 50mm/hr and the design speed is 100 km/hr hence the desirable maximum water film depth is 2.5mm with 4 mm as an absolute maximum.</p>
+                      <p>Check using both FHWA and NZTA equations</p>
+                     
+		         </section>  
+                
+                
+                 <!-- ******************************************************
+                *********************** Kerb ***********************
+                ************************************************************ -->
+                
+                <section id="Kerb-0" data-background-image="../figures/Teaching/Civil759/hydraulic.png" data-background-size="80%">                       
+                   
+                </section>
+                
+                
+                    
+                 <section id="Kerb-1" data-background-image="../figures/Teaching/Civil759/hydraulic.png"  data-background-size="80%">                       
+                    <div class="whitebackground2 ">
+                        <h3>Kerb and Channel Flow and Location of Inlets</h3>
+                        
+                        <p>Now that we can calculate an estimate of the peak flow to be catered for</p>
+                        
+                         <p>the next step is the Hydraulic Design of the channels and pipes required to carry it</p>
+                        
+                        <p class="l2">Gutter flow calculations are necessary to relate the quantity of flow in the kerbed channel to the spread of water on the shoulder, parking lane or travel lane.</p>
+                      
+                     </div>
+                </section>
+                
+                <section id="Kerb-urban" data-background-image="../figures/Teaching/Civil759/Urban-drainage.jpeg" data-background-size="95%"> </section>
+                
+                 <section id="Kerb-street" data-background-image="../figures/Teaching/Civil759/Urban-drainage-street.jpeg" data-background-size="95%"> </section>
+                
+                 <section id="Kerb-2" data-background-image="../figures/Teaching/Civil759/Urban-inlet.png" data-background-size="90%"> </section>
+                
+                
+                
+                
+                 <section id="Kerb-3" data-background-image="../figures/Teaching/Civil759/Urban-drainage-street.jpeg" data-background-size="95%">                     
+                    <div class="whitebackground2 ">
+                       
+                        <p>Inlet locations</p>
+                        
+                        <p class="l2">Ideally, inlet locations should be optimised to collect the design surface flows with the minimum number of installations and, of course, to reduce flow width on roadways.</p>
+                        <p class="l2"><a>Determine inlet spacing is a major decision</a></p>
+                        
+                       <p class="l3"> The location and spacing of inlets on roads is governed in
+                            part by the need to provide safe, economical road drainage
+                            by limiting the amount of gutter flow</p>
+                     </div>
+                </section>
+                
+        
+                <section id="Kerb-capacity">   
+                    <p>Capacity of Inlets </p>
+                            
+                        <p class="l2">The capacity of the various categories of drainage inlet may be varied by the amount of depression allowed in the gutter adjacent to the kerb opening.</p>
+                       
+                    <p class="l3">Flush inlet </p>
+                      <p class="l3">Depressed inlet</p>
+                    
+                      <p>Considerations</p>
+                       
+                    <p class="l3">Design load </p>
+                      <p class="l3">Bicycle safety</p>
+                     <p class="l3"> Bypass flow</p>
+           
+                </section>  
+                
+                 
+                
+                
+                <section id="Kerb-types" data-background-image="../figures/Teaching/Civil759/inlet-types.png" data-background-size="45%"> </section>
+               
+                
+                <section id="Kerb-4" data-background-image="../figures/Teaching/Civil759/kerb2.png" data-background-size="70%"> </section>
+                <section id="Kerb-5" data-background-image="../figures/Teaching/Civil759/kerb3.png" data-background-size="70%"> </section>
+                   
+             
+                <section id="Kerb-spacing" data-background-image="../figures/Teaching/Civil759/inlet-spacing.png" data-background-size="80%"> </section>
+               
+                
+               
+                  <section id="Kerb-bypass" data-background-image="../figures/Teaching/Civil759/bypass.png" data-background-size="60%"> </section>
+                
+              
+                
+                 <section id="Kerb-acceptable" data-background-image="../figures/Teaching/Civil759/kerb1.png" data-background-size="70%"> </section>
+                
+                   <section id="Kerb-experiment1">   
+                        <p><a>Exercise</a>: </p>
+                       
+                    <p>Design an experiment to determine the capacity of inlets.</p>
+                    
+		         </section>  
+                
+                <section id="Kerb-experiment2">   
+                       
+                    <p> An example of full-scale testing at UniSA, Australia: <a href= " https://www.unisa.edu.au/research/scarce-resources-and-circular-economy/australian-flow-management-group/stormwater-drainage-hydraulic-study/"> https://www.unisa.edu.au/research/scarce-resources-and-circular-economy/australian-flow-management-group/stormwater-drainage-hydraulic-study/</a></p>
+                    
+		         </section>  
+                
+                
+                 <section id="Kerb-6" >
+                       
+                        <p>Calculate the required inlet spacing:</p>
+                     
+                     \[\begin{aligned}
+                              Q =  q \times L \\
+                     \end{aligned} \] 
+                     
+                       <p class="l2">Where: </p>
+                     <p class="l2">$L$ = required inlet spacing, m</p>
+                      <p class="l2">$q$ = peak runoff (m$^3$/sec) </p>
+                      <p class="l2">$Q$ = discharge into inlet (m$^3$/sec) or channel capacity (at inlet)</p>
+                     
+                      \[\begin{aligned}
+                              L =  Q / q \\
+                     \end{aligned} \] 
+                     
+                </section>
+                
+                
+                 <section id="Kerb-7">   
+                    <p> How do we calcualte pavement peak runoff $q$ ?</p>
+                            
+                        <p class="l2">Pavement runoff is calculated by the Rational method, however, the contribution to the flow at the kerb is given by a modification to the formula as follows: </p>
+                       
+                      \[\begin{aligned}
+                              q =  \frac{C \times I \times W}{3.6 \times 10^6} \\
+                     \end{aligned} \] 
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$q$ = peak run-off contribution per longitudinal metre of pavement, m$^3$/sec </p>
+                      <p class="l2">$C$ = coefficient of runoff (e.g. equals 1 for impermeable)</p>
+                      <p class="l2">$I$ = rainfall intensity, mm/hr</p>
+                      <p class="l2">$W$ = width of contributing cross section, m </p>
+                       
+		         </section>  
+                
+                
+                   <section id="Kerb-9">   
+                    <p>How do we calculate the discharge into inlet $Q$ (m$^3$/sec) or channel capacity (at inlet): NZTA Equation </p>
+                       
+                      \[\begin{aligned}
+                              Q =  \frac{0.375 \times S_L^{0.5} \times d^{8/3}}{n \times S_c} \\
+                     \end{aligned} \] 
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$Q$ = discharge into inlet (m$^3$/sec)</p>
+                      <p class="l2">$S_c$ = channel crossfall (m/m)</p>
+                      <p class="l2">$S_L$ = longitudinal channel slope (m/m)</p>
+                      <p class="l2">$d$ = depth of flow at kerb face (m) </p>
+                       <p class="l2">$n$ = Manning’s roughness coefficient </p>
+                       
+		         </section>  
+                
+                
+                 <section id="Kerb-11" >
+                
+                     <p class="l2">In the Rational method, note that the value of rainfaill intensity $I$ needs to be found from the IDF curve, thus therefore requires the values of Frequency/ARI and Time of concentration of the storm</p>
+                
+                 <p class="l2">We often apply the NZTA minimum time of concentration: $T_c$ = 5 min</p>
+                     
+                     <a>With the calculated discharge into inlet $Q$, we can actually calculate $T_c$ to see if it's actually less than 5 min or not, if $T_c \leq 5$ min our assumption is valid </a>
+                     
+                     <p class="l2">$T_c$ can be found by suming values of flow time over the various parts of the catchment, assume no over flow</p>
+                     
+                      <p class="l3">$T_c = T_E + T_G + T_P$</p>
+                     
+                      <p class="l3">where: </p>
+                      <p class="l3"> $T_E$ = Time of entry to inlet, if water is flowing on the surface, we'll have $T_E=T_s$, otherwise time of entry should be given to us</p>
+                      <p class="l3"> $T_s$ = Time of flow over a pavement surface</p>
+                         <p class="l3"> $T_G$ =  Gutter flow time </p>
+                      <p class="l3"> $T_P$ =  Pipe flow time </p>
+                     
+                     
+                     <p class="l4"> Read more: <a href="https://www.nzta.govt.nz/assets/resources/highway-surface-drainage-design-guide/docs/highway-surface-drainage-design-guide.pdf"> https://www.nzta.govt.nz/assets/resources/highway-surface-drainage-design-guide/docs/highway-surface-drainage-design-guide.pdf</a> </p>
+                     
+                     
+                </section>
+                
+                
+                <section id="Kerb-12" >
+                
+                     <p><a>NZTA equation: </a>Time of flow over a pavement surface in seconds is given by: </p>
+                
+                 \[\begin{aligned}
+                                T_s =500 \times n \times \frac{l_f^{2/3}}{ S_f^{1/3}} \\
+                            \end{aligned} \]
+                    
+                     <p class="l2">where: </p>
+                     <p class="l3"> $n$ = Mannings roughness coefficient</p>
+                         <p class="l3"> $l_f$ =  Flow path length (m)</p>
+                      <p class="l3"> $S_f$ =  Flow path slope (m/m) </p>
+                     
+                    <p>Remind that flow path slope is given by: $S_f = (S_l^2 + S_c^2)^{0.5}$</p>
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$S_l$ =  Longitudinal slope (%)</p>
+                      <p class="l2">$S_c$ =  Cross fall of pavement (%)</p>
+                   
+                       <p>Flow path length is given by: $l_f = W \frac{S_f}{S_c}$</p>
+                      
+                    <p class="l2">Where: </p>
+                      <p class="l2">$W$ = Width of pavement contributing to flow (m)</p>
+                    
+                </section>
+                
+                
+                
+                  <section id="Kerb-13" >
+                        <p class="l2">Gutter flow time is given by: </p>
+                        
+                             \[\begin{aligned}
+                                T_G = \frac{5 \times L}{ 4 \times v_I} \\
+                            \end{aligned} \]
+                           
+                         <p class="l2">where: </p>
+                        
+                         <p class="l3"> $v_I$ = water velocity in the gutter</p>
+                         <p class="l3"> $L$ =  length of contributing gutter (m) </p>
+                        
+                    <p class="l2">Pipe flow time is given by: </p>
+                        
+                             \[\begin{aligned}
+                                T_P = \frac{L_p}{ v_p} \\
+                            \end{aligned} \]                        
+
+                         <p class="l2">where: </p>
+                        
+                         <p class="l3"> $L_p$ = length of contributing pipe (m)</p>
+                         <p class="l3"> $v_p$ =  Water velocity in the pipe </p>
+                  
+                </section>
+                
+                 <section id="Kerb-14" >
+                        <p class="l2">The water velocity is calculated by: </p>
+                        
+                             \[\begin{aligned}
+                               v = Q / A \\
+                            \end{aligned} \]
+                           
+                         <p class="l2">where: </p>
+                        
+                         <p class="l3"> $Q$ = discharge into gutter or pipe (m$^3$/sec)</p>
+                         <p class="l3"> $A$ =  Total cross area of gutter of pipe (m$^2$) </p>
+                      
+                     <a>Let's do an excercise</a>
+                </section>
+                
+                 <section id="Kerb-17" data-background-image="../figures/Teaching/Civil759/ex5.png" data-background-size="50%"> </section>
+                
+                 
+                  <!-- ******************************************************
+                *********************** Surface Drainage Channels ***********************
+                ************************************************************ -->
+                
+                <section id="channel-1" data-background-image="../figures/Teaching/Civil759/hydraulic.png" data-background-size="80%">                       
+                    <div class="whitebackground2 ">
+                        <h3>Highway Surface Drainage Channels</h3>
+                      
+                     </div>
+                </section>
+                 <section id="channel-2" data-background-image="../figures/Teaching/Civil759/channel1.png" data-background-size="70%"> </section>
+                
+                <section id="channel-3" data-background-image="../figures/Teaching/Civil759/channel2.png" data-background-size="70%"> </section>
+                
+                 <section id="channel-4" data-background-image="../figures/Teaching/Civil759/channel3.png" data-background-size="70%"> </section>
+  
+                <section id="channel-5">                      
+                   
+                        <p>Open Channel Flow</p>
+                        
+                        <p class="l2">Flow in an open channel takes place not because of a pressure difference between two points but because of a difference in elevation between two points.</p>
+                        
+                     <p class="l2">We often need to determine whether the side channel is capable of handling the estimated discharge without the water eroding the sides or entering the pavement.</p>
+                    
+                        <p class="l2">Most open channel hydraulic formulae in use today are based on the work of Antoine Léonard de Chézy, a French Engineer and mathematician.</p>
+                      
+                    
+                </section>
+                
+                <section id="channel-6">                      
+                        <p>Chézy Formula</p>
+                        
+                        <p class="l2">The basic hydraulic formulas for determining flow of water in open channels are as follows:</p>
+                    
+                     \[\begin{aligned}
+                              V =  C \sqrt{R \times S} \\
+                            Q =  A \times V \\
+                     \end{aligned} \] 
+                    
+                        
+                        <p class="l2">Where:</p>
+                     <p class="l3">$Q$ = discharge ($m^3/s$)</p>
+                     <p class="l3">$C$ = coefficient of roughness	 </p>
+                     <p class="l3">$R$ = $A/P$ =  average hydraulic radius ($m$) </p>
+                     <p class="l3">$S$ = slope of hydraulic gradient ($m/m$)</p>
+                     <p class="l3">$A$ = cross-sectional area of flow ($m^2$) </p>
+                     <p class="l3">$P$ = wetted perimeter of the flow ($m$)</p>
+                     <p class="l3">$V$ = average velocity of water ($m/s$)</p>
+                      
+                    
+                </section>
+                
+                <section id="channel-7">                      
+                        <p>Manning Formula</p>
+                        
+                        <p class="l2">The most widely used in highway drainage design is Manning’s Formula, applies for full flow not under pressure. This formula gives the value for C in the Chézy formula as:</p>
+                    
+                     \[\begin{aligned}
+                              C =  \frac{R^{1/6}}{n} \\
+                           
+                     \end{aligned} \] 
+                    
+                        
+                        <p class="l2">Where:</p>
+                    <p class="l3">$C$ = coefficient of roughness	 </p>
+                     <p class="l3">$n$ = Manning’s roughness coefficient</p>
+                     <p class="l3">$R$ = $A/P$ = hydraulic radius (m)	 </p>
+                      <p class="l3">$A$ = cross-sectional area of flow ($m^2$) </p>
+                     <p class="l3">$P$ = wetted perimeter of the flow ($m$)</p>
+                      
+                    
+                </section>
+                
+                  <section id="channel-8">                      
+                       
+                        
+                       <p class="l2">Replace $C$ in</p>
+                       \[\begin{aligned}
+                              V =  C \sqrt{R \times S} \\
+                           
+                     \end{aligned} \] 
+                      
+                       <p class="l2">We then have the Simplified Manning Formula</p>
+                      
+                     \[\begin{aligned}
+                              V =  \frac{R^{2/3} \times S^{1/2}}{n} \\
+                           
+                     \end{aligned} \] 
+                      
+                     <p class="l2">And</p>
+                      
+                         \[\begin{aligned}
+                              Q= A \times V =  \frac{A \times R^{2/3} \times S^{1/2}}{n} \\
+                           
+                     \end{aligned} \] 
+                      
+                        
+                        <p class="l2">Where:</p>
+                     <p class="l3">$n$ = Manning’s roughness coefficient</p>
+                     <p class="l3">$R$ = A/P = average hydraulic radius (m)	 </p>
+                      <p class="l3">$A$ = cross-sectional area of flow ($m^2$) </p>
+                     <p class="l3">$P$ = wetted perimeter of the flow ($m$)</p>
+                      <p class="l3">$S$ = slope of hydraulic gradient ($m/m$)</p>
+                      
+                    
+                </section>
+                
+                 <section id="channel-9" data-background-image="../figures/Teaching/Civil759/manning1.png" data-background-size="85%"> </section>
+                
+                 <section id="channel-10" data-background-image="../figures/Teaching/Civil759/manning2.png" data-background-size="85%"> </section>
+                
+                 <section id="channel-11">                      
+                   
+                        <p>Critical Velocity</p>
+                        
+                        <p class="l2">Manning’s formula assumes steady state conditions and a uniform flow. For more complex flow conditions refer to your hydraulics lecture notes.</p>
+                        
+                        <p class="l2">Manning’s formula does, however, provide a reasonable estimate for calculating the water velocity (and hence potential for scour) in the ditch.</p>
+                        <p class="l2">The final flow velocity should be kept below the safe flow velocity, $V_{max}$. Where $V_{max}$ can be found in the previous tables. Hence:</p>
+
+                       \[\begin{aligned}
+                              V =  \frac{R^{2/3} \times S^{1/2}}{n} \leq V_{max} \\
+                           
+                     \end{aligned} \] 
+                    
+                </section>
+                
+                <section id="channel-12">                      
+                   
+                        <p>Exercise 6: Highway channels</p>
+                        
+                        <p class="l2">An existing highway in cutting is to have side ditches to drain both the roadway and back slopes. The maximum discharge in each side channel is expected to be 1$m^3/min$. Each ditch is to have a trapezoidal shape, with side slopes of 3 horizontal to 1 vertical and bottom width of 1m. The bottom of the ditch will be 10cm below the underside of the pavement and is on a gradient of 4 per cent. The channel will be grassed after construction, the natural soil being erosion resistant.</p>
+                        
+                        <p class="l2">Determine whether the side channel is capable of handling this discharge without the water eroding the sides or entering the pavement.</p>
+                    
+                </section>
+                
+                  <!-- ******************************************************
+                *********************** Stormwater Sewer System Design ***********************
+                ************************************************************ -->
+
+               <section id="storm-1" data-background-image="../figures/Teaching/Civil759/hydraulic.png" data-background-size="80%">                        
+                    <div class="whitebackground2 ">
+                        <h3>Stormwater Sewer System Design</h3>
+                      
+                     </div>
+                </section>
+                
+                 <section id="storm-2" >                      
+                  
+                        <h3>Example standard details</h3>
+                        <p> Manhole  <a href="https://idc.tauranga.govt.nz/standard-drawings/t500-stormwater/t501-manhole-standard"> https://idc.tauranga.govt.nz/standard-drawings/t500-stormwater/t501-manhole-standard</a> </p>
+                        
+                         <p> Recessed sump <a href="https://idc.tauranga.govt.nz/standard-drawings/t400-transport-network/t426-alternative-sump-special-approval-only"> https://idc.tauranga.govt.nz/standard-drawings/t400-transport-network/t426-alternative-sump-special-approval-only</a> </p>
+                         
+                    
+                </section>
+                
+                 <section id="storm-3" >                     
+                   
+                        <h3>Further read for sewer systems: Considerations</h3>
+                        <p class="l2">Distance between manholes (access chambers) – Sect 6.3.1 Austroads (2013)</p>
+                        
+                        <p class="l2"> Minimum cover on pipes - Table 6.1 Austroads (2013)</p>
+                        <p class="l2">Flow velocities and Grades for pipes - Sect 6.5.4 Austroads (2013)</p>
+                     <p class="l2">See also NZTA P46 Stormwater Specification (NZTA 2016) for State Highway specifications</p>
+                         
+                   
+                </section>
+              
+                
+                <section id="storm-4" data-background-image="../figures/Teaching/Civil759/design_sheet.png" data-background-size="90%"> </section>
+                 
+                <section id="storm-5" >                     
+                  
+                        <h3>Exercise 7: Design pipes for urban stormwater drainage system</h3>
+                     <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/ex7.png"
+                             alt=" " />
+                       </figure>
+                    
+                        <p class="l3">The Figure illustrates the storm water drainage system for an urban road design project and surrounding buildings.</p>
+                        <p class="l3">The pipe length, difference in level and catchment area for each pipe is clearly indicated</p>
+                        <p class="l3">Catchment areas shown are for ‘impervious surfaces’ such as pavements, footpaths, driveways, roofs – all of which will end up in the storm water sewer system</p>
+                     <p class="l3">Using the Rational Method, calculate the <a>pipe size diameters for all pipes. </a></p>
+                         
+                </section>
+                
+                <section id="storm-6" >                     
+                  
+                        <h3>Exercise 7 notes:</h3>
+                        <p class="l2">A time of entry of 2 min should be used.  </p>
+                        <p class="l2">Rainfall intensity is for a 5 year return period and can be obtained from the following equation where $t$ is in minutes</p>
+                                 \[\begin{aligned}
+                                          i =  \frac{750}{9+t} \\
+                                 \end{aligned} \] 
+                        <p class="l2">Manning’s “$n$” value is assumed to be 0.011</p>
+                     <p class="l2">Design should be for full flow not under pressure at the design discharge (i.e. Manning’s formula is appropriate).</p>
+                    <p class="l2">All stormwater inlets are connected directly into a manhole</p>
+                    <p class="l2">Standard pipe diameters: 150mm, 225mm, 300mm and 375mm </p>
+                         
+                </section>
+
+                <section id="storm-7" data-background-image="../figures/Teaching/Civil759/ex7.png" data-background-size="80%"> </section>
+                
+                  <!-- ******************************************************
+                *********************** Recap & references ***********************
+                ************************************************************ -->
+
+                
+                
+                <section id="References" >                     
+                  
+                        <p>More to read:</p>
+                        <p class="l4">Austroads (2013) Guide to Road Design. Part 5A: Drainage – Road Surface, Networks, Basins and Subsurface. Austroads, Sydney.</p>
+                        <p class="l4">DfT, (1997). Design Manual for Roads and Bridges, HA 37/97. Hydraulic Design of Road-edge Surface Water Channels.</p>
+                        <p class="l4">Gallaway, B. M., Schiller, R. E., & Rose, J. G. (1971). The Effects of Rainfall Intensity, Pavement Cross Slope, Surface Texture, and Drainage Length on Pavement Water Depths, </p>
+                        <p class="l4">Main Roads Queensland (2002). Road Drainage Design Manual.</p>
+                     <p class="l4">NAASRA (1974). Guide to the Design of Road Surface Drainage.</p>
+                    <p class="l4">NZTA (2014). TM-2502 Preferred method for calculating road surface water run-off in New Zealand.</p>
+                    <p class="l4">NZTA (2016). NZTA P46 Stormwater Specification.</p>
+                    <p class="l4">Oakden, G.J. (1977). Highway Surface Drainage: Design Guide for Highways with a Positive Drainage System. Roading Directorate, Ministry of Works and Development.</p>
+                    <p class="l4">O'Flaherty, C. A. (1974). Highways. Volume 2, Highways Engineering Edward Arnold. Table 2.3</p>
+                    <p class="l4">TRRL (1976) Guide for engineers to the design of storm sewer systems. 2nd edition, Road Note 35. Transport and Road Research Laboratory.</p>
+                    <p class="l4">Woodside, A. R., & Woodward, D. H. (2002). Wet skid resistance. Highways (fourth edition) (pp. 479-499) Elsevier.</p>
+                   
+                </section>
+                
+                
+
+
+
+
+
+
+
+
+
+
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2020-Civil361-C1.html">http://bit.ly/2020-civil361-c1</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>

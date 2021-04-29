@@ -1,0 +1,1748 @@
+<!doctype html>
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Civil771</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+    
+
+          <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                         <h3>Civil 361: Traffic Engineering 2</h3>
+                        
+                        <h2>Introduction to Transportation Planning</h2>
+                        
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil361-planning.html">http://bit.ly/361-planning</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+
+                    <h2>Minh Kieu</h2>
+                    
+                   <p>These HTML slides can be accessed by:<br/><a href="https://leminhkieu.github.io/p/Civil361-planning.html">http://bit.ly/civil361-planning</a></p>
+                    <p class="l4">PDF version can be found on Canvas</p>
+                    
+                    <p> From 2020: Lecturer in Transport Analytics at the Department of Civil and Environment Engineering</p>
+                     
+                    <p> Office hours: 1 hour after lectures, or contact me via emails </p>
+                    <p class="l4">B401, Room 11.16</p>
+                    <p class="l4">minh.kieu@auckland.ac.nz</p>
+                    
+                </section>     
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                     <p>1. Understand what is transportation planning</p>
+                    <p>	2. Understand the New Zealand’s five transport planning objectives </p>
+                    <p>	3. Understand the travel demand forecasting models </p>
+                                    
+                    
+                </section>                
+
+                     
+                
+              <!-- ******************************************************
+                *********************** Intro ***********************
+                ************************************************************ -->
+
+                  <section data-background-video="../videos/Auckland-plan.mp4"
+                         data-background-video-loop="loop"
+                         id="video1">                     
+                    <div class="whitebackground2 fragment">
+                        <h3>Auckland is transforming rapidly</h3>
+                        
+                        <p>Auckland’s city centre is going through a period of rapid transformational change, with substantial investment committed to the area by both the public sector and private developers.</p>
+                       
+                        <p class="l2">City Rail Link starts operating in 2024: 54,000 peak-time passengers each hour</p>
+                        
+                        <p>“By 2032 Auckland's city centre will be highly regarded internationally as a centre for business and learning, innovation, entertainment, culture and urban living - all with a distinctly 'Auckland' flavour.”  -  Auckland City Centre Masterplan</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>
+                
+                
+                 <section id="congestion2" data-background-image="../figures/Backgrounds/city.gif">                     
+                    <div class="whitebackground2">
+                        <p>We have consistently underestimated how we might grow</p>
+                        
+                        <p>Our public transport system is underdeveloped</p>
+                        
+                        <p>Despite the green paint, cycling is not prioritised</p>
+                     </div>
+                               
+                </section>
+                
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes1" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                    <h2>Transport Planning (3L/T)</h2>
+                    
+                    <h3>Learning outcomes: </h3>
+                    
+                    <p>	<a>1. Understand what is transportation planning</a></p>
+                    <p>	2. Understand the New Zealand’s five transport planning objectives </p>
+                    <p>	3. Understand the travel demand forecasting models </p>
+                
+                </section>                
+
+               
+                
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def">
+                        <h3>What is Transportation Planning ?</h3>
+                        
+                        <p>Transport planning is defined as the steps required in the operation, provision and management of facilities and services for the modes of transport </p>
+                        
+                        <p class="l2">to achieve safer, faster, comfortable, convenient, economical and environment-friendly movement of people and goods. </p>
+                        
+                        <p>It is <a>a prediction </a>of usage demand in the future and <a>steps to ensure</a> all the necessary facilities and services to cater to that demand. </p>
+                        
+                        <p class="l2"> Transportation planning provides the information, tools, and public involvement needed for improving transportation system performance.</p>
+                        
+                        <p class="l2">Transportation planning is a continuous process that requires monitoring of the system’s performance and condition.</p>
+                        
+                
+                </section>
+                
+
+                <section id="def3" data-background-image="../figures/Teaching/Civil361/planning-flow.png" data-background-size="80%">                   
+                </section>
+                
+          
+                <section id="def2" data-background-image="../figures/Teaching/Civil361/Typical_model.png" data-background-size="80%">                   
+                </section>
+                
+              <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>1. Understand what is transportation planning</p>
+                 <p><a>2. Understand the New Zealand’s five transport planning objectives </a> </p>
+                    <p>	3. Understand the travel demand forecasting models</p>
+                    
+                  <aside class="notes">
+		          - There are only two aimed learning outcomes of this lectures
+	               </aside>                    
+                    
+                </section>       
+                
+  
+               <section id="needs">
+                       <h3>New Zealand’s five transport planning objectives</h3>
+
+                        <p class="l2">Assist economic development;</p>
+                        <p class="l2">Assist safety and personal security</p>
+                        <p class="l2">Improve access and mobility;</p>
+                        <p class="l2">Protect and promote public health;</p>
+                        <p class="l2">Ensure environmental sustainability.</p>
+                       
+                    <p>Read more:<br/><a href="https://at.govt.nz/media/imported/4989/wcc-TransportStrategy-p7-12.pdf">Here</a></p>
+                       
+                    
+                 <aside class="notes">
+		           </aside>                   
+                </section> 
+                
+                
+  
+               <section id="importance3" data-background-image="../figures/Backgrounds/data.jpg">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Assist economic development</h3>
+                        
+                       <img data-src="../figures/teaching/transport-economy.png"
+                             style="width:500px;"
+                             alt="Flow-chart" />
+                        
+                        <p>Read more:<br/><a href="https://www.transport.govt.nz/assets/Uploads/Report/edt-Contribution-of-transport-to-economic-development.pdf">Minstry of Transport (2016) Contributions of transport to economic development. </a></p>
+                    
+                       
+                        
+                   </div>  
+                   <aside class="notes">
+              
+	               </aside>      
+                   
+                    </section>    
+                
+                
+               <section id="eastwestlink" data-background-image="../figures/Backgrounds/data.jpg">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Assist economic development </h3>
+                        
+                        <p>Example: East-West connection project in Auckland</p>
+                        
+                        <p class="l2"><a href=" https://www.nzta.govt.nz/assets/projects/east-west-connections/ewc-interactive-map.pdf"> https://www.nzta.govt.nz/assets/projects/east-west-connections/ewc-interactive-map.pdf</a></p>
+                        
+                   </div>  
+                   <aside class="notes">
+              
+	               </aside>      
+                   
+                    </section>    
+                
+  
+               <section id="needs2" >
+                       <h3>New Zealand’s five transport planning objectives</h3>
+
+                        <p class="l2">Assist economic development;</p>
+                        <p class="l2"><a>Assist safety and personal security</a></p>
+                        <p class="l2">Improve access and mobility;</p>
+                        <p class="l2">Protect and promote public health;</p>
+                        <p class="l2">Ensure environmental sustainability.</p>
+                       
+                    <p>Read more:<br/><a href="https://at.govt.nz/media/imported/4989/wcc-TransportStrategy-p7-12.pdf">Here</a></p>
+                       
+                    
+
+                 <aside class="notes">
+		           </aside>                   
+                </section> 
+                
+  
+               <section id="importance2-1" data-background-image="../figures/Backgrounds/roundabout.png">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Assist safety and personal security</h3>
+                        
+                        <p class="l2">1. reduce accidents
+                        <p class="l2">2. reduce crash severity</p>
+                        
+                         <p class="l3"> Road transport was estimated to have caused 650 deaths in New
+                        Zealand in 2012 (308 from traffic accidents, 283 from air pollution
+                        and 59 from noise pollution)</p>
+                    
+                   </div>  
+                   <aside class="notes">
+                 </aside>      
+                   
+                    </section>    
+                
+  
+               <section id="importance2-2" data-background-image="../figures/Backgrounds/roundabout.png">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Assist safety and personal security</h3>
+                        
+                         <p class="l2">Read more:<br/><a href="https://www.transport.govt.nz/multi-modal/keystrategiesandplans/road-safety-strategy/">Ministry of Transport. Road to Zero: A New Road Safety Strategy for NZ</a></p>
+                        
+                        
+                        <video controls>
+                        <source data-src="../videos/road-to-zero.mp4" type="video/mp4"/>
+                         Your browser does not support the video tag.
+                    </video>
+                    
+                   </div>  
+                   <aside class="notes">
+                 </aside>      
+                   
+                    </section>        
+
+  
+               <section id="needs3" >
+                   
+                       <h3>New Zealand’s five transport planning objectives</h3>
+
+                        <p class="l2">Assist economic development;</p>
+                        <p class="l2">Assist safety and personal security</p>
+                        <p class="l2"><a>Improve access and mobility</a></p>
+                        <p class="l2">Protect and promote public health;</p>
+                        <p class="l2">Ensure environmental sustainability.</p>
+                       
+                    <p>Read more:<br/><a href="https://at.govt.nz/media/imported/4989/wcc-TransportStrategy-p7-12.pdf">Here</a></p>
+                       
+                      
+
+                 <aside class="notes">
+		           </aside>                   
+                </section> 
+                
+                
+  
+               <section id="importance5" data-background-image="../figures/Backgrounds/bike.jpg">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Improve access and mobility</h3>
+                        
+                        <p class="l2">1. Measurement of <a>ease of access</a> to activities, facilities and delivery of goods ;</p>
+                        <p class="l2">2. <a>Availability</a> of other travel alternatives and emergency travel options</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>                  
+                
+                
+  
+               <section id="assessibility" data-background-image="../figures/Backgrounds/bike.jpg">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Accessibility of public transport in Auckland</h3>
+                        
+                        <p class="l2"><a href="https://www.mapnificent.net/auckland/"> https://www.mapnificent.net/auckland/</a>
+                            
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>           
+                
+  
+               <section id="needs4" >
+                   
+                       <h3>New Zealand’s five transport planning objectives</h3>
+
+                        <p class="l2">Assist economic development;</p>
+                        <p class="l2">Assist safety and personal security</p>
+                        <p class="l2">Improve access and mobility;</p>
+                        <p class="l2"><a>Protect and promote public health;</a></p>
+                        <p class="l2">Ensure environmental sustainability.</p>
+                       
+                    <p>Read more:<br/><a href="https://at.govt.nz/media/imported/4989/wcc-TransportStrategy-p7-12.pdf">Here</a></p>
+                </section> 
+                
+                
+  
+               <section id="thealth" data-background-image="../figures/Backgrounds/bike.jpg">    
+                                       
+                    <div class="whitebackground2">
+                        <h3>Protect and promote public health: </h3>
+                        <p class="l2"> Transport can impact on health in a number of ways</p>
+                        
+                         <p class="l2">In 2011–2014, New Zealanders spent the vast majority (79%) of their total travel time in motor
+                             vehicles, with much less travel time spent walking (13%), cycling (2%) or on public transport (4%) </p>
+                        
+                         <p class="l2"> Active forms of transport (such as walking and cycling) have a
+                                range of health benefits. </p>
+                        
+                
+                   </div>  
+                 
+                    </section>  
+                
+          
+                   <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="landuse1" >  
+                                       
+                    <div class="whitebackground2">
+                        <h3>Protect and promote public health: Ideal street design</h3>
+                        
+                        <img data-src="../figures/teaching/ideal-street.png"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                        <p class="l2">More at the next chapters</p>
+                   </div>  
+                   <aside class="notes">
+                    Land use and transportation systems are inextricably linked. Land uses, and their distribution in space, produce demands for travel, while transportation systems allow the spatial distribution of land uses
+	               </aside>      
+                   
+                    </section>  
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="needs5">
+                       <h3>New Zealand’s five transport planning objectives</h3>
+
+                        <p class="l2">Assist economic development;</p>
+                        <p class="l2">Assist safety and personal security</p>
+                        <p class="l2">Improve access and mobility;</p>
+                        <p class="l2">Protect and promote public health;</p>
+                        <p class="l2"><a>Ensure environmental sustainability.</a></p>
+                       
+                    <p>Read more:<br/><a href="https://at.govt.nz/media/imported/4989/wcc-TransportStrategy-p7-12.pdf">Here</a></p>
+                
+                 <aside class="notes">
+		           </aside>                   
+                </section> 
+                
+                  <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="importance" > 
+                                       
+                        <h3>Ensure environmental sustainability</h3>
+                        
+                        <img data-src="../figures/teaching/transport-environment.png"
+                             style="width:500px;"
+                             alt="Flow-chart" />
+                   
+                        <img data-src="../figures/teaching/Civil361/emissions.png"
+                             style="width:800px;"
+                             alt="Flow-chart1" />
+                        
+                       <p class="l2">Read more:<br/><a href="https://at.govt.nz/media/1980587/aucklands-road-transport-emissions-a-new-dialogue-final-may-2019.pdf">Auckland Transport (2019) Auckland's road transport emissions...a new dialogue</a></p>
+                  
+                   <aside class="notes">
+                *** 1. Air quality
+                The importance of a transportation planning process is that if advanced technology is used creatively, then it will improve the air quality and reduce air pollution
+                       
+		         *** 2. Minimizing the impact on climate change
+                It is a hard fact to face that pollution has increased because of transportation emission. It is the need of the hour to enhance technology so that it can result in cleaner fuels. It should be the priority of people who are involved in transportation planning to upgrade the infrastructure so that people can choose less polluting methods of transportation.
+	               </aside>      
+                   
+                    </section>    
+                
+                
+            <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="discuss1" data-background-image="../figures/Backgrounds/city.gif">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Group discussion</h3>
+                        
+                       <p >1. Discuss an area in Auckland with traffic issues</p>
+                        <p class ="l2">Congestion</p>
+                        <p class ="l2">Safety</p>
+                        <p class ="l2">Noise</p>
+                        <p class ="l2">Pollution</p>
+                         <p >2. How do you present the issue to policymakers?</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>   
+                
+                
+            <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning" data-background-image="../figures/Backgrounds/bike.jpg">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Transport as a complex organic system</h3>
+                        <p> We need a holistic approach in transport planning to recognize and take advantage of all the interactions </p>
+                        <p class="l2">Economy</p>
+                        <p class="l2">Safety</p>
+                         <p class="l2">Accessibility and Mobility</p>
+                         <p class="l2">Public health</p>
+                        <p class="l2">Environment</p>
+                         
+                         <p>Just focusing on one aspect, for instance Economy, will not do it!</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>   
+                    
+               <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes3" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                   <p>	1. Understand what is transportation planning</p>
+                    <p>	2. Evaluate the need of transportation planning and managing </p>
+                    <p><a>	3. Understand the travel demand forecasting models </a></p>
+                    
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>            
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="traveldemand" >
+                                       
+                   
+                        <h3>Travel demand forecasting</h3>
+                        
+                        <p >Travel demand: number of persons/vehicles expected to travel between a particular pair of origin and destination via a particular route and use a particular mode of travel over a given time period</p>
+                        <p >Required for:</p>
+                        <p class="l2">Planning new facilities (e.g. roads, residential areas)</p>
+                        <p class="l2">Expansion of existing facilities</p>
+                        <p class="l2">Long-term demand forecasting with exisiting facilities</p>
+                        
+                      <p >Where to best invest our limited funding?</p>
+                   
+                    </section>   
+                
+                 <section id="def4" data-background-image="../figures/Teaching/Civil361/SA2.png" data-background-size="80%">                   
+                </section>
+                
+                 <section id="def5" data-background-image="../figures/Teaching/Civil361/subdivision.png" data-background-size="80%">                   
+                </section>
+                    
+                <section id="traveldemand2" >
+                        <h3>Origin-Destination (OD) table</h3>
+                        
+                         <table>
+                        <thead><tr>
+                            <th>Proportion of trips</th>
+                            
+                            <th>Zone 1</th>
+                            <th>Zone 2</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>Zone 1</td>
+                            <td>0.2</td>
+                            <td>0.8</td>
+                           
+                        </tr>
+                       
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>0.8</td>
+                            <td>0.2</td>
+                        </tr></tbody>
+                    </table>
+                        
+                      
+                        <p class="l2">Where trips come from</p>
+                        <p class="l2">Where trips go to</p>
+                        <p class="l2">By what mode</p>
+                        <p>.. And perhaps also: </p>
+                        <p class="l2">For what purpose</p>
+                        <p class="l2">Characteristics of trip makers (e.g. Socio-economic, income)</p>
+                        <p class="l2">Activities at origin and destination of the trip</p>
+                    
+                   
+                    </section>   
+                
+                 <section id="traveldemand3" >
+                                       
+                        <h3>Stratification of Trip Purposes</h3>
+                        
+                        <p > To establish trip patterns by purpose.</p>
+                        <p class="l2">Home-Based-Work (HBW)</p>
+                        <p class="l2">Home-Based-Other (HBO)</p>
+                        <p class="l2">Non-Home-Based (NHB)</p>
+                     <p class="l2"> Internal-External : Trips with either their origin or destination outside the  study area.</p>
+                     <p class="l2">Through Trips: Trips that pass through the study area. Neither origin nor destination is in the study area.</p>
+                    
+                    </section>  
+                
+                
+                
+             <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning1" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Conventional Four-step Transportation Planning Modelling </h3>
+                        
+                        <p >Dated back to 1950s and 1960s</p>
+                        <p >Four decision models are the basis of the traditional travel demand model:</p>
+                        
+                        <p class="l2">Trip generation</p>
+                        <p class="l2">Trip distribution</p>
+                        <p class="l2">Modal split</p>
+                        <p class="l2">Traffic assignment.</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>                     
+                
+               <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning2" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Step 1: Trip generation </h3>
+                        
+                        <p >Trip generation determines the number of trips attracted to a certain area or generated in a certain area.</p>
+                            <p class = "l2"> Trip attraction: Trips towards the zone</p>
+                         <p class = "l2"> Trip production: Trips from the zone</p>
+                        
+                        <p >What variables influence the number of productions and attractions to/from a zone?</p>
+                        
+                    </div>  
+                  
+                   
+                   
+                    </section>         
+  
+              <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning3" >
+                        <h3>Step 1: Trip generation </h3>
+                        
+                        <p>The amount of trips generated are related to several factors:</p>
+                        
+                        <p class="l2">Characteristics of trip-makers: age, income, car ownership, etc</p>
+                        <p class="l2">Characteristic of developments: number of units, square footage of floor area, parking spaces, etc</p>
+                        
+                       <p> Trip generation models often accept land use characteristics as inputs </p>
+                   
+                    </section>     
+                
+         <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning4" >
+                          <h3>Step 1: Trip generation: Simple Trip-rate model </h3>
+                     <p>Example: Determine the number of trips per day attracted to a zone of 200 retail and 500 nonretail workers </p>
+                      <table>
+                        <thead><tr>
+                            <th>Trip type</th>
+                            
+                            <th>Attractions per nonretail employee</th>
+                            <th>Attractions per retail employee</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>HBW</td>
+                            <td>2</td>
+                            <td>2</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>HBO</td>
+                            <td>3</td>
+                            <td>5</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>NHB</td>
+                            <td>2</td>
+                            <td>4</td>
+                        </tr></tbody>
+                    </table>
+                  
+                   
+                    </section>            
+                
+           
+         <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="transportplanning5" >
+                        
+                     <p>Example: Determine the number of trips per day attracted to a zone of 200 retail and 500 nonretail workers </p>
+              
+                    <table>
+                        <thead><tr>
+                            <th>Trip type</th> 
+                            
+                            <th>Attractions per nonretail employee</th>
+                            <th>Attractions per retail employee</th>
+                            <th>Number of trips</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>HBW</td>
+                            
+                            <td>2</td>
+                            <td>2</td>
+                            <td>(200x2)+(500x2)=1400</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>HBO</td>
+                            
+                            <td>3</td>
+                            <td>5</td>
+                            <td>(200x3)+(500x5)=3100</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>NHB</td>
+                            
+                            <td>2</td>
+                            <td>4</td>
+                            <td>(200x2)+(500x4)=2400</td>
+                            
+
+                        </tr></tbody>
+                    </table>
+                    </section>        
+                
+                
+               <section id="transportplanning6" >
+                        <h3>Step 1: Trip generation </h3>
+                        
+                       <p> In practice, there are basically two different model structures for trip generation models </p>
+                        
+                         <p class="l2"> The category analysis models (or cross-classification models)</p>
+                        
+                         <p class="l2"> Regression models</p>
+                   
+                    </section>                   
+                
+                       
+  
+               <section id="transportplanning7" >   
+                                       
+                        <h3>Step 1: Trip generation: The category analysis model </h3>
+                        
+                        <p> Extension of the simple trip-rate models</p>
+                    
+                       <p> Based on the assumption that the number of trips generated by similar households or households belonging to the same category is the same</p>
+                        
+                            \[\begin{aligned}
+					T_i = \sum_{\forall k} \ n_k^i g_k \\
+					\end{aligned} \]
+                        
+                        <p class="l2"> $n_k^i$ number of households in category $k$</p>
+                        <p class="l2"> $g_k$ average rate of trip generation per household</p>
+                        
+                        <p class="l4">Reference: M. Rogers and B. Enright, (2016). Highway Engineering, John Wiley & Sons Inc. Chapter 1 and 2</p>
+                        
+                 
+                   <aside class="notes">
+                    The model predicts the trips produced by a zone by simply aggregating the total trips produced by all the households in that zone. However, two basic questions need to be answered here: (i) how do we define similar households, or alternatively how do we define categories of households, and (ii) how do we determine the rate of trip-generation for a given category of households. The answer to both these questions is: through empirical observations and analysis. What is done is that, first, data on demographic characteristics and trip -making behaviour of a large number of households are collected. This data is then analyzed to see what characteristics of the households are important in defining a homogeneous group -- the households which produce approximately the same number of trips.
+
+                    Based on the above analysis, tables are made which define each category of households by listing its properties in terms of different demographic variables. For example, a particular category of households may be defined as households with 3 to 4 members in the age group 6 to 60, with income in the range of Rs. 30,000 to Rs. 40,000 per month, and one automobile. Finally, for each category of household the average number of trips generated are listed. The listing of the definition of categories and the associated trip -generation rates are generally referred to as trip tables.
+
+                       This method of analysis although simple in its structure has few difficulties. The foremost is the problem with defining categories correctly -- at best it is very difficult. There are other problems like handling additional data on trip-generation behaviour -- the trip tables are not amenable to simple updating but generally have to be completely revamped every time new data is available.
+                   </aside>      
+                   
+                    </section>   
+
+                 <section id="category-analysis1" >   
+                                       
+                        <h3>Step 1: Trip generation: The category analysis model </h3>
+                       
+                
+                     <img data-src="../figures/teaching/Civil361/example-category.png"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                   
+                    </section>   
+                
+                <section id="category-analysis2" >   
+                       
+                     <img data-src="../figures/teaching/Civil361/example-category.png"
+                             style="width:700px;"
+                             alt="Flow-chart" />
+                    
+                     <p class="l2" > From this table we have the number of households $n_k^i$. We now need to find out on average how many trips are made by each household in each category (i.e. trip rates) </p>
+                    
+                    \[\begin{aligned}
+					T_i = \sum_{\forall k} \ n_k^i g_k \\
+					\end{aligned} \]
+                    
+                    </section> 
+                
+                 <section id="category-analysis3" >   
+                     
+                        <p class="l2"> In practice, these values can often be found from census or household travel survey data</p>
+                     
+                     <img data-src="../figures/teaching/Civil361/example-category2.png"
+                             style="width:600px;"
+                             alt="Flow-chart" />
+                    
+                     <img data-src="../figures/teaching/Civil361/example-category3.png"
+                             style="width:500px;"
+                             alt="Flow-chart" />
+                     
+                    </section> 
+                
+                 <section id="category-analysis4" >   
+                       <p> Solution:</p>
+                     
+                      \[\begin{aligned}
+					T_i = \sum_{\forall k} \ n_k^i g_k \\
+					\end{aligned} \]
+                     
+                     <img data-src="../figures/teaching/Civil361/example-category4.png"
+                             style="width:600px;"
+                             alt="Flow-chart" />
+                     
+                    </section> 
+                    
+
+               <section id="transportplanning8" >
+                        <h3>Step 1: Trip generation: The regression model </h3>
+                        
+                        <p> In this model an additive functional form is assumed to exist between the factors which affect trip-generation and the number of trips generated. Generally, a linear function of the following form is used:</p>
+                    
+                        
+                            \[\begin{aligned}
+                            T_i = \alpha_1 z_{1,i} + \alpha_2 z_{2,i} + ... + \alpha_n z_{n,i}\\
+                            \end{aligned} \]
+                        
+                        <p class="l2"> $\alpha_k$ parameter of the regression function</p>
+                        <p class="l2"> $z_{k,i}$ value of the $k$ variable (e.g. income, age, car ownership)</p>
+                      
+                   <aside class="notes">
+                    As can be seen using this model to determine the number of trips generated by a zone is a simple matter when all the parameters of the regression function are known. Obviously, the parameters are determined by using some parameter estimation technique like Ordinary Least Squares or Maximum Likelihood Technique on empirically obtained data on $z_k$ variables and $T_i$. For a good description of regression analysis and the parameter estimation techniques mentioned here, one may refer to any book on introductory statistical methods or basic econometrics; 
+
+                    Discussion: Generally the models of trip-generation include variables which reflect the number of potential trip makers and the propensity of potential trip-makers to make a trip. However, none of the present models incorporate variables which reflect the accessibility factor. This is possibly the single largest factor as to why trip-generation models cannot very well predict the number of trips generated.
+                   </aside>      
+                   
+                    </section>   
+                
+                <section id="regression-example" >
+                        <h3>Step 1: Trip generation: The regression model -- Example</h3>
+                        
+                        <p> Trip production:</p>
+                            \[\begin{aligned}
+                            P_i = 12.5 + 2.105 C_i + 0.88 W_i\\
+                            \end{aligned} \]
+                        
+                        <p class="l2"> $C_i$ = number of trips originated from zone $i$</p>
+                        <p class="l2"> $W_i$ = number of workers in zone $i$</p>
+                      
+                     <p> Trip attraction:</p>
+                            \[\begin{aligned}
+                            A_j = 218 + 17.24 X_1 + 3.255 X_2\\
+                            \end{aligned} \]
+                        
+                        <p class="l2"> $X_1$ = 1000 sq. m of retail floor areas in zone $j$ </p>
+                        <p class="l2"> $X_2$ = 1000 sq. m. of service and office floor areas in zone $j$</p>
+                   
+                   
+                    </section>   
+                
+                
+  
+               <section id="transportplanning9" >
+                        <h3>Step 1: Trip generation: Balancing Trip Productions and Attractions </h3>
+                        
+                        <p> Make sure that the productions and attractions within the study are equal</p>
+                    
+                        <p class="l2"> Productions are generally considered to be more accurate</p>
+                        <p class="l2"> Attractions are balanced proportionately to match productions within each zone</p>
+                        
+                        <table>
+                        <thead><tr>
+                            <th>Zone</th>
+                            <th>$P_0$</th>
+                            <th>$A_0$</th>
+                            <th>$\bar{P}$</th>
+                            <th>$\bar{A}$</th>
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>1</td>
+                            <td>100</td>
+                            <td>300</td>
+                            <td>100</td>
+                            <td>150</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>200</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>150</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>300</td>
+                            <td>600</td>
+                            <td>300</td>
+                            <td>300</td>
+                        </tr></tbody>
+                    </table>                    
+                  
+                   <aside class="notes">
+                  </aside>      
+                    </section>   
+        
+              
+  
+               <section id="tripdistribution" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Step 2: Trip Distribution Models: </h3>
+                        
+                        <p> $T_{ij}$ Number of trips produced (Origins) at zone $i$ and the number of trips attracted (Destination) to zone $j$ </p>
+                        
+                        
+                            <table>
+                        <thead><tr>
+                            <th>Zone</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>1</td>
+                            <td>200</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>100</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>400</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>200</td>
+                            </tr>
+                       <tr>
+                            <td>4</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>300</td>
+                            <td>200</td>
+   
+                            </tr></tbody>
+                    </table>             
+                        
+                        
+                   </div>  
+                   <aside class="notes">
+                   </aside>      
+                   
+                    </section>      
+               
+  
+               <section id="tripdistribution1" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Step 2: Trip Distribution Models</h3>
+                        
+                        <p> From Step 1 (Trip generation), we know the levels of Trip attraction and Trip production, now how do we know the number of trips between zones?</p>
+                        <p class="l2"> All trip-attracting zones of the pair $j$ in the region will compete with each other to attract trips produced by each zone $i$.</p>
+                        <p class="l3"> More trips will be attracted by zones that have a higher level of “attractiveness”</p>
+                        <p class="l3"> Other factors that might affect the choice of j include impedance, e.g. distance</p>
+                  
+                   </div>  
+                   <aside class="notes">
+                   </aside>      
+                   
+                    </section>   
+                
+                   <section id="tripdistribution1-OD" >   
+                      
+                     <h3>Step 2: Trip Distribution Models: OD matrix</h3>
+                     <img data-src="../figures/teaching/Civil361/OD-matrix.png"
+                             style="width:900px;"
+                             alt="Flow-chart" />
+                     
+                    </section> 
+                
+               
+  
+               <section id="tripdistribution2" >
+                        <h3>Step 2: Trip Distribution Models: the Gravity Model</h3>
+                        
+                        <p> The most widely used trip distribution model is the Gravity Model</p>
+                        <p class="l2"> uses attributes of the transport system and land use data to distribute trips throughout the network</p>
+                        <p class="l2"> anologous to Newton's Law of Gravity</p>
+                        
+                        <p> The number of trips between zones is</p>
+                        <p class="l2"> directly proportional to the number of trip attractions generated by the destination zone</p>
+                        <p class="l2"> inversely proportional to travel time (or cost) between the two zones</p>
+                  
+                   
+                    </section>   
+                
+                  
+  
+               <section id="tripdistribution3" >
+                   <p>Step 2: Trip Distribution Models: the Gravity Model</p>
+                   <p class="l2">
+                         \[\begin{aligned}
+                            T_{ij} = P_i \Bigg[ \frac{\frac{A_j}{t_{ij}^n}}{\sum_j{\frac{A_j}{t_{ij}^n}}} \Bigg] \\
+                            \end{aligned} \] 
+                        
+                       
+                   
+                      \[\begin{aligned}
+                            T_{ij} = A_j \Bigg[ \frac{\frac{P_i}{t_{ij}^n}}{\sum_j{\frac{P_i}{t_{ij}^n}}} \Bigg] \\
+                            \end{aligned} \] </p>
+                        
+                        <p> Where:</p>
+                  
+                        <p class="l2"> $T_ij$ = number of trips produced in zone $i$ and attracted to zone $j$</p>
+                        <p class="l2"> $P_i$ = total number of trips produced in zone $i$</p>
+                        <p class="l2"> $A_j$ = number of trips attracted to zone $j$</p>
+                        <p class="l2"> $t_{ij}$ = travel time (or cost) between zones $i$ and $j$</p>
+                        <p class="l2"> $n$ = empirically derived travel time exponent (calibration factor)</p>
+                     
+                  
+                    </section>   
+           
+                <section id="tripdistribution4" >
+                        <p>Step 2: Trip Distribution Models: travel time exponent $n$</p>
+                   
+                     <table>
+                        <thead><tr>
+                            <th>Trip purpose</th>
+                            <th>Work</th>
+                            <th>Social</th>
+                            <th>Shopping</th>
+                            <th>Bussiness</th>
+                            <th>Recreation</th>
+                            <th>Other</th>
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>Values of $n$</td>
+                            <td>0.5</td>
+                            <td>3</td>
+                            <td>2-3</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                       </tbody>
+                    </table>         
+                      
+                   
+                    </section>   
+                
+                   <section id="tripdistribution4-1" >
+                        <p>Step 2: Trip Distribution Models: Example of Gravity Model</p>
+                       
+                       <p > Origin zone (Zone 1): </p>
+                       <p class= "l4"> 1000 families</p>
+                        <p class= "l4"> 1000 automobiles</p>
+                        <p class= "l4"> 100 shopping trips per day</p>
+                       
+                       <p > Destination zones (Zone 2-4) : </p>
+                   
+                     <table>
+                        <thead><tr>
+                            <th>Zone</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                         
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>Travel time</td>
+                            <td>5</td>
+                            <td>20</td>
+                            <td>10</td>
+                         </tr>
+                            <tr>
+                            <td>Activity(shopping area, $m^2$)</td>
+                            <td>10,000</td>
+                            <td>40,000</td>
+                            <td>20,000</td>
+                         </tr>
+                            
+                       </tbody>
+                    </table>         
+                      
+                   
+                    </section>  
+                
+                <section id="tripdistribution4-solution" >
+                        <p>Step 2: Trip Distribution Models: Example of Gravity Model</p>
+                       
+                       <img data-src="../figures/teaching/Civil361/example-OD.png"
+                             style="width:700px;"
+                             alt="Flow-chart" />    
+                      
+                   
+                    </section>  
+                
+            
+               <section id="tripdistribution4-2" >
+                        <h3>Trip Distribution Models: OD matrix estimation</h3>
+                        
+                         <p> Sometimes we can observe the number of trips or the demand between some particular pairs of origin and destination (e.g. from traffic survey or from big data) </p>
+                        
+                           
+                            <table>
+                        <thead><tr>
+                            <th>Zone</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>1</td>
+                            <td>??</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>??</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>100</td>
+                            <td>??</td>
+                            <td>200</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>400</td>
+                            <td>200</td>
+                            <td>??</td>
+                            <td>??</td>
+                            </tr>
+                       <tr>
+                            <td>4</td>
+                            <td>??</td>
+                            <td>200</td>
+                            <td>??</td>
+                            <td>200</td>
+   
+                            </tr></tbody>
+                    </table>             
+                        
+                        <p> This is now an optimisation problem to fill in the table! </p>
+                          
+                    </section>   
+                
+         
+               <section id="modal1" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Step 3: Modal split </h3>
+                        
+                        <p> Estimate the probability of choosing each mode of transport. This is done through implementation of cost functions, reflecting the utility of specific modes which is dependent on various attributes of that specific mode. </p>
+                        
+                        <p class="l2"> Traveler features (mainly sociodemographic characteristics), such as income, car
+                            ownership. </p>
+                            <p class="l2"> Features of the journey such as the purpose of the trip or the time of the day. </p>
+                          <p class="l2"> Features of the transportation facility such as availability, reliability, costs, safety and
+                                security.</p>
+
+                        
+                   </div>  
+                   <aside class="notes">
+                    
+                   </aside>      
+                   
+                    </section>   
+                
+             
+               <section id="modal2" >
+                        <h3>Step 3: Modal split: Mode Choice Models </h3>
+                        
+                        <p>  Follows the micro-economic concept of utility maximisation. Discrete choice models are created based on the assumption that individuals select a specific mode
+                                of transport from a finite choice set, each with an utility $U_a$</p>
+                        
+                        
+                        \[\begin{aligned}
+                            U_m = \alpha_0 + \sum \alpha_j z_{mj} \\
+                            \end{aligned} \]
+                       
+                        <p>Where:  </p>
+                   
+                    <p class="l2"> $U_m$ = total utility provided by mode $m$ </p>
+                    <p class="l2"> $z_{mj}$ = set of travel characteristics of mode $m$, such as travel time or costs </p>
+                    <p class="l2"> $\alpha_j$ = parameters of the model, to be determined by calibration</p>
+                    <p class="l2"> $\alpha_0$= constant to account for non-observable features of the mode $m$ </p>
+                     
+                    </section>   
+                
+              
+               <section id="modal4" >
+                        <h3>Step 3: Modal split: Mode Choice Models</h3>
+                        
+                        <p>  Multinomial Logit (MNL) is the most popular mode choice model</p>
+                        
+                        
+                        \[\begin{aligned}
+                             P_{m} = \frac{e^{U_m}}{\sum_{j=1}^J e^{U_j}}  \\
+                            \end{aligned} \]
+                       
+                        <p class="l2">$P_m$ is the probability of mode $m$ to be chosen from a finite mode choice set of 1 to $J$.</p>
+                    <p class="l2">$U_m$ total utility provided by mode $m$</p>
+                        
+                    <p>  Multinomial Logit (MNL) is the most popular mode choice model</p>
+                   
+                    \[\begin{aligned}
+                             P_A = \frac{1}{1 + e^{(U_B-U_A)}}  \\
+                            \end{aligned} \]
+                   
+                    </section>   
+                
+                 <section id="modal4-exercise" >
+                        
+                        <p> Modal split exercise: Use a logit model to determine the probabilities of a group of 5000 work commuters choosing between three modes of travel during the morning peak hour (car, bus, light rail)</p>
+                        <p>  The utility functions are estimated as follows</p>
+                        
+                      <p class="l2">$U_C = 2.4 - 0.2C - 0.03T$</p>
+                   <p class="l2">$U_B = 0 - 0.2C - 0.03T$</p>
+                     <p class="l2">$U_{LR} = 0.4 - 0.2C - 0.03T$</p>
+                     
+                     <p class="l4">Where, $C$ = cost (\$) and $T$ = travel time (min)</p>
+                     
+                    <p>  For all workers</p>
+                   <p class="l2">The cost of driving is $4.00 with a travel time of 20 min</p>
+                   <p class="l2">The bus fare is $0.50 with a travel time of 40 min</p>
+                     <p class="l2">The rail fare is $0.80 with a travel time of 25 min</p>
+                   
+                    </section> 
+                
+                <section id="modal4-exercise2" >
+                        
+                        <p> Modal split exercise 2: Effect of introducing bus lane on modal split figures</p>
+                    
+                        <p class="l2"> Taking a suburban route with the same peak hour travel conditions for car and bus described in the previous exercise, the local transport authority constructs a bus lane in order to alter the modal split in favour of bus usage. When in operation, the bus lane will reduce the bus journey time to 20 min and increase the car travel time to 30 min. The cost of travel of both modes remains the same</p>
+                        
+                      <p class="l2">Calculate the modal distributions for the 1000 work commuters using the route before and after the construction of the proposed new bus facility.</p>
+                   
+                    </section> 
+                
+                   <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="modal5" data-background-image="../figures/teaching/PT-modeshare.jpg" data-background-size="600px"> 
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Modal split: Public transport ridership in Auckland</h3>
+                        
+                        <p>  Strong grow: Over 100 million of trips (data from Auckland Transport in 2019)</p>
+                        <p> Smart Card: 95.2% of Auckland public transport trips are made by customers using an AT HOP card</p>
+                        
+                          <img class="centre" src="../figures/teaching/modal-split.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                      
+                   </div>  
+                   <aside class="notes">
+                    
+                   </aside>      
+                   
+                    </section>   
+                
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="discuss2" data-background-image="../figures/Backgrounds/city.gif">   
+                                       
+                    <div class="whitebackground2">
+                        <h3>Group discussion</h3>
+                        
+                       <p >1. Discuss the possible causes of traffic issues in Auckland or your home city</p>
+                        <p class ="l2">Congestion</p>
+                        <p class ="l2">Safety</p>
+                        <p class ="l2">Noise</p>
+                        <p class ="l2">Pollution</p>
+                        
+                         <p >2. Which is the main cause for the issue?</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>   
+                
+                
+                
+                 <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="assignment1" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">  
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Step 4: Traffic Assignment</h3>
+                        
+                        <p>  Determine which routes will be used and how much traffic can be expected on each route. Needs the following data: </p>
+                        
+                           <p class="l2"> Demand between zones </p>
+                            <p class="l2"> Available routes (route choice set) </p>
+                          <p class="l2"> Decision criteria by which users will select route</p>
+                        
+                   </div>  
+                   <aside class="notes">
+                    
+                   </aside>      
+                   
+                    </section>   
+                
+                     <section id="assignment2-1" >
+
+                         <img class="right" src="../figures/teaching/traffic-assignment.png"
+                            style="width: 400px;"
+                         alt="project-1" />
+                          <p>Step 4: Traffic Assignment: </p>
+                        
+                         <p> The traffic assignment model assigns precise quantities of traffic flow to specific routes within each of the zones based on these assumptions:</p>
+                            <p class="l2"> - Trip makers choose a route connecting their origin and destination on the basis of which one gives the lowest travel costs (e.g. travel time, parking or fare)</p>
+                          <p class="l2"> - Trip makers know the travel costs on all available routes between the origin and destination</p>
+                    
+                    </section>   
+                
+                  <section id="assignment2-2" >
+
+                         <img class="right" src="../figures/teaching/traffic-assignment.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                          <p>Step 4: Traffic Assignment: “All-or-Nothing” (AON) Assignment </p>
+                        
+                             <p class="l2"> Travel time is assumed to be independent of traffic flow</p>
+                          <p class="l2"> All road users take the travel alternative with the lowest travel cost.</p>
+                    
+                    </section>   
+                
+                <section id="assignment2-3" >
+
+                        
+                          <p>Step 4: Traffic Assignment: “All-or-Nothing” (AON) Assignment </p>
+                        
+                             <img class="centre" src="../figures/teaching/Civil361/all-or-nothing.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                    
+                    </section>  
+                
+  
+               <section id="assignment3-0" >
+
+                         
+                          <p>Step 4: Traffic Assignment: A more practical approach </p>
+                        
+                         <p> Route choice decisions are a function of travel cost (e.g. travel time, toll) </p>
+                            <p class="l2"> - Travel cost are determined by traffic flow</p>
+                          <p class="l2"> - Traffic flow is a product of route choice decisions</p>
+                    
+                    <img class="centre" src="../figures/teaching/Civil361/example-practical.png"
+                            style="width:600px;"
+                         alt="project-1" />
+                   
+                    </section>   
+                
+                
+  
+               <section id="assignment3-1" >
+                      
+                          <p>Step 4: Traffic Assignment: Wardrop's principles</p>
+                        
+                         <p class="l2"> 1st Principle: User choose the route that minimises their own travel cost -> <a>User equilibrium</a>  </p>
+                            <p class="l2"> 2nd Principle: Users distribute themselves on the network in such a way that the average travel cost for all users is minimised -> <a>System Optimum</a></p>
+                
+                    </section>   
+                
+              
+               <section id="assignment4" >
+                   
+                   <img class="right" src="../figures/teaching/traffic-assignment.png"
+                            style="width:400px;"
+                         alt="project-1" />
+                   
+                          <p>Step 4: Traffic Assignment: User Equilibrium</p>
+                        
+                          <p class="l2"> Travellers select a route on the basis of travel cost </p>
+                            <p class="l2"> Traveller know the travel cost of all available routes</p>
+                    <p>Travel costs on all "used" routes will be equal</p>
+                   
+                        <p class="l2"> Traveller cannot improve their travel times by unilaterally changing routes</p>
+                      
+                    </section>   
+                
+                 <section id="assignment4-1" >
+                          <p>Step 4: Traffic Assignment: User Equilibrium Example</p>
+                        
+                     <p>Assuming user equilibrium conditions, determine the following </p>
+                     
+                          <p class="l2"> Travel time on each route</p>
+                            <p class="l2"> Traffic volumes on each route</p>
+                     <p class="l2"> Total system travel time</p>
+                     
+                     <p>Given a total hourly flow rate of 4000 veh/hr between a studied OD pair between Zone 1 and Zone 2</p>
+                     
+                      \[\begin{aligned}
+                            t_1 =  6 + 5 x_1 \\
+                            t_2 =  4 + x_2^2 \\
+                            \end{aligned} \]
+                     
+                      <p>Where: </p>
+                     
+                      <p class="l2"> $t_1, t_2$ = average travel times on route 1 and 2 in minutes</p>
+                            <p class="l2"> $x_1, x_2$ = traffic flow on routes 1 nd 2 in 1000s of vehicles/hour</p>
+                     
+                    </section>  
+                
+                
+                
+                <section id="assignment4-3" >
+                          <p>Step 4: Traffic Assignment: User Equilibrium Example</p>
+                        
+                     <p>The flow conservation condition: $q= x_1 + x_2 = 4$ , where $q$= total traffic flow between the OD pair in 1000s of vehicles per hour</p>
+                     
+                          <p class="l2"> First check to see if both routes are used</p>
+                    
+                     <p>If all traffic is assigned to Route 1:</p>
+                    <p class="l2"> $t_1(4) = 26 $ min</p>
+                    <p class="l2"> $t_2(0) = 4 $ min</p>
+                    
+                     <p>If all traffic is assigned to Route 2:</p>
+                    <p class="l2"> $t_1(0) = 6 $ min</p>
+                    <p class="l2"> $t_2(4) = 20 $ min</p>
+                    
+                     <p>-> Both routes should be used!</p>
+                    
+                    </section>  
+                
+                 <section id="assignment4-4" >
+                          <p>Step 4: Traffic Assignment: User Equilibrium Example</p>
+                        
+                     <p>Wardrop's User Equilibrium gives: </p>
+                     
+                          <p class="l2"> $t_1 = t_2$</p>
+                     <p class="l2"> $6 + 5x_1 = 4 + x_2^2$</p>
+                    
+                     <p>From flow conservation, $x_1 = 4-x_2$, so substituting:</p>
+                    <p class="l2"> $6 + 5(4-x_2) = 4 + x_2^2$</p>
+                    <p class="l2"> $x_2^2 + 5x_2 -22 = 0$</p>
+                     
+                     <p>Solve the quadratic equation, we have:/p>
+                    <p class="l2"> $x_2 = 2.815$</p>
+                    <p class="l2"> $x_1 = 4 - x_2 = 1.185$</p>
+                    
+                    
+                    </section> 
+                
+               
+               <section id="assignment5" >
+                         <img class="right" src="../figures/teaching/traffic-assignment.png"
+                            style="width:400px;"
+                         alt="project-1" />
+                          <p>Step 4: Traffic Assignment: System Optimun</p>
+                   
+                   <p>Second Wardrop's principles</p>
+                        
+                         <p class="l2"> Theoretically, there exists a route choice strategy that minimise the total vehicle hours travel for some traffic flow</p>
+                            
+                         \[\begin{aligned}
+                            min S(x) = \sum_n x_n c_n (x_n)  \\
+                            \end{aligned} \]
+                        
+                    </section>   
+                
+                
+                
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/trafficmodel-macro.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="ABM-MIT">                     
+                
+                    
+                  <aside class="notes">
+		        
+	               </aside>                    
+                    
+                </section>
+                
+                
+                <section id="whydifficult2" data-transition="fade">
+                    <figure class="right">
+                        <img data-src="../figures/side-graphics/congestion.jpg" 
+                             alt="picture of people in time square" />
+                        
+                    </figure>
+
+                     <h2>Why is it difficult to model traffic systems for planning purposes?</h2>
+                    <p>Traditional approaches often work at large scales, struggle to predict local effects</p>
+                    <p class="l2">Computationally convenient</p>
+                    <p>Cities are built from the bottom up</p>
+                </section>
+
+                
+                 
+                <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
+                         data-background-video-loop="loop">
+                    
+                     <div class="whitebackground2 fragment">
+                      
+                        
+                          <p>What if I want to play with a transport planning model? the ABStreet Game</p>
+                        
+                         <p class="l2"> Windows: 
+                             
+                             <a href="https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_windows_v0_2_39.zip"> https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_windows_v0_2_39.zip </a>
+                             
+                             If the game immediately crashes, it might be a graphics card problem.
+                             </p>
+                            
+                         <p class="l2"> Mac: 
+                             
+                             <a href="https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_mac_v0_2_39.zip"> https://github.com/a-b-street/abstreet/releases/download/v0.2.39/abstreet_mac_v0_2_39.zip</a>
+                             
+                             </p>
+                        
+                       
+                        
+                        <p class="l3">Unzip the folder, then run play_abstreet.sh or play_abstreet.bat. On Windows, you'll probably get a warning about running software from an unknown publisher.</p>
+                        
+                         <p class="l2"> On your web browser: 
+                             
+                             <a href="http://abstreet.s3-website.us-east-2.amazonaws.com/0.2.39/abstreet.html"> http://abstreet.s3-website.us-east-2.amazonaws.com/0.2.39/abstreet.html</a>
+                             
+                             </p>
+                        
+                        
+                   </div>  
+                    
+                </section>
+
+               
+                   <!-- ************** Learning outcomes ************* -->
+
+                <section id="recap0" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Recap: </h2>
+                    
+                        <p>1. Understand what is transportation planning</p>
+                    <p>	2. Understand the New Zealand’s five transport planning objectives </p>
+                    <p>	3. Understand the travel demand forecasting models </p>
+                   
+                    
+                </section>
+                     <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="recap1" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                           <h3>What is Transportation Planning ?</h3>
+                        
+                        <p>Transport planning is defined as the steps required in the operation, provision and management of facilities and services for the modes of transport </p>
+                        
+                        <p class="l2">to achieve safer, faster, comfortable, convenient, economical and environment-friendly movement of people and goods. </p>
+                        
+                        <p>It is <a>a prediction </a>of usage demand in the future and <a>steps to ensure</a> all the necessary facilities and services to cater to that demand. </p>
+                        
+                        <p class="l2"> Transportation planning provides the information, tools, and public involvement needed for improving transportation system performance.</p>
+                        
+                        <p class="l2">Transportation planning is a continuous process that requires monitoring of the system’s performance and condition.</p>
+                        
+                    </div>
+                    
+                  <aside class="notes">
+		          - First, let's define ...
+	               </aside>                    
+                </section>
+                
+                   
+                   <!-- *************** ITS User Services  ************************** -->
+  
+               <section id="recap3" data-background-image="../figures/teaching/four-step.jpg" data-background-size="800px">   
+                                       
+                    <div class="whitebackground2 fragment">
+                        <h3>Conventional Four-step Transportation Planning Modelling </h3>
+                        
+                     
+                        <p class="l2">Trip generation</p>
+                        <p class="l2">Trip distribution</p>
+                        <p class="l2">Modal split</p>
+                        <p class="l2">Traffic assignment.</p>
+                        
+                   </div>  
+                   <aside class="notes">
+   
+                   </aside>      
+                   
+                    </section>    
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                       <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil361-planning.html">http://bit.ly/361-planning</a></h4>
+
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
