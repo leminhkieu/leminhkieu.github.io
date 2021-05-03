@@ -1,0 +1,330 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Emulators of ABMs</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                  <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Towards Real-Time Predictions using Emulators of Agent-Based Models</h3>
+                        
+                        
+                        
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2021-Emulators.html">https://leminhkieu.github.io/p/2021-Emulators.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                   
+              <section id="intro" data-background-image="../figures/Backgrounds/city.gif">  
+
+               <div class="whitebackground">
+                    <h2>Challenges to city simulation</h2>
+
+                    <p>Extremely complex systems</p>
+
+                    <p>Interactions between individuals are key</p>
+
+                    <p>Aggregate models are unsuitable</p>
+
+                    <p class="l2">"Computationally convenient".</p>
+
+                    <p class="l2">But cannot capture non-linear, complex systems.</p>
+                    
+                    <p>Unprecendented access to data about individuals (Big Data)</p>
+                   
+                  </div>
+
+                </section>
+                
+                
+
+                  <!-- *****************************************************************
+
+                     ************* Intro to modelling and ABM **************************
+
+                     ***************************************************************** -->
+
+                
+                <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
+
+                         data-background-video-loop="loop">
+                    
+                     <div class="whitebackground fragment">
+                    <h2>Issues with Agent-Based Modelling</h2>
+
+                    <p>Extremely complex models!</p>
+                    <p class="l2">Computationally expensive</p>
+
+                    <p class="l2">High technological barrier to policymakers</p>
+                         
+                     <p class="l2">Generally incapable of making predictions in real-time or near real-time</p>
+                    
+                  </div>
+                    
+
+                </section>
+                
+               
+
+  
+                <section id="othersimulation" 
+
+                         data-background-video="../videos/matsim-singapore.mp4" 
+
+                         data-background-video-muted 
+
+                         data-background-video-loop="loop">
+
+                    
+                        <div class="whitebackground fragment">
+
+                            <p>MatSim Singapore takes 2 days to implement each scenario, even when using a cluster of 4 supercomputers (Anda, 2017) </p>
+                        </div>
+
+                </section>                
+                
+          
+    
+    
+           <section id="solution1" >
+                    <h2>Emulators of Agent-Based Models</h2>
+                    <figure>
+                        <img data-src="../figures/DUST/emulator.png"/>
+                            </figure>
+                    
+                </section>  
+                
+                <section id="solution2" >
+                    <h2>Bi-phase modelling framework</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/Emulators-phase.png"/>
+                            </figure>
+                    
+                </section>  
+                
+                <section id="stationsim-video">
+                    <video controls width="80%" height="auto">
+                        <source src="../videos/StationSim-Videos/stationsim-no_crowding.mp4" type="video/mp4"/>
+                         Your browser does not support the video tag.
+                    </video>
+                     
+                </section>
+                
+                <section id="solution3" >
+                    <h2>Simulation set-up</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/Emulators-StationSim.png"/>
+                            </figure>
+                </section>  
+                
+                <section id="solution4" >
+                    <h2>Simulation set-up: Counts at sensor 1, 5 and 10</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/Emulators-sensors.png"/>
+                            </figure>
+                </section> 
+                  
+                
+                 <section id="solution5" >
+                    <h2>Regression Emulator</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/Emulators-RF.png"/>
+                            </figure>
+                </section> 
+                
+                 <section id="solution6" >
+                     <h2>Time-series Emulator</h2>
+                    <figure>
+                        <img data-src="../figures/paper-figures/Emulators-LSTM.png"/>
+                            </figure>
+                </section> 
+                
+                 <section id="solution7" >
+                     <h2>Prediction results: Counts of pedestrian at each sensors</h2>
+                    <figure>
+                        <img src="../figures/paper-figures/Emulators-count.png"
+                             style="width:800px;"/>
+                            </figure>
+                </section> 
+                
+                <section id="solution8" >
+                     <h2>Prediction results: Delay of pedestrian at each sensors</h2>
+                    <figure>
+                        <img src="../figures/paper-figures/Emulators-TS-delay.png"
+                             style="width:800px;"/>
+                            </figure>
+                </section> 
+                
+                <section id="solution9" >
+                     <h2>Prediction results: Comparision between Time-series and Regression emulators</h2>
+                    <figure>
+                        <img src="../figures/paper-figures/Emulators-compare.png"
+                              style="width:600px;"/>
+                            </figure>
+                </section> 
+                
+                     
+              <section id="con" data-background-image="../figures/Backgrounds/city.gif">  
+
+               <div class="whitebackground">
+                    <h2>Conclusion: </h2>
+
+                    <p>Emulators can be used in place of ABMs to make quick predictions</p>
+  
+                    <p class="l2">With good accuracy</p>
+
+                    <p class="l2">Time-series emulators are superior </p>
+                    
+                    <p>More investigation needed! </p>
+                   
+                  </div>
+
+                </section>
+                
+                
+               
+           <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Thank you</h3>
+                        
+                        
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <h4>Lecturer</h4>
+
+                        <h4>University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/2021-Emulators.html">https://leminhkieu.github.io/p/2021-Emulators.html</a></h4>
+
+                    </div>
+
+                </section>
+        
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
