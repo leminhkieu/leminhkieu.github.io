@@ -1,0 +1,304 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 774 - Studies in Transportation 1 - Smart Infrastructure Analytics</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 774 - Studies in Transportation 1 </h3>
+                        
+                        <h4>Smart Infrastructure Analytics</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 5: Statistics for Machine Learning</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w5.html">http://bit.ly/774-5</a></h4>
+
+                    </div>
+
+                </section>
+                                
+               
+           
+                 <!-- ********* SUpervised vs Unsupervised learning ************* -->
+  
+               <section id="ML0">  
+                    
+                   <p> In machine learning, computers apply statistical learning techniques to automatically identify patterns in data. These techniques can be used to make highly accurate predictions.</p>
+                   
+                   <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">http://www.r2d3.us/visual-intro-to-machine-learning-part-1/</a>
+                   
+             </section>   
+                
+                
+                 <section id="domingos">  
+                    
+                   <p> I recommend reading Domingos (2012) A Few Useful Things to Know About Machine Learning</p>
+                   
+                   <a href="https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf">https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf</a>
+                     
+                     <p class="l2"> <a>Data alone is not enough. </a>Machine learning is not magic; it can’t get something from nothing. </p>
+                     <p class="l2"> <a>More data beats a cleverer algorithm.</a> You should focus your efforts on your domain knowledge and data before optimising your choice of algorithms. Prefer to do simple things until you have to increase complexity. You should not rush into neural networks because you think they’re cool. </p>
+                   
+             </section>  
+               
+                
+                
+                <!-- ********* SUpervised vs Unsupervised learning ************* -->
+  
+               <section id="ML1">  
+                    
+                    <h3>Data analytics with machine learning </h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/machine-learning.png"
+                             style="width:700px;"
+                             alt="ML" />
+                    </figure>
+                   
+             </section>                 
+                
+                <!-- ********* SUpervised learning ************* -->
+  
+               <section id="ML2" >  
+                    
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/supervised-learning.png"
+                             style="width:800px;"
+                             alt="ML" />
+                    </figure>
+                    <p class="l2">Learning with a 'label' </p>
+                  
+             </section>     
+                
+                         <!-- ********* SUpervised learning ************* -->
+  
+               <section id="ML3" >  
+                    <p>Supervised Learning: Learning with a 'label' </p>
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/supervised-learning-simple.png"
+                             style="width:800px;"
+                             alt="ML" />
+                    </figure>
+                    
+                  
+             </section>       
+                
+                      <!-- ******** Travel speed prediction  ******************* -->
+                
+ 
+               <section id="travel-speed-prediction" data-transition="fade">
+
+                    <h2>Urban Flow Data: Google Travel time</h2>
+                
+                    <img src="../figures/paper-figures/travel-speed-prediction.png"
+                            style="width:600px;"
+                         alt="travel speed prediction" />
+                   
+                        <p class="l2">Nguyen et al. (2019) A Deep Learning System for Travel Speed Predictions on Multiple Arterial Road Segments. Transportation Research Record: Journal of the Transportation Research Board</p>
+                 
+
+                </section> 
+
+               <!-- ********* UnSUpervised learning ************* -->
+  
+               <section id="ML4" >  
+                    
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/unsupervised-learning.png"
+                             style="width:800px;"
+                             alt="ML" />
+                    </figure>
+                    <p class="l2">Learning WITHOUT a 'label' </p>
+                  
+             </section>   
+                
+                     <!-- *****************************************************************
+
+                     ************* Passenger Segmentation -3  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="passenger-segmentation-3" data-transition="fade">
+
+                    <h2>Urban Flow Data: Smart Card data</h2>
+
+                    <img class="right" src="../figures/paper-figures/passenger-segmentation-results.png"
+                            style="width:300px;"
+                         alt="passenger-segmentation-3" />
+                   
+                   <p class="l2">Kieu et al. (2018) Large-scale transit market segmentation with spatial-behavioural features. Transportation Research Part C: Emerging Technologies 90, 97-113</p>
+                   
+                   <p class="l2">Kieu et al. (2014) Passenger Segmentation Using Smart Card Data. IEEE Transactions of Intelligent Transport Systems 16 (3), 1537 - 1548</p>
+                </section>      
+                
+                
+                <!-- ********* reinforcement learning ************* -->
+  
+               <section id="ML5" >  
+                    
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/reinforcement-learning.png"
+                             style="width:800px;"
+                             alt="ML" />
+                    </figure>
+                    <p class="l2">Learning by rewards </p>
+                  
+             </section>   
+                
+                
+                   <!-- *************** ITS data ************************** -->
+  
+               <section id="RL" > 
+                      <div class="whitebackground2 ">
+                         <h3>Reinforcement learning</h3>
+                          
+                  <video controls autoplay muted>
+
+                        <source data-src="../videos/racing-car.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                          
+                   </div>          
+                </section>  
+                
+                
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w1.html">http://bit.ly/774-1</a></h4>
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
