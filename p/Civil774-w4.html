@@ -68,7 +68,7 @@
                         
                         <hr/>
 
-                        <h3>Week 5: Statistics for Machine Learning</h3>
+                        <h3>Week 4: Introduction to Machine Learning</h3>
 
                         <h4>Dr Minh Kieu</h4>
 
@@ -76,25 +76,105 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w5.html">http://bit.ly/774-5</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w4.html">http://bit.ly/774-4</a></h4>
 
                     </div>
 
                 </section>
-                                
-               
-           
-                 <!-- ********* SUpervised vs Unsupervised learning ************* -->
+                
+                
+                  <!-- ********* SUpervised vs Unsupervised learning ************* -->
   
-               <section id="ML0">  
-                    
-                   <p> In machine learning, computers apply statistical learning techniques to automatically identify patterns in data. These techniques can be used to make highly accurate predictions.</p>
+               <section id="learning">  
                    
-                   <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">http://www.r2d3.us/visual-intro-to-machine-learning-part-1/</a>
+                  <h2>What does learning mean?</h2>
                    
              </section>   
                 
                 
+                <section data-background-video="../videos/learning.m4v"
+                         data-background-video-muted
+                         data-background-video-loop="loop"
+                         id="video00">       
+                    </section>  
+                
+           
+                 <!-- ********* SUpervised vs Unsupervised learning ************* -->
+  
+               <section id="ML0">  
+                   
+                   <p>Learning is about association!</p>
+                   
+                   <p class="l2"> Machine Learning is not different</p>
+                    
+                   <p> In machine learning, computers apply statistical learning techniques to automatically identify patterns in data. These techniques can be used to make highly accurate predictions.</p>
+                   
+                   <p>In this lecture, I'll introduce the basics of Machine Learning and the statistics required for Machine Learning</p>
+                   
+                 
+                   
+             </section>   
+                
+                
+                
+                 <section id="ML0-linear">  
+                    
+                    <h3>Learning is about association: Simple Linear regression</h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Civil763/linear.png"
+                             style="width:700px;"
+                             alt="ML" />
+                    </figure>
+                   
+             </section>   
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="data-fusion" >
+                   
+                   <h3>Learning is about association: Uber's Autonomous Vehicles</h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Uber-AV.gif"
+                             style="width:800px;"
+                             alt="UberAV" />
+                    </figure>
+                   
+                    <p>Does it mean that ML can tell cars, buses and pedestrians just like a human?</p>
+                   
+                </section>     
+                
+                
+                  <section id="ML-usage">  
+                    
+                    <h3>When does the ice cream parlour need another assistant? </h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Civil763/linear.png"
+                             style="width:700px;"
+                             alt="ML" />
+                    </figure>
+                   
+             </section> 
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="ML-usage2"> 
+                   
+                   <h3>When does the vehicle need to speed up, slow down, change lane or brake?</h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Uber-AV.gif"
+                             style="width:800px;"
+                             alt="UberAV" />
+                    </figure>
+                   
+                </section>   
+                
+                
+                   <!-- ************** data science process ************* -->
+
+                <section id="process-data" data-background-image="../figures/Backgrounds/data-process.png" data-background-size="90%">      
+                </section> 
+                
+                 
                  <section id="domingos">  
                     
                    <p> I recommend reading Domingos (2012) A Few Useful Things to Know About Machine Learning</p>
@@ -106,6 +186,87 @@
                    
              </section>  
                
+                
+                  
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-lect2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand Correlation vs Causation</p>
+                    <p> 2. Summerise the types of Machine Learning algorithms</p>
+                    
+                    
+                    <h2>Next week: </h2>
+                    
+                    <p> 1. Summary Statistics</p>
+                    <p> 2. Exploratory Data Analysis</p>
+                    <p>	3. Covariance and Correlation</p>
+                    <p> 4. Probability Density Functions</p>
+                    <p> 5. False Possitive/Negative</p>
+                    <p> 6. Error functions</p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>    
+                
+                   <!-- *************** ITS data ************************** -->
+  
+               <section id="corr"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                   <h3>Correlation vs Causation</h3> 
+                   
+                   <p>Correlation tests for a relationship between two variables</p>
+                   <p class="l2">However, seeing two variables moving together does not necessarily mean we know whether one variable causes the other to occur. </p>
+                   <p class="l2">This is why we commonly say “correlation does not imply causation.”</p>
+                   
+                   </div>
+                </section>   
+                
+                
+                  <section id="corr2"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                        <p>For observational data, correlations can’t confirm causation...</p>
+                        <p class="l2">Correlations between variables show us that there is a pattern in the data: that the variables we have tend to move together. However, correlations alone don’t show us whether or not the data are moving together because one variable causes the other. </p>
+                   
+                   <p> A strong correlation might indicate causality, but there could easily be other explanations:</p>
+                        
+                        
+                        
+                        
+                   <p class="l2">It may be the result of random chance, where the variables appear to be related, but there is no true underlying relationship. </p>
+                        
+                   <p class="l2">There may be a third, lurking variable that that makes the relationship appear stronger (or weaker) than it actually is.</p>
+                        
+                        <p class="l3">E.g. number of ice cream sales vs the number of murders in New York</p>
+                   
+                   </div>
+                </section>   
+                
+                 <section id="corr3"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                        <p>...but with well-designed empirical research, we can establish causation!</p>
+                        
+                        <p class="l2">there are a variety of experimental, statistical and research design techniques for finding evidence toward causal relationships: e.g., controlled experiments and predictive models with multiple variables. </p>
+                   
+                   </div>
+                </section>   
+                
+           
                 
                 
                 <!-- ********* SUpervised vs Unsupervised learning ************* -->
@@ -162,7 +323,16 @@
                  
 
                 </section> 
+                
+                 <section id="ML3-classification" >  
+                    
+                   
+                    <p class="l2">Follow this to learn about Classification models</p>
+                     
+                      <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">http://www.r2d3.us/visual-intro-to-machine-learning-part-1/</a>
 
+             </section> 
+                 
                <!-- ********* UnSUpervised learning ************* -->
   
                <section id="ML4" >  
@@ -228,6 +398,16 @@
                    </div>          
                 </section>  
                 
+                 <section id="ML6" >  
+                    
+                   
+                    <p class="l2">Model Tuning and the Bias-Variance Tradeoff</p>
+                     
+                      <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-2/">http://www.r2d3.us/visual-intro-to-machine-learning-part-2/</a>
+
+             </section> 
+                
+                
                 
                 
                 
@@ -252,7 +432,7 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w1.html">http://bit.ly/774-1</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w4.html">http://bit.ly/774-4</a></h4>
                         
                     </div>
 

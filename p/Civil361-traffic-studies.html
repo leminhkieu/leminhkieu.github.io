@@ -76,7 +76,7 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">http://bit.ly/361-1</a></h4>
+                        <h4 style="text-align:center">These slides:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">http://bit.ly/361-traffic-studies</a></h4>
 
                     </div>
 
@@ -92,10 +92,11 @@
                              alt="Minh picture" />
                      </figure>
 
-                    <h2>Minh Kieu</h2>
-                    <p class="l4"> Lecturer in Transport Analytics at the Department of Civil and Environment Engineering</p>
+                    <h2>Dr Minh Kieu</h2>
+                    <p class="l4"> Lecturer in Transport Analytics </p>
+                     <p class="l4"> Department of Civil and Environment Engineering</p>
                     
-                   <p>These HTML slides can be accessed by:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">  http://bit.ly/361-1</a></p>
+                   <p>These HTML slides can be accessed by:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">  http://bit.ly/361-traffic-studies</a></p>
                     <p class="l4">A PDF version can be found on Canvas</p>
                     
                      
@@ -241,8 +242,7 @@
                         <p>Why measure speed? </p>
                         
                         <p class="l2">Speed limit </p>
-                        <p class="l2">Mean speed: congestions </p>
-                        <p class="l2">Speed as a upperbound and lowerbound </p>
+                        <p class="l2">Mean speed: showing congestion </p>
                          
                     </div>
                          
@@ -282,26 +282,10 @@
                 </section>
                 
                
-                <section id="ex1-speed" >                     
-                   
-                        <p> <a class="bold">Example 1:</a> During a 60-sec period a detector is occupied by vehicles for the following occupancy time: 0.34, 0.38, 0.40, 0.32, and 0.52 sec. Estimate the values of flow (q), spot speeds and space mean speed (vs). Assume that the loop detector length = 4 m and that the average length of vehicles = 6 m.</p>
-                        
-                        <p class="l2">Hints: Calculate effective vehicle length first, then spot speeds, then flow and space mean speed</p>
-                
-                     <aside class="notes">
-                         <p class="l2">EVL = 4 +6 = 10m</p>
-                         <p class="l2">q = N/T = 5/60*3600 = 300 veh/h</p>
-                          
-                         <p class="l2">speed = EVL/to = 10 / 0.34 = 29.4 m/s</p>
-                         
-                     </aside>  
-                </section>
-                
-            
-                   
+               
                 <section id="speed3" >                     
                    
-                        <p> <a class="bold">Example 2:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
                         
                 
                      <aside class="notes">
@@ -321,6 +305,8 @@
                 <section id="speed4" >              
                          <h3>Relationship between time and space mean speed</h3>
                         
+                    <p>From Example 1, we can see that Space Mean Speed is quite different to Time Mean Speed </p>
+                    
                         <p class="l2">Space mean speed weights slower vehicles more heavily, as they take a longer time to occupy a highway section. As such, $v_s$ is typically lower than $v_t$, in which each vehicle is weighted equally. </p>
                         
                          \[\begin{aligned}
@@ -357,10 +343,6 @@
                         <p class="l2">Establish <a>“minimum speed limit”</a>.</p>
                        
                     </div>
-                         
-                    <aside class="notes">
-                       
-                     </aside>  
                     
                 </section>
                 
@@ -376,6 +358,21 @@
                       
                  </section>
                 
+                 <section id="ex1-speed" >                     
+                   
+                        <p> <a class="bold">Example 2:</a> During a 60-sec period a single-loop detector is occupied by vehicles for the following occupancy time: 0.34, 0.38, 0.40, 0.32, and 0.52 sec. Estimate the values of spot speeds and space mean speed (vs). Assume that the loop detector length = 4 m and that the average length of vehicles = 6 m.</p>
+                     
+                        <p>Which vehicle is faster than the speed limit of 110 km/h ?</p>
+                        
+                        <p class="l2">Hints: Calculate effective vehicle length (EVL) first, then spot speeds and space mean speed</p>
+                
+                     <aside class="notes">
+                         <p class="l2">EVL = 4 +6 = 10m</p>
+                          
+                         <p class="l2">speed = EVL/to = 10 / 0.34 = 29.4 m/s</p>
+                         
+                     </aside>  
+                </section>
                
             
                    <section id="speed7" >                 
@@ -635,7 +632,7 @@
                          <p class="l2"> - The proportion of time that a detector is “occupied”, by a vehicle in a defined time period.</p>
                         
                           \[\begin{aligned}
-					O_t = \frac{\sum_{i}^N{\delta t_i}}{T}\\
+					Time Occupancy(O_t) O_t = \frac{\sum_{i}^N{\delta t_i}}{T}\\
 					\end{aligned} \]
                          
                 </section>  
@@ -645,8 +642,11 @@
                    <p class="l2">   Space occupancy $O_s$: percentage length of highway occupied by vehicles</p>
                         
                         \[\begin{aligned}
-					Space Occupancy(O_s) \quad O_s = \frac{\sum_{i=1}^N{h_i}}{L} \\
+					Space Occupancy(O_s) \quad O_s = \frac{\sum_{i=1}^N{l_i}}{L} \\
 					\end{aligned} \]
+                      
+                      <p class="l2">Where: $l_i$ is the length of vehicle $i$</p>
+                      <p class="l2">$L$ is the total length of the highway section</p>
                         
                       
                  </section>  
@@ -662,6 +662,10 @@
                         
                          <p class="l2"> Time between two vehicles passing the same point </p>
                          <p class="l2">More popular for public transport</p>
+                    
+                     \[\begin{aligned}
+					Time Headway(\bar{t}) \quad \bar{t} = \frac{L}{N} = \frac{1}{k} \\
+					\end{aligned} \]
                     
                          <p> Space headway $\bar{s}$:  distance between the same points of two consecutive vehicles following each other </p>
                         
@@ -752,7 +756,7 @@
              
                 <section id="ex2" >                     
                    
-                        <p><a>Example 3:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 6 vehicles in a 3000 m  motorway section. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
+                        <p><a>Example 3:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 6 vehicles as below. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
                     
                     
                     <table>
@@ -788,15 +792,9 @@
                         <tr>
                             <td>5</td>
                             <td>500</td>
-                            <td>1630</td>
+                            <td>1200</td>
                         </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>0</td>
-                            <td>1000</td>
-                        </tr>
-                        
-                        
+                       
                         
                         </tbody>
                     </table>
@@ -1136,8 +1134,8 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">http://bit.ly/361-1</a></h4>
-
+                       <h4 style="text-align:center">These slides:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">http://bit.ly/361-traffic-studies</a></h4>
+                        
                     </div>
 
                 </section>
