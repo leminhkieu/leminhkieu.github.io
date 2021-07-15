@@ -383,6 +383,38 @@
                     
                 </section>
                 
+                
+                 <section id="speed8" >                 
+                        <p>What if we have a lot of spot speeds that are similar?</p>
+                     
+                        \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{ f_i v_i}}{N} \\
+					\end{aligned} \]
+                        
+                         <p class="l2">Where $f$ is the frequency or the number of times the spot speeds are repeated. Similarly for space mean speed</p>
+                     
+                          \[\begin{aligned}
+					v_s = \frac{N}{\sum_{i=1}^N{\frac{f_i} {v_i}}} \\
+					\end{aligned} \] 
+                    
+                </section>
+                
+                 <section id="speed9" >                 
+                        <p>Variance of speed: measures how far a set of spot speeds is spread out from their average value.</p>
+                     
+                        \[\begin{aligned}
+					\sigma_t^2 = \frac{1}{N-1} \sum_{i=1}^{m}{f_i (v_i - v_t)^2} \\
+					\end{aligned} \]
+                        
+                         <p class="l2"> Similarly for space mean speed</p>
+                     
+                         \[\begin{aligned}
+					\sigma_s^2 = \frac{1}{N-1} \sum_{i=1}^{m}{f_i (v_i - v_s)^2} \\
+					\end{aligned} \]
+                    
+                </section>
+                
+                
         
                  <section id="flow-what?" data-background-image="../figures/teaching/traffic-count.jpg" data-background-size=80%> 
                 
@@ -530,11 +562,22 @@
                            
                           <p >	<a> Annual Average Daily Traffic (AADT)</a>: is the average number of vehicles per day on a road over the year. </p>
                         
-                        <p > <a>Average Daily Traffic (ADT) </a> refers to the average number of vehicles on a road during a 7 day week (or 5 day working week). </p>
+                        <p > <a>Average Daily Traffic (ADT) </a> refers to the average number of vehicles on a road on a day</p>
                            
                         
                     </div>
                 </section>
+                
+                 <section id="param12" data-background-image="../figures/Teaching/Civil361/intersection.png" data-background-size="65%">
+                     
+                      <div class="whitebackground2 fragment"  style="position: relative; bottom: 300px"> 
+                    
+                    <p> Intersection traffic flow diagram </p>
+                     
+                   </div>
+                    
+                </section>
+                
                 
                 
                 
@@ -563,12 +606,7 @@
                          <p class="l3">$V$ = Total hourly volume</p>
                         
                         <p class="l3"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
-                        
-                    
-                   
-                    
-                      
-                   
+                  
                 </section>
                 
               
@@ -632,7 +670,7 @@
                          <p class="l2"> - The proportion of time that a detector is “occupied”, by a vehicle in a defined time period.</p>
                         
                           \[\begin{aligned}
-					Time Occupancy(O_t) O_t = \frac{\sum_{i}^N{\delta t_i}}{T}\\
+					Time Occupancy(O_t) \quad O_t = \frac{\sum_{i}^N{\delta t_i}}{T}\\
 					\end{aligned} \]
                          
                 </section>  
@@ -660,11 +698,11 @@
                 <section id="headway0">
                         <h3>What is 'headway'</h3>
                         
-                         <p class="l2"> Time between two vehicles passing the same point </p>
+                         <p class="l2"> Time between two consecutive vehicles passing the same point </p>
                          <p class="l2">More popular for public transport</p>
                     
                      \[\begin{aligned}
-					Time Headway(\bar{t}) \quad \bar{t} = \frac{L}{N} = \frac{1}{k} \\
+					Time Headway(\bar{t}) \quad \bar{t} = t_i - t_{i+1} \\
 					\end{aligned} \]
                     
                          <p> Space headway $\bar{s}$:  distance between the same points of two consecutive vehicles following each other </p>
@@ -835,7 +873,7 @@
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                ********************************************************
 
              
                 <section id="ex5" >                     
@@ -855,6 +893,7 @@
                     
                 </section>
                 
+                **** -->
                 
                    <!-- ******************************************************
                 *********************** Traffic flow ***********************
@@ -889,10 +928,8 @@
 
                 <section id="traveltime1" >
                         <h3>Free-flow travel time and travel delay</h3>
-                        
-                        
-                       
-                        <p><a>Free-flow travel time </a>is the time it should take if we can always travel at the maximum possible speed, usually the speed limit</p>
+                    
+                    <p><a>Free-flow travel time </a>is the time it should take if we can always travel at the maximum possible speed, usually the speed limit</p>
                         
                         <p class="l2">We often can calculate this by using a certain distance divide by the speed limit</p>
                         
@@ -1032,14 +1069,29 @@
   
                <section id="data-fusion" >
                    
-                   <h3>Travel time data collection: Autonomous/Connected Vehicles</h3> 
+                   <h3>Travel time data collection: Floating or Probe vehicles </h3> 
                    <figure class="centre" >
                         <img data-src="../figures/teaching/Uber-AV.gif"
                              style="width:800px;"
                              alt="UberAV" />
                     </figure>
-                    <p class="l2">Integrating data from multiple sources </p>
+                    <p class="l2"> <a href="https://www.fhwa.dot.gov/ohim/tvtw/natmec/00020.pdf">FHWA's Travel Time Data Collection Handbook</a> </p>
                 </section>      
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="data7" data-background-image="../figures/teaching/bluetooth.png"> 
+                   
+                   <div class="whitebackground2 fragment" >
+                   <h3>Travel time data collection: License plate matching methods</h3> 
+                  
+                    
+                    <p class="l2">Travel time </p>
+                        
+                        <p class="l2">Origins/Destination</p>
+                          
+                   </div>
+                </section> 
                 
                 
                  <!-- *************** ITS data ************************** -->
@@ -1067,10 +1119,10 @@
  
                <section id="travel-speed-prediction" data-transition="fade">
 
-                    <h2>Google Travel time</h2>
+                    <h2>Crowd sourcing method: Google Travel time</h2>
                 
                     <img src="../figures/paper-figures/travel-speed-prediction.png"
-                            style="width:600px;"
+                            style="width:400px;"
                          alt="travel speed prediction" />
                    
                  <p>How do you think Google can estimate travel time so accurately? </p>
@@ -1106,13 +1158,123 @@
                 </section>     
                 
           <!-- ******************************************************
-                *********************** Traffic flow ***********************
+                *********************** Recap***********************
                 ************************************************************ -->
 
                  <section id="recap1" data-background-image="../figures/Teaching/Civil361/lvl2-traveltime.png" data-background-size="90%">                     
                    
                 </section>  
             
+                
+                  <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob0" data-background-image="../figures/Backgrounds/problems.jpg" data-background-size="1000px">   
+           
+                </section>   
+          
+                
+                  <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob1" data-background-image="../figures/Teaching/Civil361/problem1-trafficstudies.png" data-background-size="70%">     
+                </section>   
+                
+                <section id="prob2" >
+                    <h3>Problem 2</h3>
+                    <p>From a traffic video, an observer find two groups of cars travelling along a road. The observation section is 1 kilometre long. Group A consists of 20 cars in the
+                    section running at 10km/hr; group B consists of 40 cars running at 20 km/hr. Determine the space
+                    mean and time mean speeds of the traffic.</p>
+                    
+                    <p class="l2">[Answers: vt = 16.7 kph, vs = 15 kph]</p>
+                    
+                </section>  
+                
+                
+                 <section id="prob3" >
+                    <h3>Problem 3</h3>
+                    <p>A loop detector having a length of 3 m was observed to have six vehicles cross over it in a period
+                    of 148 sec, for the following durations: 0.44, 0.48, 0.50, 0.41, 0.49, and 0.55s. Estimate the values
+                    of $q, k,$ space-mean and time mean speed. The corresponding lengths of vehicles were 6, 7, 6.5,
+                    5, 7.5, and 5.5m.</p>
+                    
+                    <p class="l2">[Answers: q = 146 vph, vs = 69.2 kph, k = 2.1 veh/km, vt = 70 kph]</p>
+                    
+                </section>  
+                
+                <section id="prob4" >
+                    <h3>Problem 4</h3>
+                    <p>At traffic count stations A and B, the ADT are collected in 6 months as the below table. The AADT can be estimated as the average values of these ADT. </p>
+                    
+                    <p>Station B also has another modern way to count the vehicles from automatic video processing, which considered more accurate. This value is 8800 veh/day, and is consided as the ground-truth of the vehicle count. </p>
+                    
+                     <p >Assume that the ratio between the estimated AADT (using ADT) and the ground-truth value is the same in both stations. Calculate the ground-truth AADT for station A? </p>
+                     <p class="l2">[Answers: 4093 veh/day</p>
+                    
+                </section>  
+                
+                
+                 <section id="prob4-2" >
+                     
+                     <p>Collected ADT (veh/day)</p>
+                <table>
+                        <thead><tr>
+                            <th>Month</th>
+                            
+                            <th>Station A</th>
+                            <th>Station B</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>January</td>
+                            <td>4300</td>
+                            <td>9100</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>4100</td>
+                            <td>8700</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>3900</td>
+                            <td>8400</td>
+                        </tr>
+                        <tr>
+                            <td>April</td>
+                            <td>3800</td>
+                            <td>8200</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>3900</td>
+                            <td>8500</td>
+                        </tr>
+                            
+                         <tr>
+                            <td>June</td>
+                            <td>4000</td>
+                            <td>8700</td>
+                        </tr>
+                        </tbody>
+                    </table>
+               
+                      </section>  
+                    
+                   
+                 <section id="prob5" >
+                    <h3>Problem 5</h3>
+                    <p>Speeds are measured at a fixed point along a road section as follows:</p>
+                    <p class="l2">52, 47, 50, 54, 59, 63, 67, 57, 55, 48, 44, 53, 54, 58, 49, 61, 55, 50, 47, 55</p>
+                    <p>Determine the following:</p>
+                    <p class="l2">a) The time mean speed and variance</p>
+                    <p class="l2">b) The space mean speed and variance directly from the measurement data.</p>
+                    <p class="l2">c) The space mean speed using the results in (a).</p>
+                    <p>[Answers: a) $v_t$ = 53.9 kph, $\sigma_t^2$ = 34.1, b) $v_s$ = 53.3 km/h, $\sigma_s^2$ = 34.5, c) $v_s$ = 53.3 kph]</p>
+        
+                </section>  
+                
+                 
                  <!-- *************** Thanks  ************************** -->
                                   
                 <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
