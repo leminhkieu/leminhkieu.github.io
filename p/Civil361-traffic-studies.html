@@ -301,18 +301,26 @@
                      </aside>  
                 </section>
             
-       
                 <section id="speed4" >              
                          <h3>Relationship between time and space mean speed</h3>
                         
-                    <p>From Example 1, we can see that Space Mean Speed is quite different to Time Mean Speed </p>
+                    <p class="l2">From Example 1, we can see that Space Mean Speed is quite different to Time Mean Speed </p>
                     
                         <p class="l2">Space mean speed weights slower vehicles more heavily, as they take a longer time to occupy a highway section. As such, $v_s$ is typically lower than $v_t$, in which each vehicle is weighted equally. </p>
                         
                          \[\begin{aligned}
-					v_t = v_s + \frac{\delta^2_{v_s}}{v_s} \\
+					v_t = v_s + \frac{\sigma^2_{v_s}}{v_s} \\
+					\end{aligned} \]
+                    
+                     \[\begin{aligned}
+					v_t \geq v_s \\
+					\end{aligned} \]
+                    
+                     \[\begin{aligned}
+					v_s \cong v_t - \frac{\sigma^2_{v_t}}{v_t} \\
 					\end{aligned} \]
                         
+                    <p class="l2">Where $\sigma$ is the variance of speed</p>
                          
                     <aside class="notes">
                   *** Time Mean Speed =  arithmetic mean speed
@@ -326,7 +334,6 @@
                     
                 </section>
                 
-     
                 <section id="speed5" data-background-image="../figures/Backgrounds/street2.jpg">                     
                     <div class="whitebackground2">
                         <h3>Speed quartiles</h3>
@@ -784,6 +791,30 @@
                    
                          
                 </section>
+                
+               
+                
+                
+                <section id="theory2" >
+                       <h3>Relationship between Speed, Flow, and Density:</h3>
+                    
+                    <p>More at the next chapter (Traffic Flow Fundamentals), but generally:</p>
+                        
+                        <p>Flow = Density x Space-Mean-Speed</p>
+                    
+                     \[\begin{aligned}
+					q = k \times v_s \\
+					\end{aligned} \]
+                        
+                        <p class="l2"> where k is in veh/km and vs is in km/h. </p>
+                        
+                        <p>Density is the most important attribute of traffic flow, as it provides an indication of travel
+                                    demand.</p>
+                        
+                         
+                </section>
+                
+                
                 
                 
                 
@@ -1266,7 +1297,7 @@
                    
                  <section id="prob5" >
                     <h3>Problem 5</h3>
-                    <p>Speeds are measured at a fixed point along a road section as follows:</p>
+                    <p>Speeds are measured at a fixed point along a road section as follows (in km/h):</p>
                     <p class="l2">52, 47, 50, 54, 59, 63, 67, 57, 55, 48, 44, 53, 54, 58, 49, 61, 55, 50, 47, 55</p>
                     <p>Determine the following:</p>
                     <p class="l2">a) The time mean speed and variance</p>
