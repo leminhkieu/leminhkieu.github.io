@@ -309,7 +309,7 @@
                         <p class="l2">Space mean speed weights slower vehicles more heavily, as they take a longer time to occupy a highway section. As such, $v_s$ is typically lower than $v_t$, in which each vehicle is weighted equally. </p>
                         
                          \[\begin{aligned}
-					v_t = v_s + \frac{\sigma^2_{v_s}}{v_s} \\
+					v_t = v_s + \frac{\sigma^2_{s}}{v_s} \\
 					\end{aligned} \]
                     
                      \[\begin{aligned}
@@ -317,10 +317,10 @@
 					\end{aligned} \]
                     
                      \[\begin{aligned}
-					v_s \cong v_t - \frac{\sigma^2_{v_t}}{v_t} \\
+					v_s \cong v_t - \frac{\sigma^2_{t}}{v_t} \\
 					\end{aligned} \]
                         
-                    <p class="l2">Where $\sigma$ is the variance of speed</p>
+                    <p class="l2">Where $\sigma$ is the variance of speed ($\sigma^2_{s}$ is the variance of space-mean-speed and vice versa)</p>
                          
                     <aside class="notes">
                   *** Time Mean Speed =  arithmetic mean speed
