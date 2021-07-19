@@ -450,25 +450,33 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    <div class="whitebackground2">
                         <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
                        
-                        <p class="l2"> Let's do some maths!</p>
+                        <p class="l2"> At maximum density </p>
                    
-                      
+                      <p class="l2">
                         \[\begin{aligned}
-					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \\
+					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k_m}{k_j} \bigg) = 0 \\
 					\end{aligned} \]
+                          </p>
                        
+                        <img class="right" src="../figures/teaching/flow-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
  
                        <p class="l2">As the free-flow speed $v_f$ is not equal to zero so: $k_m = \frac{k_j}{2}$</p>
                        
-                       <p class="l2">Substituting km into speed density relationship at maximum flow condition gives: </p>
+                       <p class="l2">Substituting $k_m$ into speed density relationship at maximum flow condition gives: </p>
                        
+                       <p class="l2">
                         \[\begin{aligned}
-					v_m = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = \frac{v_f}{2} \\
+					v_m = v_f \bigg( 1 - \frac{k_j}{2k_j} \bigg) = \frac{v_f}{2} \\
 					\end{aligned} \]
+                           </p>
                        
+                       <p class="l2">
                         \[\begin{aligned}
 					q_m = v_m k_m = \frac{v_f k_j}{4} \\
 					\end{aligned} \]
+                           </p>
                        
                     </div>
                        <aside class="notes">
@@ -502,7 +510,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                          alt="project-1" />
                        
                     
-                     <p class="l2">The linear speed-density model can be rearranged to the following speed-flow model:</p>
+                     <p class="l2">The linear speed-density model can be rearranged into the following speed-flow model:</p>
                          
                         \[\begin{aligned}
 					k = k_j \bigg( 1 - \frac{v}{v_f} \bigg) \\
@@ -737,25 +745,11 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    </div>
                 </section>
                 
-                
-                 <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="micro3"> 
-                    
-                   <h3>Car-following dynamics</h3>
-                       <img class="centre" src="../figures/teaching/car-following.png"
-                            style="width:800px;"
-                         alt="project-1" />
-                
-                </section>
-                
                    <!-- ******************************************************
                 *********************** diagram5 ***********************
                 ************************************************************ -->
 
-               <section id="micro4">
+               <section id="micro3">
                    <h3>Car-following models</h3>
                       
                        <p class="l2">The basic philosophy of car following model is from Newtonian mechanics, where the acceleration may be regarded as the response of a matter to the stimulus it receives in the form of the force it receives from the interaction with other particles in the system. </p>
@@ -768,6 +762,21 @@ Use space-mean speeds when reducing and analyzing travel time data.
                        <p class="l2">different theories on car-following have arisen because of the difference in views regarding the nature of the stimulus. The stimulus may be composed of the speed of the vehicle, relative speeds, distance headway etc
                     
                 </section>
+                
+                 <!-- ******************************************************
+                *********************** diagram5 ***********************
+                ************************************************************ -->
+
+               <section id="micro4"> 
+                    
+                   <h3>Car-following dynamics</h3>
+                       <img class="centre" src="../figures/teaching/car-following.png"
+                            style="width:800px;"
+                         alt="project-1" />
+                
+                </section>
+                
+                
                 
                 
                  <!-- ******************************************************
@@ -1396,8 +1405,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 
                        <!-- *************** ITS management 4 ************************** -->
   
-               <section id="prob0" data-background-image="../figures/Backgrounds/problems.jpg" data-background-size="1000px">   
-           
+               <section id="prob0" data-background-image="../figures/Backgrounds/problems.jpg" data-background-size="80%">   
+                    <div>&nbsp;</div>
                 </section>   
           
                 
