@@ -423,22 +423,27 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         <p class="l2"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 2000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
                           
                   
-                       <aside class="notes">
-                           Speed :
-		        v= vf – vf*k/kj = 100 - 100 * k / 1000 = 100 - 0.1k
-                           
-                           @@@ q = v k = 100k - 0.1k^2, at critical density we have dq/dk = 0
-                           
-                           @@@ dq/dk = 100 - 0.2 k, so, k = 500 = kj/2 half of jam density
-                           
-                           @@@ vm = 100 - 100 * 500 /1000 = 50 kmh = vf/2 half of free flow speed
-                           
-                           @@@ qm = v * k = 50 * 50 = 2500 > 2000 veh/h, so the theoretical value is actually larger than the observed maximum flow, and does not account for the field conditions that influence maximum flow
-                           
-                           
-	               </aside> 
+                       
                 </section>
                 
+                 <section id="ex1-sol" >
+                        <p>Example 1: Greenshield's Model </p>
+                         <p class="l3"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
+                       <p> Speed :
+		       $ v= v_f – v_f*k/k_j = 100 - 100 * k / 1000 = 100 - 0.1k$</p>
+                          
+                           
+                     
+                         <p>  $ q = v k = 100k - 0.1k^2, $ at critical density we have dq/dk = 0</p>
+                           
+                          <p>  $ dq/dk = 100 - 0.2 k, $ so, k = 500 = kj/2 half of jam density</p>
+                           
+                          <p>  $ v_m = 100 - 100 * 500 /1000 = 50 kmh = vf/2 $ half of free flow speed</p>
+                           
+                        <p>   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is actually larger than the observed maximum flow, and does not account for the field conditions that influence maximum flow</p>
+                           
+                     
+                </section>
                 
                 
                           <!-- ******************************************************
@@ -454,7 +459,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                       <p class="l2">
                         \[\begin{aligned}
-					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k_m}{k_j} \bigg) = 0 \\
+					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k_m}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k_m}{k_j} \bigg) = 0 \\
 					\end{aligned} \]
                           </p>
                        
@@ -1117,13 +1122,12 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <section id="nosignal1" >
                     <p>The arrival of traffic is often assumed to follow the <a>Poisson distribution</a></p>
                    
-                      
                     \[\begin{aligned}
                    P(X=n)={\frac {(\lambda t) ^{n}e^{-\lambda t }}{n!}},
                    \end{aligned} \]
                    
                     <p class="l2"> where $P(X=n)$ is the probability of exactly n vehicles arriving within a time interval t </p>
-                   <p class="l2"> $\lambda$ average arrival rate (veh/unit time) </p>
+                   <p class="l2"> $\lambda$ average arrival rate (veh/unit time) <a>Note: Only equals to traffic flow if there is no congestion</a> </p> 
                    <p class="l2"> $X$ number of vehicles arriving in a specific time interval </p>
                    
                   <p class="l2"> $t$ duration of the time interval over  which vehicles are counted </p>
