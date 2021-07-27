@@ -416,12 +416,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                        
                        <p class="l3">Note in the figure that the maximum flow rate $q_m$ represents the capacity of the highway. The traffic density that corresponds to this capacity flow rate is critical density $k_m$, and the  corresponding optimum speed is $v_m$</p>
                        
-                       <p class="l3">They can be estimated by differentiating the above equation and then equating to zero as flow is maximum flow when</p>
-                       
-                        \[\begin{aligned}
-					\frac{dq}{dk} = 0 \\
-					\end{aligned} \]
-                       
+                    
                         
                     </div>
                        <aside class="notes">
@@ -438,7 +433,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         <h3>Example 1: Greenshield's Model </h3>
                        
                        
-                        <p class="l2"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 2000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
+                        <p class="l2"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
                           
                   
                        
@@ -458,9 +453,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
                            
                           <p class="l2">  $ v_m = 100 - 100 * 500 /1000 = 50 kmh = vf/2 $ half of free flow speed</p>
                            
-                        <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is actually larger than the observed maximum flow, and does not account for the field conditions that influence maximum flow</p>
+                        <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is much larger than the observed maximum flow, because it does not account for the field conditions that influence maximum flow</p>
                            
-                     
                 </section>
                 
                 
@@ -471,19 +465,20 @@ Use space-mean speeds when reducing and analyzing travel time data.
              
                 <section id="greenshields2" >
                    <div class="whitebackground2">
-                        <h3>Fundamental diagrams of traffic flow 2: Flow-density relationship</h3>
+                        <h4>Fundamental diagrams of traffic flow 2: Flow-density relationship</h4>
                        
-                        <p class="l2"> At maximum density </p>
+                        <p class="l2">  \[\begin{aligned}
+					q = v_f \bigg( k - \frac{k^2}{k_j} \bigg)  \\
+					\end{aligned} \] </p>
                    
+                         <p class="l3"> If we differentiate the above equation and then equating to zero, we can derive the traffic condition at maximum flow:</p>
+                       
                       <p class="l2">
                         \[\begin{aligned}
 					\frac{dq}{dk} = v_f \bigg( 1 - \frac{2k_m}{k_j} \bigg) = 0 \quad so \quad \bigg( 1 - \frac{2k_m}{k_j} \bigg) = 0 \\
 					\end{aligned} \]
                           </p>
-                       
-                        <img class="right" src="../figures/teaching/flow-density.gif"
-                            style="width:300px;"
-                         alt="project-1" />
+                      
  
                        <p class="l2">As the free-flow speed $v_f$ is not equal to zero so: $k_m = \frac{k_j}{2}$</p>
                        
@@ -493,14 +488,10 @@ Use space-mean speeds when reducing and analyzing travel time data.
                        
                        <p class="l2">
                         \[\begin{aligned}
-					v_m = v_f \bigg( 1 - \frac{k_j}{2k_j} \bigg) = \frac{v_f}{2} \\
+					v_m = v_f \bigg( 1 - \frac{k_j}{2k_j} \bigg) = \frac{v_f}{2} \quad and \quad q_m = v_m k_m = \frac{v_f k_j}{4} \\
 					\end{aligned} \]
-                           </p>
-                       
-                       <p class="l2">
-                        \[\begin{aligned}
-					q_m = v_m k_m = \frac{v_f k_j}{4} \\
-					\end{aligned} \]
+                          
+                    
                            </p>
                        
                     </div>
