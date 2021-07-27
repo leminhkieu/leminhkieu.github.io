@@ -79,6 +79,25 @@
                 </section>
                                 
                 
+                
+               <section id="feedback" data-transition="fade">
+                   
+                   <h3>Feedback from the Quizz yesterday</h3>
+    
+		            <p> Many thanks to those who provided feedback </p>
+                    <p class="l2"> More info on the test/assignment 1 next week. Clarity on what is assessed</p>
+                    <p class="l2"> Keep up with the examples/more examples</p>
+                    <p class="l2"> More quizzes </p>
+                    <p class="l2"> Less slides with little info </p>
+                    <p class="l2"> The HTML slides are difficult to annotate, when they are converted to PDF, sometimes there are multiple diagrams on top of each other </p>
+                   <p class="l2">Kahoot is better </p>
+                   <p class="l2">Reduce announcement length</p>
+                   
+                
+                </section>
+                
+                
+                
                            <!-- ********************************************************
 
                      ************* Auckland congestion  *****************
@@ -165,6 +184,13 @@
                          
                 </section>
                 
+                  <!-- ******************************************************
+                *********************** Agenda 1 ***********************
+                ************************************************************ -->
+
+                <section id="lastlecture" data-background-image="../figures/Teaching/Civil361/lvl1.png" data-background-size="70%">       
+                     <div>&nbsp;</div>
+                </section>    
                 
                    <!-- ******************************************************
                 *********************** Definition ***********************
@@ -257,15 +283,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     
                 </section>
                 
-                   <!-- ******************************************************
-                *********************** Traffic flow ***********************
-                ************************************************************ -->
-
-                 <section id="def2" data-background-image="../figures/Teaching/Civil361/lvl2-traveltime.png" data-background-size="90%">                     
                    
-                </section>   
-                
-                 
                   <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
                 ************************************************************ -->
@@ -429,18 +447,18 @@ Use space-mean speeds when reducing and analyzing travel time data.
                  <section id="ex1-sol" >
                         <p>Example 1: Greenshield's Model </p>
                          <p class="l3"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
-                       <p> Speed :
+                       <p class="l2"> Speed :
 		       $ v= v_f – v_f*k/k_j = 100 - 100 * k / 1000 = 100 - 0.1k$</p>
                           
                            
                      
-                         <p>  $ q = v k = 100k - 0.1k^2, $ at critical density we have dq/dk = 0</p>
+                         <p class="l2">  $ q = v k = 100k - 0.1k^2, $ at critical density we have dq/dk = 0</p>
                            
-                          <p>  $ dq/dk = 100 - 0.2 k, $ so, k = 500 = kj/2 half of jam density</p>
+                          <p class="l2">  $ dq/dk = 100 - 0.2 k, $ so, k = 500 = kj/2 half of jam density</p>
                            
-                          <p>  $ v_m = 100 - 100 * 500 /1000 = 50 kmh = vf/2 $ half of free flow speed</p>
+                          <p class="l2">  $ v_m = 100 - 100 * 500 /1000 = 50 kmh = vf/2 $ half of free flow speed</p>
                            
-                        <p>   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is actually larger than the observed maximum flow, and does not account for the field conditions that influence maximum flow</p>
+                        <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is actually larger than the observed maximum flow, and does not account for the field conditions that influence maximum flow</p>
                            
                      
                 </section>
@@ -468,6 +486,8 @@ Use space-mean speeds when reducing and analyzing travel time data.
                          alt="project-1" />
  
                        <p class="l2">As the free-flow speed $v_f$ is not equal to zero so: $k_m = \frac{k_j}{2}$</p>
+                       
+                       <p class="l2">And earlier we have: $ v= v_f – v_f*k/k_j $</p>
                        
                        <p class="l2">Substituting $k_m$ into speed density relationship at maximum flow condition gives: </p>
                        
@@ -545,7 +565,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                <section id="diagram4" >               
                     
                    <div class="whitebackground2">
-                   <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
+                   <h3>Fundamental diagrams of traffic flow: Other models </h3>
                        <img class="centre" src="../figures/teaching/trafficmodel-other.png"
                             style="width:800px;"
                          alt="project-1" />
@@ -704,7 +724,12 @@ Use space-mean speeds when reducing and analyzing travel time data.
                          data-background-video-muted 
                          data-background-video-loop="loop"
                          id="macro">                     
-                    <div class="whitebackground2 fragment">
+                    <div>&nbsp;</div>
+                    </section>
+                
+                
+                 <section id="macro2">                     
+                    
                         <h3>Macroscopic models</h3>
                         
                        <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
@@ -713,8 +738,9 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         
                         <p>are efficient and so applicable to large network and real-time simulation</p>
                         
-                    </div>
+                  
                     </section>
+                
                          <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
@@ -723,7 +749,10 @@ Use space-mean speeds when reducing and analyzing travel time data.
                          data-background-video-muted 
                          data-background-video-loop="loop"
                          id="micro">                     
-                    <div class="whitebackground2 fragment">
+                    <div>&nbsp;</div>
+                </section>
+                
+                <section id="micro2">
                         <h3>Microscopic models</h3>
                         
                           <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
@@ -733,8 +762,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
                         
                          <p> <a>What do you think are the core components of a micro-simulation model?</a> </p>
-                        
-                    </div>
+                   
                 </section>
                 
               
@@ -955,7 +983,10 @@ Use space-mean speeds when reducing and analyzing travel time data.
                          data-background-video-muted 
                          data-background-video-loop="loop"
                          id="meso">                     
-                    <div class="whitebackground2 fragment">
+                  <div>&nbsp;</div>
+                </section>
+                
+                <section id="meso2">
                         <h3>Mesoscopic models</h3>
                         
                         <p>Individual vehicles may be presented but not as details as microscopic models</p>
@@ -963,10 +994,20 @@ Use space-mean speeds when reducing and analyzing travel time data.
                         <p class="l2">less computationally expensive to run, but more detailed than macroscopic models</p>
                         
                         <p>Capable of modelling the traffic on the large scale</p>
-                        
-                    </div>
-                
+                    
                 </section>
+                
+                 <section id="whatmodel">
+                        <h3>What models to use in which case?</h3>
+                        
+                        <p class="l2">1. The Ministry of Transport wants a traffic model of Auckland to identify the bottlenecks in the traffic systems and come up with ways to reduce traffic congestions </p>
+                        
+                        <p class="l2">2. Auckland Transport wants to evaluate the feasibility of replacing the traffic lights in one of our busy intersections with a roundabout</p>
+                        
+                        <p>What model should we be using in which case, and what kind of data should we collect to model the system? </p>
+                    
+                </section>
+                
                 
                    <!-- ************** Learning outcomes ************* -->
 
@@ -1009,7 +1050,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
   
                <section id="nosignal" data-background-image="../figures/Backgrounds/roundabout.png">   
                    
-               <div class="whitebackground2">
+               <div class="whitebackground">
                         <h3>Unsignalised traffic flow: Areas of interests</h3>
                         
                             <p class="l2">Uninterrupted roads</p>
@@ -1392,9 +1433,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 
                      <!-- *************** ITS management 4 ************************** -->
   
-               <section id="reading" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">   
-                   
-               <div class="whitebackground2">
+               <section id="reading" >
                        <h3>Further readings:</h3>
                              
                       <p>  TRB Special Report (2001) Traffic Flow Theory, A State-of-the-Art Report, A  revised version.</p>
@@ -1402,8 +1441,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     <p> TRB Special Report 165 (1975) Traffic Flow Theory, A Monograph.  </p>
                    <p> Mannering, F.L., Kilareski, W.P. and Washburn, S.S. (2005). Principles of Highway Engineering and Traffic Analysis. 3rd Edition, Wiley.</p>
                    <p> Ogden K W and Taylor S Y (1996 and reprinted 1999) (Editors). Traffic  Engineering and Management, Monash University, Melbourne, Australia.  </p>
-                       </div>                       
-           
+                             
                 </section>   
                 
                 

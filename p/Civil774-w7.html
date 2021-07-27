@@ -1,0 +1,476 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 774 - Studies in Transportation 1 - Smart Infrastructure Analytics</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 774 - Studies in Transportation 1 </h3>
+                        
+                        <h4>Smart Infrastructure Analytics</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 7: Clustering (Unsupervised Learning)</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w7.html">http://bit.ly/774-7</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+                  <!-- ********* SUpervised vs Unsupervised learning ************* -->
+  
+               <section id="ML1">  
+                    
+                    <h3>Types of machine learning </h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/machine-learning.png"
+                             style="width:700px;"
+                             alt="ML" />
+                    </figure>
+                   
+             </section>                 
+                
+              
+                
+                 <section id="clus"  data-background-image="https://media.geeksforgeeks.org/wp-content/uploads/merge3cluster.jpg" data-background-size="70%">      
+                    <div>&nbsp;</div>
+                </section>   
+                
+                
+                  <section id="clus2"  data-background-image="https://media.geeksforgeeks.org/wp-content/uploads/clusteringg.jpg" data-background-size="70%">      
+                    <div>&nbsp;</div>
+                </section>  
+                   
+                      
+               <!-- ********* UnSUpervised learning ************* -->
+  
+               <section id="ML4" >  
+                    
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/unsupervised-learning.png"
+                             style="width:800px;"
+                             alt="ML" />
+                    </figure>
+                    <p class="l2">Learning WITHOUT a 'label' </p>
+                  
+             </section>   
+                
+                  
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-0" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Clustering algorithms are for</p>
+                    <p> 2. Summerise the types of Clustering algorithms</p>
+                    <p> 3. Evaluate the strengths of each Clustering algorithm</p>
+                    
+               
+                </section>    
+                
+                   <!-- *************** outcommes1  ************************** -->
+  
+               <section id="clus3"  >    
+                    
+                   <h3>What clustering algorithms are for?</h3> 
+            
+                <p class="l2">Marketing : It can be used to characterise & discover customer segments for marketing purposes.</p>
+                <p class="l2">Biology : It can be used for classification among different species of plants and animals.</p>
+                <p class="l2">Libraries : It is used in clustering different books on the basis of topics and information.</p>
+                <p class="l2">Insurance : It is used to acknowledge the customers, their policies and identifying the frauds.</p>
+                <p class="l2">City Planning: It is used to make groups of houses and to study their values based on their geographical locations and other factors present.</p>
+                <p class="l2">Earthquake studies: By learning the earthquake-affected areas we can determine the dangerous zones.</p>
+                   
+                        <p><a>Useful to put a 'label' into some unlabeled dataset </a></p>
+                        
+                        <p>But not easy to do, since it can be gibberish</p>
+                        
+                  
+                </section>   
+                
+                 <section id="clus-ex1"  > 
+                   
+                   <h3>Historic application of clustering algorithms </h3> 
+            
+                <p class="l2">In the 1850s, a London physician plotted the location of cholera deaths on a map</p>
+                <p class="l2">The locations showed that the casualities were clustered around certain intersections where there were polluted wells - thus exposing both the problem and the solution.</p>
+               
+                 
+                </section>  
+                
+                 <section id="passenger-segmentation-3" data-transition="fade">
+
+                    <h2>Urban Flow Data: Smart Card data</h2>
+
+                    <img class="right" src="../figures/paper-figures/passenger-segmentation-results.png"
+                            style="width:300px;"
+                         alt="passenger-segmentation-3" />
+                   
+                   <p class="l2">Kieu et al. (2018) Large-scale transit market segmentation with spatial-behavioural features. Transportation Research Part C: Emerging Technologies 90, 97-113</p>
+                   
+                   <p class="l2">Kieu et al. (2014) Passenger Segmentation Using Smart Card Data. IEEE Transactions of Intelligent Transport Systems 16 (3), 1537 - 1548</p>
+                </section>  
+                
+                
+                  <section id="clus4"  data-background-image="https://visibledata.files.wordpress.com/2011/08/clusterdistances.jpg?w=800" data-background-size="50%">  
+                   
+                      
+                       <div class="whitebackground2"  style="position: relative; bottom: -250px">
+                        <p>In general a grouping of objects such that the objects in a group (cluster) are similar (or related) to one another and different from (or unrelated to) the objects in other groups</p>
+
+
+                        <p class="l2">Inter-cluster distances are maximized </p>
+                   
+                   <p class="l2"> Intra-cluster distances are minimized</p>
+                        
+                   </div>
+                </section>   
+                
+                 <section id="clus5"  > 
+                   
+                        <p>...but what "similar" mean?</p>
+                        
+                         <p class="l2">Similarity measure $s(x_i,x_k)$: large if $x_i, x_k$ are similar </p>
+                        <p class="l2">Dissimilarity measure $d(x_i,x_k)$: small if $x_i, x_k$ are similar </p>
+                        
+                        <p>Most popular option: Euclidean distance (squared) </p>
+                        
+                         \[\begin{aligned}
+					dist(\vec{x},\vec{y}) = || \vec{x} - \vec{y} ||^2_2 \\
+					\end{aligned} \]
+                   
+                        
+                        <p class="l2"> Clustering results are crucially dependent on the measure of similarity (or distance) between “points” to be clustered</p>
+                  
+                </section>   
+                
+           <section id="clus6"  > 
+                   
+                        <h3>Cluster evaluation (a hard problem)</h3>
+                        
+                        <p> Intra-cluster cohesion (compactness):</p>
+               
+                         <p class="l2">Cohesion measures how near the data points in a
+                                cluster are to the cluster centroid. </p>
+                        <p class="l2">Sum of squared error (SSE) is a commonly used
+                                measure</p>
+               
+                        \[\begin{aligned}
+					       SSE = \sum_{i=1}^n (X_i -\bar{X})^2 \\
+					\end{aligned} \]
+                        
+                        <p>Inter-cluster separation (isolation):</p>
+                        <p class="l2"> – Separation means that different cluster centroids
+                                should be far away from one another</p>
+                  
+               <p><a>In most applications, expert judgments are
+                    still the key</a></p>
+                </section>   
+                
+                 <section id="clus7"  data-background-image="https://visibledata.files.wordpress.com/2011/08/howmanyclusters.jpg?w=800" data-background-size="90%">  
+                <div>&nbsp;</div>
+                </section>
+                
+                 <!-- *************** outcommes2 : type of clustering algorithms ************************** -->
+                
+                    <section id="outcomes-2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Clustering algorithms are for</p>
+                    <p> <a>2. Summerise the types of Clustering algorithms</a></p>
+                    <p> <a>3. Evaluate the strengths of each Clustering algorithm</a></p>
+                    
+                </section>    
+                
+                <section id="clus8"  data-background-image="https://miro.medium.com/max/700/1*edHAomhbY4zTY5zPksvxUw.png" data-background-size="75%">  
+                <div>&nbsp;</div>
+                </section>
+                
+                 <!-- ************** K-means ************* -->
+    
+                <section id="k-means"  > 
+                   
+                        <h3>Partitioning methods: K-means clustering</h3>
+                        
+                       
+                    <p>The k-means algorithm partitions the given data into k clusters </p>
+               
+                         <p class="l2">– Each cluster has a cluster center, called <a>centroid</a>. So with k clusters we have k centroid </p>
+                        <p class="l2">– k is specified by the user</p>
+               
+                   <p>Given k, the k-means algorithm works as follows:</p> 
+<p class="l2">1. Choose k (random) data points (seeds) to be the initial
+centroids, cluster centers</p>
+<p class="l2">2. Assign each data point to the closest centroid</p>
+<p class="l2">3. Re-compute the centroids using the current cluster
+memberships</p>
+<p class="l2">4. If a convergence criterion is not met, repeat steps 2 and 3</p>
+                    
+                </section> 
+                
+                
+                <section id="k2"  data-background-image="https://stanford.edu/~cpiech/cs221/img/kmeansViz.png" data-background-size="75%">  
+                <div>&nbsp;</div>
+                </section>
+                
+                 <section id="k-means3"  > 
+                   
+                        <h3>K-means convergence criterion</h3>
+                        
+                       
+                    <p>no (or minimum) re-assignments of data points to
+different clusters, or</p>
+                     
+                     <p>no (or minimum) change of centroids, or</p>
+                     
+                     <p>minimum decrease in the sum of squared error (SSE)</p>
+               
+                </section> 
+                
+                 <section id="k-means4"  data-background-image="../figures/Backgrounds/grass.jpg"> 
+                   
+                     <div class="whitebackground2"> 
+                        <h3>So, why K-means?</h3>
+                        
+                     <p>Strengths:</p>
+                       
+                    <p class="l2">Simple: easy to understand and to implement</p>
+                     <p class="l2">Efficient: Time complexity: $\mathcal{O}(tkn)$,
+where $n$ is the number of data points,
+$k$ is the number of clusters, and
+$t$ is the number of iterations.</p>
+                    
+                     <p>K-means is the most popular clustering algorithm.</p>
+                     <p class="l2">Note that: it may terminate at a local optimum. The global optimum is hard to find due to complexity</p>
+                     </div>
+                </section> 
+          
+                 <section id="k-means5"  data-background-image="../figures/Backgrounds/weather1.jpg"> 
+                    <div class="whitebackground2"> 
+                        <h3>Limitations of K-means</h3>
+                        
+                     <p>The algorithm is only applicable if we can estimate <a>mean</a> of data points</p>
+                     <p>The user needs to specify $k$</p>
+                     <p>The algorithm is sensitive to outliers</p>
+                     <p class="l2">Outliers are data points that are very far away
+                            from other data points.</p>
+                    <p class="l2">Outliers could be errors in the data recording or
+some special data points with very different values. </p>
+                        <p>The algorithm is sensitive to the initial centroid locations</p>
+                        <p class="l2">There are ways to deal with this issue</p>
+                       <p>K-means is not suitable for discovering clusters that are not hyper-spheres</p>
+                     </div>
+                </section> 
+                
+                 
+                <section id="k-means6"  data-background-image="../figures/Backgrounds/weather1.jpg"> 
+                    <div class="whitebackground2"> 
+                        <h3>K-means summary</h3>
+                        
+                     <p>Despite weaknesses, k-means is still the most
+                    popular algorithm due to its simplicity and
+                    efficiency</p>
+                     <p>No clear evidence that any other clustering
+                    algorithm performs better in general</p>
+                        
+                        <p>Comparing different clustering algorithms is a
+                            difficult task. No one knows the correct
+                            clusters!</p>
+                   
+                     </div>
+                </section> 
+                
+                  <!-- *************** Hierachical  ************************** -->
+                <section id="clus9"  data-background-image="https://miro.medium.com/max/700/1*edHAomhbY4zTY5zPksvxUw.png" data-background-size="75%">  
+                <div>&nbsp;</div>
+                </section>
+                
+                <section id="h1"  data-background-image="../figures/Backgrounds/beach.jpg"> 
+                    <div class="whitebackground2"> 
+                        <h3>Hierarchical clustering</h3>
+                        
+                     <p>K-means is a "flat" clustering</p>
+                     <p>Sometimes the data has a hierchical structure when some groups of data is within a larger group</p>
+                        
+                        <p>We use a "Dendogram" to represent this hierachical structure</p>
+                   
+                     </div>
+                </section> 
+              
+                 <section id="h2"  data-background-image="https://www.researchgate.net/profile/Carsten-Walther/publication/273456906/figure/fig3/AS:294866065084419@1447312956501/Example-of-hierarchical-clustering-clusters-are-consecutively-merged-with-the-most.png" data-background-size="90%">  
+                <div>&nbsp;</div>
+                </section>
+                
+                 <section id="h3"  data-background-image="../figures/Backgrounds/beach.jpg"> 
+                    <div class="whitebackground2"> 
+                        <h3>Types of hierarchical clustering</h3>
+                        
+                     <h4>Divisive (top down) clustering</h4>
+                     <p>Start with all data points in one cluster (the root), then:</p>
+                        
+                        <p class="l2">Splits the root into a set of child clusters. Each child cluster is
+recursively divided further </p>
+                        
+                        <p class="l2">Start with all data points in one cluster (the root), then:</p>
+                        
+                        <p>We use a "Dendogram" to represent this hierachical structure</p>
+                   
+                     </div>
+                </section> 
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w7.html">http://bit.ly/774-7</a></h4>
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
