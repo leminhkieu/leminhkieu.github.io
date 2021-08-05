@@ -1,0 +1,570 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 774 - Studies in Transportation 1 - Smart Infrastructure Analytics</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 774 - Studies in Transportation 1 </h3>
+                        
+                        <h4>Smart Infrastructure Analytics</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 8: Classification (Supervised learning)</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w7.html">http://bit.ly/774-7</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+                  <!-- ********* SUpervised vs Unsupervised learning ************* -->
+  
+               <section id="ML1">  
+                    
+                    <h3>Types of machine learning </h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/machine-learning.png"
+                             style="width:700px;"
+                             alt="ML" />
+                    </figure>
+                   
+             </section>                 
+                
+              
+                
+                <section id="clus2"  data-background-image="https://camo.githubusercontent.com/f0fe57a3540c293e21dcadff0cf5dedf3aaaea16509613822ee713fd40228a91/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313833382f312a6f4233533579484868766f75674a6b50587563386f672e676966" data-background-size="70%">      
+                    <div>&nbsp;</div>
+                </section>  
+                
+                
+                 <section id="clus"  data-background-image="https://miro.medium.com/max/1200/1*SFFZYMxxtMTtaDfTB0WCFg.png" data-background-size="70%">      
+                    <div>&nbsp;</div>
+                </section>   
+                
+                
+                <section id="clus3"  data-background-image="https://miro.medium.com/max/1000/1*NLnnf_M4Nlm4p1GAWrWUCQ.gif" data-background-size="70%">      
+                    <div>&nbsp;</div>
+                </section>   
+                
+                
+                
+                      
+                <!-- ********* SUpervised learning ************* -->
+  
+               <section id="ML2" >  
+                    
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/supervised-learning.png"
+                             style="width:800px;"
+                             alt="ML" />
+                    </figure>
+                    <p class="l2">Learning with a 'label' </p>
+                  
+             </section>  
+                
+                  
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-0" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> <a>1. Understand what Classification algorithms are for</a></p>
+                    <p> 2. Evaluate the methods to improve model accuracy</p>
+                    <p> 3. Summerise the types of Classification algorithms</p>
+                    <p> 4. Evaluate the strengths of each Classification algorithm</p>
+                    
+               
+                </section>    
+                
+                   <!-- *************** outcommes1  ************************** -->
+  
+               <section id="class"  >    
+                    
+                   <h3>What is a classification problem?</h3> 
+            
+                <p class="l2">Objective: each entity in some domain can be placed in one of a discrete set of categories: yes/no, good/bad, working/broken, positive/negative</p>
+                <p class="l2">Procedure: Given a training set of labeled entities, develop a rule for assigning labels to entities in a test set</p>
+                <p class="l2">Type of classification: </p>
+                <p class="l3">-binary classification</p>
+                <p class="l3">-multi-category classification</p>
+                <p class="l3">-non-exclusive categories</p>
+                   <p class="l3">-ranking</p>
+                   <p class="l2">What is a good classification model?: </p>
+                   <p class="l3">-overall errors</p>
+                   <p class="l3">-costs associated with different kinds of errors</p>
+                   <p class="l3">-operating points</p>
+                   
+                </section>   
+                
+                 <section id="prob4-2" >
+                      <p>Training data</p>
+                     <p>Classify students into Class "A" and "B"</p>
+                <table>
+                        <thead><tr>
+                            <th>Math</th>
+                            <th>Literature</th>
+                            <th>English</th>
+                            <th>"Label"</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>A</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>B</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>9</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>A</td>
+                        </tr>
+                            
+                         <tr>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                             <td>B</td>
+                        </tr>
+                        </tbody>
+                    </table>
+               
+                      </section>  
+                
+                <section id="prob4-3" >
+                     
+                     <p>Testing data: same format as the training dataset, i.e. the values of concept attribute are known but without the "label"</p>
+                    
+                    <table>
+                        <thead><tr>
+                            <th>Math</th>
+                            <th>Literature</th>
+                            <th>English</th>
+                            
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>4</td>
+                            
+                           
+                        </tr>
+                       
+                        </tbody>
+                    </table>
+               
+                      </section>  
+                
+                   
+                 <section id="simple-classification" >  
+                    
+                   
+                    <p>Naive classification: Using rules</p>
+                     
+                      <p>If Math>6, Literature>6 and English>6 then class "A"</p>
+                     
+                     <p> But what if we want a machine learning model to have all of these rules inherently, and automatically classify new testing data?</p>
+                     
+                     <p class="l2"> We need a learning or traning process </p>
+                      <p class="l2">It is called a supervised learning because we know
+                            what is a good classification</p>
+                
+                    </section> 
+                
+                
+              
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-1" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Classification algorithms are for</p>
+                    <p> <a>2. Evaluate the methods to improve model accuracy</a></p>
+                    <p> 3. Summerise the types of Classification algorithms</p>
+                    <p> 4. Evaluate the strengths of each Classification algorithm</p>
+                    
+               
+                </section>   
+                
+                  <section id="accurary" >  
+                    
+                   
+                    <p><a>PREDICTIVE ACCURACY</a> of a classifier is a percentage of well classified data in the testing data set.</p>
+                     
+                        \[\begin{aligned}
+					Accuracy = \frac{Number \ of \ correct \ prediction}{Total \ number \ of \ predictions} \\
+					\end{aligned} \] 
+                      
+                      
+                      <p>Predictive accuracy depends heavily on:  </p>
+                     
+                     <p class="l2"> - The test and training data.</p>
+                      <p class="l2">- Whether the data needs to be scaled</p>
+                    <p class="l2">- Whether there are missing data</p>
+                    <p class="l2">- How do we define "accurate" ?</p>
+                
+                    <p>So model accuracy heavily depends on our choices and the issues in the data</p>
+                    
+                    </section> 
+                
+                
+                 <section id="accurary2"> 
+                     
+                   <figure class="center">
+
+                        <img data-src="https://cdn-images-1.medium.com/max/1600/1*4G__SV580CxFj78o9yUXuQ.png"
+                             alt=" " />
+                    
+                    </figure>
+                     
+                     <p>Splitting data into training and testing data</p>
+                </section> 
+                
+                
+                <section id="accurary3"  >      
+                    <figure class="center">
+
+                        <img data-src="https://cdn-images-1.medium.com/max/1600/1*J2B_bcbd1-s1kpWOu_FZrg.png"
+                             alt=" " />
+                    
+                    </figure>
+                     <p>k-fold cross validation</p>
+                </section> 
+                
+                
+               <section id="accurary4" >    
+                 
+                    <figure class="right">
+
+                        <img data-src="https://miro.medium.com/max/355/1*v-xGs_W8ZtFPNS7T-BJnKA.png"
+                             alt=" " />
+                    
+                    </figure>
+                   
+                  <p>Data scaling problem</p>
+                    <p class="l2">  - Some variables have much larger values or variance compared to others </p>
+                   <p class="l2">  - Data scaling will make sure that variables have the same chance to contribute to the final model outcomes </p>
+                </section>
+                
+                
+                   <section id="accurary5">
+                   
+                    <p>Data scaling methods</p>
+                    <p class="l2"> - Min-Max scaling: scale data to [0,1] or [-1,1] </p>
+                   
+                        <p class="l3">
+                    \[\begin{aligned}
+					\hat{x} = \frac{x - min(x)}{max(x)-min(x)} \\
+					\end{aligned} \] 
+                   </p>
+                       
+                    <p class="l2"> - Standard scaling: It transforms the data in such a manner that it has mean as 0 and standard deviation as 1. In short, it standardises the data.</p>
+                   <p class="l3">In the presence of outliers, StandardScaler does not guarantee balanced feature scales</p>
+                   
+                       <p class="l3">
+                    \[\begin{aligned}
+					\hat{x} = \frac{x - mean(x)}{std(x)} \\
+					\end{aligned} \] 
+                   </p>
+                   
+                    <p class="l2"> - Robust scaling: scales features using statistics that are robust to outliers. </p>
+                   
+                       <p class="l3">
+                    \[\begin{aligned}
+					\hat{x} = \frac{x - Q_1(x)}{Q_3(x)-Q_1(x)} \\
+					\end{aligned} \] 
+                   </p>
+                       
+                     </section>
+                  
+                     
+                     <section id="accurary6" data-background-image="https://media.geeksforgeeks.org/wp-content/uploads/20200519001052/2020-05-18-21.png" data-background-size="80%">    
+                   <div>&nbsp;</div>
+                </section>
+                   
+                   
+              
+                
+               
+                <section id="accurary7" >  
+                    
+                   
+                    <p><a>Imbalanced data</a>: the number of observations belonging to one class is significantly lower than those belonging to the other classes.</p>
+                     
+                      <p>For example</p>
+                     
+                     <p class="l2"> - Traffic accidents</p>
+                      <p class="l2">- Infrastructure failures</p>
+                    <p class="l2">- COVID-19</p>
+                    <p class="l2">- Fraudulent transactions</p>
+                
+                   <p> Read more: <a href="https://machinelearningmastery.com/what-is-imbalanced-classification/">https://machinelearningmastery.com/what-is-imbalanced-classification/</a>
+                    </p> 
+                
+               </section> 
+                
+                
+                <section id="accurary8"  data-background-image="https://miro.medium.com/max/725/0*49LgGsY4l09sNwcR.png" data-background-size="80%">      
+                    <div>&nbsp;</div>
+                </section>
+                
+               
+               
+                
+                  <section id="accurary9"  data-background-image=" https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2781854%2F9f52bb1c3b88148e7513f6f67572c249%2FFP.JPG?generation=1593865487816676&alt=media" data-background-size="40%">      
+                    <div>&nbsp;</div>
+                </section>
+                
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Classification algorithms are for</p>
+                    <p> 2. Evaluate the methods to improve model accuracy</p>
+                    <p> <a>3. Summerise the types of Classification algorithms</a></p>
+                    <p> 4. Evaluate the strengths of each Classification algorithm</p>
+                    
+               
+                </section>   
+                
+                <section id="types" >  
+                    
+                    <p><a>Classification algorithms</a></p>
+                     
+                      
+                     
+                     <p class="l2"> - Decision trees</p>
+                      <p class="l2">- Random Forest</p>
+                    <p class="l2">- Logistic regression</p>
+                    <p class="l2">- K-Nearest Neighbour</p>
+                
+                    </section> 
+                
+                
+                 <section id="dt1" data-background-image="https://i.makeagif.com/media/8-24-2017/qKcO7d.gif" data-background-size="70%">      
+                    <div>&nbsp;</div>
+                </section>
+                
+                
+              
+                 
+                 <section id="ML3-classification" >  
+                    
+                   
+                    <p class="l2">Decision tree algorithm</p>
+                     
+                      <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">http://www.r2d3.us/visual-intro-to-machine-learning-part-1/</a>
+
+                    </section> 
+                
+                
+                 <section id="dt2" >  
+                    
+                  
+                <section id="RF1" >  
+                    
+                   
+                    <p>What if we have many many decision trees?</p>
+                     
+                       <p class="l2">We call it a forest!</p>
+
+                    </section> 
+                
+                
+                 <section id="randomforest"  data-background-image=" https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/example-of-random-forest-classifier.png" data-background-size="60%">      
+                    <div>&nbsp;</div>
+                </section>
+               
+                
+                
+                 
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w7.html">http://bit.ly/774-7</a></h4>
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
