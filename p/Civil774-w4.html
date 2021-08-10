@@ -68,7 +68,7 @@
                         
                         <hr/>
 
-                        <h3>Week 2: Introduction to Pandas</h3>
+                        <h3>Week 4: Principles of data visualisation</h3>
 
                         <h4>Dr Minh Kieu</h4>
 
@@ -76,7 +76,7 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w2.html">https://leminhkieu.github.io/p/Civil774-w2.html</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w4.html">https://leminhkieu.github.io/p/Civil774-w4.html</a></h4>
 
                     </div>
 
@@ -94,7 +94,7 @@
 
 
                     
-                  <p class="l3">These HTML slides can be accessed by:<br/><a href="https://leminhkieu.github.io/p/Civil774-w2.html">https://leminhkieu.github.io/p/Civil774-w2.html</a></p>
+                  <p class="l3">These HTML slides can be accessed by:<br/><a href="https://leminhkieu.github.io/p/Civil774-w4.html">https://leminhkieu.github.io/p/Civil774-w4.html</a></p>
                     
                     <p class="l3">PDF version can be found on Canvas</p>
                     
@@ -133,9 +133,8 @@
                     <h2>Learning outcomes of the week: </h2>
                     
                     
-                    <p>	1. Summarise the data structures in Pandas </p>
-                    <p> 2. Understand way to import data into Pandas</p>
-                    <p>	3. Understand the fundamental functions in Pandas </p>
+                    <p> <a>1. Understand the fundamentals of data visualisations </a>	</p>
+                    <p> 2. Evaluate the suitability of common types of graphs on a real data</p>
                     
                   <aside class="notes">
 		         
@@ -148,41 +147,112 @@
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
-                <section id="intro"  data-background-image="https://miro.medium.com/max/3006/1*KdxlBR9P3mDp9JZ_URMdYQ.jpeg">   
+                <section id="intro"  >   
                        
                     <div class="whitebackground2">
                         
-                        <p>Pandas is one of the two major data analytics modules in Python, along with Numpy</p>
+                        <p>Why data visualisation?</p>
                         
-                        <p class="l2">It is a fundamental high-level building block for doing practical, real world data analysis in Python. </p>
+                        <p class="l2">Understand the data </p>
                         
-                        <p class="l2">providing fast, flexible, and expressive data structures designed to work with large datasets.</p>
+                        <p class="l2">Observe patterns in the data</p>
                         
+                         <p class="l2">Define a research problem: what can we do with the data?</p>
+                        
+                        <p>Data visualisation is harder than it looks!</p>
                     </div>
                  </section>  
                 
                 
-                 <section id="intro2"  data-background-image="https://media.geeksforgeeks.org/wp-content/uploads/finallpandas.png">   
+                 <section id="intro2">   
                        
-                    <div class="whitebackground2" style="position: relative; bottom: -350px">
+                              
+                        <p>Priciples of data visualisation</p>
                         
-                        <p class="l3">Pandas is about Dataframes (like Excel spreadsheet)</p>
-                            
-                    </div>
+                        <p class="l2">Maximise data-ink ratio</p>
+                        
+                        <p class="l2">Minimise lie factor</p>
+                        
+                         <p class="l2"></p>
+             
+                        
+                     
                  </section>  
                 
                 
-             <section id="intro3"  data-background-image="https://www.datasciencemadesimple.com/wp-content/uploads/2020/05/create-series-in-python-pandas-0.png" data-background-size="60%">   
+             <section id="intro3"  data-background-image="https://lukebeacon.com.au/wp-content/uploads/2020/07/Capture-1060x299.png" data-background-size="60%">   
                        
                     <div class="whitebackground2" style="position: relative; bottom: -300px">
                         
-                        <p class="l3">1-dimensional data in Pandas is called Series: array with labels, contains any data type: integers, string, float, Python objects and more</p>
+                        <p class="l3">Data-ink ratio = Info / Total ink used to print the graph</p>
+                        <p class="l3">Extraneous visual elements distract from the message the data is trying to tell: minimise chartjunks</p>
                         
-                        <p class="l3">Dataframe is a 2-dimensional data structure with labels</p>
-                            
-                    </div>
+                           </div>
                  
                  </section>  
+                
+                 
+                
+                  <section id="lie1">  
+                   
+                   <figure class="right" >
+                        <img data-src="https://infolific.com/images/internet/seo-traffic-pie-chart.gif"
+                             style="width:1000px;"
+                             alt="ML" />
+                    </figure>
+                   
+                      <p>Minimise lie factor </p> 
+                      
+                      <p class="l3">Data visualisation needs to be fair and truthful</p>
+                      
+                      
+             </section>  
+                
+                 <section id="lie2">  
+                   
+                   <figure class="right" >
+                        <img data-src="https://infolific.com/images/internet/seo-traffic-columns.gif"
+                             style="width:1000px;"
+                             alt="ML" />
+                    </figure>
+                
+                   
+                      <p>Minimise lie factor </p> 
+                      
+                      <p class="l3">Always start bar graphs at zero</p>
+                      <p class="l3">Always properly label the axes</p>
+                      
+                      
+             </section>  
+                
+                 <section id="lie3">  
+                   
+                   <figure class="right" >
+                        <img data-src="https://eagereyes.org/wp-content/uploads/2013/06/aspect-ratios.png"
+                             style="width:1000px;"
+                             alt="ML" />
+                    </figure>
+                
+                      <p>Minimise lie factor </p> 
+                      
+                      <p class="l3">Aim for 45 degree lines or Golden ratio as most interpretable</p>
+                      
+             </section>  
+                
+                
+                <section id="intro4"  data-background-image="https://www.techprevue.com/wp-content/uploads/2016/12/abela-chart-chooser.jpg" data-background-size="95%">   
+                        <div>&nbsp;</div>
+                   
+                 </section> 
+                
+                <section id="intro5" >
+                   
+                  <p> Useful resources: <a href=" https://www.python-graph-gallery.com/"> https://www.python-graph-gallery.com/</a>  </p> 
+                 </section> 
+                
+               
+                
+                
                 
                 
                  <!-- *************** Thanks  ************************** -->
@@ -206,7 +276,8 @@
 
                         <hr/>
 
-                       <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w2.html">https://leminhkieu.github.io/p/Civil774-w2.html</a></h4>
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w4.html">https://leminhkieu.github.io/p/Civil774-w4.html</a></h4>
+
 
                         
                     </div>
