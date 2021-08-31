@@ -148,13 +148,6 @@
                <section id="clus3"  >    
                     
                    <h3>What clustering algorithms are for?</h3> 
-            
-                <p class="l2">Marketing : It can be used to characterise & discover customer segments for marketing purposes.</p>
-                <p class="l2">Biology : It can be used for classification among different species of plants and animals.</p>
-                <p class="l2">Libraries : It is used in clustering different books on the basis of topics and information.</p>
-                <p class="l2">Insurance : It is used to acknowledge the customers, their policies and identifying the frauds.</p>
-                <p class="l2">City Planning: It is used to make groups of houses and to study their values based on their geographical locations and other factors present.</p>
-                <p class="l2">Earthquake studies: By learning the earthquake-affected areas we can determine the dangerous zones.</p>
                    
                         <p><a>Useful to put a 'label' into some unlabeled dataset </a></p>
                         
@@ -163,13 +156,11 @@
                   
                 </section>   
                 
-                 <section id="clus-ex1"  data-background-image="https://i0.wp.com/www.circleofblue.org/wp-content/uploads/2013/04/Cholerafull_905.png"> 
-                   
+                 <section id="clus-ex1"  data-background-image="../figures/paper-figures/Kmeans.png" data-background-size="70%"> 
                      
-                   <div class="whitebackground2"  style="position: relative; bottom: -250px">
+                   <div class="whitebackground2"  style="position: relative; bottom: 300px">
             
-                <p class="l2">In the 1850s, a London physician plotted the location of cholera deaths on a map</p>
-                <p class="l2">The locations showed that the casualities were clustered around certain intersections where there were polluted wells - thus exposing both the problem and the solution.</p>
+                <p class="l2">Clustering of living conditions in Hanoi, Vietnam</p>
                 </div>
                  
                 </section>  
@@ -182,9 +173,9 @@
                             style="width:300px;"
                          alt="passenger-segmentation-3" />
                    
-                   <p class="l2">Kieu et al. (2018) Large-scale transit market segmentation with spatial-behavioural features. Transportation Research Part C: Emerging Technologies 90, 97-113</p>
+                   <p class="l3">Kieu et al. (2018) Large-scale transit market segmentation with spatial-behavioural features. Transportation Research Part C: Emerging Technologies 90, 97-113</p>
                    
-                   <p class="l2">Kieu et al. (2014) Passenger Segmentation Using Smart Card Data. IEEE Transactions of Intelligent Transport Systems 16 (3), 1537 - 1548</p>
+                   <p class="l3">Kieu et al. (2014) Passenger Segmentation Using Smart Card Data. IEEE Transactions of Intelligent Transport Systems 16 (3), 1537 - 1548</p>
                 </section>  
                 
                 
@@ -217,30 +208,9 @@
                    
                         
                         <p class="l2"> Clustering results are crucially dependent on the measure of similarity (or distance) between “points” to be clustered</p>
-                  
-                </section>   
-                
-           <section id="clus6"  > 
-                   
-                        <h3>Cluster evaluation (a hard problem)</h3>
-                        
-                        <p> Intra-cluster cohesion (compactness):</p>
-               
-                         <p class="l2">Cohesion measures how near the data points in a
-                                cluster are to the cluster centroid. </p>
-                        <p class="l2">Sum of squared error (SSE) is a commonly used
-                                measure</p>
-               
-                        \[\begin{aligned}
-					       SSE = \sum_{i=1}^n (X_i -\bar{X})^2 \\
-					\end{aligned} \]
-                        
-                        <p>Inter-cluster separation (isolation):</p>
-                        <p class="l2"> – Separation means that different cluster centroids
-                                should be far away from one another</p>
-                  
-               <p><a>In most applications, expert judgments are
+                      <p class="l2"><a>In most applications, expert judgments are
                     still the key</a></p>
+                  
                 </section>   
                 
                  <section id="clus7"  data-background-image="https://visibledata.files.wordpress.com/2011/08/howmanyclusters.jpg?w=800" data-background-size="90%">  
@@ -284,13 +254,13 @@
                         <p class="l2">– k is specified by the user</p>
                
                    <p>Given k, the k-means algorithm works as follows:</p> 
-<p class="l2">1. Choose k (random) data points (seeds) to be the initial
-centroids, cluster centers</p>
-<p class="l2">2. Assign each data point to the closest centroid</p>
-<p class="l2">3. Re-compute the centroids using the current cluster
-memberships</p>
-<p class="l2">4. If a convergence criterion is not met, repeat steps 2 and 3</p>
-                    
+                    <p class="l2">1. Choose k (random) data points (seeds) to be the initial
+                    centroids, cluster centers</p>
+                    <p class="l2">2. Assign each data point to the closest centroid</p>
+                    <p class="l2">3. Re-compute the centroids using the current cluster
+                    memberships</p>
+                    <p class="l2">4. If a convergence criterion is not met, repeat steps 2 and 3</p>
+
                 </section> 
                 
                 
@@ -386,22 +356,13 @@ some special data points with very different values. </p>
                 <div>&nbsp;</div>
                 </section>
                 
-                 <section id="h3"  data-background-image="../figures/Backgrounds/beach.jpg"> 
-                    <div class="whitebackground2"> 
-                        <h3>Types of hierarchical clustering</h3>
-                        
-                     <h4>Divisive (top down) clustering</h4>
-                     <p>Start with all data points in one cluster (the root), then:</p>
-                        
-                        <p class="l2">Splits the root into a set of child clusters. Each child cluster is
-recursively divided further </p>
-                        
-                        <p class="l2">Start with all data points in one cluster (the root), then:</p>
-                        
-                        <p>We use a "Dendogram" to represent this hierachical structure</p>
-                   
-                     </div>
-                </section> 
+               <section id="clus10"  data-background-image="https://miro.medium.com/max/700/1*edHAomhbY4zTY5zPksvxUw.png" data-background-size="75%">  
+                <div>&nbsp;</div>
+                </section>
+                
+                
+                
+                
                 
                 
                  <!-- *************** Thanks  ************************** -->
