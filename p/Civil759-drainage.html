@@ -309,9 +309,9 @@
                     
                     </figure>
                         
-                     <h2>Calculation of Runoff</h2>
+                     <h2>Runoff</h2>
                      
-                    <p class ="l2">	(The draining away of water from the surface of highway)</p>    
+                    <p class ="l2">	The draining away of water from the surface of highway</p>    
                         
                     <h2>Precipitation</h2>
                      
@@ -383,8 +383,12 @@
                         concentration</p>   
                      <p class ="l2">$A$ = catchment area in $km^2$ <a>(hectares)</a> </p>   
                     
-                    <p class ="l2"> <a>Note:</a>	1 $km^2$ = 100 hectares  ;  1 $m^3/sec$ = 1000 l/s   </p>   
+                    <p class ="l2">Note:</p>   
+                     <p class ="l3"> The unit in <a>Blue colour</a>	are used together   </p>   
+                     <p class ="l3"> 1 $km^2$ = 100 hectares  ;  1 $m^3/sec$ = 1000 l/s   </p>   
 		         </section>  
+                
+                
                 
                  <section id="Runoff-2">   
                     <p>Limitations of Rational Method</p>
@@ -399,10 +403,7 @@
                 
                  <section id="Runoff-assumption">   
                     <p>Basic Assumptions about Rational Method:</p>
-                             <figure class="right">
-                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
-                             alt=" " />
-                    </figure>
+                          
                                <p class ="l2">Drainage areas are smaller than 300 acres.</p>  
                     <p class ="l2">Peak flow occurs when the entire catchment is contributing.</p>  
                       <p class="l2">Rainfall intensity is uniform over a duration of time equal to or greater than the time of concentration.</p>
@@ -411,9 +412,9 @@
                 
             
                   <section id="Runoff-3">   
-                    <p>In the specialised hydrology of an urban area the assumption that:</p>
+                    <p>The rational method makes more sense on urban areas...</p>
                              <figure class="right">
-                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
+                            <img data-src="https://is.muni.cz/www/burianova/comet/hydro/basic_int/runoff/media/graphics/rational_cross-section.jpg"
                              alt=" " />
                     </figure>
                                <p class ="l2">The design storm produces a uniform rainfall intensity over the entire catchment is valid because of the small catchment area.</p>  
@@ -435,11 +436,21 @@
                                   Q = 2.78 \times C \times I \times A \\
                             \end{aligned} \]  
                      
+                      <p class ="l3">Where: $Q$ = peak flow/discharge in $m^3/sec$ <a>(l/s)</a></p>
+                    <p class ="l3">$C$ = Peak runoff coefficient (dimensionless) </p>  
+                     <p class ="l3">$I$ = average rainfall intensity over the whole catchment in
+                        $mm/hr$ for a duration corresponding to the time of
+                        concentration</p>   
+                     <p class ="l3">$A$ = catchment area in $km^2$ <a>(hectares)</a> </p>   
                      
-                    <p>So how do we have $C$ and $I$?</p>
+                    <h3><a>How do we have $C$ and $I$? </a> </h3>
                      
 		         </section> 
                 
+                
+                  <section id="C0" data-background-image="https://is.muni.cz/www/burianova/comet/hydro/basic_int/runoff/media/graphics/rational_cross-section.jpg" data-background-size="80%">   
+           <div>&nbsp;</div>
+                </section> 
                 
                 
                 
@@ -472,19 +483,20 @@
                 
                  <section id="Runoff-C3">   
                     <p>Rational Method: Average peak runoff coefficient $C$</p>
-                     <figure class="right">
-                            <img data-src="../figures/Teaching/Civil759/runoff.png"
-                             alt=" " />
-                    </figure>
+                   
+                      <img src="../figures/Teaching/Civil759/runoff.png"
+                            style="float:right;width:400px;"
+                         alt="travel speed prediction" />
+                     
                      
                     <p class ="l2">	Let $A_1, A_2,$ ..., $A_n$ = areas of the different surface on the catchment area.</p>    
                     <p class ="l2">$C_1, C_2,$ ..., $C_n$ = corresponding runoff coefficient for different surfaces</p>
                     <p class ="l2">	 Average peak runoff coefficient = </p>   
-                    
+                    <p class ="l2">
                       \[\begin{aligned}
                                   C_{avg} = \frac{C_1A_1 + C_2A_2+...+C_nA_n}{A_1+A_2+...+A_n} \\
                             \end{aligned} \]  
-                     
+                     </p>   
                 </section>  
                      
                 
@@ -511,6 +523,7 @@
                         <figure class="center">
 
                         <img data-src="../figures/Teaching/Civil759/IDF.png"
+                            style="float:centre;width:700px;"
                              alt=" " />
                     
                     </figure>
@@ -554,9 +567,8 @@
                   <section id="IDF2" >
                         
                         <img data-src="../figures/Teaching/Civil759/IDF_tauranga.png"
-                             height="100" width="200"
+                              style="width:800px;"
                              />
-                   
                         
                    <a href="https://idc.tauranga.govt.nz/design-standards/ds-5-stormwater/ds-5-appendix-c-rainfall-intensity-curves">https://idc.tauranga.govt.nz/design-standards/ds-5-stormwater/ds-5-appendix-c-rainfall-intensity-curves</a>
                     
@@ -577,7 +589,7 @@
                 
                 <section id="IDF-ex">   
                     
-                  <h5>Exercise 2: Using at the IDF curve in page 20, calculate the rainfall intensities for storm durations of: </h5>
+                  <h5>Exercise 2: (a) Using at the IDF curve in page 30, calculate the rainfall intensities for storm durations of: </h5>
                      
                     <p class ="l2">	10 min </p>    
                      <p class ="l2">	50 min </p>    
@@ -591,7 +603,7 @@
                 
                  <section id="IDF-ex2">   
                     
-                  <h5>Exercise 2: Using at the IDF curve in page 20, calculate the rainfall intensities for ARIs of: </h5>
+                  <h5>Exercise 2: (b) Using at the IDF curve in page 30, calculate the rainfall intensities for ARIs of: </h5>
                      
                     <p class ="l2">	1 year </p>    
                      <p class ="l2">	5 years </p>    
@@ -617,7 +629,7 @@
                         
                         <p class="l2"> We know earlier that we can make fairly good assumption for the Frequency as it is an economic decision.</p> 
                         
-                        <p class="l2"> <a>It's important to make a good estimation for the Time of concentration $T_c$</a></p> 
+                        <p class="l2"> Thus, <a>it's important to make a good estimation for the Time of concentration $T_c$</a></p> 
                      </div>
                 </section> 
                 
