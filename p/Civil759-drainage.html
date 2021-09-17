@@ -189,14 +189,17 @@
 
                 <section id="surfwater" data-transition="fade">
 
-                    <figure class="right">
+                  
 
-                        <img data-src="../figures/Teaching/Civil759/lvl2.png"
-                             alt=" " />
+                       
                     
-                    </figure>
+                   
                     
                     <p> Road Drainage can be conveniently divided into those relating to the flow of:</p>
+                    
+                     <img data-src="../figures/Teaching/Civil759/lvl2.png"
+                             style="float:right;width:600px;"/>
+                    
                     <p class ="l2"> Surface Water – concerned with the measures taken to control the movement of water over the ground on and adjacent to the highway; and</p>
                      <p class ="l2">   Subsurface Water – concerned with the flow of water within soils.
                         </p>
@@ -347,11 +350,11 @@
                  <section id="Runoff-rational">   
                     <p>Rational Method</p>
                      
+                     <p class ="l2"> One of the most commonly used <a>procedures for calculating peak flows from small drainages</a> of less than 200 acres is the Rational Method. </p> 
+                     
                      <p class ="l2"> The Rational Method has been in use in some form or another at least since 1889. It
                     is not so much that the method itself is judged as being rational, but more than the method relates to the ratio
                     between rainfall and runoff (which is essentially the runoff coefficient, $C$).  </p> 
-                     
-                     <p class ="l2"> One of the most commonly used procedures for calculating peak flows from small drainages less than 200 acres is the Rational Method. </p> 
                      
                      
                     <p class ="l2">For catchments larger than the areas above, the Rational Method tends to give a
@@ -396,80 +399,76 @@
                 
                 
                 
-                 <section id="Runoff-2">   
-                    <p>Limitations of Rational Method</p>
-                             <figure class="right">
-                            <img data-src="../figures/Teaching/Civil759/Runoff.jpeg"
-                             alt=" " />
-                    </figure>
-                               <p class ="l2">For larger catchment areas the precision is somewhat limited and generally tends to overestimate maximum runoff due to assumptions made in the model.</p>  
-                    <p class ="l2">The method is best suited to urban areas or relatively small catchments (5 – 50 Km2) in rural locations....and well suited to highway surface drainage design.</p>  
-                     
-		         </section>  
                 
                  <section id="Runoff-assumption">   
-                    <p>Basic Assumptions about Rational Method:</p>
-                          
-                               <p class ="l2">Drainage areas are smaller than 300 acres.</p>  
-                    <p class ="l2">Peak flow occurs when the entire catchment is contributing.</p>  
-                      <p class="l2">Rainfall intensity is uniform over a duration of time equal to or greater than the time of concentration.</p>
+                   
+                           <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/runoff.png"
+                             alt=" " />
+                    </figure>
+                     
+                      <h4>Basic Assumptions about Rational Method:</h4>
+                               <p>Drainage areas are smaller than 300 acres.</p>  
+                      <p class ="l4">For larger catchment areas the precision is somewhat limited and generally tends to overestimate maximum runoff due to assumptions made in the model.</p> 
+                     
+                    <p>Peak flow occurs when the entire catchment is contributing, or in other words, at <a>time of concentration $T_c$</a>.</p>  
+                     
+                      <p>Rainfall intensity is uniform over a duration of time equal to or greater than the <a>time of concentration $T_c$</a> .</p>
                      
 		         </section>  
                 
+                  <section id="IDF-1" >
+                         <figure class="right">
+                            <img data-src="../figures/Teaching/Civil759/runoff.png"
+                             alt=" " />
+                    </figure>
+                        
+                   <p class="l2"> Time of Concentration $T_c$ = Duration of rainfall</p>
+                             <p class="l2">$T_c$ is defined as the time required for the surface runoff from the remotest part of the drainage basin to reach the point under consideration. Or in other words, time required for an entire watershed to contribute to runoff at the point of interest for hydraulic design</p>
+                    
+                     <p class="l2">Note that $T_c$ does not solely depend on the distance to the point of consideration </p>
+                    
+                    
+                </section> 
             
                   <section id="Runoff-3">   
-                    <p>The rational method makes more sense on urban areas...</p>
+                    <p>The method is best suited to urban areas or relatively small catchments in rural locations....and well suited to highway surface drainage design.</p>
                              <figure class="right">
                             <img data-src="https://is.muni.cz/www/burianova/comet/hydro/basic_int/runoff/media/graphics/rational_cross-section.jpg"
                              alt=" " />
                     </figure>
-                               <p class ="l2">The design storm produces a uniform rainfall intensity over the entire catchment is valid because of the small catchment area.</p>  
-                    <p class ="l2">The relationship between rainfall intensity and rate of runoff is constant for a particular catchment is related to the coefficient $C$ and is essentially constant as the runoff is from buildings and roads.</p>  
-                      <p class="l2">Also the difficulty in assessing $C$ is solved as the runoff is from buildings and roads, hence  $C ≈ 1$ (impermeable).</p>
-                     
-		         </section>  
-                
-                
-                 <!-- ******************************************************
-                *********************** peak runoff coefficient $C$< ***********************
-                ************************************************************ -->
-                
-                 <section id="Runoff-4">   
-                     
-                     <p>Rational Method</p>
-                     
-                      \[\begin{aligned}
+                               <p class ="l3">The design storm produces a uniform rainfall intensity over the entire catchment is valid because of the small catchment area.</p>  
+                    <p class ="l3">The relationship between rainfall intensity and rate of runoff is constant for a particular catchment is related to the coefficient $C$ and is essentially constant as the runoff is from buildings and roads.</p>  
+                      <p class="l3">Also the difficulty in assessing $C$ is solved as the runoff is from buildings and roads, hence  $C ≈ 1$ (impermeable).</p>
+                      
+                      <p class="l3"> \[\begin{aligned}
                                   Q = 2.78 \times C \times I \times A \\
-                            \end{aligned} \]  
-                     
-                      <p class ="l3">Where: $Q$ = peak flow/discharge in $m^3/sec$ <a>(l/s)</a></p>
-                    <p class ="l3">$C$ = Peak runoff coefficient (dimensionless) </p>  
-                     <p class ="l3">$I$ = average rainfall intensity over the whole catchment in
-                        $mm/hr$ for a duration corresponding to the time of
-                        concentration</p>   
-                     <p class ="l3">$A$ = catchment area in $km^2$ <a>(hectares)</a> </p>   
-                     
-                    <h3><a>How do we have $C$ and $I$? </a> </h3>
-                     
-		         </section> 
-                
-                
-                  <section id="C0" data-background-image="https://is.muni.cz/www/burianova/comet/hydro/basic_int/runoff/media/graphics/rational_cross-section.jpg" data-background-size="80%">   
-           <div>&nbsp;</div>
-                </section> 
-                
-                
+                            \end{aligned} \]  </p>
+                      
+                      <p><a>How do we have $C$ and $I$? </a> </p>
+		         </section>  
+            
                 
                  <section id="Runoff-C1">   
-                    <p>Rational Method: Values of peak runoff coefficient $C$</p>
+                      <p>Rational Method: Values of peak runoff coefficient $C$</p>
+                     
+                     
+                    <p class ="l2">
                      
                       \[\begin{aligned}
                                   Q = 2.78 \times C \times I \times A \\
                             \end{aligned} \]  
+                     </p>
+                     
+                      <img data-src="https://is.muni.cz/www/burianova/comet/hydro/basic_int/runoff/media/graphics/rational_cross-section.jpg"
+                          style="float:right;width:600px;"
+                             alt=" " />
+                     
+                       <p class ="l2">The percentage of rain water that is available in the form of runoff is known as <a>Impermeability Factors</a> or <a>Runoff Coefficient </a> $C$</p>   
                      
                     <p class ="l2">$C$ represents the ratio of runoff to rainfall.</p>
                     <p class ="l2">If the ground is relatively impervious, more runoff takes place </p>  
-                     <p class ="l2">The percentage of rain water that is available in the form of runoff is known as Impermeability Factors or runoff coefficient </p>   
+                   
                     
 		         </section>  
                 
@@ -539,19 +538,7 @@
                 </section> 
                 
                 
-                <section id="IDF-1" >
-                         <figure class="right">
-                            <img data-src="../figures/Teaching/Civil759/runoff.png"
-                             alt=" " />
-                    </figure>
-                        
-                   <p class="l2"> Time of Concentration $T_c$ = Duration of rainfall</p>
-                             <p class="l2">$T_c$ is defined as the time required for the surface runoff from the remotest part of the drainage basin to reach the point under consideration. Or in other words, time required for an entire watershed to contribute to runoff at the point of interest for hydraulic design</p>
-                    
-                     <p class="l2">Note that $T_c$ does not solely depend on the distance to the point of consideration </p>
-                    
-                    
-                </section> 
+              
                 
                 
                  <section id="IDF-example" >
@@ -796,7 +783,7 @@
                 
                 
                 
-                 <section id="Runoff-ex" data-background-image="../figures/Teaching/Civil759/ex-runoff.png" data-background-size="60%">  
+                 <section id="Runoff-ex" data-background-image="../figures/Teaching/Civil759/ex-runoff.png" data-background-size="50%">  
                       <div>&nbsp;</div>
                 </section> 
                 
