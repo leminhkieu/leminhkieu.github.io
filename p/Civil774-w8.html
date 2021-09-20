@@ -167,7 +167,6 @@
                    <p class="l2">What is a good classification model?: </p>
                    <p class="l3">-overall errors</p>
                    <p class="l3">-costs associated with different kinds of errors</p>
-                   <p class="l3">-operating points</p>
                    
                 </section>   
                 
@@ -262,8 +261,7 @@
                      <p> But what if we want a machine learning model to have all of these rules inherently, and automatically classify new testing data?</p>
                      
                      <p class="l2"> We need a learning or traning process </p>
-                      <p class="l2">It is called a supervised learning because we know
-                            what is a good classification</p>
+                      <p class="l2">It is called a supervised learning because we have a set of "labels" to train our model </p>
                 
                     </section> 
                 
@@ -304,11 +302,11 @@
                       
                       <p>Predictive accuracy depends heavily on:  </p>
                      
-                     <p class="l2"> - The test and training data.</p>
-                      <p class="l2">- Whether the data needs to be scaled</p>
-                      <p class="l2">- Whether the data is imbalanced</p>
-                    <p class="l2">- Whether there are missing data</p>
-                    <p class="l2">- How do we define "accurate" ?</p>
+                     <p class="l2"> - 1. The test and training data.</p>
+                      <p class="l2">- 2. Whether the data needs to be scaled</p>
+                      <p class="l2">- 3. Whether the data is imbalanced</p>
+                    <p class="l2">- 4. Whether there are missing data</p>
+                    <p class="l2">- 5. How do we define "accurate" ?</p>
                 
                     <p>So model accuracy heavily depends on our choices and the issues in the data</p>
                     
@@ -324,7 +322,7 @@
                     
                     </figure>
                      
-                     <p>Splitting data into training and testing data</p>
+                     <p>1. Splitting data into training and testing data</p>
                 </section> 
                 
                 
@@ -335,7 +333,7 @@
                              alt=" " />
                     
                     </figure>
-                     <p>k-fold cross validation</p>
+                     <p>What is k-fold cross validation ? </p>
                 </section> 
                 
                 
@@ -348,7 +346,7 @@
                     
                     </figure>
                    
-                  <p>Data scaling problem</p>
+                  <p>2. Data scaling problem</p>
                     <p class="l2">  - Some variables have much larger values or variance compared to others </p>
                    <p class="l2">  - Data scaling will make sure that variables have the same chance to contribute to the final model outcomes </p>
                 </section>
@@ -396,7 +394,7 @@
                 <section id="accurary7" >  
                     
                    
-                    <p><a>Imbalanced data</a>: the number of observations belonging to one class is significantly lower than those belonging to the other classes.</p>
+                    <p><a>3. Imbalanced data</a>: the number of observations belonging to one class is significantly lower than those belonging to the other classes.</p>
                      
                       <p>For example</p>
                      
@@ -411,13 +409,19 @@
                </section> 
                 
                 
-                <section id="accurary8"  data-background-image="https://miro.medium.com/max/725/0*49LgGsY4l09sNwcR.png" data-background-size="80%">      
+                <section id="accurary8"  data-background-image="https://miro.medium.com/max/725/0*49LgGsY4l09sNwcR.png" data-background-size="80%">  
+                    
+                    <div class="whitebackground2" style="position: relative; bottom: 200px">
+                     <p>Undersampling vs Oversampling methods for imbalanced data</p>
+                                      
+                    </div> 
+                    
                     <div>&nbsp;</div>
                 </section>
                 
                 <section id="accurary9" >  
                    
-                    <p><a>Missing data</a>: "NaN" or "NA".</p>
+                    <p><a>4. Missing data</a>: "NaN" or "NA".</p>
                      
                       <p class="l2">Very common issue with real data</p>
                     
@@ -433,9 +437,25 @@
                
                 
                   <section id="falsenegative"  data-background-image=" https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2781854%2F9f52bb1c3b88148e7513f6f67572c249%2FFP.JPG?generation=1593865487816676&alt=media" data-background-size="40%">      
-                    <div>&nbsp;</div>
+                     <div class="whitebackground3" style="position: relative; bottom: 200px">
+                     <p>5. How can we define "accurate"?</p>
+                                      
+                    </div>
                 </section>
                 
+                 <section id="accurary10"  data-background-image="https://46gyn61z4i0t1u1pnq2bbk2e-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/ROC-curve-1-768x631.jpg" data-background-size="40%">      
+                     <div class="whitebackground3" style="position: relative; bottom: 200px">
+                     <p>Measure accuracy: A Receiver Operator Characteristic (ROC) curve is a graphical plot used to show the diagnostic ability of binary classifiers. </p>
+                         </div>
+                     
+                     <div class="whitebackground3" style="position: relative; bottom: -250px">
+                        <p> Read more: <a href=" https://www.displayr.com/what-is-a-roc-curve-how-to-interpret-it/"> https://www.displayr.com/what-is-a-roc-curve-how-to-interpret-it/</a>
+                    </p>  
+                          </div>
+                    
+                </section>
+                
+               
                 
                  <!-- ************** Learning outcomes ************* -->
 
@@ -462,15 +482,28 @@
                 <section id="types" >  
                     
                     <p><a>Classification algorithms</a></p>
-                     
-                      
-                     
+                     <p class="l2">- K-Nearest Neighbour</p>
+                    <p class="l2">- Logistic regression</p>
                      <p class="l2"> - Decision trees</p>
                       <p class="l2">- Random Forest</p>
-                    <p class="l2">- Logistic regression</p>
-                    <p class="l2">- K-Nearest Neighbour</p>
-                
+                     <p class="l2">- XGBoost</p>
+                    
+                 
                     </section> 
+                
+                   <section id="KNN0">
+                
+                 <p>K-nearest neighbour algorithm</p>
+                    
+                 <p class="l2">  Read more:   <a href="https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761">https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761</a></p>
+                
+                
+                </section>
+                
+                <section id="KNN1"  data-background-image="http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1531424125/KNN_final1_ibdm8a.png" data-background-size="60%">  
+                    
+                    <div>&nbsp;</div>
+                </section>
                 
                 
                 <section id="logistic0">
@@ -507,20 +540,11 @@
                     <p class="l2">  Linear model: $y = b_0+b_1x$</p>
                      <p class="l2"> Sigmoid function: $\sigma(z) = 1/(1+e^{−z})$</p>
                           <p class="l2"> Logistic regression model: $y = \sigma(b_0+b_1x) = 1/(1+e^{-(b_0+b_1x)})$</p>
-                     
                    
                 </section>
                 
                 
-                <section id="KNN0">
-                
-                 <p>K-nearest neighbour algorithm</p>
-                    
-                 <p class="l2">  Read more:   <a href="https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761">https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761</a></p>
-                
-                
-                </section>
-                
+             
                 
                 
                 
@@ -548,15 +572,17 @@
                   
                 <section id="RF1" >  
                     
-                   
+                    <p>Random Forest algorithm</p>
                     <p class="l2">What if we have many many decision trees?</p>
                      
                        <p class="l2">We call it a forest!</p>
                     
-                        <p>Random Forest algorithm</p>
+                       
                     
                     <p class="l2"> <a>Bagging:</a> Take some training dataset, make a decision tree, repeat, take the major vote </p>
-
+                    
+                    <p> Read more: <a href="https://towardsdatascience.com/understanding-random-forest-58381e0602d2">https://towardsdatascience.com/understanding-random-forest-58381e0602d2</a> </p>
+                    
                     </section> 
                 
                 
@@ -564,6 +590,29 @@
                     <div>&nbsp;</div>
                 </section>
                
+                  <section id="xgboost0" >  
+                    
+                    <p>XGBoost algorithm</p>
+                      
+                    <p class="l2">Bagging only take some random data out of a bag</p>
+                     
+                       <p class="l2">What if we can also develop each tree to be a better tree?</p>
+                    
+                       
+                    
+                    <p class="l2"> <a>Boosting:</a> Creates new weak learners (models) and sequentially combines their predictions to improve the overall performance of the model. For any incorrect prediction, larger weights are assigned to misclassified samples and lower ones to samples that are correctly classified. Weak learner models that perform better have higher weights in the final ensemble model. Boosting never changes the previous predictor and only corrects the next predictor by learning from mistakes. </p>
+                    
+                    <p> Read more: <a href="https://medium.com/sfu-cspmp/xgboost-a-deep-dive-into-boosting-f06c9c41349">https://medium.com/sfu-cspmp/xgboost-a-deep-dive-into-boosting-f06c9c41349</a> </p>
+                    
+                    </section> 
+                
+                
+                 <section id="xgboost"  data-background-image=" https://www.researchgate.net/profile/Salih-Awadh/publication/344683182/figure/fig4/AS:949696809938952@1603436772830/Schematic-diagram-of-XGBoost-working-model-from-the-feature-input-regularization-loss.png" data-background-size="60%">      
+                    <div>&nbsp;</div>
+                </section>
+                
+                
+                
                 
                 
                  <!-- *************** Thanks  ************************** -->
