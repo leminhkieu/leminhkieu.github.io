@@ -1,0 +1,496 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 774 - Studies in Transportation 1 - Smart Infrastructure Analytics</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 774 - Studies in Transportation 1 </h3>
+                        
+                        <h4>Smart Infrastructure Analytics</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 9: Prediction (Supervised learning) & Deep Learning</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w9.html">https://leminhkieu.github.io/p/Civil774-w9.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+                  <!-- ********* SUpervised vs Unsupervised learning ************* -->
+  
+               <section id="recap">  
+                    
+                    <h3>Recap: Classification in Machine Learning</h3> 
+                   
+                   <p> Classification predictive modeling is the task of approximating a mapping function (f) from input variables (X) to discrete output variables (y).
+
+                <p>The output variables are often called labels or categories. The mapping function predicts the class or category for a given observation. </p>
+                <p class="l3">A problem with two classes is often called a two-class or binary classification problem.</p>
+                <p class="l3">A problem with more than two classes is often called a multi-class classification problem.</p>
+                <p class="l3">A problem where an example is assigned multiple classes is called a multi-label classification problem.</p>
+                   
+             </section>                 
+                
+                
+              
+                 <section id="ML-usage">  
+                    
+                    <h3>When does the ice cream parlour need another assistant? </h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Civil763/linear.png"
+                             style="width:700px;"
+                             alt="ML" />
+                    </figure>
+                   
+             </section> 
+                
+                
+                 <section id="ML2"  data-background-image=" https://www.researchgate.net/profile/Yves-Matanga/publication/326175998/figure/fig9/AS:644582983352328@1530691967314/Classification-vs-Regression.png" data-background-size="80%">  
+                    
+                    <div>&nbsp;</div>
+                </section>
+                
+                      
+            
+                
+                
+                
+                  
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-0" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> <a>1. Understand what Regression algorithms are for</a></p>
+                    <p> 2. Summerise the types of Regression algorithms</p>
+                    <p> 3. Understand what is a Neural Network</p>
+                    <p> 4. Understand the concept of Deep Learning</p>
+                    
+               
+                </section>    
+                
+                   <!-- *************** outcommes1  ************************** -->
+  
+               <section id="class"  >    
+                    
+                   <h3>What is a regression problem?</h3> 
+            
+                <p>Objective: Fundamentally, classification is about predicting a label and regression is about predicting a continuous quantity output for an example..</p>
+                <p>Procedure: learning a mapping function from inputs to outputs called function approximation.</p>
+                   <p>Output: A continuous output variable is a real-value, such as an integer or floating point value. These are often quantities, such as amounts and sizes.</p>
+                   <p class="l3">A regression can have real valued or discrete input variables.</p>
+                   <p class="l3">A problem with multiple input variables is often called a multivariate regression problem.</p>
+                   <p class="l3">A regression problem where input variables are ordered by time is called a time series forecasting problem.</p>
+                  </section>   
+                
+                  
+                 <section id="prob4-2" >
+                      <p>Training data</p>
+                     <p>Classify students into Class "A" and "B"</p>
+                <table>
+                        <thead><tr>
+                            <th>Math</th>
+                            <th>Literature</th>
+                            <th>English</th>
+                            <th>"Total Score"</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>82</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>48</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>9</td>
+                            <td>91</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>53</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>79</td>
+                        </tr>
+                            
+                         <tr>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                             <td>32</td>
+                        </tr>
+                        </tbody>
+                    </table>
+               
+                      </section>  
+                
+                   
+                 <section id="regress" >  
+                    
+                   
+                    <p>Model accuracy in regression</p>
+                     
+                      <p>Because a regression predictive model predicts a quantity, the accuracy of the model must be reported as an error in those predictions.</p>
+                     
+                     <p>There are many ways to estimate the accuracy of a regression predictive model, but perhaps the most popular are: </p>
+                     
+                     <p class="l2">Root Mean Squared Error: RMSE </p>
+                      <p class="l2">Mean Squared Error: MSE</p>
+                     <p class="l2">Mean Absolute Error: MAE</p>
+                
+                    </section> 
+                
+                
+                <section id="regress2" >  
+                    
+                   
+                    <p>Convert Between Classification and Regression Problems</p>
+                     
+                      <p>In some cases, it is possible to convert a regression problem to a classification problem. For example, the quantity to be predicted could be converted into discrete buckets.</p>
+                     
+                     <p>For example, amounts in a continuous range between 100 could be converted into 2 buckets: This is often called discretisation </p>
+                     
+                     <p class="l2">Class 0: 49</p>
+                      <p class="l2">Class 1: 100</p>
+                     <p>In some cases, a classification problem can be converted to a regression problem. For example, a label can be converted into a continuous range.</p>
+                
+                    </section> 
+                
+                
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-1" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    </figure>
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Regression algorithms are for</p>
+                    <p> <a>2. Summerise the types of Regression algorithms</a></p>
+                    <p> 3. Understand what is a Neural Network</p>
+                    <p> 4. Understand the concept of Deep Learning</p>
+               
+                </section>    
+                
+                 
+                       <section id="types" >  
+                    
+                   
+                    <p>Types of regression algorithms</p>
+                     
+                     
+                    <table>
+                        <thead><tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                           
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>Simple Linear regression</td>
+                            <td>One explainatory variable</td>
+                        </tr>
+                        <tr>
+                             <td>Multivariate Linear regression</td>
+                            <td>Multiple explainatory variables</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>Nonlinear (polynomial) regression</td>
+                            <td>Non-linear mapping between inputs and outputs variables</td>
+                        </tr>
+                        <tr>
+                            <td>Poisson regression</td>
+                            <td>Count variables</td>
+                        </tr>
+                        <tr>
+                            <td>Logistic regression</td>
+                            <td>Binary variable</td>
+                        </tr>
+                            
+                         <tr>
+                            <td>Time-series regression</td>
+                            <td>Time-ordered target variable</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                
+                           
+                           <p class="l3"> Read more: Regression in Machine Learning: <a href=" https://builtin.com/data-science/regression-machine-learning"> https://builtin.com/data-science/regression-machine-learning</a></p>
+                          
+                           
+                           
+                    </section> 
+                      
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="NN-1" data-transition="fade">
+
+                    <h2>Do you know what facial recognition, real-time translation, Google photos and autonomous cars have in common? </h2>
+               
+                </section>  
+                
+                
+                
+                
+                       
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    </figure>
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Regression algorithms are for</p>
+                    <p> 2. Summerise the types of Regression algorithms</p>
+                    <p> <a>3. Understand what is a Neural Network</a></p>
+                    <p> 4. Understand the concept of Deep Learning</p>
+               
+                </section> 
+                      
+                
+        
+                  
+                <section id="accurary9" >  
+                   
+                    <p><a>What is a neural network?</a>:</p>
+                     
+                      <p class="l2">Artificial neural networks (ANNs), usually simply called neural networks (NNs), are computing systems inspired by the biological neural networks that constitute animal brains. </p>
+                    
+                     <p class="l2"> When an animal brain receives an input, it processes it through a series of neurons. Different neurons of the animal brain are responsible for processing different aspects of input in a hierarchical fashion. NNs try to replicate this through artificial neurons called units that are arranged in layers and connected to each other to create a web-like structure.</p>
+                      
+                    <p class="l2">NNs have an input layer and output layer. Between these two layers there are other hidden layers that perform the mathematical computations that help determine the decision or action the machine should take. Ultimately, these hidden layers are in place to transform the input data into something the output unit can use.</p>
+                    
+                    <p class="l3"> Read more: What is a NN: <a href="https://developers.google.com/machine-learning/crash-course/introduction-to-neural-networks/video-lecture">https://developers.google.com/machine-learning/crash-course/introduction-to-neural-networks/video-lecture</a></p>
+                    
+                    <p class="l3"> How to train NNs with data: concept of Backpropagation: <a href="https://brilliant.org/wiki/backpropagation/">https://brilliant.org/wiki/backpropagation/</a></p>
+                    
+                    
+               </section> 
+                
+                  <section id="NN2"  data-background-image=" https://miro.medium.com/max/1400/1*bhFifratH9DjKqMBTeQG5A.gif" >  
+                    <div>&nbsp;</div>
+                </section>
+                
+                
+               
+              <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-3" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    </figure>
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> 1. Understand what Regression algorithms are for</p>
+                    <p> 2. Summerise the types of Regression algorithms</p>
+                    <p> 3. Understand what is a Neural Network</p>
+                    <p> <a>4. Understand the concept of Deep Learning </a></p>
+               
+                </section> 
+                
+                
+                  <section id="DL1"  data-background-image="https://blog.bismart.com/hs-fs/hubfs/01-MachineLearning_Mesa%20de%20trabajo%201%20copia%202_Mesa%20de%20trabajo%201%20copia%202.jpg" >  
+                    <div>&nbsp;</div>
+                </section>
+                
+                 <section id="DL2"  data-background-image="https://i2.wp.com/semiengineering.com/wp-content/uploads/2018/01/MLvsDL.png" data-background-size="80%" >  
+                    <div>&nbsp;</div>
+                </section>
+                
+             
+                <section id="DL3" >  
+                   
+                    <p><a>What is Deep Learning?</a>:</p>
+                     
+                      <p class="l2">Machine learning uses algorithms developed for specific tasks. Deep learning is more of a data representation based upon multiple layers of a matrix, where each layer uses output from the previous layer as input. -> DL algorithms are not often "off-the-shelves"</p>
+                    
+                     <p class="l2"> Deep neural networks are NNs with more layers</p>
+                      
+                    <p class="l2">The approach more closely mimic the activity of the human brain, which can tell not only that a ball is in motion, but approximately where it will land.</p>
+                    
+                    <p class="l3"> Andrea Ng's talk about Deep Learning in 2012:  <a href="https://www.youtube.com/watch?v=n1ViNeWhC24&ab_channel=XinHuang">https://www.youtube.com/watch?v=n1ViNeWhC24&ab_channel=XinHuang</a></p>
+                    
+                    <p class="l3"> Read more: Jason Brownlee's blog: <a href="https://machinelearningmastery.com/what-is-deep-learning/">https://machinelearningmastery.com/what-is-deep-learning/</a></p>
+                    
+                    
+               </section> 
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil774-w9.html">https://leminhkieu.github.io/p/Civil774-w9.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
