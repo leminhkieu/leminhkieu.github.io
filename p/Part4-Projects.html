@@ -1,0 +1,316 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Part 4 projects 2022</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Part 4 projects for 2022</h2> 
+                           <h4> Data analytics in transportation</h4>
+
+                        <hr/>
+
+                        <h3>Minh Kieu</h3>
+
+                        <h4>Lecturer</h4> 
+
+                        <h4>Department of Civil and Environmental Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Part4-Projects.html">https://leminhkieu.github.io/p/Part4-Projects.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                  <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     *************************************************************
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/my_pics/minh.jpg"
+                             alt="Minh picture" />
+                    
+                    </figure>
+
+
+                    <h2>About me</h2>
+                    
+                    <p> Lecturer in Transportation at the Department of Civil and Environmenta Engineering</p>
+                     
+                    <p>Research Interests</p>
+                    <p class="l2">- Agent-Based Modelling: computer simulation of individual agents that are interacting with each other</p>
+                    
+                    <p class="l2">- Machine Learning: models that aims at data analytics, especially Big data</p>
+                    
+                    
+                </section>        **** -->        
+
+                
+               
+                
+                   <section id="flow-def2" >                   
+                   
+                         <p><a>Traffic studies of the future: Video processing</a> </p>
+                        
+                        <img data-src="../figures/teaching/traffic-count.gif"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                       
+                       <p>Discussed by Don McKenzie of Stantec as the futute of data collection in transport</p>
+                        
+                 
+                </section>  
+                
+                
+                 <!-- *****************************************************************
+
+                     ************* Bike lanes  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p1" data-transition="fade">
+                   
+                   <h3>Project 1: Video data collection and analysis  </h3>
+      
+                   <p class="l2">We have developed a video processing AI for you to play with, example here: <a href="https://www.youtube.com/watch?v=aWRvpY8Mh1I">https://www.youtube.com/watch?v=aWRvpY8Mh1I</a></p>
+                   
+                     <p class="l3">Project plan: (1) Video record traffic in Auckland in two locations: one motorway from a pedestrian bridge, and one street from a building</p>
+                   
+                     <p class="l3">(2) Use our developed software to process the recorded videos into traffic data: Speed, Flow and Density</p>
+                   
+                   <p class="l3">(3) Compare the processed data with data from TomTom for validation</p>
+                   
+                   
+                </section> 
+                
+                
+                  <!-- *****************************************************************
+
+                     ************* Bike lanes  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p1-2" data-transition="fade">
+                   
+                   <h3>Project 2: Analysis of potential traffic safety threats from shared paths </h3>
+                    
+                   
+                     <p class="l2">You will work with a PhD student who is also working at the Auckland Transport, Dr Doug Wilson and me on this project</p>
+                   
+                 <p class="l3">Project plan: (1) Video record two sites of shared paths between cyclists, pedestrians and micro-mobility users in Auckland</p>
+                   <p class="l3">(2) Use our developed software to process your recorded video into trajectories of shared path users</p>
+                   <p class="l3">(3) Identify near-missed and safety threats from the processed trajectories and the video</p>
+                     <p class="l3">(4) Answer transport policy questions: Is shared path really dangerous? Do we need to separate them? Do we need to send cyclists and micro-mobility users to the main roads?</p>
+                 
+                </section> 
+                
+                  <!-- *****************************************************************
+
+                     ************* Bike lanes  *****************
+
+                     ***************************************************************** -->
+                
+ 
+               <section id="p1-3" data-transition="fade">
+                   
+                   <h3>Project 3: Develop an interactive data dashboard for traffic data using Python </h3>
+       
+                   <p class="l2">Auckland has a traffic dashboard to show real-time traffic data, but looking quite dull: <a href="https://www.journeys.nzta.govt.nz/auckland/traffic-dashboard">https://www.journeys.nzta.govt.nz/auckland/traffic-dashboard</a></p>
+                   
+                   <p class="l2">Could we make something more visually pleasing like the Covid-19 dashboard?: <a href="https://www.aucklandnz.com/auckland-index/covid-19-dashboard">https://www.aucklandnz.com/auckland-index/covid-19-dashboard</a></p>
+                   
+                    <p class="l2"><a>This project needs students with some experience with Python programming language</a></p>
+
+            
+                </section> 
+                
+              
+               
+                  <section id="p3-4" data-transition="fade">
+                   
+                   <h3>Career progress</h3>
+     
+                   <p class="l2">The Part IV students who worked with me have often been able to learn programming and data analytis to continue working on roles related to transport analytics in their professional roles, e.g. 5/6 students of mine in 2020 </p>
+                   
+                   <p class="l3">Terresa Kim - Aurecon</p>
+                   
+                    <p class="l2">Nairy Yaghobian - Hawkins</p>
+                      
+                       <p class="l2">William Lay - GHD</p>
+                      
+                       <p class="l2">Cameron Spick - Waka Kotahi NZTA</p>
+                      
+                      <p class="l2">Liam Bramley - Abley</p>
+ 
+                </section> 
+                
+                  
+                           
+               <section id="p3-3" data-transition="fade">
+                   
+                   <h3>Project allocation </h3>
+     
+                   <p class="l2">I can allocate one project to one chosen pair of students, the rest of you will need to go through a quite random selection process</p>
+                   
+                   <p class="l2">To be allocated, both students should have a GPA of >6.5, preferably those who have done well in Civil 361</p>
+                   
+                    <p class="l2">Contact me asap if you are interested</p>
+ 
+                </section> 
+                
+                   <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h3><a href="https://leminhkieu.github.io">https://leminhkieu.github.io</a></h3>
+                        
+                        
+
+                     <h4>Lecturer</h4> 
+
+                        <h4>minh.kieu@auckland.ac.nz</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Part4-Projects.html">https://leminhkieu.github.io/p/Part4-Projects.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
