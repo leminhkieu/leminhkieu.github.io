@@ -140,6 +140,8 @@
                     <h2> Traffic Flow Fundamentals </h2>
                      
                     <p>	2 lectures and 2 tutorials </p>
+                        
+                        <p>10% of the test, then 25% of the assignment </p>
                          <p>Mostly numerical problems</p>
                        
                     </div>  
@@ -267,21 +269,32 @@
                 
                 </section>
                 
-                   <!-- ******************************************************
+                
+                      
+                      <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="speed" >                    
+                <section id="speed1" >
                         <h3>What is 'speed': Speed is a vehicle's rate of motion</h3>
                         
+                    <p>There are two ways to measure speed: </p>
                         
-                        <p class="l2">Space-mean-speed is calculated by dividing the measured distance by the average travel time </p>
+                        <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
+                        
+                         \[\begin{aligned}
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					\end{aligned} \]
+                        
+                        <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
                         
                           \[\begin{aligned}
 					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
 					\end{aligned} \]
                         
-                  
+                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
+                        
+                   
                          
                     <aside class="notes">
                   *** Time Mean Speed =  arithmetic average speed
@@ -289,14 +302,80 @@
                  ***   Space Mean Speed = harmonic mean speed
                         
                     ***    Time-mean speed is associated with a single point along a roadway over time,
-whereas the space-mean speed is associated with a specified length of roadway.
-Use space-mean speeds when reducing and analyzing travel time data.
+                        whereas the space-mean speed is associated with a specified length of roadway.
+                        Use space-mean speeds when reducing and analyzing travel time data.
                         
                      </aside>  
                     
                 </section>
                 
-                   
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                *****************************************************
+
+                <section id="speed2" >
+                      <h3>Spot speed</h3>
+                        
+                    <p>Spot speed $v_i$: the instantaneous speed of a vehicle passing a
+                        point on the roadway. Data represent the speed
+                        characteristics of vehicles passing the site. </p>
+                        
+                        <p class="l2"> Most of the speed cameras measure spot speeds!</p>
+                        
+                <p>Typical use of spot speed</p>
+                        
+                        <p class="l2">Speed limit enforcements </p>
+                        
+                        <p class="l2">Traffic control planning - speed limits, safe speeds at curves, location for traffic signs, etc. </p>
+                        
+                        <p class="l2">Geometric design - road alignments, stopping sight distance</p>
+                        <p class="l2">Accident analysis</p>
+                        
+                        <p>Measurements: Enoscope, Pneumatic tubes, Video recordings, Speed gun/camera </p>
+                    
+                </section>
+               
+                
+                <!-- ******************************************************
+                *********************** Definition ***********************
+                *******************************************************
+
+                <section id="speed4" data-background-image="../figures/teaching/bluetooth.png">                     
+                    <div class="whitebackground2">
+                        <h3>Journey vs Running speed</h3>
+                        
+                    <p>Journey speed is the distance divided by total journey time.
+                        Total journey time includes all delays due to traffic.</p>
+                        
+                        <p > Running speed is the distance divided by running time, i.e.
+                        total journey time minus delays. (Running time is the
+                        time that the vehicle is actually in motion.)</p>
+                        
+                   </div>
+                    
+                </section>
+                
+                
+                 
+
+                <section id="speed5" >                     
+                    <div class="whitebackground2">
+                        <h3>Example 3: Estimate journey vs running speeds</h3>
+                        
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/journey-running.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                        
+                   </div>
+                    
+                </section>
+                ***** -->
+                
+                    
                   <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
                 ************************************************************ -->
@@ -362,15 +441,10 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>
                 
                 
-                   
-                
-                
                       <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
                 ************************************************************ -->
 
-                
-                 
                   <section id="density-flow">
                         <h3>Flow & Density relationship: This one is more challenging!</h3>
                        
@@ -464,7 +538,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                            
                           <p class="l2">  $ dq/dk = 100 - 0.2 k, $ so, k = 500 = kj/2 half of jam density</p>
                            
-                          <p class="l2">  $ v_m = 100 - 100 * 500 /1000 = 50 kmh = vf/2 $ half of free flow speed</p>
+                          <p class="l2">  $ v_m = 100 - 100 * 500 /1000 = 50 km/h = vf/2 $ half of free flow speed</p>
                            
                         <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is much larger than the observed maximum flow, because it does not account for the field conditions that influence maximum flow</p>
                            
@@ -603,26 +677,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     
                 </section>
      
-                  <!-- ******************************************************
-                *********************** diagram5 ***********************
-                *******************************************************
-
-               <section id="diagram5" >          
-                    
-                   <div class="whitebackground2">
-                   <h3>Fundamental diagrams of traffic flow: 3D digram</h3>
-                       <img class="centre" src="../figures/teaching/fundamental-3d.png"
-                            style="width:800px;"
-                         alt="project-1" />
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                ***** -->
+                
                 <!-- ******************************************************
                 *********************** diagram5 ***********************
                 ************************************************************ -->
@@ -644,8 +699,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>
            
                 
-                
-                  <!-- ************** Learning outcomes ************* -->
+                    <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes2" data-transition="fade">
 
@@ -657,493 +711,120 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     </figure>
                     <h2>Learning outcomes: </h2>
                     
-                    <p>	 1. Understand the traffic flow theory</p>
-                    <p><a>	2. Understand classes of traffic flow models</a> </p>
+                    <p>	1. Understand the traffic flow theory </p>
+                     <p> <a> 	2. Understand the queuing theory </a></p>
                     <p>	3. Evaluate variables for unsignalised traffic flow </p>
                     
-                    <aside class="notes">
-                    ***Introduction to traffic flow theory                
-                    -Traffic flow variables
-                    -Traffic stream characteristics
-                    -Traffic stream models
-                    -Fundamental diagram of traffic flow
-                    ***Traffic flow models
-                    -Macroscopic models
-                    -Microscopic models
-                    -Mesoscopic models
-                    ***Unsignalized intersections
-                    -Gap acceptance model
-                    -Headway distributions
-                    -Delay to minor flow 
-                    -Absorption capacity of major stream
-                    ***Examples and problems
-	               </aside>                         
-                    
-                </section>          
-               
-                         <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="traffic-models" > 
-                   <h3>Traffic modelling</h3>
-                     <p>A mathematical representation of real-world traffic, usually, but not restricted to, road traffic.</p>
-                    <p>Traffic models can help to objectively answer important questions, such as:</p>   
-                       <p class="l2">What is the potential impact of land use development and/or transport infrastructure on traffic patterns ?</p>   
-                       <p class="l2">What will be the levels of congestion on the road network ?</p>   
-                       <p class="l2">What measures may be appropriate to mitigate potential adverse effects ?</p>   
-                       <p class="l2">How can infrastructure projects and packages be designed to maximise benefits ?</p>   
                   
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-    
-                   <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="traffic-models2" >
-                   <h3>Classes of traffic models</h3>
-                       <img class="centre" src="../figures/teaching/traffic-models.png"
-                            style="width:600px;"
-                         alt="project-1" />
-                       
-                  
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
+                </section>      
                 
                 
-                
-                         <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-macro.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="macro">                     
-                    <div>&nbsp;</div>
-                    </section>
-                
-                
-                 <section id="macro2">                     
-                    
-                        <h3>Macroscopic models</h3>
-                        
-                       <p>Traffic flow is treated in an aggregate manner, similar to models of fluid  dynamics using average flow, speed and density</p>
-                        
-                        <p class="l2">describe the system entities, their activities and interactions at a low level of details</p>
-                        
-                        <p>are efficient and so applicable to large network and real-time simulation</p>
-                        
-                  
-                    </section>
-                
-                         <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-micro.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="micro">                     
-                    <div>&nbsp;</div>
-                </section>
-                
-                
-
-                <section id="micro2">
-                        <h3>Microscopic models</h3>
-                        
-                          <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
-                        
-                        <p class="l2">Describe both the system entities and their interactions at a high level of  detail.</p>
-                        
-                        <p class="l2"> Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated.</p>
-                        
-                         <p> <a>What do you think are the core components of a micro-simulation model?</a> </p>
-                   
-                </section>
-                
-              
-                    
-                 <section id="micro2-2" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
-                    
-                   <div class="whitebackground2">
-                   <h3>Components of traffic microsimulation packages</h3>
-                       <img class="centre" src="../figures/teaching/microsim-components.png"
-                            style="width:800px;"
-                         alt="project-1" />
-                     
-                   </div>
-                </section>
-                
-                   <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="micro3">
-                   <h3>Car-following models</h3>
-                      
-                       <p class="l2">The basic philosophy of car following model is from Newtonian mechanics, where the acceleration may be regarded as the response of a matter to the stimulus it receives in the form of the force it receives from the interaction with other particles in the system. </p>
-
-                       \[\begin{aligned}
-					Response_n \quad \alpha \quad Stimulus_n \\
-					\end{aligned} \]
-                    
-                       
-                       <p class="l2">different theories on car-following have arisen because of the difference in views regarding the nature of the stimulus. The stimulus may be composed of the speed of the vehicle, relative speeds, distance headway etc
-                    
-                </section>
-                
-                 <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
-               <section id="micro4"> 
-                    
-                   <h3>Car-following dynamics</h3>
-                       <img class="centre" src="../figures/teaching/car-following.png"
-                            style="width:800px;"
-                         alt="project-1" />
-                
-                </section>
-                
-                
-                
-                
-                 <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ********************************************************
-
-                        and hence, it is not a single variable, but a function and can be represented as </p>
-                    \[\begin{aligned}
-					   
-                       {\ddot  {x}}_{n }(t)={\dot  {v}}_{n }(t) = a_n(t) =F(v_{n }(t),s_{n }(t),v_{{n -1}}(t))
-                       
-					\end{aligned} \]
- 
-                       <p class="l2">where $F$ is the stimulus function that depends on the speed of the current vehicle, relative position and speed with the front vehicle.</p>
-
-
-               <section id="micro5" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
-                    
-                   <div class="whitebackground2">
-                   <h3>Car-following models: Gipps' model (1981) </h3>
-                      
-                       <p class="l2">Gipps' model was defined primarily by one vehicle (noted by subscript n) following another (noted by subscript n-1); reaction time of the following vehicle; the location, speed and acceleration of the following vehicle; and finally, model constants to adjust the model to real-life conditions </p>
-
-                       \[\begin{aligned}
-					 a_{n}(t+\tau)=l_{n}{\frac {\left[v_{n-1}(t)-v_{n}(t)\right]^{k}}{\left[x_{n-1}(t)-x_{n}(t)\right]^{m}}}\\
-					\end{aligned} \]
-                    
-                       
-                       <p class="l2">The following vehicle is limited by two constraints: that it will not exceed its driver’s desired speed and its free acceleration should first increase with speed as engine torque increases then decrease to zero as the desired speed is reached.</p>
-                       
-                    \[\begin{aligned}
-					   
-                       {\displaystyle v_{n}(t+\tau )\leq v_{n}(t)+2.5a_{n}\tau (1-v_{n}/V_{n})(0.025+v_{n}(t)/V_{n})^{1/2}}
-                       
-					\end{aligned} \]
- 
-                       <p class="l2">And some other constraints. See:<br/><a href="https://www.sciencedirect.com/science/article/pii/0191261581900370">https://www.sciencedirect.com/science/article/pii/0191261581900370</a></p>
-                       
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-
-                  
-
-                 <!-- ******************************************************
-                *********************** Lane change 1 ***********************
-                *********************************************************
-                
-                 <section id="lanechange1" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
-                    
-                   <div class="whitebackground2">
-                   <h3>Lane-changing model: dynamics</h3>
-                       
-                       <p>Mandatory lane change</p>
-                       <p>Discretionary lane change</p>
-                       <p>Random lane change</p>
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                 <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ********************************************************
-                
-                 <section id="lanechange2" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
-                    
-                   <div class="whitebackground2">
-                   <h3>Lane-changing model: Mandatory lane change</h3>
-                       
-                       <p>To position the vehicle to reach the destination, for instance: </p>
-                       <p class="l2">changing to the proper lane before making the turning
-                            movement at an intersection</p>
-                       
-                       <img class="right" src="../figures/teaching/merging.png"
-                            style="width:500px;"
-                         alt="project-1" />
-                       
-                       <p class="l2">merging to the freeway mainline</p>
-                       <p class="l2">diverging to the deceleration lanes before exiting through offramp</p>
-                       
-                       <p class="l2">Bypass a lane blockage downstream</p>
-                       <p class="l2">Avoid entering a restricted lane </p>
-                      <p class="l2"> Respond to message signs</p>
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                
-                 <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                *********************************************************
-                
-                 <section id="lanechange3" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
-                    
-                   <div class="whitebackground2">
-                   <h3>Lane-changing model: Discretionary lane change</h3>
-                       
-                       <p>Reasons: </p>
-                       <p class="l2">Increase speed </p>
-                        <p class="l2">Bypass a slow or heavy vehicle</p>
-                        <p class="l2">Avoid the lane connected to a ramp</p>
-                       
-                     
-                       <p>Depends on:</p>
-                        <p class="l2">Driver characteristics: Driver aggressiveness, Desired speed, Normal/Maximum Acceleration/Deceleration, Impatience</p>
-                      <p class="l2">External stimuli, e.g Relative speed of the subject vehicle and its leader, candidate leader is making/will make a left/right turn.</p>
-                       
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                            <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                **********************************************************
-                
-                 <section id="lanechange4" data-background-image="../figures/Backgrounds/lane-changing.jpg">                 
-                    
-                   <div class="whitebackground2">
-                   <h3>Lane-changing and Gap Acceptance </h3>
-                       
-                       <p>Gap Acceptance studies typically used to
-                           assess capacity for merging, crossing,
-                           turning, and for lane change</p>
-                       <p class="l2">Available gaps and their acceptance by
-                           drivers are the two main components for
-                           such studies</p>
-                        <p class="l2">Bypass a slow or heavy vehicle</p>
-                        <p class="l2">Avoid the lane connected to a ramp</p>
-                       
-                     
-                       <p>Depends on:</p>
-                        <p class="l2">Driver characteristics: Driver aggressiveness, Desired speed, Normal/Maximum Acceleration/Deceleration, Impatience</p>
-                      <p class="l2">External stimuli, e.g Relative speed of the subject vehicle and its leader, candidate leader is making/will make a left/right turn.</p>
-                       
-                       
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
-                    
-                </section>
-                
-                    **** -->
-                
-                    <!-- ******************************************************
-                *********************** Problem 1 ***********************
-                ************************************************************ -->
-
-                <section data-background-video="../videos/trafficmodel-meso.mp4"
-                         data-background-video-muted 
-                         data-background-video-loop="loop"
-                         id="meso">                     
-                  <div>&nbsp;</div>
-                </section>
-                
-                
-
-                <section id="meso2">
-                        <h3>Mesoscopic models</h3>
-                        
-                        <p>Individual vehicles may be presented but not as details as microscopic models</p>
-                        
-                        <p class="l2">less computationally expensive to run, but more detailed than macroscopic models</p>
-                        
-                        <p>Capable of modelling the traffic on the large scale</p>
-                    
-                </section>
-                
-                 <section id="whatmodel">
-                        <h3>What models to use in which case?</h3>
-                        
-                        <p class="l2">1. The Ministry of Transport wants a traffic model of Auckland to identify the bottlenecks in the traffic systems and come up with ways to reduce traffic congestions </p>
-                        
-                        <p class="l2">2. Auckland Transport wants to evaluate the feasibility of replacing the traffic lights in one of our busy intersections with a roundabout</p>
-                        
-                        <p>What model should we be using in which case, and what kind of data should we collect to model the system? </p>
-                    
-                </section>
-                
-                
-                   <!-- ************** Learning outcomes ************* -->
-
-                <section id="outcomes3" data-transition="fade">
-
-                    <figure class="right">
-
-                        <img data-src="../figures/teaching/learning-outcomes.jpg"
-                             alt=" " />
-                    
-                    </figure>
-                    <h2>Learning outcomes: </h2>
-                    
-                    <p>	 1. Understand the traffic flow theory</p>
-                    <p>	2. Understand classes of traffic flow models</p>
-                    <p><a>	3. Evaluate variables for unsignalised traffic flow </a> </p>
-                    
-                    <aside class="notes">
-                    ***Introduction to traffic flow theory                
-                    -Traffic flow variables
-                    -Traffic stream characteristics
-                    -Traffic stream models
-                    -Fundamental diagram of traffic flow
-                    ***Traffic flow models
-                    -Macroscopic models
-                    -Microscopic models
-                    -Mesoscopic models
-                    ***Unsignalized intersections
-                    -Gap acceptance model
-                    -Headway distributions
-                    -Delay to minor flow 
-                    -Absorption capacity of major stream
-                    ***Examples and problems
-	               </aside>                         
-                    
-                </section>    
-                
-
-                <!-- *************** ITS management 4 ********************* ***** -->
-  
-               <section id="nosignal" data-background-image="../figures/Backgrounds/roundabout.png">   
-                   
-               <div class="whitebackground">
-                        <h3>Unsignalised traffic flow: Areas of interests</h3>
-                        
-                            <p class="l2">Uninterrupted roads</p>
-                         <p class="l2">Priority controlled intersections (Stop, Yield)</p>
-                        <p class="l2">Roundabouts</p>
-                        <p class="l2">Unprotected pedestrian crossings </p>
-                   </div>                       
-           
-                </section>  
-                
-                      <!-- *************** ITS management 4 **********************
-  
-               <section id="nosignal2" data-background-image="../figures/Backgrounds/roundabout.png">   
-                   
-               <div class="whitebackground2">
-                        <h3>Unsignalised intersections</h3>
                  
-                        <p><a>Gap acceptance models:</a> applicable in situations where vehicles or pedestrians  cross/merge into traffic stream, which requires them to select an acceptance time  gap in the priority traffic stream. </p>
-                   
-                        <p>Two major factors that influence the capacity of an unsignalised intersection:</p>
-                   
-                         <p class="l2">Critical gap - a unique time gap acceptable to all drivers at all times.</p>
-                        <p class="l2">Headway distribution - determines the frequency with which gaps of various  size are offered.</p>
-                                               
-                       </div>                       
-           
-                </section>    
-                
-                
-                      <!-- ******************************************************
-                *********************** Traffic safety ***********************
-                *********************************************************
-
-                <section id="safety" data-transition="fade">                  
-                    
-                    <video controls
-
-                                src="../videos/road-safety.mp4" 
-                                
-                                >
-                        
-                         Your browser does not support the video tag.
-
-                    </video>
-                    
-                    <div class="whitebackground2">
-                        <p>Unsignalised intersections: Critical gap</p>
-                        
-                        <p class="l2">the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
-                        
-                   </div> 
-                    
-                  <aside class="notes">
-		     To understand more about critical gap, I'd you to watch this video
-	               </aside>   
-                    
-                </section> 
-                
-                ***** -->
-                
-                   <!-- *************** ITS management 4 ***********************
+                  <!-- *************** time space diagram ************************** -->
   
-               <section id="nosignal3" data-background-image="../figures/Backgrounds/roundabout.png">   
+               <section id="spacetime" >
                    
-               <div class="whitebackground2">
-                        <h3>Unsignalised intersections: Critical gap</h3>
-                 
-                    <figure class="centre" >
+                   <h2>Time space diagram</h2>
+                     <p class="l2">Illutrates the spatial-temporal trajectory of each vehicle.</p>
+                   
+                   <figure class="right" >
 
-                        <img data-src="../figures/teaching/critical-gap.svgz"
+                        <img data-src="../figures/teaching/time-space.png"
                              style="width:400px;"
                              alt="ATIS" />
                     
                     </figure>
                    
-                        <p>Rejection curve: Erlang Distribution</p>
-                        <p>Acceptance Curve: Probit Normal Distribution or Logit Exponential Distribution </p>
+                    <p class="l2"> Each line represents the trajectory of a vehicle</p>
                    
-                        </div>                       
-           
-                </section>   
-                    *** -->
+                   <p class="l2"> The horizontal gap (time gap) between two vehicle at the same position shows the <a>headway</a> between them </p>
+               
+                   <p class="l2"> The vertical gap (space gap) between two vehicle at the same time shows the <a>spacing</a> between them </p>
+                    
+                  </section>  
                 
                 
+                <section id="spacetime2" >
                    
+                   <h4>The relationship between time-space diagram and fundamental diagram</h4>
+                   
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/Civil361/shockwave.png"
+                             style="width:800px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                    <p class="l2">  A shock wave propagates along a line of vehicles in response to changing conditions at the front of the line. A shock wave exists whenever the traffic conditions change.</p>
+                   
+                 
+                   <p class="l3"> Source: Dr Yildirimoglu, University of Queensland (2021)  </p>
+                    
+                  </section>  
+                
+                
+                 <section id="spacetime3" >
+                   
+                   <h4>Shockwaves seeing from a birdeye view (Youtube: 6ZC9h8jgSj4)</h4>
+                   
+                    
+                     <iframe data-src="https://www.youtube.com/embed/6ZC9h8jgSj4?autoplay=1"></iframe>
+                   
+                  </section>  
+                
+                
+                
+                
+                 <!-- *************** queuing 1 *********************** *** -->
+                 <section id="queuing" >
+                   
+                   <h2>Queuing theory</h2>
+                     <figure class="right" >
+
+                        <img data-src="../figures/teaching/queuing.jpg"
+                             style="width:400px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                     
+                     <p>is the study of traffic behavior near a certain section where demand exceeds available capacity.</p>
+                     <p class="l2">It provides a way of analyzing queue behavior and predicting 
+                         its consequences, including queue lengths and queuing delays</p>
+                   
+                   
+                     
+                     <p>Vehicle arrival rate is different to traffic flow </p>
+                   
+                    <p class="l2"> Irregularity of vehicle arrivals </p>
+                   
+                   <p class="l2"> + variability of time taken for each to leave the study area </p>
+                   
+                 <p class="l2"> = queues of vehicles build up and dissipate </p>
+                     
+                  </section>  
+                
+                 <!-- *************** queuing 2*********************** *** -->
+                 <section id="queuing2" >
+                   
+                   <h4>Vehicle arrival patterns</h4>
+                    
+                   
+                   <figure class="centre" >
+
+                        <img data-src="../figures/teaching/arrival.png"
+                             style="width:1000px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                    
+                 <p class="l3"> Source: Dr J Kim, University of Queensland </p>
+                     
+                   
+                  </section>  
+                
+                
+                
                    <!-- *************** ITS management 4 *********************** *** -->
                <section id="poisson" >
                    
@@ -1335,7 +1016,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    \end{aligned} \]</p>
                    
                    <p class="l2"> Similarly, $P(2)=0.27, P(3)=0.18, P(4)=0.09$</p>
-                   <p class="l2"> $P(n \geq 5) = 1 - P(n<5) = 1-0.14 - 0.27 -0.27 - 0.18-0.09 = 0.05$ </p>
+                   <p class="l2"> $P(n \geq 5) = 1 - P(n < 5) = 1-0.14 - 0.27 -0.27 - 0.18-0.09 = 0.05$ </p>
                    
                    
                        </div>                       
@@ -1343,10 +1024,106 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 </section>   
                 
                 
+                    <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes3" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Understand the traffic flow theory </p>
+                     <p>  	2. Understand the queuing theory </p>
+                    <p><a>	3. Evaluate variables for unsignalised traffic flow </a></p>
+                    
+                </section>     
+                
+                   <!-- *************** ITS management 4 ********************* ***** -->
+  
+               <section id="nosignal" data-background-image="../figures/Backgrounds/roundabout.png">   
+                   
+               <div class="whitebackground">
+                        <h3>Unsignalised traffic flow: Areas of interests</h3>
+                        
+                            <p class="l2">Uninterrupted roads</p>
+                         <p class="l2">Priority controlled intersections (Stop, Yield)</p>
+                        <p class="l2">Roundabouts</p>
+                        <p class="l2">Unprotected pedestrian crossings </p>
+                   
+                   
+                   </div>                       
+           
+                </section>  
+                
+                      <!-- *************** ITS management 4 *************************** -->
+  
+               <section id="nosignal2" > 
+                   
+                        <h3>Unsignalised intersections</h3>
+                   
+                    <figure class="right" >
+
+                        <img data-src="https://www.drivingtests.co.nz/media/question-images/q172b.jpg"
+                             style="width:350px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                   
+                   
+                    <p class="l2">	The idea is to limit and simplify the points of conflicts</p>
+                 
+                        <p class="l2"><a>Gap acceptance models:</a> applicable in situations where vehicles or pedestrians  cross/merge into traffic stream, which requires them to select an acceptance time  gap in the priority traffic stream. </p>
+                   
+                        <p class="l2">Two major factors that influence the capacity of an unsignalised intersection:</p>
+                   
+                         <p class="l3">Critical gap - the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
+                   
+                        <p class="l3">Headway distribution - determines the frequency with which gaps of various  size are offered.</p>
+                                               
+                                   
+           
+                </section>    
+                
+                
+                      <!-- ******************************************************
+                *********************** Traffic safety ***********************
+                ************************************************************** -->
+
+                <section id="safety" data-transition="fade">                  
+                    
+                    <video controls
+
+                                src="../videos/road-safety.mp4" 
+                                
+                                >
+                        
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                    <div class="whitebackground2">
+                        <p>Unsignalised intersections: Critical gap</p>
+                        
+                        <p class="l2">the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
+                       
+                        
+                   </div> 
+                    
+                  <aside class="notes">
+		     To understand more about critical gap, I'd you to watch this video
+	               </aside>   
+                    
+                </section> 
+                
+                
                 
                  <!-- *************** ITS management 4 ************************** -->
   
-               <section id="nosignal2" >
+               <section id="nosignal4" >
                         <h3>Estimate delays of vehicles/pedestrians merge/cross into the main flow</h3>
                          
                     <figure class="centre" >
@@ -1359,10 +1136,10 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    
                     <p>Important variables for estimating delays: </p>
                    
-                         <p class="l2">Critical gap - a unique time gap acceptable to all drivers at all times.</p>
+                         <p class="l2">Critical gap (s): assume a similar value acceptable to all drivers at all times.</p>
                         <p class="l2">The distribution of traffic: usually Poisson</p>
                    
-                    <p class="l2">Follow-up headway is the additional time needed in the main flow for not one, but two vehicles to cross or merge into the main traffic stream.</p>
+                    <p class="l2">Follow-up headway (s) : additional time needed in the main flow for not one, but two vehicles to cross or merge into the main traffic stream.</p>
                    
                 </section>   
                 
@@ -1370,7 +1147,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 
                   <!-- *************** ITS management 4 ************************** -->
   
-               <section id="nosignal4" >
+               <section id="nosignal5" >
                         <h3>Adams's delay to minor flow</h3>
                    
                          <p>Major assumptions: </p>
@@ -1394,7 +1171,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
             
                 <!-- *************** ITS management 4 ********************** **** -->
   
-               <section id="nosignal5">
+               <section id="nosignal6">
                         <h3> Tanner's delay to minor flow</h3>
                          <p>Major assumptions: </p>
                             <p class="l2">For case with minor traffic flow > 200 veh/h</p>
@@ -1415,7 +1192,7 @@ Use space-mean speeds when reducing and analyzing travel time data.
                 
                  <!-- *************** ITS management 4 ********************** **** -->
   
-               <section id="nosignal6">
+               <section id="nosignal7">
                         <p>Tanner's graph: Pre-estimated values</p>
                    
                      <figure class="centre" >
@@ -1502,7 +1279,6 @@ Use space-mean speeds when reducing and analyzing travel time data.
                    <p class="l2">(c) the probability of there being more than three accidents in a day </p>
                    <p class="l3">[Answer: 0.02]</p>
                                     
-           
                 </section>   
                 
                 
@@ -1647,27 +1423,9 @@ Use space-mean speeds when reducing and analyzing travel time data.
                     </figure>
                     <h2>Learning outcomes: </h2>
                     
-                    <p>	 1. Understand the traffic flow theory</p>
-                    <p>	2. Understand classes of traffic flow models</p>
-                    <p>	3. Evaluate variables for unsignalised traffic flow </p>
-                    
-                    <aside class="notes">
-                    ***Introduction to traffic flow theory                
-                    -Traffic flow variables
-                    -Traffic stream characteristics
-                    -Traffic stream models
-                    -Fundamental diagram of traffic flow
-                    ***Traffic flow models
-                    -Macroscopic models
-                    -Microscopic models
-                    -Mesoscopic models
-                    ***Unsignalized intersections
-                    -Gap acceptance model
-                    -Headway distributions
-                    -Delay to minor flow 
-                    -Absorption capacity of major stream
-                    ***Examples and problems
-	               </aside>                         
+                   <p>	1. Understand the traffic flow theory </p>
+                     <p>  	2. Understand the queuing theory </p>
+                    <p>	3. Evaluate variables for unsignalised traffic flow </p>        
                     
                 </section>   
                 
@@ -1689,6 +1447,10 @@ Fred Mannering, Scott Washburn and Walter Kilareski </p>
 Markos Papageorgiou</p>
                     
                     <p>	5. Fred Hall (1997) Traffic stream characteristics.</p>
+                    
+                    <p> 6. AustroadsGuide to Road Design (2010)</p>
+                    
+                    <p> 7. Austroads Guide to Traffic Management (Part 2 - 2015, Part 3 - 2013, Part 6 - 2013)</p>
                     
                 </section>   
                 
@@ -1715,7 +1477,7 @@ Markos Papageorgiou</p>
 
                         <hr/>
 
-                      <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil361-traffic-flow.html">http://bit.ly/361-2</a></h4>
+                      <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil303-traffic-flow.html">http://bit.ly/303-traffic-flow</a></h4>
 
                     </div>
 
