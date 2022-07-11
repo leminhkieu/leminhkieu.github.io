@@ -101,16 +101,38 @@
                     <h2>Dr Minh Kieu</h2>
                     <p class="l4"> Lecturer in Transport Analytics </p>
                      <p class="l4"> Department of Civil and Environment Engineering</p>
-                    
-                   <p>These HTML slides can be accessed by:<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">  http://bit.ly/303-traffic-studies</a></p>
-                    <p class="l4">A PDF version can be found on Canvas</p>
-                    
                      
                     <p> Office hours: 1 hour after lectures, or via emails </p>
-                    <p class="l4">B401, Room 11.16</p>
+                    <p class="l4">B401, Room 10.08</p>
                     <p class="l4">minh.kieu@auckland.ac.nz</p>
                     
-                </section>      
+                </section>   
+                
+                
+                  <!-- ************** About me ************* -->
+
+                <section id="aboutme2" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+                    
+                   <p>These slides are HTML (like websites):<a href="https://leminhkieu.github.io/p/Civil361-traffic-studies.html">  http://bit.ly/303-traffic-studies</a></p>
+                    <p class="l4">A PDF version can be found on Canvas</p>
+                    
+                     <p>My principles:</p>
+                    <p class="l4"> 1. Each slide usually has only 1 topic </p>
+                    
+                    <p class="l4"> 2. All learning outcomes are going to be evaluated</p>
+                    
+                    <p class="l4"> 3. Look for the examples and open-ended questions along the way, then the problems at the end of the slides </p>
+                   
+                    
+                </section>   
+                
+                
                 
                   <!-- ******************************************************
                 *********************** Problem 1 ***********************
@@ -147,7 +169,7 @@
                     
                     <h2>Traffic Studies </h2>
                      
-                    <p>	3 Lectures + 2 tutorials </p>
+                    <p>	4 Lectures + 1 tutorial </p>
                         
                         <p>	40% of your first test! </p>
                         
@@ -173,8 +195,7 @@
                   
                     <h2>Learning outcomes: </h2>
                     
-                    
-                    <p>	1. Summarise and communicate key concepts regarding data in traffic engineering </p>
+                     <p>	1. Summarise and communicate key concepts regarding data in traffic engineering </p>
                     <p> 2. Apply calculation formulas and analyse traffic variables</p>
                     <p>	3. Understand how to collect those data </p>
                     
@@ -194,7 +215,6 @@
                         <h3>What is a 'traffic study'?</h3>
                         
                         <p class="l2">A traffic study is the collection and analysis of measurable factual data relating to traffic and its characteristics.</p>
-                        
                  
                         <p>Why do we need to collect data? </p>
                         
@@ -215,10 +235,8 @@
                 <section id="agenda" data-background-image="../figures/Teaching/Civil361/lvl1.png" data-background-size="70%">       
                     
                      <div class="whitebackground2 fragment">
-                       
                         
                         <p>We'll talk about </p>
-                        
                         
                         <p class="l2">What is speed, flow, density and travel time?</p>
                         <p class="l2">How to measure them?</p>
@@ -268,7 +286,7 @@
                         <p class="l2">Time-mean-speed is calculated from the individual spot speed recorded for vehicles passing a point over a selected time period (arithmetic mean)</p>
                         
                          \[\begin{aligned}
-					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N}\\
 					\end{aligned} \]
                         
                         <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance (harmonic mean)</p>
@@ -276,9 +294,9 @@
                           \[\begin{aligned}
 					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
 					\end{aligned} \]
+                    
+                    <p><a>In Traffic Engineering, when we talk about mean speeds, it often means Space-mean-speed</a></p>
                         
-                  
-                         
                     <aside class="notes">
                   *** Time Mean Speed =  arithmetic average speed
                     
@@ -372,6 +390,9 @@
                              style="width:700px;"
                              alt="Flow-chart" />
                       
+                      
+                      <p class="l2">How to record $t_0$? When we observe a magnetic signal from the loop detector</p>
+                      
                       <p class="l2"> <a href="https://journals.plos.org/plosone/article/figure/image?size=large&id=10.1371/journal.pone.0211626.g001">Click to see: magnetic profiles</a> </p> 
                       
                  </section>
@@ -417,8 +438,25 @@
                     
                 </section>
                 
-                 <section id="speed9" >                 
-                        <p>Variance of speed: measures how far a set of spot speeds is spread out from their average value.</p>
+                
+                 <section id="ex3-speed" >
+                    <a class="bold">Example 3:</a>
+                    <p>From a traffic video, an observer finds two groups of cars travelling along a road. The observation section is 1 kilometre long. Group A consists of 20 cars in the
+                    section running at 10km/h; group B consists of 40 cars running at 20 km/h. Determine the space
+                    mean and time mean speeds of the traffic.</p>
+                    
+                    <p>What can you conclude about the relationship between space mean speed and time mean speed?</p>
+                    
+                    <p class="l2">[Answers: $v_t$ = 16.7 km/h, $v_s$ = 15 km/h]</p>
+                    
+                </section>  
+                
+                
+                
+                 <section id="speed9" >   
+                     
+                     <h3>Variance of speed: </h3>
+                        <p>Measures how far a set of spot speeds is spread out from their average value.</p>
                      
                         \[\begin{aligned}
 					\sigma_t^2 = \frac{1}{N-1} \sum_{i=1}^{m}{f_i (v_i - v_t)^2} \\
@@ -434,13 +472,17 @@
                 
                 
         
-                 <section id="flow-what?" data-background-image="../figures/teaching/traffic-count.jpg" data-background-size=80%> 
+                 <section id="flow-what?" > 
                 
-                 <div class="whitebackground2" style="position: relative; bottom: 250px">
-                     <p> Which data do you think is being collected? 
-                        </p>  
-                                      
-                    </div> 
+                     <p> Which data do you think is being collected? </p>
+                       
+                           <video controls autoplay muted>
+
+                        <source data-src="../videos/traffic-counters.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
                 
                 </section>      
                 
@@ -456,6 +498,10 @@
                 
                 <section id="flow-def1" >                
                         <h3>What is 'traffic flow'?</h3>
+                    
+                     <img data-src="https://img.rasset.ie/001189ff-1600.jpg"
+                             style="float:right;width:300px;"
+                             alt="Flow-chart" />
                         
                         <p>The total number of vehicles passing a given point in a given time. Traffic flow is expressed as vehicles per hour (veh/hr) </p>
                         
@@ -471,7 +517,6 @@
                     
                 </section>
                 
-                
           
                 <section id="flow-def2" >                   
                    
@@ -483,29 +528,36 @@
                  
                 </section>  
                 
-                 
-                 <section id="flow-def3" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                    <p>Traffic flow data can be collected by:</p>
+                
+               
+                
+                  <section id="flow-collect" data-background-image="../figures/Backgrounds/city.gif" >
+                      
+                      <div class="whitebackground ">
+                    
+                     <h3>Traffic monitoring and traffic data collection</h3>
                         
-                        <p class="l2">manual counting with human surveyors</p>
-                        <p class="l2">road tubes</p>
-                        <p class="l2">loop detectors</p>
-                        <p class="l2">big data e.g. mobile phone data, etc</p>
+                        <p>Can support decision making (e.g. tackle traffic congestion or civil emergencies)</p>
                         
-                    </div>
-                         
-                 
-                </section>    
+                       <p>Can feed into models of traffic planning.</p>
+                      
+                      <h3>What are the current techniques and their issues?.</h3>
+                          
+                          </div>   
+                        
+                </section>     
                 
                 
-           <!-- ******************************************************
+                 <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="flow1" >                   
+                <section id="flow11" >   
+                    
+                     <h3>Traffic flows monitoring: With human suveryors</h3>
                         
-                        <p class="l3"><a>Manual counting with human surveyors</a> is usually more expensive per unit time. But can be used where automatic machine counting is not capable of recording the data in the form required.</p>
+                        <p>Costly and inefficient.</p>
+                    <p>But quite flexible</p>
                         
                         <img data-src="../figures/teaching/traffic-count.jpg"
                              style="width:800px;"
@@ -517,10 +569,12 @@
                 
                  <!-- *************** ITS data ************************** -->
   
-               <section id="traffic-counters" > 
+               <section id="traffic-counters1" > 
                       <div class="whitebackground2 ">
                         
-                        <p>How to measure traffic flows: With road tubes</p>
+                        <h3>Traffic flows monitoring: With road tubes</h3>
+                          
+                          <p>Imagine doing this on our 5-lanes motorways!</p>
                           
                   <video controls autoplay muted>
 
@@ -536,11 +590,12 @@
                 
                  <!-- *************** ITS data ************************** -->
   
-               <section id="traffic-counters" > 
+               <section id="traffic-counters21" > 
                       <div class="whitebackground2 ">
-                        <h3>How to measure traffic flows</h3>
+                        <h3>Traffic flows monitoring: With loop detectors</h3>
                         
-                        <p class= "l2">With loop detectors (and how they contribute to traffic signals!)</p>
+                           <p class= "l2">Automatic, and can provide data in real-time once the infrastructure is inplace</p>
+                        <p class= "l2">Very high cost for maintenance</p>
                           
                   <video controls autoplay muted>
 
@@ -554,16 +609,58 @@
                 </section>    
                 
                     <!-- *************** ITS data ************************** -->    
-                <section id="Data-MobilePhones">
+                <section id="Data-MobilePhones1">
                     <figure class="right">
                         <figcaption>a</figcaption>
                         <img data-src="../figures/teaching/census_mobile-correlation-map.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
                     </figure>
                     
-                    <p>How to measure traffic flows: Big Data (e.g. mobile phone data)</p>
+                 <h3>Traffic flows monitoring: With mobile phone data</h3>
                     <img class="left" data-src="../figures/teaching/census_mobile-correlation.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
                     <p class="l2">Huge volume of detailed data but has privacy concerns or coarse resolution</p>
                 </section>   
+                
+
+                
+                <section id="flow-def21" >                   
+                   
+                        <h3>Traffic flows monitoring: Using computer vision </h3>
+                        
+                    <p class="l2">Efficient and economical</p>
+                    <p class="l2">But still quite early so might not be realiable (yet)</p>
+                    
+                        <img data-src="../figures/teaching/traffic-count.gif"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                 
+                </section>  
+                
+                
+                 <section id="Tramon5" data-transition="fade">
+
+                    <p>Application on the CCTV footage at SH16</p>
+                
+                   
+                     <video controls muted>
+
+                        <source data-src="../videos/SH16.m4v" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                    
+                </section> 
+                
+                
+                <section id="intersection-example" data-background-image="../figures/Teaching/Civil361/example-intersection.png" data-background-size="40%">    
+                    
+                    <div class="whitebackground2" style="position: relative; bottom: 300px">
+                        <p><a>Example 4: </a> Assigment question in 2021</p>
+                        
+                    </div>
+                    
+                          <div>&nbsp;</div>
+                </section>
               
             
                    <!-- ******************************************************
@@ -575,8 +672,9 @@
                         <h3>Traffic volume</h3>
                             
                              <p> Traffic volume is basically traffic flow, but often about a longer time period</p>
-                         <p class="l2"> The total number of vehicles that pass over a given point or section during an extended period (beyond an hour) and usually 24 hours.</p>
-                           
+                        
+                         <p class="l2"> The total number of vehicles that pass over a given point or section during an extended period (beyond an hour) and is usually in <a>a day</a></p>
+                        
                           <p >	<a> Annual Average Daily Traffic (AADT)</a>: is the average number of vehicles per day on a road over the year. </p>
                         
                         <p > <a>Average Daily Traffic (ADT) </a> refers to the average number of vehicles on a road on a day</p>
@@ -585,17 +683,19 @@
                     </div>
                 </section>
                 
-                 <section id="param12" data-background-image="../figures/Teaching/Civil361/intersection.png" data-background-size="65%">
+                
+                 <section id="param12" >
+                
+                      <h3>Now what's if our traffic is mixed: some cars, some trucks, some motorbikes, etc..</h3>
                      
-                      <div class="whitebackground2"  style="position: relative; bottom: 300px"> 
-                    
-                    <p> Intersection traffic flow diagram </p>
+                     <p>We use <a>passenger car units</a></p>
                      
-                   </div>
-                    
+                     <p class="l3">e.g. a truck equals 1.5 cars, so 1 truck = 1/5 $pcu$</p>
+                     
+                     <p class="l3">e.g. a right turn car = 1/5 $pcu$</p>
+                     
+                   
                 </section>
-                
-                
                 
                 
                    <!-- ******************************************************
@@ -609,8 +709,6 @@
                              alt="PHF" />
                      </figure>
                         <h4>Peak Hour Factor (PHF) </h4>
-                    
-                           
                     
                              <p class="l3"> Compares the traffic volume during the busiest 15-minutes of the peak hour with the total volume during the peak hour. It indicates how consistent traffic volume is during the peak hour.</p>
                         
@@ -626,6 +724,66 @@
                         <p class="l3"> $V_{15m}$ =  volumne during the peak 15 minutes of the analysis hour </p>
                   
                 </section>
+                
+                
+                 <section id="ex4-PHF" >
+                    <a class="bold">Example 5:</a>
+                    <p class="l3">It is commonly known in your area that the heaviest traffic flow rates occur between 5:00 PM and 6:00 PM. Your assignment for the day is to find the peak hour factor (PHF). To do this, you obtain a click-counter and position yourself at the intersection. For each fifteen-minute interval, you record the numbers of right-turns, left-turns, straight-through (ST) trucks, and straight-through passenger cars. Your tabulated values are as shown below.</p>
+                    
+                     <p class="l3">Note that: a truck is 1.5pcu, a left turn vehicle is 1.5pcu, a right turn vehicle is 2.5pcu</p>
+                     
+                      <table>
+                        <thead><tr>
+                            <th>Time</th>
+                            
+                            <th>Right turn</th>
+                            <th>Left turn</th>
+                            <th>ST truck</th>
+                            <th>ST car</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>5:00-5:15</td>
+                            <td>20</td>
+                            <td>40</td>
+                            <td>25</td>
+                            <td>30</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>5:15-5:30</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>10</td>
+                           
+                        </tr>
+                             <tr>
+                             <td>5:30-5:45</td>
+                            <td>50</td>
+                            <td>70</td>
+                            <td>55</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                           
+                            <td>5:45-6:00</td>
+                            <td>30</td>
+                            <td>35</td>
+                            <td>20</td>
+                            <td>40</td>
+                        </tr>
+                       
+                        </tbody>
+                    </table>
+                     
+                     
+                    
+                    <p class="l2">[Answers: $PHF$=0.57]</p>
+                    
+                </section>  
+                
+                
                 
               
                 
@@ -643,6 +801,11 @@
                     <div class="whitebackground2">
                         <h3>What is 'density'?</h3>
                         
+                        <img data-src=" https://www.researchgate.net/profile/Evan-Tan-2/publication/4308159/figure/fig1/AS:279602132996108@1443673751765/Examples-of-traffic-density-states-clockwise-starting-from-top-left-empty-low-high.png"
+                             style="float:right;width:400px;"
+                             alt="Flow-chart" />
+                        
+                        
                     <p class="l2">The average number of vehicles that occupy one mile or one kilometer of road space (veh/km) </p>
                         
                         \[\begin{aligned}
@@ -653,8 +816,11 @@
                          
                 </section>
                 
-                  <section id="density1" data-background-image="../figures/Teaching/auckland-signal.jpg">           
-                    <div class="whitebackground2">
+                  <section id="density1" >
+                      
+                       <img data-src=" https://www.researchgate.net/profile/Evan-Tan-2/publication/4308159/figure/fig1/AS:279602132996108@1443673751765/Examples-of-traffic-density-states-clockwise-starting-from-top-left-empty-low-high.png"
+                             style="float:right;width:400px;"
+                             alt="Flow-chart" />
                         
                           <p>The average number of vehicles that occupy one mile or one kilometer of road space (veh/km) </p>
                         
@@ -670,9 +836,7 @@
 					Density(k) \quad k = \frac{N}{L} \ (veh/km) \\
 					\end{aligned} \]
                         
-                       
-                    </div>
-                         
+                    
                 </section>
                 
                 
@@ -708,75 +872,67 @@
                  </section>  
                 
                 
-                
-                  <!-- ******************************************************
+                 <!-- ******************************************************
                 *********************** Definition ***********************
                 ************************************************************ -->
 
-                <section id="headway0">
-                        <h3>What is 'headway'</h3>
-                        
-                         <p class="l2"> Time between two consecutive vehicles passing the same point </p>
-                         <p class="l2">More popular for public transport</p>
+             
+                <section id="ex4" >                     
+                   
+                        <p><a>Example 6:</a> Four vehicles, 6, 7, 8, and 9 m long, are distributed over a length of a freeway lane 200 m long. What is the space occupancy and density?</p>
                     
-                     \[\begin{aligned}
-					Time Headway(\bar{t}) \quad \bar{t} = t_i - t_{i+1} \\
-					\end{aligned} \]
                     
-                         <p> Space headway $\bar{s}$:  distance between the same points of two consecutive vehicles following each other </p>
-                        
-                        \[\begin{aligned}
-					Space Headway(\bar{s}) \quad \bar{s} = \frac{L}{N} = \frac{1}{k} \\
-					\end{aligned} \]
-                          
-                </section>  
-                 
-                
-                
-                 <!-- ******************************************************
-                *********************** Definition ***********************
-                ********************************************************
+                      <video controls autoplay>
 
-                <section id="timespace" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What is a 'Time-Space Diagram'</h3>
-                        
-                        <img data-src="../figures/teaching/time-space.png"
-                             style="width:600px;"
-                             alt="Flow-chart" />
-                        
-                         <p class="l2"> Shows the position of individual vehicles in time and in space</p> 
-                         <p class="l2">Useful for understanding traffic flow. These diagrams are especially useful for discussions of shock waves and wave propagation </p>
-                        
-                    </div>
-                         
-                     <aside class="notes">
-                 Typically, time is drawn on the horizontal axis and distance from a reference point on the vertical axis. The trajectories of individual vehicles in motion are portrayed in this diagram by sloping lines, and stationary vehicles are represented by horizontal lines. The slope of the line represents the speed of the vehicle. Curved portions of the trajectories represent vehicles undergoing speed changes such as deceleration.
-                
-                        
-                     </aside>  
-                    
-                </section>  
-    
-                
-                <section id="pf-bussim-video">
-
-                    <h2>Example: Time-space diagram of buses</h2>
-
-                    <video controls autoplay>
-
-                        <source data-src="../videos/bussim-pf-video.mp4" type="video/mp4"/>
+                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
 
                          Your browser does not support the video tag.
 
                     </video>
-             </section>           
                 
-                **** -->
+                     <aside class="notes">
+                  Refer to the class notes 
+                     </aside>  
+                    
+                    
+                </section>
+                
+                 <!-- *************** time space diagram ************************** -->
+  
+               <section id="spacetime" >
+                   
+                   <h3>Time space diagram</h3>
+                    
+                   <figure class="right" >
+
+                        <img data-src="../figures/teaching/time-space.png"
+                             style="width:400px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                    <p class="l2">Illutrates the spatial-temporal trajectory of each vehicle. Each line represents the trajectory of a vehicle</p>
+                   
+                   
+                   <p class="l2"> The horizontal gap (time gap) between two vehicle at the same position shows the <a>time headway</a> $\bar{t}$ between them
+                   
+                    \[\begin{aligned}
+					Time Headway(\bar{t}) \quad \bar{t} = t_i - t_{i+1} \\
+					\end{aligned} \]
+                </p>
+                   <p class="l2"> The vertical gap (space gap) between two vehicle at the same time shows the <a>space headway</a> $\bar{s}$ between them 
+                   
+                     \[\begin{aligned}
+					Space Headway(\bar{s}) \quad \bar{s} = \frac{L}{N} = \frac{1}{k} \\
+					\end{aligned} \]
+                          </p>
+                    
+                  </section>  
+                
+                
                 
                <section id="flow-covid" data-background-image="../figures/Teaching/auckland-traffic.jpg" data-background-size="90%">                     
                     <div class="whitebackground2" style="position: relative; bottom: 300px">
-                        <h3>Example: Use today's concepts to explain the graph </h3>
+                        <h3><a>Example 7: </a> Use today's concepts to explain the graph </h3>
                         
                     </div>
                          
@@ -836,7 +992,7 @@
              
                 <section id="ex2" >                     
                    
-                        <p><a>Example 3:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 5 vehicles as below. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
+                        <p><a>Example 8:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 5 vehicles as below. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
                     
                     
                     <table>
@@ -888,56 +1044,6 @@
                 
                 
                    <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-             
-                <section id="ex4" >                     
-                   
-                        <p><a>Example 4:</a> Four vehicles, 6, 7, 8, and 9 m long, are distributed over a length of a freeway lane 200 m long. What is the space occupancy and density?</p>
-                    
-                    
-                      <video controls autoplay>
-
-                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
-
-                         Your browser does not support the video tag.
-
-                    </video>
-                
-                     <aside class="notes">
-                  Refer to the class notes 
-                     </aside>  
-                    
-                    
-                </section>
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ********************************************************
-
-             
-                <section id="ex5" >                     
-                   
-                      <p><a>Example 5:</a> </p>
-                    
-                    
-                     <img data-src="../figures/teaching/example5.png"
-                             style="width:1000px;"
-                             alt="UberAV" />
-                    
-                
-                     <aside class="notes">
-                  Refer to the class notes 
-                     </aside>  
-                    
-                    
-                </section>
-                
-                **** -->
-                
-                   <!-- ******************************************************
                 *********************** Traffic flow ***********************
                 ************************************************************ -->
 
@@ -970,6 +1076,16 @@
 
                 <section id="traveltime1" >
                         <h3>Free-flow travel time and travel delay</h3>
+                    
+                    <figure class="right" >
+
+                        <img data-src="https://www.researchgate.net/profile/Srijith-Balakrishnan/publication/287206999/figure/fig3/AS:669485472161806@1536629183626/shows-a-typical-multi-lane-highway-under-free-flow-traffic-conditions.jpg"
+                             style="width:400px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                    
+                    
                     
                     <p><a>Free-flow travel time </a>is the time it should take if we can always travel at the maximum possible speed, usually the speed limit</p>
                         
@@ -1145,7 +1261,7 @@
                   
                         <video controls autoplay>
 
-                        <source data-src="../videos/HighD.mp4" type="video/mp4"/>
+                        <source data-src="../videos/video-data.mp4" type="video/mp4"/>
 
                          Your browser does not support the video tag.
 
@@ -1171,7 +1287,13 @@
 
                 </section> 
 
-                <section id="flow-example" data-background-image="../figures/Teaching/Civil361/test2021.png" data-background-size="50%">                     
+                <section id="flow-example" data-background-image="../figures/Teaching/Civil361/test2021.png" data-background-size="40%">    
+                    
+                    <div class="whitebackground2" style="position: relative; bottom: 300px">
+                        <p><a>Example 9: </a> Auckland vs other cities in ANZ</p>
+                        
+                    </div>
+                    
                           <div>&nbsp;</div>
                 </section>
                  
@@ -1217,9 +1339,6 @@
                 </section>   
                 
                 
-                
-          
-                
                   <!-- *************** ITS management 4 ************************** -->
   
                <section id="prob1" data-background-image="../figures/Teaching/Civil361/problem1-trafficstudies.png" data-background-size="70%">    
@@ -1227,22 +1346,8 @@
                 </section>   
                 
                 
-                
-                <section id="prob2" >
-                    <h3>Problem 2</h3>
-                    <p>From a traffic video, an observer finds two groups of cars travelling along a road. The observation section is 1 kilometre long. Group A consists of 20 cars in the
-                    section running at 10km/h; group B consists of 40 cars running at 20 km/h. Determine the space
-                    mean and time mean speeds of the traffic.</p>
-                    
-                    <p>What can you conclude about the relationship between space mean speed and time mean speed?</p>
-                    
-                    <p class="l2">[Answers: $v_t$ = 16.7 km/h, $v_s$ = 15 km/h]</p>
-                    
-                </section>  
-                
-                
                  <section id="prob3" >
-                    <h3>Problem 3</h3>
+                    <h3>Problem 2</h3>
                     <p>A loop detector having a length of 3 m was observed to have six vehicles cross over it in a period
                     of 148 sec, for the following durations: 0.44, 0.48, 0.50, 0.41, 0.49, and 0.55s. Estimate the values
                     of $q, k,$ space-mean and time mean speed. The corresponding lengths of vehicles were 6, 7, 6.5,
@@ -1253,7 +1358,7 @@
                 </section>  
                 
                 <section id="prob4" >
-                    <h3>Problem 4</h3>
+                    <h3>Problem 3</h3>
                     <p>At traffic count stations A and B, the ADT are collected in 6 months as the below table. The AADT can be estimated as the average values of these ADT. </p>
                     
                     <p>Station B also has another modern way to count the vehicles from automatic video processing, which considered more accurate. This value is 8800 veh/day, and is consided as the ground-truth of the vehicle count. </p>
@@ -1315,7 +1420,7 @@
                     
                    
                  <section id="prob5" >
-                    <h3>Problem 5</h3>
+                    <h3>Problem 4</h3>
                     <p>Speeds are measured at a fixed point along a road section as follows (in km/h):</p>
                     <p class="l2">52, 47, 50, 54, 59, 63, 67, 57, 55, 48, 44, 53, 54, 58, 49, 61, 55, 50, 47, 55</p>
                     <p>Determine the following:</p>
