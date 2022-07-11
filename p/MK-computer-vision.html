@@ -76,8 +76,7 @@
                        <hr/>
 
                         
-                        <h2>Data-driven Agent-Based Models: </h2>
-                        <h4>bringing together machine learning and city simulation</h4>
+                         <h2>AI and computer vision in traffic data collection and monitoring</h2>
 
                         <hr/>
 
@@ -85,227 +84,358 @@
 
                         <h4>Lecturer</h4>
 
-                        <h4>Transport Research Centre, University of Auckland</h4>
+                        <h4>University of Auckland</h4>
 
                         <hr/>
 
                          <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
 
-                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO_TRC.png"/>
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
                         </a>
-                        
-                             
-                              <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-ABM.html">https://leminhkieu.github.io/p/MK-ABM.html</a></p>
+                              <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-computer-vision.html">https://leminhkieu.github.io/p/MK-computer-vision.html</a></p>
                        
                     </div>
 
                 </section>
-
-             
-               
-
-                 <!-- ***************** problems with ABMs ******************** -->
                 
+                
+                
+                  <section id="intro" data-background-image="../figures/Backgrounds/city.gif" >
+                      
+                      <div class="whitebackground2 ">
+                    
+                     <h3>Traffic monitoring and traffic data collection</h3>
+                        
+                        <p>Can support decision making during civil emergencies.</p>
+                        
+                       <p>Can feed into traffic models.</p>
+                      
+                      <h3>What are the current techniques and their issues?.</h3>
+                          
+                          </div>   
+                        
+                </section>     
+                
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
 
-                <section id="prob-divergence" data-background-image="../figures/Backgrounds/skylines-day2.jpg">
+                <section id="flow1" >   
+                    
+                     <h3>Traffic flows monitoring: With human suveryors</h3>
+                        
+                        <p>Costly and inefficient.</p>
+                        
+                        <img data-src="../figures/teaching/traffic-count.jpg"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                        
+                </section>      
+                
+                
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="traffic-counters" > 
+                      <div class="whitebackground2 ">
+                        
+                        <h3>Traffic flows monitoring: With road tubes</h3>
+                          
+                          <p>Imagine doing this on our 5-lanes motorways!</p>
+                          
+                  <video controls autoplay muted>
 
-                        <div class="whitebackground2">
+                        <source data-src="../videos/traffic-counters.mp4" type="video/mp4"/>
 
-                            <h2>Issues with current Agent-Based Models</h2>
-                            
-                            <p>1. Uncertainty: there is no systematic mechanism to incorporate new data into agent-based models</p>
+                         Your browser does not support the video tag.
 
-                            <p class="l3">The reality is dynamic: Non-linear models predict near future well, but diverge over time.   </p>
-                            <p class="l3">The reality is stochastic: No set of parameters would perfectly explain the real system.   </p>
-                            
-                            <p>2. Complex development</p>
+                    </video>
+                          
+                   </div>          
+                </section>    
+                
+                
+                 <!-- *************** ITS data ************************** -->
+  
+               <section id="traffic-counters2" > 
+                      <div class="whitebackground2 ">
+                        <h3>Traffic flows monitoring: With loop detectors</h3>
+                        
+                        <p class= "l2">Very high cost for maintenance</p>
+                          
+                  <video controls autoplay muted>
 
+                        <source data-src="../videos/loop-signal.mp4" type="video/mp4"/>
 
-                           <p class="l3">Modellers' bias</p>
-                           <p class="l3">Complex human behaviours</p>
-                           <p class="l3">Agents homogeneity</p>
+                         Your browser does not support the video tag.
 
-                        </div>
-               
-                </section>
-                 
-                             <!-- ***************** Data Assimilation **************** -->                
-               <section id="how_DA_works" data-transition="fade">
-
-                    <h2>1. Deals with uncertainty: Data Assimilation for Agent-Based Models</h2>
-
-                    <img src="../figures/projects/data-assimilation.png"
-
-                         alt="DA" />
-
-                        <div class="whitebackground">
-
-                            <p>Improve estimates of the true system state by combining noisy, real-world observations and model estimates of the system state</p>
-
-                        </div>
-
+                    </video>
+                          
+                   </div>          
+                </section>    
+                
+                    <!-- *************** ITS data ************************** -->    
+                <section id="Data-MobilePhones">
+                    <figure class="right">
+                        <figcaption>a</figcaption>
+                        <img data-src="../figures/teaching/census_mobile-correlation-map.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    </figure>
+                    
+                 <h3>Traffic flows monitoring: With mobile phone data</h3>
+                    <img class="left" data-src="../figures/teaching/census_mobile-correlation.png" alt="Comparing census daytime populations to aggregate mobile phone estimates" />
+                    <p class="l2">Huge volume of detailed data but has privacy concerns or coarse resolution</p>
                 </section>   
                 
-                
-                
-                <section id="abm-dda-overview">
-                    
-                    <p><a>ERC's Horizon 2020 project</a>  </p>
-                     <p class="l2">DUST: Data Assimilation for Agent-Based Models.  </p>
-                    
-                    <img data-src="../figures/DUST/DUST.png" alt="Diagram of dynamic data assimilation and an ABM" />
-                </section>
-                
-                <section id="pf-bussim">
-                    <h2>Example 1<br/>Bus Simulation with a Particle Filter</h2>
-                    <p>Context: simulate bus routes <i>in real time</i></p>
-                    <p>We have GPS bus positions, but to make good term forecasts we need to be able to infer other factors</p>
-                    <p class="l2">Number of people waiting at bus stops</p>
-                    <p class="l2">Number of people on the bus</p>
-                    <p class="l2">Surrounding traffic levels</p>
-                    <p class="l2">Etc.</p>
-                    <p>Aim: test a <i>particle filter</i> as the means of assimilating real-time GPS positions into a model.</p>
-                </section>
-                
-                
-                
-                
-                <section id="particle-filter">
-                    <h2>Particle Filter</h2>
-                 <img class="right"  src="https://miro.medium.com/max/1400/1*k_xV46MBF-ixl9UwIcUujQ.png"
-                         alt="PF" />
-                    <p>Create N realisations of the model ('particles')</p>
-                    <p>Run each particle forward in time until you receive some new data</p>
-                    <p>Compare the particles to the observation and:</p>
-                    <p class="l2">Weight each particle depending on how close it is to the observations</p>
-                    <p class="l2">Resample the population of particles using the weights
-                    (good particles are kept, bad ones disappear)</p>
-                    <p>Repeat</p>
-                    
-                </section>
-                
-                <section id="pf-bussim-video">
-                    <h2>Bus Simulation</h2>
-                    <video controls autoplay >
-                        <source data-src="../videos/bussim-video.mp4" type="video/mp4"/>
-                         Your browser does not support the video tag.
-                    </video>
-                </section>
 
                 
+                <section id="flow-def2" >                   
+                   
+                        <h3>Traffic flows monitoring: Using computer vision </h3>
+                        
+                        <img data-src="../figures/teaching/traffic-count.gif"
+                             style="width:800px;"
+                             alt="Flow-chart" />
+                 
+                </section>  
+             
+                 <section id="YOLO0" data-transition="fade">
+                    
+                      <p>Object detection algorithm YOLO: You only look once</p>
                 
-                <section id="pf-bussim-pf-video">
-                    <h2>Bus Simulation with a Particle Filter</h2>
-                    <video controls autoplay>
-                        <source data-src="../videos/bussim-pf-video.mp4" type="video/mp4"/>
-                         Your browser does not support the video tag.
-                    </video>
-                </section>
-                
-                
-                 <section id="pf-bussim-last">
-                    <h2>Example 1<br/>Bus Simulation with a Particle Filter</h2>
+                    <img data-src="../figures/paper-figures/computer-vision/Yolo.png"  style="float:centre;width:800px;" alt="2"/>
+                   
+                        <p class="l3">State-of-the-art object detection algorithm</p>
                      
-                      <p class="l3">LM Kieu, N Malleson, A Heppenstall (2020) <i>Dealing with uncertainty in agent-based models for short-term predictions</i> Royal Society open science 7 (1), 191074</p>
-                            
-                    <p class="l3">LM Kieu, D Ngoduy, N Malleson, E Chung (2019) <i>A stochastic schedule-following simulation model of bus routes </i>, Transportmetrica B: Transport Dynamics 7 (1), 1588-1610</p>
-                </section>
+                 </section> 
                 
+                
+                 <section id="YOLO1" data-transition="fade">
+                
+                     
+                      <p>Annotated image dataset: Microsoft COCO</p>
+                
+                    <img data-src="https://production-media.paperswithcode.com/datasets/COCO-0000000050-6e25f9dc.jpg"  style="float:centre;width:800px;" alt="2"/>
+                   
+                        <p class="l3">84 different objects, but not specialised in transportation</p>
+                     
+                 </section> 
+                
+                
+                
+                 <section id="YOLO2" data-transition="fade">
 
-                                
-                <section id="pf-stationsim" >
+                    <p>Standard YOLO object detection</p>
+                
+                     
+                     <iframe src="https://www.youtube.com/embed/69Ii3HjUiTM" data-autoplay></iframe>
                     
-                    <h2>Example 2<br/>Crowd Simulation with a Particle Filter</h2>
-                    <img class="right" src="../figures/DUST/GCS-data.jpg"
-                         alt="GCS" />
-                    <p>Context: simulate a crowd <i>in real time</i></p>
-                    <p class="l2">What methods can we use to assimilate data?</p>
-                    <p class="l2">How much data do we need?</p>
-                    <p class="l3">Track every individual?</p>
-                    <p class="l3">Track some individuals?</p>
-                    <p class="l3">Just aggregate counts (e.g. number of people passing a footfall camera)</p>
-                    <p>Case study: a simple, hypothetical train station (<i>Station Sim</i>)</p>
-                </section>
+                </section> 
                 
                 
-                <section id="stationsim-video">
-                    <video controls width="80%" height="auto">
-                        <source src="../videos/StationSim-Videos/stationsim-no_crowding.mp4" type="video/mp4"/>
+                  <section id="Challenge" data-transition="fade">
+
+                    <h3>Research challenge:</h3>
+                
+                     <p>How can be specialise computer vision for traffic monitoring?</p>
+                      <p class="l2">Traffic vehicle objects</p>
+                      <p class="l2">Actual locations of those objects on a real-world dataset</p>
+                    
+                </section> 
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="acknowledgement" data-background-image="../figures/Backgrounds/city.jpg" >
+
+                     <div class="whitebackground2 ">
+                     <h3>Acknowledgement</h3>
+                        
+                        <p><a>Dr Tan Dang</a>, Hanoi University of Transport and Communications, Vietnam</p>
+                     <p><a>Daria Solovyeva</a>, University of Auckland</p>
+                         </div>
+                      
+                        
+                </section>  
+                
+                
+                 <section id="Challenge1" data-background-image="../figures/Backgrounds/hanoi-old-quarter.jpg" >
+
+                     <div class="whitebackground2 ">
+                    <h3>1st challenge: How can we make AI-based traffic monitoring practical?</h3>
+                         <p class="l2">Efficient (e.g. real-time monitoring)</p>
+                         <p class="l2">Accurate</p>
+                         <p class="l2">Economical</p>
+                         <p class="l2">Versatile</p>
+                
+                     <p>Our case study is in Hanoi, Vietnam</p>
+                      <p class="l2">Much higher traffic density</p>
+                      <p class="l2">Many unknown classes of vehicles</p>
+                      <p class="l2">Lane-free traffic</p>
+                     
+                      <p>We believe that if we can do Vietnam, we can do New Zealand, too!</p>
+                     
+                     </div>
+                    
+                </section> 
+                
+                
+                <section id="Challenge1a" data-transition="fade">
+                
+                     
+                      <p>If we use existing computer vision packages for the traffic in Vietnam...</p>
+                
+                    <img data-src="../figures/paper-figures/computer-vision/COCO-problem.png" alt="2"/>
+                   
+                        
+                 </section> 
+                
+                
+                  <section id="Tramon0" data-transition="fade">
+                       <p>TRAMON: a real-time traffic monitoring system</p>
+                    
+                    <img data-src="../figures/paper-figures/computer-vision/Tramon.png"  style="float:right;width:700px;" alt="2"/>
+                
+                     
+                
+                     <p>To improve object detection performance, we use: </p>
+                      <p class="l2">- state-of-the-art algorithms and databases: Yolov5, Ms COCO and DeepSORT </p>
+                      <p class="l2">- a 3-levels iterative system </p>
+                      <p class="l2">- a semi-automatic method for image annotation</p>
+                      
+                      <p class="l3"><a>Paper under review at IATSS Journal</a></p>
+                    
+                </section> 
+                
+                
+                 <section id="Tramon1" data-transition="fade">
+                
+                     
+                      <p>Key elements from our traffic videos</p>
+                
+                    <img data-src="../figures/paper-figures/computer-vision/ROI.png" alt="2"/>
+                   
+                        
+                 </section> 
+                
+                
+                 <section id="Tramon2" data-transition="fade">
+                
+                     
+                      <p>Left: existing algorithms, Right: our proposed TRAMON system</p>
+                
+                    <img data-src="../figures/paper-figures/computer-vision/COCOvsTRAMON.png" alt="2"/>
+                   
+                        
+                 </section> 
+                
+                
+                 <section id="Tramon3" data-transition="fade">
+                
+                     
+                      <p>Left: existing algorithms, Right: our proposed TRAMON system</p>
+                
+                    <img data-src="../figures/paper-figures/computer-vision/COCOvsTRAMON2.png" alt="2"/>
+                   
+                        
+                 </section> 
+                
+                
+                 <section id="Tramon4" data-transition="fade">
+
+                    <p>TRAMON performance</p>
+                
+                     <iframe src="https://www.youtube.com/embed/wPvA5n9xrpI" data-autoplay></iframe>
+                    
+                </section> 
+                
+                
+                <section id="Tramon5" data-transition="fade">
+
+                    <p>TRAMON application on the CCTV footage at SH16</p>
+                
+                   
+                     <video controls muted>
+
+                        <source data-src="../videos/SH16.m4v" type="video/mp4"/>
+
                          Your browser does not support the video tag.
+
                     </video>
-                </section>
-                
-                <section id="pf-stationsim2">
-                    <h2>Crowd Simulation with a Particle Filter</h2>
-                    <img src="../figures/DUST/pf_animation.gif" 
-                         alt="Animation of crowd simulation with data assimilation" />
-
-                </section>
-                
-                <section id="pf-stationsim3">
-                    <h4>Real-time Crowd Simulation with an Emulator of Agent-based models </h4>
-                    <img src="../figures/DUST/emulator.png" 
-                         alt="Emulator" />
-
-                </section>
-                
-                
-                    <section id="pf-stationsim-last">
-                    <h2>Example 2: Crowd Simulation with a Particle Filter</h2>
-                        
-                        <p class="l3">M Kieu, H Nguyen, J A Ward, N Malleson (2022) <i>Towards Real-Time Predictions using Emulators of Agent-Based Models</i> Journal of Simulation</p>
                     
-                        <p class="l3"> Patrica Ternes, Jonathan A Ward, Alison Heppenstall, Vijay Kumar, Le-Minh Kieu, Nick Malleson (2021)  <i>Data assimilation and agent-based modelling: towards the incorporation of categorical agent parameters</i>, Open Research Europe</p>
-                        
-                        <p class="l3">R Clay, JA Ward, P Ternes, LM Kieu, N Malleson (2021) <i>Real-time agent-based crowd simulation with the reversible jump unscented kalman filter</i> Simulation Modelling Practice and Theory 113, 102386</p>
-                        
-                        <p class="l3">N Malleson, K Minors, LM Kieu, JA Ward, AA West, A Heppenstall<i>Simulating Crowds in Real Time with Agent-Based Modelling and a Particle Filter</i> Journal of Artificial Societies and Social Simulation 23 ((3) 3)</p>
-                        
+                </section> 
+                
+                    
+                 <section id="Challenge-2" data-background-image="../figures/Backgrounds/beach.jpg" >
+
+                     <div class="whitebackground2 ">
+                    <h3>2nd challenge: Locate the actual coordinates of vehicles</h3>
+                
+                     <p>Our cameras are all 2D-cameras</p>
+                      <p class="l2">Larger objects vs closer objects</p>
+                      
+                     
+                      <p>Identify the bottom plane for each vehicle</p>
+                          <p class="l2">3D bounding box, instead of 2D</p>
+                     
+                     </div>
+                    
+                </section> 
+                
+                
+                <section id="box3D" data-transition="fade">
+                    
+                    <p>Existing 3D bounding box method for actual coordinates estimation</p>
+                
+                 <img data-src="https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/275841279_799651107584719_2580889897656257084_n.png?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=hslGMy1cRZQAX-3rte2&_nc_ht=scontent.fakl2-1.fna&oh=03_AVLYd_1L92DLWH7q1ArvWT9sJ3PWI80CIb4L8rk-8kRdjw&oe=62F126E6"  style="float:centre;width:600px;" alt="2"/>
+                    
+                     <p class="l3">Generally limited to completely straight section</p>
+                    
+                   
                 </section>
                 
-             <!-- ***************** IGSS **************** -->                
-               <section id="IGSS" data-transition="fade">
-
-                    <h3>2. A "Level 0" modelling approach: <a>Inverse Generative Social Science</a></h3>
-
-                   <p>Issues with current development of ABMs:</p>
-                   
-                   <p class="l3">Modellers' bias</p>
-                   <p class="l3">Complex human behaviours</p>
-                   <p class="l3">Agents homogeneity</p>
-
-                     <p>IGSS: Use AI to craft agents' behaviours from data</p>
-
-                   
-                    <img style="float:left;border:1px solid #eeeeee;width:400px; height:auto;" src="https://karlnaumann.com/content/images/2021/06/20210612_IGSS.001.jpeg"/>
-                   
-                    <img style="float:right;border:1px solid #eeeeee;width:400px;height:auto;" src="https://karlnaumann.com/content/images/2021/06/20210612_IGSS.002-1.jpeg"/>
-                 </section>   
                 
-                <section id="evacuation1" data-transition="fade">
-
-                    <h3>IP3 QuakeCoRE - A Resilient Aotearoa New Zealand Transport System</h3>
                 
-                    <video data-autoplay src="../videos/auckland_evacuation.mp4" style="float:center;width:1000px;" > </video>
-                        
-                   
-                        <p class="l3">Data-driven behavioural modelling</p>
-                    <p class="l3">Case study: Auckland CBD</p>
+                 <section id="box3D2" data-transition="fade">
+
+                    <p>Or limited to sections where we can measure every details!</p>
+                
+                     <iframe src="https://www.youtube.com/embed/8kPY1fQhZtk" data-autoplay></iframe>
                     
-           
+                </section> 
+                
+                
+                  <section id="box3D3" data-transition="fade">
+
+                    <p>Introduce Tramon3D</p>
+                
+                    <img data-src="../figures/paper-figures/computer-vision/Tramon-3d.png" alt="2"/>
+                   
+                        <p class="l3">Key idea: We use a vector of motion to identify the vehicle heading direction, and then use that to draw a 3d bounding box</p>
+                    
+                </section> 
+                
+                <section id="box3D4" data-transition="fade">
+
+                  <p class="l3">Now with the vehicle 3d bounding box developed, we only need to compare its location to a set of 4 control points</p>
+                    
+                    <img data-src="../figures/paper-figures/computer-vision/Tramon-3d-2.png" alt="2"/>
+                   
+                        
+                    
                 </section> 
                 
                  
                 <section id="cctv2" data-transition="fade">
 
-                    <p>How can we mine data for our hungry simulation models?</p>
-                
-                    <img data-src="../figures/paper-figures/cctv-1.jpg"  style="float:right;width:300px;" alt="2"/>
+                    <p>Tramon3D on CCTV cameras</p>
+                  
+                        <p class="l3">More accurate and cheaper than any other methods</p>
+                    <p class="l3">Provides estimation of traffic flow, speed and density</p>
+                    
                    
-                        <p class="l3">Traffic analysis from traffic CCTV images</p>
-                    
-                    <p class="l3">Extension: how to estimate the real-world trajectories and speed from just the 2D videos or images?</p>
-                    
                      <video data-autoplay src="../videos/3d-box.mp4" style="float:center;width:600px;" > </video>
                     
                     <a href="https://www.youtube.com/watch?v=8IJcoYMlR4Y">https://www.youtube.com/watch?v=8IJcoYMlR4Y</a>
@@ -313,15 +443,18 @@
                 </section> 
                 
                 
+                
                  <section id="cctv3" data-transition="fade">
 
-                    <p>Mining data for crowd simulation model</p>
+                    <p>Extension to pedestrian systems</p>
                 
                     <video data-autoplay src="../videos/ped-processed.mp4" style="float:center;width:600px;" > </video>
                    
-                        <p class="l3">Also for: shared path safety analysis</p>
-                    
+                      
                 </section> 
+                
+                
+                
                 
                <!-- *****************************************************
 
@@ -345,7 +478,7 @@
 
                        <hr/>
 
-                        <h2>Data-driven Agent-based Models: bringing together machine learning and city simulation</h2>
+                        <h2>AI and computer vision in traffic data collection and monitoring</h2>
 
                         <hr/>
 
@@ -357,8 +490,8 @@
 
                         <hr/>
 
-                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-ABM.html">https://leminhkieu.github.io/p/MK-ABM.html</a></h4>
-
+                             <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-computer-vision.html">https://leminhkieu.github.io/p/MK-computer-vision.html</a></p>
+                     
                     </div>
 
                 </section>
