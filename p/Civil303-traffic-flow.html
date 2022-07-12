@@ -161,7 +161,7 @@
                     <h2>Learning outcomes: </h2>
                     
                     <p>	<a> 1. Understand the traffic flow theory</a> </p>
-                     <p>	2. Understand the queuing theory</p>
+                     <p>	2. Understand the distribution of vehicle arrivals </p>
                     <p>	3. Evaluate variables for unsignalised traffic flow </p>
                     
                   
@@ -190,40 +190,7 @@
                      <div>&nbsp;</div>
                 </section>    
                 
-                  <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="tfflow" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What is 'traffic flow'?</h3>
-                        
-                        <p>Traffic flow studies the movement and interaction of vehicles between two points</p>
-                        
-                        <p class="l2"> Also called traffic streams, as many techniques here are also used to study fluid mechanics (e.g. partial differential equations)</p>
-                            
-                    </div>
-                         
-                </section>
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="theory" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
-                    <div class="whitebackground2">
-                        <h3>What is 'traffic flow theory'?</h3>
-                        
-                        <p>Traffic flow theory involves the development of mathematical relationships  among the three primary elements of a traffic stream namely flow, density and  speed.</p>
-                        
-                        <p class="l2"> Read more:<br/><a href="https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html">https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html</a> </p>
-                            
-                       
-                    </div>
-                         
-                </section>
-                
+                 
               
                        <!-- ******************************************************
                 *********************** Definition ***********************
@@ -231,6 +198,11 @@
 
                 <section id="flow" >                   
                         <h3>What is the 'flow' in flow-density-speed relationship?</h3>
+                    
+                     <img data-src="../figures/teaching/traffic-count.gif"
+                             style="float:right;width:400px;"
+                             alt="Flow-chart" />
+                    
                         
                         <p>The total number of vehicles passing a given point in a given time. Traffic flow is expressed as vehicles per hour (veh/hr) </p>
                         
@@ -258,6 +230,10 @@
 
                 <section id="density" >                     
                         <h3>What is 'density'?</h3>
+                    
+                    <img data-src=" https://www.researchgate.net/profile/Evan-Tan-2/publication/4308159/figure/fig1/AS:279602132996108@1443673751765/Examples-of-traffic-density-states-clockwise-starting-from-top-left-empty-low-high.png"
+                             style="float:right;width:400px;"
+                             alt="Flow-chart" />
                         
                     <p class="l2">The average number of vehicles that occupy one mile or one kilometer of road space (veh/km) </p>
                         
@@ -283,7 +259,7 @@
                         <p class="l2">Time-mean-speed is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
                         
                          \[\begin{aligned}
-					v_t = \frac{\sum_{i=1}^N{v_i}}{N} = \frac{\sum_{i=1}^N{\frac{\Delta x}{\Delta t_i}}}{N} \\
+					v_t = \frac{\sum_{i=1}^N{v_i}}{N}  \\
 					\end{aligned} \]
                         
                         <p class="l2">Space-mean-speed is calculated by dividing the average travel time by the measured distance </p>
@@ -292,7 +268,7 @@
 					v_s = \frac{\Delta x}{\Delta \bar{t}} = \frac{\Delta x}{\frac{1}{N} \sum_{i=1}^N{\frac{\Delta x} {v_i}}} = \frac{N}{\sum_{i=1}^N{\frac{1} {v_i}}}  \\
 					\end{aligned} \]
                         
-                        <p class="l2">Average Travel Speed usually means Space-mean-speed!</p>
+                        <p class="l2"><a>Mean Speed in Traffic Engineering usually means Space-mean-speed!</a></p>
                         
                    
                          
@@ -375,6 +351,24 @@
                 </section>
                 ***** -->
                 
+                
+                  <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="theory" data-background-image="../figures/Backgrounds/grass-left.jpg">                     
+                    <div class="whitebackground2">
+                        <h3>What is 'traffic flow theory'?</h3>
+                        
+                        <p>Traffic flow theory involves the development of mathematical relationships  among the three primary elements of a traffic stream namely flow, density and  speed.</p>
+                        
+                        <p class="l2"> Read more:<br/><a href="https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html">https://lost-contact.mit.edu/afs/eos.ncsu.edu/info/ce400_info/www2/flow1.html</a> </p>
+                            
+                       
+                    </div>
+                         
+                </section>
+                
                     
                   <!-- ******************************************************
                 ***********************  Fundamental diagrams of traffic flow ***********************
@@ -394,7 +388,7 @@
                 
              
                 <section id="diagram2">
-                        <h3>Fundamental diagrams of traffic flow: Speed-density relationship</h3>
+                        <h3>1st fundamental diagrams of traffic flow: Speed-density relationship</h3>
                        
                         <img class="centre" src="../figures/teaching/speed-density.gif"
                             style="width:300px;"
@@ -446,7 +440,9 @@
                 ************************************************************ -->
 
                   <section id="density-flow">
-                        <h3>Flow & Density relationship: This one is more challenging!</h3>
+                        <h3>2nd fundamental diagram of traffic flow: Flow & Density relationship: </h3>
+                      
+                      <p>This one is more challenging!</p>
                        
                          <p class="l2">When density is zero (Free-flow condition), flow will be ...</p>
                       
@@ -458,7 +454,7 @@
              
                 <section id="diagram1" >
                    <div class="whitebackground2">
-                        <h3>Fundamental diagrams of traffic flow: Flow-density relationship</h3>
+                        <h3>2nd fundamental diagrams of traffic flow: Flow-density relationship</h3>
                        
                         <img class="centre" src="../figures/teaching/flow-density.gif"
                             style="width:300px;"
@@ -488,10 +484,10 @@
              
                 <section id="greenshields" >
                    <div class="whitebackground2">
-                        <h3>Fundamental diagrams of traffic flow: Flow-density relationship</h3>
+                        <h3>2nd fundamental diagrams of traffic flow: Flow-density relationship</h3>
                        
                        
-                        <p class="l3"> More on Greenshields model of Flow-density</p>
+                        <p class="l2"> More on Greenshields model of Flow-density</p>
                         
                      \[\begin{aligned}
 					q = k v = k v_f \bigg( 1 - \frac{k}{k_j} \bigg) = v_f \bigg( k - \frac{k^2}{k_j} \bigg)  \\
@@ -501,7 +497,9 @@
                             style="width:300px;"
                          alt="project-1" />
                        
-                       <p class="l3">Note in the figure that the maximum flow rate $q_m$ represents the capacity of the highway. The traffic density that corresponds to this capacity flow rate is critical density $k_m$, and the  corresponding optimum speed is $v_m$</p>
+                       <p class="l2">Note in the figure that the maximum flow rate $q_m$ represents the capacity of the highway. The traffic density that corresponds to this capacity flow rate is critical density $k_m$, and the  corresponding optimum speed is $v_m$</p>
+                       
+                       <p class="l3">More about <a>capacity</a> on a later chapter in this course</p>
                        
                     
                         
@@ -509,39 +507,6 @@
                        <aside class="notes">
 		        
 	               </aside> 
-                </section>
-                
-                 <!-- ******************************************************
-                ***********************  Fundamental diagrams of traffic flow ***********************
-                ************************************************************ -->
-
-             
-                <section id="ex1" >
-                        <h3>Example 1: Greenshield's Model </h3>
-                       
-                       
-                        <p class="l2"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
-                          
-                  
-                       
-                </section>
-                
-                 <section id="ex1-sol" >
-                        <p>Example 1: Greenshield's Model </p>
-                         <p class="l3"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
-                       <p class="l2"> Speed :
-		       $ v= v_f – v_f*k/k_j = 100 - 100 * k / 1000 = 100 - 0.1k$</p>
-                          
-                           
-                     
-                         <p class="l2">  $ q = v k = 100k - 0.1k^2, $ at critical density we have dq/dk = 0</p>
-                           
-                          <p class="l2">  $ dq/dk = 100 - 0.2 k, $ so, k = 500 = kj/2 half of jam density</p>
-                           
-                          <p class="l2">  $ v_m = 100 - 100 * 500 /1000 = 50 km/h = vf/2 $ half of free flow speed</p>
-                           
-                        <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is much larger than the observed maximum flow, because it does not account for the field conditions that influence maximum flow</p>
-                           
                 </section>
                 
                 
@@ -552,7 +517,7 @@
              
                 <section id="greenshields2" >
                    <div class="whitebackground2">
-                        <h4>Fundamental diagrams of traffic flow 2: Flow-density relationship</h4>
+                        <h4>2nd fundamental diagrams of traffic flow: Flow-density relationship</h4>
                        
                         <p class="l2">  \[\begin{aligned}
 					q = v_f \bigg( k - \frac{k^2}{k_j} \bigg)  \\
@@ -588,17 +553,51 @@
                 </section>
                 
                 
+                 <!-- ******************************************************
+                ***********************  Fundamental diagrams of traffic flow ***********************
+                ************************************************************ -->
+
+             
+                <section id="ex1" >
+                        <h3><a>Example 1:</a> Greenshield's Model </h3>
+                       
+                       
+                        <p class="l2"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
+                       
+                </section>
+                
+                
+                 <!-- ******
+                 <section id="ex1-sol" >
+                        <p>Example 1: Greenshield's Model </p>
+                         <p class="l3"> Given a free flow speed of 100 km/h, a jam density of 1000 veh/km, and an observed maximum flow of 10,000 vehicles per hour. Determine the linear equation for velocity for these conditions, and determine the speed and density at maximum flow (critical) conditions. How do the theoretical maximum flow and observed maximum flow compare?</p>
+                       <p class="l2"> Speed :
+		       $ v= v_f – v_f*k/k_j = 100 - 100 * k / 1000 = 100 - 0.1k$</p>
+                          
+                           
+                     
+                         <p class="l2">  $ q = v k = 100k - 0.1k^2, $ at critical density we have dq/dk = 0</p>
+                           
+                          <p class="l2">  $ dq/dk = 100 - 0.2 k, $ so, k = 500 = kj/2 half of jam density</p>
+                           
+                          <p class="l2">  $ v_m = 100 - 100 * 500 /1000 = 50 km/h = vf/2 $ half of free flow speed</p>
+                           
+                        <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is much larger than the observed maximum flow, because it does not account for the field conditions that influence maximum flow</p>
+                           
+                </section>
+                
+                
              <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
                 
                    <section id="speed-flow">
-                        <h3>Speed & Flow relationship: More interesting facts about traffic</h3>
+                        <h3>3rd fundamental diagram of traffic flow: Speed & Flow relationship: </h3>
+                       
+                       <p>More interesting facts about traffic</p>
                        
                          <p class="l2">When Flow is zero, what can you say about mean speed? </p>
-                      
-                    
                       
                 </section>
                 
@@ -606,7 +605,7 @@
                <section id="diagram3" >          
                     
                    <div class="whitebackground2">
-                   <h3>Fundamental diagrams of traffic flow 3: Speed-flow relationship</h3>
+                   <h3>3rd fundamental diagrams of traffic flow: Speed-flow relationship</h3>
                        
                         <img class="right" src="../figures/teaching/speed-flow.gif"
                             style="width:300px;"
@@ -661,7 +660,7 @@
                 *********************** diagram4 ***********************
                 ************************************************************ -->
 
-               <section id="diagram4" >          
+               <section id="diagram5" >          
                     
                    <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow: Empirical values</h3>
@@ -684,21 +683,34 @@
 
                <section id="diagram6" >          
                     
-                   <div class="whitebackground2">
                    <h3>Fundamental diagrams of traffic flow: All-in-one digram</h3>
                        <img class="centre" src="../figures/teaching/fundamental-key.png"
                             style="width:800px;"
                          alt="project-1" />
                        
-                    </div>
-                    
-                  <aside class="notes">
-		         
-	               </aside>                    
+                                 
                     
                 </section>
-           
                 
+                
+                    
+                <!-- ******************************************************
+                *********************** Example ***********************
+                ************************************************************ -->
+
+               <section id="diagram7" >          
+                    
+                   <h3><a>Example 2:</a> Briefly explain and illustrate with the aid of sketches the following</h3>
+                   
+                   <p class="l2">Test question 2021</p>
+                       
+                   <p>(a)	Sketch a set of simplistic diagrams of the relationship between Speed, Flow and Density of cars on a uninterrupted highway. </p>
+                   
+                   <p>(b) In your own words, briefly explain each diagram in your diagram set to describe the relationship between Speed, Flow and Density. Point out on the diagrams the free-flow speed, jam density and maximum flow.</p>
+                    
+                </section>
+                
+               
                     <!-- ************** Learning outcomes ************* -->
 
                 <section id="outcomes2" data-transition="fade">
@@ -712,7 +724,7 @@
                     <h2>Learning outcomes: </h2>
                     
                     <p>	1. Understand the traffic flow theory </p>
-                     <p> <a> 	2. Understand the queuing theory </a></p>
+                     <p> <a> 	2. Understand the distribution of vehicle arrivals </a></p>
                     <p>	3. Evaluate variables for unsignalised traffic flow </p>
                     
                   
@@ -725,6 +737,7 @@
                <section id="spacetime" >
                    
                    <h2>Time space diagram</h2>
+                   <p>(from Traffic Studies chapter)</p>
                      <p class="l2">Illutrates the spatial-temporal trajectory of each vehicle.</p>
                    
                    <figure class="right" >
@@ -737,9 +750,9 @@
                    
                     <p class="l2"> Each line represents the trajectory of a vehicle</p>
                    
-                   <p class="l2"> The horizontal gap (time gap) between two vehicle at the same position shows the <a>headway</a> between them </p>
+                   <p class="l2"> The horizontal gap (time gap) between two vehicle at the same position shows the <a>time headway (or just headway)</a> between them </p>
                
-                   <p class="l2"> The vertical gap (space gap) between two vehicle at the same time shows the <a>spacing</a> between them </p>
+                   <p class="l2"> The vertical gap (space gap) between two vehicle at the same time shows the <a>space headway (or spacing)</a> between them </p>
                     
                   </section>  
                 
@@ -756,7 +769,7 @@
                     
                     </figure>
                    
-                    <p class="l2">  A shock wave propagates along a line of vehicles in response to changing conditions at the front of the line. A shock wave exists whenever the traffic conditions change.</p>
+                    <p class="l3">A shock wave exists whenever the traffic conditions change. A shock wave propagates along a line of vehicles in response to changing conditions at the front of the line. </p>
                    
                  
                    <p class="l3"> Source: Dr Yildirimoglu, University of Queensland (2021)  </p>
@@ -779,29 +792,19 @@
                  <!-- *************** queuing 1 *********************** *** -->
                  <section id="queuing" >
                    
-                   <h2>Queuing theory</h2>
-                     <figure class="right" >
+                   <h4>Vehicle arrival rate is different to traffic flow </h4>
+                     <figure class="centre" >
 
                         <img data-src="../figures/teaching/queuing.jpg"
-                             style="width:400px;"
+                             style="float:center;width:400px;"
                              alt="ATIS" />
                     
                     </figure>
                      
-                     <p>is the study of traffic behavior near a certain section where demand exceeds available capacity.</p>
-                     <p class="l2">It provides a way of analyzing queue behavior and predicting 
-                         its consequences, including queue lengths and queuing delays</p>
                    
+                    <p class="l2"> Irregularity of vehicle arrivals + variability of time taken for each to leave the study area = queues of vehicles build up and dissipate </p>
                    
-                     
-                     <p>Vehicle arrival rate is different to traffic flow </p>
-                   
-                    <p class="l2"> Irregularity of vehicle arrivals </p>
-                   
-                   <p class="l2"> + variability of time taken for each to leave the study area </p>
-                   
-                 <p class="l2"> = queues of vehicles build up and dissipate </p>
-                     
+                
                   </section>  
                 
                  <!-- *************** queuing 2*********************** *** -->
@@ -857,7 +860,7 @@
                    \end{aligned} \]
                    
                     <p class="l2"> where $P(X=n)$ is the probability of exactly n vehicles arriving within a time interval t </p>
-                   <p class="l2"> $\lambda$ average arrival rate (veh/unit time) <a>Note: Only equals to traffic flow if there is no congestion</a> </p> 
+                   <p class="l2"> $\lambda$ average arrival rate (veh/unit time) <a>Note: Only equals to traffic flow near free-flow traffic conditions!</a> </p> 
                    <p class="l2"> $X$ number of vehicles arriving in a specific time interval </p>
                    
                   <p class="l2"> $t$ duration of the time interval over  which vehicles are counted </p>
@@ -885,7 +888,7 @@
                    \end{aligned} \]
                    
                     
-                    <p class="l2"> Recall: the time gap between the two vehicles is called <a>Headway</a> </p>
+                    <p class="l2"> <a>Recall:</a> the time gap between the two vehicles is called <a>Headway</a> </p>
                    
                     <p class="l2"> The above equation can then be used to estimate the mean <a>Headway</a> </p>
                    
@@ -898,7 +901,7 @@
                <section id="exp2" >
                    
                <div class="whitebackground2">
-                       <h3>Example 2: Calculation of traffic flow</h3>
+                       <h3><a>Example 3:</a> Calculation of traffic flow</h3>
                              
                       <p> Given a highway with an average traffic flow of 240 veh/hr. Assuming that the flow is free-flowing and follows a Poisson distribution, calculate:</p>
                          <p class="l2">Probability of there being no vehicles in 6s. 
@@ -915,7 +918,7 @@
                <section id="exp2-2" >
                    
                <div class="whitebackground2">
-                       <h3>Example 2: Calculation of traffic flow</h3>
+                       <h3>Example 3: Calculation of traffic flow</h3>
                              
                        \[\begin{aligned}
                    P(X=n)={\frac {(\lambda t) ^{n}e^{-\lambda t }}{n!}},
@@ -943,7 +946,7 @@
                <section id="exp2-3" >
                    
                <div class="whitebackground2">
-                       <h3>Example 2: Calculation of traffic flow</h3>
+                       <h3>Example 3: Calculation of traffic flow</h3>
                              
                       <p> The cumulative likelihood of seeing fewer than 3 vehicles arrive in 6s</p>
                      
@@ -964,7 +967,7 @@
                <section id="exp2-4" >
                    
                <div class="whitebackground2">
-                       <h3>Example 2: Calculation of traffic flow</h3>
+                       <h3>Example 3: Calculation of traffic flow</h3>
                              
                       <p> the propability of having 3 or more vehicles arrive in 6s?</p>
                      
@@ -977,26 +980,48 @@
            
                 </section>   
                 
+                
+                  <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob1">
+                       <h3><a>Example 4:</a></h3>
+                             
+                      <p>  On a particular section of motorway, accidents occur once per day on average. Assume that the number of accidents is random and follows a Poisson distribution, calculate: </p>
+     
+                    <p class="l2">(a) The probability of there being no accident in a day</p>
+                   <p class="l3">[Answer: 0.37]</p>
+                   <p class="l2">(b) The probability of there being only one accident in a day</p>
+                   <p class="l3">[Answer: 0.37]</p>
+                   <p class="l2">(c) the probability of there being more than three accidents in a day </p>
+                   <p class="l3">[Answer: 0.02]</p>
+                                    
+                </section>   
+                
+                
                   <!-- *************** ITS management 4 ************************** -->
   
                <section id="exp3" >
                    
                <div class="whitebackground2">
-                       <h3>Example 3: Poisson distributed traffic flow</h3>
+                       <h3><a>Example 5:</a> Poisson distributed traffic flow</h3>
                              
                       <p> An observer counts 360 veh/h at a specific highway location. Assuming that the arrival of vehicles at this highway location is Poisson distributed, estimate the  probabilities of having 0, 1, 2, 3, 4 and 5 or more vehicles arriving over a 20-sec  time interval.</p>
+                   
+                    <p class="l3">[Answer: $P(0) = 0.14$]</p>
+                   <p class="l3">...</p>
+                   <p class="l3">[Answer: $P(n \geq 5) = 0.05$]</p>
                    
                        </div>                       
            
                 </section>   
                 
                 
-                <!-- *************** ITS management 4 ************************** -->
+                <!-- *************** ITS management 4 ******************
   
                <section id="exp3-2" >
                    
                <div class="whitebackground2">
-                       <h3>Example 3: Poisson distributed traffic flow</h3>
+                       <h3>Example 5: Poisson distributed traffic flow</h3>
                   
                    <p class="l2">
                    \[\begin{aligned}
@@ -1037,7 +1062,7 @@
                     <h2>Learning outcomes: </h2>
                     
                     <p>	1. Understand the traffic flow theory </p>
-                     <p>  	2. Understand the queuing theory </p>
+                     <p>  	2. Understand the distribution of vehicle arrivals  </p>
                     <p><a>	3. Evaluate variables for unsignalised traffic flow </a></p>
                     
                 </section>     
@@ -1074,18 +1099,10 @@
                     </figure>
                    
                    
-                    <p class="l2">	The idea is to limit and simplify the points of conflicts</p>
+                    <p>	The idea is to limit and simplify the points of conflicts</p>
                  
                         <p class="l2"><a>Gap acceptance models:</a> applicable in situations where vehicles or pedestrians  cross/merge into traffic stream, which requires them to select an acceptance time  gap in the priority traffic stream. </p>
                    
-                        <p class="l2">Two major factors that influence the capacity of an unsignalised intersection:</p>
-                   
-                         <p class="l3">Critical gap - the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
-                   
-                        <p class="l3">Headway distribution - determines the frequency with which gaps of various  size are offered.</p>
-                                               
-                                   
-           
                 </section>    
                 
                 
@@ -1105,18 +1122,12 @@
 
                     </video>
                     
-                    <div class="whitebackground2">
-                        <p>Unsignalised intersections: Critical gap</p>
+                         <p><a>Critical gap -</a> the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
+                    
+                    <p class="l3">In practice, the critical gap depends on the individual judgments, the current travel speed, weather, road condition, etc.</p>
+                   
                         
-                        <p class="l2">the time difference (in secs) between two  successive vehicles in the priority traffic stream (back bumper  of the lead vehicle to front bumper of the following vehicle),  which is required for the first vehicle waiting in the minor  traffic stream to cross or merge with the priority traffic stream.</p>
                        
-                        
-                   </div> 
-                    
-                  <aside class="notes">
-		     To understand more about critical gap, I'd you to watch this video
-	               </aside>   
-                    
                 </section> 
                 
                 
@@ -1126,7 +1137,7 @@
                <section id="nosignal4" >
                         <h3>Estimate delays of vehicles/pedestrians merge/cross into the main flow</h3>
                          
-                    <figure class="centre" >
+                    <figure class="right" >
 
                         <img data-src="../figures/teaching/Civil361/minor-flow.png"
                              style="width:400px;"
@@ -1134,12 +1145,14 @@
                     
                     </figure>
                    
-                    <p>Important variables for estimating delays: </p>
+                    <p>3 important variables for estimating delays: </p>
                    
-                         <p class="l2">Critical gap (s): assume a similar value acceptable to all drivers at all times.</p>
-                        <p class="l2">The distribution of traffic: usually Poisson</p>
+                         <p class="l2">1.Critical gap ($\alpha$): assume a similar value acceptable to all drivers at all times.</p>
+                        
                    
-                    <p class="l2">Follow-up headway (s) : additional time needed in the main flow for not one, but two vehicles to cross or merge into the main traffic stream.</p>
+                    <p class="l2">2. Follow-up headway ($\beta$) : additional time needed in the main flow for not one, but two vehicles to cross or merge into the main traffic stream.</p>
+                   
+                   <p class="l2">3. The distribution of vehicle arrivals: usually Poisson</p>
                    
                 </section>   
                 
@@ -1153,7 +1166,7 @@
                          <p>Major assumptions: </p>
                             <p class="l2">The traffic flow is Poisson distributed </p>
                    <p class="l2"><a>There is no queue on the minor queue</a></p>
-                   <p class="l2"> Generally use when minor traffic flow is less than 200 veh/h </p>
+                   <p class="l2"> Generally use when minor traffic arrival rate of the minor flow is less than 200 veh/h </p>
                    
                    <p>The average delay to all vehicles seeking to cross or merge a priority traffic stream is given by:</p>
                    
@@ -1163,19 +1176,59 @@
                         
 					\end{aligned} \]
                    
-                    <p class="l2"><a>Note:</a> Adam's Delay equations assume the minor flow has no queue. Use Tanner's delay if the minor flow has significant flow</p>
+                    <p class="l2"><a>Where:</a> $\lambda$: arrival rate of the MAJOR flow</p>
+                   <p class="l2"> $\alpha$: critical gap (in seconds)</p>
                    
                             
                 </section>   
                 
+                
+                 <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob6" >
+                       <h3><a>Example 6:</a></h3>
+                             
+                      <p>  During an off-peak period, a minor flow of 100 veh/hr joins a major flow of 300 veh/hr near the beginning of an on-ramp of a motorway. The minor flow of 100 veh/hr is controlled by give-way signs, requires at least 4 secs of critical gap to join the major flow. Assuming there is no queuing and that both traffic flows are free-  flowing and random, calculate:</p>
+                   
+                    <p class="l2">(a) the number of vehicles per hour in the minor flow which are expected to be delayed  </p>
+                   <p class="l3">[Answer: 28 veh/hr]</p>
+                   
+                   <p class="l2">(b) the average delay to the minor flow (hint: using Adam's delay formula)</p>
+                   <p class="l3">[Answer: 0.75 s]</p>
+                   
+                   <p class="l2">(c) if during peak periods, the minor flow increases to 150 veh/hr and the major flow increases to 600 veh/hr., re-calculate (a) and (b) above</p>
+                   <p class="l3">[Answer: 97 veh/hr, delay = 1.69s]</p>
+           
+                </section>  
+                
             
+                 <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob7">
+                       <h3><a>Example 7:</a></h3>
+                             
+                      <p>  The two-way traffic flows through a suburban shopping street are 250 and 290  vehicles per hour respectively. There is no pedestrian crossing and pedestrians  who cross the street at an average rate of one every 20 sec, require 8 secs to do so.  Assuming that the traffic is free flowing and that pedestrians wish to cross the  street at random, determine:</p>
+                   
+                    <p class="l2">(a) the percentage of time a pedestrian will not be delayed </p>
+                   <p class="l3">[Answer: 30%]</p>
+                   
+                   <p class="l2">(b) the number of pedestrians per hour who are delayed in crossing the street</p>
+                   <p class="l3">[Answer: 126 ped/hr]</p>
+                   
+                   <p class="l2">(c) the total delay to pedestrians wishing to cross the street in pedestrian minutes  per hour</p>
+                   <p class="l3">[Answer: 22.5 ped-min/hr]</p>
+               
+                </section>  
+                
                 <!-- *************** ITS management 4 ********************** **** -->
   
                <section id="nosignal6">
                         <h3> Tanner's delay to minor flow</h3>
                          <p>Major assumptions: </p>
-                            <p class="l2">For case with minor traffic flow > 200 veh/h</p>
+                            <p class="l2"><a>For case with minor traffic flow > 200 veh/h</a></p>
                    <p class="l2"><a>Takes queuing of the minor flow into account.</a></p>
+                   
+                   <p>Average delay:</p>
                              
                      <figure class="centre" >
 
@@ -1184,16 +1237,14 @@
                              alt="ATIS" />
                     
                     </figure>
-                   
-                                          
-           
+                   <p class="l2">Long formula! But we often use pre-estimated values from the Tanner's graph</p>
                 </section>  
                 
                 
                  <!-- *************** ITS management 4 ********************** **** -->
   
                <section id="nosignal7">
-                        <p>Tanner's graph: Pre-estimated values</p>
+                        <p>Tanner's graph: Pre-estimated average delay </p>
                    
                      <figure class="centre" >
 
@@ -1203,20 +1254,12 @@
                     
                     </figure>
                    
+                    <p class="l3"><a>Where:</a> $\lambda$: arrival rate of the MAJOR flow, $\alpha$: critical gap (in seconds), $\beta$: follow-up gap (in seconds)</p>
+                   
+                   
                 </section>   
                 
-                
-               <!-- *************** ITS management 4 ***********************
-  
-               <section id="nosignal7">
-                        <h3>Headway distribution</h3>
-                  <p> Instead of simply modelling the number of vehicles passing  a specified point on a highway in some time interval (flow),  there is considerable analytic value in modelling the time  between the arrivals of  successive vehicles (headway).</p>
-
-                    <p class="l2"> E.g. Traffic flow is separated by traffic signals</p>
             
-                </section>   
-                *** -->
-                
                 
                       <!-- *************** ITS management 4 ************************** -->
   
@@ -1237,11 +1280,32 @@
                    <p class="l2">$\alpha$ = critical gap (s) </p>
                    <p class="l2">$\beta$ = follow-up headway </p>
                    
-                   <p> In practice, the practical capacity is generally around 80% of the theoretical capacity </p>
+                   <a> Note: In practice, the practical capacity is generally around 80% of the theoretical capacity </a>
                      
                        </div>                       
            
                 </section>   
+                
+                 <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob8" >
+                       <p class="l2"><a>Example 8:</a> A multi-storey car park exits onto a one-way street carrying 1200 veh/hr - this  traffic can be considered to be free flowing (random), consider the following scenarios:</p>
+                             
+                   
+                    <p class="l3">(a) Assuming exiting  vehicles require a 4 sec initial gap and a 2 sec follow-up gap, calculate the maximum practical flow that exit from the car park in practice. Given that the practical value should be around 80% of the theoretical value.</p>
+                   <p class="l3">[Answer: 518 veh/hr]</p>
+                   
+                   <p class="l3">(b) Re-determine the above result, if exiting vehicles require a 5 sec initial gap and  a 3 sec follow-up gap</p>
+                   <p class="l3">[Answer: 288 veh/hr]</p>
+                   
+                   <p class="l3">(c) If the exit flow from the car park is 300 veh/h, use the Tanner's graph to identify the expected average  delay to vehicles exiting, assuming vehicles require a 4-sec initial gap and 2-sec  follow-up gap</p>
+                   <p class="l3">[Answer: 9.5s]</p>
+                   
+                   <p class="l3">(d) Use the Tanner's graph to reidentify (c) assuming vehicles require a 5-sec initial gap and a 3-sec follow-up gap.</p>
+                   <p class="l3">[Answer: 40s]</p>
+                                
+           
+                </section>  
                 
                 
                      <!-- *************** ITS management 4 ************************** -->
@@ -1265,27 +1329,10 @@
                 </section>   
           
                 
-                  <!-- *************** ITS management 4 ************************** -->
-  
-               <section id="prob1">
-                       <h3>Problem 1:</h3>
-                             
-                      <p>  On a particular section of motorway, accidents occur once per day on average. Assume that the number of accidents is random and follows a Poisson distribution, calculate: </p>
-     
-                    <p class="l2">(a) The probability of there being no accident in a day</p>
-                   <p class="l3">[Answer: 0.37]</p>
-                   <p class="l2">(b) The probability of there being only one accident in a day</p>
-                   <p class="l3">[Answer: 0.37]</p>
-                   <p class="l2">(c) the probability of there being more than three accidents in a day </p>
-                   <p class="l3">[Answer: 0.02]</p>
-                                    
-                </section>   
-                
-                
                    <!-- *************** ITS management 4 ************************** -->
   
                <section id="prob2" >
-                       <h3>Problem 2:</h3>
+                       <h3>Problem 1:</h3>
                              
                       <p>  The average number of breakdowns of a large regional bus fleet is 2 breakdowns/day. At  present, three relief buses are available. Assuming that breakdowns occur at random with the number of breakdowns following a Poisson distribution and each  bus can be made roadworthy by the next day, determine: </p>
      
@@ -1302,7 +1349,7 @@
                   <!-- *************** ITS management 4 ************************** -->
   
                <section id="prob3" >
-                       <h3>Problem 3:</h3>
+                       <h3>Problem 2:</h3>
                              
                       <p>  Traffic data are collected in fifteen 60-seconds intervals at a specific highway location with counts as follows: </p>
                    
@@ -1320,7 +1367,7 @@
                   <!-- *************** ITS management 4 ************************** -->
   
                <section id="prob4" >
-                       <h3>Problem 4:</h3>
+                       <h3>Problem 3:</h3>
                              
                       <p>  Consider a traffic stream with a flow of 360 veh/h. Assume that the vehicle arrivals are Poisson distributed. What is the probability that the headway between successive vehicles will be less than 8 seconds, and what is the  probability that the headway between successive vehicles will be between 8 and 10 seconds? </p>
                                 <p class="l3">[Answer: 0.55, 0.37 and 0.08]</p>
@@ -1330,7 +1377,7 @@
                  <!-- *************** ITS management 4 ************************** -->
   
                <section id="prob5" >
-                       <h3>Problem 5:</h3>
+                       <h3>Problem 4:</h3>
                              
                       <p>  On a free-flowing highway, a traffic count records a steady 450veh/hr. By assuming that the headways are exponentially distributed, determine:</p>
                    
@@ -1349,65 +1396,38 @@
            
                 </section> 
                 
-                 <!-- *************** ITS management 4 ************************** -->
-  
-               <section id="prob6" >
-                       <h3>Problem 6:</h3>
-                             
-                      <p>  During an off-peak period, a minor flow of 100 veh/hr joins a major flow of 300 veh/hr near the beginning of an on-ramp of a motorway. The minor flow of 100 veh/hr is controlled by give-way signs, requires at least 4 secs of critical gap to join the major flow. Assuming there is no queuing and that both traffic flows are free-  flowing and random, calculate:</p>
+                 
+                 <section id="exam2020-problem6">
+                       <h3>Problem 5: Exam Civil 361 in 2020</h3>
                    
-                    <p class="l2">(a) the number of vehicles per hour in the minor flow which are expected to be delayed  </p>
-                   <p class="l3">[Answer: 28 veh/hr]</p>
-                   
-                   <p class="l2">(b) the average delay to the minor flow (hint: using Adam's delay formula)</p>
-                   <p class="l3">[Answer: 0.75 s]</p>
-                   
-                   <p class="l2">(c) if during peak periods, the minor flow increases to 150 veh/hr and the major flow increases to 600 veh/hr., re-calculate (a) and (b) above</p>
-                   <p class="l3">[Answer: 97 veh/hr, delay = 1.69s]</p>
-           
-                </section>  
+                     <figure class="centre" >
+
+                        <img data-src="../figures/teaching/Civil361/problem5-flow.png"
+                             style="width:500px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                     
+                     
+                     <p class="l3">There are also 50 pedestrians per hour who will cross the major road without a pedestrian crossing – so pedestrians have to wait for a gap in the major flow. Each pedestrian requires a 10-seconds gap to cross the major road. </p>
+
+                    </section>   
                 
-                 <!-- *************** ITS management 4 ************************** -->
-  
-               <section id="prob7">
-                       <h3>Problem 7:</h3>
-                             
-                      <p>  The two-way traffic flows through a suburban shopping street are 250 and 290  vehicles per hour respectively. There is no pedestrian crossing and pedestrians  who cross the street at an average rate of one every 20 sec, require 8 secs to do so.  Assuming that the traffic is free flowing and that pedestrians wish to cross the  street at random, determine:</p>
+                 <section id="exam2020-problem6-2">
+                       <h3>Problem 5: Exam Civil 361 in 2020</h3>
                    
-                    <p class="l2">(a) the percentage of time a pedestrian will not be delayed </p>
-                   <p class="l3">[Answer: 30%]</p>
                    
-                   <p class="l2">(b) the number of pedestrians per hour who are delayed in crossing the street</p>
-                   <p class="l3">[Answer: 126 ped/hr]</p>
-                   
-                   <p class="l2">(c) the total delay to pedestrians wishing to cross the street in pedestrian minutes  per hour</p>
-                   <p class="l3">[Answer: 22.5 ped-min/hr]</p>
-                             
-           
-                </section>  
-                
-                
-                  <!-- *************** ITS management 4 ************************** -->
-  
-               <section id="prob8" >
-                       <p>Problem 8:</p>
-                             
-                      <p class="l2">  A multi-storey car park exits onto a one-way street carrying 1200 veh/hr - this  traffic can be considered to be free flowing (random), consider the following scenarios:</p>
-                   
-                    <p class="l3">(a) Assuming exiting  vehicles require a 4 sec initial gap and a 2 sec follow-up gap, calculate the maximum practical flow that exit from the car park in practice. Given that the practical value should be around 80% of the theoretical value.</p>
-                   <p class="l3">[Answer: 518 veh/hr]</p>
-                   
-                   <p class="l3">(b) Re-determine the above result, if exiting vehicles require a 5 sec initial gap and  a 3 sec follow-up gap</p>
-                   <p class="l3">[Answer: 288 veh/hr]</p>
-                   
-                   <p class="l3">(c) If the exit flow from the car park is 300 veh/h, use the Tanner's graph to identify the expected average  delay to vehicles exiting, assuming vehicles require a 4-sec initial gap and 2-sec  follow-up gap</p>
-                   <p class="l3">[Answer: 9.5s]</p>
-                   
-                   <p class="l3">(d) Use the Tanner's graph to reidentify (c) assuming vehicles require a 5-sec initial gap and a 3-sec follow-up gap.</p>
-                   <p class="l3">[Answer: 40s]</p>
-                                
-           
-                </section>  
+                    <p class="l2">Based on the given information, determine the following:</p>
+
+                    <p class="l2">(a)	The probability of delay and total delay (in veh-h/h) for the Left Turning (LT) traffic from the proposed development. </p>
+
+                    <p class="l2">(b)	Estimate the average delay for the Right Turning (RT) traffic from the proposed development	</p>
+
+                    <p class="l2">(c)	The average delay and total delay for pedestrians crossing the main road in (ped-min/h). 	</p>
+
+                    <p class="l2">(d)	The practical absorption capacity of the major road for the Left Turning (LT) and Right Turning (RT) traffic from the proposed development in (veh/h).	</p>
+
+                    </section>   
                 
                 
               
@@ -1424,7 +1444,7 @@
                     <h2>Learning outcomes: </h2>
                     
                    <p>	1. Understand the traffic flow theory </p>
-                     <p>  	2. Understand the queuing theory </p>
+                     <p>  	2. Understand the distribution of vehicle arrivals </p>
                     <p>	3. Evaluate variables for unsignalised traffic flow </p>        
                     
                 </section>   
@@ -1436,21 +1456,21 @@
                    
                     <h2>Recommended further read: </h2>
                     
-                    <p>	 1. Chap 4. of Prof. Carlos Daganzo’s book Fundamentals of Transportation and 
+                    <p class="l2">	 1. Chap 4. of Prof. Carlos Daganzo’s book Fundamentals of Transportation and 
 Traffic Operations (2007)</p>
-                    <p>	2. Prof. Nikolas Geroliminis’ lecture Fundamentals of Traffic Operations and Control, 
+                    <p class="l2">	2. Prof. Nikolas Geroliminis’ lecture Fundamentals of Traffic Operations and Control, 
 Spring 2010 EPFL</p>
-                    <p>	3. Lecture notes: Principles of Highway Engineering and Traffic Analysis (2009) by 
+                    <p class="l2">	3. Lecture notes: Principles of Highway Engineering and Traffic Analysis (2009) by 
 Fred Mannering, Scott Washburn and Walter Kilareski </p>
                     
-                    <p>	4. Lecture notes: 9th Dynamic Traffic Flow Modeling and Control (2010) by Prof. 
+                    <p class="l2">	4. Lecture notes: 9th Dynamic Traffic Flow Modeling and Control (2010) by Prof. 
 Markos Papageorgiou</p>
                     
-                    <p>	5. Fred Hall (1997) Traffic stream characteristics.</p>
+                    <p class="l2">	5. Fred Hall (1997) Traffic stream characteristics.</p>
                     
-                    <p> 6. AustroadsGuide to Road Design (2010)</p>
+                    <p class="l2"> 6. AustroadsGuide to Road Design (2010)</p>
                     
-                    <p> 7. Austroads Guide to Traffic Management (Part 2 - 2015, Part 3 - 2013, Part 6 - 2013)</p>
+                    <p class="l2"> 7. Austroads Guide to Traffic Management (Part 2 - 2015, Part 3 - 2013, Part 6 - 2013)</p>
                     
                 </section>   
                 
@@ -1469,7 +1489,7 @@ Markos Papageorgiou</p>
                        
                         <hr/>
 
-                        <h3>Contact me: Minh Kieu</h3>
+                        <h3>Contact me: Dr Minh Kieu</h3>
                         
                         <h4>Lecturer</h4>
 
