@@ -1,0 +1,341 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 763 - Smart Infrastructure Analytics</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        
+                        <h4>Civil 763 - Smart Infrastructure Analytics</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 3: Assignment and Project</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w3.html">https://leminhkieu.github.io/p/Civil763-w3.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+               
+                   <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+
+                    
+                  <p class="l3">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w3.html">https://leminhkieu.github.io/p/Civil763-w3.html</a></p>
+                    
+                    <p class="l3">PDF version can be found on Canvas</p>
+                    
+                     <h3> Teaching staffs </h3>
+                    
+                   <p > Dr Minh Kieu </p>
+                    <p class="l4">B401, Room 10.08</p>
+                    <p class="l4">minh.kieu@auckland.ac.nz</p>
+                    
+                     <p > Dr Conrad Zorn </p>
+                    <p class="l4">B401, Room 10.06</p>
+                    <p class="l4">conrad.zorn@auckland.ac.nz</p>
+                    
+                    
+                    <p> Charles Lan </p>
+                   
+                    <p class="l4">clan549@aucklanduni.ac.nz</p>
+                    
+                    
+                </section>       
+                
+              
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="intro0"  >
+                    
+                    <h4>Key points on the Assignment and Project</h4>
+                        
+                        <p>Each student gets a unique dataset of a region in New Zealand, with either </p>
+                        
+                        <p class="l2"> Crash Analysis System data: <a href="https://opendata-nzta.opendata.arcgis.com/search?tags=CAS">https://opendata-nzta.opendata.arcgis.com/search?tags=CAS</a> (2000-2021) </p>
+                        
+                        <p class="l2">Residential Property Sales data: <a href="https://www-library-auckland-ac-nz.ezproxy.auckland.ac.nz/eproducts/NZ_housedata/residential-property.htm">https://www-library-auckland-ac-nz.ezproxy.auckland.ac.nz/eproducts/NZ_housedata/residential-property.htm</a> (1990-2020)</p>
+                    
+                    <p>Can you change you mind later?</p>
+                    <p class="l2">No</p>
+                    
+                    <p>Assignment due on 9th September 2022 (30%)</p>
+                    <p>Final project due on 24th October 2022 (40%)</p>
+                     <p class="l2">Final project presentation on our last session on Week 12 (10%)</p>
+                    
+                 </section>  
+                
+                
+                
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="CAS0" data-background-image="https://img.freepik.com/free-vector/traffic-accident-abstract-concept-illustration_335657-3958.jpg">
+                    
+                    <div class="whitebackground2">
+                    
+                    <h4>Crash Analysis System (CAS) data</h4>
+                        
+                        <p>The Crash Analysis System (CAS) maps traffic crashes reported to us by the NZ Police and is built on the ArcGIS system. You can also interact with the data as a data table. The main page of the Crash Analysis System (CAS) features a map and information. </p>
+                    
+                    <p>User guide: <a href="https://opendata-nzta.opendata.arcgis.com/documents/NZTA::crash-analysis-system-cas-data-user-guide/about">https://opendata-nzta.opendata.arcgis.com/documents/NZTA::crash-analysis-system-cas-data-user-guide/about</a></p>
+                    
+                    </div>
+                      
+                    
+                 </section>  
+                
+                
+                 <section id="CAS1"  >
+                    
+                    <h4>Crash Analysis System (CAS) data</h4>
+                        
+                    
+                        <p>What can you do for the Assignment?</p>
+                        <p class="l2">Data cleaning and processing</p>
+                     <p class="l2">Show basic statistics on the data</p>
+                     <p class="l2">Show the impacts of different variables on traffic crashes, e.g. weather, lighting condition, type of traffic crashes, vehicles involved, number of lanes, crash severity, traffic control</p>
+                        <p class="l2">Show us at least 3 most interesting patterns from your dataset</p>
+                    
+                 </section>  
+                
+                
+                <section id="CAS2"  >
+                    
+                    <h4>Crash Analysis System (CAS) data</h4>
+                        
+                    
+                        <p>What can you do on for the Final Project?</p>
+                     <p class="l2">Refinement of the 3 most interesting patterns from the Assignment</p>
+                    
+                        <p class="l2">Geo-spatial analysis: Where are the hot-spots of crashes in your region? What can we do to make the situation better? </p>
+                        
+                        <p class="l2">Time-series analysis: How do crashes change over time in your area? Is this getting better, or is there anything we can do? </p>
+                    
+                    <p class="l2">Clustering analysis: Group similar crashes. What are those clusters? what can we do for each cluster of crashes?  </p>
+                    
+                    
+                 </section>  
+                
+                
+                <section id="House0"  data-background-image="https://img.freepik.com/free-vector/real-estate-deals-agent-client-shaking-hands-people-buying-building-houses-during-market-growth-flat-vector-illustration-investment-construction-rent-property-concept_74855-22534.jpg">
+                    
+                     <div class="whitebackground2">
+                    
+                    <h4>Residential Property Sales Statistics data</h4>
+                        
+                        <p>Data files for New Zealand house sales from CoreLogic (previously Property IQ New Zealand). Elements include geographic location (excluding house number), sale date and price, capital and land value, building floor area, land area, building type. </p>
+                    
+                    <p>Data dictionary and examples: <a href="https://www-library-auckland-ac-nz.ezproxy.auckland.ac.nz/eproducts/NZ_housedata/CSTDAT8700_DataDelivery_20210607.xlsx">https://www-library-auckland-ac-nz.ezproxy.auckland.ac.nz/eproducts/NZ_housedata/CSTDAT8700_DataDelivery_20210607.xlsx</a></p>
+                         
+                    </div>
+                </section>  
+                
+                  <section id="House1"  >
+                    
+                   <h4>Residential Property Sales Statistics data</h4>
+                         
+                    
+                        <p>What can you do for the Assignment?</p>
+                        <p class="l2">Data cleaning and processing</p>
+                     <p class="l2">Show basic statistics on the data</p>
+                     <p class="l2">Show the impacts of different variables on the house prices in your region, e.g. land area, building condition, type of cladding, number of bedrooms</p>
+                      <p class="l2">Combine with other types of data, e.g. NZ derivation data, School decile rating, to explain the house price in your region</p>
+                        <p class="l2">Show us at least 3 most interesting patterns from your dataset</p>
+                    
+                 </section>  
+                
+                
+                <section id="House2"  >
+                    
+                  <h4>Residential Property Sales Statistics data</h4>
+                          
+                    
+                        <p>What can you do on for the Final Project?</p>
+                     <p class="l2">Refinement of the 3 most interesting patterns from the Assignment</p>
+                    
+                        <p class="l2">Geo-spatial analysis: Where are the areas of high and low house price in your region of interest?</p>
+                        
+                        <p class="l2">Time-series analysis: How do price change over time in your area? You may discuss gentrification of areas, link to building quality, building floor area, landscaping quality, etc. </p>
+                    
+                    <p class="l2">Clustering analysis: Group similar properties. What are those clusters?  </p>
+                    
+                    
+                 </section>  
+                
+              
+                 <section id="QA"  >
+                    
+                    
+                    <p>Can I change my mind later?</p>
+                    <p class="l3">No, sorry</p>
+                     
+                     
+                     <p>I've already known or just learnt other methods that are not covered in this course, could I use them for the Assignment and the Final Project? </p>
+                    <p class="l3">Yes, absolutely</p>
+                     
+                     
+                     <p>While the projects are individually assessed, could I still work with my friend?</p>
+                    <p class="l3">Yes, but your datasets are different so your findings will be different</p>
+                     
+                       <p>Could I take some other datasets that may complement my analysis of the given dataset?</p>
+                    <p class="l3">Yes, you are welcomed to!</p>
+                     
+                     
+                     <p>What next?</p>
+                    <p class="l3">Let me know via email whether you want to work on Property or Crash data. They are now uploaded to the <a>Link to data</a> on Canvas</p>
+                     
+                   
+                    
+                 </section>  
+                
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Let's move on the Notebook!</h3>
+                        
+                        <h4>Contact me:</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                       <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w3.html">https://leminhkieu.github.io/p/Civil763-w3.html</a></h4>
+
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
