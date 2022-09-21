@@ -212,7 +212,7 @@
                   <section id="model-how" >
                       
                         <img class="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/GeorgeEPBox_%28cropped%29.jpg/440px-GeorgeEPBox_%28cropped%29.jpg"
-                            style="width:300px;"
+                            style="width:500px;"
                          alt="project-1" />
                    
                       <p><a> "All models are wrong, but some are useful" </a> -- George Box</p>
@@ -285,10 +285,10 @@
                           <p>Modelling behaviours of individual vehicles in a traffic stream such as car-following and lane changing behaviour.</p>
                         
                          <p>Characteristic: Describe both the system entities and their interactions at a high level of  detail.</p>
-                       <p class="l2">describe the system entities, their activities and interactions at a <a>high</a> level of details</p>
+                       <p class="l2">Describe the system entities, their activities and interactions at a <a>high</a> level of details</p>
                     <p class="l2">Potentially to be more accurate than macroscopic models, however this potential might not always be realized due  to the complexity of their logic and the larger number of parameters that need to  be calibrated</p>
                      
-                     <p><a>Requirement</a>: Often use aggregated traffic data for model calibration/validation, but also often use individual data to understand microscopic behaviour better</p>
+                     <p><a>Requirements</a>?</p>
                         
                   
                    
@@ -321,7 +321,7 @@
                 
                    <!-- ******************************************************
                 *********************** diagram5 ***********************
-                ************************************************************ -->
+                **********************************************************
 
                <section id="micro3">
                    <h3>Car-following models</h3>
@@ -337,10 +337,7 @@
                     
                 </section>
                 
-                 <!-- ******************************************************
-                *********************** diagram5 ***********************
-                ************************************************************ -->
-
+                
                <section id="micro4"> 
                     
                    <h3>Car-following dynamics</h3>
@@ -549,7 +546,7 @@
                 </section>
                 
                  <section id="whatmodel">
-                        <h3>What models to use in which case?</h3>
+                        <h3>Exercise 1: What models to use in which case?</h3>
                         
                         <p class="l2">1. The Ministry of Transport wants a traffic model of Auckland to identify the bottlenecks in the traffic systems and come up with ways to reduce traffic congestions </p>
                         
@@ -567,8 +564,9 @@
                     
                      <div class="whitebackground2 fragment">
                       
-                        
-                          <p>The ABStreet Game on your web browser</p>
+                        <h3>Agent-Based Models</h3>
+                         <p>Similar to microscopic models, but often model individual travellers with their activities instead of just vehicles</p>
+                          <p>Example: The ABStreet Game on your web browser</p>
                          
                          <a href="http://play.abstreet.org/0.3.24/abstreet.html">http://play.abstreet.org/0.3.24/abstreet.html</a>
                         
@@ -602,7 +600,7 @@
 
                      <!-- ********************************************************
 
-                     ************* Auckland congestion  *****************
+                     ************* Capacity  *****************
 
                      ***************************************************************** -->
                 
@@ -622,33 +620,9 @@
                 
                 
                 
-               <section id="capacity2" >
-                 
-		            <img class="right" src="../figures/teaching/flow-density.gif"
-                            style="width:300px;"
-                         alt="project-1" />
-                
-                 
-                       
-                    <p>Under-Saturated Flow: When the demand (number of vehicles arrivals) is lower than the capacity of the section</p>
-                   
-                   <p class="l2">Vehicles flow reasonably well and speed remains high. Traffic flow is stable and uncongested</p>
-                       
-                        <img class="left" src="../figures/teaching/speed-flow.gif"
-                            style="width:300px;"
-                         alt="project-1" />
-                       
-                   <p>Over-Saturated Flow: When the demand (number of vehicles arrivals) exceeds the capacity of the section</p>
-                   
-                   <p class="l2">Flow breakdown occurs and a queue forms. Traffic flow is unstable and congested</p>
-                 
-                    
-                </section>
-                
-                
                       <!-- ******************************************************
                 *********************** Definition ***********************
-                ************************************************************ -->
+                ******************************************************
 
                 <section id="facility3" >
                         <h3>Specifically: Operating conditions</h3>
@@ -665,7 +639,7 @@
                             
                 </section>
                 
-                
+               
                 
                  <!-- ******************************************************
                 *********************** Definition ***********************
@@ -724,6 +698,31 @@
                      <p class="l2">It is a characteristic of a roadway. </p>
                     
                 </section>
+                
+                
+                  <section id="capacity2" >
+                 
+		            <img class="right" src="../figures/teaching/flow-density.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                
+                 
+                       
+                    <p>Under-Saturated Flow: When the demand (number of vehicles arrivals) is lower than the capacity of the section</p>
+                   
+                   <p class="l2">Vehicles flow reasonably well and speed remains high. Traffic flow is stable and uncongested</p>
+                       
+                        <img class="left" src="../figures/teaching/speed-flow.gif"
+                            style="width:300px;"
+                         alt="project-1" />
+                       
+                   <p>Over-Saturated Flow: When the demand (number of vehicles arrivals) exceeds the capacity of the section</p>
+                   
+                   <p class="l2">Flow breakdown occurs and a queue forms. Traffic flow is unstable and congested</p>
+                 
+                    
+                </section>
+                
                 
                  <section id="demandratio" >
                  
@@ -1117,7 +1116,7 @@
                 
                   <section id="LOS7" data-background-image="../figures/Backgrounds/bokeh.jpg">    
                    <div class="whitebackground2 ">
-                   <h3>Example 1: LOS in HCM 2016</h3>
+                   <h3>Exercise 2: LOS in HCM 2016</h3>
 
                    <p>For a basic freeway segment with the
                     free-flow speed (FFS) of 65 mi/h,
@@ -1356,7 +1355,7 @@
                 <p class="l2"> The number of ramps (on and off, one direction) located between 3 mi upstream and 3 mi downstream of the mid-point of the basic freeway segment under study, divided by 6 mi.</p>
                          <p class="l2"> The TRD is a measure of the impact of merging and diverging vehicles on FFS</p>
                         
-                        <p><a>Example 2</a>: Given 4 ramps downstream and another 4 ramps upstream within 3 miles of the freeway segment under study, estimate the value of $TRD$</p>
+                        <p><a>Exercise 3</a>: Given 4 ramps downstream and another 4 ramps upstream within 3 miles of the freeway segment under study, estimate the value of $TRD$</p>
                         <p class="l2"> 
                               </p>
                         
@@ -1424,7 +1423,7 @@
                      <p class="l2">The freeway segment capacity is a function of the segment $FFS$. The base capacity ($c$) for
                         a basic freeway segment can be estimated using the following equation:</p>
                 
-                       <p class="l2">The capacities resulting from application of these equations can never exceed the capacities of the base/ideal conditions in Exhibit 12-4 (Slide 53)</p>
+                       <p class="l2">The capacities resulting from application of these equations can never exceed the capacities of the base/ideal conditions in <a>Exhibit 12-4 (Slide 47)</a></p>
      
                 </section>  
      
@@ -1478,12 +1477,12 @@
             
                 </section>  
                
-                <!--****** Example *******-->
+                <!--****** Exercise *******-->
                 
                 
                  <section id="method11" >
                 
-                    <p>Example 3: Estimate the capacity of a four-lane basic freeway segment (two lanes in each direction) under base conditions (with 12-ft lane width, 6-ft right-side lateral clearance and base FFS of 75.4 mi/h). The ramp density is 4 ramps/mi and there is no severe weather event.</p>
+                    <p>Exercise 4: Estimate the capacity of a four-lane basic freeway segment (two lanes in each direction) under base conditions (with 12-ft lane width, 6-ft right-side lateral clearance and base FFS of 75.4 mi/h). The ramp density is 4 ramps/mi and there is no severe weather event.</p>
                 
                      <p>Hints:</p>
                      
@@ -1609,7 +1608,7 @@
                             prevailing conditions.</p>
                     
                     
-                    <p class="l2"> <a>Example 4</a>: If the traffic stream of 1000 veh/h containing 10 % trucks and $E_T$ = 2.5 (1 truck = 2.5 passenger cars), estimate the value of the adjustment factor $f_{HV}$ </p>
+                    <p class="l2"> <a>Exercise 5</a>: If the traffic stream of 1000 veh/h containing 10 % trucks and $E_T$ = 2.5 (1 truck = 2.5 passenger cars), estimate the value of the adjustment factor $f_{HV}$ </p>
                     
                     <aside class="notes">
 		     
