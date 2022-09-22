@@ -830,6 +830,26 @@
                 </section>
                 
                 
+                  <section id="exercise2" >
+                      
+                        <p>Exercise 2: Where do you think the Levels-of-service are located on our fundamental diagrams? </p>
+                 
+		            <img class="right" src="../figures/teaching/flow-density.gif"
+                            style="width:400px;"
+                         alt="project-1" />
+                     
+                   
+                           
+                        <img class="left" src="../figures/teaching/speed-flow.gif"
+                            style="width:400px;"
+                         alt="project-1" />
+                 
+                 
+                    
+                </section>
+                
+                
+                
                  <!-- ************** Learning outcomes 3************* -->
 
                 <section id="outcomes3" data-transition="fade">
@@ -1056,7 +1076,7 @@
                 <!-- ******************* Definition **************** -->
 
                 <section id="HCM4" >
-                        <h3>Capacity and Level-of-Service Analysis</h3>
+                        <h3>MOTORIZED VEHICLE CORE METHODOLOGY</h3>
                     
                     <p>Chapter 12 of HCM2016: Basic Freeway and Multilane Highway Segments</p>
                     
@@ -1068,69 +1088,6 @@
                    
                 </section>
                 
-                
-               <section id="LOS5">
-                   <h3>LOS in HCM 2016</h3>
-
-                    <p>LOS on basic freeway segments is defined by <a>density</a> in passenger cars per 
-                       mile per lane (pc/mi/ln):</p>
-                   
-                       <p class="l3">Although speed is a major concern of drivers related to service quality, describing LOS on the basis of 
-            speed would be difficult since it remains constant up to high flow rates. Unlike speed, density is sensitive 
-            to flow rates throughout the range of flows</p>
-                 
-                       <p class="l3">The point where the traffic changes from a constant-speed to a decreasing-speed range is called the <a>breakpoint</a></p>
-                       
-                        <p class="l3">Also recall that flow = speed x density ($q=kv$)</p>
-                       
-                   
-                    <img class="centre" src="../figures/teaching/Civil361/LOS.png"
-                            style="width:1000px;"
-                         alt="project-1" />
-                       
-                 
-                    
-                    
-                </section>
-                
-                 
-               <section id="LOS6" >
-                   <h3>LOS in HCM 2016</h3>
-
-                   <p>LOS on basic freeway segments is defined by density in passenger cars per 
-                       mile per lane (pc/mi/ln):</p>
-                       
-                   
-                   <img class="centre" src="../figures/teaching/Civil361/LOS2.png"
-                            style="width:1000px;"
-                         alt="project-1" />
-                       
-                    
-                     <aside class="notes">
-		     
-                     Six levels of service as illustrated in the  figure below, are defined for each type of  facility for which analysis procedures are  available. They are given letter designations,  from A to F, with level-of-service A  representing the best operating conditions  and level-of-service F the worst.
-	               </aside>
-                    
-                </section>
-                
-                
-                  <section id="LOS7" data-background-image="../figures/Backgrounds/bokeh.jpg">    
-                   <div class="whitebackground2 ">
-                   <h3>Exercise 2: LOS in HCM 2016</h3>
-
-                   <p>For a basic freeway segment with the
-                    free-flow speed (FFS) of 65 mi/h,
-                    determine LOS when the demand
-                    flow rate ($v$) is 900 pc/h/ln.</p>
-                       
-                   
-                   <img class="centre" src="../figures/teaching/Civil361/LOS2.png"
-                            style="width:1000px;"
-                         alt="project-1" />
-                       
-                      </div>
-                    
-                </section>
                 
                  <!-- ******************* Definition **************** -->
 
@@ -1212,10 +1169,11 @@
                    <div class="whitebackground2 ">
                    <h3>So what is a <a>Base</a> or ideal condition</h3>
                        
-                       <p>The capacity and LOS analysis procedures are based on calibrated speed-flow curves for sections
+                       <p class="l2">The capacity and LOS analysis procedures are based on calibrated speed-flow curves for sections
                         with various free-flow speeds (FFSs) operating under “base conditions”.</p>
+                       
+                       <p><a>Base condition: </a> where full capacity is archived, include good weather, good visibility, no incidents or accidents, no work zone activity and no serious pavement dterioration. No heavy vehicles, regular road users, adequate lane widths and lateral clearances <a>-- ideal conditions without any capacity-reducing effects</a></p>
             
-                <p class="l2" >  In many capacity analyses, prevailing conditions are not ideal, and computations of  capacity, service flow rate, or level of service must include adjustments to reflect this. Prevailing conditions are generally categorised as roadway, traffic, or control  conditions.</p>
                    
                     </div>
                     
@@ -1253,7 +1211,7 @@
                 </section>
              
                  <!-- ******* Auckland congestion  *********** -->
-                <section id="method4-1" data-background-image="../figures/teaching/HCM-method.png" data-background-size="500px">
+                <section id="method4-1" data-background-image="../figures/teaching/HCM-method.png" data-background-size="45%">
                    
                     <div>&nbsp;</div>
                     
@@ -1305,7 +1263,7 @@
                 <p>  Step 2: FFS may be estimated by Equation 12-2 in HCM 2016:</p>
                    
                     \[\begin{aligned}
-					FFS = BFFS - f_{LW} - f_{RLC} - f_M - 3.22 \times TRD^{0.84} \\
+					FFS = BFFS - f_{LW} - f_{RLC} - 3.22 \times TRD^{0.84} \\
 					\end{aligned} \]
                         
                         <p class="l2">Where:</p>
@@ -1319,7 +1277,6 @@
                         
                         <p class="l3">$f_{RLC}$ = adjustment (mi/h) for right-side lateral clearance (RLC), from <a>Exhibit 12-21</a> (base RLC = minimum 6 ft)</p>
                     
-                       <p class="l3"> $f_{M}$ = adjustment for median type, km/h  </p>
                         
                         <p class="l3">$TRD$ = total ramp density (ramps/mi), defined as the number of ramps (on and off, one direction) located between 3 mi upstream and 3 mi downstream of the mid-point of the basic freeway segment under study, divided by 6 mi.</p>
                        
@@ -1334,7 +1291,7 @@
                      
                       <p class="l2"> 
                       \[\begin{aligned}
-					FFS = BFFS - f_{LW} - f_{RLC} - f_M - 3.22 \times TRD^{0.84} \\
+					FFS = BFFS - f_{LW} - f_{RLC} - 3.22 \times TRD^{0.84} \\
 					\end{aligned} \]
                      </p>
                      
@@ -1348,7 +1305,7 @@
                       <p>Step 2: Estimate and Adjust FFS</p>
                      <p class="l2"> 
                       \[\begin{aligned}
-					FFS = BFFS - f_{LW} - f_{RLC} - f_M - 3.22 \times TRD^{0.84} \\
+					FFS = BFFS - f_{LW} - f_{RLC} - 3.22 \times TRD^{0.84} \\
 					\end{aligned} \]
                      </p>
                     <p>  Total Ramp Density, TRD (ramps/mi)</p>
@@ -1362,7 +1319,7 @@
                  <aside class="notes">
 		     
                     \[\begin{aligned}
-					TRD = \frac{4 ramps/mi \times 3 mi + 4 ramps/mi \times 3 mi}{6 mi} = 24/6 = 4 ramps/mi \\
+					TRD = \frac{4 + 4}{6 } = 8/6 = 1.33 ramps/mi \\
 					\end{aligned} \]
 	               </aside>
                         
@@ -1372,7 +1329,7 @@
                       <p>Step 2: Estimate and Adjust FFS</p>
                      <p class="l2"> 
                       \[\begin{aligned}
-					FFS = BFFS - f_{LW} - f_{RLC} - f_M - 3.22 \times TRD^{0.84} \\
+					FFS = BFFS - f_{LW} - f_{RLC} - 3.22 \times TRD^{0.84} \\
 					\end{aligned} \]
                      </p>
                     <p>  The estimated FFS can be further adjusted to reflect, for example, effects of
@@ -1408,23 +1365,30 @@
                      <!-- ******* Auckland congestion  *********** -->
                 <section id="method9" >
                     
-                <p>  Step 3: Estimate and Adjust Capacity</p>
-                   
-                    <p class="l2">
-                     \[\begin{aligned}
-					c = Min[ 2,200 + 10 \times (FFS_{adj}-50), 2400] \\
-					\end{aligned} \]
-                           </p>
-                    
                      <img class="right" src="../figures/teaching/HCM-method.png"
                             style="width:400px;"
                          alt="project-1" />
                     
-                     <p class="l2">The freeway segment capacity is a function of the segment $FFS$. The base capacity ($c$) for
+                    
+                <p>  Step 3: Estimate and Adjust Capacity</p>
+                    
+                    
+                    <p class="l2">The capacities resulting from the HCM methodology can never exceed the capacities of the base/ideal conditions in <a>Exhibit 12-4</a> in Slide 44</p>
+                    
+                   
+                    <p class="l2"><a>So for a default BFFS (75.4 mi/h), capacity cannot exceed 2400 pc/h/ln</a></p>
+                   
+                      <p class="l2">The freeway segment capacity is a function of the segment $FFS$. The base capacity ($c$) for
                         a basic freeway segment can be estimated using the following equation:</p>
                 
-                       <p class="l2">The capacities resulting from application of these equations can never exceed the capacities of the base/ideal conditions in <a>Exhibit 12-4 (Slide 47)</a></p>
-     
+                    
+                    <p class="l2">
+                     \[\begin{aligned}
+					c = Min[ 2200 + 10 \times (FFS_{adj}-50), 2400] \\
+					\end{aligned} \]
+                           </p>
+                    
+                   
                 </section>  
      
                 
@@ -1434,7 +1398,7 @@
                    
                     <p class="l2">
                      \[\begin{aligned}
-					c = Min[ 2,200 + 10 \times (FFS_{adj}-50), 2400] \\
+					c = Min[ 2200 + 10 \times (FFS_{adj}-50), 2400] \\
 					\end{aligned} \]
                            </p>
                      
@@ -1460,7 +1424,7 @@
                    
                     <p class="l2">
                      \[\begin{aligned}
-					c = Min[ 2,200 + 10 \times (FFS_{adj}-50), 2400] \\
+					c = Min[ 2200 + 10 \times (FFS_{adj}-50), 2400] \\
 					\end{aligned} \]
                            </p>
                      
@@ -1488,7 +1452,7 @@
                      
                       <p class="l2">  Step 2: 
                       \[\begin{aligned}
-					FFS = BFFS - f_{LW} - f_{RLC} - f_M - 3.22 \times TRD^{0.84} \\
+					FFS = BFFS - f_{LW} - f_{RLC} - 3.22 \times TRD^{0.84} \\
 					\end{aligned} \]
                      </p>
                      <p class="l2">  
@@ -1499,7 +1463,7 @@
                      
                       <p class="l2"> Step 3: 
                      \[\begin{aligned}
-					c = Min[ 2,200 + 10 \times (FFS_{adj}-50), 2400] \\
+					c = Min[ 2200 + 10 \times (FFS_{adj}-50), 2400] \\
 					\end{aligned} \]
                            </p>
                      
@@ -1659,7 +1623,7 @@
                    
                     <p class="l2"> After Step 4, the demand volume has been converted to a demand flow rate
                     ($v_p$) in pc/hr/ln under equivalent base conditions. This demand rate must be
-                    compared with the capacity (c_{adj}) obtained from Step 3</p>
+                    compared with the capacity ($c_{adj}$) obtained from Step 3</p>
 
                     
                     <p class="l2"> 1. If demand exceeds capacity, or $v_p > c_{adj}$, the LOS is F and a breakdown has
@@ -1736,12 +1700,22 @@
                     
                 <p>  Step 5: Estimate Speed and Density</p>
                         
-                     <img class="right" src="../figures/teaching/Civil361/LOS.png"
-                            style="width:600px;"
+                     <img class="centre" src="../figures/teaching/Civil361/LOS.png"
+                            style="width:1100px;"
                          alt="project-1" />
                     
-                     <p class="l4"> Recall that we discussed $BP$ in slide 45</p>
+                     <p>The point where the traffic changes from a constant-speed to a decreasing-speed range is called the <a>breakpoint</a></p>
                    
+               
+                </section>  
+                
+                    <!-- ******* Step 5  *********** -->
+                <section id="method14-2" >
+                   
+                    
+                <p>  Step 5: Estimate Speed and Density</p>
+                        
+                     
                     <p class="l2"> Finally, the density of the traffic stream can be estimated using the "flow = speed x density" relationship: 
                         
                     \[\begin{aligned}
@@ -1753,29 +1727,77 @@
                     <p class="l3">$v_p$ = demand flow rate (pc/h/ln)  </p>
                         <p class="l3">$S$ = mean speed of traffic stream under base conditions (mi/h)  </p>
                     
-                  
-                    
                 </section>  
                 
-                <!-- ******* Step 5  *********** -->
-                <section id="method15" >
+                
+                  <section id="LOS5">
+                   <p>  Step 6: Determine LOS</p>
+
+                    <p class="l2">LOS on basic freeway segments is defined by <a>density</a> in passenger cars per 
+                       mile per lane (pc/mi/ln):</p>
+                   
+                       <p class="l3">Although speed is a major concern of drivers related to service quality, describing LOS on the basis of 
+            speed would be difficult since it remains constant up to high flow rates. Unlike speed, density is sensitive 
+            to flow rates throughout the range of flows</p>
+                 
+                      
+                       
+                        <p class="l3">Also recall that flow = speed x density ($q=kv$)</p>
+                       
+                   
+                    <img class="centre" src="../figures/teaching/Civil361/LOS.png"
+                            style="width:1000px;"
+                         alt="project-1" />
                     
-                  
-                    
-                <p>  Step 6: Determine LOS</p>
-                     
+                </section>
+                
+                 
+               <section id="LOS6" >
+                   <p>  Step 6: Determine LOS</p>
+
+                   <p class="l2">LOS on basic freeway segments is defined by density in passenger cars per 
+                       mile per lane (pc/mi/ln):</p>
+                       
+                   
+                   <img class="centre" src="../figures/teaching/Civil361/LOS2.png"
+                            style="width:1000px;"
+                         alt="project-1" />
+                       
                     <p class="l2"> With the value of $D$ from Step 5, the LOS can be identified by either entering <a>Exhibit 12-15 </a>, or graphically from <a>Exhibit 12-16</a>
                         
                     \[\begin{aligned}
 					D = \frac{v_p}{S} \\
 					\end{aligned} \]
                          </p>
+                   
                     
-                             <img class="centre" src="../figures/teaching/Civil361/LOS2.png"
+                     <aside class="notes">
+		     
+                     Six levels of service as illustrated in the  figure below, are defined for each type of  facility for which analysis procedures are  available. They are given letter designations,  from A to F, with level-of-service A  representing the best operating conditions  and level-of-service F the worst.
+	               </aside>
+                    
+                </section>
+                
+                 
+                
+                
+                  <section id="LOS7" data-background-image="../figures/Backgrounds/bokeh.jpg">    
+                   <div class="whitebackground2 ">
+                   <h3>Exercise 6: LOS in HCM 2016</h3>
+
+                   <p>For a basic freeway segment with the
+                    free-flow speed (FFS) of 65 mi/h,
+                    determine LOS when the demand
+                    flow rate ($v$) is 900 pc/h/ln.</p>
+                       
+                   
+                   <img class="centre" src="../figures/teaching/Civil361/LOS2.png"
                             style="width:1000px;"
                          alt="project-1" />
-                   
-                </section>  
+                       
+                      </div>
+                    
+                </section>
                 
                 
                  <!-- ******* Auckland congestion  *********** -->
