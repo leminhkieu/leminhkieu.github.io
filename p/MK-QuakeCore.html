@@ -1,0 +1,298 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Minh Kieu's Data analytics</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        
+       
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h2>Towards transport resilience with real-time traffic monitoring</h2>
+
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Senior Lecturer</h4>
+
+                        <h4>University of Auckland</h4>
+
+                        <hr/>
+
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+                        
+                        <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-QuakeCore.html">https://leminhkieu.github.io/p/MK-QuakeCore.html</a></p>
+
+                    </div>
+
+                </section>
+
+              
+                   <!-- ******************************************************
+                *********************** Definition ***********************
+                ************************************************************ -->
+
+                <section id="def0" data-background-image="../figures/teaching/auckland-traffic-management.jpg" >         
+                    <div class="whitebackground2 fragment">
+                        <h3>Traffic monitoring</h3>
+                        
+                        
+                        <p>Loop detectors: High cost of maintainance and installation</p>
+                        
+                         <video controls autoplay muted>
+
+                        <source data-src="../videos/loop-signal.mp4" type="video/mp4"/>
+
+                         Your browser does not support the video tag.
+
+                    </video>
+                    </div>
+                         
+                </section>
+                
+        
+                  <section id="YOLO2" data-transition="fade">
+
+                    <p>Traffic monitoring with computer vision</p>
+                
+                     
+                     <iframe src="https://www.youtube.com/embed/69Ii3HjUiTM" data-autoplay></iframe>
+                    
+                </section> 
+                
+                
+                 <section id="cctv2" data-transition="fade">
+
+                    <p>How can we use the existing CCTV system for AI-based traffic monitoring?</p>
+                
+                    <img data-src="../figures/teaching/CCTV.gif"  style="float:centre;width:700px;" alt="2"/>
+                   
+                        <p class="l3">Traffic analysis from NZTA's traffic CCTV cameras</p>
+                    
+                    
+                </section> 
+                
+                    <section id="YOLO0" data-transition="fade">
+                    
+                      <p>Object detection algorithm YOLO: You only look once</p>
+                
+                    <img data-src="../figures/paper-figures/computer-vision/Yolo.png"  style="float:centre;width:800px;" alt="2"/>
+                   
+                        <p class="l3">State-of-the-art object detection algorithm</p>
+                     
+                 </section> 
+                
+                
+                 <section id="YOLO1" data-transition="fade">
+                
+                     
+                      <p>Annotated image dataset: Microsoft COCO</p>
+                
+                    <img data-src="https://production-media.paperswithcode.com/datasets/COCO-0000000050-6e25f9dc.jpg"  style="float:centre;width:800px;" alt="2"/>
+                   
+                        <p class="l3">84 different objects, but not specialised in transportation</p>
+                     
+                 </section> 
+                
+                
+                  <section id="Challenge" data-transition="fade">
+                      
+                      
+                        <img data-src="../figures/teaching/CCTV.gif"  style="float:right;width:500px;" alt="2"/>
+                      
+                    <p>Research challenges</p>
+                      <p class="l2">Focus on traffic vehicle objects</p>
+                      <p class="l2">Process a large number of objects in real-time</p>
+                      
+                      
+                      <p>Identify the actual locations of those objects on a real-world dataset</p>
+                        <p class="l2">Enables us to estimate speed, flow, density</p>
+                      
+                         <p>Our "sensors" are more durable and replacable </p>
+                        <p class="l2">Multiple cameras are already operated</p>
+                    
+                        <p>The system relies more on software rather than hardware</p>
+                        <p class="l2">Extendable: e.g. incident/anomalies detection</p>
+                    
+                     
+                </section> 
+           
+                
+                 
+                 <section id="cctv2-2" data-transition="fade">
+
+                    <p>On-going work 1: Identify the actual locations of those objects on a real-world dataset</p>
+                    
+                     <video data-autoplay src="../videos/3d-box.mp4" style="float:center;width:600px;" > </video>
+                    
+                    <a href="https://www.youtube.com/watch?v=8IJcoYMlR4Y">https://www.youtube.com/watch?v=8IJcoYMlR4Y</a>
+                    
+                </section> 
+                
+                
+                
+                
+                 <section id="cctv3" data-transition="fade">
+
+                      <p>On-going work 2: Pedestrians/active transport systems</p>
+                  
+                
+                    <video data-autoplay src="../videos/ped-processed.mp4" style="float:center;width:600px;" > </video>
+                   
+                        <p class="l3">Take the coordinate conversion challenge to the next level!</p>
+                    
+                
+                </section> 
+                
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>Towards transport resilience with real-time traffic monitoring</h2>
+
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-QuakeCore.html">https://leminhkieu.github.io/p/MK-QuakeCore.html</a></h4>
+
+                    </div>
+
+                </section>
+           
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+                
+ 
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
