@@ -1,0 +1,227 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 735 - Transport Modelling and Design</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        
+                        <h4>Civil 735 - Transport Modelling and Design</h4>
+                        
+                        <hr/>
+
+                        <h3>Introduction to Pandas</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil735-L2.html">https://leminhkieu.github.io/p/Civil735-L2.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-lect" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the week: </h2>
+                    
+                    
+                    <p>	1. Summarise the data structures in Pandas </p>
+                    <p> 2. Understand way to import data into Pandas</p>
+                    <p>	3. Understand the fundamental functions in Pandas </p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>    
+                
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="intro"  data-background-image="https://miro.medium.com/max/3006/1*KdxlBR9P3mDp9JZ_URMdYQ.jpeg">   
+                       
+                    <div class="whitebackground2">
+                        
+                        <p>Python, by itself, is an open-source programming language with limited capacities</p>
+                        <p class="l2">Python replies on the use of "modules" </p>
+                        
+                        
+                        <p>Pandas is one of the two major data analytics modules in Python, along with Numpy</p>
+                        
+                        <p class="l2">It is a fundamental high-level building block for doing practical, real world data analysis in Python. </p>
+                        
+                        <p class="l2">providing fast, flexible, and expressive data structures designed to work with large datasets.</p>
+                        
+                    </div>
+                 </section>  
+                
+                
+                 <section id="intro2"  data-background-image="https://media.geeksforgeeks.org/wp-content/uploads/finallpandas.png">   
+                       
+                    <div class="whitebackground2" style="position: relative; bottom: -350px">
+                        
+                        <p class="l3">Pandas is about Dataframes (like Excel spreadsheet)</p>
+                            
+                    </div>
+                 </section>  
+                
+                
+             <section id="intro3"  data-background-image="https://media.geeksforgeeks.org/wp-content/uploads/dataSER-1.png" data-background-size="60%">   
+                       
+                    <div class="whitebackground2" style="position: relative; bottom: -300px">
+                        
+                        <p class="l3">1-dimensional data in Pandas is called Series: array with labels, contains any data type: integers, string, float, Python objects and more</p>
+                        
+                        <p class="l3">Dataframe is a 2-dimensional data structure with labels</p>
+                            
+                    </div>
+                 
+                 </section>  
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Let's move on to the Notebook!</h3>
+                        
+                        <h4>Contact me:</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                       <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil735-L2.html">https://leminhkieu.github.io/p/Civil735-L2.html</a></h4>
+
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>

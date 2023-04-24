@@ -1,0 +1,455 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 735 - Transport Modelling and Design</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h4>Civil 735 - Transport Modelling and Design</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 4: Introduction to Python programming and Data analytics</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w1.html">https://leminhkieu.github.io/p/Civil735-L1.html</a></h4>
+
+                    </div>
+
+                </section>
+                                
+               
+                   <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+
+                    
+                  <p class="l3">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil735-L1.html">https://leminhkieu.github.io/p/Civil735-L1.html</a></p>
+                    
+                    <p class="l3">PDF version can be found on Canvas</p>
+                    
+                     <h3> Teaching staffs </h3>
+                    
+                   <p > Dr Minh Kieu </p>
+                    <p class="l4">B401, Room 10.08</p>
+                    <p class="l4">minh.kieu@auckland.ac.nz</p>
+                    
+                    <p class="l2">Office hours: One hour BEFORE each lecture</p>
+                    
+                    
+                    <p> Daria Solovyeva </p>
+                   
+                    <p class="l4">dsol083@aucklanduni.ac.nz</p>
+                    
+                  
+                </section>       
+                
+              
+                
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/data-platform.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         id="video00">                     
+                    <div class="whitebackground2 fragment">
+                       
+                        
+                        <p>Data are everywhere</p>
+                        
+                        <p class="l2">make informed decisions, solve complex problems, and drive innovation.</p>
+                        
+                        <p>The demand for data scientists is growing rapidly</p>
+                        <p>Data science empowers you to be a critical thinker</p>
+                        
+                        
+                    </div>
+                    
+                     <aside class="notes">
+		         [WHY DATA SCIENCE]
+
+                Now, you might be wondering, why data science? Well, let me tell you, data is everywhere. From the smartphones in our pockets to the satellites orbiting our planet, we are generating and collecting data at an unprecedented rate. And with that data comes the power to make informed decisions, solve complex problems, and drive innovation.
+
+                [APPLICATIONS]
+
+                Data science has applications in almost every field you can think of. In healthcare, it helps us predict and prevent diseases. In finance, it helps us make smarter investments. In sports, it helps us analyze performance and develop winning strategies. And in politics, well, it played a significant role in my own campaigns.
+
+                [JOB OPPORTUNITIES]
+
+                The demand for data scientists is growing rapidly, and with it comes the opportunity for high-paying jobs and fulfilling careers. By learning data science, you not just investing in your future, but also in the future of our nation and the world.
+
+                [EMPOWERMENT]
+
+                Data science empowers you to be a critical thinker, to question assumptions, and to make sense of the complex world we live in. It gives you the tools to become an agent of change, to challenge the status quo, and to make a real difference in your community and beyond.
+	               </aside>
+                    
+                    </section>  
+                
+                   
+                
+                   <!-- ************** Learning outcomes ************* -->
+
+                <section id="modules"  >
+                    
+                   
+                    <h2>Modules: Schedule on Canvas > Home </h2>
+                    
+                    <p>	<a>Module 1:</a> Python programming for Engineers (1 week – 3 hours) </p>
+                    <p>	<a>Module 2:</a> Exploratory Data Analytics (2 weeks – 6 hours)</p>
+                    <p> <a>Module 3:</a> Data visualisations and exploration (2 weeks - 6 hours)</p>
+                    
+                </section>   
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes00"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2">
+                    
+                    <h2>Learning outcomes: </h2>
+                    
+                    <p>	1. Write Python programming code using popular tools such as Jupyter Notebook and Visual Studio Code </p>
+                    <p>	2. Analyse the suitability and limitations of data analytics tools, algorithms, and platforms for real-world data science problems </p>
+                    <p>	3. Apply cutting-edge techniques from large-scale data mining, machine learning and statistical analysis through assignments and a final project </p>
+                    <p>	4. Apply statistical and geospatial data visualisation techniques to communicate and visually represent their findings to both technical and non-technical audiences </p>
+                   
+                 </div>                    
+                    
+                </section>   
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="assessment"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2">
+                    
+                    <h2>Assessments: </h2>
+                    
+                    <p>	Data analytics quizzes x 4 (5% each) </p>
+                    <p>	Exploratory data analysis project (30%) </p>
+                    <p class="l4"> Findings from data</p>
+                    <p class="l4"> Quality of reporting</p>
+                    <p class="l4"> Coding practice</p>
+                   
+                 </div>                    
+                    
+                </section>   
+                
+                
+                
+              
+                 <!-- ******************************************************
+                ***********************Lecture: ***********************
+                ************************************************************ -->
+
+                <section id="intro1" data-background-image="../figures/Backgrounds/shutterstock_788457058-small.jpg">      
+                    <div class="whitebackground2">
+                    
+                    <h2>What is data analytics?</h2>
+                     
+                    <p class="l2">	The concept is too recent that there is currently no single agreed definition</p>
+                    <a>Data analytics is the science of analysing raw data in order to make conclusions about that information</a>    
+                    
+                    </div>  
+                    
+                   
+                </section> 
+                
+                 <section id="examples" data-background-image="https://datasciencepr.com/wp-content/uploads/2020/06/Data-Science-use-cases-740x398.png" data-background-size="90%"> 
+                  <div>&nbsp;</div>
+                </section>
+                
+                
+                  <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-lect" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the week: </h2>
+                    
+                    
+                    <p>	<a>1. Summarise the essential steps in a data analytic project</a></p>
+                    <p> 2. Understand the type of data analytics</p>
+                    <p>	3. Understand the fundamentals of Python programming language </p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>    
+                
+                
+                
+                   <!-- ************** data science process ************* -->
+
+                <section id="process-data" data-background-image="../figures/Backgrounds/data-process.png" data-background-size="90%">      
+                      <div>&nbsp;</div>
+                </section> 
+                
+                
+                
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-lect2" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the week: </h2>
+                    
+                    
+                    <p>	1. Summarise the essential steps in a data analytic project </p>
+                    <p> <a>2. Understand the type of data analytics</a></p>
+                    <p>	3. Understand the fundamentals of Python programming language </p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>    
+                
+                
+                <!-- ************** data science process ************* -->
+
+                <section id="types-data" data-background-image="../figures/Backgrounds/analytics-types.jpeg" data-background-size="90%">    
+                      <div>&nbsp;</div>
+                </section> 
+                
+                 <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-lect4" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the week: </h2>
+                    
+                    
+                    <p>	1. Summarise the essential steps in a data analytic project </p>
+                    <p> 2. Understand the type of data analytics</p>
+                    <p><a>	3. Understand the fundamentals of Python programming language </a></p>
+                    
+                  <aside class="notes">
+		         
+	               </aside>                    
+                    
+                </section>    
+                
+                
+                 <section id="python0" data-background-image="https://invozone-backend.s3.amazonaws.com/most_in_demand_programming_languages_survay_8bd58ba25b.webp" data-background-size="90%">              <div>&nbsp;</div>
+                </section>
+                
+                
+                
+                
+                 <!-- ************** Python ************* -->
+
+                <section id="python1" data-background-image="https://www.ssdntech.com/blog/wp-content/uploads/2019/11/python-features.png" data-background-size="90%">      
+                      <div>&nbsp;</div>
+                </section>
+                
+                
+                 <!-- ************** Jupyter Notebook ************* -->
+                
+                
+                <section id="jup0" data-background-image="https://www.dataquest.io/wp-content/uploads/2019/01/1-LPnY8nOLg4S6_TG0DEXwsg-1.jpg"> 
+                    
+                     <div class="whitebackground2" style="position: relative; top: 300px">
+                    
+                    <p>What is a Jupyter Notebook?</p>
+                         
+                         <p class="l3">It's a single document where you can run code, display the output, and also add
+                            explanations, formulas, charts, and make your work more transparent, understandable,
+                            repeatable, and shareable.</p>
+                    </div>  
+                    
+                </section>
+                
+                
+                <section id="jup0-install" data-background-image="https://www.dataquest.io/wp-content/uploads/2019/01/1-LPnY8nOLg4S6_TG0DEXwsg-1.jpg" >
+                    
+                     <div class="whitebackground2">
+                    
+                    <h2>Installing Anaconda's Python, VS Code and accessing Jupyter Notebook</h2>
+                         
+                         <p>Follow the instructions in "N01b-Jupyter Notebook.PDF" in <a href="https://canvas.auckland.ac.nz/courses/90464/files/10347428?module_item_id=1779968"> [Canvas>Modules>Python and Jupyter Notebook]</a></p>
+                    
+                    </div>  
+                    
+                </section>
+                
+                
+
+                <section id="jup1" data-background-image="https://www.dataquest.io/wp-content/uploads/2019/01/1-LPnY8nOLg4S6_TG0DEXwsg-1.jpg">
+                    
+                     <div class="whitebackground2">
+                    
+                         <h2>Practice</h2>
+                    <p>Let's open our first notebook: "N01c_Intro_to_Python.ipynb" </p>
+                         
+                         <p><a href="https://canvas.auckland.ac.nz/courses/90464/files/10424844?module_item_id=1789275"> https://canvas.auckland.ac.nz/courses/90464/files/10424844?module_item_id=1789275</a></p>
+                    
+                    </div>  
+                    
+                </section>
+                
+                
+                
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Dr Minh Kieu</h3>
+                        
+                        <h4>Senior Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil735-L1.html">https://leminhkieu.github.io/p/Civil735-L1.html</a></h4>
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
