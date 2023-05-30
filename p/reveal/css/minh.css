@@ -372,5 +372,55 @@ It basically draws a white transparent box behind the text to make it easier to 
 
 }
 
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 50%;
+    padding: 5px;
+}
+
+.column img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fig1 img, .fig2 img, .fig3 img, .fig4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fig1 img {
+    max-width: 800px;
+    max-height: 800px;
+}
+
+.fig2 img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.fig3 img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.fig4 img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.responsive-img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    max-height: 90vh !important;
+}
+
+
 
 
