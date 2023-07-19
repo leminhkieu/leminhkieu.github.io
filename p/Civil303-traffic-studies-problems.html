@@ -1,0 +1,441 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil303-Traffic Studies Examples and Problems only</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 303</h3>
+                        
+                        <h3>Transport Operations and Pavements </h3>
+                        
+                        <hr/>
+
+                        <h3>Traffic Studies: Examples and Problems</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+                        
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+                        
+                        <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil303-traffic-studies.html">http://bit.ly/303-traffic-studies</a></p>
+
+                    </div>
+
+                </section>
+                                
+               
+            
+               
+                <section id="speed3" >                     
+                   
+                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
+                        
+                
+                    
+                </section>
+            
+              
+                
+                 <section id="ex1-speed" >                     
+                   
+                        <p> <a class="bold">Example 2:</a> During a 60-sec period a single-loop detector is occupied by vehicles for the following occupancy time: 0.34, 0.38, 0.40, 0.32, and 0.52 sec. Estimate the values of spot speeds and space mean speed (vs). Assume that the loop detector length = 4 m and that the average length of vehicles = 6 m.</p>
+                     
+                        <p>Which vehicle is faster than the speed limit of 110 km/h ?</p>
+                        
+                        <p class="l2">Hints: Calculate effective vehicle length (EVL) first, then spot speeds and space mean speed</p>
+                
+                     <aside class="notes">
+                         <p class="l2">EVL = 4 +6 = 10m</p>
+                          
+                         <p class="l2">speed = EVL/to = 10 / 0.34 = 29.4 m/s</p>
+                         
+                     </aside>  
+                </section>
+               
+            
+                 <section id="ex3-speed" >
+                    <a class="bold">Example 3:</a>
+                    <p>From a traffic video, an observer finds two groups of cars travelling along a road. The observation section is 1 kilometre long. Group A consists of 20 cars in the
+                    section running at 10km/h; group B consists of 40 cars running at 20 km/h. Determine the space
+                    mean and time mean speeds of the traffic.</p>
+                    
+                    <p>What can you conclude about the relationship between space mean speed and time mean speed?</p>
+                    
+                    <p class="l2">[Answers: $v_t$ = 16.7 km/h, $v_s$ = 15 km/h]</p>
+                    
+                </section>  
+                
+                
+                <section id="intersection-example" data-background-image="../figures/Teaching/Civil361/example-intersection.png" data-background-size="40%">    
+                    
+                    <div class="whitebackground2" style="position: relative; bottom: 300px">
+                        <p><a>Example 4: </a> Test question in 2021</p>
+                        
+                    </div>
+                    
+                          <div>&nbsp;</div>
+                </section>
+            
+                
+                 <section id="ex4-PHF" >
+                    <a class="bold">Example 5:</a>
+                    <p class="l3">It is commonly known in your area that the heaviest traffic flow rates occur between 5:00 PM and 6:00 PM. Your assignment for the day is to find the peak hour factor (PHF). To do this, you obtain a click-counter and position yourself at the intersection. For each fifteen-minute interval, you record the numbers of right-turns, left-turns, straight-through (ST) trucks, and straight-through passenger cars. Your tabulated values are as shown below.</p>
+                    
+                     <p class="l3">Note that: a truck is 1.5pcu, a left turn vehicle is 1.5pcu, a right turn vehicle is 2.5pcu</p>
+                     
+                      <table>
+                        <thead><tr>
+                            <th>Time</th>
+                            
+                            <th>Right turn</th>
+                            <th>Left turn</th>
+                            <th>ST truck</th>
+                            <th>ST car</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>5:00-5:15</td>
+                            <td>20</td>
+                            <td>40</td>
+                            <td>25</td>
+                            <td>30</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>5:15-5:30</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>10</td>
+                           
+                        </tr>
+                             <tr>
+                             <td>5:30-5:45</td>
+                            <td>50</td>
+                            <td>70</td>
+                            <td>55</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                           
+                            <td>5:45-6:00</td>
+                            <td>30</td>
+                            <td>35</td>
+                            <td>20</td>
+                            <td>40</td>
+                        </tr>
+                       
+                        </tbody>
+                    </table>
+                     
+                     
+                    <p class="l2">[Answers: $PHF$=0.57]</p>
+                    
+                </section>  
+                
+                
+                
+             
+                <section id="ex4" >                     
+                   
+                        <p><a>Example 6:</a> Four vehicles, 6, 7, 8, and 9 m long, are distributed over a length of a freeway lane 200 m long. What is the space occupancy and density?</p>
+                    
+                </section>
+                
+                
+               <section id="flow-covid" data-background-image="../figures/Teaching/auckland-traffic.jpg" data-background-size="90%">                     
+                    <div class="whitebackground2" style="position: relative; bottom: 300px">
+                        <h3><a>Example 7: </a> Use today's concepts to explain the graph: Traffic data from 2020 in Auckland </h3>
+                        
+                    </div>
+                         
+                </section>
+                
+               
+                <section id="ex2" >                     
+                   
+                        <p><a>Example 8:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 5 vehicles as below. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
+                    
+                    
+                    <table>
+                        <thead><tr>
+                            <th>Vehicle</th>
+                            
+                            <th>Position at 0s</th>
+                            <th>Position at 30s</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>1</td>
+                            <td>2000</td>
+                            <td>2940</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2100</td>
+                            <td>3000</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1900</td>
+                            <td>2600</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>1500</td>
+                            <td>2400</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>500</td>
+                            <td>1200</td>
+                        </tr>
+                       
+                        
+                        </tbody>
+                    </table>
+                
+                     <aside class="notes">
+                  Refer to the class notes 
+                     </aside>  
+                    
+                    
+                </section>
+                
+                
+                  <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob0" data-background-image="../figures/Backgrounds/problems.jpg" data-background-size="80%">   
+           <div>&nbsp;</div>
+                </section>   
+                
+                
+                  <!-- *************** ITS management 4 ************************** -->
+  
+               <section id="prob1" data-background-image="../figures/Teaching/Civil361/problem1-trafficstudies.png" data-background-size="70%">    
+                   <div>&nbsp;</div>
+                </section>   
+                
+                
+                 <section id="prob3" >
+                    <h3>Problem 2</h3>
+                    <p>A loop detector having a length of 3 m was observed to have six vehicles cross over it in a period
+                    of 148 sec, for the following durations: 0.44, 0.48, 0.50, 0.41, 0.49, and 0.55s. Estimate the values
+                    of $q, k,$ space-mean and time mean speed. The corresponding lengths of vehicles were 6, 7, 6.5,
+                    5, 7.5, and 5.5m.</p>
+                    
+                    <p class="l2">[Answers: $q$ = 146 veh/h, $v_s$ = 69.2 km/h, $k$ = 2.1 veh/km, $v_t$ = 70 km/h]</p>
+                    
+                </section>  
+                
+                <section id="prob4" >
+                    <h3>Problem 3</h3>
+                    <p>At traffic count stations A and B, the ADT are collected in 6 months as the below table. The AADT can be estimated as the average values of these ADT. </p>
+                    
+                    <p>Station B also has another modern way to count the vehicles from automatic video processing, which considered more accurate. This value is 8800 veh/day, and is consided as the ground-truth of the vehicle count. </p>
+                    
+                     <p >Assume that the ratio between the estimated AADT (using ADT) and the ground-truth value is the same in both stations. Calculate the ground-truth AADT for station A? </p>
+                     <p class="l2">[Answers: 4093 veh/day</p>
+                    
+                </section>  
+                
+                
+                 <section id="prob4-2" >
+                     
+                     <p>Collected ADT (veh/day)</p>
+                <table>
+                        <thead><tr>
+                            <th>Month</th>
+                            
+                            <th>Station A</th>
+                            <th>Station B</th>
+                            
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>January</td>
+                            <td>4300</td>
+                            <td>9100</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>4100</td>
+                            <td>8700</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>3900</td>
+                            <td>8400</td>
+                        </tr>
+                        <tr>
+                            <td>April</td>
+                            <td>3800</td>
+                            <td>8200</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>3900</td>
+                            <td>8500</td>
+                        </tr>
+                            
+                         <tr>
+                            <td>June</td>
+                            <td>4000</td>
+                            <td>8700</td>
+                        </tr>
+                        </tbody>
+                    </table>
+               
+                      </section>  
+                    
+                   
+                 <section id="prob5" >
+                    <h3>Problem 4</h3>
+                    <p>Speeds are measured at a fixed point along a road section as follows (in km/h):</p>
+                    <p class="l2">52, 47, 50, 54, 59, 63, 67, 57, 55, 48, 44, 53, 54, 58, 49, 61, 55, 50, 47, 55</p>
+                    <p>Determine the following:</p>
+                    <p class="l2">a) The time mean speed and variance</p>
+                    <p class="l2">b) The space mean speed and variance directly from the measurement data.</p>
+                    <p class="l2">c) The space mean speed using the results in (a).</p>
+                    <p>[Answers: a) $v_t$ = 53.9 kph, $\sigma_t^2$ = 34.1, b) $v_s$ = 53.3 km/h, $\sigma_s^2$ = 34.5, c) $v_s$ = 53.3 kph]</p>
+        
+                </section>  
+                
+                 
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Dr Minh Kieu</h3>
+                        
+                        <h4>Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                       <h4 style="text-align:center">These slides:<a href="https://leminhkieu.github.io/p/Civil303-traffic-studies.html">http://bit.ly/303-traffic-studies</a></h4>
+                        
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                 backgroundTransition: 'slide-in fade-out',
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
