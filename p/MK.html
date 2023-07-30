@@ -282,9 +282,64 @@
                             <p class="l2"> Human behaviours: how drivers will react to DWPT?</p>
                     <p class="l2"> Incentivise drivers to reduce traffic congestion or traffic crashes: combination with congestion charging?</p>
                     
-                        
-
                 </section>
+                
+                
+                
+                <section id="SPOT-1">
+
+                            <h3>SPOT (Suitable Placement for On-demand Transport): A
+                                Systematic Methodology for On-Demand Transport Site
+                                Evaluation</h3>
+                    
+                     <img data-src="https://insights.daffodilsw.com/hubfs/OnDemandTranportation.png"  style="float:right;width:500px;" alt="2"/>
+
+                            <p>What is On-demand Transport?</p>
+                            <p class="l2"> Passengers request for service (e.g. similar to Uber or Taxi) </p>
+                            <p class="l2"> Many-to-many (e.g. taxi) or Many-to-one (first-mile/last-mile problem) </p>
+                    
+                    <p>Benefits:</p>
+                    <p class="l2"> Replace underperforming regular bus routes, or comlement existing bus routes </p>
+                    <p class="l2"> Reduce private vehicle usage by offering similar door-to-door service </p>
+                    <p class="l2"> Provide mobility for those who needs it </p>
+                            
+                    <p>Challenges:</p>
+                            <p class="l2"> The selection of suitable locations for on-demand transport is still often a trialand-error process </p>
+                    
+                </section>
+                
+                
+                
+                <section id="SPOT-2" data-background-image="../figures/paper-figures/SPOT/AKL_PT_suply_demand_greybase.png" data-background-size="50%">
+
+                    
+                    <div class="whitebackground2 fragment">
+                    
+                         
+                   <p>6-steps framework for identifying and ranking locations for on-demand transport</p>
+                        
+                      
+                        </div>
+                    
+                </section>   
+                
+                
+                <section id="SPOT-3" data-background-image="../figures/paper-figures/SPOT/PatchyDemandAreas_step1.png">
+
+                    
+                    <div class="whitebackground2 fragment">
+                    
+                         
+                   <p>Final step: Confirm the analysis with Agent-based simulation</p>
+                        
+                      
+                        </div>
+                    
+                </section>   
+                
+                
+                
+                
                 
                 <section id="IntroToABM4" data-background-video="../videos/skylines_mov-long.mp4"
                          data-background-video-loop="loop">
@@ -441,166 +496,7 @@
                         
                 </section>
                 
-                
-                
-                   <!-- ******************************************************
-                *********************** Definition ***********************
-                ************************************************************ -->
-
-                <section id="def0" data-background-image="../figures/teaching/auckland-traffic-management.jpg" >         
-                    <div class="whitebackground2">
-                        <a>So how do I have data for my data-hungry models?</a>
-                        <h3>Towards Real-time traffic monitoring with computer vision: PI</h3>
-                        
-                        
-                        <p>Loop detectors: High cost of maintainance and installation</p>
-                        
-                         
-                    </div>
-                         
-                </section>
-                
-        
-                  <section id="YOLO2" data-transition="fade">
-
-                    <p>Traffic monitoring with computer vision</p>
-                
-                     
-                     <iframe src="https://www.youtube.com/embed/69Ii3HjUiTM" data-autoplay></iframe>
-                    
-                </section> 
-                
-                
-                 <section id="cctv2" data-transition="fade">
-
-                    <p>How can we use the existing CCTV system for AI-based traffic monitoring?</p>
-                
-                    <img data-src="../figures/teaching/CCTV.gif"  style="float:centre;width:700px;" alt="2"/>
-                   
-                        <p class="l3">Traffic analysis from NZTA's traffic CCTV cameras</p>
-                    
-                    
-                </section> 
-                
-                    <section id="YOLO0" data-transition="fade">
-                    
-                      <p>Object detection algorithm YOLO: You only look once</p>
-                
-                    <img data-src="../figures/paper-figures/computer-vision/Yolo.png"  style="float:centre;width:800px;" alt="2"/>
-                   
-                        <p class="l3">State-of-the-art object detection algorithm</p>
-                     
-                 </section> 
-                
-                
-                 <section id="YOLO1" data-transition="fade">
-                
-                     
-                      <p>Annotated image dataset: Microsoft COCO</p>
-                
-                    <img data-src="https://production-media.paperswithcode.com/datasets/COCO-0000000050-6e25f9dc.jpg"  style="float:centre;width:800px;" alt="2"/>
-                   
-                        <p class="l3">84 different objects, but not specialised in transportation</p>
-                     
-                 </section> 
-                
-                
-                  <section id="Challenge" data-transition="fade">
-                      
-                      
-                        <img data-src="../figures/teaching/CCTV.gif"  style="float:right;width:500px;" alt="2"/>
-                      
-                    <p>Research challenges</p>
-                      <p class="l2">Focus on traffic vehicle objects</p>
-                      <p class="l2">Process a large number of objects in real-time</p>
-                      
-                      
-                      <p>Identify the actual locations of those objects on a real-world dataset</p>
-                        <p class="l2">Enables us to estimate speed, flow, density</p>
-                      
-                         <p>Our "sensors" are more durable and replacable </p>
-                        <p class="l2">Multiple cameras are already operated</p>
-                    
-                        <p>The system relies more on software rather than hardware</p>
-                        <p class="l2">Extendable: e.g. incident/anomalies detection</p>
-                    
-                     
-                </section> 
-           
-                
-                 
-                 <section id="cctv2-2" data-transition="fade">
-
-                    <p>On-going work 1: Identify the actual locations of those objects on a real-world dataset</p>
-                    
-                     <video data-autoplay src="../videos/3d-box.mp4" style="float:center;width:600px;" > </video>
-                    
-                    <a href="https://www.youtube.com/watch?v=8IJcoYMlR4Y">https://www.youtube.com/watch?v=8IJcoYMlR4Y</a>
-                    
-                </section> 
-                
-                <section id="box3D3" data-transition="fade">
-
-                    <p>How do we find the real-world location ?</p>
-                
-                    <img data-src="../figures/paper-figures/computer-vision/Tramon-3d.png" alt="2"/>
-                   
-                        <p class="l3">Key idea: We use a vector of motion to identify the vehicle heading direction, and then use that to draw a 3d bounding box</p>
-                    
-                </section> 
-                
-                <section id="box3D4" data-transition="fade">
-
-                  <p class="l3">Now with the vehicle 3d bounding box developed, we only need to compare its location to a set of 4 control points</p>
-                    
-                    <img data-src="../figures/paper-figures/computer-vision/Tramon-3d-2.png" alt="2"/>
-                    
-                </section> 
-                
-                 <section id="Tramon2" data-transition="fade">
-                
-                     <h3>Vietnam case study</h3>
-                      <p>Left: existing algorithms, Right: our proposed system</p>
-                
-                    <img data-src="../figures/paper-figures/computer-vision/COCOvsTRAMON.png" alt="2"/>
-                   
-                        
-                 </section> 
-                
-                
-                 <section id="Tramon3" data-transition="fade">
-                
-                     
-                      <p>Left: existing algorithms, Right: our proposed system</p>
-                
-                    <img data-src="../figures/paper-figures/computer-vision/COCOvsTRAMON2.png" alt="2"/>
-                   
-                        
-                 </section> 
-                
-                
-                 <section id="Tramon4" data-transition="fade">
-
-                    <p>Performance on a Vietnam case study</p>
-                
-                     <iframe src="https://www.youtube.com/embed/wPvA5n9xrpI" data-autoplay></iframe>
-                    
-                </section> 
-                
-                 <section id="cctv3" data-transition="fade">
-
-                      <p>On-going work 2: Pedestrians/active transport systems</p>
-                  
-                
-                    <video data-autoplay src="../videos/ped-processed.mp4" style="float:center;width:600px;" > </video>
-                   
-                        <p class="l3">Take the coordinate conversion challenge to the next level!</p>
-                    
-                
-                </section> 
-                
-                
-                
+               
                 <section id="prob-divergence2" data-background-image="../figures/Backgrounds/skylines-day2.jpg">
 
                         <div class="whitebackground2">
