@@ -91,7 +91,7 @@
               
                         <p style="text-align:center">Minh Kieu</p>
 
-                        <p class="l4" style="text-align:center">Senior Lecturer & Intelligent and Future Transport Systems Lead</p>
+                        <p class="l4" style="text-align:center">Intelligent and Future Transport Systems Lead</p>
                         
                         <p class="l4" style="text-align:center">Transport Research Centre</p>
                         <p class="l4" style="text-align:center">University of Auckland</p>
@@ -114,12 +114,7 @@
                    
                    <p class="l2"><a>Where is New Zealand?</a></p> 
                    
-                   
-
- <p>We introduce a causal discovery and inference analysis to shed lights into the underlying dynamics that shape resilience at a global level</p>          
-                   
-                    <p class="l2"><a>How can we make people more resilient to risks?</a></p> 
-                    
+                  
                 </section>
                 
              
@@ -189,37 +184,45 @@
             </div>
         </section>
                 
+                
+                  <section id="crime-map">
+           
+                    <h3>How people around the world worry about crimes?</h3>
+                     
+                      <div class="row">
+                          <figure class="fig1">
+                        <img src="../figures/paper-figures/Resilience/crime_map-1.png" alt="Figure 3">
+                        
+                    </figure>
+                          </div>
+                     
+                    </section>
+                
+                
                    
                  <section id="transport">
            
         
-                   <h2>How worry are we about road crashes?</h2>
+                     
+                      <div class="row">
+                          <figure class="fig1">
+                        <img src="../figures/paper-figures/Resilience/transport_map-1.png" alt="Figure 3">
+                        
+                    </figure>
+                          </div>
+                     
+                      <div class="row">
           
                     <figure class="fig1">
                         <img src="../figures/paper-figures/Resilience/transport_rank_map-1.png" alt="Figure 3">
                         
                     </figure>
-                     
-                    <p>We are second in the world!</p>
+                          </div>
                 
         </section>
                 
                 
-                 <section id="transport2">
-                     
-                      
-          
-                    <figure class="fig1">
-                        <img src="../figures/paper-figures/Resilience/transport_map.svg" alt="Figure 3">
-                        
-                    </figure>
-                     
-                  
-                 <p>People in developed countries worry more about crashes</p>
-                
-           
-        </section>
-                
+             
                 
                 
                  <!-- *****************************************************
@@ -229,7 +232,9 @@
                      ***************************************************************** -->
                 
                 
-                <section id="exp">
+                <section id="exp"  data-background-image="../figures/Backgrounds/pedestrian.jpg">
+                    
+                    <div class="whitebackground">
                     <h2>Experience index</h2>
                    
                    
@@ -237,6 +242,7 @@
                    
                      
                      <p>Value is either 0 (no harm), 0.25 (know someone who experienced harm), 0.5 (experienced harm) or 1 (both).</p>
+            </div>
                    
                 </section>
                 
@@ -292,31 +298,58 @@
                 
                 <!-- *****************************************************
 
-                     ************* Risk impact index **************************
+                     ************* Risk impact index
 
-                     ************************************************************
+                        \[\begin{aligned}
+					i^k_{i,c} = p^k_{i,c}\times e^k_{i,c}\\
+					\end{aligned} \]**************************
+
+                     ************************************************************ ***** -->
                 
-                <section id="impact-1">
+                <section id="impact-1" data-background-image="../figures/Backgrounds/weather1.jpg">
+                    
+                    <div class="whitebackground">
            
                <h3>Risk Impact index as the product of Perception and Experience indices.</h3>
-                    
-                     \[\begin{aligned}
-					i^k_{i,c} = p^k_{i,c}\times e^k_{i,c}\\
-					\end{aligned} \]
+                    <p> $Risk \ Impact = Perception \ index \times Experience \ index$</p>
+                   
+           </div>
+                </section>
+                
+                 <section id="impact-2">
+                 <h3>Risk Impact index: Crime</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/risk_impact_crime_map-1.png" alt="Figure 1">
+                        
+                    </figure>
+               
            
                 </section>
-              ***** -->
+                
+                 <section id="impact-3">
+                 <h3>Risk Impact index: Traffic</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/risk-impact-traffic-map.png" alt="Figure 1">
+                        
+                    </figure>
+               
+           
+                </section>
+                
+                
+            
+             
                  <!-- *****************************************************
 
                      ************* Resilience index **************************
 
-                     *****************************************************
+                     ***************************************************************** -->
                 
               
                 <section id="res-1">
            
                
-                    <p>The Work Risk Poll survey dataset has several questions  related to personal resilience: </p>
+                    <p class="l2">The Work Risk Poll survey dataset has several questions  related to personal resilience: </p>
                     
                     <ul>
                 <li>Suppose you lost all of your household income, how long would you be able to cover your basic needs?</li>
@@ -329,27 +362,68 @@
                         <li>Does the plan for future disaster known by all household member in your family?</li>
             </ul>
                     
-                    <p>We encode the answers for these questions with a value between 0 to 1. We assign 1
+                    <p class="l3">We encode the answers for these questions with a value between 0 to 1. We assign 1
 to the most resilient answer (e.g. “Yes, well prepared"), 0 to the least (e.g. “No, not well prepared") and 0.5 to the middle/unsure
                         answer (e.g. “It depends"). </p>
                     
                 </section>
                 
-                ************ -->
+                
                 
                 <section id="res-3">
-                    <h3>A new resilience index</h3>
+                    <h3>Resilience vs Risk Impact</h3>
            
-                    <figure>
-                        <img src="../figures/paper-figures/Resilience/Resilience_risk_index.svg" alt="Figure 1">
+                    
+                    <figure class="resize-figure">
+                        <img src="../figures/paper-figures/Resilience/Resilience-risk-impact.png" alt="Figure 1">
                         
                     </figure>
                     
-                 <p>Risk Impact = Experience x Perception</p>
-                    <p>Resilience = How an individual can bounce-back and bounce-foward against disasters</p>
+                    
+                 <p class="l3">Risk Impact = Experience x Perception</p>
+                    <p class="l3">Resilience = How an individual can bounce-back and bounce-foward against disasters</p>
                
                 </section>
                 
+                
+                
+                 <section id="res-4">
+                    <h3>Resilience vs Risk Impact on the map</h3>
+           
+                    
+                        
+                        <figure>
+                          <img src="../figures/paper-figures/Resilience/resilience_map.svg" alt="Figure 1">
+                        </figure>
+
+                        
+                </section>
+                
+                
+                 <section id="res-5">
+                    
+                    <figure class="resize-figure">
+                        <img src="../figures/paper-figures/Resilience/Resilience-experience.png" alt="Figure 1">
+                        
+                    </figure>
+                    
+               
+                </section>
+                
+                
+                
+                
+                <section id="res-map">
+                    <h3>Global ranking of resilience</h3>
+           
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/resilience_index_rank_map.svg" alt="Figure 1">
+                        
+                    </figure>
+                    
+                 <p>We are 13th in the world!</p>
+               
+                </section>
                 
                 
                 
@@ -358,7 +432,7 @@ to the most resilient answer (e.g. “Yes, well prepared"), 0 to the least (e.g.
 
                      ************* Causal discovery **************************
 
-                     ***************************************************************** -->
+                     *****************************************************
                 
                 
                  <section id="causal-1">
@@ -413,14 +487,12 @@ to the most resilient answer (e.g. “Yes, well prepared"), 0 to the least (e.g.
                       
                       <p> People in developed countries experience a lot less harms compared to people to people in developing countries, so as a result they also perceive risks as a lot less severe.</p>
                       
-                      <p class="l2">In Aoteroa we worry too much about traffic, but we actually should worry more about our Mental health issues</p>
+                      <p class="l2">In Aoteroa we worry too much about traffic, but we actually should worry more about Mental health issues</p>
                       
-                      <p>A new resilience index enables us to classify countries into 4 main groups.</p>
+                      <p>A new resilience index enables us to classify countries into 4 main quarters.</p>
                       
                       <p class="l2">We are 13th in the world in Resilience</p>
                       
-                      <p>A major link to Resilience is Income Perception</p>
-                     
                      
                
                 </section>

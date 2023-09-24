@@ -421,6 +421,12 @@ It basically draws a white transparent box behind the text to make it easier to 
     max-height: 90vh !important;
 }
 
+.resize-figure img {
+  max-width: 70%; /* Make the image scale down to fit the container */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+
 
 
 
