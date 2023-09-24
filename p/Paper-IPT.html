@@ -1,0 +1,450 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>IPT</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Minh -->
+
+        <link rel="stylesheet" href="reveal/css/minh.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+        
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+                    <div class="whitebackground2">
+
+                 
+                      
+                        
+                         <figure class="fig2">
+                        <img src="https://itsnz.org/wp-content/uploads/2023/05/ttech23_1_web_sml-1024x427.jpg" alt="Figure 1">
+                        
+                            </figure>
+                        
+                        <h4><a>Decoding the decision-making process for
+                            electric vehicles:</a> </h4>
+                            
+                           <h5>A causal analysis of
+                            factors impacting the adoption of dynamic
+                            wireless charging technology</h5> 
+
+              
+                        <p style="text-align:center">Minh Kieu</p>
+
+                        <p class="l4" style="text-align:center">Senior Lecturer & Intelligent and Future Transport Systems Lead</p>
+                        
+                        <p class="l4" style="text-align:center">Transport Research Centre, University of Auckland</p>
+                        
+                        <p class="l4" style="text-align:center">These slides: <a href="https://leminhkieu.github.io/p/Paper-IPT.html">https://leminhkieu.github.io/p/Paper-IPT.html</a></p>
+                       
+
+                        
+
+                        
+                        <hr/>
+           
+                    </div>
+
+                </section>
+
+                
+                
+               <section id="Intro">
+                    <h2>What's in this research?</h2>
+                   
+                   <p> <a>MBIE Endeavour Programme:</a> Wirelessly Powered Transport Infrastructure for a Low-carbon Future </p> 
+                   
+                   <p> How do people decide to buy an EV? </p>
+                   
+                   <p class="l2">Causal discovery and analysis in machine learning</p>
+                           
+                </section>
+                
+             
+                
+                  <section id="DWPT-1" data-background-image="https://www.designboom.com/wp-content/uploads/2021/05/electreon-EV-charging-highways-israel-sweden-italy-designboom-02.gif" >
+
+                        <div class="whitebackground2 fragment">
+
+                            <h3>Wirelessly Powered Transport Infrastructure for a Low-carbon Future (2021-2026) MBIE Endeavour Programme </h3>
+                            
+                            <p>Charging of Electric Vehicles: Wired or Wireless</p>
+                            <p class="l2">Wireless: Static or <a>Dynamic</a></p>
+
+                            <p>5-year research programme between Transport, Electrical, Science and Bussiness School at the University of Auckland </p>
+                            <p>In collaboration with ASPIRE (5-year NSF Research programme): Utah State, Purdue, Colorado, Virginia Tech, etc <a>https://aspire.usu.edu/</a>  </p>
+
+                        </div>
+
+                </section>
+                
+                
+                
+                <section id="DWPT-2">
+
+                            <h3>Dynamic Wireless Power Transfer for Electric Vehicles </h3>
+                    
+                     <img data-src="https://resources.stuff.co.nz/content/dam/images/1/k/9/2/2/x/image.related.StuffLandscapeSixteenByNine.1240x700.1ktkdy.png/1501802375356.jpg"  style="float:right;width:500px;" alt="2"/>
+
+                            <p>Location of dynamic charging lanes</p>
+                            <p class="l2"> Optimise the locations of static and dynamic wireless charging infrastructure </p>
+                            <p class="l2"> Evaluate different DWPT technologies </p>
+                            
+                    <p>Traffic control/management for DWPT</p>
+                            <p class="l2"> Human behaviours: how drivers will react to DWPT?</p>
+                    <p class="l2"> Incentivise drivers to reduce traffic congestion or traffic crashes: combination with congestion charging?</p>
+                    
+                </section>
+                
+                
+                  
+                
+                
+                
+                  <!-- *****************************************************
+
+                     ************* Allocation of DWC sections**************************
+
+                     ***************************************************************** -->
+                                  
+                
+                 <section id="location1">
+                    <h4>Optimal allocation of dynamic wireless charging facility for
+                        electric vehicles</h4>
+                     
+                     <p class="l3"> <a>Paper:</a> Majhi et al. (2022). Optimal allocation of dynamic wireless charging facility for electric vehicles. Transportation Research Part D: Transport and Environment, 111</p>
+                     
+                     <figure class="fig1">
+                        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1361920922002875-gr2.jpg" alt="Figure 1">
+                        
+                    </figure>
+                     
+                    
+                     
+                     <p class="l2"> Minimise Total cost = investment + electricity + delay</p>
+                   
+                </section>
+                
+                                
+                
+                 <section id="location2">
+                    <h4>Optimal allocation of dynamic wireless charging facility for
+                        electric vehicles</h4>
+                     
+                     <figure class="fig1">
+                        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1361920922002875-gr15.jpg" alt="Figure 1" >
+                        
+                    </figure>
+                     
+                     <p class="l2">(a) Starting SOC = 50%, Battery Capacity = 55kWh (b) Starting SOC = 60%, Battery Capacity = 40kWh.</p>
+                     
+                    
+                   
+                </section>
+                
+                <section id="adoption1">
+                    <h4>A Spatio-Temporal Approach to Electric Vehicle Uptake: Evidence from New Zealand.</h4>
+                    
+                     <p class="l3"><a>Paper:</a> Sheng et al. (2022). A Spatio-Temporal Approach to Electric Vehicle Uptake: Evidence from New Zealand. Transportation Research Part D: Transport and Environment, 105.</p>
+                     
+                     
+                     <figure class="fig2">
+                        <img src="https://www.eastland.nz/wp-content/uploads/cache/2017/08/Charger-map3/3599381979.jpg" alt="Figure 1" style="float:right;width:500px;">
+                        
+                    </figure>
+                     
+                     <p class="l2">- One new charging station would lead to 15 more adopters.</p>
+
+                         
+                    <p class="l2">- Adoption of EVs would lead to more adoption in the future, though the rate is low</p>
+                     
+                    
+                   
+                </section>
+                
+                 <section id="adoption2">
+                      <figure class="fig1">
+                        <img src="../figures/paper-figures/EVs/survey.png" alt="Figure 1" style="float:right;width:500px;">
+                        
+                    </figure>
+                     <h4><a>Decoding the decision-making process for
+                            electric vehicles:</a> </h4>
+                            
+                           <h5>A causal analysis of
+                            factors impacting the adoption of dynamic
+                            wireless charging technology</h5> 
+                     
+                     
+                    
+                     
+                     <p class="l2">1238 individuals</p>
+
+                         
+                   
+                </section>
+                
+                
+
+               <section id="corr"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                   <h3>Correlation vs Causation</h3> 
+                   
+                   <p>Correlation tests for a relationship between two variables</p>
+                   <p class="l2">However, seeing two variables moving together does not necessarily mean we know whether one variable causes the other to occur. </p>
+                   <p class="l2">This is why we commonly say “correlation does not imply causation.”</p>
+                   
+                   </div>
+                </section>   
+                
+                  <section id="corr1" data-transition="fade">
+
+                    <figure class="centre">
+
+                        <img data-src="https://graphpaperdiaries.files.wordpress.com/2016/06/niccage.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                        <p class="l2">Spurious correlation </p>
+                   
+                    
+                </section>   
+                
+                
+                
+                
+                  <section id="corr2"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                        <p>For observational data, correlations can’t confirm causation...</p>
+                       
+                   <p> A strong correlation might indicate causality, but there could easily be other explanations:</p>
+                        
+                   <p class="l2">It may be the result of random chance, where the variables appear to be related, but there is no true underlying relationship. </p>
+                        
+                   <p class="l2">There may be a third, lurking variable that that makes the relationship appear stronger (or weaker) than it actually is.</p>
+                    </div>
+                </section>  
+                
+                
+                 <section id="corr2b" data-transition="fade">
+
+                    <figure class="centre">
+
+                        <img data-src="https://5thorderindustry.com/wp-content/uploads/2020/12/1-causation-vs-correlation-germ-theory-980x531.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                        <p class="l2">Germs are the main cause, while bad smells are just correlated to Disease</p>
+                     
+                     <a>Bayesian Network!</a>
+                   
+                    
+                </section>   
+                
+                    
+                      
+                
+                 <section id="bayes">
+                    <h4>Causal relationship of EVs adoption</h4>
+                     
+                     <figure class="fig">
+                        <img src="../figures/paper-figures/EVs/causalnetwork.svg" alt="Figure 1">
+                        
+                    </figure>
+                     
+                </section>
+                
+                
+                 <section id="bayes1">
+                    <h4>Causal relationship of EVs adoption</h4>
+                     
+                     <figure class="fig">
+                        <img src="../figures/paper-figures/EVs/causal_futvehBEV.png" alt="Figure 1">
+                        
+                    </figure>
+                     
+                </section>
+                
+                
+                <section id="bayes2">
+                    <h4>What is "average treatment effect" (ATE) ?</h4>
+                     
+                     <figure class="fig">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*N6Fq22ketgII7EYwm3ZjMg.png" alt="Figure 1">
+                        
+                    </figure>
+                     
+                    <p>Model causal effect without controlled treatment observations</p>
+                    <a> Causal Forest Double Machine Learning!</a>
+                    
+                </section>
+                
+                 <section id="bayes3">
+                    <h4>Impacts of variables on EVs adoption</h4>
+                     
+                     <figure class="fig">
+                        <img src="../figures/paper-figures/EVs/CATE.svg" alt="Figure 1">
+                        
+                    </figure>
+                     
+                   
+                </section>
+                
+                  <section id="conclusion"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                   <h3>Conclusion</h3> 
+                   
+                   <p>- We find significant causal links between user experience, awareness of energy efficiency of EVs, as well as the plan to buy other vehicles, to the adoption of EVs </p>
+                        
+                         <p>- It's important to improve the user experience, while making EVs more attractive compared to other vehicles</p>
+                        
+                        <p>- No direct links from Wireless Charging yet! May be people doesn't know about the tecnology?</p>
+                        
+                   </div>
+                </section>   
+                
+                  
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                      
+                        <h3>Thank you!</h3>
+
+                     
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                    </div>
+
+                </section>
+            </div>
+
+		</div>
+
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
