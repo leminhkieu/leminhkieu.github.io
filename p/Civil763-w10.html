@@ -1,0 +1,435 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 763 - Smart Infrastructure Analytics</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 763  </h3>
+                        
+                        <h4>Smart Infrastructure Analytics</h4>
+                        
+                        <hr/>
+
+                        <h3>Week 10: Causal analysis</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w10.html">https://leminhkieu.github.io/p/Civil763-w10.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+               
+                 <section id="ML2"  data-background-image=" https://www.researchgate.net/profile/Yves-Matanga/publication/326175998/figure/fig9/AS:644582983352328@1530691967314/Classification-vs-Regression.png" data-background-size="80%">  
+                    
+                    <div class='whitebackground'>
+                     
+                        <p>Classification: learning with a "label"</p>
+                         <p>Regression: predict a numeric value</p>
+
+                     
+                     </div>
+                </section>
+                
+                      
+            
+                
+                
+                
+                  
+                <!-- ************** Learning outcomes ************* -->
+
+                <section id="outcomes-0" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img data-src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                  
+                    <h2>Learning outcomes of the lecture: </h2>
+                    
+                    <p> <a>1. Understand what is Causal discovery and inference analysis</a></p>
+                    <p> 2. Be familiar with popular Causal analysis methods: Propensity Score Matching and Bayesian Network</p>
+                    
+                
+                </section>    
+                
+                  <section id="corr"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                        
+                        <p>Causal inference determines what causes what. </p>
+                        
+                        <p class="l2">Economics: How does supply and demand (causally) depend on price?</p>
+                        <p class="l2">Policy: Are new policies actually effective?</p>
+                        <p class="l2">Education: Does learning “mindset” affect academic achievements?</p>
+                        <p class="l2">Engineering: How does the new concrete mix impact buildings</p>
+                        
+                         </div>
+                </section>   
+                
+                
+                        <section id="corr2"  data-background-image="../figures/Backgrounds/Beach.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                   <h3>Correlation vs Causation</h3> 
+                   
+                   <p>Correlation tests for a relationship between two variables</p>
+                   <p class="l2">However, seeing two variables moving together does not necessarily mean we know whether one variable causes the other to occur. </p>
+                   <p class="l2">This is why we commonly say “correlation does not imply causation.”</p>
+                   
+                   </div>
+                </section>   
+                
+                  <section id="corr1" data-transition="fade">
+
+                    <figure class="centre">
+
+                        <img data-src="https://graphpaperdiaries.files.wordpress.com/2016/06/niccage.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                       
+                       <p>For observational data, correlations can’t confirm causation...</p>
+                        <p class="l2">It may be the result of random chance, where the variables appear to be related, but there is no true underlying relationship. </p>
+                   
+                    
+                </section>   
+                
+                
+                
+              <section id="discovery"  data-background-image="../figures/Backgrounds/bokeh.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                   <h4>Step 1: Causal discovery</h4> 
+                        <p>Using Counterfactuals</p>
+                        
+                        <p class="l2"> “If X had not occurred, Y would not have occurred”</p>
+                   
+                   <p>Infer about the differences between Distribution of Y(0) and Y(1)</p>
+                   <p class="l2">How is this possible?</p>
+                   
+                         <p>To study causal relationships, empirical studies often do randomised experiment</p>
+                     
+                     <p class="l2">We let half of the participants to receive the treatment at random.</p>
+                     
+                   <figure class="fig2">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*N6Fq22ketgII7EYwm3ZjMg.png" alt="Figure 1">
+                        
+                    </figure>
+                        
+                        
+                   </div>
+                </section>   
+                
+                
+        
+                
+                  <section id="discovery2"  data-background-image="../figures/Backgrounds/bokeh.jpg">      
+                    <div class="whitebackground2"> 
+                
+                     
+                    <h4>What is "average treatment effect" (ATE) ?</h4>
+                     
+                     <figure class="fig">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*N6Fq22ketgII7EYwm3ZjMg.png" alt="Figure 1">
+                        
+                    </figure>
+                     </div>
+                 
+                    
+                </section>
+                
+                
+                
+        
+                 <section id="discovery3"  >
+                   
+                
+                        
+                        <p>In practice, we often can't do randomised experiment</p>
+                     
+                     <p class="l2">Expensive</p>
+                     <p class="l2">Don’t scale (as we increase number of variables we want to control for)</p>
+                     <p class="l2">Patient/participant drop out</p>
+                     <p class="l2">May ultimately not yield meaningful results</p>
+                     
+              
+                    <h4>Can we just use a parametric regression method?</h4> 
+                     
+                                          
+                      <p class="l2"> $Y = \delta T + \beta X + \epsilon$ </p>
+                     
+                    
+                    <p class="l2"> $Y$ is our outcome (e.g. recovered or not?) and $T$ is out treatment (e.g. took the real pill or not) </p>
+                        <p class="l2">Parameters for the treatment variable should show the causal impact </p>
+                      <p class="l2">However this is not best because of the strong assumptions we have in parametric regressions</p>
+                     
+                    
+                </section>   
+                
+                
+                
+                
+                  <section id="PSM1"  >
+                   
+                
+                        
+                        <h4>Matching methods</h4> 
+                      <p class="l2">Statistical technique to mimic randomised experiments</p>
+                     
+                    
+                        <p class="l2">Match the "treatment" and the "control" group</p>
+                     
+                <figure class="fig2">
+
+                        <img data-src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*KztiF_4E28Ss8AoyHglrmw.png"
+                             alt="" />
+                    
+                    </figure>
+                      
+                      <p>Simple matching would be too limited! Especially if we have many variables</p>
+                   
+                     
+                    
+                </section>   
+                
+                
+                 
+                  <section id="PSM2"  >
+                   
+                
+                        
+                        <h4>Propensity Score Matching</h4> 
+                     
+                      
+                     <p>Propensity scores estimate the probability of an individual receives treatment based on other characteristics</p>
+                      
+                      
+                       <figure class="fig2">
+
+                        <img data-src="https://miro.medium.com/v2/resize:fit:1400/1*K480UhgiFpwuygzYAM_DJQ.png"
+                             alt="" />
+                    
+                    </figure>
+                      
+                    
+                      
+                      <p>Subjects with similar propensity scores have similar baseline covariates</p>
+                      <p class="l2">So that instead of matching 100 variables, we now only have one variable to match!</p>
+                     
+   
+                </section>   
+                
+                
+                
+                
+                
+                 <section id="discovery4"  data-background-image="../figures/Backgrounds/bokeh.jpg">      
+                    <div class="whitebackground2"> 
+                   
+                   <h4>Causal discovery</h4> 
+                        
+                        <p>In practice, it's also hard to know exactly what are out "outcome" and "treatment" variable from observational data</p>
+                   
+                  <p>Using Graphical models</p>
+
+                    <figure class="fig2">
+
+                        <img data-src="https://5thorderindustry.com/wp-content/uploads/2020/12/1-causation-vs-correlation-germ-theory-980x531.png"
+                             alt=" " />
+                    
+                    </figure>
+                    
+                        <p class="l2">Germs are the main cause, while bad smells are just correlated to Disease</p>
+                     
+                     <a>Bayesian Network!</a>
+                     </div>
+                    
+                </section>   
+                
+                
+                
+                
+                 <section id="bayes">
+                     
+                     <figure>
+                        <img src="../figures/paper-figures/EVs/causalnetwork.svg" alt="Figure 1">
+                        
+                    </figure>
+                     
+                </section>
+                
+                
+                 <section id="ATE"  >
+                   
+                
+                        
+                        <h4>Average Treatment Effect</h4> 
+                     
+                      
+                     <p>Causal effects quantify the impact of a treatment by comparing the outcomes of different treatment values</p>
+                     
+                      
+                      
+                       <figure class="fig2">
+
+                        <img data-src="https://miro.medium.com/v2/resize:fit:1400/1*w_O8N2Ug57mJR8mv7OT-qQ.png"
+                             alt="" />
+                    
+                    </figure>
+                      
+                    
+                      
+                      
+                      <p class="l2">Treatment Effect on individual (TE)</p>
+                     <p class="l2">Average Treatment Effect (ATE)</p>
+                      <p class="l2">Conditional Average Treatment Effect (CATE)</p>
+                     
+   
+                </section>   
+                
+                
+                
+                
+                
+               
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Senior Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w10.html">https://leminhkieu.github.io/p/Civil763-w10.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
