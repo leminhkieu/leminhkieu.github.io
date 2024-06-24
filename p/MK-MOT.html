@@ -1,0 +1,393 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Minh Kieu's Data analytics</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        
+       
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h2>UoA Transport Data Analytics Research</h2>
+
+                        <hr/>
+
+                        <h3>Dr Minh Kieu</h3>
+
+                        <h4>Senior Lecturer</h4>
+                        
+                        <h4>Future and Intelligent Transport System Lead</h4>
+
+                        <h4>Transport Research Centre, University of Auckland</h4>
+
+                        <hr/>
+
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO_TRC.png"/>
+
+                        </a>
+                        
+                        <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-MOT.html">https://leminhkieu.github.io/p/MK-MOT.html</a></p>
+
+                    </div>
+
+                </section>
+                
+                  <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     ***************************************************************** -->
+
+                
+               
+                
+                
+                 <section id="intro2" data-transition="fade">
+
+                   
+                    <img data-src="https://scx2.b-cdn.net/gfx/news/2020/numberofdisa.jpg" style="float:center;width:900px;" alt="1"/>
+                        
+                    
+                        <p>In New Zealand alone: </p>
+                    <p class="l2">Light vehicles contribute to 70% of transport emissions</p>
+                     
+                      <p class="l2">62% transport GHG emissions increase since 1990</p>
+                     
+                      <p class="l2">256 deaths/year due to harmful emissions from transport</p>
+                     
+                     
+                    </section>
+                
+                
+                
+                
+                 <!-- ******************************************************
+                *********************** Definition ***********************
+                ***************************************************-->
+                
+                <section id="TRC" data-background-image="../figures/my-pics/TRC.png">
+                </section>  
+                
+               
+                 <section id="cctv2" data-transition="fade">
+
+                    <h3>How can we use the existing CCTV system for AI-based traffic monitoring?</h3>
+                
+                    <img data-src="../figures/teaching/CCTV.gif"  style="float:centre;width:700px;" alt="2"/>
+                   
+                        <p class="l3">Traffic analysis from NZTA's traffic CCTV cameras</p>
+                    
+                    
+                </section> 
+                
+                   
+                
+                
+                  <section id="Challenge" data-transition="fade">
+                      
+                      
+                        <img data-src="../figures/teaching/CCTV.gif"  style="float:right;width:500px;" alt="2"/>
+                      
+                         <p>Our "sensors" are more durable and replacable </p>
+                        <p class="l2">Multiple cameras are already operated</p>
+                    
+                        <p>The system relies more on software rather than hardware</p>
+                        <p class="l2">Extendable: e.g. incident/anomalies detection</p>
+                      
+                      
+                    <p>Research challenges</p>
+                      <p class="l2">Focus on traffic vehicle objects</p>
+                      <p class="l2">Process a large number of objects in real-time</p>
+                      <p class="l2">Identify the actual locations of those objects on a real-world dataset</p>
+                        
+                </section> 
+           
+                
+                
+                 <section id="SPOT-1">
+
+                            <h3>SPOT (Suitable Placement for On-demand Transport): A
+                                Systematic Methodology for On-Demand Transport Site
+                                Evaluation</h3>
+                    
+                     <img data-src="https://insights.daffodilsw.com/hubfs/OnDemandTranportation.png"  style="float:right;width:500px;" alt="2"/>
+
+                            <p>What is On-demand Transport?</p>
+                            <p class="l2"> Passengers request for service (e.g. similar to Uber or Taxi) </p>
+                            <p class="l2"> Many-to-many (e.g. taxi) or Many-to-one (first-mile/last-mile problem) </p>
+                    
+                    <p>Benefits:</p>
+                    <p class="l2"> Replace underperforming regular bus routes, or comlement existing bus routes </p>
+                    <p class="l2"> Reduce private vehicle usage by offering similar door-to-door service </p>
+                    <p class="l2"> Provide mobility for those who needs it </p>
+                            
+                    <p>Challenges:</p>
+                            <p class="l2"> The selection of suitable locations for on-demand transport is still often a trialand-error process </p>
+                    
+                </section>
+                
+                
+                
+                <section id="SPOT-2" data-background-image="../figures/paper-figures/SPOT/AKL_PT_suply_demand_greybase.png" data-background-size="50%">
+
+                    
+                    <div class="whitebackground2 fragment">
+                    
+                         
+                   <p>6-steps framework for identifying and ranking locations for on-demand transport</p>
+                        
+                      
+                        </div>
+                    
+                </section>   
+                
+                
+                <section id="SPOT-3" data-background-image="../figures/paper-figures/SPOT/PatchyDemandAreas_step1.png">
+
+                     <div>&nbsp;</div>
+                </section>   
+                
+                
+                 <section id="DWPT-1" data-background-image="https://www.designboom.com/wp-content/uploads/2021/05/electreon-EV-charging-highways-israel-sweden-italy-designboom-02.gif" >
+
+                        <div class="whitebackground2 fragment">
+
+                            <h3>Wirelessly Powered Transport Infrastructure for a Low-carbon Future (2021-2026) MBIE Endeavour Programme </h3>
+                            
+                            <p>Charging of Electric Vehicles: Wired or Wireless</p>
+                            <p class="l2">Wireless: Static or <a>Dynamic</a></p>
+
+                            <p>5-year research programme between Transport, Electrical, Science and Bussiness School at the University of Auckland </p>
+                            <p>In collaboration with ASPIRE (5-year NSF Research programme): Utah State, Purdue, Colorado, Virginia Tech, etc <a>https://aspire.usu.edu/</a>  </p>
+
+                        </div>
+
+                </section>
+                
+                
+                
+                  <!-- *****************************************************
+
+                     ************* Allocation of DWC sections**************************
+
+                     ***************************************************************** -->
+                                  
+                
+                 <section id="location1">
+                    <h4>Optimal allocation of dynamic wireless charging facility for
+                        electric vehicles</h4>
+                     
+                     <p class="l3"> <a>Paper:</a> Majhi et al. (2022). Optimal allocation of dynamic wireless charging facility for electric vehicles. Transportation Research Part D: Transport and Environment, 111</p>
+                     
+                     <figure class="fig1">
+                        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1361920922002875-gr2.jpg" alt="Figure 1">
+                        
+                    </figure>
+                     
+                    
+                     
+                     <p class="l2"> Minimise Total cost = investment + electricity + delay</p>
+                   
+                </section>
+                
+                                
+                
+                 <section id="location2">
+                    <h4>Optimal allocation of dynamic wireless charging facility for
+                        electric vehicles</h4>
+                     
+                     <figure class="fig1">
+                        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1361920922002875-gr15.jpg" alt="Figure 1" >
+                        
+                    </figure>
+                     
+                     <p class="l2">(a) Starting SOC = 50%, Battery Capacity = 55kWh (b) Starting SOC = 60%, Battery Capacity = 40kWh.</p>
+                     
+                    
+                   
+                </section>
+                
+                
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/DWC-routing.mov"
+                         data-background-video-loop="loop"
+                         id="video00">                     
+                    <div class="whitebackground2 fragment" style="position: relative; top: 300px">
+                       
+                        <p>Using AI and dynamic wireless charging, our autonomous vehicles can operate continuously around-the-clock</p>
+                     
+                    </div>
+                
+                    </section>  
+                
+                
+                  <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section data-background-video="../videos/AV-merging.mp4"
+                         data-background-video-loop="loop"
+                         id="video01">                     
+                    <div class="whitebackground2" style="position: relative; top: -300px">
+                       
+                        <p>Autonomous vehicles can help us merge like a zip!</p>
+                     
+                    </div>
+                
+                    </section>  
+                
+                
+          
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        <h2>UoA Transport Data Analytics Research</h2>
+
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/MK-MOT.html">https://leminhkieu.github.io/p/MK-MOT.html</a></h4>
+
+                    </div>
+
+                </section>
+           
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+                
+ 
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
