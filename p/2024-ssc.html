@@ -187,8 +187,10 @@
                 <section id="stationsim-video">
                       <h2>Pseudo-truth: StationSim model</h2>
                     <p>Stochastic model: age, gender, and maximum speed,</p>
-                    <p><a>Dynamic exit selection choice</a></p>
+                    
                     <p>Random avoidance behaviour</p>
+                    
+                    <p><a>Dynamic exit selection choice</a></p>
                   
                     <video controls width="80%" height="auto">
                         <source src="../videos/StationSim-Videos/stationsim-no_crowding.mp4" type="video/mp4"/>
@@ -217,6 +219,25 @@
 
                 </section>   
                 
+                
+                  <!-- ***************** Data Assimilation **************** -->                
+               <section id="IGSS3" data-transition="fade">
+
+                    <h2>3 versions of StationSim</h2>
+                   
+                  <p>- Fully stochastic: random age, gender, initial location, and maximum speed, activation times within train arrival waves and the “wiggle” parameter for
+obstacle avoidance.</p>
+                   <p>- Semi-stochastic: deterministically assigning the agent attributes and
+activation times based on their unique IDs while retaining maximum speed and wiggle behaviour as stochastic
+elements.</p>
+                   <p>- Deterministic: removes almost all random elements, everything determined by the agent’s unique ID and model
+parameters</p>
+
+                </section>   
+                
+                  
+                
+                
                  <!-- ***************** Data Assimilation **************** -->                
                <section id="pseudo" data-transition="fade">
 
@@ -240,7 +261,7 @@
                <section id="exit" data-transition="fade">
 
                     
-                   <p>Primitive set used for exit selection</p>
+                   <p>Primitive set used for dynamic exit selection</p>
 
                     <img src="../figures/paper-figures/IGSS/exitrule.png"
 
@@ -254,6 +275,8 @@
 
                 </section>   
                 
+                
+              
                 
                 
                  
