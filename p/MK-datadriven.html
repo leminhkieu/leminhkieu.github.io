@@ -1,0 +1,948 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Minh Kieu's Agent-Based Models</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        
+       
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="https://www.yorkshireeveningpost.co.uk/jpim-static/image/2023/02/09/16/leedscitystock.jpg">
+
+                    <div class="whitebackground2">
+                     
+                    
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Data-driven Transport Modelling in Urban Areas</h3>
+                        
+                        <hr/>
+                     
+                       
+                        <h3 style="text-align:center">Minh Kieu</h3>
+                        
+                        
+                        <p style="text-align:center">Senior Lecturer</p>
+
+                        <p style="text-align:center">University of Auckland, New Zealand</p>
+                        
+
+                        <hr/>
+
+                      <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:right;padding:0px;width:250px; height:auto;" src="../figures/logo/LOGO_TRC.png"/>
+                        </a>
+                     
+                              <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                       
+                    </div>
+
+                </section>
+
+             
+              <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     ***************************************************************** -->
+
+                
+               
+                
+                
+                 <section id="intro-beginning" data-transition="fade">
+
+                    <h3>Motivation</h3>
+                   
+                    <img src="https://scx2.b-cdn.net/gfx/news/2020/numberofdisa.jpg" style="float:center;width:900px;" alt="1"/>
+                        
+                    
+                        <p>In New Zealand alone: </p>
+                    <p class="l2">Light vehicles contribute to 70% of transport emissions</p>
+                     
+                      <p class="l2">62% transport GHG emissions increase since 1990</p>
+                     
+                      <p class="l2">256 deaths/year due to harmful emissions from transport</p>
+                     
+                
+                    </section>
+                
+                
+                
+                
+           
+                  <section id="motivation" data-background-image="../figures/projects/NZ-hazards.png"  data-background-size="90%" >
+
+                        <div class="whitebackground2 fragment">
+
+                            <h2>The focus of my research</h2>
+
+                            <p>Improving transport resilience during and after natural disasters</p>
+                            
+                         <p>Autonomous / Electric vehicles</p>
+
+                        </div>
+
+                </section>
+                
+                
+             <!-- **************** DATA *********
+                
+                
+                <section id="Data-smartcard">
+                    <h2>Big data in transportation</h2>
+                     <figure>
+                        <img data-src="../figures/my-pics/Research.png" alt="Traffic watch"/>
+                    </figure>
+                </section>
+                
+    
+                <section id="Data-synthetic">
+                    <h2>Data project 1: Synthetic Big Data of Human Activities (SynAc)</h2>
+                    <p>Funded by FRDF Funding, University of Auckland</p>
+                    <figure>
+                        <img data-src="../figures/my-pics/synthetic-AI.png" alt="Traffic watch"/>
+                    </figure>
+                </section>
+
+            
+                
+                <section id="Data-synthetic2">
+                    <h2>Data project 1: Synthetic Big Data of Human Activities (SynAc)</h2>
+                    <p>Major challenges with sequential and spatial data </p>
+                    <figure>
+                        <img data-src="../figures/my-pics/activity.png" alt="Traffic watch"/>
+                    </figure>
+                </section>
+
+                ******** -->
+                
+                  <section id="aboutme" data-transition="fade">
+
+
+                   
+                    <img src="../figures/my-pics/my-papers.png" style="float:center;width:700px;" alt="1"/>
+                        
+                    
+                        
+                    <p class="l3">- From 2020: Lecturer/Senior Lecturer, University of Auckland, NZ</p>
+                
+                    <p class="l3">- 2018-2019: Research Fellow, University of Leeds, UK</p>
+                    
+                    <p class="l3">- 2016-2018: Research Scientist, Data61, CSIRO, Australia</p>
+                    
+                    <p class="l3">- 2011-2016: PhD and Research Associate at Queensland University of Technology, Australia</p>
+                     
+                </section>
+                
+                
+                
+                 <section id="aboutme-2" data-background-image="../figures/Backgrounds/grass-left.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Agenda</h3>
+                        
+                        
+                         <p class="l3">Hanoi-UTM project</p>
+                
+                <p class="l3">Synthetic data generation</p>
+                
+                        
+                         <p class="l3">Dynamic Wireless Charging project</p>
+                         <p class="l3">Inverse Generative Social Science project</p>
+                        
+                         <p class="l3"><a>Call for collaboration</a></p>
+                        
+                        
+                        
+                       
+                        </div>
+                    
+                </section>   
+                
+                
+                 <section id="vietnam-project" data-background-image="../figures/Backgrounds/hanoi-old-quarter.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Urban Transport Modelling for Sustainable Well-being in Hanoi (2020-2022)</h3>
+                     <h4>With Nick Malleson and Lex Comber</h4>
+                        
+                         <p class="l2">Motorbikes are associated with many traffic issues in Hanoi</p>
+                         
+                   <p>A potential motorbike ban in the CBD of Hanoi</p>
+                        
+                        <p>How do people react to that?</p>
+                        <p class="l2">We survey 30,000 respondents, and obtained the census data for 500,000 Hanoians</p>
+                        <p class="l2">Individual perceptions to important transport policies</p>
+                        
+                        </div>
+                    
+                </section>   
+                
+                
+               <section id="vietnam2" data-transition="fade">
+
+                    <p>People don't mind congestion if they are inside a car...</p>
+                   
+                    <img src="../figures/projects/Hanoi-UTM1.png" style="float:center;width:900px;" alt="1"/>
+                       
+                </section> 
+             
+              <section id="vietnam2-2" data-transition="fade">
+
+                    <p>There's a gap between intentions and actual choices</p>
+                   
+                        
+                         <img src="../figures/projects/Hanoi-UTM2.png"  style="float:center;width:700px;" alt="2"/>
+                   
+           
+                </section> 
+             
+                
+                
+                 <section id="vietnam3" data-background-image="../figures/Backgrounds/hanoi-old-quarter.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Hanoi-UTM project: Publications </h3>
+                        
+                        
+                         <p class="l3">Kieu et al. (2023) Factors affecting perceptions in transport–A deep dive into the motorbike ban in Hanoi, Vietnam. 
+Case Studies on Transport Policy 11, 100958</p>
+                
+                <p class="l3">Kieu et al. (2024) An open dataset on individual perceptions of transport policies.
+Scientific data 11 (1), 104</p>
+                
+                <p class="l3">Kieu et al. (2024) Evaluating public sentiment towards transport policies: A causal analysis of the motorbike ban in Hanoi. 
+Case Studies on Transport Policy 16, 101203</p>
+                       
+                        </div>
+                    
+                </section>   
+                
+                 <section id="Data-synthetic">
+                    <h3>Synthetic Big Data of Human Activities -- SynAc (2020-2022)</h3>
+                    <p>Funded by FRDF Funding, University of Auckland</p>
+                    <figure>
+                        <img src="../figures/my-pics/synthetic-AI.png" style="float:center;width:600px;" alt="Traffic watch"/>
+                    </figure>
+                  
+                  <p class="l3">Kieu, Meredith and Raith (2023)  Synthetic Generation of Trip Data: The Case of Smart Card. 
+Data Science for Transportation 5 (2), 14</p>
+                     
+                  
+                </section>
+                
+                
+                 <section id="DWPT-1" data-background-image="https://www.designboom.com/wp-content/uploads/2021/05/electreon-EV-charging-highways-israel-sweden-italy-designboom-02.gif" >
+
+                        <div class="whitebackground2 fragment">
+
+                            <h3>Wirelessly Powered Transport Infrastructure for a Low-carbon Future (2021-2026)</h3>
+                            <h4>MBIE Endeavour Programme</h4>
+                            
+                            <p>Charging of Electric Vehicles: Wired or Wireless</p>
+                            <p class="l2">Wireless: Static or <a>Dynamic</a></p>
+
+                            <p>5-year research programme between Transport, Electrical, Science and Bussiness School at the University of Auckland </p>
+                            <p>In collaboration with ASPIRE (5-year NSF Research programme): Utah State, Purdue, Colorado, Virginia Tech, etc <a>https://aspire.usu.edu/</a>  </p>
+
+                        </div>
+
+                </section>
+                
+                
+                
+                <section id="DWPT-2">
+
+                            <h3>Dynamic Wireless Power Transfer for Electric Vehicles </h3>
+                    
+                     
+                  <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1361920922002875-gr2.jpg" style="float:center;width:500px;" alt="Figure 1">
+                       
+                 
+                            <p>Strategic planning for dynamic charging lanes</p>
+                            
+                    <p><a>Traffic control/management for DWPT</a></p>
+                     <p class="l3"> Vehicle routing and control</p>
+                            <p class="l3"> Human behaviours: how drivers will react to DWPT?</p>
+                    <p class="l3"> Incentivise drivers to reduce traffic congestion or traffic crashes: combination with congestion charging?</p>
+                    
+                </section>  
+                
+                
+                
+                
+             
+              <section id="DWPT-3">
+
+                    
+                            <h3>Can Autonomous Vehicles operate continuously now? </h3>
+                     <p class="l3"> Smart routing + DWC</p>
+                            <p class="l3"> Multi-objective optimisation: too complex for existing algorithms</p>
+                    
+                  
+                  <img src="../figures/paper-figures/EVs/problem.png" style="float:left;width:400px;" alt="Figure 1">
+                  <img src="../figures/paper-figures/EVs/case.png" style="float:left;width:400px;" alt="Figure 2">
+                  
+                           
+                </section>  
+             
+             
+               <section id="DWPT-4">
+      
+                  <img src="../figures/paper-figures/EVs/algorithm.png" style="float:center;width:800px;" alt="Figure 1">
+                     <p class="l3">Deep Reinforcement Learning with Heterogeneous Multi-head attention mechanism</p>
+                           
+                </section>  
+             
+             
+             <section id="DWPT-5">
+                    <h3>How does routing works?</h3>
+                  <img src="../figures/paper-figures/EVs/DRL20.gif" style="float:center;width:800px;" alt="Figure 1">
+                           
+                </section>  
+                    
+                     <section id="DWPT-6">
+      
+                  <img src="../figures/paper-figures/EVs/Presentation1.gif" style="float:center;width:800px;" alt="Figure 1">
+                           
+                </section>  
+             
+             
+             
+             <section id="yunlong2" data-background-color="black">
+              <div style="display: flex; justify-content: space-between;">
+                <iframe src="../figures/paper-figures/EVs/3-1.pdf" width="32%" height="600px" title="20-node"></iframe>
+                <iframe src="../figures/paper-figures/EVs/3-2.pdf" width="32%" height="600px" title="50-node"></iframe>
+                <iframe src="../figures/paper-figures/EVs/3-3.pdf" width="32%" height="600px" title="100-node"></iframe>
+               <p style="color: white;">We can achive lower costs and more stable state-of-charge </p>
+              
+              </div>
+            </section>
+                
+                
+                
+             
+             <section id="yunlong1" data-background-color="black">
+              <div style="display: flex; justify-content: space-between;">
+                <iframe src="../figures/paper-figures/EVs/5_41.pdf" width="32%" height="600px" title="20-node"></iframe>
+                <iframe src="../figures/paper-figures/EVs/5_42.pdf" width="32%" height="600px" title="50-node"></iframe>
+                <iframe src="../figures/paper-figures/EVs/5_43.pdf" width="32%" height="600px" title="100-node"></iframe>
+               
+              <p style="color: white;">Our algorithm smartly anticipates the reduction in energy levels to top-up with wireless charging</p>
+              </div>
+              
+            </section>
+                
+                
+        <section id="yunlong4" data-background-color="black">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <embed src="../figures/paper-figures/EVs/5_51.pdf" width="70%" height="300px" style="margin-bottom: 5px;" type="application/pdf" title="20-node" />
+            <embed src="../figures/paper-figures/EVs/5_53.pdf" width="70%" height="300px" type="application/pdf" title="100-node" />
+            <p style="color: white;">Sensitivity analysis</p>
+          </div>
+        </section>
+
+                
+
+                  <section id="yunlong5" data-background-image="../figures/Backgrounds/AV.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Continous AV project: Publications </h3>
+                        
+                        
+                         <p class="l3">Wang, Kieu and Ranjitkar (2024) Enabling Continuous Operation of Shared Autonomous Vehicles With Dynamic Wireless Charging. IEEE Transactions on Intelligent Transportation Systems. </p>
+                
+                <p class="l3">Wang et al. (TBA) Deep Reinforcement Learning based Approach to
+Shared Autonomous Vehicles Pickup, Delivery, and
+Charging Problem. Transportation Research Part C: Emerging Technologies (Under review)</p>
+                
+                  
+                        </div>
+                    
+                </section>   
+                
+                
+                
+                 <section id="y5">
+      
+                  <img src="../figures/paper-figures/EVs/traffic-data.png" style="float:center;width:800px;" alt="Figure 1">
+                     <p class="l3">What if we are stuck on traffic?</p>
+                           
+                </section>  
+             
+                
+                 <section id="y6">
+      
+                  <img src="../figures/paper-figures/EVs/algorithm2.png" style="float:center;width:800px;" alt="Figure 1">
+                     <p class="l3">Split to two levels now to deal with traffic congestion</p>
+                     <p class="l3">Also consider battery state-of-health now</p>
+                           
+                </section>  
+             
+                
+                <section id="y7" data-background-color="black">
+               <div style="display: flex; flex-direction: column; align-items: center;">
+                   
+                   <embed src="../figures/paper-figures/EVs/5_2.pdf" width="90%" height="500px" style="margin-bottom: 1px;" type="application/pdf" title="20-node" />
+            
+                   
+                 <p style="color: white;">Our algorithm vs literature</p>
+              </div>
+              
+            </section>
+                
+              
+                
+                
+
+                  <section id="y8" data-background-image="../figures/Backgrounds/AV.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Continous AV project (with traffic congestion): Publications </h3>
+                        
+                          <p class="l3">Wang et al. (TBA) A Two-Stage Deep Reinforcement Learning Framework for to Enable Continuous Operation Shared Autonomous Vehicles under Dynamic Traffic Scenarios. Transportation Research Part C: Emerging Technologies (Under review)</p>
+               
+                
+                       
+                        </div>
+                    
+                </section>   
+                
+                
+                  <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="conclusion-EV" data-background-image="../figures/Backgrounds/beach.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Summary of Dynamic Wireless Charging project</h2>
+                            
+                            <p>AVs can operate continuously without stopping!</p>
+                            <p class="l3">State-of-charge, state-of-health and traffic are not really an issue</p>
+                          
+                            <p>Future works:</p>
+                            <p class="l3">Incidents</p>
+                             <p class="l3">Vehicle-to-grid interaction</p>
+                            
+                        </div>
+               
+                </section>
+                
+             
+
+                 <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="prob-divergence" data-background-image="../figures/Backgrounds/skylines-day2.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Issues with current Agent-Based Models</h2>
+                            
+                            <p>1. Complexity of model design </p>
+                            <p class="l3">Modellers' bias</p>
+                           <p class="l3">Complex human behaviours</p>
+                           <p class="l3">Agents homogeneity</p>
+                            
+                            <p>2. Data availability</p>
+                            
+                            <p>3. Scalability</p>
+                            
+                            <p>4. Transparency and Interpretability</p>
+                            
+                            <p class="l3">Emergence of unexpected behaviours from the interactions of agents</p>
+                            <p class="l3">Black Box</p>
+                            
+                        </div>
+               
+                </section>
+                 
+                             <!-- ***************** Data Assimilation **************** -->                
+               <section id="how_DA_works" data-transition="fade">
+
+                    <h2>Types of decision making in ABMs on pedestrian systems (Senanayake et al. 2024)</h2>
+
+                    <img src="../figures/paper-figures/IGSS/abm-decision.png"
+
+                         alt="DA" />
+
+                        <div class="whitebackground">
+
+                            <p>Majority are rule-based</p>
+
+                        </div>
+
+                </section>   
+                
+                
+                  <!-- ***************** Data Assimilation **************** -->                
+               <section id="IGSS" data-transition="fade">
+
+                    <h2>Inverse Generative Social Science</h2>
+
+                    <img src="../figures/paper-figures/IGSS/IGSS.png"
+
+                         alt="DA" />
+
+                        <div class="whitebackground">
+
+                            <p></p>
+
+                        </div>
+
+                </section>   
+                
+                
+                   <section data-background-video="../videos/GCS.mp4"
+                         data-background-video-muted 
+                         data-background-video-loop="loop"
+                         data-background-size="cover" 
+                         id="video00">                     
+                    <div class="whitebackground2">
+                       
+                        <h2>Contribution</h2> 
+                        <h4> Identifying Stochastic ABMs</h4>
+                   
+                    </div>
+                    
+                    
+                    </section>  
+                
+                
+                <section id="stationsim-video">
+                      <h2>Pseudo-truth: StationSim model</h2>
+                    <p>Stochastic model: gate in, age, gender, and maximum speed,</p>
+                    
+                    <p>Random avoidance behaviour</p>
+                    
+                    <p><a>Dynamic exit selection choice</a></p>
+                  
+                    <video controls width="80%" height="auto">
+                        <source src="../videos/StationSim-Videos/stationsim-no_crowding.mp4" type="video/mp4"/>
+                         Your browser does not support the video tag.
+                    </video>
+                    
+                </section>
+                
+              <!-- ***************** Data Assimilation **************** -->                
+               <section id="IGSS1" data-transition="fade">
+
+                   
+                    <img src="../figures/paper-figures/IGSS/fitness.png"
+
+                         alt="DA" />
+
+                        <div class="whitebackground">
+
+                            <p></p>
+
+                        </div>
+
+                </section>   
+             
+             
+                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="IGSS2" data-transition="fade">
+
+                    <h2>Adaptive Generative Programming for identifying Stochastic ABMs</h2>
+                   
+                   <p>Target dynamic pseudo-truth rule: “Exit = Randomly based on the combination of distance and crowdedness”</p>
+
+                    <img src="../figures/paper-figures/IGSS/AGP.png"
+
+                         alt="DA" />
+
+                        <div class="whitebackground">
+
+                            <p></p>
+
+                        </div>
+                
+                <p>Other stochastic factors: gate in, age, gender, and maximum speed,</p>
+
+                </section>   
+             
+             
+             
+                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-flow2" data-transition="fade">
+
+                    
+                   <p>Stochastic model discovery with AGP</p>
+
+                    <img src="../figures/paper-figures/IGSS/flowchart2.png"
+
+                         alt="DA" />
+
+                      
+
+                </section>   
+             
+                
+                
+                  <!-- ***************** Data Assimilation **************** -->                
+               <section id="IGSS3" data-transition="fade">
+
+                    <h2>3 versions of StationSim</h2>
+                   
+                  <p>- <a>Fully stochastic:</a> random gate-in, age, gender, initial location, and maximum speed, activation times within train arrival waves and the “wiggle” parameter for
+                   obstacle avoidance.</p>
+                   <p>- <a>Semi-stochastic:</a> deterministically assigning the agent attributes and
+                    activation times based on their unique IDs while retaining maximum speed and wiggle behaviour as stochastic
+                    elements.</p>
+                   <p>- <a>Deterministic:</a> removes almost all random elements, everything determined by the agent’s unique ID and model
+                    parameters</p>
+
+                </section>   
+                
+                  
+                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="exit" data-transition="fade">
+
+                    
+                   <p>Primitive set used for dynamic exit selection</p>
+
+                    <img src="../figures/paper-figures/IGSS/exitrule.png"
+
+                         alt="DA" />
+
+                        <div class="whitebackground">
+
+                            <p></p>
+
+                        </div>
+
+                </section>   
+                
+                
+                 
+                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-flow" data-transition="fade">
+
+                    
+                   <p>Stochastic model discovery with AGP</p>
+
+                    <img src="../figures/paper-figures/IGSS/flowchart.png"
+                         alt="DA"
+                         style="width: 55%; height: auto;" 
+                         />
+
+                        
+
+                            <p>n keeps the track on consecutive generations without performance
+                                    improvement, while m adjust the dynamic population</p>
+
+                       
+
+                </section>   
+                
+                
+                
+                
+                
+                <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-res" data-transition="fade">
+
+                    
+                   <p>Errors of 5 different AGP runs</p>
+
+                    <img src="../figures/paper-figures/IGSS/res1.png"
+
+                         alt="DA" 
+                         style="width: 80%; height: auto;" 
+                         />
+
+                      
+
+                </section>  
+                
+                
+                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-res2" data-transition="fade">
+
+                    
+                   <p>Factors identified</p>
+
+                    <img src="../figures/paper-figures/IGSS/res2.png"
+                          style="width: 55%; height: auto;" 
+                         alt="DA" />
+
+                      
+
+                </section>  
+                
+                
+                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-res3" data-transition="fade">
+
+                    
+                   <p>AGP results on deterministic, semi-stochastic and stochastic ABM</p>
+
+                    <img src="../figures/paper-figures/IGSS/res3.png"
+                          style="width: 80%; height: auto;" 
+                         alt="DA" />
+
+                      
+
+                </section> 
+             
+                               <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-SA" data-transition="fade">
+
+                    
+                   <p>AGP vs Simulated Anneling</p>
+
+                    <img src="../figures/paper-figures/IGSS/vs-SA.png"
+
+                         alt="DA" />
+
+                      
+
+                </section> 
+             
+                               <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-RW" data-transition="fade">
+
+                    
+                   <p>AGP vs Random Walk</p>
+
+                    <img src="../figures/paper-figures/IGSS/vs-RW.png"
+
+                         alt="DA" />
+
+                      
+
+                </section> 
+             
+                               <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-RS" data-transition="fade">
+
+                    
+                   <p>AGP vs Random Walk</p>
+
+                    <img src="../figures/paper-figures/IGSS/vs-RS.png"
+
+                         alt="DA" />
+
+                      
+
+                </section> 
+             
+             
+                                 <!-- ***************** Data Assimilation **************** -->                
+               <section id="AGP-vs1" data-transition="fade">
+
+                    
+                   <p>AGP vs Standard GP</p>
+
+                    <img src="../figures/paper-figures/IGSS/vs1.png"
+
+                         alt="DA" />
+
+                      
+
+                </section> 
+             
+             
+             
+                
+                
+                
+                  <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="conclusion-IGSS" data-background-image="../figures/Backgrounds/beach.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Summary of IGSS project</h2>
+                            
+                            <p>IGSS as the solution for issues with current Agent-Based Modelling </p>
+                            <p class="l3">Model development & calibration</p>
+                           <p class="l3">Transparency and interpretability</p>
+                          
+                            <p>Adaptive Genetic Programming to identify stochastic models</p>
+                            
+                            <p>Future works:</p>
+                            <p class="l3">Real data</p>
+                             <p class="l3">Complete set of rules</p>
+                            
+                        </div>
+               
+                </section>
+                
+                
+                    <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="call" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Call for collaboration</h2>
+                            
+                            <p>I love working with interesting datasets!</p>
+                          
+                            <p>I am expanding to transport resilience / recovery from natural disasters or incidents</p>
+                            <p class="l3">QuakeCoRE (<a href="https://quakecore.nz">https://quakecore.nz</a>)</p>
+                             
+                        </div>
+               
+                </section>
+                
+                
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                             <h2>Data-driven Transport Modelling in Urban Areas</h2>
+                  
+
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                         <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                    </div>
+
+                </section>
+           
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+                loop: true,
+                autoPlayMedia: true,
+                
+ 
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>

@@ -364,5 +364,16 @@ It basically draws a white transparent box behind the text to make it easier to 
 
 }
 
+.row {
+    display: flex;
+    justify-content: space-around; /* Space the columns */
+    margin-bottom: 20px; /* Add some space between the rows */
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the images within the columns */
+}
 
 
