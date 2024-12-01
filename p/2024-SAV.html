@@ -1,0 +1,441 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Continuous Operations of Autonomous Vehicles</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        
+       
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="https://cdn.getyourguide.com/img/location/5c4c945c61246.jpeg/88.jpg">
+
+                    <div class="whitebackground2">
+                     
+                    
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Continuous operation of Autonomous Vehicles with Dynamic Wireless Charging and Routing</h3>
+                        
+                        <hr/>
+                     
+                       
+                        <h3 style="text-align:center">Minh Kieu</h3>
+                        
+                        
+                        <p style="text-align:center">Senior Lecturer</p>
+
+                        <p style="text-align:center">University of Auckland, New Zealand</p>
+                        
+
+                        <hr/>
+
+                      <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:right;padding:0px;width:250px; height:auto;" src="../figures/logo/LOGO_TRC.png"/>
+                        </a>
+                     
+                              <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                       
+                    </div>
+
+                </section>
+
+             
+              <!-- *****************************************************************
+
+                     ************* About me **************************
+
+                     ************************************************************
+
+                
+                 <section id="intro-beginning" data-transition="fade">
+
+                    <h3>Motivation</h3>
+                   
+                    <img src="https://scx2.b-cdn.net/gfx/news/2020/numberofdisa.jpg" style="float:center;width:900px;" alt="1"/>
+                        
+                    
+                        <p>In New Zealand alone: </p>
+                    <p class="l2">Light vehicles contribute to 70% of transport emissions</p>
+                     
+                      <p class="l2">62% transport GHG emissions increase since 1990</p>
+                     
+                      <p class="l2">256 deaths/year due to harmful emissions from transport</p>
+                     
+                
+                    </section>
+                
+                ***** -->
+                
+                
+                
+                
+             <!-- **************** DATA *********
+                
+                
+                <section id="Data-smartcard">
+                    <h2>Big data in transportation</h2>
+                     <figure>
+                        <img data-src="../figures/my-pics/Research.png" alt="Traffic watch"/>
+                    </figure>
+                </section>
+                
+    
+                <section id="Data-synthetic">
+                    <h2>Data project 1: Synthetic Big Data of Human Activities (SynAc)</h2>
+                    <p>Funded by FRDF Funding, University of Auckland</p>
+                    <figure>
+                        <img data-src="../figures/my-pics/synthetic-AI.png" alt="Traffic watch"/>
+                    </figure>
+                </section>
+
+            
+                
+                <section id="Data-synthetic2">
+                    <h2>Data project 1: Synthetic Big Data of Human Activities (SynAc)</h2>
+                    <p>Major challenges with sequential and spatial data </p>
+                    <figure>
+                        <img data-src="../figures/my-pics/activity.png" alt="Traffic watch"/>
+                    </figure>
+                </section>
+
+                ******** -->
+                
+                
+                
+                
+                
+                 <section id="DWPT-1" data-background-image="https://www.designboom.com/wp-content/uploads/2021/05/electreon-EV-charging-highways-israel-sweden-italy-designboom-02.gif" >
+
+                        <div class="whitebackground2 fragment">
+
+                            <h3>Wirelessly Powered Transport Infrastructure for a Low-carbon Future (2021-2026)</h3>
+                            <h4>MBIE Endeavour Programme</h4>
+                            
+                            <p>Charging of Electric Vehicles: Wired or Wireless</p>
+                            <p class="l2">Wireless: Static or <a>Dynamic</a></p>
+
+                            <p>5-year research programme between Transport, Electrical, Science and Bussiness School at the University of Auckland </p>
+                            <p>In collaboration with ASPIRE (5-year NSF Research programme): Utah State, Purdue, Colorado, Virginia Tech, etc <a>https://aspire.usu.edu/</a>  </p>
+                            
+                            <a>PhD research of Yunlong Wang, University of Auckland </a>
+
+                        </div>
+
+                </section>
+                
+                
+                
+                
+                <section id="DWPT-background">
+      
+                  <img src="../figures/paper-figures/EVs/SAV-background.png" style="float:center;width:1200px;" alt="Figure 1">
+                    
+                           
+                </section>  
+                
+                
+                   <section id="DWPT-problem" data-background-image="https://www.teslarati.com/wp-content/uploads/2024/10/Robotaxi_75-scaled.jpg" >
+
+                        <div class="whitebackground2">
+
+                           <h3>With dynamic wireless charging, can Shared Autonomous Vehicles operate continuously? </h3>
+                        </div>
+
+                </section>
+                
+                
+                
+                
+             
+              <section id="DWPT-3">
+
+                    
+                           
+                    <p class="l3"> Multi-objective routing optimisation: too complex for existing algorithms</p>
+                          
+                  
+                  <img src="../figures/paper-figures/EVs/problem.png" style="float:left;width:400px;" alt="Figure 1">
+                    
+                  <img src="../figures/paper-figures/EVs/SAV-case.png" style="float:left;width:400px;" alt="Figure 2">
+                  
+                           
+                </section>  
+             
+             
+               <section id="DWPT-4">
+      
+                  <img src="../figures/paper-figures/EVs/algorithm.png" style="float:center;width:800px;" alt="Figure 1">
+                     <p class="l3">Deep Reinforcement Learning with Heterogeneous Multi-head attention mechanism</p>
+                           
+                </section>  
+             
+             
+             <section id="DWPT-5">
+                    <h3>How does routing works?</h3>
+                  <img src="../figures/paper-figures/EVs/DRL20.gif" style="float:center;width:800px;" alt="Figure 1">
+                           
+                </section>  
+                    
+                     <section id="DWPT-6">
+      
+                  <img src="../figures/paper-figures/EVs/Presentation1.gif" style="float:center;width:800px;" alt="Figure 1">
+                           
+                </section>  
+             
+             
+             
+             <section id="yunlong2" >
+               <img src="../figures/paper-figures/EVs/SAV-compare.png" style="float:center;width:1000px;" alt="Figure 1">
+                 
+            </section>
+                
+                
+             
+             <section id="yunlong3" >
+               <img src="../figures/paper-figures/EVs/SAV-compare2.png" style="float:center;width:1000px;" alt="Figure 1">
+                 
+            </section>
+                
+              
+                
+        <section id="yunlong4" data-background-color="black">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <embed src="../figures/paper-figures/EVs/5_51.pdf" width="70%" height="300px" style="margin-bottom: 5px;" type="application/pdf" title="20-node" />
+            <embed src="../figures/paper-figures/EVs/5_53.pdf" width="70%" height="300px" type="application/pdf" title="100-node" />
+            <p style="color: white;">Sensitivity analysis</p>
+          </div>
+        </section>
+
+                
+
+                  <section id="yunlong5" data-background-image="../figures/Backgrounds/AV.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Continous AV project: Publications </h3>
+                        
+                        
+                         <p class="l3">Wang, Kieu and Ranjitkar (2024) Enabling Continuous Operation of Shared Autonomous Vehicles With Dynamic Wireless Charging. IEEE Transactions on Intelligent Transportation Systems. </p>
+                
+                <p class="l3">Wang et al. (TBA) Deep Reinforcement Learning based Approach to
+Shared Autonomous Vehicles Pickup, Delivery, and
+Charging Problem. Transportation Research Part C: Emerging Technologies (Under review)</p>
+                
+                  
+                        </div>
+                    
+                </section>   
+                
+                
+                
+                 <section id="y5">
+      
+                  <img src="../figures/paper-figures/EVs/traffic-data.png" style="float:center;width:800px;" alt="Figure 1">
+                     <p class="l3">What if we are stuck on traffic?</p>
+                           
+                </section>  
+             
+                
+                 <section id="y6">
+      
+                  <img src="../figures/paper-figures/EVs/algorithm2.png" style="float:center;width:800px;" alt="Figure 1">
+                     <p class="l3">Split to two levels now to deal with traffic congestion</p>
+                     <p class="l3">Also consider battery state-of-health now</p>
+                           
+                </section>  
+             
+                
+                <section id="y7" >
+              
+                     <img src="../figures/paper-figures/EVs/SAV-compare3.png" style="float:center;width:600px;" alt="Figure 1">
+              
+              
+            </section>
+                
+              
+                
+                
+
+                  <section id="y8" data-background-image="../figures/Backgrounds/AV.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Continous AV project (with traffic congestion): Publications </h3>
+                        
+                          <p class="l3">Wang et al. (TBA) A Two-Stage Deep Reinforcement Learning Framework for to Enable Continuous Operation Shared Autonomous Vehicles under Dynamic Traffic Scenarios. Transportation Research Part C: Emerging Technologies (Under review)</p>
+               
+                
+                       
+                        </div>
+                    
+                </section>   
+                
+                
+                  <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="conclusion-EV" data-background-image="../figures/Backgrounds/beach.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Summary</h2>
+                            
+                            <p>AVs can operate continuously without stopping!</p>
+                            <p class="l3">State-of-charge, state-of-health and traffic are not really an issue</p>
+                          
+                            <p>Future works:</p>
+                            <p class="l3">Incidents</p>
+                             <p class="l3">Vehicle-to-grid interaction</p>
+                            
+                        </div>
+               
+                </section>
+                
+             
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                             <h2>Continuous operation of Autonomous Vehicles with Dynamic Wireless Charging and Routing</h2>
+                  
+
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+                        <!-- <h4>Research Fellow</h4> -->
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                         <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                    </div>
+
+                </section>
+           
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+                loop: true,
+                autoPlayMedia: true,
+                
+ 
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
