@@ -50,6 +50,12 @@
 
 		</script>
         
+         <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         
        
 
@@ -210,14 +216,47 @@
                 </section>
                 
                 
+                <section id="DWPT-charging" data-background-image="../figures/Backgrounds/city.jpg">
+      
+                  <img src="../figures/paper-figures/EVs/SAV-charging.png" style="float:center;width:1200px;" alt="Figure 1">
+                    
+                           
+                </section>  
                 
+                   <section id="DWPT-literature">
+      
+                  <img src="../figures/paper-figures/EVs/SAV-literature.png" style="float:center;width:1200px;" alt="Figure 1">
+                    
+                           
+                </section>
+                
+                
+                 <section id="DWPT-problem2">
+      
+                  <img src="../figures/paper-figures/EVs/SAV-problem.png" style="float:center;width:1200px;" alt="Figure 1">
+                    
+                           
+                </section>  
+                
+                
+                
+                
+                <section id="DWPT-literature2" data-background-image="../figures/Backgrounds/bokeh.jpg">
+      
+                  <img src="../figures/paper-figures/EVs/SAV-literature2.png" style="float:center;width:1200px;" alt="Figure 1">
+                    
+                           
+                </section>  
+                
+                
+               
                 
              
               <section id="DWPT-3">
 
                     
                            
-                    <p class="l3"> Multi-objective routing optimisation: too complex for existing algorithms</p>
+                    <p class="l3"> Case study in Auckland, New Zealand</p>
                           
                   
                   <img src="../figures/paper-figures/EVs/problem.png" style="float:left;width:400px;" alt="Figure 1">
@@ -225,7 +264,36 @@
                   <img src="../figures/paper-figures/EVs/SAV-case.png" style="float:left;width:400px;" alt="Figure 2">
                   
                            
-                </section>  
+                </section> 
+                
+                
+                <section id="maths">
+                    
+                    <p class="l2"> State-of-charge model</p>
+                
+                  \[\begin{aligned}
+					\text{SOC}(t) &= \frac{Q_0 - \int_0^{T_{cur}} I(t) \, dt}{Q_{bat}} \\
+					\end{aligned} \]
+                    
+                    \[\begin{aligned}
+                    I(t) &= \frac{V_{\text{oc}}(t) - \sqrt{V_{\text{oc}}^2(t) - 4 \cdot R_0 \cdot (P_{\text{discharged}}(t) + P_{\text{charged}}(t))}}{2 \cdot R_0} \\
+                    \end{aligned} \]
+                    
+                    <p class="l2"> SUMO (traffic simulation model) for link costs (travel time)</p>
+                    <p class="l2"> Optimisation problem</p>
+                    
+                    \[\begin{aligned}
+                    \text{Objective:} \quad \min \sum_{i,j} cost_{ij} x_{ij} + \lambda_1 \cdot \sum \Delta SOC \\
+                    \end{aligned} \]
+                
+                </section>
+                
+                 <section id="DWPT-5">
+                    <h3>How does routing works?</h3>
+                  <img src="../figures/paper-figures/EVs/DRL20.gif" style="float:center;width:800px;" alt="Figure 1">
+                           
+                </section>
+                
              
              
                <section id="DWPT-4">
@@ -236,11 +304,7 @@
                 </section>  
              
              
-             <section id="DWPT-5">
-                    <h3>How does routing works?</h3>
-                  <img src="../figures/paper-figures/EVs/DRL20.gif" style="float:center;width:800px;" alt="Figure 1">
-                           
-                </section>  
+              
                     
                      <section id="DWPT-6">
       
@@ -319,6 +383,13 @@ Charging Problem. Transportation Research Part C: Emerging Technologies (Under r
             </section>
                 
               
+                <section id="res-2levels" data-background-image="../figures/Backgrounds/bokeh.jpg">
+      
+                  <img src="../figures/paper-figures/EVs/SAV-2levels.png" style="float:center;width:1200px;" alt="Figure 1">
+                    
+                           
+                </section>  
+                
                 
                 
 
