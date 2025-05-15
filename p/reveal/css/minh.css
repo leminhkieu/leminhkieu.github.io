@@ -126,6 +126,13 @@ body {
 }
 */
 
+.square {
+  background: rgba(255,255,255,0.6);
+  width: 20vw;
+  height: 20vw;
+}
+
+
 /* Some text can be two colums (use e.g. in a <div>) */
 .twocol  {
     -moz-column-count:2; /* Firefox */
