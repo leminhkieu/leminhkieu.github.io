@@ -1,0 +1,280 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil303-ITS</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                       <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 303</h3>
+                        
+                        <h3>Transport Operations and Pavements </h3>
+                        
+                        <hr/>
+
+                        <h3>Case studies in Intelligent Transport Systems</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+                        
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+                        
+                        <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil303-its.html">http://bit.ly/303-its</a></p>
+
+                    </div>
+
+                </section>
+                           
+              
+             <!-- ******************************************************
+                *********************** Problem 1 ***********************
+                ************************************************************ -->
+
+                <section id="outcomes00"  data-background-image="../figures/Backgrounds/Beach.jpg">  
+                  <div class="whitebackground2">
+                        <h3>Auckland has unique challenges</h3>
+                        
+                     <p class="l2">Separated by the ocean</p>
+                     <p class="l2">Urban spawl</p>
+                     <p class="l2">Growling population</p>
+                         
+                        <p>Solutions do not have to be unique</p>
+                 
+                   <p class="l2">For decades, the answer was to build more roads</p>
+                 <p class="l2">But new infrastructure often induces new traffic</p>
+                   
+                   <p>Solutions are not with infrastructure, but intelligence!</p>
+                 </div>
+                </section>
+                
+                  <section id="outcomes01"  data-background-image="../figures/Backgrounds/Beach.jpg">  
+                  <div class="whitebackground2">
+                        <h3>It's always a demand / capacity problem</h3>
+                        
+                     <p class="l2">Roads that change shape</p>
+                     <p class="l2">AI traffic brain</p>
+                     <p class="l2">Pricing our way out</p>
+                   
+                         
+                        <p>Connecting all the dots</p>
+                 
+                 </div>
+                </section>
+             
+             
+              <section id="tidalflow"  data-background-image="https://www.carscoops.com/wp-content/uploads/2024/12/zipper-road.jpg">  
+                  <div class="whitebackground2 fragment">
+                        <h3>Moveable lane barrier system/ Tidal flow</h3>
+                        
+                     <p class="l2">+ Increased Capacity and Flexibility</p>
+                   <p class="l2">Research at UTexas Austin: improve capacity by 72%</p>
+                   
+                   
+                     <p class="l2">- Limited Applicability</p>
+                     <p class="l2">- Potential for User Confusion</p>
+                   
+                 
+                 </div>
+                </section>
+             
+              <section id="AI0">
+                     
+                     <iframe src="https://www.youtube.com/embed/HPjmwlWwKE8" data-autoplay></iframe>
+                 
+                </section> 
+             
+             
+                <section id="AI"  data-background-image="https://www.symmetryelectronics.com/getmedia/494205f1-d826-4f73-b0ca-f06a4d6070cb/Tech-Ethics-Nov-Fig-1-1024x672.jpg">  
+                  <div class="whitebackground2 fragment">
+                        <h3>AI traffic brain</h3>
+                        
+                     <p>Uses machine learning / AI to make traffic prediction and control</p>
+                   <p class="l2">Hardware: Cameras, Connected traffic signals, road sensors (e.g. loop detectors, RFID, air quality sensors)</p>
+                   
+                   <p>Flatten the curve!</p>
+                   
+                     <p>Requires a systematic implementation to be successful</p>
+                 
+                 </div>
+                </section>
+             
+             <section id="congestion"  data-background-image="https://www.sfcta.org/sites/default/files/styles/full/public/2020-04/Congestion_Pricing_World.png">  
+                  <div class="whitebackground2">
+                 <p><a href="https://www.sfcta.org/blogs/congestion-pricing-global-concept">https://www.sfcta.org/blogs/congestion-pricing-global-concept</a></p>
+                   
+                   <p class="l2">Can hurt low-income drivers, and impact city center businesses </p>
+                   
+                 </div>
+                </section>
+             
+             
+             <section id="dots"  data-background-image="https://images.prismic.io/mademade-nz/c403479e-fa0a-4372-b9a1-fa0853697785_Integrated+Transport+Map+1.jpg">  
+                  <div class="whitebackground2">
+                   <h3>Connect all the dots</h3>
+                   <p>Interconnected transport system</p>
+                   <p class="l2">Different modes of transport (like roads, railways, waterways, and even air travel) are integrated to work together seamlessly, facilitating smooth transitions between modes and enabling efficient movement of people and goods</p>
+                   <p>Provide resilience to disruptions</p>
+                   <p>Improve efficiency</p>
+                   <p>Enhanced accessibility</p>
+                   
+                 </div>
+                </section>
+                
+             
+              <section id="future"  data-background-image="https://bestpedia.in/wp-content/uploads/2022/12/City-of-future-composition.jpg">  
+                  <div class="whitebackground2 fragment">
+                   <h3>Future of transportation</h3>
+                   
+                   <p class="l2">+ Emission free</p>
+                    <p class="l2">+ Data rich</p>
+
+                   
+                   <p class="l2"> </p>
+                   
+                   <p class="l2">Interconnected? or still private and separated?</p>
+                   <p class="l2">Active transport? or is it a Wall-E future?</p>
+                   <p class="l2">Resilience to disruptions and disasters? or increasingly frustrated and dangerous?</p>
+                   
+                   
+                   
+                 </div>
+                </section>
+                
+             
+             
+             
+             
+             
+             
+                
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Dr Minh Kieu</h3>
+                        
+                        <h4>Senior Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                      
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                 backgroundTransition: 'slide-in fade-out',
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
