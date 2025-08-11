@@ -1,0 +1,263 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="big data, urban dynamics">
+        
+		<title>Civil 735 - Transport Modelling and Design</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+            
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+         <script>Reveal.initialize({ slideNumber: true });</script>
+        
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 763 - Smart Infrastructure Analytics</h3>
+                        
+                        
+                        <hr/>
+
+                        <h3>Week 4: Prompt Engineering with AI </h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+
+                        <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w4-prompt.html">https://leminhkieu.github.io/p/Civil763-w4-prompt.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+             <section id="llm-0" data-background-image="../figures/teaching/AI.svg" data-background-size="50%"> 
+                    <div>&nbsp;</div>
+                </section> 
+
+                
+                
+                
+           <section id="stats">  
+                    
+                   <p> Comparison between LLMs</p>
+                   
+                   <a href="https://llm-stats.com">https://llm-stats.com</a>
+                     
+             </section>  
+              
+                                
+           <section id="p0">  
+                   <h2> Principles of Prompt Engineering </h2>
+                  <p>1.	Be Clear and Specific</p>
+            <p>2.	Provide Context</p>
+            <p>3.	Use Technical Terminology Accurately</p>
+            <p>4.	Structure Requests According to the Coding Task</p>
+            	
+             </section>  
+ 
+             <section id="p1" data-background-image="../figures/Backgrounds/grass-left.jpg">
+              <div class="whitebackground2">
+                   <h3>1.	Be Clear and Specific </h3>
+                  <p>Bad prompts:</p>
+              <a>“Generate code for a simulation.”</a>
+              <p>Good prompts:</p>
+              <a>“I am developing a traffic flow simulation in Python using discrete-event simulation principles. Please write a Python class called IntersectionSimulator that:</a>
+              </div>
+             </section>  
+
+                          <section id="p2" data-background-image="../figures/Backgrounds/grass-left.jpg">
+              <div class="whitebackground2">
+                   <h3>2.	Provide Context</h3>
+                  <p>Bad prompts:</p>
+              <a>“Write code to get data out of a file with pandas or something.”</a>
+              <p>Good prompts:</p>
+              <a>“In Python, write a function called calculate_stats that takes a list of integers and returns a dictionary containing the minimum value, maximum value, average, and standard deviation of the list.”</a>
+               </div>
+             </section>  
+                          <section id="p3" data-background-image="../figures/Backgrounds/grass-left.jpg">
+              <div class="whitebackground2">
+                   <h3>3.	Use Technical Terminology Accurately</h3>
+                  <p>Bad prompts:</p>
+              <a>“Write me some code to do calculations.”</a>
+              <p>Good prompts:</p>
+              <a>“Using the pandas library in Python, write a function read_and_clean_csv that:</a>
+		<a>1.	Loads data from a CSV file called ‘data.csv’.</a>
+	<a>2.	Drops any rows with missing values.</a>
+	<a>3.	Converts columns ‘time’ and ‘date’ to appropriate datetime formats.</a>
+	<a>4.	Returns a cleaned DataFrame ready for further analysis.</a>
+	<a>Make sure to handle potential file I/O errors gracefully.”</a></div>
+             </section>  
+                
+               <section id="p4" data-background-image="../figures/Backgrounds/grass-left.jpg">
+              <div class="whitebackground2">
+                   <h3>4.	Structure Requests According to the Coding Task</h3>
+               
+               <p>•	For debugging: describe the error, show problematic code, and ask for an explanation plus a fix.</p>
+               <p>•	For optimization: define performance expectations, highlight known issues or complexities, and request specific improvements.</p>
+               <p>•	For documentation: specify the style (docstring vs. comment block) and the details to include (parameters, return values, usage).</p>
+                              
+                  <p>Bad prompts:</p>
+              <a>“Fix my code.”</a>
+              <p>Good prompts:</p>
+             
+                </div>
+                </section>  
+             
+             
+              <section id="p5" data-background-image="../figures/Backgrounds/grass-left.jpg">
+              <div class="whitebackground2">
+                   <h3>General tips:</h3>
+               <p>Include the current code for clarity</p>
+                  <p> Breaking down complex problems into manageable chunks</p>
+              <p>Using LLMs for code planning and architecture</p>
+               <p>Refining and improving generated code</p>
+               <p>Asking for code explanations and reasoning</p>
+             
+                </div>
+                </section> 
+             
+              <section id="p6" data-background-image="../figures/Backgrounds/grass.jpg">
+              <div class="whitebackground2">
+                   <h3>How to Stay Current with LLM Capabilities</h3>
+               <p>Experimenting with the latest models</p>
+                  <p> Follow key information sources: websites of major AI labs, Huggingface, CivitAI, r/MachineLearning and r/LearnProgramming subreddits </p>
+              <p>Participate in the feedback loop</p>
+               <p>Refining and improving generated code</p>
+               <p>Pay attention to limitations that get resolved</p>
+                </div>
+                </section> 
+             
+             <section id="p7" data-background-image="../figures/Backgrounds/grass.jpg">
+              <div class="whitebackground2">
+                   <h3>Balancing AI Assistance with Core Programming Knowledge</h3>
+               <p>Practice the 'understanding first' principle.</p>
+                  <p>Implement a 'no-LLM day' in your weekly routine. </p>
+              <p>Use LLMs as tuitors, not just tools. </p>
+               <p>Challenge yourself with problems at the edge of your abilities</p>
+               <p>Remember that the meta-skill of knowing when and how to use AI is becoming as important as coding itself</p>
+                </div>
+                </section> 
+             
+                 <!-- *************** Thanks  ************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                       
+                        <hr/>
+
+                        <h3>Contact me: Minh Kieu</h3>
+                        
+                        <h4>Senior Lecturer</h4>
+
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+
+                        <hr/>
+
+                         <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil763-w4-prompt.html">https://leminhkieu.github.io/p/Civil763-w4-prompt.html</a></h4>
+
+                    </div>
+
+                </section>
+                
+                
+            </div>
+
+		</div>
+
+         
+                 
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+                
+                backgroundTransition: 'slide-in fade-out',
+                
+				history: true,
+                slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+       
+        
+        
+	</body>
+
+</html>
