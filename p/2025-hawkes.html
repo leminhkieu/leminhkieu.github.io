@@ -1,0 +1,398 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Disaster-Aware Hawkes process</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+       
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
+
+                    <div class="whitebackground2">
+                     
+                     <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:right;padding:0px;width:200px; height:auto;" src="https://giscience2025.org/assets/img/map-transp.png"/>
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h2>Modelling social mobility during natural disasters</h2>
+                        
+                        <hr/>
+                     
+                        <h3 style="text-align:left">Minh Kieu - University of Auckland </h3>
+                     <h4 style="text-align:left">Alexis Comber - University of Leeds</h4>
+                     <h4 style="text-align:left">Quang Thanh Bui - Vietnam National University</h4>
+                     <h4 style="text-align:left">Nick Malleson - University of Leeds</h4>
+
+                        <hr/>
+
+                              <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                       
+                    </div>
+
+                </section>
+
+
+                 <!-- ***************** Introduction ******************** -->
+                
+
+                <section id="intro1" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
+
+                        <div class="whitebackground2">
+                    <h3>Classical approaches in modelling human mobility during disasters fall short</h3>
+                    <ul>
+                        <li>Treat mobility events as <strong>independent</strong></li>
+                        <li>Miss <strong>cascading effects</strong> between locations</li>
+                        <li>Can't capture <strong>recovery dynamics</strong></li>
+                        <li>Ignore <strong>category-specific</strong> responses</li>
+                    </ul>
+                         
+                          <img src="../figures/paper-figures/Resilience/Daily_visits.png"
+
+                         alt="DA" />
+               </div>
+                </section>
+             
+               <section id="intro2" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
+
+                        <div class="whitebackground">
+            <h2>Our Solution: Disaster-Aware Hawkes Process</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label"><strong>Regime Switching:</strong> Normal ↔ Disaster states</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label"><strong>Bounce-Back Effects:</strong> Post-disaster surges</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label"><strong>Category-Specific:</strong> Different recovery rates</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label"><strong>Cascade Effects:</strong> Network propagation</div>
+                </div>
+            </div>
+                        </div>
+                </section>   
+                       
+               <section id="intro3" data-background-image="../figures/Backgrounds/beach.jpg">
+                <div class="whitebackground">
+                              <h2>Case Study: Cyclone Gabrielle, Auckland 2023</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Perfect Natural Experiment</h3>
+                    <ul>
+                        <li><strong>New Zealand's most severe</strong> weather event in recent decades</li>
+                        <li><strong>130+ km/h winds</strong> across Auckland</li>
+                        <li><strong>225,000+ properties</strong> without power</li>
+                        <li><strong>Major transport disruption</strong> from flooding</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="highlight-box">
+                        <h3>Our Dataset</h3>
+                        <p>5.85M mobility records from <strong>111,539 devices</strong>
+                    </div>
+                </div>
+            </div>
+                 </div>
+                </section>   
+                
+             
+
+              <!-- ***************** Data **************** -->                
+               <section id="Data1" data-background-image="../figures/Backgrounds/beach.jpg">
+                
+                 <img src="../figures/paper-figures/Resilience/activity_heatmap_corrected.png"
+                         alt="Data"
+                      style="width: 100%; height: auto;" />
+                </section>   
+             
+               <section id="Data2" data-background-image="../figures/Backgrounds/beach.jpg">
+                 <img src="../figures/paper-figures/Resilience/auckland_heatmap.png"
+                         alt="Data" 
+                      style="width: 70%; height: auto;" />
+                </section> 
+             
+             <section id="Data2-2" data-background-image="../figures/Backgrounds/beach.jpg">
+                  <img src="../figures/paper-figures/Resilience/NZDep1.png" style="float:centre;width:500px;" alt="Figure 1">
+                  
+                  <img src="../figures/paper-figures/Resilience/NZDep2.png" style="float:centre;width:500px;" alt="Figure 1">
+                  
+                </section>               
+             
+               <section id="Data3" data-background-image="../figures/Backgrounds/beach.jpg">
+                 <img src="../figures/paper-figures/Resilience/disaster_impact_by_category.png"
+                         alt="Data" 
+                      style="width: 100%; height: auto;" />
+                </section>             
+               <section id="Data4" data-background-image="../figures/Backgrounds/beach.jpg">
+                 <img src="../figures/paper-figures/Resilience/flow_asymmetry_matrix_Auckland.png"
+                         alt="Data" 
+                      style="width: 100%; height: auto;" />
+                </section>              
+
+             
+             
+              <!-- ***************** Modelling **************** -->                
+               <section id="Hawkes1" >
+                   <h3>Classical Hawkes process</h3>
+                
+                  
+					$\lambda(t) = \mu + \sum_{t_i} \alpha \cdot e^{-\beta(t-t_i)} $
+                
+               <p class="l2"> + Excitation, successfully applied in fields such as seismology and social media dynamics   </p> 
+                <p class="l2"> - Doesn't model suppression, no category-specific modelling, no bounce-back effects </p>
+                
+                </section>   
+             
+               <section id="Hawkes2" data-transition="fade">
+                   <h3>Our proposed Disaster-Aware Hawkes process</h3>
+                
+                $\lambda(t, c) = \lambda_0(t, c, r) \cdot (1 + B(t, c)) + \sum_{(t_i, c_i) \in \mathcal{H}_t} \alpha(c_i \rightarrow c) \cdot w(t_i, d_i) \cdot \kappa(t - t_i)$
+
+                
+                
+               <p class="l2">+ Specific category: $c$</p> 
+                <p class="l2"> + Excitation strength from category $c_i$ to category $c$: $\alpha(c_i \rightarrow c)$</p>
+                <p class="l2"> + Bounce-back effects: $B(t,c)$</p>
+                <p class="l2">+ Weight function based on dwell time $d_i$ at visit $i$: $w(t_i, d_i)$</p>
+                <p class="l2" >+ Decay kernel that models how excitation diminishes over time: $\kappa(t - t_i)$ </p>
+                
+                <p>Parameter estimation using Maximum Likelihood Estimation ( L-BFGS-B)</p>
+                </section>                
+             
+                 <!-- ***************** Results **************** -->                
+               <section id="Results0" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                    
+                    <img src="../figures/paper-figures/Resilience/hawkes-prediction.png"
+                         alt="DA" />  
+                     
+             </section>
+             
+               <section id="Results1" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    <h3>Ablation analysis</h3>
+                    <img src="../figures/paper-figures/Resilience/hawkes-performance.png"
+                         alt="DA" style="width: 60%; height: auto;" />
+                  
+                  <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Overall MSE improvement vs. standard models: 25.7%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Improvement during disaster period: 80.0%</div>
+                </div>
+            </div>
+                </div>
+
+                </section>   
+             
+             <section id="Results2" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    <h3>Discovering hidden cascade effects</h3>
+                   </div>
+                  <img src="../figures/paper-figures/Resilience/cascade_matrix.png" style="float:left;width:450px;" alt="Figure 1">
+                  
+                  <img src="../figures/paper-figures/Resilience/impact_network.png" style="float:right;width:450px;" alt="Figure 1">
+                  
+                </section>  
+             
+             <section id="Results3" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    <h3>Recovery Intervention Strategies</h3>
+                   </div>
+                  <img src="../figures/paper-figures/Resilience/combined_intervention_effects.png" style="float:center;width:750px;" alt="Figure 1">
+                  
+                  
+                </section>  
+                
+             <section id="Results4" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    
+                  <img src="../figures/paper-figures/Resilience/scenario_comparison.png" style="float:right;width:700px;" alt="Figure 1">
+                  <h3>Disaster simulation</h3>
+                   
+                  </div>
+                  
+                </section>  
+                                
+                
+                  <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="conclusion" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Conclusion</h2>
+                            
+                            <p>Compared to a standard Hawkes process, our proposed Disaster-aware Hawkes process </p>
+                             
+                            <p class="l3"> regime-switching baselines, </p>
+                             <p class="l3"> category-specific excitation components, </p>
+                              <p class="l3"> and post-disaster bounce-back effects</p>
+                          
+                            <p>Limitations</p>
+                            
+                           
+                            <p class="l3">Potential data sampling bias</p>
+                             <p class="l3">Only one disaster</p>
+                         <p class="l3">More spatial elements needed</p>
+                            
+                        </div>
+               
+                </section>
+                
+                
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                             <h2>Modelling social mobility during natural disasters</h2>
+                        
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+
+                         <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                    </div>
+
+                </section>
+           
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+                loop: true,
+                autoPlayMedia: true,
+                
+ 
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
