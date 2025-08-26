@@ -95,11 +95,7 @@
                      <h4 style="text-align:left">Quang Thanh Bui - Vietnam National University</h4>
                      <h4 style="text-align:left">Nick Malleson - University of Leeds</h4>
 
-                        <hr/>
-
-                              <p style="text-align:center">Lab website:<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
-                        </p>
-                       
+                        
                     </div>
 
                 </section>
@@ -107,12 +103,13 @@
 
                  <!-- ***************** Introduction ******************** -->
                 
-
+               
                 <section id="intro1" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
 
                         <div class="whitebackground2">
-                    <h3>Classical approaches in modelling human mobility during disasters fall short</h3>
-                    <ul>
+                            <h3>Classical approaches in modelling human mobility during disasters</h3>
+                            
+                            <ul>
                         <li>Treat mobility events as <strong>independent</strong></li>
                         <li>Miss <strong>cascading effects</strong> between locations</li>
                         <li>Can't capture <strong>recovery dynamics</strong></li>
@@ -125,26 +122,51 @@
                </div>
                 </section>
              
-               <section id="intro2" data-background-image="https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/img-1536231811-1001-21233-7F319728-A8AB-8675-2B8680547101DB5C__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg">
+                 <section id="intro1-2">
+                  <h3>Point Process</h3>
+                    <p>Probabilistic generative models for modelling <em>sequences of events</em> with complex temporal dependencies</p>
+                    <p>$\lambda(t) = g(t)$</p> 
+                        
+                    <img src="https://shchur.github.io/assets/img/posts/tpp1/poisson.png"
 
-                        <div class="whitebackground">
-            <h2>Our Solution: Disaster-Aware Hawkes Process</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label"><strong>Regime Switching:</strong> Normal ↔ Disaster states</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label"><strong>Bounce-Back Effects:</strong> Post-disaster surges</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label"><strong>Category-Specific:</strong> Different recovery rates</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label"><strong>Cascade Effects:</strong> Network propagation</div>
-                </div>
-            </div>
-                        </div>
+                         alt="DA"  style="width: 80%; height: auto;" />
+                        
+                 
+                 </section>
+                
+                
+             
+              <!-- ***************** Modelling **************** -->                
+               <section id="Hawkes1" >
+                   <h3>Classical Hawkes process</h3>
+                
+                  
+					$\lambda(t) = \mu + \sum_{t_i} \alpha \cdot e^{-\beta(t-t_i)} $
+                
+               <p class="l2"> Excitation: the intensity increases by $\alpha$ whenever an event occurs and then exponentially decays towards the baseline level $\mu$</p> 
+                
+         <img src="https://shchur.github.io/assets/img/posts/tpp1/hawkes.png"
+
+                         alt="DA"  style="width: 80%; height: auto;" />
+                   
                 </section>   
+             
+               <section id="Hawkes2" data-transition="fade">
+                   <h3>Our proposed Disaster-Aware Hawkes process</h3>
+                
+                $\lambda(t, c) = \lambda_0(t, c, r) \cdot (1 + B(t, c)) + \sum_{(t_i, c_i) \in \mathcal{H}_t} \alpha(c_i \rightarrow c) \cdot w(t_i, d_i) \cdot \kappa(t - t_i)$
+
+                
+                
+               <p class="l2">+ Specific category: $c$</p> 
+                <p class="l2"> + Excitation strength from category $c_i$ to category $c$: $\alpha(c_i \rightarrow c)$</p>
+                <p class="l2"> + Bounce-back effects: $B(t,c)$</p>
+                <p class="l2">+ Weight function based on dwell time $d_i$ at visit $i$: $w(t_i, d_i)$</p>
+                <p class="l2" >+ Decay kernel that models how excitation diminishes over time: $\kappa(t - t_i)$ </p>
+                
+                <p>Parameter estimation using Maximum Likelihood Estimation ( L-BFGS-B)</p>
+                </section>                
+             
                        
                <section id="intro3" data-background-image="../figures/Backgrounds/beach.jpg">
                 <div class="whitebackground">
@@ -203,35 +225,6 @@
                       style="width: 100%; height: auto;" />
                 </section>              
 
-             
-             
-              <!-- ***************** Modelling **************** -->                
-               <section id="Hawkes1" >
-                   <h3>Classical Hawkes process</h3>
-                
-                  
-					$\lambda(t) = \mu + \sum_{t_i} \alpha \cdot e^{-\beta(t-t_i)} $
-                
-               <p class="l2"> + Excitation, successfully applied in fields such as seismology and social media dynamics   </p> 
-                <p class="l2"> - Doesn't model suppression, no category-specific modelling, no bounce-back effects </p>
-                
-                </section>   
-             
-               <section id="Hawkes2" data-transition="fade">
-                   <h3>Our proposed Disaster-Aware Hawkes process</h3>
-                
-                $\lambda(t, c) = \lambda_0(t, c, r) \cdot (1 + B(t, c)) + \sum_{(t_i, c_i) \in \mathcal{H}_t} \alpha(c_i \rightarrow c) \cdot w(t_i, d_i) \cdot \kappa(t - t_i)$
-
-                
-                
-               <p class="l2">+ Specific category: $c$</p> 
-                <p class="l2"> + Excitation strength from category $c_i$ to category $c$: $\alpha(c_i \rightarrow c)$</p>
-                <p class="l2"> + Bounce-back effects: $B(t,c)$</p>
-                <p class="l2">+ Weight function based on dwell time $d_i$ at visit $i$: $w(t_i, d_i)$</p>
-                <p class="l2" >+ Decay kernel that models how excitation diminishes over time: $\kappa(t - t_i)$ </p>
-                
-                <p>Parameter estimation using Maximum Likelihood Estimation ( L-BFGS-B)</p>
-                </section>                
              
                  <!-- ***************** Results **************** -->                
                <section id="Results0" data-background-image="../figures/Backgrounds/bokeh.jpg">
