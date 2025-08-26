@@ -237,6 +237,21 @@
                       style="width: 100%; height: auto;" />
                 </section>              
 
+              <section id="Hawkes3" data-transition="fade">
+                   <h3>Our proposed Disaster-Aware Hawkes process</h3>
+                
+                $\lambda(t, c) = \lambda_0(t, c, r) \cdot (1 + B(t, c)) + \sum_{(t_i, c_i) \in \mathcal{H}_t} \alpha(c_i \rightarrow c) \cdot w(t_i, d_i) \cdot \kappa(t - t_i)$
+
+                
+                
+               <p class="l2">+ Specific category: $c$</p> 
+                <p class="l2"> + Excitation strength from category $c_i$ to category $c$: $\alpha(c_i \rightarrow c)$</p>
+                <p class="l2"> + Bounce-back effects: $B(t,c)$</p>
+                <p class="l2">+ Weight function based on dwell time $d_i$ at visit $i$: $w(t_i, d_i)$</p>
+                <p class="l2" >+ Decay kernel that models how excitation diminishes over time: $\kappa(t - t_i)$ </p>
+                
+                <p>Parameter estimation using Maximum Likelihood Estimation ( L-BFGS-B)</p>
+                </section>          
              
                  <!-- ***************** Results **************** -->                
                <section id="Results0" data-background-image="../figures/Backgrounds/bokeh.jpg">
