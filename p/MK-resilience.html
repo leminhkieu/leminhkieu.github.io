@@ -1,0 +1,915 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="author" content="Minh Kieu">
+
+        <meta name="keywords" content="big data, urban dynamics">
+
+
+
+		<title>Disaster-Aware Hawkes process</title>
+
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+
+        
+        <!-- Some extra bits added by Nick -->
+
+        <link rel="stylesheet" href="reveal/css/nick.css">
+
+
+
+		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+
+
+		<!-- Printing and PDF exports -->
+
+		<script>
+
+			var link = document.createElement( 'link' );
+
+			link.rel = 'stylesheet';
+
+			link.type = 'text/css';
+
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+       
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                    <!-- *****************************************************************
+
+                     ************* Title **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="title" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                    <div class="whitebackground2">
+                     
+                     <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:right;padding:0px;width:200px; height:auto;" src="../figures/logo/TARLab.png"/>
+                         
+                        </a>
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h2>Reimagining Transport Resilience through Digital Twins and AI</h2>
+                        
+                        <hr/>
+                     
+                        <h3 style="text-align:left">Dr Minh Kieu - University of Auckland </h3>
+                     <h4 style="text-align:left">Future & Intelligent Transportation Systems Lead</h4>
+                     <h4 style="text-align:left">Transport Research Centre</h4>
+                     <h4 style="text-align:left">University of Auckland</h4>
+                     
+                                             <hr/>
+
+                      <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:0px;width:250px; height:auto;" src="../figures/logo/LOGO_TRC.png"/>
+                        </a>
+                     
+                     
+                     
+                              <p style="text-align:center">Lab website<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+                     
+                    </div>
+                  
+
+                </section>
+
+
+                 <!-- ***************** Introduction ******************** -->
+                
+               
+                <section id="title2" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                 
+                        <div class="whitebackground2">
+                            <h3>Acknowledgements</h3>
+                            
+                             <div style="display:flex; align-items:center; gap:10px;">
+                               <img src="../figures/logo/LOGO_TRC.png"
+                                    alt="Data"
+                                    style="width:20%; height:auto;" />
+                               <p>Doug Wilson, Theuns Hennings</p>
+                             </div>
+                             <div style="display:flex; align-items:center; gap:10px;">
+                               <img src="../figures/logo/LOGO-QuakeCore.png"
+                                    alt="Data"
+                                    style="width:20%; height:auto;" />
+                               <p>Liam Wotherspoon, Prakash Ranjitkar, Seosamh Costello</p>
+                               </div> 
+                             <div style="display:flex; align-items:center; gap:10px;">
+                               <img src="../figures/logo/TARLab.png"
+                                    alt="Data"
+                                    style="width:20%; height:auto;" />
+                               <p>My students at the TARLab</p>
+                              
+                             </div>  
+                        <p>Collaborators, Stakeholder partners, Research funding programmes</p>
+                            </div> 
+                </section>
+             
+                            
+             
+             <section id="auckland" data-background-image="https://assets.studies-overseas.com/Mailchimp_1190_400_copy_5289f560e5.png">
+             
+              <div class="whitebackground2 fragment">
+               
+               
+               <p>Founded: 1883</p>
+               <p>Total enrollment: 40,000</p>
+               
+               <p>QS World University Ranking: 65</p>
+               
+               <p>QS World University Rankings by Subject 2024: Civil and Structural Engineering: 46</p>
+
+               
+              </div>
+              
+              
+             </section>
+             
+             
+             
+             
+                   <section id="aboutme-2" data-background-image="../figures/Backgrounds/city.jpg">
+
+                    
+                    <img src="../figures/teaching/Transport_spectrum.png" style="float:center;width:800px;" alt="1"/>
+                  
+                    
+                </section>   
+             
+             
+             
+              <section id="TRC-spectrum" data-background-image="../figures/my-pics/TRC-themes.png" data-background-size=70%>
+             
+                    <div>&nbsp;</div>
+                    
+                </section> 
+             
+             <section id="TARLab">
+              
+              
+                <p style="text-align:center">Transport Analytics Research Lab (TARLab)<br/><a href="https://transportanalytics.nz">https://transportanalytics.nz</a>
+                        </p>
+              
+             
+             
+              <img src="../figures/my-pics/TARLab.jpg" style="float:right;width:500px;" alt="1"/>
+              
+               <p>6 PhD students</p>
+              <p>Focus:</p>
+              <p class="l3"> Improving transport resilience</p>
+              <p class="l3"> Reducing transport carbon footprint</p>
+              
+                  
+             
+             </section>
+               
+                 <section id="DWPT-1" data-background-image="https://www.designboom.com/wp-content/uploads/2021/05/electreon-EV-charging-highways-israel-sweden-italy-designboom-02.gif" >
+
+                        <div class="whitebackground2 fragment">
+
+                            <h3>Wirelessly Powered Transport Infrastructure for a Low-carbon Future (2021-2026)</h3>
+                            <h4>MBIE Endeavour Programme</h4>
+                            
+
+
+                            <p>5-year research programme between Transport, Electrical, Science and Bussiness School at the University of Auckland </p>
+                            <p>In collaboration with ASPIRE (5-year NSF Research programme): Utah State, Purdue, Colorado, Virginia Tech, etc <a>https://aspire.usu.edu/</a>  </p>
+                            
+                            <h4>My research here:</h4>
+                            <p>Smart routing of SAVs for continuous operation using Deep Reinforcement Learning</p>
+                            <p>Incorporation of SAVs into existing public transport systems</p>
+
+                        </div>
+                </section>  
+                
+             <section data-background-video="../figures/paper-figures/AVs/high.mp4"
+                         data-background-video-loop="loop"
+                         id="AV3">                     
+                    <div class="whitebackground2 fragment" style="position: relative; bottom: -200px">
+                           <h4>My research here:</h4>
+                            <p>Control of mixed traffic using AVs</p>
+                            <p>Incorporation of AVs into existing incident management systems</p>
+                 </div>
+                    </section>  
+             
+                
+           
+                  <section id="motivation" data-background-image="../figures/projects/NZ-hazards.png"  data-background-size="90%" >
+
+                      <div class="whitebackground2 fragment" style="position: relative; bottom: -200px">
+                           
+                          <ul>
+                        <li>Wide range of research underway across New Zealand with a focus on natural hazard and transport resilience</li>
+                        <li>Strong partnership between research and industry</li>
+                        <li>Real world data, real world scale, real world complexity</li>
+                    </ul>
+                          
+                      </div>
+                      
+                </section>
+                
+                
+                
+                 <section id="aboutme-2" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3>Agenda</h3>
+                        
+                <p><a>PART A: </a>My work in transport resilience</p>
+                         <p><a>PART B: </a>Other research in transport resilience at the UoA</p>
+
+                         <p><a>Call for collaboration</a></p>
+                        
+                        </div>
+                    
+                </section>   
+                
+                   <section id="aboutme-3" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3><a>PART A: </a>My work in transport resilience </h3>
+                        
+                <p>1. New Zealand vs the world (Lloyd's Register Foundation World Risk Poll data)</p>
+                <p>2. Modelling human mobility during natural disasters</p>
+                <p>3. Simulating transport infrastructure recovery after disasters</p>
+                        
+                        </div>
+                    
+                </section>  
+                
+                
+                  
+                
+               <section id="Intro-1">
+                    <h2>What's in this research?</h2>
+                   
+                   <p> We introduce four new indices – Risk Perception, Experience, Impact, and Resilience – to provide a visual global comparison of individuals' concerns, exposures, and preparedness towards major personal harms and disasters across the globe </p> 
+                   
+                   <p class="l2"><a>Where is New Zealand?</a></p> 
+                   
+                  
+                </section>
+                
+                
+                  <!-- *****************************************************
+
+                     ************* Perception index **************************
+
+                     ***************************************************************** -->
+                                  
+                
+                 <section id="perc">
+                    <h2>Perception index</h2>
+                   
+                   
+                    <p>How worry a repondent is to the major risks: </p>
+                     
+                     <p class="l2">Crime</p>
+                     <p class="l2">Water</p>
+                     <p class="l2">Food</p>
+                     <p class="l2">Work accident</p>
+                     <p class="l2">Mental health</p>
+                     <p class="l2">Traffic crashes</p>
+                     <p class="l2">Serious weather</p>
+                   
+                     
+                        
+                     <p>For each risk, we give a value of 1 if the respondent is
+                         “very worried", 0.5 if they are “somewhat worried" and 0 if they are “not worried" towards the risk.</p>
+                   
+                </section>
+                
+                
+                <section id="continents">
+            <div class="row">
+                <div class="column">
+                    <figure class="fig3">
+                        <img src="../figures/paper-figures/Resilience/Risks_perception_Africa.svg" alt="Figure 1" style="width:80%; height:auto;" />
+                        
+                    </figure>
+                </div>
+                <div class="column">
+                    <figure class="fig3">
+                        <img src="../figures/paper-figures/Resilience/Risks_perception_AmericaANZ.svg" alt="Figure 2" style="width:80%; height:auto;" />
+                        
+                    </figure>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <figure class="fig3">
+                        <img src="../figures/paper-figures/Resilience/Risks_perception_Asia.svg" alt="Figure 3" style="width:80%; height:auto;" />
+                        
+                    </figure>
+                </div>
+                <div class="column">
+                    <figure class="fig3">
+                        <img src="../figures/paper-figures/Resilience/Risks_perception_Europe.svg" alt="Figure 4" style="width:80%; height:auto;" />
+                        
+                    </figure>
+                </div>
+            </div>
+        </section>
+                
+                
+                 <!-- *****************************************************
+
+                     ************* Experience index **************************
+
+                     ***************************************************************** -->
+                
+                
+                <section id="exp"  data-background-image="../figures/Backgrounds/pedestrian.jpg">
+                    
+                    <div class="whitebackground">
+                    <h2>Experience index</h2>
+                   
+                   
+                    <p>But how do we actually experience those risks? </p>
+                   
+                     
+                     <p>Value is either 0 (no harm), 0.25 (know someone who experienced harm), 0.5 (experienced harm) or 1 (both).</p>
+            </div>
+                   
+                </section>
+                
+                
+                 <section id="exp-3">
+           
+               <h3>Experience vs Perception of risks: Traffic</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/traffic_perception_experience.svg" alt="Figure 1">
+                        
+                    </figure>
+               
+           
+                </section>
+                
+                
+              
+                
+                <section id="exp-4">
+           
+               <h3>Experience vs Perception of risks: Crime</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/crime_experience_perception.svg" alt="Figure 1">
+                        
+                    </figure>
+               
+           
+                </section>
+                
+                
+                <section id="exp-5">
+           
+               <h3>Experience vs Perception of risks: Mental health</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/mental_health_experience_perception.svg" alt="Figure 1">
+                        
+                    </figure>
+               
+           
+                </section>
+              
+                
+                <section id="impact-1" data-background-image="../figures/Backgrounds/weather1.jpg">
+                    
+                    <div class="whitebackground">
+           
+               <h3>Risk Impact index as the product of Perception and Experience indices.</h3>
+                    <p> $Risk \ Impact = Perception \ index \times Experience \ index$</p>
+                   
+           </div>
+                </section>
+                
+                 <section id="impact-2">
+                 <h3>Risk Impact index: Crime</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/risk_impact_crime_map-1.png" alt="Figure 1">
+                        
+                    </figure>
+               
+           
+                </section>
+                
+                 <section id="impact-3">
+                 <h3>Risk Impact index: Traffic</h3>
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/risk-impact-traffic-map.png" alt="Figure 1">
+                        
+                    </figure>
+               
+           
+                </section>
+                
+                
+            
+             
+                 <!-- *****************************************************
+
+                     ************* Resilience index **************************
+
+                     ***************************************************************** -->
+                
+              
+                <section id="res-1">
+           
+               
+                    <p class="l2">The Work Risk Poll survey dataset has several questions  related to personal resilience: </p>
+                    
+                    <ul>
+                <li>Suppose you lost all of your household income, how long would you be able to cover your basic needs?</li>
+                <li>Are your neighbours care about you and your well-being?</li>
+                <li>Is your national government well prepared to deal with a disaster?</li>
+                        <li>Are your hospitals well prepared to deal with a disaster?</li>
+                        <li>Are you and your family well prepared to deal with a disaster?</li>
+                        <li>Is your local government well prepared to deal with a disaster?</li>
+                        <li>Could you protect yourself and your family in a future disasters?</li>
+                        <li>Does the plan for future disaster known by all household member in your family?</li>
+            </ul>
+                    
+                    <p class="l3">We encode the answers for these questions with a value between 0 to 1. We assign 1
+to the most resilient answer (e.g. “Yes, well prepared"), 0 to the least (e.g. “No, not well prepared") and 0.5 to the middle/unsure
+                        answer (e.g. “It depends"). </p>
+                    
+                </section>
+                
+                
+                
+                <section id="res-3">
+                    <h3>Resilience vs Risk Impact</h3>
+           
+                    
+                    <figure class="resize-figure">
+                        <img src="../figures/paper-figures/Resilience/Resilience-risk-impact.png" alt="Figure 1">
+                        
+                    </figure>
+                    
+                    
+                 <p class="l3">Risk Impact = Experience x Perception</p>
+                    <p class="l3">Resilience = How an individual can bounce-back and bounce-foward against disasters</p>
+               
+                </section>
+                
+                
+                
+                 <section id="res-4">
+                    <h3>Resilience vs Risk Impact on the map</h3>
+           
+                    
+                        
+                        <figure>
+                          <img src="../figures/paper-figures/Resilience/resilience_map.svg" alt="Figure 1">
+                        </figure>
+
+                        
+                </section>
+                
+                
+                <section id="res-map">
+                    <h3>Global ranking of resilience</h3>
+           
+                    <figure>
+                        <img src="../figures/paper-figures/Resilience/resilience_index_rank_map.svg" alt="Figure 1">
+                        
+                    </figure>
+                    
+                 <p>We are 13th in the world!</p>
+               
+                </section>
+                
+                
+                 <!-- ***************** Introduction ******************** -->
+                
+                <section id="aboutme-32" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3><a>PART A: </a>My work in transport resilience </h3>
+                        
+                <p>1. New Zealand vs the world (Lloyd's Register Foundation World Risk Poll data)</p>
+                <p><a>2. Modelling human mobility during natural disasters</a></p>
+                <p>3. Simulating transport infrastructure recovery after disasters</p>
+                        
+                        </div>
+                    
+                </section>  
+                
+               
+                <section id="intro1-hawkes" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                        <div class="whitebackground2">
+                            <h3>Classical approaches in modelling human mobility during disasters</h3>
+                            
+                            <ul>
+                        <li>Treat mobility events as <strong>independent</strong></li>
+                        <li>Miss <strong>cascading effects</strong> between locations</li>
+                        <li>Can't capture <strong>recovery dynamics</strong></li>
+                        <li>Ignore <strong>category-specific</strong> responses</li>
+                    </ul>
+                         
+                          <img src="../figures/paper-figures/Resilience/Daily_visits.png"
+
+                         alt="DA" />
+               </div>
+                </section>
+                
+                 <section id="intro1-2">
+                  <h3>Point Process</h3>
+                    <p>Probabilistic generative models for modelling <em>sequences of events</em> with complex temporal dependencies</p>
+                    <p>$\lambda(t) = g(t)$</p> 
+                        
+                    <img src="https://shchur.github.io/assets/img/posts/tpp1/poisson.png"
+
+                         alt="DA"  style="width: 80%; height: auto;" />
+                        
+                 
+                 </section>
+             
+              <!-- ***************** Modelling **************** -->                
+               <section id="Hawkes1" >
+                   <h3>Classical Hawkes process</h3>
+                
+                  
+					$\lambda(t) = \mu + \sum_{t_i} \alpha \cdot e^{-\beta(t-t_i)} $
+                
+               <p class="l2"> Excitation: the intensity increases by $\alpha$ whenever an event occurs and then exponentially decays towards the baseline level $\mu$</p> 
+                
+         <img src="https://shchur.github.io/assets/img/posts/tpp1/hawkes.png"
+
+                         alt="DA"  style="width: 80%; height: auto;" />
+                   
+                </section>   
+             
+               <section id="Hawkes2" data-transition="fade">
+                   <h3>Our proposed Disaster-Aware Hawkes process</h3>
+                
+                $\lambda(t, c) = \lambda_0(t, c, r) \cdot (1 + B(t, c)) + \sum_{(t_i, c_i) \in \mathcal{H}_t} \alpha(c_i \rightarrow c) \cdot w(t_i, d_i) \cdot \kappa(t - t_i)$
+
+                
+                
+               <p class="l2">+ Specific category: $c$</p> 
+                <p class="l2"> + Excitation strength from category $c_i$ to category $c$: $\alpha(c_i \rightarrow c)$</p>
+                <p class="l2"> + Bounce-back effects: $B(t,c)$</p>
+                <p class="l2">+ Weight function based on dwell time $d_i$ at visit $i$: $w(t_i, d_i)$</p>
+                <p class="l2" >+ Decay kernel that models how excitation diminishes over time: $\kappa(t - t_i)$ </p>
+                
+                <p>Parameter estimation using Maximum Likelihood Estimation ( L-BFGS-B)</p>
+                </section>                
+             
+                       
+               <section id="intro3" data-background-image="../figures/Backgrounds/beach.jpg">
+                <div class="whitebackground">
+                              <h2>Case Study: Cyclone Gabrielle, Auckland 2023</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Perfect Natural Experiment</h3>
+                    <ul>
+                        <li><strong>New Zealand's most severe</strong> weather event in recent decades</li>
+                        <li><strong>130+ km/h winds</strong> across Auckland</li>
+                        <li><strong>225,000+ properties</strong> without power</li>
+                        <li><strong>Major transport disruption</strong> from flooding</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="highlight-box">
+                        <h3>Our Dataset</h3>
+                        <p>5.85M mobility records from <strong>111,539 devices</strong>
+                    </div>
+                </div>
+            </div>
+                 </div>
+                </section>   
+                
+             
+
+              <!-- ***************** Data **************** -->                
+               <section id="Data1" data-background-image="../figures/Backgrounds/beach.jpg">
+                
+                 <img src="../figures/paper-figures/Resilience/activity_heatmap_corrected.png"
+                         alt="Data"
+                      style="width: 100%; height: auto;" />
+                </section>   
+             
+               <section id="Data2" data-background-image="../figures/Backgrounds/beach.jpg">
+                 <img src="../figures/paper-figures/Resilience/auckland_heatmap.png"
+                         alt="Data" 
+                      style="width: 70%; height: auto;" />
+                </section> 
+             
+             <section id="Data2-2" data-background-image="../figures/Backgrounds/beach.jpg">
+                  <img src="../figures/paper-figures/Resilience/NZDep1.png" style="float:centre;width:500px;" alt="Figure 1">
+                  
+                  <img src="../figures/paper-figures/Resilience/NZDep2.png" style="float:centre;width:500px;" alt="Figure 1">
+                  
+                </section>               
+             
+               <section id="Data3" data-background-image="../figures/Backgrounds/beach.jpg">
+                 <img src="../figures/paper-figures/Resilience/disaster_impact_by_category.png"
+                         alt="Data" 
+                      style="width: 100%; height: auto;" />
+                </section>             
+               <section id="Data4" data-background-image="../figures/Backgrounds/beach.jpg">
+                 <img src="../figures/paper-figures/Resilience/flow_asymmetry_matrix_Auckland.png"
+                         alt="Data" 
+                      style="width: 100%; height: auto;" />
+                </section>              
+
+              <section id="Hawkes3" data-transition="fade">
+                   <h3>Our proposed Disaster-Aware Hawkes process</h3>
+                
+                $\lambda(t, c) = \lambda_0(t, c, r) \cdot (1 + B(t, c)) + \sum_{(t_i, c_i) \in \mathcal{H}_t} \alpha(c_i \rightarrow c) \cdot w(t_i, d_i) \cdot \kappa(t - t_i)$
+
+                
+                
+               <p class="l2">+ Specific category: $c$</p> 
+                <p class="l2"> + Excitation strength from category $c_i$ to category $c$: $\alpha(c_i \rightarrow c)$</p>
+                <p class="l2"> + Bounce-back effects: $B(t,c)$</p>
+                <p class="l2">+ Weight function based on dwell time $d_i$ at visit $i$: $w(t_i, d_i)$</p>
+                <p class="l2" >+ Decay kernel that models how excitation diminishes over time: $\kappa(t - t_i)$ </p>
+                
+                <p>Parameter estimation using Maximum Likelihood Estimation ( L-BFGS-B)</p>
+                </section>          
+             
+                 <!-- ***************** Results **************** -->                
+               <section id="Results0" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                    
+                    <img src="../figures/paper-figures/Resilience/hawkes-prediction.png"
+                         alt="DA" />  
+                     
+             </section>
+             
+               <section id="Results1" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    <h3>Ablation analysis</h3>
+                    <img src="../figures/paper-figures/Resilience/hawkes-performance.png"
+                         alt="DA" style="width: 60%; height: auto;" />
+                  
+                  <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Overall MSE improvement vs. standard models: 25.7%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Improvement during disaster period: 80.0%</div>
+                </div>
+            </div>
+                </div>
+
+                </section>   
+             
+             <section id="Results2" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    <h3>Discovering hidden cascade effects</h3>
+                   </div>
+                  <img src="../figures/paper-figures/Resilience/cascade_matrix.png" style="float:left;width:450px;" alt="Figure 1">
+                  
+                  <img src="../figures/paper-figures/Resilience/impact_network.png" style="float:right;width:450px;" alt="Figure 1">
+                  
+                </section>  
+             
+             <section id="Results3" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    <h3>Recovery Intervention Strategies</h3>
+                   </div>
+                  <img src="../figures/paper-figures/Resilience/combined_intervention_effects.png" style="float:center;width:750px;" alt="Figure 1">
+                  
+                  
+                </section>  
+                
+             <section id="Results4" data-background-image="../figures/Backgrounds/bokeh.jpg">
+                 <div class="whitebackground">
+                    
+                  <img src="../figures/paper-figures/Resilience/scenario_comparison.png" style="float:right;width:700px;" alt="Figure 1">
+                  <h3>Disaster simulation</h3>
+                   
+                  </div>
+                  
+                </section>  
+                                
+                
+                  <!-- ***************** problems with ABMs ******************** -->
+                
+
+                <section id="conclusion" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                        <div class="whitebackground2">
+
+                            <h2>Conclusion</h2>
+                            
+                            <p>Compared to a standard Hawkes process, our proposed Disaster-aware Hawkes process </p>
+                             
+                            <p class="l3"> regime-switching baselines, </p>
+                             <p class="l3"> category-specific excitation components, </p>
+                              <p class="l3"> and post-disaster bounce-back effects</p>
+                          
+                            <p>Limitations</p>
+                            
+                           
+                            <p class="l3">Potential data sampling bias</p>
+                             <p class="l3">Only one disaster</p>
+                         <p class="l3">More spatial elements needed</p>
+                            
+                        </div>
+               
+                </section>
+                
+                
+                 <!-- ***************** Introduction ******************** -->
+                
+                <section id="aboutme-33" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+                    
+                    <div class="whitebackground2">
+                    <h3><a>PART A: </a>My work in transport resilience </h3>
+                        
+                <p>1. New Zealand vs the world (Lloyd's Register Foundation World Risk Poll data)</p>
+                <p>2. Modelling human mobility during natural disasters</p>
+                <p><a>3. Simulating transport infrastructure recovery after disasters</a></p>
+                        
+                        </div>
+                    
+                </section>  
+                
+                 <!-- ******************************************************
+                *********************** New project IP3 ***********************
+                ************************************************************ -->
+                
+                 <section id="ip3-0" data-background-image="../figures/paper-figures/Resilience/NZ-setting.png"  data-background-size=75%>  
+
+                        <div>&nbsp;  </div>
+
+                </section>
+                
+                
+                
+                 <!-- ******************************************************
+                *********************** New project IP3 ***********************
+                ************************************************************ -->
+                
+                 <section id="ip3-1" data-background-image="../figures/paper-figures/funding_roads.png"  data-background-size=75%>  
+
+                        <div class="whitebackground2 fragment" style="position: relative; top: -50px">
+
+                            <h4>Funding for highway improvements and operations are highest and increasing. However...</h4>
+                            
+                        <img style="float:center;padding:1px;width:700px; height:auto;" src="../figures/paper-figures/funding_GPS.png"/>
+                            
+                        </div>
+
+                </section>
+                
+                  <section id="ip3-2">
+                    <h4>QuakeCore's Inter-disciplinary Theme 3 - A Resilient Aotearoa New Zealand Transport System</h4>
+                     
+                     <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-QuakeCore.png"/>
+                       
+                      <h3>Rapid Resilience: Data-Driven Strategies for Prioritizing Transport Infrastructure Recovery after Natural Hazards</h3>
+                        <ul>
+                        <li> <a>Junran Wang:</a> Simulating transport infrastructure recovery process after natural hazards</li>
+                            <li> <a>Jincheng Song:</a> Optimising transport infrastructure recovery process after natural hazards</li>
+                        
+                                            </ul>
+                   
+                </section>
+                
+                  <section id="ip3-3">
+                       
+                      <h3>Simulating transport infrastructure recovery process after natural hazards</h3>
+                      <p>Gaps</p>
+                        <ul>
+                        <li></li>
+                            <li> </li>
+                        
+                                            </ul>
+                   
+                </section>
+                
+                
+               <!-- *****************************************************
+
+                     ************* Thanks **************************
+
+                     ***************************************************************** -->
+                                  
+                <section class="title" id="thanks" data-background-image="https://lp-cms-production.imgix.net/2019-06/d9a0cf787c1e22560f9cf9f29e7e5ced-xi-an-city-walls.jpg">
+
+
+                    <div class="whitebackground2">
+
+
+                        <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:centre;padding:1px;width:300px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+
+                        <h5></h5>
+
+                       <hr/>
+
+                           
+                        <h2>Reimagining Transport Resilience through Digital Twins and AI</h2>
+                        
+                        <hr/>
+
+                        <h3>Thank you!</h3>
+
+
+                        <h4>Questions?</h4>
+
+                        <hr/>
+                     <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:right;padding:0px;width:200px; height:auto;" src="../figures/QR/hawkes.png"/>
+                        </a>
+
+                         <p style="text-align:right">These slides:<br/><a href="https://transportanalytics.nz"> </a>
+                        </p>
+                     
+                     
+                    </div>
+
+                </section>
+           
+
+		<script src="reveal/lib/js/head.min.js"></script>
+
+		<script src="reveal/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+
+			Reveal.initialize({
+
+				history: true,
+                slideNumber: true,
+                loop: true,
+                autoPlayMedia: true,
+                
+ 
+				// More info https://github.com/hakimel/reveal.js#dependencies
+
+				dependencies: [
+
+					{ src: 'reveal/plugin/markdown/marked.js' },
+
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+				]
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
