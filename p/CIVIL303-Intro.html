@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIVIL 303 — Transport Operations and Pavements | Introduction</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/minh.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --uoa-navy: #00467F;
+      --uoa-deep: #002A4E;
+      --uoa-gold: #C8A65C;
+      --uoa-grey: #4A4A4A;
+      --uoa-light: #F4F6F9;
+      --uoa-accent: #E94F37;
+      --uoa-teal: #1E8E8E;
+    }
+
+    .reveal {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 32px;
+      color: #1f2937;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: 'Roboto Slab', Georgia, serif;
+      color: var(--uoa-navy);
+      text-transform: none;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+      margin-bottom: 0.4em;
+    }
+
+    .reveal h1 { font-size: 2.2em; line-height: 1.1; }
+    .reveal h2 { font-size: 1.55em; line-height: 1.15; }
+    .reveal h3 { font-size: 1.15em; line-height: 1.2; color: var(--uoa-deep); }
+
+    .reveal p, .reveal li { line-height: 1.45; }
+
+    .reveal ul { display: block; margin-left: 1em; }
+    .reveal li { margin-bottom: 0.35em; }
+
+    .reveal a { color: var(--uoa-navy); }
+
+    .reveal section img { border: none; box-shadow: none; }
+
+    /* Title slide */
+    .title-slide {
+      background: linear-gradient(135deg, var(--uoa-deep) 0%, var(--uoa-navy) 60%, #1a6fb5 100%);
+      color: white !important;
+      padding: 2em !important;
+    }
+    .title-slide h1, .title-slide h2, .title-slide h3 { color: white !important; }
+    .title-slide .course-code {
+      font-family: 'Roboto Slab', serif;
+      font-size: 4em;
+      font-weight: 700;
+      color: var(--uoa-gold) !important;
+      letter-spacing: 0.02em;
+      margin-bottom: 0;
+    }
+    .title-slide .course-name {
+      font-size: 1.6em;
+      font-weight: 600;
+      margin: 0.2em 0 0.6em 0;
+    }
+    .title-slide .subtitle {
+      font-size: 0.85em;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+    .title-slide .institution {
+      margin-top: 1.8em;
+      font-size: 0.7em;
+      opacity: 0.75;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Section divider */
+    .section-divider {
+      background: var(--uoa-navy);
+      color: white !important;
+    }
+    .section-divider h1, .section-divider h2 { color: white !important; }
+    .section-divider .section-number {
+      font-size: 0.7em;
+      color: var(--uoa-gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    /* Stat displays */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1em;
+      margin-top: 0.8em;
+    }
+    .stat-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+    .stat-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+
+    .stat-card {
+      background: white;
+      border: 2px solid var(--uoa-navy);
+      border-radius: 10px;
+      padding: 0.7em 0.5em;
+      text-align: center;
+    }
+    .stat-card .stat-number {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.8em;
+      font-weight: 700;
+      color: var(--uoa-navy);
+      line-height: 1;
+      display: block;
+    }
+    .stat-card .stat-label {
+      font-size: 0.45em;
+      color: var(--uoa-grey);
+      margin-top: 0.5em;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .stat-card.accent { border-color: var(--uoa-accent); }
+    .stat-card.accent .stat-number { color: var(--uoa-accent); }
+    .stat-card.teal { border-color: var(--uoa-teal); }
+    .stat-card.teal .stat-number { color: var(--uoa-teal); }
+    .stat-card.gold { border-color: var(--uoa-gold); background: #FFF9EE; }
+    .stat-card.gold .stat-number { color: #8a6f29; }
+
+    /* Side-by-side */
+    .two-col-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+      align-items: start;
+    }
+    .three-col-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1em;
+    }
+
+    /* Callout box */
+    .callout {
+      background: var(--uoa-light);
+      border-left: 5px solid var(--uoa-navy);
+      padding: 0.6em 0.9em;
+      border-radius: 4px;
+      margin: 0.5em 0;
+      font-size: 0.85em;
+    }
+    .callout.gold { border-color: var(--uoa-gold); background: #FFF9EE; }
+    .callout.accent { border-color: var(--uoa-accent); background: #FEF1EE; }
+    .callout.teal { border-color: var(--uoa-teal); background: #E8F5F5; }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--uoa-navy);
+      margin-bottom: 0.2em;
+      font-size: 0.95em;
+    }
+
+    /* Topic cards */
+    .topic-card {
+      background: white;
+      border: 1px solid #D1D5DB;
+      border-top: 4px solid var(--uoa-navy);
+      border-radius: 6px;
+      padding: 0.7em 0.8em;
+      text-align: left;
+    }
+    .topic-card h3 {
+      margin: 0 0 0.3em 0;
+      font-size: 0.85em;
+      color: var(--uoa-navy);
+    }
+    .topic-card p {
+      font-size: 0.6em;
+      color: var(--uoa-grey);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .topic-card .topic-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 50%;
+      background: var(--uoa-navy);
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      font-size: 0.65em;
+      margin-bottom: 0.3em;
+    }
+
+    /* Pill */
+    .pill {
+      display: inline-block;
+      background: var(--uoa-navy);
+      color: white;
+      padding: 0.15em 0.7em;
+      border-radius: 999px;
+      font-size: 0.55em;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-right: 0.3em;
+    }
+    .pill.gold { background: var(--uoa-gold); }
+    .pill.accent { background: var(--uoa-accent); }
+    .pill.teal { background: var(--uoa-teal); }
+    .pill.outline {
+      background: transparent;
+      color: var(--uoa-navy);
+      border: 1.5px solid var(--uoa-navy);
+    }
+
+    /* Tables */
+    .reveal table {
+      font-size: 0.7em;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .reveal table th {
+      background: var(--uoa-navy);
+      color: white;
+      padding: 0.5em 0.7em;
+      text-align: left;
+    }
+    .reveal table td {
+      padding: 0.45em 0.7em;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .reveal table tr:nth-child(even) td { background: #FAFAFC; }
+
+    /* Quote / closing */
+    .quote-block {
+      font-family: 'Roboto Slab', serif;
+      font-style: italic;
+      font-size: 1.15em;
+      color: var(--uoa-deep);
+      padding: 0.5em 1em;
+      border-left: 4px solid var(--uoa-gold);
+    }
+
+    /* Slide header strip */
+    .slide-header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      padding: 0.5em 1.5em 0.4em 1.5em;
+      font-size: 0.5em;
+      color: var(--uoa-grey);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #E5E7EB;
+      text-align: left;
+      font-weight: 500;
+    }
+    .slide-header strong { color: var(--uoa-navy); }
+
+    /* Footer note */
+    .source-note {
+      display: block;
+      margin-top: 0.2em;
+      padding-top: 0.2em;
+      border-top: 1px solid #E5E7EB;
+      font-size: 0.4em;
+      color: #9CA3AF;
+      text-align: left;
+      font-style: italic;
+    }
+
+    /* Pavement layer visualisation */
+    .pavement-stack {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: 0.5em auto;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .pavement-stack .layer {
+      padding: 0.35em 0.8em;
+      color: white;
+      font-size: 0.55em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+    .layer-surf { background: #2a2a2a; }
+    .layer-base { background: #6b5d4d; }
+    .layer-subbase { background: #8e7e63; }
+    .layer-subgrade { background: #4d4030; }
+
+    /* 4-step model */
+    .four-step {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5em;
+      margin-top: 0.6em;
+    }
+    .step-box {
+      background: white;
+      border: 2px solid var(--uoa-navy);
+      border-radius: 8px;
+      padding: 0.6em 0.4em;
+      text-align: center;
+      position: relative;
+    }
+    .step-box .step-n {
+      background: var(--uoa-navy);
+      color: white;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      border-radius: 50%;
+      margin: 0 auto 0.3em auto;
+      font-weight: 700;
+      font-size: 0.6em;
+    }
+    .step-box h4 {
+      margin: 0;
+      font-size: 0.65em;
+      color: var(--uoa-navy);
+    }
+    .step-box p {
+      margin: 0.2em 0 0 0;
+      font-size: 0.5em;
+      color: var(--uoa-grey);
+    }
+
+    /* Career path bar */
+    .career-bar {
+      display: flex;
+      width: 100%;
+      margin: 0.5em 0;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.55em;
+    }
+    .career-bar .segment {
+      padding: 0.5em;
+      color: white;
+      text-align: center;
+      flex: 1;
+    }
+    .seg-1 { background: #6BA4D6; }
+    .seg-2 { background: #4682B4; }
+    .seg-3 { background: var(--uoa-navy); }
+    .seg-4 { background: var(--uoa-deep); }
+
+    /* Bullet emphasis */
+    .key { color: var(--uoa-accent); font-weight: 700; }
+    .em-navy { color: var(--uoa-navy); font-weight: 600; }
+
+    /* Image-like icon banner */
+    .icon-banner {
+      font-size: 3em;
+      text-align: center;
+      margin: 0.2em 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- =========================================================
+           SLIDE 1: Title
+           ========================================================= -->
+      
+                             <!-- *********** Title **************************** -->
+                                  
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 303</h3>
+                        
+                        <h3>Transport Operations &amp; Pavements</h3>
+                        
+                        <hr/>
+
+                        <h3>Introductory lecture</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+                        
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+                     <a href="https://leminhkieu.github.io/p/Civil303-its-2.html">
+
+                            
+                        </a>
+                        
+                        <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil303-Intro.html">https://leminhkieu.github.io/p/Civil303-Intro.html</a></p>
+
+                        
+                    </div>
+
+                </section>
+
+      
+                         <!-- ************** About me ************* -->
+
+                <section id="aboutme" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+                    <h2>Dr Minh Kieu</h2>
+                    <p class="l4"> Senior Lecturer in Transport Analytics </p>
+                     <p class="l4"> Department of Civil and Environment Engineering</p>
+                     
+                    <p> Office hours: after lectures, or via emails </p>
+                    <p class="l4">Room 235, B903, Newmarket</p>
+                    <p class="l4">minh.kieu@auckland.ac.nz</p>
+                    
+                </section>   
+                
+        <section id="motivation" >
+                            <h2>My role</h2>
+
+                            
+                            
+                         <p>Course coordinator: Civil 303, Civil 763</p>
+                         <p>Programme Director: Master of Civil Engineering</p>
+                         
+                         
+                         <h2>About me</h2>
+                         
+                          <p class="l2">- 2020-: Senior Lecturer, University of Auckland, NZ</p>
+                
+                    <p class="l2">- 2018-2019: Research Fellow, University of Leeds, UK</p>
+                    
+                    <p class="l2">- 2016-2018: Research Scientist, Data61, CSIRO, Australia</p>
+                    
+                    <p class="l2">- 2011-2016: PhD and Research Associate at Queensland University of Technology, Australia</p>
+                         
+                    <p class="l2">- 2009-2011: Master of Science in Intelligent Transport Systems, Linkoping University, Sweden</p>
+                         
+                    <p class="l2">- 2003-2008: Bachelor of Civil Engineering, Hanoi University of Transport and Communications, Vietnam</p>
+                </section>
+                
+                
+                  <!-- ************** About me ************* -->
+
+                <section id="aboutme2" data-transition="fade">
+
+                    <figure class="right">
+                            <img data-src="../figures/side-graphics/highway.jpg"
+                             alt="Minh picture" />
+                     </figure>
+
+                    
+                   <p>These slides are HTML (like websites):<a href="https://leminhkieu.github.io/p/Civil303-Intro.html">  http://bit.ly/303-intro</a></p>
+                    <p class="l4">A PDF version can be found on Canvas</p>
+                    
+                     <p>My principles:</p>
+                    <p class="l2"> 1. Each slide usually has only 1 topic and is always attached to a learning outcome</p>
+                    
+                    <p class="l2"> 2. All learning outcomes are going to be assessed</p>
+                    
+                    <p class="l2"> 3. Look for the examples and open-ended questions along the way, then the problems at the end of each chapter </p>
+                   
+                </section>   
+
+      
+      
+      <!-- =========================================================
+           SLIDE 2: Welcome / Why you're here
+           ========================================================= -->
+      <section>
+        <h2>Welcome to CIVIL 303</h2>
+        <p style="font-size: 0.85em;">Almost everything you do today involved the transport network.</p>   
+        <p style="font-size: 0.85em;">Over the coming weeks you will learn how that system is <span class="em-navy">planned, designed, operated, and renewed</span> and how engineers like you keep it working for 5.3 million New Zealanders.</p>
+        <div class="callout gold">
+          <div class="callout-title">What to expect today</div>
+          A tour of the course, the industry that hires its graduates, and the real-world problems you will soon be solving.
+        </div>
+      </section>
+      
+      
+      
+      
+      <!-- =========================================================
+           SLIDE: What is transport engineering?
+           ========================================================= -->
+      <section>
+        <h2>What is transport engineering?</h2>
+        <p style="font-size: 1.2em;">A branch of <span class="em-navy">civil engineering</span> focused on the planning, design, operation, and maintenance of transport systems for <span class="em-navy">all</span> users: drivers, freight, public transport passengers, cyclists, and pedestrians.</p>
+        <p style="font-size: em; color: var(--uoa-grey);">In practice, the work falls into four overlapping streams. Most transport engineers move between them across a career.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5em; margin-top: 0.6em;font-size: 1.2em">
+          <div class="topic-card">
+            <div class="topic-num">1</div>
+
+            <h3>Traffic engineering</h3>
+            <p>Classic detailed-design work: checking car parks and loading docks against standards, signal timing, geometric design. Traffic flow theory in action.</p>
+
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">2</div>
+            <h3>Transport modelling</h3>
+            <p>Using software like Aimsun, VISSIM, and EMME to predict how networks will behave and to stress-test designs before they're built.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">3</div>
+                        <h3>Transport planning</h3>
+            <p>High-level strategy: where to put cycle lanes, how to improve PT access, how to align with council strategies. Less calculation, more report-writing and policy framing.</p>
+
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">4</div>
+            <h3>Pavements</h3>
+            <p>Designing and renewing the physical road structure — materials, layers, drainage, surfacing. Engineering that has to last decades under heavy loads.</p>
+          </div>
+        </div>
+
+        <div class="callout gold" style="margin-top: 0.7em;">
+          <div class="callout-title">CIVIL 303 covers all four streams</div>
+          Topics 1–2 are on OPERATING a transport system, Topic 3 is long-term STRATEGIC PLANNING, and Topic 4 is BUILD & RENEW of our pavements. By the end of semester you'll know which stream fits you best.
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 4: Section divider — Why this matters
+           ========================================================= -->
+      <section class="section-divider" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+        <div class="section-number">Part One</div>
+        <h1>Why transport engineering matters now</h1>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 5: NZ's transport investment
+           ========================================================= -->
+      <section>
+        <h2>$32.9 billion. Three years.</h2>
+        <p style="font-size: 0.8em;">The <span class="em-navy">2024–27 National Land Transport Programme</span> is the largest land-transport investment in New Zealand's history.</p>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-number">$7.0B</span>
+            <div class="stat-label">State highway improvements, including 17 new Roads of National Significance</div>
+          </div>
+          <div class="stat-card accent">
+            <span class="stat-number">$5.5B</span>
+            <div class="stat-label">Pothole prevention and road maintenance</div>
+          </div>
+          <div class="stat-card teal">
+            <span class="stat-number">$6.4B</span>
+            <div class="stat-label">Public transport services and infrastructure</div>
+          </div>
+        </div>
+        <div class="callout gold" style="margin-top: 0.8em;">
+          <div class="callout-title">Beyond 2027</div>
+          NZ's National Infrastructure Pipeline lists around <strong>25 major road, rail and rapid-transit schemes worth over $100 billion</strong>.
+        </div>
+        <div class="source-note">Sources: NZ Transport Agency Waka Kotahi, 2024–27 NLTP; Te Waihanga National Infrastructure Plan, 2025.</div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 6: NZ Road Network
+           ========================================================= -->
+      <section>
+        <h2>The asset you will help manage</h2>
+        <div class="stat-grid four-col">
+          <div class="stat-card">
+            <span class="stat-number">~11,000</span>
+            <div class="stat-label">km of state highways</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">~83,000</span>
+            <div class="stat-label">km of local roads</div>
+          </div>
+          <div class="stat-card gold">
+            <span class="stat-number">$23B</span>
+            <div class="stat-label">Asset value of the state highway network alone</div>
+          </div>
+          <div class="stat-card accent">
+            <span class="stat-number">75%</span>
+            <div class="stat-label">of road freight uses state highways</div>
+          </div>
+        </div>
+        <div style="margin-top: 0.7em; font-size: 0.78em;">
+          <p><strong>State Highway 1</strong> in central Auckland is the busiest road in New Zealand, carrying more than <span class="key">200,000 vehicles a day</span>.</p>
+          <p>Around <span class="em-navy">$2.2 billion is spent every year</span> maintaining the state highway network, which requires a programme of inspection, design, and rehabilitation.</p>
+        </div>
+        <div class="source-note">Sources: NZTA State Highway FAQs; LEARNZ NZ Roads; figure.nz.</div>
+
+      </section>
+
+                 <!-- ******************************************************
+                *********************** New project IP3 ***********************
+                ************************************************************ -->
+                
+                 <section id="ip3-1" data-background-image="../figures/paper-figures/funding_roads.png"  data-background-size=75%>  
+
+                        <div class="whitebackground2 fragment" style="position: relative; top: px">
+
+                            <h4>Funding for highway improvements and operations are highest and increasing. However...</h4>
+                            
+                        <img style="float:center;padding:1px;width:700px; height:auto;" src="../figures/paper-figures/funding_GPS.png"/>
+                            
+                        </div>
+
+                </section>      
+      
+      <!-- =========================================================
+           SLIDE 7: Road safety story
+           ========================================================= -->
+      <section data-background-image="../figures/Backgrounds/beach.jpg">
+        <div class="whitebackground">
+        <h2>Fatalities from road crashes: still a big issue</h2>
+        <div class="two-col-layout">
+          <div>
+            <p style="font-size: 0.8em;">In 2024, <span class="key">290 people</span> died on New Zealand's roads.</p>
+            <p style="font-size: 0.8em;">New Zealand's road-death rate is <span class="em-navy">~50% higher than Australia's</span>, comparable to Victorian and Queensland figures.</p>
+            <p style="font-size: 0.78em;">Engineering choices, such as geometry, sight distance, intersection layout, pavement texture, signage, speed environment, directly determine how many people make it home.</p>
+          </div>
+          <div>
+            <div class="stat-card accent" style="padding: 1em 0.5em;">
+              <span class="stat-number" style="font-size: 2.4em;">290</span>
+              <div class="stat-label">Provisional NZ road deaths in 2024<br>(341 in 2023, 843 in 1973)</div>
+            </div>
+            <div class="callout teal" style="margin-top: 0.6em;">
+              <div class="callout-title">The Safe System</div>
+              You will learn how design decisions, not just driver behaviours, keep people alive.
+            </div>
+          </div>
+        </div>
+        <div class="source-note">Sources: Ministry of Transport provisional road toll 2024; AA Media Release Jan 2025; Wikipedia Road Toll (AU/NZ).</div>
+          </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 8: Section divider — Career
+           ========================================================= -->
+      <section class="section-divider" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+        <div class="section-number">Part Two</div>
+        <h1>Where this course takes your career</h1>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 9: Demand
+           ========================================================= -->
+      <section>
+        <h2>Civil engineers are on the Green List</h2>
+        <p style="font-size: 0.8em;">Civil engineers, and transport engineers in particular, sit on New Zealand's <span class="em-navy">Skilled Migrant Green List</span> and have featured on the long-term skills shortage list for years.</p>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-number">110+</span>
+            <div class="stat-label">Transport engineer vacancies advertised on SEEK NZ at any given time</div>
+          </div>
+          <div class="stat-card teal">
+            <span class="stat-number">4–5%</span>
+            <div class="stat-label">Projected rise in NZ engineering vacancies in 2025</div>
+          </div>
+          <div class="stat-card gold">
+            <span class="stat-number">~1,400</span>
+            <div class="stat-label">People employed directly by NZTA Waka Kotahi alone</div>
+          </div>
+        </div>
+        <div class="callout accent" style="margin-top: 0.7em;">
+          <div class="callout-title">Why the shortage?</div>
+          An ageing engineering workforce, a record infrastructure pipeline, and ambitious climate and resilience targets.
+        </div>
+        <div class="source-note">Sources: SEEK NZ (Sept 2025); Working In New Zealand 2025 Outlook; Immigration NZ Green List.</div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 10: Where graduates work
+           ========================================================= -->
+      <section data-background-image="../figures/Backgrounds/highway.jpg">
+        <div class="whitebackground">
+        <h2>Transport-related jobs in NZ</h2>
+        <div class="three-col-layout">
+          <div class="topic-card">
+            <h3>Public agencies</h3>
+            <p>NZTA Waka Kotahi, KiwiRail, Auckland Transport, Wellington Regional Council, Christchurch City Council, Ministry of Transport.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Consultancies</h3>
+            <p>Beca, WSP, Aurecon, Stantec, Tonkin + Taylor, GHD, Jacobs, Mott MacDonald, Abley, Flow Transportation.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Contractors &amp; suppliers</h3>
+            <p>Fulton Hogan, Downer, Higgins, HEB Construction, McConnell Dowell — the firms delivering the new IDC maintenance contracts from 2026.</p>
+          </div>
+        </div>
+        <div style="margin-top: 0.8em;">
+          <h3 style="font-size: 0.85em;">Typical first-job titles</h3>
+          <p style="font-size: 0.75em;">
+            <span class="pill outline">Graduate Transport Engineer</span>
+            <span class="pill outline">Pavement Engineer</span>
+            <span class="pill outline">Traffic Engineer</span>
+            <span class="pill outline">Transport Planner</span>
+            <span class="pill outline">Asset Engineer</span>
+            <span class="pill outline">Road Safety Engineer</span>
+          </p>
+        
+        <div class="source-note">Source: BusinessDesk (Dec 2025) NZTA IDC contracts; SEEK NZ listings 2025.</div>
+          </div>
+                                </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 11: Salary trajectory
+           ========================================================= -->
+      <section>
+        <h2>What you can expect to earn</h2>
+        <p style="font-size: 0.8em;">Civil engineering offers strong, predictable salary progression and transport is one of its most in-demand specialisations.</p>
+
+        <div class="career-bar">
+          <div class="segment seg-1">
+            <strong>Graduate</strong><br>$60–70k<br><span style="opacity: 0.85;">0–1 yr</span>
+          </div>
+          <div class="segment seg-2">
+            <strong>Intermediate</strong><br>$75–95k<br><span style="opacity: 0.85;">3–6 yr</span>
+          </div>
+          <div class="segment seg-3">
+            <strong>Senior</strong><br>$110–140k<br><span style="opacity: 0.85;">8–15 yr</span>
+          </div>
+          <div class="segment seg-4">
+            <strong>Principal / Lead</strong><br>$150–200k+<br><span style="opacity: 0.85;">15+ yr</span>
+          </div>
+        </div>
+
+        <div class="stat-grid" style="margin-top: 0.8em;">
+          <div class="stat-card gold">
+            <span class="stat-number">$95k</span>
+            <div class="stat-label">Median civil engineer salary, NZ (Engineering NZ)</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">$91.8k</span>
+            <div class="stat-label">Median civil engineer salary (Jobted NZ 2026)</div>
+          </div>
+          <div class="stat-card teal">
+            <span class="stat-number">16%</span>
+            <div class="stat-label">Projected salary growth over the next 5 years (SalaryExpert)</div>
+          </div>
+       
+        <div class="source-note">Sources: PayScale NZ 2025; Jobted NZ 2026; Glassdoor NZ 2025; ENZ.org Civil Engineer salaries; ERI SalaryExpert 2026.</div>
+       </div>
+          </section>
+
+      <!-- =========================================================
+           SLIDE 12: Real projects you could work on
+           ========================================================= -->
+      <section data-background-image="../figures/Backgrounds/Auckland.jpg">
+        <div class="whitebackground">
+        <h2>Upcoming projects in transportation</h2>
+        <table>
+          <thead>
+            <tr><th>Project</th><th>What's involved</th><th>What CIVIL 303 prepares you for</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>City Rail Link</strong><br>Auckland, opens 2027</td>
+              <td>Doubling Auckland's rail capacity; level-crossing removals follow.</td>
+              <td>Transit planning, demand modelling, multi-modal integration.</td>
+            </tr>
+            <tr>
+              <td><strong>Ara Tūhono — Warkworth to Te Hana</strong></td>
+              <td>Major Northland state highway extension; a Road of National Significance.</td>
+              <td>Geometric design, capacity analysis, pavement design.</td>
+            </tr>
+            <tr>
+              <td><strong>Waitematā Harbour Crossing</strong></td>
+              <td>Tunnel/bridge replacement, one of NZ's largest-ever infrastructure schemes.</td>
+              <td>Macro-modelling, tolling assessment, network operations.</td>
+            </tr>
+            <tr>
+              <td><strong>Lower North Island Rail Mobility</strong></td>
+              <td>Wellington–Masterton–Palmerston North rail upgrade.</td>
+              <td>Transit-oriented design, land-use/transport interaction.</td>
+            </tr>
+            <tr>
+              <td><strong>Integrated Delivery Contracts</strong><br>From May 2026</td>
+              <td>The new generation of state-highway maintenance contracts.</td>
+              <td>Pavement performance, rehabilitation, asset management.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="source-note">Sources: Beehive media releases ; NZ Herald Sept 2024; BusinessDesk Dec 2025; Working In NZ 2025.</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE: Pros and Cons of the career
+           ========================================================= -->
+      <section>
+        <h2>The reality of being a transport engineer</h2>
+
+        <div class="two-col-layout" style="margin-top: 0.4em;">
+          <div>
+            <h3 style="color: var(--uoa-teal); font-size: 0.95em; margin-bottom: 0.3em;">✓ The pros</h3>
+            <div class="callout teal" style="margin-bottom: 0.4em;">
+              <div class="callout-title">Job stability</div>
+              <span style="font-size: 0.82em;">Population growth and urban congestion mean demand for better traffic solutions only goes up. Transport engineers are rarely out of work.</span>
+            </div>
+            <div class="callout teal" style="margin-bottom: 0.4em;">
+              <div class="callout-title">A dynamic field</div>
+              <span style="font-size: 0.82em;">Intelligent transport systems, Autonomous vehicles, Electrification, Smart highways.</span>
+            </div>
+            <div class="callout teal">
+              <div class="callout-title">Creative latitude</div>
+              <span style="font-size: 0.82em;">At the planning end you have real flexibility. Engineering judgement carries more weight than in some other civil disciplines.</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="color: var(--uoa-accent); font-size: 0.95em; margin-bottom: 0.3em;">✗ The cons</h3>
+            <div class="callout accent" style="margin-bottom: 0.4em;">
+              <div class="callout-title">Public scrutiny</div>
+              <span style="font-size: 0.82em;">Traffic is personal. Every project draws attention and everyone has their own views.</span>
+            </div>
+            <div class="callout accent" style="margin-bottom: 0.4em;">
+              <div class="callout-title">Communication-heavy</div>
+              <span style="font-size: 0.82em;">Most projects involve multiple agencies with competing agendas. Negotiation and writing skills matter as much as the maths.</span>
+            </div>
+            <div class="callout accent">
+              <div class="callout-title">Pay ceiling</div>
+              <span style="font-size: 0.82em;">Australasian benchmarks put transport engineer pay at roughly <strong>$81–$128k</strong>. This is solid, but slightly below geotechnical or structure specialisations at the top of the table.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- =========================================================
+     SLIDE: NZ Herald video case study
+     ========================================================= -->
+<section>
+  <div class="slide-header"><strong>From the news</strong></div>
+
+  <div style="display: flex; justify-content: center; margin-top: 0.4em;">
+    <video controls preload="metadata"
+           style="max-width: 85%; max-height: 460px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); background: #000;">
+      <source src="../videos/WayneBrown.mp4" type="video/mp4">
+      Your browser does not support embedded video.
+    </video>
+  </div>
+  <div class="source-note">Source: NZ Herald's Youtube channel, date 13/5/2026.</div>
+</section>
+      
+      
+
+      <!-- =========================================================
+           SLIDE 13: Section divider — Course content
+           ========================================================= -->
+      <section class="section-divider" data-background-image="../figures/Backgrounds/auckland-background.jpg">
+        <div class="section-number">Part Three</div>
+        <h1>What you'll actually learn</h1>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 14: Course map
+           ========================================================= -->
+      <section data-background-image="../figures/Backgrounds/grass-left.jpg">
+        <div class="whitebackground">
+        <h2>The seven topics of CIVIL 303</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5em; margin-top: 0.5em;">
+          <div class="topic-card">
+            <div class="topic-num">1</div>
+            <h3>Traffic measurements &amp; studies</h3>
+            <p>Counting, classifying, and characterising traffic data on the network.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">2</div>
+            <h3>Modelling &amp; simulation</h3>
+            <p>Traffic flow theory, micro and macro simulation.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">3</div>
+            <h3>Operational analysis</h3>
+            <p>Capacity, level of service, multi-lane highway operations.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">4</div>
+            <h3>Transport &amp; land use</h3>
+            <p>How cities shape trips and how trips shape cities.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">5</div>
+            <h3>Transportation planning</h3>
+            <p>The classic four-step model, demand analysis, assignment.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">6</div>
+            <h3>Active modes &amp; equity</h3>
+            <p>Designing for people on foot and on bikes; transport fairness.</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-num">7</div>
+            <h3>Pavement design</h3>
+            <p>Materials, traffic loading, mechanistic design, rehabilitation.</p>
+          </div>
+          <div class="topic-card" style="background: var(--uoa-light); border-top-color: var(--uoa-gold);">
+            <h3 style="color: #8a6f29;">Throughout</h3>
+            <p>Sustainability, equity, and resilience are woven through every topic.</p>
+          </div>
+        </div>
+          </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 15: Topic 1 - Traffic studies
+           ========================================================= -->
+      <section>
+        <h2>1. Traffic measurements &amp; studies</h2>
+        <div class="two-col-layout">
+          <div>
+            <p style="font-size: 0.78em;">You can't manage what you can't measure. Before designing anything, engineers <span class="em-navy">characterise the flow</span>: how many vehicles, when, how fast, in what direction, in what mix.</p>
+            <h3 style="font-size: 0.85em;">You'll learn to:</h3>
+            <ul style="font-size: 0.72em;">
+              <li>Measure flow, speed, density, headway, gap</li>
+              <li>Design and conduct traffic and turning movement studies</li>
+              <li>Interpret count data, peak-hour factors, AADT</li>
+              <li>Choose the right method: manual, loop, video, Bluetooth, probe data</li>
+            </ul>
+          </div>
+          <div>
+            <div class="callout gold">
+              <div class="callout-title">Industry context</div>
+              NZTA's national open-data dashboard (covering ~11,000 km of state highway and ~83,000 km of local roads) is built from exactly these measurements. Knowing how the data was generated is what lets you trust or challenge what it says.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 19: Topic 2 - Modelling & simulation
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Topic 2</strong> · Modelling and simulation</div>
+        <h2>5. Modelling &amp; simulation</h2>
+        <div class="two-col-layout">
+          <div>
+            <h3 style="font-size: 0.85em;">Macro models</h3>
+            <p style="font-size: 0.72em;">Whole-network strategic models — Auckland Regional Transport Model, Wellington Transport Strategic Model. Tools: EMME, VISUM.</p>
+            <h3 style="font-size: 0.85em;">Micro simulation</h3>
+            <p style="font-size: 0.72em;">Individual vehicle trajectories on time-space diagrams. Tools: VISSIM, AIMSUN, SUMO. Used to design intersections, signal timings, motorway merges.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 0.85em;">Core relationships</h3>
+            <ul style="font-size: 0.7em;">
+              <li><strong>Speed–flow–density</strong> fundamental diagram</li>
+              <li>Traffic flow models (Greenshields)</li>
+              <li>Capacity of un-signalised intersections (gap-acceptance theory)</li>
+              <li>Queueing theory at bottlenecks</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 20: Topic 6 - Operational analysis
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Topic 6</strong> · Operational analysis</div>
+        <h2>6. Operational analysis of transport facilities</h2>
+        <p style="font-size: 0.78em;">Every road, intersection, bus stop, and station has a <span class="em-navy">capacity</span> and an associated <span class="em-navy">Level of Service (LOS)</span> — a letter grade from A (free-flowing) to F (gridlock) that captures how well it's performing.</p>
+        <div class="stat-grid" style="margin-top: 0.6em;">
+          <div class="stat-card teal">
+            <span class="stat-number">A → F</span>
+            <div class="stat-label">The LOS scale you'll use on every analysis</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">2,200</span>
+            <div class="stat-label">veh/h/lane — the canonical capacity of a freeway lane (HCM)</div>
+          </div>
+          <div class="stat-card accent">
+            <span class="stat-number">200,000</span>
+            <div class="stat-label">vehicles a day on SH1 in central Auckland — NZ's busiest road</div>
+          </div>
+        </div>
+        <p style="font-size: 0.75em; margin-top: 0.7em;">
+          You'll learn the <span class="em-navy">Highway Capacity Manual (HCM)</span> framework as adapted for NZ practice, and apply it to multi-lane highways, signalised and un-signalised intersections.
+        </p>
+      </section>      
+      
+      <!-- =========================================================
+           SLIDE 16: Topic 2 - Land use
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Topic 2</strong> · Transport and land use</div>
+        <h2>2. Transport &amp; land use</h2>
+        <div class="two-col-layout">
+          <div>
+            <p style="font-size: 0.78em;">Transport networks shape where people live and work; land use shapes how, when, and how far they travel. The two cannot be designed separately.</p>
+            <h3 style="font-size: 0.85em;">You'll explore:</h3>
+            <ul style="font-size: 0.72em;">
+              <li>The feedback loop between accessibility and development</li>
+              <li><strong>Transit-Oriented Development (TOD)</strong> — concentrating density around stations</li>
+              <li>How induced demand undermines "just build more lanes"</li>
+              <li>Auckland's Unitary Plan as a live example</li>
+            </ul>
+          </div>
+          <div>
+            <div class="callout teal">
+              <div class="callout-title">Live case study</div>
+              The new City Rail Link stations at Maungawhau, Karangahape, and Te Waihorotiu will trigger dense redevelopment within walking distance. Designing the transport without designing the land use — or vice versa — wastes billions.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 17: Topic 3 - Transportation planning / 4-step
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Topic 3</strong> · Transportation planning</div>
+        <h2>3. Transportation planning</h2>
+        <p style="font-size: 0.78em;">The classic <span class="em-navy">four-step model</span> is still the workhorse of strategic transport planning in New Zealand. Every business case for a major project rests on it.</p>
+        <div class="four-step">
+          <div class="step-box">
+            <div class="step-n">1</div>
+            <h4>Trip generation</h4>
+            <p>How many trips originate in each zone?</p>
+          </div>
+          <div class="step-box">
+            <div class="step-n">2</div>
+            <h4>Trip distribution</h4>
+            <p>Where do they go? (Gravity model)</p>
+          </div>
+          <div class="step-box">
+            <div class="step-n">3</div>
+            <h4>Mode choice</h4>
+            <p>Car, bus, train, walk, bike?</p>
+          </div>
+          <div class="step-box">
+            <div class="step-n">4</div>
+            <h4>Assignment</h4>
+            <p>Which route do they take?</p>
+          </div>
+        </div>
+        <div class="callout" style="margin-top: 0.7em;">
+          <div class="callout-title">Why it matters in NZ</div>
+          Every dollar of the $32.9B NLTP is justified using a business case built on these four steps. Knowing where the assumptions live is what makes you a useful engineer rather than a calculator.
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 18: Topic 4 - Active modes & equity
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Topic 4</strong> · Active modes and equity</div>
+        <h2>4. Active modes &amp; equity</h2>
+        <div class="two-col-layout">
+          <div>
+            <p style="font-size: 0.78em;">The cheapest, healthiest, lowest-carbon trip is the one taken on foot or by bike. Designing for these modes isn't optional — it's central.</p>
+            <h3 style="font-size: 0.85em;">You'll learn to:</h3>
+            <ul style="font-size: 0.72em;">
+              <li>Design pedestrian crossings, footpaths, kerb extensions</li>
+              <li>Design protected and on-road cycle facilities</li>
+              <li>Apply <strong>transport equity</strong> — who benefits, who pays, who's excluded</li>
+              <li>Recognise <strong>hypermobility</strong> and its effect on mode choice</li>
+            </ul>
+          </div>
+          <div>
+            <div class="callout accent">
+              <div class="callout-title">Policy context</div>
+              The 2024–27 NLTP halved walking and cycling funding (from $910m to $460m). The future of active-mode infrastructure depends on engineers making the case rigorously — with data — not on advocacy alone.
+            </div>
+          </div>
+        </div>
+        <div class="source-note">Source: NZ Herald, "National Land Transport Programme shake-up", Sept 2024.</div>
+      </section>
+
+
+
+      <!-- =========================================================
+           SLIDE 21: Topic 7 - Pavement design
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Topic 7</strong> · Pavement design</div>
+        <h2>7. Pavement design &amp; rehabilitation</h2>
+        <div class="two-col-layout">
+          <div>
+            <p style="font-size: 0.78em;">Roads are layered structures, engineered to spread heavy axle loads down to the natural ground without permanent deformation.</p>
+            <div class="pavement-stack">
+              <div class="layer layer-surf"><span>Surfacing</span><span>Chipseal / AC</span></div>
+              <div class="layer layer-base"><span>Basecourse</span><span>Granular / Bound</span></div>
+              <div class="layer layer-subbase"><span>Subbase</span><span>Granular</span></div>
+              <div class="layer layer-subgrade"><span>Subgrade</span><span>Natural ground</span></div>
+            </div>
+            <p style="font-size: 0.65em; color: var(--uoa-grey); margin-top: 0.4em; text-align: center;"><em>A typical NZ flexible pavement cross-section.</em></p>
+          </div>
+          <div>
+            <h3 style="font-size: 0.85em;">You'll cover:</h3>
+            <ul style="font-size: 0.7em;">
+              <li>Material characterisation (CBR, resilient modulus)</li>
+              <li>Traffic loading and ESA calculations</li>
+              <li><strong>Mechanistic-Empirical</strong> design (critical stress &amp; strain)</li>
+              <li>Surfacings: chipseal (dominant in NZ) vs asphalt</li>
+              <li>Pavement performance and condition monitoring</li>
+              <li>Rehabilitation strategies (overlays, recycling, reconstruction)</li>
+            </ul>
+            <div class="callout gold" style="margin-top: 0.5em;">
+              <div class="callout-title">Why it matters now</div>
+              $5.5B of the current NLTP is dedicated to pothole prevention and pavement renewal. This is where many graduates land their first role.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 22: How the topics connect
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>The big picture</strong> · How it all fits together</div>
+        <h2>How the seven topics connect</h2>
+        <p style="font-size: 0.78em;">A real project — say, a new corridor between Drury and Pukekohe — uses every topic in this course, in roughly this order:</p>
+        <div style="font-size: 0.7em; margin-top: 0.5em;">
+          <p><span class="pill">1</span> Land-use forecasts feed <span class="pill">2</span> demand modelling, which sizes the corridor.</p>
+          <p><span class="pill accent">3</span> Mode choice tells you how much goes to bus, train, car, bike.</p>
+          <p><span class="pill teal">4</span> Active-mode and equity analysis tells you who the corridor must serve.</p>
+          <p><span class="pill gold">5</span> Micro-simulation tests intersection and merge performance.</p>
+          <p><span class="pill">6</span> Operational analysis sets the number of lanes and the LOS target.</p>
+          <p><span class="pill accent">7</span> Pavement design turns the geometry into a structure that lasts 25–40 years.</p>
+        </div>
+        <div class="callout" style="margin-top: 0.8em;">
+          <div class="callout-title">The integration is the point</div>
+          A common failure mode in industry is treating these as separate silos. CIVIL 303 deliberately teaches them as one workflow — which is what graduates tell us made them effective on day one.
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 23: What graduates can do
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>By semester's end</strong> · Capabilities</div>
+        <h2>What you'll be able to do</h2>
+        <div class="two-col-layout">
+          <div>
+            <h3 style="font-size: 0.85em;">Technical skills</h3>
+            <ul style="font-size: 0.7em;">
+              <li>Conduct and analyse a traffic study</li>
+              <li>Build a four-step demand model</li>
+              <li>Calculate capacity and LOS for a road or intersection</li>
+              <li>Design a flexible pavement to NZ standards</li>
+              <li>Specify a rehabilitation treatment for a worn road</li>
+              <li>Run a micro-simulation and interpret the output</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size: 0.85em;">Professional skills</h3>
+            <ul style="font-size: 0.7em;">
+              <li>Read and critique an NZTA business case</li>
+              <li>Communicate trade-offs to a non-technical audience</li>
+              <li>Frame an engineering problem in equity and sustainability terms</li>
+              <li>Use data confidently — and call out where it's weak</li>
+              <li>Speak the same language as Engineering NZ chartered colleagues</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout gold" style="margin-top: 0.8em;">
+          <div class="callout-title">Chartered Professional Engineer pathway</div>
+          The competencies in this course map directly to the Engineering NZ <em>Knowledge Profile</em> required to progress towards CPEng status — typically a 4–6 year journey after graduation.
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 24: What we expect from you
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Practicalities</strong> · How to succeed</div>
+        <h2>How to make the most of CIVIL 303</h2>
+        <div class="three-col-layout">
+          <div class="topic-card">
+            <h3>Show up curious</h3>
+            <p>Every concept here is alive in the city you live in. Notice the cycle lane, the chipseal repair, the queue at the lights — and ask why.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Practice the maths</h3>
+            <p>Capacity, gravity models, mechanistic design — these are quantitative. Doing the problems is non-negotiable.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Read what industry reads</h3>
+            <p>NZTA's research reports, Austroads guides, and the NLTP factsheets are short, free, and exactly what your future employer reads.</p>
+          </div>
+        </div>
+        <div class="callout accent" style="margin-top: 0.8em;">
+          <div class="callout-title">Your number-one tip</div>
+          Form a study group early. Transport engineering is collaborative in practice — and the people sitting near you will be your professional network for the next 40 years.
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 25: Resources
+           ========================================================= -->
+      <section>
+        <div class="slide-header"><strong>Resources</strong> · Where to look</div>
+        <h2>Free resources every student should bookmark</h2>
+        <table>
+          <thead>
+            <tr><th>Resource</th><th>Why it matters</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>NZTA Waka Kotahi research portal</strong></td><td>Every major NZ transport study from the last 30 years, free.</td></tr>
+            <tr><td><strong>2024–27 National Land Transport Programme</strong></td><td>The funding context for every project you will work on.</td></tr>
+            <tr><td><strong>Austroads Guides (AGTM, AGPT)</strong></td><td>The pan-Australasian technical standards for traffic and pavement.</td></tr>
+            <tr><td><strong>NZTA Economic Evaluation Manual</strong></td><td>How investment decisions are actually made in NZ.</td></tr>
+            <tr><td><strong>Ministry of Transport statistics</strong></td><td>Road toll, household travel survey, mode share data.</td></tr>
+            <tr><td><strong>Engineering New Zealand — Transportation Group</strong></td><td>NZ's professional society of transport engineers — student membership is free.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- =========================================================
+           SLIDE 26: Closing
+           ========================================================= -->
+      <section class="title-slide" style="text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="icon-banner" style="color: var(--uoa-gold);">→</div>
+          <h2 style="color: white !important; font-size: 1.8em;">You are entering an industry that is short of people, full of money, and full of problems worth solving.</h2>
+          <p style="font-size: 0.9em; opacity: 0.9; margin-top: 1em;">Over the next twelve weeks, CIVIL 303 gives you the toolkit to be useful from day one of your career.</p>
+          <p style="margin-top: 2em; font-size: 0.75em; opacity: 0.7; letter-spacing: 0.1em; text-transform: uppercase;">Questions? Let's begin.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      controls: true,
+      progress: true,
+      center: false,
+      width: 1280,
+      height: 800,
+      margin: 0.06,
+      plugins: [RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+</html>
