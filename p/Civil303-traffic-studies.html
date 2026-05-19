@@ -176,7 +176,7 @@
                         
                         <p>	40% of your first test, and 15% of your assignemnt, and Quiz 1 </p>
                         
-                         <p class="l2">	Mostly numerical problems for the test and with knowledge here being used in the assignment, project and Quiz 1 </p>
+                         <p class="l2">	Mostly numerical problems for the test and with knowledge here being used in the Assignment 1, and Test </p>
                         
                         <p class="l2">	Contents are directly connected to other chapters</p>
                         
@@ -942,9 +942,9 @@
                 
                 
                 
-               <section id="flow-covid" data-background-image="../figures/teaching/auckland-traffic.jpg" data-background-size="90%">                     
+               <section id="flow-covid" data-background-image="../figures/teaching/Civil361/signal_coordination.png" data-background-size="90%">                     
                     <div class="whitebackground2" style="position: relative; bottom: 300px">
-                        <h3><a>Example 7: </a> Use today's concepts to explain the graph: Traffic data from 2020 in Auckland </h3>
+                        <h3>The time-space diagram can be used to plan for "green waves" or coordination between multiple intersections</h3>
                         
                     </div>
                          
@@ -1004,7 +1004,7 @@
              
                 <section id="ex2" >                     
                    
-                        <p><a>Example 8:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 5 vehicles as below. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
+                        <p><a>Example 7:</a> Two aerial photographs were taken, 30 seconds apart, to record the positions of 5 vehicles as below. Calculate the density, time-mean-speed, space-mean-speed and flow. </p>
                     
                     
                     <table>
@@ -1086,18 +1086,10 @@
                 *********************************************************** ****** -->
                 
 
-                <section id="traveltime1" >
-                        <h3>Free-flow travel time and travel delay</h3>
-                    
-                    <figure class="right" >
-
-                        <img data-src="https://www.researchgate.net/profile/Srijith-Balakrishnan/publication/287206999/figure/fig3/AS:669485472161806@1536629183626/shows-a-typical-multi-lane-highway-under-free-flow-traffic-conditions.jpg"
-                             style="width:400px;"
-                             alt="ATIS" />
-                    
-                    </figure>
-                    
-                    
+                <section id="traveltime1" data-background-image="https://images.squarespace-cdn.com/content/v1/5e93b7452c15d54491e354f5/1613445371825-AYDBAL1JQXXCTKGPZM08/Scenic+roads+in+New+Zealand+mount+doom?format=2500w">
+                        
+                    <div class="whitebackground2">
+                    <h3>Free-flow travel time and travel delay</h3>
                     
                     <p><a>Free-flow travel time </a>is the time it should take if we can always travel at the maximum possible speed, usually the speed limit</p>
                         
@@ -1107,7 +1099,7 @@
                         
                          <p class="l2">Delay = Travel time - Free-flow travel time</p>
                         
-                   
+                    </div>
                          
                 </section>
                 
@@ -1237,16 +1229,6 @@
                 
                    <!-- *************** ITS data ************************** -->
   
-               <section id="data-fusion" >
-                   
-                   <h3>Travel time data collection: Floating or Probe vehicles </h3> 
-                   <figure class="centre" >
-                        <img data-src="../figures/teaching/Uber-AV.gif"
-                             style="width:800px;"
-                             alt="UberAV" />
-                    </figure>
-                    <p class="l2"> <a href="https://www.fhwa.dot.gov/ohim/tvtw/natmec/00020.pdf">FHWA's Travel Time Data Collection Handbook</a> </p>
-                </section>      
                 
                  <!-- *************** ITS data ************************** -->
   
@@ -1282,27 +1264,120 @@
                    </div>
                 </section>  
                 
-            
+               <section id="lidar" >
+                   
+                   <div class="whitebackground2 " >
+                   <h3>Travel time data collection: LiDAR </h3> 
+                                      <img src="../figures/teaching/Civil361/lidar.gif"
+                            style="width:1200px;"
+                         alt="travel speed prediction" />
+                  
+                          
+                   </div>
+                </section>              
                 
-                      <!-- ******** Travel speed prediction  ******************* -->
+               <section id="data-fusion" >
+                   
+                   <h3>Travel time data collection: Floating or Probe vehicles </h3> 
+                   <figure class="centre" >
+                        <img data-src="../figures/teaching/Uber-AV.gif"
+                             style="width:1000px;"
+                             alt="UberAV" />
+                    </figure>
+                    <p class="l2"> <a href="https://www.fhwa.dot.gov/ohim/tvtw/natmec/00020.pdf">FHWA's Travel Time Data Collection Handbook</a> </p>
+                </section>      
                 
  
-               <section id="travel-speed-prediction" data-transition="fade">
-
+               <section id="travel-speed-prediction" data-transition="fade" data-background-image="../figures/Backgrounds/mobile.jpg">
+                    <div class="whitebackground2 " >
                     <h3>Crowd sourcing method: Google Travel time</h3>
-                
-                    <img src="../figures/paper-figures/travel-speed-prediction.png"
-                            style="width:400px;"
-                         alt="travel speed prediction" />
                    
                  <p>How do you think Google can estimate travel time so accurately? </p>
-
+                   </div>
                 </section> 
 
+
+<!-- ============================================================ -->
+<!-- SLIDE 2 — DATA SOURCES TABLE                                 -->
+<!-- ============================================================ -->
+<section>
+  <h3>Traffic studies data collection: Summary</h3>
+
+
+  <table class="data" style="font-size:0.55em; color:#555; margin-top:-0.3em;" >
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>What it measures directly</th>
+        <th>Coverage</th>
+        <th>Penetration</th>
+        <th>Privacy risk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Inductive loop detectors</strong></td>
+        <td>Occupancy, flow, classification (with double loops)</td>
+        <td>Point</td>
+        <td>100% of vehicles passing</td>
+        <td><span class="tag low">Low</span></td>
+      </tr>
+      <tr>
+        <td><strong>Pneumatic / piezo tubes</strong></td>
+        <td>Axle counts, classification, spot speed</td>
+        <td>Point</td>
+        <td>100% (while deployed)</td>
+        <td><span class="tag low">Low</span></td>
+      </tr>
+      <tr>
+        <td><strong>CCTV + computer vision</strong></td>
+        <td>Counts, speed, turning movements, queue length, classification</td>
+        <td>Section (~50–200 m)</td>
+        <td>100% of vehicles in frame</td>
+        <td><span class="tag med">Medium</span> (faces, plates)</td>
+      </tr>
+      <tr>
+        <td><strong>Bluetooth / Wi-Fi MAC re-ID</strong></td>
+        <td>Travel time between paired roadside readers</td>
+        <td>Link / corridor</td>
+        <td>~5–25%</td>
+        <td><span class="tag med">Medium</span> (re-ID risk)</td>
+      </tr>
+      <tr>
+        <td><strong>GPS probe data</strong> (Google, TomTom, HERE)</td>
+        <td>Speed, travel time, route choice</td>
+        <td>Network-wide</td>
+        <td>~2–10% of vehicles</td>
+        <td><a>High</a></td>
+      </tr>
+      <tr>
+        <td><strong>Connected-vehicle telematics</strong></td>
+        <td>Speed, acceleration, braking, location at 1–10 Hz</td>
+        <td>Network-wide</td>
+        <td>~1–8% (rising)</td>
+        <td><a>High</a></td>
+      </tr>
+      <tr>
+        <td><strong>LiDAR sensors</strong></td>
+        <td>Full trajectories, density, conflicts</td>
+        <td>Local (~200–500 m)</td>
+        <td>100% within range</td>
+        <td><span class="tag med">Medium</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+    <p style="font-size:0.7em; color:#555; margin-top:0.3em;">Rule of thumb: point sensors give you ground truth but only at a point;
+    probe sources cover the whole network but only see a <em>sample</em>. A modern
+        traffic study almost always fuses both.</p>
+</section> 
+              
+                
+                
                 <section id="flow-example" data-background-image="../figures/teaching/Civil361/test2021.png" data-background-size="40%">    
                     
                     <div class="whitebackground2" style="position: relative; bottom: 300px">
-                        <p><a>Example 9: </a> Auckland vs other cities in ANZ</p>
+                        <p><a>Example 8: </a> Auckland vs other cities in Australasia</p>
                         
                     </div>
                     
