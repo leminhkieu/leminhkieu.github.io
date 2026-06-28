@@ -911,6 +911,102 @@
         
                 </section>  
                 
+<section id="quiz-its-match">
+  <h3>Quick check: ITS services</h3>
+  <p>Click a service on the left, then its correct category on the right.</p>
+  <div class="q4-wrap" style="position:relative; max-width:1000px; margin:0 auto;">
+    <div style="display:flex; justify-content:space-between;">
+      <div class="q4-left" style="width:50%;"></div>
+      <div class="q4-right" style="width:40%;"></div>
+    </div>
+    <svg class="q4-lines" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:50;"></svg>
+  </div>
+  <p class="q4-feedback" style="font:inherit; margin-top:0.6em;"></p>
+  <script>
+    (function(){
+      var slide = document.getElementById('quiz-its-match');
+      var btnStyle = "font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.1em 0; padding:0.2em 1em; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:2px; cursor:pointer;";
+      var items = [
+        {key:"atis", left:"Advanced Traveller Information (ATIS)", right:"User Service: Information"},
+        {key:"ramp", left:"Ramp metering",                        right:"Management: Traffic control"},
+        {key:"abs",  left:"Collision avoidance / ABS",            right:"User Service: Safety"},
+        {key:"mode", left:"Bus signal priority",                  right:"Management: Demand"}
+      ];
+      function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+      function mk(cls,key,label){var b=document.createElement('button');b.className=cls;b.dataset.key=key;b.setAttribute('style',btnStyle);b.innerHTML=label;return b;}
+
+      var L=slide.querySelector('.q4-left'), R=slide.querySelector('.q4-right');
+      shuffle(items).forEach(function(it){L.appendChild(mk('q4i',it.key,it.left));});
+      shuffle(items).forEach(function(it){R.appendChild(mk('q4t',it.key,it.right));});
+
+      var svg=slide.querySelector('.q4-lines'), wrap=slide.querySelector('.q4-wrap');
+      var matched = [];
+
+      function positionLines(){
+        var w = wrap.getBoundingClientRect();
+        // Convert scaled (rendered) px back into the SVG's unscaled coordinate space.
+        var scale = w.width / wrap.offsetWidth || 1;
+
+        var lines = svg.querySelectorAll('line');
+        while(lines.length < matched.length){ svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg','line')); lines = svg.querySelectorAll('line'); }
+        while(lines.length > matched.length){ svg.removeChild(lines[lines.length-1]); lines = svg.querySelectorAll('line'); }
+
+        matched.forEach(function(key, i){
+          var lb = slide.querySelector('.q4i[data-key="'+key+'"]');
+          var rb = slide.querySelector('.q4t[data-key="'+key+'"]');
+          if(!lb || !rb) return;
+          var ra = lb.getBoundingClientRect(), rc = rb.getBoundingClientRect();
+          var ln = lines[i];
+          ln.setAttribute('x1', (ra.right - w.left) / scale);
+          ln.setAttribute('y1', (ra.top + ra.height/2 - w.top) / scale);
+          ln.setAttribute('x2', (rc.left - w.left) / scale);
+          ln.setAttribute('y2', (rc.top + rc.height/2 - w.top) / scale);
+          ln.setAttribute('stroke', '#1b7f3b');
+          ln.setAttribute('stroke-width', '5');
+          ln.setAttribute('stroke-linecap', 'round');
+        });
+      }
+
+      var raf=null;
+      function scheduleReposition(){ if(raf) return; raf=requestAnimationFrame(function(){ raf=null; positionLines(); }); }
+
+      var sel=null, done=0;
+      slide.addEventListener('click', function(e){
+        var btn=e.target.closest('button'); if(!btn||btn.disabled) return;
+        var fb=slide.querySelector('.q4-feedback');
+        if(btn.classList.contains('q4i')){
+          slide.querySelectorAll('.q4i').forEach(function(x){x.style.outline="none";});
+          btn.style.outline="4px solid #C8A65C"; sel=btn; return;
+        }
+        if(btn.classList.contains('q4t')){
+          if(!sel) return;
+          if(sel.dataset.key===btn.dataset.key){
+            sel.style.outline="none"; sel.disabled=btn.disabled=true;
+            sel.style.background=btn.style.background="#1b7f3b";
+            sel.style.color=btn.style.color="#fff";
+            sel.style.borderColor=btn.style.borderColor="#1b7f3b";
+            matched.push(sel.dataset.key);
+            positionLines();
+            done++;
+            fb.textContent = (done===4) ? "All matched. User Services inform/protect the driver; Management Services control or redistribute traffic." : "Matched. Keep going.";
+          } else {
+            fb.textContent="Mismatch — ATIS and safety systems are User Services; ramp metering is traffic control; bus priority is demand management.";
+          }
+          sel=null;
+        }
+      });
+
+      if(window.ResizeObserver){
+        var ro = new ResizeObserver(scheduleReposition);
+        ro.observe(wrap);
+        slide.querySelectorAll('.q4i, .q4t').forEach(function(b){ ro.observe(b); });
+      }
+      window.addEventListener('resize', scheduleReposition);
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(scheduleReposition); }
+      if(window.Reveal){ Reveal.on('slidechanged', scheduleReposition); Reveal.on('resize', scheduleReposition); }
+    })();
+  </script>
+</section>
                 
                  <!-- *************** Thanks  ************************** -->
                                   

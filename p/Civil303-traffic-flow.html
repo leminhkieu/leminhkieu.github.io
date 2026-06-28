@@ -723,6 +723,50 @@
                       
                 </section>
                 
+                              <section id="quiz-order">
+          <h3>Quick check: Order by density</h3>
+          <p>Drag these four traffic states into order of <strong>increasing density</strong> (lowest first).</p>
+          <ul id="q2-list" style="list-style:none; padding:0; max-width:900px; margin:0 auto;">
+            <li draggable="true" data-rank="2"
+              style="font:inherit; padding:0.7em 1em; margin:0.4em 0; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:grab;">Maximum flow (critical density k<sub>m</sub>)</li>
+            <li draggable="true" data-rank="1"
+              style="font:inherit; padding:0.7em 1em; margin:0.4em 0; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:grab;">Free flow (near-empty road)</li>
+            <li draggable="true" data-rank="3"
+              style="font:inherit; padding:0.7em 1em; margin:0.4em 0; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:grab;">Congested but moving</li>
+            <li draggable="true" data-rank="4"
+              style="font:inherit; padding:0.7em 1em; margin:0.4em 0; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:grab;">Jam density (stopped)</li>
+          </ul>
+          <button id="q2-check"
+            style="font:inherit; display:inline-block; margin:0.4em auto; padding:0.7em 1.4em; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">Check order</button>
+          <p id="q2-feedback" style="font:inherit; margin-top:0.6em;"></p>
+          <script>
+            (function(){
+              var list=document.getElementById('q2-list'), dragged=null;
+              list.querySelectorAll('li').forEach(function(li){
+                li.addEventListener('dragstart',function(){dragged=li;});
+                li.addEventListener('dragover',function(e){e.preventDefault();li.style.outline="3px dashed #C8A65C";});
+                li.addEventListener('dragleave',function(){li.style.outline="none";});
+                li.addEventListener('drop',function(e){
+                  e.preventDefault(); li.style.outline="none";
+                  if(dragged&&dragged!==li){
+                    var items=[].slice.call(list.children);
+                    if(items.indexOf(dragged)<items.indexOf(li)) li.after(dragged);
+                    else li.before(dragged);
+                  }
+                });
+              });
+              document.getElementById('q2-check').onclick=function(){
+                var order=[].slice.call(list.children).map(function(li){return +li.dataset.rank;});
+                var ok=order.every(function(v,i){return v===i+1;});
+                document.getElementById('q2-feedback').innerHTML = ok
+                  ? "Correct. As density rises from zero, flow climbs to a peak at critical density k<sub>m</sub>, then falls back to zero at jam density. The flow&ndash;density curve is a parabola, not a straight line."
+                  : "Not yet. Remember flow rises then falls as density increases: free flow &rarr; max flow at k<sub>m</sub> &rarr; congested &rarr; jam. Drag and try again.";
+              };
+            })();
+          </script>
+        </section>
+              
+              
                 
                  <section id="density-flow3" >
                       <h4>Exercise: Could you map these traffic conditions on the right to the diagram on the left? </h4>
@@ -752,7 +796,7 @@
                 </section>
                 
                 
-                
+
                 
              
                 <section id="diagram1" >
@@ -888,12 +932,38 @@
                         <p class="l2">   $ q_m = v_m * k_m = 50 * 500 = 25,000 > 10,000 $ veh/h, so the theoretical value is much larger than the observed maximum flow, because it does not account for the field conditions that influence maximum flow</p>
                            
                 </section>
-                
-                
-             <!-- ******************************************************
+
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
 
+              
+                              
+            <section id="quiz-greenshields">
+              <h3>Quick check: Greenshields model</h3>
+              <p>Under Greenshields' linear speed&ndash;density model, maximum flow occurs at:</p>
+              <div style="max-width:900px; margin:0 auto;">
+                <button class="qopt" data-q="q3" data-correct="false"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">A. Density = jam density, speed = 0</button>
+                <button class="qopt" data-q="q3" data-correct="false"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">B. Density = 0, speed = free-flow speed</button>
+                <button class="qopt" data-q="q3" data-correct="true"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">C. Density = half jam density, speed = half free-flow speed</button>
+                <button class="qopt" data-q="q3" data-correct="false"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">D. Density = jam density, speed = free-flow speed</button>
+              </div>
+              <p id="q3-feedback" style="font:inherit; margin-top:0.6em;"></p>
+              <script>
+                document.querySelectorAll('[data-q="q3"]').forEach(function(b){
+                  b.onclick=function(){
+                    var ok=this.dataset.correct==="true";
+                    this.style.background=ok?"#1b7f3b":"#a33"; this.style.color="#fff"; this.style.borderColor=ok?"#1b7f3b":"#a33";
+                    document.getElementById('q3-feedback').innerHTML = ok
+                      ? "Correct. Setting dq/dk = 0 for q = v<sub>f</sub>(k &minus; k&sup2;/k<sub>j</sub>) gives k<sub>m</sub> = k<sub>j</sub>/2 and v<sub>m</sub> = v<sub>f</sub>/2. Capacity sits at the midpoint."
+                      : "Not quite. Differentiate q = v<sub>f</sub>(k &minus; k&sup2;/k<sub>j</sub>) and set dq/dk = 0: you get k<sub>m</sub> = k<sub>j</sub>/2 and v<sub>m</sub> = v<sub>f</sub>/2.";
+                  };
+                });
+              </script>
+               </section>
                 
                    <section id="speed-flow">
                         <h3>3rd fundamental diagram of traffic flow: Speed & Flow relationship: </h3>
@@ -1032,7 +1102,48 @@
                    <p>(b) In your own words, briefly explain each diagram in your diagram set to describe the relationship between Speed, Flow and Density. Point out on the diagrams the free-flow speed, jam density and maximum flow.</p>
                     
                 </section>
-                
+              
+<section id="quiz-fill-tf">
+  <h3>Quick check: Fill in the blanks</h3>
+  <p style="font:inherit;">Complete the fundamental relationships of traffic flow. (One word per blank.)</p>
+  <div style="font:inherit; text-align:left; max-width:900px; margin:0 auto; line-height:2;">
+    <p>Flow equals density multiplied by
+      <input class="q13blank" data-answer="speed" size="8"
+        style="font:inherit; padding:0.1em 0.4em; border:2px solid #00467F; border-radius:2px; text-align:center;">
+      &nbsp;&nbsp;( q = k &times; v )</p>
+    <p>At zero density, speed reaches its maximum, called the
+      <input class="q13blank" data-answer="free-flow|free flow|freeflow" size="10"
+        style="font:inherit; padding:0.1em 0.4em; border:2px solid #00467F; border-radius:2px; text-align:center;">
+      speed.</p>
+    <p>At maximum density, speed falls to zero; this is called the
+      <input class="q13blank" data-answer="jam" size="6"
+        style="font:inherit; padding:0.1em 0.4em; border:2px solid #00467F; border-radius:2px; text-align:center;">
+      density.</p>
+    <p>The flow&ndash;density curve peaks at the
+      <input class="q13blank" data-answer="capacity|maximum|critical" size="10"
+        style="font:inherit; padding:0.1em 0.4em; border:2px solid #00467F; border-radius:2px; text-align:center;">
+      of the road.</p>
+  </div>
+  <button id="q13-check"
+    style="font:inherit; display:inline-block; margin:0.6em 0; padding:0.2em 1em; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:2px; cursor:pointer;">Check answers</button>
+  <p id="q13-feedback" style="font:inherit; margin-top:0.4em;"></p>
+  <script>
+    document.getElementById('q13-check').onclick=function(){
+      var all=true;
+      document.querySelectorAll('.q13blank').forEach(function(inp){
+        var accepted=inp.dataset.answer.toLowerCase().split('|');
+        var given=inp.value.trim().toLowerCase();
+        var ok=accepted.indexOf(given)!==-1;
+        inp.style.borderColor=ok?"#1b7f3b":"#a33";
+        inp.style.background=ok?"#e3f3e8":"#fbe6e6";
+        if(!ok) all=false;
+      });
+      document.getElementById('q13-feedback').innerHTML = all
+        ? "All correct. q = k &times; v ties the three together: free-flow speed at zero density, jam density at zero speed, and the flow peak marks capacity (at critical density)."
+        : "Some blanks need another look. Recall q = k &times; v, free-flow speed at k = 0, jam density at v = 0, and the curve's peak = capacity.";
+    };
+  </script>
+</section>
                
                     <!-- ************** Learning outcomes ************* -->
 

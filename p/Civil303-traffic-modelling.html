@@ -387,7 +387,32 @@
                     
                 </section>
 
-                  
+<section id="quiz-carfollow">
+  <h3>Quick check: Car-following models</h3>
+  <p>Car-following models are built on a stimulus&ndash;response idea borrowed from Newtonian mechanics. In that analogy, the driver's <strong>response</strong> is the:</p>
+  <div style="max-width:900px; margin:0 auto;">
+    <button class="qopt" data-q="q9" data-correct="false"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">A. Gap to the vehicle in front</button>
+    <button class="qopt" data-q="q9" data-correct="true"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">B. Acceleration of the following vehicle</button>
+    <button class="qopt" data-q="q9" data-correct="false"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">C. Relative speed between the two vehicles</button>
+    <button class="qopt" data-q="q9" data-correct="false"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">D. Driver's reaction time</button>
+  </div>
+  <p id="q9-feedback" style="font:inherit; margin-top:0.6em;"></p>
+  <script>
+    document.querySelectorAll('[data-q="q9"]').forEach(function(b){
+      b.onclick=function(){
+        var ok=this.dataset.correct==="true";
+        this.style.background=ok?"#1b7f3b":"#a33"; this.style.color="#fff"; this.style.borderColor=ok?"#1b7f3b":"#a33";
+        document.getElementById('q9-feedback').innerHTML = ok
+          ? "Correct. Response &prop; stimulus: the response is the follower's acceleration, a<sub>n</sub>(t). The stimulus is the function of relative speed, gap and speed. Reaction time delays the response, it isn't the response itself."
+          : "Not quite. The response is the follower's acceleration. Gap, relative speed and reaction time are inputs to the stimulus, not the response.";
+      };
+    });
+  </script>
+</section>
 
                  <!-- ******************************************************
                 *********************** Lane change 1 ***********************
@@ -539,17 +564,103 @@
                     
                 </section>
                 
-                 <section id="whatmodel">
-                        <h3>Exercise 1: What models to use in which case?</h3>
-                        
-                        <p class="l2">1. The Ministry of Transport wants a traffic model of Auckland to identify the bottlenecks in the traffic systems and come up with ways to reduce traffic congestions </p>
-                        
-                        <p class="l2">2. Auckland Transport wants to evaluate the feasibility of replacing the traffic lights in one of our busy intersections with a roundabout</p>
-                        
-                        <p>What model should we be using in which case, and what kind of data should we collect to model the system? </p>
-                    
-                </section>
-                
+<section id="quiz-model-match">
+  <h3>Example 1: Which model scale?</h3>
+  <p>Click a task on the left, then the most suitable model scale on the right.</p>
+  <div class="q8-wrap" style="position:relative; max-width:1000px; margin:0 auto;">
+    <div style="display:flex; justify-content:space-between;">
+      <div class="q8-left" style="width:60%;"></div>
+      <div class="q8-right" style="width:30%;"></div>
+    </div>
+    <svg class="q8-lines" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:50;"></svg>
+  </div>
+  <p class="q8-feedback" style="font:inherit; margin-top:0.6em;"></p>
+  <script>
+    (function(){
+      var slide = document.getElementById('quiz-model-match');
+      var btnStyle = "font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.1em 0; padding:0.2em 1em; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:2px; cursor:pointer;";
+      var items = [
+        {key:"macro", left:"Find bottlenecks across all of Auckland's network", right:"Macroscopic"},
+        {key:"micro", left:"Compare traffic lights vs a roundabout at one intersection", right:"Microscopic"},
+        {key:"meso",  left:"Detailed-ish model of a large network at lower cost",   right:"Mesoscopic"}
+      ];
+      function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+      function mk(cls,key,label){var b=document.createElement('button');b.className=cls;b.dataset.key=key;b.setAttribute('style',btnStyle);b.innerHTML=label;return b;}
+
+      var L=slide.querySelector('.q8-left'), R=slide.querySelector('.q8-right');
+      shuffle(items).forEach(function(it){L.appendChild(mk('q8i',it.key,it.left));});
+      shuffle(items).forEach(function(it){R.appendChild(mk('q8t',it.key,it.right));});
+
+      var svg=slide.querySelector('.q8-lines'), wrap=slide.querySelector('.q8-wrap');
+      var matched = [];
+
+      function positionLines(){
+        var w = wrap.getBoundingClientRect();
+        // Reveal.js scales slides with transform:scale(). getBoundingClientRect returns scaled
+        // (rendered) pixels, but the SVG draws in its own unscaled coordinate space. Convert by
+        // dividing every coordinate by the scale factor = rendered width / layout width.
+        var scale = w.width / wrap.offsetWidth || 1;
+
+        var lines = svg.querySelectorAll('line');
+        while(lines.length < matched.length){ svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg','line')); lines = svg.querySelectorAll('line'); }
+        while(lines.length > matched.length){ svg.removeChild(lines[lines.length-1]); lines = svg.querySelectorAll('line'); }
+
+        matched.forEach(function(key, i){
+          var lb = slide.querySelector('.q8i[data-key="'+key+'"]');
+          var rb = slide.querySelector('.q8t[data-key="'+key+'"]');
+          if(!lb || !rb) return;
+          var ra = lb.getBoundingClientRect(), rc = rb.getBoundingClientRect();
+          var ln = lines[i];
+          ln.setAttribute('x1', (ra.right - w.left) / scale);
+          ln.setAttribute('y1', (ra.top + ra.height/2 - w.top) / scale);
+          ln.setAttribute('x2', (rc.left - w.left) / scale);
+          ln.setAttribute('y2', (rc.top + rc.height/2 - w.top) / scale);
+          ln.setAttribute('stroke', '#1b7f3b');
+          ln.setAttribute('stroke-width', '5');
+          ln.setAttribute('stroke-linecap', 'round');
+        });
+      }
+
+      var raf=null;
+      function scheduleReposition(){ if(raf) return; raf=requestAnimationFrame(function(){ raf=null; positionLines(); }); }
+
+      var sel=null, done=0;
+      slide.addEventListener('click', function(e){
+        var btn=e.target.closest('button'); if(!btn||btn.disabled) return;
+        var fb=slide.querySelector('.q8-feedback');
+        if(btn.classList.contains('q8i')){
+          slide.querySelectorAll('.q8i').forEach(function(x){x.style.outline="none";});
+          btn.style.outline="4px solid #C8A65C"; sel=btn; return;
+        }
+        if(btn.classList.contains('q8t')){
+          if(!sel) return;
+          if(sel.dataset.key===btn.dataset.key){
+            sel.style.outline="none"; sel.disabled=btn.disabled=true;
+            sel.style.background=btn.style.background="#1b7f3b";
+            sel.style.color=btn.style.color="#fff";
+            sel.style.borderColor=btn.style.borderColor="#1b7f3b";
+            matched.push(sel.dataset.key);
+            positionLines();
+            done++;
+            fb.textContent = (done===3) ? "All matched. Macro = whole network, low detail; micro = few intersections, high detail; meso sits between." : "Matched. Keep going.";
+          } else {
+            fb.textContent="Mismatch — network-wide bottleneck hunting is macro; a single intersection redesign is micro; large network at moderate detail is meso.";
+          }
+          sel=null;
+        }
+      });
+
+      if(window.ResizeObserver){
+        var ro = new ResizeObserver(scheduleReposition);
+        ro.observe(wrap);
+        slide.querySelectorAll('.q8i, .q8t').forEach(function(b){ ro.observe(b); });
+      }
+      window.addEventListener('resize', scheduleReposition);
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(scheduleReposition); }
+      if(window.Reveal){ Reveal.on('slidechanged', scheduleReposition); Reveal.on('resize', scheduleReposition); }
+    })();
+  </script>
+</section>
                 
                 
             
@@ -569,6 +680,7 @@
                     
                 </section>
                 
+             
                 
                   <!-- ************** Learning outcomes ************* -->
 
@@ -842,6 +954,32 @@
                 </section>
                 
                 
+             <section id="quiz-los">
+  <h3>Quick check: Level of Service</h3>
+  <p>On a basic freeway segment, why is LOS defined by <strong>density</strong> rather than speed?</p>
+  <div style="max-width:900px; margin:0 auto;">
+    <button class="qopt" data-q="q5" data-correct="false"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.3em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">A. Density is easier to measure in the field than speed</button>
+    <button class="qopt" data-q="q5" data-correct="true"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.3em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">B. Speed stays roughly constant up to high flows</button>
+    <button class="qopt" data-q="q5" data-correct="false"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.3em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">C. Density is what drivers care about most</button>
+    <button class="qopt" data-q="q5" data-correct="false"
+      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.3em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">D. Speed cannot be calculated from flow and density</button>
+  </div>
+  <p id="q5-feedback" style="font:inherit; margin-top:0.6em;"></p>
+  <script>
+    document.querySelectorAll('[data-q="q5"]').forEach(function(b){
+      b.onclick=function(){
+        var ok=this.dataset.correct==="true";
+        this.style.background=ok?"#1b7f3b":"#a33"; this.style.color="#fff"; this.style.borderColor=ok?"#1b7f3b":"#a33";
+        document.getElementById('q5-feedback').innerHTML = ok
+          ? "Correct. Speed remains near free-flow until flows are high, so it's a poor discriminator. Density (pc/mi/ln) varies across the full flow range, giving a cleaner A&ndash;F scale. Recall D = v<sub>p</sub>/S."
+          : "Not quite. The reason is sensitivity: speed barely changes until flows get high, so it can't separate LOS A from C. Density changes throughout, which is why HCM uses it.";
+      };
+    });
+  </script>
+</section>
                 
                  <!-- ************** Learning outcomes 3************* -->
 
@@ -892,7 +1030,7 @@
                             
                           <p>(b) transportation planners who
                             work inthe field of transportation system management. </p>
-                        <h3>How to access the Highway Capacity Manual 2016 (6th edition) ?</h3>
+                        <h3>How to access the Highway Capacity Manual ?</h3>
                          <p>  <a href="https://www.library.auckland.ac.nz/">https://www.library.auckland.ac.nz/</a></p>
                         
                         
@@ -1124,7 +1262,7 @@
                     
                      <p class="l2">Roads are based on Right-Hand Traffic. The shoulder and on/off-ramps are on the right-side of the road</p>
                     
-                     <p class="l2"> HCM 2010 and 2016 are available only in Imperial units (ft/mile) contrary to HCM 2000, which was available in Metric version as well.</p>
+                     <p class="l2"> HCM 2010, 2016 and 2022 are available only in Imperial units (ft/mile) contrary to HCM 2000, which was available in Metric version as well.</p>
                     
                    
                 </section>
@@ -1136,7 +1274,7 @@
                 <section id="HCM4" >
                         <h3>MOTORIZED VEHICLE CORE METHODOLOGY</h3>
                     
-                    <p>Chapter 12 of HCM2016: Basic Freeway and Multilane Highway Segments</p>
+                    <p>Chapter 12 of HCM: Basic Freeway and Multilane Highway Segments</p>
                     
                         <img class="centre" src="../figures/teaching/Civil361/HCM.png"
                             style="width:800px;"
@@ -1171,7 +1309,7 @@
                     <p class="l3">–“What is the number of lanes needed to provide LOS B during the worst 15 minutes of the peak hour?” - Design Analysis</p>
                     <p class="l3">–“Given the present traffic demand and the forecast demand in 3 years, when will thecapacity of the roadway be exceeded (assuming traffic grows as expected)?” - Planning Analysis</p>
                    
-                    <p> The methodology for multilane highway segments is very similar (see HCM2016, Chapter 12)  </p>
+                    <p> The methodology for multilane highway segments is very similar (see HCM2022, Chapter 12)  </p>
                     
                 </section>    
                 
@@ -1318,7 +1456,7 @@
                 <section id="method5" >
                     
                    
-                <p>  Step 2: FFS may be estimated by Equation 12-2 in HCM 2016:</p>
+                <p>  Step 2: FFS may be estimated by Equation 12-2 in HCM 2022:</p>
                    
                     \[\begin{aligned}
 					FFS = BFFS - f_{LW} - f_{RLC} - 3.22 \times TRD^{0.84} \\
@@ -1599,7 +1737,7 @@
 					\end{aligned} \]
                            </p>
                     
-                    <p class="l2">We need to make adjustment for heavy vehicles ($f_{HV}$) using HCM2016 Equation 12-10
+                    <p class="l2">We need to make adjustment for heavy vehicles ($f_{HV}$) using HCM2022 Equation 12-10
                    
                       
                      \[\begin{aligned}
@@ -1653,7 +1791,7 @@
                   
                <p>  Step 4: Adjust Demand Volume</p>  
                     
-                    <p>In the majority of cases, $E_T$ is not given, but we can look it up in HCM2016 if the segment of interest is in a "General Terrain"</p>
+                    <p>In the majority of cases, $E_T$ is not given, but we can look it up in HCM if the segment of interest is in a "General Terrain"</p>
                     
                     
                     
@@ -1691,7 +1829,6 @@
                      <p class="l2"> 2. If demand is less or equal to capacity, or $v_p \leq c_{adj}$, the analysis continues to Step 5</p>
                     
                 </section>  
-                
                 
                 
                     <!-- ******* Step 5  *********** -->
@@ -1841,7 +1978,7 @@
                 
                   <section id="LOS7" data-background-image="../figures/Backgrounds/bokeh.jpg">    
                    <div class="whitebackground2 ">
-                   <h3>Exercise 6: LOS in HCM 2016</h3>
+                   <h3>Exercise 6: LOS in HCM</h3>
 
                    <p>For a basic freeway segment with the
                     adjusted free-flow speed  ($FFS_{adj}$) of 65 mi/h,

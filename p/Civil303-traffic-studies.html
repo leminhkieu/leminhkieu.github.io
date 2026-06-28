@@ -338,8 +338,34 @@
                
                 <section id="speed3" >                     
                    
-                        <p> <a class="bold">Example 1:</a> If the spot speeds are 50, 40, 30, 20 and 10 km/h, find the time mean speed and space mean speed.</p>
-                        
+                <section id="quiz-tmsvsms">
+                  <h3>Example 1: Mean speeds</h3>
+                  <p>Five vehicles pass a point at 50, 40, 30, 20 and 10 km/h. Which statement is correct?</p>
+                  <div style="max-width:900px; margin:0 auto;">
+                    <button class="qopt" data-q="q1" data-correct="false"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">A. Time-mean speed (30 km/h) is lower than space-mean speed</button>
+                    <button class="qopt" data-q="q1" data-correct="true"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">B. Time-mean speed (30 km/h) exceeds space-mean speed (28.9 km/h)</button>
+                    <button class="qopt" data-q="q1" data-correct="false"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">C. Both means are always equal</button>
+                    <button class="qopt" data-q="q1" data-correct="false"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.4em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:3px solid #00467F; border-radius:14px; cursor:pointer;">D. Space-mean speed is the arithmetic mean of the spot speeds</button>
+                  </div>
+                  <p id="q1-feedback" style="font:inherit; margin-top:0.6em;"></p>
+                  <script>
+                    document.querySelectorAll('[data-q="q1"]').forEach(function(b){
+                      b.onclick=function(){
+                        var ok=this.dataset.correct==="true";
+                        this.style.background=ok?"#1b7f3b":"#a33";
+                        this.style.color="#fff";
+                        this.style.borderColor=ok?"#1b7f3b":"#a33";
+                        document.getElementById('q1-feedback').innerHTML = ok
+                          ? "Correct. Space-mean speed (harmonic mean = 28.9 km/h) weights slower vehicles more heavily, so v<sub>t</sub> &ge; v<sub>s</sub> always holds."
+                          : "Not quite. Time-mean speed is the arithmetic mean (30 km/h); space-mean speed is the harmonic mean (28.9 km/h). Slower vehicles occupy the section longer, so v<sub>t</sub> &ge; v<sub>s</sub>.";
+                      };
+                    });
+                  </script>
+                </section>                      
                 
                      <aside class="notes">
                   <p class="l2">Time-mean-speed (arithmetic mean) is calculated from the individual speed recorded for vehicles passing a point over a selected time period</p>
@@ -405,6 +431,81 @@
                     </div>
                     
                 </section>
+                
+<section id="quiz-percentile-match">
+  <h3>Quick check: Percentile speeds</h3>
+  <p>Click a speed measure on the left, then how engineers use it on the right.</p>
+  <div class="q12-wrap" style="position:relative; max-width:1000px; margin:0 auto;">
+    <div style="display:flex; justify-content:space-between;">
+      <div class="q12-left" style="width:50%;"></div>
+      <div class="q12-right" style="width:45%;"></div>
+    </div>
+    <svg class="q12-lines" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:50;"></svg>
+  </div>
+  <p class="q12-feedback" style="font:inherit; margin-top:0.6em;"></p>
+  <script>
+    (function(){
+      var slide = document.getElementById('quiz-percentile-match');
+      var btnStyle = "font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.1em 0; padding:0.2em 1em; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:2px; cursor:pointer;";
+      var items = [
+        {key:"p85", left:"85th percentile speed", right:"Sets the maximum speed limit"},
+        {key:"p15", left:"15th percentile speed", right:"Sets the minimum speed limit"},
+        {key:"med", left:"50th percentile (median) speed", right:"Typical speed of the stream"}
+      ];
+      function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+      function mk(cls,key,label){var b=document.createElement('button');b.className=cls;b.dataset.key=key;b.setAttribute('style',btnStyle);b.innerHTML=label;return b;}
+
+      var L=slide.querySelector('.q12-left'), R=slide.querySelector('.q12-right');
+      shuffle(items).forEach(function(it){L.appendChild(mk('q12i',it.key,it.left));});
+      shuffle(items).forEach(function(it){R.appendChild(mk('q12t',it.key,it.right));});
+
+      var svg=slide.querySelector('.q12-lines'), wrap=slide.querySelector('.q12-wrap');
+      var matched = [];
+
+      function positionLines(){
+        var w = wrap.getBoundingClientRect();
+        var scale = w.width / wrap.offsetWidth || 1;
+        var lines = svg.querySelectorAll('line');
+        while(lines.length < matched.length){ svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg','line')); lines = svg.querySelectorAll('line'); }
+        while(lines.length > matched.length){ svg.removeChild(lines[lines.length-1]); lines = svg.querySelectorAll('line'); }
+        matched.forEach(function(key, i){
+          var lb = slide.querySelector('.q12i[data-key="'+key+'"]'), rb = slide.querySelector('.q12t[data-key="'+key+'"]');
+          if(!lb || !rb) return;
+          var ra = lb.getBoundingClientRect(), rc = rb.getBoundingClientRect(), ln = lines[i];
+          ln.setAttribute('x1', (ra.right - w.left) / scale);
+          ln.setAttribute('y1', (ra.top + ra.height/2 - w.top) / scale);
+          ln.setAttribute('x2', (rc.left - w.left) / scale);
+          ln.setAttribute('y2', (rc.top + rc.height/2 - w.top) / scale);
+          ln.setAttribute('stroke', '#1b7f3b'); ln.setAttribute('stroke-width', '5'); ln.setAttribute('stroke-linecap', 'round');
+        });
+      }
+      var raf=null;
+      function scheduleReposition(){ if(raf) return; raf=requestAnimationFrame(function(){ raf=null; positionLines(); }); }
+
+      var sel=null, done=0;
+      slide.addEventListener('click', function(e){
+        var btn=e.target.closest('button'); if(!btn||btn.disabled) return;
+        var fb=slide.querySelector('.q12-feedback');
+        if(btn.classList.contains('q12i')){ slide.querySelectorAll('.q12i').forEach(function(x){x.style.outline="none";}); btn.style.outline="4px solid #C8A65C"; sel=btn; return; }
+        if(btn.classList.contains('q12t')){
+          if(!sel) return;
+          if(sel.dataset.key===btn.dataset.key){
+            sel.style.outline="none"; sel.disabled=btn.disabled=true;
+            sel.style.background=btn.style.background="#1b7f3b"; sel.style.color=btn.style.color="#fff"; sel.style.borderColor=btn.style.borderColor="#1b7f3b";
+            matched.push(sel.dataset.key); positionLines(); done++;
+            fb.textContent = (done===3) ? "All matched. The 85th percentile (the 'critical speed') anchors the maximum limit; the 15th anchors the minimum; the median describes the typical driver." : "Matched. Keep going.";
+          } else { fb.textContent="Mismatch — the 85th percentile sets the maximum limit, the 15th the minimum, and the median is the typical stream speed."; }
+          sel=null;
+        }
+      });
+
+      if(window.ResizeObserver){ var ro=new ResizeObserver(scheduleReposition); ro.observe(wrap); slide.querySelectorAll('.q12i, .q12t').forEach(function(b){ ro.observe(b); }); }
+      window.addEventListener('resize', scheduleReposition);
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(scheduleReposition); }
+      if(window.Reveal){ Reveal.on('slidechanged', scheduleReposition); Reveal.on('resize', scheduleReposition); }
+    })();
+  </script>
+</section>
                 
                   <section id="speed6" >                 
                    
@@ -475,6 +576,7 @@
                     
                 </section>  
                 
+
                 
                 
                  <section id="speed9" >   
@@ -494,7 +596,32 @@
                     
                 </section>
                 
-                
+                <section id="quiz-tmsorder">
+              <h3>Quick check: Which mean speed?</h3>
+              <p>You measure travel times over a 1 km section to analyse journey speeds. Which mean should you use, and how does it compare to the time-mean speed?</p>
+              <div style="max-width:900px; margin:0 auto;">
+                <button class="qopt" data-q="q7" data-correct="true"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.2em 0; padding:0.2em 1em; text-align:left; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:8px; cursor:pointer;">A. Space-mean speed; it is lower than or equal to the time-mean speed</button>
+                <button class="qopt" data-q="q7" data-correct="false"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.2em 0; padding:0.2em 1em; text-align:left; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:8px; cursor:pointer;">B. Space-mean speed; it is always higher than the time-mean speed</button>
+                <button class="qopt" data-q="q7" data-correct="false"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.2em 0; padding:0.2em 1em; text-align:left; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:8px; cursor:pointer;">C. Time-mean speed; the two are always identical</button>
+                <button class="qopt" data-q="q7" data-correct="false"
+                  style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.2em 0; padding:0.2em 1em; text-align:left; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:8px; cursor:pointer;">D. Time-mean speed; it is lower than the space-mean speed</button>
+              </div>
+              <p id="q7-feedback" style="font:inherit; margin-top:0.6em;"></p>
+              <script>
+                document.querySelectorAll('[data-q="q7"]').forEach(function(b){
+                  b.onclick=function(){
+                    var ok=this.dataset.correct==="true";
+                    this.style.background=ok?"#1b7f3b":"#a33"; this.style.color="#fff"; this.style.borderColor=ok?"#1b7f3b":"#a33";
+                    document.getElementById('q7-feedback').innerHTML = ok
+                      ? "Correct. Travel-time data over a length is analysed with space-mean speed (harmonic mean). Because slower vehicles are weighted more, v<sub>s</sub> &le; v<sub>t</sub>."
+                      : "Not quite. Length-based travel-time data uses space-mean speed (harmonic mean), and slower vehicles weigh it down, so v<sub>s</sub> &le; v<sub>t</sub>.";
+                  };
+                });
+              </script>
+            </section>
         
                  <section id="flow-what?" > 
                 
@@ -749,6 +876,33 @@
                   
                 </section>
                 
+                
+                <section id="quiz-phf">
+                  <h3>Quick check: Peak Hour Factor</h3>
+                  <p>A PHF close to 1.0 tells you that, during the peak hour, traffic is:</p>
+                  <div style="max-width:900px; margin:0 auto;">
+                    <button class="qopt" data-q="q6" data-correct="true"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">A. Spread evenly across the four 15-minute intervals</button>
+                    <button class="qopt" data-q="q6" data-correct="false"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">B. Heavily concentrated in one 15-minute burst</button>
+                    <button class="qopt" data-q="q6" data-correct="false"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">C. Lower in total volume than off-peak</button>
+                    <button class="qopt" data-q="q6" data-correct="false"
+                      style="font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.25em 0; padding:0.7em 1em; text-align:left; background:#ffffff; color:#00467F; border:2px solid #00467F; border-radius:8px; cursor:pointer;">D. Made up mostly of heavy vehicles</button>
+                  </div>
+                  <p id="q6-feedback" style="font:inherit; margin-top:0.6em;"></p>
+                  <script>
+                    document.querySelectorAll('[data-q="q6"]').forEach(function(b){
+                      b.onclick=function(){
+                        var ok=this.dataset.correct==="true";
+                        this.style.background=ok?"#1b7f3b":"#a33"; this.style.color="#fff"; this.style.borderColor=ok?"#1b7f3b":"#a33";
+                        document.getElementById('q6-feedback').innerHTML = ok
+                          ? "Correct. PHF = V / (4 &times; V<sub>15m</sub>). When flow is uniform, the peak 15-min volume is a quarter of the hour, so PHF &rarr; 1.0. A low PHF means a sharp spike within the hour."
+                          : "Not quite. PHF = V / (4 &times; V<sub>15m</sub>). It measures how evenly flow is spread, not total volume or vehicle mix. Near 1.0 = uniform; lower = peaked.";
+                      };
+                    });
+                  </script>
+                </section>
                 
                  <section id="ex4-PHF" >
                     <a class="bold">Example 5:</a>
@@ -1518,7 +1672,82 @@
         
                 </section>  
                 
-                 
+<section id="quiz-data-match">
+  <h3>Quick check: Data collection methods</h3>
+  <p>Click a data source on the left, then what it is best known for on the right.</p>
+  <div class="q11-wrap" style="position:relative; max-width:1000px; margin:0 auto;">
+    <div style="display:flex; justify-content:space-between;">
+      <div class="q11-left" style="width:50%;"></div>
+      <div class="q11-right" style="width:45%;"></div>
+    </div>
+    <svg class="q11-lines" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:50;"></svg>
+  </div>
+  <p class="q11-feedback" style="font:inherit; margin-top:0.6em;"></p>
+  <script>
+    (function(){
+      var slide = document.getElementById('quiz-data-match');
+      var btnStyle = "font:inherit; display:block; width:100%; box-sizing:border-box; margin:0.1em 0; padding:0.2em 1em; background:#ffffff; color:#00467F; border:1px solid #00467F; border-radius:2px; cursor:pointer;";
+      var items = [
+        {key:"loop",  left:"Inductive loop detector", right:"100% count at a single point"},
+        {key:"gps",   left:"GPS probe data (Google, TomTom)", right:"Network-wide, but only a sample"},
+        {key:"bt",    left:"Bluetooth / Wi-Fi re-identification", right:"Travel time between two readers"},
+        {key:"cctv",  left:"CCTV + computer vision", right:"Turning movements over a section"}
+      ];
+      function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+      function mk(cls,key,label){var b=document.createElement('button');b.className=cls;b.dataset.key=key;b.setAttribute('style',btnStyle);b.innerHTML=label;return b;}
+
+      var L=slide.querySelector('.q11-left'), R=slide.querySelector('.q11-right');
+      shuffle(items).forEach(function(it){L.appendChild(mk('q11i',it.key,it.left));});
+      shuffle(items).forEach(function(it){R.appendChild(mk('q11t',it.key,it.right));});
+
+      var svg=slide.querySelector('.q11-lines'), wrap=slide.querySelector('.q11-wrap');
+      var matched = [];
+
+      function positionLines(){
+        var w = wrap.getBoundingClientRect();
+        var scale = w.width / wrap.offsetWidth || 1;
+        var lines = svg.querySelectorAll('line');
+        while(lines.length < matched.length){ svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg','line')); lines = svg.querySelectorAll('line'); }
+        while(lines.length > matched.length){ svg.removeChild(lines[lines.length-1]); lines = svg.querySelectorAll('line'); }
+        matched.forEach(function(key, i){
+          var lb = slide.querySelector('.q11i[data-key="'+key+'"]'), rb = slide.querySelector('.q11t[data-key="'+key+'"]');
+          if(!lb || !rb) return;
+          var ra = lb.getBoundingClientRect(), rc = rb.getBoundingClientRect(), ln = lines[i];
+          ln.setAttribute('x1', (ra.right - w.left) / scale);
+          ln.setAttribute('y1', (ra.top + ra.height/2 - w.top) / scale);
+          ln.setAttribute('x2', (rc.left - w.left) / scale);
+          ln.setAttribute('y2', (rc.top + rc.height/2 - w.top) / scale);
+          ln.setAttribute('stroke', '#1b7f3b'); ln.setAttribute('stroke-width', '5'); ln.setAttribute('stroke-linecap', 'round');
+        });
+      }
+      var raf=null;
+      function scheduleReposition(){ if(raf) return; raf=requestAnimationFrame(function(){ raf=null; positionLines(); }); }
+
+      var sel=null, done=0;
+      slide.addEventListener('click', function(e){
+        var btn=e.target.closest('button'); if(!btn||btn.disabled) return;
+        var fb=slide.querySelector('.q11-feedback');
+        if(btn.classList.contains('q11i')){ slide.querySelectorAll('.q11i').forEach(function(x){x.style.outline="none";}); btn.style.outline="4px solid #C8A65C"; sel=btn; return; }
+        if(btn.classList.contains('q11t')){
+          if(!sel) return;
+          if(sel.dataset.key===btn.dataset.key){
+            sel.style.outline="none"; sel.disabled=btn.disabled=true;
+            sel.style.background=btn.style.background="#1b7f3b"; sel.style.color=btn.style.color="#fff"; sel.style.borderColor=btn.style.borderColor="#1b7f3b";
+            matched.push(sel.dataset.key); positionLines(); done++;
+            fb.textContent = (done===4) ? "All matched. Point sensors give ground truth at one spot; probe sources cover the whole network but only see a sample." : "Matched. Keep going.";
+          } else { fb.textContent="Mismatch — loops count 100% at a point; GPS covers the network from a sample; Bluetooth times two readers; CCTV reads turning movements over a section."; }
+          sel=null;
+        }
+      });
+
+      if(window.ResizeObserver){ var ro=new ResizeObserver(scheduleReposition); ro.observe(wrap); slide.querySelectorAll('.q11i, .q11t').forEach(function(b){ ro.observe(b); }); }
+      window.addEventListener('resize', scheduleReposition);
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(scheduleReposition); }
+      if(window.Reveal){ Reveal.on('slidechanged', scheduleReposition); Reveal.on('resize', scheduleReposition); }
+    })();
+  </script>
+</section>                
+                
                  <!-- *************** Thanks  ************************** -->
                                   
                 <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
