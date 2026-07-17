@@ -384,6 +384,89 @@
       margin: 0.2em 0;
     }
   </style>
+  
+  <style>
+  .project-flow {
+    display: grid;
+    grid-template-columns: 1fr 32px 1fr 32px 1fr 32px 1fr;
+    gap: 0.3em;
+    align-items: stretch;
+    margin-top: 0.7em;
+  }
+  .flow-phase {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .flow-phase-head {
+    color: white;
+    padding: 0.45em 0.5em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.62em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .flow-phase-body {
+    background: white;
+    border: 1.5px solid #E5E7EB;
+    border-top: none;
+    padding: 0.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    flex: 1;
+  }
+  .flow-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4em;
+    background: #FAFAFC;
+    border-radius: 5px;
+    padding: 0.4em 0.45em;
+  }
+  .flow-num {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.6em;
+    font-family: 'Inter', sans-serif;
+  }
+  .flow-card-content strong {
+    display: block;
+    color: var(--uoa-navy);
+    font-size: 0.62em;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.2;
+    margin-bottom: 0.15em;
+  }
+  .flow-card-content p {
+    margin: 0;
+    font-size: 0.5em;
+    color: var(--uoa-grey);
+    line-height: 1.3;
+  }
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--uoa-grey);
+  }
+  .flow-arrow svg { width: 28px; height: 28px; }
+  /* Phase colour themes */
+  .phase-1 .flow-phase-head { background: #00467F; }
+  .phase-2 .flow-phase-head { background: #1E8E8E; }
+  .phase-3 .flow-phase-head { background: #8a6f29; }
+  .phase-4 .flow-phase-head { background: #E94F37; }
+</style>
+  
 </head>
 <body>
   <div class="reveal">
@@ -441,7 +524,7 @@
                 <section id="aboutme" data-transition="fade">
 
                     <figure class="right">
-                            <img data-src="../figures/side-graphics/highway.jpg"
+                            <img src="../figures/side-graphics/highway.jpg"
                              alt="Minh picture" />
                      </figure>
 
@@ -485,7 +568,7 @@
                 <section id="aboutme2" data-transition="fade">
 
                     <figure class="right">
-                            <img data-src="../figures/side-graphics/highway.jpg"
+                            <img src="../figures/side-graphics/highway.jpg"
                              alt="Minh picture" />
                      </figure>
 
@@ -1119,6 +1202,8 @@
            ========================================================= -->
       <section>
         <h2>5. Transport &amp; land use</h2>
+
+
         <div class="two-col-layout">
           <div>
             <p style="font-size: 0.78em;">Transport networks shape where people live and work; land use shapes how, when, and how far they travel. The two cannot be designed separately.</p>
@@ -1128,6 +1213,11 @@
               <li><strong>Transit-Oriented Development (TOD)</strong> — concentrating density around stations</li>
               <li>How induced demand undermines "just build more lanes"</li>
               <li>Auckland's Unitary Plan as a live example</li>
+              
+
+              
+              
+              
             </ul>
           </div>
           <div>
@@ -1135,6 +1225,8 @@
               <div class="callout-title">Live case study</div>
               The new City Rail Link stations at Maungawhau, Karangahape, and Te Waihorotiu will trigger dense redevelopment within walking distance. Designing the transport without designing the land use — or vice versa — wastes billions.
             </div>
+                                  <img src="https://i1.rgstatic.net/ii/profile.image/11431281206653998-1700826756344_Q128/Subeh-Chowdhury.jpg" style="float:right;width:300px;" alt="Figure 1">
+                          <p class="l2">Dr Subeh Chowdhury</p>
           </div>
         </div>
       </section>
@@ -1167,6 +1259,8 @@
         <div class="callout" style="margin-top: 0.7em;">
           <div class="callout-title">Why it matters in NZ</div>
           Every dollar of the $32.9B NLTP is justified using a business case built on these four steps. Knowing where the assumptions live is what makes you a useful engineer rather than a calculator.
+                                            <img src="https://i1.rgstatic.net/ii/profile.image/11431281206653998-1700826756344_Q128/Subeh-Chowdhury.jpg" style="float:right;width:300px;" alt="Figure 1">
+
         </div>
       </section>
 
@@ -1189,8 +1283,11 @@
               The 2024–27 NLTP halved walking and cycling funding (from $910m to $460m). The future of active-mode infrastructure depends on engineers making the case rigorously — with data — not on advocacy alone.
             </div>
           </div>
+
         </div>
         <div class="source-note">Source: NZ Herald, "National Land Transport Programme shake-up", Sept 2024.</div>
+                                                              <img src="https://i1.rgstatic.net/ii/profile.image/11431281206653998-1700826756344_Q128/Subeh-Chowdhury.jpg" style="float:right;width:300px;" alt="Figure 1">
+
       </section>
 
       <section>
@@ -1205,6 +1302,9 @@
               <div class="layer layer-subgrade"><span>Subgrade</span><span>Natural ground</span></div>
             </div>
             <p style="font-size: 0.65em; color: var(--uoa-grey); margin-top: 0.4em; text-align: center;"><em>A typical NZ flexible pavement cross-section.</em></p>
+                                                                                      <img src="https://www.auckland.ac.nz/content/auckland/en/news/2024/10/03/a-simcity-is-being-built-to-advance-resilience-planning/_jcr_content/leftpar/imagecomponent/image.img.480.low.jpg/1727898683727.jpg" style="float:left;width:400px;" alt="Figure 1">
+                          <p class="l2">Assoc Prof Theuns Hennings</p>
+
           </div>
           <div>
             <h3 style="font-size: 0.85em;">You'll cover:</h3>
@@ -1216,12 +1316,19 @@
               <li>Pavement performance and condition monitoring</li>
               <li>Rehabilitation strategies (overlays, recycling, reconstruction)</li>
             </ul>
+
             <div class="callout gold" style="margin-top: 0.5em;">
+
               <div class="callout-title">Why it matters now</div>
               $5.5B of the current NLTP is dedicated to pothole prevention and pavement renewal. This is where many graduates land their first role.
+
+              
+              
             </div>
+                          
           </div>
         </div>
+        
       </section>
 
       <!-- =========================================================
@@ -1231,87 +1338,7 @@
       <!-- =========================================================
      SLIDE 22: How the topics connect (project workflow)
      ========================================================= -->
-<style>
-  .project-flow {
-    display: grid;
-    grid-template-columns: 1fr 32px 1fr 32px 1fr 32px 1fr;
-    gap: 0.3em;
-    align-items: stretch;
-    margin-top: 0.7em;
-  }
-  .flow-phase {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-  .flow-phase-head {
-    color: white;
-    padding: 0.45em 0.5em;
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    font-size: 0.62em;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-  .flow-phase-body {
-    background: white;
-    border: 1.5px solid #E5E7EB;
-    border-top: none;
-    padding: 0.4em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35em;
-    flex: 1;
-  }
-  .flow-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.4em;
-    background: #FAFAFC;
-    border-radius: 5px;
-    padding: 0.4em 0.45em;
-  }
-  .flow-num {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-    border-radius: 50%;
-    color: white;
-    text-align: center;
-    font-weight: 700;
-    font-size: 0.6em;
-    font-family: 'Inter', sans-serif;
-  }
-  .flow-card-content strong {
-    display: block;
-    color: var(--uoa-navy);
-    font-size: 0.62em;
-    font-family: 'Roboto Slab', serif;
-    line-height: 1.2;
-    margin-bottom: 0.15em;
-  }
-  .flow-card-content p {
-    margin: 0;
-    font-size: 0.5em;
-    color: var(--uoa-grey);
-    line-height: 1.3;
-  }
-  .flow-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--uoa-grey);
-  }
-  .flow-arrow svg { width: 28px; height: 28px; }
-  /* Phase colour themes */
-  .phase-1 .flow-phase-head { background: #00467F; }
-  .phase-2 .flow-phase-head { background: #1E8E8E; }
-  .phase-3 .flow-phase-head { background: #8a6f29; }
-  .phase-4 .flow-phase-head { background: #E94F37; }
-</style>
+
 
 <section>
   <h2>How the eight topics connect</h2>
