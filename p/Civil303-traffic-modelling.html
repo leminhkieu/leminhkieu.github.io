@@ -245,7 +245,7 @@
                     </section>
                 
                 
-                 <section id="macro2">                     
+                 <section id="macro2a">                     
                     
                         <h3>Macroscopic models</h3>
                         
@@ -261,6 +261,350 @@
                      
                     </section>
                 
+ 
+ 
+                <!-- ******************************************************
+                *********************** Why macroscopic ***********************
+                ************************************************************ -->
+ 
+                <section id="why" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                    <div class="whitebackground2">
+ 
+                        <h3>Macroscopic models: Why treat traffic as a fluid?</h3>
+ 
+                        <p>We do not need to know what every driver is doing. We need to know where the queue starts, how fast it grows, and when it goes away.</p>
+ 
+                        <p class="l2">A <a>macroscopic</a> model describes the traffic stream as a whole: how many vehicles, how tightly packed, how fast.</p>
+ 
+                        <p class="l2">Three numbers per location, per time step. That is all.</p>
+ 
+                        <p class="l2">Cheap to compute, easy to calibrate, and it scales to a whole motorway corridor.</p>
+ 
+                        <p>This is the theory behind ramp metering, incident response plans, variable speed limits and every travel time sign you drive past on SH1.</p>
+ 
+                    </div>
+ 
+                    <aside class="notes">
+                        Microsimulation models every driver. That is powerful, but slow, data-hungry and hard to defend in a business case.
+                        Macroscopic models give you the shape of the congestion, which is usually the thing the client is paying you to find.
+                    </aside>
+ 
+                </section>
+ 
+
+ 
+                <!-- ******************************************************
+                *********************** Core variables ***********************
+                ************************************************************ -->
+ 
+                <section id="variables">
+ 
+                    <h3>Macroscopic models: The three core macroscopic variables</h3>
+ 
+                    <p class="l2"><a>Flow</a> $q$ (veh/h): vehicles passing a point per unit time. What a loop detector measures.</p>
+ 
+                    <p class="l2"><a>Density</a> $k$ (veh/km): vehicles occupying a length of road at an instant. What an aerial photo measures.</p>
+ 
+                    <p class="l2"><a>Space-mean speed</a> $v_s$ (km/h): the average speed of the vehicles in that length of road.</p>
+ 
+                    \[\begin{aligned}
+                    q = k \, v_s \\
+                    \end{aligned} \]
+ 
+                    <p class="l3">Only <a>two</a> of the three are independent. Fix any two and the third follows.</p>
+ 
+                    <p class="l3">Watch the units. Mixing veh/h with veh/km and m/s is the single most common exam mistake.</p>
+ 
+                    <aside class="notes">
+                        Remind them: time-mean speed is the average of individual spot speeds and is always higher than space-mean speed.
+                        The fundamental relation only works with space-mean speed.
+                    </aside>
+ 
+                </section>
+ 
+ 
+                <!-- ******************************************************
+                *********************** Edie definitions ***********************
+                ************************************************************ -->
+ 
+                <section id="edie">
+ 
+                    <div class="whitebackground2">
+ 
+                        <h4>Estimating $q$ and $k$ from Time-space diagrams: Edie's generalised definitions</h4>
+ 
+                        <p class="l2">A point measurement gives you flow. A snapshot gives you density. Neither on its own is enough when traffic is changing.</p>
+ 
+                        <p class="l2">Take a region of the time-space diagram of length $L$ and duration $T$, so area $A = L \times T$. Then:</p>
+ 
+                        \[\begin{aligned}
+                        q = \frac{\text{total distance travelled}}{A} \\
+                        k = \frac{\text{total time spent}}{A} \\
+                        v_s = \frac{\text{total distance travelled}}{\text{total time spent}} \\
+                        \end{aligned} \]
+ 
+                        <p class="l3">These three definitions are consistent by construction, so $q = k v_s$ holds automatically.</p>
+ 
+                        <p class="l3">This is exactly how flow and density are extracted from trajectory datasets.</p>
+ 
+                    </div>
+ 
+                </section>
+ 
+ 
+                <!-- ******************************************************
+                *********************** Example 1 ***********************
+                ************************************************************ -->
+ 
+                <section id="ex1">
+ 
+                    <h3><a>Example 1:</a> Macroscopic variables from trajectories</h3>
+ 
+                    <p class="l2">A 400 m section of the Southern Motorway is observed for 60 seconds. From the vehicle trajectories, the total distance travelled by all vehicles inside that space-time region is 4,800 veh&middot;m, and the total time spent inside it is 240 veh&middot;s.</p>
+ 
+                    <p class="l2">Calculate the flow, the density and the space-mean speed. Check that they are consistent.</p>
+ 
+                </section>
+ 
+ 
+                <section id="ex1-sol">
+ 
+                    <h4>Example 1: solution</h4>
+ 
+                    <p class="l3">Area of the space-time region: $A = 400 \times 60 = 24{,}000$ m&middot;s</p>
+ 
+                    <p class="l3">Flow: $q = 4800 / 24000 = 0.2$ veh/s $= \underline{720}$ veh/h</p>
+ 
+                    <p class="l3">Density: $k = 240 / 24000 = 0.01$ veh/m $= \underline{10}$ veh/km</p>
+ 
+                    <p class="l3">Space-mean speed: $v_s = 4800 / 240 = 20$ m/s $= \underline{72}$ km/h</p>
+ 
+                    <p class="l3">Check: $q = k v_s = 10 \times 72 = 720$ veh/h &#10003;</p>
+ 
+                    <p class="l2">10 veh/km is light traffic and 72 km/h is close to the posted speed, so this section is <a>uncongested</a>. Note how little the flow figure alone tells you: 720 veh/h could also be the discharge from a jam.</p>
+ 
+                </section>
+ 
+
+ 
+                <!-- ******************************************************
+                *********************** LWR ***********************
+                ************************************************************ -->
+ 
+                <section id="lwr">
+ 
+                        <h3>Macroscopic models: The LWR continuum model</h3>
+ 
+                        <p class="l2">Lighthill, Whitham (1955) and Richards (1956) treated the traffic stream as a compressible fluid. Two ingredients only:</p>
+ 
+                        <p class="l2">1. <a>Conservation law</a> &mdash; just as fluid mass cannot disappear, vehicles cannot vanish or appear out of nowhere on a highway without ramps</p>
+ 
+                        \[\begin{aligned}
+                        \frac{\partial k}{\partial t} + \frac{\partial q}{\partial x} = 0 \\
+                        \end{aligned} \]
+                      
+                      <p class="l2"> 2. <a>Shockwaves:</a> When fast-moving traffic hits a bottleneck, a deceleration wave propagates backward through the traffic stream. This is mathematically identical to a shock wave in compressible fluid flow (like a sonic boom or hydraulic jump).</p>
+ 
+                        <p class="l2">3. <a>The fundamental diagram</a> &mdash; In fluid dynamics, a gas slows down and compresses under high pressure. In traffic, vehicles slow down as density increases, mimicking a compressible gas. Drivers instantly adopt the speed appropriate to the density: $q = Q(k)$</p>
+                   
+                </section>
+
+                <section id="lwr2">
+ 
+                        <h3>Macroscopic models: The LWR continuum model - Key Differences from Real Fluids</h3>
+   
+                        \[\begin{aligned}
+                        \frac{\partial k}{\partial t} + \frac{\partial q}{\partial x} = 0 \\
+                        \end{aligned} \]
+                      
+                      <p class="l2"> 1. <a>No Backward Interaction:</a> Real fluid molecules press against each other in all directions. In traffic, drivers only react to the cars ahead of them, not behind them.</p>
+                      <p class="l2"> 2. <a>Anisotropic Propagation:</a> Disturbance waves in traffic only travel backward relative to the vehicles, whereas acoustic waves in fluids travel in all directions.</p>
+                      <p class="l2"> 3. <a>No Conservation of Momentum:</a> Traffic does not strictly conserve momentum because drivers can slam on the brakes or accelerate using an external energy source (the car engine).</p>
+
+                </section>              
+              
+ 
+                <!-- ******************************************************
+                *********************** Shockwaves ***********************
+                ************************************************************ -->
+ 
+                <section id="shockwave">
+ 
+                    <h3>Shockwaves: what happens when two states meet</h3>
+ 
+                    <p class="l2">When traffic in state 1 ($q_1, k_1$) runs into traffic in state 2 ($q_2, k_2$), the boundary between them travels at:</p>
+ 
+                    \[\begin{aligned}
+                    u_{12} = \frac{q_2 - q_1}{k_2 - k_1} \\
+                    \end{aligned} \]
+                  
+                  <p class="l2"> Where: </p>
+                   <p class="l3">$u_{12}$ = Shockwave velocity (km/h) </p>
+                   <p class="l3"> $q_1, k_1$ = Traffic flow and density upstream (before the shockwave) </p>
+                   <p class="l3"> $q_2, k_2$ = Traffic flow and density downstream (after the shockwave) </p>
+ 
+                    <p class="l3">This is the <a>chord</a> joining the two points on the fundamental diagram</p>
+  
+                </section>
+ 
+ 
+                <!-- ******************************************************
+                *********************** Example 3 ***********************
+                ************************************************************ -->
+ 
+                <section id="ex3">
+ 
+                    <h3><a>Example 3:</a> An incident on a three-lane motorway</h3>
+ 
+                    <p class="l2">Demand arriving at a three-lane motorway is 4,500 veh/h at a free-flow speed of 100 km/h. Each lane has a capacity of 2,000 veh/h, a jam density of 150 veh/km and a backward wave speed of 15.4 km/h.</p>
+ 
+                    <p class="l2">A crash blocks two lanes for 10 minutes. Find:</p>
+ 
+                    <p class="l3">(a) the speed at which the back of the queue moves</p>
+                    <p class="l3">(b) the maximum queue length and when it occurs</p>
+                    <p class="l3">(c) when the motorway returns to normal, and the total delay</p>
+ 
+                </section>
+ 
+ 
+                <section id="ex3-sol1">
+ 
+                    <h4>Example 3: solution (a) and (b)</h4>
+ 
+                    <p class="l3">State A (arriving): $q_A = 4500$ veh/h, $k_A = 4500/100 = 45$ veh/km</p>
+ 
+                    <p class="l3">State B (queue): the restriction passes one lane only, so $q_B = 2000$ veh/h on the congested branch, with $k_j = 3 \times 150 = 450$ veh/km</p>
+ 
+                    <p class="l3">$k_B = k_j - q_B/w = 450 - 2000/15.4 = 320$ veh/km</p>
+ 
+                    <p class="l2">(a) Back of queue: $u_{AB} = \dfrac{2000 - 4500}{320 - 45} = \dfrac{-2500}{275} = \underline{-9.1}$ km/h &mdash; the tail moves upstream at 9.1 km/h</p>
+ 
+                    <p class="l3">After 10 minutes the queue is $9.1 \times 1/6 = 1.52$ km long.</p>
+ 
+                    <p class="l2">(b) When the lanes reopen, the discharge state C is capacity: $q_C = 6000$ veh/h, $k_C = 60$ veh/km. The release wave is $u_{BC} = \dfrac{6000-2000}{60-320} = \underline{-15.4}$ km/h.</p>
+ 
+                    <p class="l3">It closes on the tail at $15.4 - 9.1 = 6.3$ km/h, catching it after $1.52/6.3 = 0.24$ h = 14.4 min.</p>
+ 
+                    <p class="l3">Maximum queue at $t = 24.4$ min, length $= 9.1 \times 0.407 = \underline{3.7}$ km</p>
+ 
+                </section>
+ 
+ 
+                <section id="ex3-sol2">
+ 
+                    <h4>Example 3: solution (c)</h4>
+ 
+                    <svg viewBox="0 0 620 400" style="width:760px; max-width:100%;" xmlns="http://www.w3.org/2000/svg">
+                        <!-- axes -->
+                        <line x1="70" y1="50" x2="570" y2="50" stroke="#333" stroke-width="2"/>
+                        <line x1="70" y1="50" x2="70" y2="340" stroke="#333" stroke-width="2"/>
+                        <text x="320" y="26" font-size="18" text-anchor="middle">time (min)</text>
+                        <text x="22" y="200" font-size="18" text-anchor="middle" transform="rotate(-90 22 200)">distance upstream (km)</text>
+                        <!-- queue region -->
+                        <polygon points="70,50 453,257 227,50" fill="#d1495b" fill-opacity="0.18"/>
+                        <!-- incident duration -->
+                        <line x1="70" y1="50" x2="227" y2="50" stroke="#111" stroke-width="7"/>
+                        <text x="148" y="42" font-size="16" text-anchor="middle">incident, 10 min</text>
+                        <!-- tail shockwave -->
+                        <line x1="70" y1="50" x2="453" y2="257" stroke="#d1495b" stroke-width="3.5"/>
+                        <!-- release wave -->
+                        <line x1="227" y1="50" x2="453" y2="257" stroke="#1f6feb" stroke-width="3.5"/>
+                        <circle cx="453" cy="257" r="6" fill="#111"/>
+                        <!-- ticks -->
+                        <text x="70" y="362" font-size="15" text-anchor="middle">0</text>
+                        <text x="227" y="362" font-size="15" text-anchor="middle">10</text>
+                        <text x="453" y="362" font-size="15" text-anchor="middle">24.4</text>
+                        <text x="570" y="362" font-size="15" text-anchor="middle">30</text>
+                        <text x="58" y="262" font-size="15" text-anchor="end">3.7</text>
+                        <!-- labels -->
+                        <text x="150" y="180" font-size="17" fill="#d1495b">tail, $-9.1$ km/h</text>
+                        <text x="330" y="120" font-size="17" fill="#1f6feb">release, $-15.4$ km/h</text>
+                        <text x="270" y="205" font-size="18">queue (state B)</text>
+                        <text x="470" y="240" font-size="16">max queue 3.7 km</text>
+                    </svg>
+ 
+                    <p class="l3">Flow at the incident site recovers when the cumulative departures catch the cumulative arrivals: $4500t = 333 + 6000(t - 1/6)$, giving $t = \underline{26.7}$ min.</p>
+ 
+                    <p class="l3">Peak queue in vehicles: $(4500-2000) \times 1/6 = 417$ veh. Total delay $= \tfrac{1}{2} \times 417 \times 0.444 = \underline{93}$ veh&middot;h, spread over about 2,000 vehicles &mdash; roughly 2.8 minutes each.</p>
+ 
+                    <p class="l2">Ten minutes of blockage produces nearly half an hour of disruption and 3.7 km of queue. This asymmetry is the single most useful thing to tell a client.</p>
+ 
+                </section>
+ 
+ 
+                <!-- ******************************************************
+                *********************** Queueing ***********************
+                ************************************************************ -->
+ 
+                <section id="queue">
+ 
+                    <div class="whitebackground2">
+ 
+                        <h3>Queueing: cumulative curves do the accounting</h3>
+ 
+                        <p class="l2">Plot cumulative vehicle number $N(t)$ against time at two points: upstream (arrivals) and at the bottleneck (departures).</p>
+ 
+                        <p class="l3"><a>Vertical gap</a> between the curves = number of vehicles queued</p>
+                        <p class="l3"><a>Horizontal gap</a> = delay to an individual vehicle</p>
+                        <p class="l3"><a>Area between them</a> = total delay in veh&middot;h &mdash; the number that goes into the economic appraisal</p>
+ 
+                        <p class="l2">The deterministic queue treats the queue as vertical: correct on vehicle counts and total delay, silent on where the queue physically sits.</p>
+ 
+                        <p class="l2">The shockwave model gives you the physical queue: length, tail position, and whether it will reach the upstream interchange.</p>
+ 
+                        <p class="l3">Use both. They must agree on total delay &mdash; if they do not, you have made an arithmetic error.</p>
+ 
+                    </div>
+ 
+                </section>
+ 
+ 
+                <!-- ******************************************************
+                *********************** Practical knowledge ***********************
+                ************************************************************ -->
+ 
+                <section id="practice" data-background-image="../figures/Backgrounds/beach.jpg">
+ 
+                    <div class="whitebackground2">
+ 
+                        <h3>What the textbook does not tell you</h3>
+ 
+                        <p class="l2"><a>Capacity drop.</a> Once a queue forms, the bottleneck discharges 5&ndash;10% below its pre-queue capacity. Break the flow and you do not get it all back. This is the entire justification for ramp metering and variable speed limits.</p>
+ 
+                        <p class="l2"><a>Hysteresis.</a> Real fundamental diagrams are a scatter, not a line. Traffic loading and traffic recovering follow different paths.</p>
+ 
+                        <p class="l2"><a>Calibrate, do not assume.</a> $v_f$, $q_{max}$, $k_j$ and $w$ are site-specific. Get them from your own loop, Bluetooth or probe data before you trust a single number.</p>
+ 
+                        <p class="l2"><a>Network scale.</a> The Macroscopic Fundamental Diagram extends the same idea to a whole area: network production against network accumulation. It is how perimeter control schemes decide when to hold traffic out of a city centre.</p>
+ 
+                        <p class="l3">Macroscopic models tell you <a>how much</a> and <a>where</a>. If the client needs lane changing, gap acceptance or individual driver behaviour, you need microsimulation instead.</p>
+ 
+                    </div>
+ 
+                </section>
+ 
+ 
+                <!-- ******************************************************
+                *********************** Practice question ***********************
+                ************************************************************ -->
+ 
+                <section id="ex4">
+ 
+                    <h3><a>Example 4:</a> Try this one yourself</h3>
+ 
+                    <p class="l2">A signalised approach carries 900 veh/h at 50 km/h. The red phase lasts 40 seconds, during which the stopped queue reaches jam density of 130 veh/km. On green the approach discharges at a saturation flow of 1,800 veh/h with a density of 36 veh/km.</p>
+ 
+                    <p class="l3">(a) How fast does the stopping wave travel back from the stop line?</p>
+                    <p class="l3">(b) How long is the queue when the light turns green?</p>
+                    <p class="l3">(c) How fast does the starting wave travel back, and when does it reach the last stopped vehicle?</p>
+ 
+                    <p class="l2">Sketch the time-space diagram before you touch the algebra. Every mark in part (c) depends on getting the picture right.</p>
+ 
+                </section>
+               
+              
+              
+              
                          <!-- ******************************************************
                 *********************** Problem 1 ***********************
                 ************************************************************ -->
