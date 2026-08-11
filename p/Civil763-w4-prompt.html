@@ -86,7 +86,11 @@
                     <div>&nbsp;</div>
                 </section> 
 
-                
+                <section>
+               
+  <iframe width="900" height="auto" src="https://www.youtube.com/embed/j1Vk6Y-23CY" title="YouTube video player" >
+</iframe>
+             </section> 
                 
                 
            <section id="stats">  
@@ -98,77 +102,251 @@
              </section>  
               
                                 
-           <section id="p0">  
-                   <h2> Principles of Prompt Engineering </h2>
-                  <p>1.	Be Clear and Specific</p>
-            <p>2.	Provide Context</p>
-            <p>3.	Use Technical Terminology Accurately</p>
-            <p>4.	Structure Requests According to the Coding Task</p>
-            	
-             </section>  
- 
-             <section id="p1" data-background-image="../figures/Backgrounds/grass-left.jpg">
-              <div class="whitebackground2">
-                   <h3>1.	Be Clear and Specific </h3>
-                  <p>Bad prompts:</p>
-              <a>“Generate code for a simulation.”</a>
-              <p>Good prompts:</p>
-              <a>“I am developing a traffic flow simulation in Python using discrete-event simulation principles. Please write a Python class called IntersectionSimulator that:</a>
-              </div>
-             </section>  
 
-                          <section id="p2" data-background-image="../figures/Backgrounds/grass-left.jpg">
-              <div class="whitebackground2">
-                   <h3>2.	Provide Context</h3>
-                  <p>Bad prompts:</p>
-              <a>“Write code to get data out of a file with pandas or something.”</a>
-              <p>Good prompts:</p>
-              <a>“In Python, write a function called calculate_stats that takes a list of integers and returns a dictionary containing the minimum value, maximum value, average, and standard deviation of the list.”</a>
-               </div>
-             </section>  
-                          <section id="p3" data-background-image="../figures/Backgrounds/grass-left.jpg">
-              <div class="whitebackground2">
-                   <h3>3.	Use Technical Terminology Accurately</h3>
-                  <p>Bad prompts:</p>
-              <a>“Write me some code to do calculations.”</a>
-              <p>Good prompts:</p>
-              <a>“Using the pandas library in Python, write a function read_and_clean_csv that:</a>
-		<a>1.	Loads data from a CSV file called ‘data.csv’.</a>
-	<a>2.	Drops any rows with missing values.</a>
-	<a>3.	Converts columns ‘time’ and ‘date’ to appropriate datetime formats.</a>
-	<a>4.	Returns a cleaned DataFrame ready for further analysis.</a>
-	<a>Make sure to handle potential file I/O errors gracefully.”</a></div>
-             </section>  
-                
-               <section id="p4" data-background-image="../figures/Backgrounds/grass-left.jpg">
-              <div class="whitebackground2">
-                   <h3>4.	Structure Requests According to the Coding Task</h3>
-               
-               <p>•	For debugging: describe the error, show problematic code, and ask for an explanation plus a fix.</p>
-               <p>•	For optimization: define performance expectations, highlight known issues or complexities, and request specific improvements.</p>
-               <p>•	For documentation: specify the style (docstring vs. comment block) and the details to include (parameters, return values, usage).</p>
-                              
-                  <p>Bad prompts:</p>
-              <a>“Fix my code.”</a>
-              <p>Good prompts:</p>
+<section id="p0">
+  <h2>Principles of Prompt Engineering</h2>
+  <p><strong>Brief it</strong></p>
+  <p class="l2">1. Be clear and specific</p>
+  <p class="l2">2. Give it context to work with</p>
+  <p class="l2">3. Use technical terminology accurately</p>
+  <p class="l2">4. Structure the request around the coding task</p>
+  <p><strong>Work with it</strong></p>
+  <p class="l2">5. Ask for options before you ask for code</p>
+  <p class="l2">6. Remember the training cutoff</p>
+  <p><strong>Check it</strong></p>
+  <p class="l2">7. Double-check the outputs</p>
+  <aside class="notes">
+    The first four are about the brief you write. The last three are about how you behave
+    once the code comes back. Most marks are lost in the last three.
+  </aside>
+</section>
+ 
+<section id="p0a" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>What has changed</h3>
+    <p>The models now read your files, run your code, search the web, and hold a whole
+      project in memory while they work.</p>
+    <p>So the old game of hunting for magic words is over. Two things decide what you get back:</p>
+    <p class="l3"><a>How well you brief it — the data, the constraints, the definition of done.</a></p>
+    <p class="l3"><a>How hard you check it — a wrong answer arrives looking exactly like a right one.</a></p>
+    <p class="l2">A model that can run your code can also test it. Ask it to.</p>
+    <aside class="notes">
+      Practical consequence: upload the actual file, don't describe it. Paste the whole
+      traceback, not the last line. The context window is large enough now that trimming
+      costs you more than it saves.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p1" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>1. Be clear and specific</h3>
+    <p>Bad prompt:</p>
+    <p class="l3"><a>"Generate code for a simulation."</a></p>
+    <p>Good prompt:</p>
+    <p class="l3"><a>"I am building a traffic flow simulation in Python using discrete-event
+      principles. Write a class <code>IntersectionSimulator</code> for a four-arm intersection
+      with fixed-time signals. Inputs: arrival rate per approach in vehicles per hour, green
+      time per approach in seconds, and cycle length. It should run for a set number of cycles
+      and return the average delay per approach in seconds. Assume Poisson arrivals. Standard
+      library plus NumPy only."</a></p>
+    <p class="l2">Say what the code takes in, what it gives back, and what it may depend on.</p>
+    <aside class="notes">
+      Vague in, plausible out. The model will not stop to ask what you meant unless you tell
+      it to. Add "ask me anything ambiguous before you write code" and watch how much it
+      actually wanted to know.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p2" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>2. Give it context to work with</h3>
+    <p>The model knows Python. It knows nothing about your file, your marking rubric, or the
+      trap on line 40.</p>
+    <p>Bad prompt:</p>
+    <p class="l3"><a>"Write code to get the data out of a file with pandas or something."</a></p>
+    <p>Good prompt — attach the file, then say:</p>
+    <p class="l3"><a>"Attached is counts.csv: hourly vehicle counts at one intersection
+      approach, one row per hour, columns date, hour, count. Hours with no working detector
+      are recorded as the text 'n/a', not as blanks. Load it into pandas, convert count to a
+      number, and tell me how many hours are missing per day before you do anything else."</a></p>
+    <p class="l2">Context is the part only you can supply. Everything else it can work out.</p>
+    <aside class="notes">
+      Worth demonstrating live. Without the warning about 'n/a', the count column loads as
+      text, the mean silently fails or comes back wrong, and nothing raises an error.
+      This slide previously carried a calculate_stats example, which was really about
+      specificity, not context.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p3" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>3. Use technical terminology accurately</h3>
+    <p>The wrong word sends the model down the wrong road, confidently.</p>
+    <p>Loose:</p>
+    <p class="l3"><a>"Group the counts and match them to the sites."</a></p>
+    <p>Precise:</p>
+    <p class="l3"><a>"Aggregate counts.csv by date to get a daily total, then left join
+      sites.csv on site_id to add the site name. Keep every date, even those with no matching
+      site record — I want to see the gaps, not lose them."</a></p>
+    <p class="l2">Names carry meaning: left join, aggregate, resample, saturation flow,
+      95th percentile. Use them properly and you get the analysis you asked for.</p>
+    <aside class="notes">
+      "Group" could mean groupby, clustering, or binning. An inner join instead of a left join
+      quietly drops rows, and the result still looks reasonable, so nobody notices. This is
+      the most common invisible error in student code.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p4" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>4. Structure the request around the coding task</h3>
+    <p class="l2">Debugging: paste the full traceback, the code that produced it, the input
+      that triggered it, and what you expected instead. Ask for the cause before the fix.</p>
+    <p class="l2">Optimisation: state the current runtime, the data size, and the target.
+      Say what you cannot change.</p>
+    <p class="l2">Documentation: name the style and the audience.</p>
+    <p>Bad prompt:</p>
+    <p class="l3"><a>"Fix my code."</a></p>
+    <p>Good prompt:</p>
+    <p class="l3"><a>"This should return 24 rows, one per hour, but returns 26. Code and full
+      traceback below; the input file has two duplicate timestamps. Explain what is causing
+      the duplication before you change anything, then show the minimal fix and a check I can
+      run to confirm the row count."</a></p>
+    <aside class="notes">
+      "Explain the cause before you change anything" is the highest-value habit on this slide.
+      Otherwise you get a fix that makes the symptom disappear and the fault stay.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p5" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>5. Ask for options before you ask for code</h3>
+    <p>The first answer is the most obvious answer, not the best one. Make it show you the
+      field before it commits.</p>
+    <p class="l3"><a>"My hourly count data has gaps where the detector failed. Give me three
+      defensible ways to handle them — do not write code yet. For each: the assumption behind
+      it, what it does to my daily totals, and how I would justify it in a report. Then tell me
+      which you would choose and why."</a></p>
+    <p class="l2">Then pick one, tell it which, and ask for the code.</p>
+    <p class="l2">Also worth asking: "What would you do differently if this had to run on a
+      year of data from fifty sites?"</p>
+    <aside class="notes">
+      This is what separates using AI as a search engine from using it as a colleague. Three
+      options with trade-offs force the assumption into the open, where it can be defended or
+      attacked. A single unlabelled assumption buried in code is how an analysis quietly goes
+      wrong.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p6" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>6. Remember the training cutoff</h3>
+    <p>Every model was trained up to a date and then stopped. It does not feel that gap, and
+      it will answer anyway.</p>
+    <p class="l2">Libraries move: code written from memory still calls
+      <code>DataFrame.append()</code>, removed in pandas 2.0.</p>
+    <p class="l2">Standards, design guides, prices and regulations move faster than any
+      training run. A confident quote with no source is a guess.</p>
+    <p>What to do:</p>
+    <p class="l3"><a>Attach the current document rather than asking it to recall what is in it.</a></p>
+    <p class="l3"><a>Turn on web search for anything with a date on it, then check the source
+      it cites — not just that it cited one.</a></p>
+    <p class="l3"><a>Tell it which Python and library versions you are running.</a></p>
+    <aside class="notes">
+      Good live demo: ask for a figure from a standard or a current regulation without giving
+      it the document, then attach the document and ask again. The tone of the two answers is
+      identical. That is the lesson.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p7" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>7. Double-check the outputs</h3>
+    <p>Code that runs is not code that is right. Every number you hand in is yours, not the
+      model's.</p>
+    <p class="l2">Cheap checks that catch most of it:</p>
+    <p class="l3"><a>Count rows before and after every merge, and say out loud what the count
+      should be.</a></p>
+    <p class="l3"><a>Count missing values per column immediately after loading.</a></p>
+    <p class="l3"><a>Hand-calculate one row end to end on a calculator, then find it in the
+      output.</a></p>
+    <p class="l3"><a>Plot the result. Wrong answers usually look wrong.</a></p>
+    <p class="l2">Then hand it back: "Here is your code and my result. What would make this
+      wrong? List the assumptions you made that I did not ask for."</p>
+    <aside class="notes">
+      The hand-calculation is non-negotiable. One row, one calculation. It catches unit errors
+      — seconds versus minutes, per hour versus per day — in every cohort. A model asked to
+      review its own work will often find its own error, but only if you ask.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p8" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>Putting it together</h3>
+    <p class="l3"><a>"Attached: counts.csv, hourly vehicle counts at one approach, columns
+      date, hour, count. Goal: a table of daily totals and the morning peak hour for each day.</a></p>
+    <p class="l3"><a>Context: missing hours are stored as the text 'n/a'. Some days are
+      incomplete. Peak hour means the highest single hour between 06:00 and 10:00.</a></p>
+    <p class="l3"><a>Before writing code: list the assumptions this task forces me to make and
+      give me two or three options for each, with the effect on the daily totals.</a></p>
+    <p class="l3"><a>Then: the loading code with a missing-value report, and three checks I can
+      run to prove the totals are right.</a></p>
+    <p class="l3"><a>I am on Python 3.12 and pandas 2.x. Ask me anything unclear before you
+      start."</a></p>
+    <aside class="notes">
+      Walk through which principle each paragraph is doing: context, specificity, options,
+      structure, verification, versions, and an invitation to ask questions. Two minutes to
+      write, saves an afternoon.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p9" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>When to stop trusting it</h3>
+    <p class="l2">Warning signs, in the code and in the conversation:</p>
+    <p class="l3"><a>A function or argument you cannot find in the library documentation.</a></p>
+    <p class="l3"><a>A figure, threshold or standard quoted without a source.</a></p>
+    <p class="l3"><a>Column names that do not exist in your file, invented to make the code
+      look finished.</a></p>
+    <p class="l3"><a>Row counts, totals or means that changed and were not mentioned.</a></p>
+    <p class="l3"><a>Agreement the instant you push back. Real answers survive one challenge;
+      invented ones fold immediately.</a></p>
+    <p class="l2">None of these come with an error message. That is the point.</p>
+    <aside class="notes">
+      Demonstrate the last one: challenge an answer you know is correct and see whether the
+      model holds its ground. If it capitulates on something right, discount its confidence
+      everywhere else in that conversation.
+    </aside>
+  </div>
+</section>
+ 
+<section id="p10" data-background-image="../figures/Backgrounds/grass-left.jpg">
+  <div class="whitebackground2">
+    <h3>General tips</h3>
+    <p class="l2">Give it the current code, not a description of the current code.</p>
+    <p class="l2">Break big problems into stages and check each one before moving on.</p>
+    <p class="l2">Use it to plan the analysis before you use it to write the analysis.</p>
+    <p class="l2">Ask it to explain its reasoning, then judge the reasoning, not the fluency.</p>
+    <p class="l2">Start a fresh conversation when the thread goes off the rails. Errors compound.</p>
+    <p class="l2">Keep a record of what you asked and what you accepted. That is your method
+      section.</p>
+    <aside class="notes">
+      The last one matters for assessment. If you cannot explain why the code does what it
+      does, you cannot defend the number, and the number is what is being marked.
+    </aside>
+  </div>
+</section>
              
-                </div>
-                </section>  
-             
-             
-              <section id="p5" data-background-image="../figures/Backgrounds/grass-left.jpg">
-              <div class="whitebackground2">
-                   <h3>General tips:</h3>
-               <p>Include the current code for clarity</p>
-                  <p> Breaking down complex problems into manageable chunks</p>
-              <p>Using LLMs for code planning and architecture</p>
-               <p>Refining and improving generated code</p>
-               <p>Asking for code explanations and reasoning</p>
-             
-                </div>
-                </section> 
-             
-              <section id="p6" data-background-image="../figures/Backgrounds/grass.jpg">
+              <section id="p61" data-background-image="../figures/Backgrounds/grass.jpg">
               <div class="whitebackground2">
                    <h3>How to Stay Current with LLM Capabilities</h3>
                <p>Experimenting with the latest models</p>
@@ -179,7 +357,7 @@
                 </div>
                 </section> 
              
-             <section id="p7" data-background-image="../figures/Backgrounds/grass.jpg">
+             <section id="p71" data-background-image="../figures/Backgrounds/grass.jpg">
               <div class="whitebackground2">
                    <h3>Balancing AI Assistance with Core Programming Knowledge</h3>
                <p>Practice the 'understanding first' principle.</p>
