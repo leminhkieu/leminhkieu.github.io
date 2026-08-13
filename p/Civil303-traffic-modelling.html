@@ -298,25 +298,22 @@
  
                 <section id="edie">
  
-                    <div class="whitebackground2">
- 
+                            
                         <h4>Estimating $q$ and $k$ from Time-space diagrams: Edie's generalised definitions</h4>
- 
-                        <p class="l2">A point measurement gives you flow. A snapshot gives you density. Neither on its own is enough when traffic is changing.</p>
- 
+                        <img class="right" src="../figures/teaching/eddie.webp"
+                            style="width:400px;"
+                         alt="project-1" />
+                    
                         <p class="l2">Take a region of the time-space diagram of length $L$ and duration $T$, so area $A = L \times T$. Then:</p>
- 
+                            <p class="l2">
                         \[\begin{aligned}
                         q = \frac{\text{total distance travelled}}{A} \\
                         k = \frac{\text{total time spent}}{A} \\
                         v_s = \frac{\text{total distance travelled}}{\text{total time spent}} \\
                         \end{aligned} \]
- 
+                    </p>
                         <p class="l3">These three definitions are consistent by construction, so $q = k v_s$ holds automatically.</p>
  
-                        <p class="l3">This is exactly how flow and density are extracted from trajectory datasets.</p>
- 
-                    </div>
  
                 </section>
  
@@ -359,7 +356,7 @@
                 *********************** Why macroscopic ***********************
                 ************************************************************ -->
  
-                <section id="why" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                <section id="why" data-background-image="../figures/Backgrounds/street2.jpg">
                     <div class="whitebackground2">
  
                         <h3>Macroscopic models: Why treat traffic as a fluid?</h3>
@@ -403,8 +400,8 @@
  
                     <p class="l2">The whole model is built from just <a>two</a> ingredients.</p>
  
-                    <p class="l3">1. Vehicles are conserved &mdash; nothing appears or disappears</p>
-                    <p class="l3">2. The fundamental diagram &mdash; density tells you the flow</p>
+                    <p class="l3">1. Vehicles are conserved (what comes in, comes out)</p>
+                    <p class="l3">2. The fundamental diagram (density tells you the flow)</p>
  
                     <aside class="notes">
                         Stress that everything else in this lecture, including the shockwave formula, falls out of these two statements.
@@ -437,20 +434,28 @@
                         <line x1="200" y1="140" x2="500" y2="140" stroke="#888" stroke-width="1"/>
                     </svg>
  
-                    <p class="l2">In plain words: <a>what goes in, minus what comes out, is what piles up inside</a>.</p>
+                    <p class="l2"><a>What goes in, minus what comes out, is what piles up inside</a>.</p>
  
                     <p class="l3">If $q_{in} &gt; q_{out}$, density rises &mdash; a queue is building.</p>
                     <p class="l3">If $q_{in} &lt; q_{out}$, density falls &mdash; a queue is clearing.</p>
                     <p class="l3">If $q_{in} = q_{out}$, nothing changes.</p>
  
-                    <p class="l2">Shrink $\Delta x$ to a point and that sentence becomes:</p>
  
                     \[\begin{aligned}
-                    \frac{\partial k}{\partial t} + \frac{\partial q}{\partial x} = 0 \\
+                    \frac{\partial k}{\partial t} + \frac{\partial q}{\partial x} = 0  \quad \implies \quad
+                    \frac{\partial k}{\partial t} = - \frac{\partial q}{\partial x} \\
+
                     \end{aligned} \]
- 
-                    <p class="l3">Exactly the equation you would write for water in a pipe or a river reach.</p>
- 
+  
+                    
+                    <aside class="notes">
+                       The two quantities are different kinds of thing. Density k is a stock — how many vehicles are sitting in a kilometre of road at this insta nt. Flow q is a rate — how many vehicles stream past a fixed point per hour. The equation is just the bookkeeping that links them.
+                        
+                        The bathtub is the honest analogy. Tap on, plug half out. Water level rises whenever the tap beats the drain. It has nothing to do with how fast the water moves or how wide the bath is — it's pure accounting. Same here. Nobody parks, nobody vanishes, no ramps. Every vehicle that enters a stretch either leaves it or is still inside it.
+                        
+                    </aside>
+                    
+                    
                 </section>
  
  
@@ -469,8 +474,9 @@
                     \[\begin{aligned}
                     q = Q(k) \\
                     \end{aligned} \]
- 
-                    <p class="l3">Greenshields, or a triangular diagram, or any measured curve &mdash; the model does not care which, as long as flow is a known function of density.</p>
+
+                     <p class="l3">$Q(k)$ is a look-up table: give it density, it gives you the flow (e.g. Greenshields, or a triangular diagram, or any measured curve)</p>
+
   
                 </section>
  
@@ -483,19 +489,25 @@
  
                     <h4>Put them together: traffic states travel as waves</h4>
  
-                    <p class="l2">Substituting $q = Q(k)$ into the conservation law gives a wave equation. A given traffic state travels along the road at:</p>
- 
+                    <p class="l2">Substituting $q = Q(k)$ into the conservation law gives a wave equation</p>
+
+                    \[\begin{aligned}
+                    \frac{\partial k}{\partial t} + \frac{\partial q}{\partial x} = 0 \\
+                    \frac{\partial k}{\partial t} + \frac{dq}{dk} \frac{\partial k}{\partial x} = 0 \\
+                    \end{aligned} \]
+
+                    <p class="l2">A given traffic state travels along the road at:</p>
+                    
+                    
                     \[\begin{aligned}
                     u = \frac{dq}{dk} \\
                     \end{aligned} \]
  
                     <p class="l3">That is the <a>slope of the fundamental diagram</a> at that density. Nothing more.</p>
  
-                    <p class="l2">On the free-flow branch the slope is positive, so the wave runs <a>downstream</a> with the traffic.</p>
+                    <p class="l2">Free-flow: slope is positive, wave runs <a>downstream</a> with the traffic. Congested: slope is negative, wave runs <a>upstream</a>, against the traffic.</p>
  
-                    <p class="l2">On the congested branch the slope is negative, so the wave runs <a>upstream</a>, against the traffic.</p>
- 
-                    <p class="l3">This is why the back of a queue grows towards you while every vehicle in it is still moving forwards. The wave and the vehicles travel in opposite directions.</p>
+                    <p class="l3"> $\implies$ back of a queue grows towards you while every vehicle in it is still moving forwards.</p>
  
                 </section>
  
@@ -506,9 +518,18 @@
  
                 <section id="shockwave">
  
-                    <h3>Shockwaves: what happens when two states meet</h3>
+                    <h3>Shockwaves: what happens when congestion develops</h3>
  
-                    <p class="l2">When traffic in state 1 ($q_1, k_1$) runs into traffic in state 2 ($q_2, k_2$), the boundary between them travels at:</p>
+                                       <figure class="right" >
+
+                        <img src="../figures/teaching/Civil361/shockwave.png"
+                             style="width:400px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                    
+                    
+                    <p class="l2">When traffic transitions from state 1 ($q_1, k_1$) to state 2 ($q_2, k_2$), traffic wave travels at:</p>
  
                     \[\begin{aligned}
                     u_{12} = \frac{q_2 - q_1}{k_2 - k_1} \\
@@ -518,11 +539,7 @@
                     <p class="l3">$u_{12}$ = Shockwave velocity (km/h) </p>
                     <p class="l3"> $q_1, k_1$ = Traffic flow and density upstream (before the shockwave) </p>
                     <p class="l3"> $q_2, k_2$ = Traffic flow and density downstream (after the shockwave) </p>
- 
-                    <p class="l3">This is the <a>chord</a> joining the two points on the fundamental diagram</p>
- 
-                    <p class="l2">Take $x$ positive in the direction of travel. A <a>negative</a> answer means the boundary moves upstream, back towards the drivers.</p>
- 
+  
                 </section>
  
  
@@ -532,19 +549,24 @@
  
                 <section id="lwr-ex">
  
-                    <h3><a>Example:</a> LWR applied to a traffic signal</h3>
+                    <h3><a>Example 2:</a> LWR applied to a traffic signal</h3>
  
                     <p class="l2">A single-lane approach to a signalised intersection carries 1,200 veh/h at 60 km/h. When vehicles stop, they sit at a jam density of 125 veh/km. On green, the queue discharges at a saturation flow of 1,800 veh/h at a speed of 30 km/h.</p>
  
                     <p class="l2">The red phase lasts 30 seconds.</p>
  
                     <p class="l3">(a) How fast does the stopping wave travel back from the stop line?</p>
-                    <p class="l3">(b) How long is the queue, and how many vehicles are in it, when the light turns green?</p>
+                    <p class="l3">(b) How long is the queue (in m), and how many vehicles are in it, when the light turns green?</p>
                     <p class="l3">(c) How fast is the starting wave, and when does it reach the last stopped vehicle?</p>
-                    <p class="l3">(d) What is the longest the queue ever gets?</p>
+                    <p class="l3">(d) What is the distance of the last vehicle in the queue, given that the green time should be enough to clear all the queue,  and the approaching road has enough length to store them all </p>
+                    <p class="l3">[Solutions: (a) -11.4 km/h, (b) 95 m, 12 vehicles, (c) -27.7 km/h, 21s, (d) 161.5 m]</p>
  
                 </section>
  
+
+                <!-- ******************************************************
+                *********************** Solution Example 2 ***********************
+                *******************************************************         
  
                 <section id="lwr-ex-states">
  
@@ -588,24 +610,29 @@
                     <p class="l3">(d) The queue peaks 21 s after green, at $11.4 \times 51/3600 = \underline{162}$ m, about 20 vehicles.</p>
  
                 </section>
- 
+ ***** -->       
  
                 <section id="lwr-ex-interp">
  
-                    <h4>Example: what the numbers actually tell you</h4>
+                    <h4>Example 2: what the numbers actually tell you</h4>
+                    
+                                                           <figure class="right" >
+
+                        <img src="https://www.researchgate.net/publication/270082186/figure/fig2/AS:406292834340864@1473879168196/conflict-green-queue-spillback-3-Reliability-optimization-of-coordinated-control-for.png"
+                             style="width:400px;"
+                             alt="ATIS" />
+                    
+                    </figure>
+                    
  
                     <p class="l2">The queue keeps growing for <a>21 seconds after the light goes green</a>. Drivers at the back are still joining a queue that, from their point of view, was released ages ago.</p>
  
-                    <p class="l2">The starting wave is more than twice as fast as the stopping wave. That is the only reason signals work at all &mdash; queues must clear faster than they form.</p>
+                    <p class="l2">The starting wave is more than twice as fast as the stopping wave $\implies$  queues must clear faster than they form.</p>
  
-                    <p class="l2">Design check: the queue reaches 162 m. If the upstream intersection is 150 m away, this approach will block it every single cycle, and no amount of retiming that intersection will fix it.</p>
- 
-                    <p class="l3">Same three-line method as the motorway incident problem. Only the numbers change.</p>
- 
-                    <aside class="notes">
-                        Ask the class what happens if arrivals rise to 1,600 veh/h. The stopping wave gets faster, the starting wave does not change,
-                        and eventually the queue no longer clears within one cycle. That is oversaturation.
-                    </aside>
+                    <p class="l2">Intersection Design: the queue reaches 162 m. If the upstream intersection is 150 m away, this approach will block it every single cycle $\implies$ the <a>spillback</a> problem</p>
+
+                    <p class="l2">Redo Example 2 with arrivals rise to 1,600 veh/h, you'll see queue no longer clears within one cycle. That is oversaturation.</p>
+                    
  
                 </section>
   
@@ -615,17 +642,17 @@
                 *********************** The question ***********************
                 ************************************************************ -->
  
-                <section id="mfd-why" data-background-image="../figures/Backgrounds/grass-left.jpg">
+                <section id="mfd-why" data-background-image="../figures/Backgrounds/skylines-day2.jpg">
  
                     <div class="whitebackground2">
  
-                        <h3>The same question, one scale up</h3>
+                        <h3>Now how do we look at the whole city?</h3>
  
                         <p>Greenshields asked: for <a>one road</a>, how does flow change as vehicles pack in?</p>
  
-                        <p>The Macroscopic Fundamental Diagram asks exactly the same question about <a>a whole area</a>.</p>
+                        <p>The Macroscopic Fundamental Diagram is for <a>a whole area</a>.</p>
  
-                        <p class="l2">How much travel can the Auckland city centre deliver, and how many vehicles can be inside it before that number starts falling?</p>
+                        <p class="l2"><a>e.g.</a> How much travel can the Auckland city centre deliver, and how many vehicles can be inside it before that number starts falling?</p>
  
                         <p class="l3">Proposed by Godfrey in 1969. Ignored for forty years because nobody could measure it. Demonstrated with real data by Geroliminis and Daganzo in Yokohama in 2008, using taxi GPS traces and loop detectors together.</p>
  
@@ -645,11 +672,11 @@
  
                 <section id="mfd-vars">
  
-                    <h3>Same three variables, network versions</h3>
+                    <h3>Network versions of $q, v_s, k$:</h3>
  
-                    <p class="l2"><a>Accumulation</a> $n$ (veh): how many vehicles are inside the network right now. The network version of density.</p>
+                    <p class="l2"><a>Accumulation</a> $n$ (veh): how many vehicles are inside the network right now. The network version of density $k$.</p>
  
-                    <p class="l2"><a>Production</a> $P$ (veh&middot;km/h): total distance being covered by all of them per hour. The network version of flow.</p>
+                    <p class="l2"><a>Production</a> $P$ (veh&middot;km/h): total distance being covered by all of them per hour. The network version of flow $q$.</p>
  
                     <p class="l2"><a>Network average speed</a> $v$ (km/h)</p>
  
@@ -670,7 +697,7 @@
  
                 <section id="mfd-compare">
  
-                    <h3>Greenshields vs the MFD</h3>
+                    <h4>Greenshields vs Macroscopic Fundamental Diagram (MFD)</h4>
  
                     <svg viewBox="0 0 900 380" style="width:900px; max-width:100%;" xmlns="http://www.w3.org/2000/svg">
  
@@ -712,7 +739,7 @@
  
                     </svg>
  
-                    <p class="l3">Same story: rises, peaks, falls to zero. The difference is what a point on the curve represents.</p>
+                    <p class="l3">Both parabolic (bell curve). The difference is what a point on the curve represents.</p>
  
                 </section>
  
@@ -748,26 +775,28 @@
  
                 <section id="mfd-ex">
  
-                    <h3><a>Example:</a> Two ways to deliver the same production</h3>
+                    <h3><a>Example 3:</a> Two ways to deliver the same production</h3>
  
                     <p class="l2">A city-centre network contains 50 km of road. Average trip length is 3 km.</p>
  
-                    <p class="l3">Morning shoulder: 500 vehicles inside, average speed 24 km/h.</p>
+                    <p class="l3">Early morning: 500 vehicles inside, average speed 24 km/h.</p>
  
-                    <p class="l3">Peak: 1,500 vehicles inside, average speed 8 km/h.</p>
+                    <p class="l3">Morning peak: 1,500 vehicles inside, average speed 8 km/h.</p>
  
                     <p class="l2">Find the production and the trip completion rate in each case. What has the extra 1,000 vehicles bought the city?</p>
  
                 </section>
  
- 
+                 <!-- ******************************************************
+                *********************** Why it matters ***********************
+                *****************************************************
                 <section id="mfd-ex-sol">
  
-                    <h4>Example: solution</h4>
+                    <h4>Example 3: solution</h4>
  
-                    <p class="l3">Shoulder: $P = 500 \times 24 = \underline{12{,}000}$ veh&middot;km/h, so $12000/3 = \underline{4{,}000}$ trips/h. Each trip takes $3/24 = 7.5$ min.</p>
+                    <p class="l3">Early morning: $P = 500 \times 24 = \underline{12{,}000}$ veh&middot;km/h, so $12000/3 = \underline{4{,}000}$ trips/h. Each trip takes $3/24 = 7.5$ min.</p>
  
-                    <p class="l3">Peak: $P = 1500 \times 8 = \underline{12{,}000}$ veh&middot;km/h, so again $\underline{4{,}000}$ trips/h. Each trip now takes $3/8 = 22.5$ min.</p>
+                    <p class="l3">Morning Peak: $P = 1500 \times 8 = \underline{12{,}000}$ veh&middot;km/h, so again $\underline{4{,}000}$ trips/h. Each trip now takes $3/8 = 22.5$ min.</p>
  
                     <p class="l2">Three times the vehicles, identical output, three times the travel time. The city is doing the same work and charging its residents three times as much for it.</p>
  
@@ -776,7 +805,7 @@
                     <p class="l3">Push past the peak and it gets worse than merely wasteful: production actually <a>falls</a> as more vehicles enter.</p>
  
                 </section>
- 
+ ******* -->
  
                 <!-- ******************************************************
                 *********************** Why it matters ***********************
@@ -786,17 +815,16 @@
  
                     <div class="whitebackground2">
  
-                        <h3>Why an engineer cares</h3>
+                        <h3>Why do we need MFD ?</h3>
  
                         <p class="l2">If production peaks at a known accumulation $n_c$, the job of network control is simple to state: <a>keep the number of vehicles in the city near $n_c$</a>.</p>
  
-                        <p class="l2"><a>Perimeter control, or gating.</a> Hold traffic at signals on the edge of the CBD so the inside never tips past the peak. Queues form where there is room to store them, instead of blocking intersections where there is not.</p>
+                        <p class="l2"><a>Perimeter control, or gating.</a> </p>
+                        <p class="l3">         $\implies$ Counter-intuitive but correct: deliberately delaying vehicles at the boundary lets the whole network finish more trips per hour.</p>
  
-                        <p class="l3">Counter-intuitive but correct: deliberately delaying vehicles at the boundary lets the whole network finish more trips per hour.</p>
+                        <p class="l2">         $\implies$ It also gives you one honest number for a business case. Not "level of service D at this intersection", but trips completed per hour across the whole city centre.</p>
  
-                        <p class="l2">It also gives you one honest number for a business case. Not "level of service D at this intersection", but trips completed per hour across the whole city centre.</p>
- 
-                        <p class="l3">Same logic underpins congestion pricing: control the accumulation, protect the peak of the curve.</p>
+                        <p class="l3"><a>Same logic underpins congestion pricing !</a></p>
  
                     </div>
  
@@ -806,51 +834,8 @@
                     </aside>
  
                 </section>
-                <!-- ******************************************************
-                *********************** Practical knowledge ***********************
-                ************************************************************ -->
+
  
-                <section id="practice" data-background-image="../figures/Backgrounds/beach.jpg">
- 
-                    <div class="whitebackground2">
- 
-                        <h3>What the textbook does not tell you</h3>
- 
-                        <p class="l2"><a>Capacity drop.</a> Once a queue forms, the bottleneck discharges 5&ndash;10% below its pre-queue capacity. Break the flow and you do not get it all back. This is the entire justification for ramp metering and variable speed limits.</p>
- 
-                        <p class="l2"><a>Hysteresis.</a> Real fundamental diagrams are a scatter, not a line. Traffic loading and traffic recovering follow different paths.</p>
- 
-                        <p class="l2"><a>Calibrate, do not assume.</a> $v_f$, $q_{max}$, $k_j$ and $w$ are site-specific. Get them from your own loop, Bluetooth or probe data before you trust a single number.</p>
- 
-                        <p class="l2"><a>Network scale.</a> The Macroscopic Fundamental Diagram extends the same idea to a whole area: network production against network accumulation. It is how perimeter control schemes decide when to hold traffic out of a city centre.</p>
- 
-                        <p class="l3">Macroscopic models tell you <a>how much</a> and <a>where</a>. If the client needs lane changing, gap acceptance or individual driver behaviour, you need microsimulation instead.</p>
- 
-                    </div>
- 
-                </section>
- 
- 
-                <!-- ******************************************************
-                *********************** Practice question ***********************
-                ************************************************************ -->
- 
-                <section id="ex4">
- 
-                    <h3><a>Example 4:</a> Try this one yourself</h3>
- 
-                    <p class="l2">A signalised approach carries 900 veh/h at 50 km/h. The red phase lasts 40 seconds, during which the stopped queue reaches jam density of 130 veh/km. On green the approach discharges at a saturation flow of 1,800 veh/h with a density of 36 veh/km.</p>
- 
-                    <p class="l3">(a) How fast does the stopping wave travel back from the stop line?</p>
-                    <p class="l3">(b) How long is the queue when the light turns green?</p>
-                    <p class="l3">(c) How fast does the starting wave travel back, and when does it reach the last stopped vehicle?</p>
- 
-                    <p class="l2">Sketch the time-space diagram before you touch the algebra. Every mark in part (c) depends on getting the picture right.</p>
- 
-                </section>
-               
-              
-              
               
                          <!-- ******************************************************
                 *********************** Problem 1 ***********************
@@ -946,6 +931,10 @@
                        <p class="l2">where $F$ is the stimulus function that depends on the speed of the current vehicle, relative position and speed with the front vehicle.</p>
                 </section>
 
+                 <!-- ******************************************************
+                *********************** Gibss ***********************
+                *******************************************************      
+                
                <section id="micro5" data-background-image="../figures/Backgrounds/skylines-night1.jpg"> 
                     
                    <div class="whitebackground2">
@@ -976,7 +965,7 @@
 	               </aside>                    
                     
                 </section>
-
+                    ******-->          
 <section id="quiz-carfollow">
   <h3>Quick check: Car-following models</h3>
   <p>Car-following models are built on a stimulus&ndash;response idea borrowed from Newtonian mechanics. In that analogy, the driver's <strong>response</strong> is the:</p>
@@ -1527,7 +1516,7 @@
                 
                   <section id="exercise2" >
                       
-                        <p>Exercise 2: Where do you think the Levels-of-service are located on our fundamental diagrams? </p>
+                        <p><a>Example 4:</a> Where do you think the Levels-of-service are located on our fundamental diagrams? </p>
                  
 		            <img class="right" src="../figures/teaching/flow-density.gif"
                             style="width:400px;"
@@ -1542,6 +1531,25 @@
                  
                     
                 </section>
+
+                  <section id="exercise2-sol" >
+                      
+                        <p><a>Example 4:</a> Where do you think the Levels-of-service are located on our fundamental diagrams? </p>
+                 
+		            <img class="right" src="../figures/teaching/los1.svg"
+                            style="width:400px;"
+                         alt="project-1" />
+                     
+                   
+                           
+                        <img class="left" src="../figures/teaching/los2.svg"
+                            style="width:450px;"
+                         alt="project-1" />
+                 
+                 
+                    
+                </section>                
+                
                 
                 
              <section id="quiz-los">
@@ -1997,7 +2005,7 @@
                 </section>
              
                  <!-- ******* Auckland congestion  *********** -->
-                <section id="method4-1" data-background-image="../figures/teaching/HCM-method.png" data-background-size="45%">
+                <section id="method4-1" data-background-image="../figures/teaching/HCM-method.png" data-background-size="30%">
                    
                     <div>&nbsp;</div>
                     
@@ -2232,7 +2240,7 @@
                 
                  <section id="method11" >
                 
-                    <p>Exercise 4: Estimate the capacity of a four-lane basic freeway segment (two lanes in each direction) under base conditions (with 12-ft lane width, 6-ft right-side lateral clearance and base FFS of 75.4 mi/h). The ramp density is 4 ramps/mi and there is no severe weather event.</p>
+                    <p><a>Example 5:</a> Estimate the capacity of a four-lane basic freeway segment (two lanes in each direction) under base conditions (with 12-ft lane width, 6-ft right-side lateral clearance and base FFS of 75.4 mi/h). The ramp density is 4 ramps/mi and there is no severe weather event.</p>
                 
                      <p>Hints:</p>
                      
@@ -2358,7 +2366,7 @@
                             prevailing conditions.</p>
                     
                     
-                    <p class="l2"> <a>Exercise 5</a>: If the traffic stream of 1000 veh/h containing 10 % trucks and $E_T$ = 2.5 (1 truck = 2.5 passenger cars), estimate the value of the adjustment factor $f_{HV}$ </p>
+                    <p class="l2"> <a>Example 6</a>: If the traffic stream of 1000 veh/h containing 10 % trucks and $E_T$ = 2.5 (1 truck = 2.5 passenger cars), estimate the value of the adjustment factor $f_{HV}$ </p>
                     
                     <aside class="notes">
 		     
@@ -2611,8 +2619,31 @@
                 
                   <!-- *************** ITS management 4 ************************** -->
   
+                
+                <!-- ******************************************************
+                *********************** Practice question ***********************
+                ************************************************************ -->
+ 
+                <section id="ex4">
+ 
+                    <h3>Problem 1:</h3>
+ 
+                    <p class="l2">A signalised approach carries 900 veh/h at 50 km/h. The red phase lasts 40 seconds, during which the stopped queue reaches jam density of 130 veh/km. On green the approach discharges at a saturation flow of 1,800 veh/h with a density of 36 veh/km.</p>
+ 
+                    <p class="l3">(a) How fast does the stopping wave travel back from the stop line?</p>
+                    <p class="l3">(b) How long is the queue when the light turns green (in m)?</p>
+                    <p class="l3">(c) How fast does the starting wave travel back, and when does it reach the last stopped vehicle?</p>
+                    <p class="l3">(d) How fast does the wave travel when the queue is cleared? </p>
+                    <p class="l3">(e) How long should be the minimum design length of the approach road to avoid the spillback problem? </p>
+                    
+ 
+                    <p class="l2">Hint: For (c), sketch the time-space diagram before you touch the algebra. </p>
+ 
+                    <p class="l2">[Answers:] (a) -8.036 km/h, (b) 89 m, (c) -19.1 km/h, 29s, (d) 50 km/h, (e) 154 m </p>
+                    
+                </section>                
                <section id="problems1">
-                       <h3>Problem 1:</h3>
+                       <h3>Problem 2:</h3>
                              
                       <p class="l2">  A six-lane urban freeway (three lanes in each direction) is on level terrain with 11-ft lanes,
                         2-ft right-side lateral clearance, and 9 ramps within 3 miles upstream and 3 miles
@@ -2630,6 +2661,9 @@
                   
                    
                 </section>   
+                
+                
+                
                 
                  <!-- ************** Learning outcomes ************* -->
 
