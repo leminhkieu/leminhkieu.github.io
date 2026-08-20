@@ -1,0 +1,1082 @@
+<!doctype html>
+
+<html lang="eng">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Minh Kieu">
+        <meta name="keywords" content="traffic flow, shockwave, kinematic waves">
+        
+		<title>Civil303- Traffic Shockwaves</title>
+        
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/white.css">
+        <!-- Some extra bits added by Nick -->
+        <link rel="stylesheet" href="reveal/css/nick.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- maths -->
+        <link rel="stylesheet" href="reveal/css/math.css" type="text/css" media="screen,projection">
+
+      <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+        <!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        
+     
+ <style>
+  :root {
+    --navy: #1f3a63;
+    --accent: #2e8bc0;
+    --soft: #f4f7fb;
+    --rule: #d8dee7;
+    --warn: #c0392b;
+    --good: #1e7f4f;
+    --asphalt: #3a3a3a;
+    --hov: #2e8bc0;
+    --frontage: #888888;
+  }
+  .reveal { font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif; color: #222; }
+  .reveal .slides { text-align: left; }
+  .reveal section { padding: 0 2vw; }
+  .reveal h1, .reveal h2, .reveal h3 {
+    color: var(--navy);
+    text-transform: none;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin: 0 0 0.4em 0;
+  }
+  .reveal h1 { font-size: 2.0em; }
+  .reveal h2 { font-size: 1.5em; }
+  .reveal h3 { font-size: 1.1em; color:#333; font-weight: 500; }
+  .reveal p, .reveal li { font-size: 0.76em; line-height: 1.45; }
+  .reveal li { margin: 0.22em 0; }
+  .reveal ul { margin-left: 1em; }
+  .reveal em { color: var(--accent); font-style: normal; }
+  .reveal strong { color: var(--navy); font-weight: 600; }
+  .reveal section img { box-shadow: none; border: none; margin: 0; max-height: 56vh; }
+
+  .footer {
+    position: absolute;
+    bottom: 1.1em;
+    left: 2vw; right: 2vw;
+    font-size: 0.45em;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+  }
+
+  .stat-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6em;
+    margin: 0.4em 0 0.6em 0;
+  }
+  .stat {
+    background: var(--navy);
+    color: white;
+    padding: 0.55em 0.6em;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.45em; font-weight: 700; line-height: 1.1; display: block; }
+  .stat .lbl { font-size: 0.52em; opacity: 0.92; margin-top: 0.18em; display: block; line-height: 1.3; }
+  .stat.warn { background: var(--warn); }
+  .stat.good { background: var(--good); }
+
+  .pull {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 0.55em 0.9em;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.72em;
+    line-height: 1.45;
+  }
+  .pull.warn { border-left-color: var(--warn); }
+  .pull h4 { margin: 0 0 0.25em 0; color: var(--navy); font-size: 1.05em; }
+  .pull.warn h4 { color: var(--warn); }
+
+  .equation {
+    background: #fafafa;
+    border: 1px solid var(--rule);
+    padding: 0.45em 0.9em;
+    border-radius: 6px;
+    margin: 0.5em 0;
+    text-align: center;
+    font-size: 0.85em;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 1.2em;
+    align-items: start;
+  }
+  .two-col.flip { grid-template-columns: 1fr 1.4fr; }
+
+  .source {
+    font-size: 0.5em;
+    color: #888;
+    font-style: italic;
+    margin-top: 0.5em;
+  }
+
+  /* SVG-based figures */
+  .katy-figure {
+    background: #f6f7f8;
+    padding: 0.8em 0.8em 0.6em 0.8em;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+  }
+  .katy-figure svg { width: 100%; height: auto; display: block; }
+  .figure-caption {
+    text-align: center;
+    font-size: 0.55em;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.4em;
+  }
+
+  .arrow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin: 0.4em 0 0.6em 0;
+    font-size: 0.7em;
+  }
+  .arrow-row .step {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.4em 0.7em;
+    text-align: center;
+    min-width: 8em;
+  }
+  .arrow-row .step .v {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--navy);
+    display: block;
+  }
+  .arrow-row .step .l {
+    font-size: 0.75em;
+    color: #555;
+  }
+  .arrow-row .arrow {
+    color: var(--warn);
+    font-weight: 700;
+    font-size: 1.6em;
+  }
+
+.reveal .wave-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7em !important; /* Force it */
+  margin-top: 0;
+}
+.reveal .wave-table th {
+  background: var(--navy);
+  color: white;
+  text-align: left;
+  padding: 2px 4px !important;
+  font-weight: 200;
+}
+.reveal .wave-table td {
+  border-bottom: 1px solid var(--rule);
+  padding: 2px 4px !important;
+  vertical-align: middle;
+}
+.reveal .wave-table tr:nth-child(even) td { 
+  background: var(--soft); 
+}
+
+  .reveal .slide-number {
+    background: transparent;
+    color: #aaa;
+    font-size: 14px;
+  }
+</style>    
+     
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                <!-- ============================================================ -->
+                <!-- TITLE                                                        -->
+                <!-- ============================================================ -->
+
+                <section class="title" id="title" data-background-image="../figures/teaching/its.jpg">
+
+                    <div class="whitebackground2">
+
+                        <h5></h5>
+
+                       <hr/>
+
+                        
+                        <h3>Civil 303</h3>
+                        
+                        <h3>Transport Operations and Pavements </h3>
+                        
+                        <hr/>
+
+                        <h3>Chapter 2: Traffic Shockwaves</h3>
+
+                        <h4>Dr Minh Kieu</h4>
+
+                        <h4>Department of Civil and Environment Engineering, University of Auckland</h4>
+
+                        <hr/>
+                        
+                         <a href="https://unidirectory.auckland.ac.nz/profile/minh-kieu/">
+
+                            <img style="float:left;padding:1px;width:250px; height:auto;" src="../figures/logo/LOGO-UOA.png"/>
+
+                        </a>
+                        
+                        <p style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil303-shockwaves.html">http://bit.ly/303-shockwaves</a></p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================================================ -->
+                <!-- LEARNING OUTCOMES                                            -->
+                <!-- ============================================================ -->
+
+                <section id="outcomes" data-transition="fade">
+
+                    <figure class="right">
+
+                        <img src="../figures/teaching/learning-outcomes.jpg"
+                             alt=" " />
+
+                    </figure>
+
+                    <h2>Learning outcomes: </h2>
+
+                    <p>	1. Explain what a shockwave is and why it forms </p>
+                    <p>	2. Read and draw shockwaves on a time-space diagram </p>
+                    <p>	3. Estimate shockwave speed, queue length and delay </p>
+
+                </section>
+
+
+                <!-- ============================================================ -->
+                <!-- MOTIVATION                                                   -->
+                <!-- ============================================================ -->
+
+                <section id="why" data-background-image="../figures/Backgrounds/traffic-congestion2.jpg">
+                 <div class="whitebackground2">
+
+                  <h2 style="margin-bottom:0.15em;">Why this matters</h2>
+                  <p style="font-size:0.65em; color:#555; margin: 0 0 0.5em 0;">
+                    <a>A crash that lasts fifteen minutes may block a motorway for hours </a>
+                  </p>
+
+                  <p class="l2">Phantom traffic jam</p>
+
+                  <p class="l2">Traffic congestion is not still, but <a>a wave that travels backwards through the traffic stream</a>, usually faster than you would guess, and it keeps travelling, even after the thing that caused it has gone.</p>
+
+                   <p class="l2"> What can we do if we can estimate these waves? </p>
+                 </div>
+                </section>
+
+
+                <!-- ================= ROADWAY STORY ================= -->
+ 
+                <section id="road">
+ 
+                  <h2>Start by watching the road</h2>
+ 
+                  <p class="l3" style="margin-bottom:0.3em;">A truck breaks down and blocks one lane of a three-lane motorway. Look at what happens to the vehicles behind it.</p>
+ 
+                  <div class="katy-figure">
+                    <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan view of a road at three moments, showing vehicles bunching behind a broken-down truck and the back of the queue moving backwards.">
+<defs><marker id="la" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#1f3a63"/></marker></defs>
+<line x1="600" y1="30" x2="780" y2="30" stroke="#1f3a63" stroke-width="2.5" marker-end="url(#la)"/>
+<text x="595" y="35" font-size="16" fill="#1f3a63" text-anchor="end">direction of travel</text>
+<text x="110" y="50" font-size="17" font-weight="600" fill="#1f3a63">08:00   the truck breaks down.  Traffic is still free flowing.</text>
+<rect x="110" y="60" width="700" height="46" fill="#3a3a3a" rx="3"/>
+<line x1="110" y1="83" x2="810" y2="83" stroke="#ffd24d" stroke-width="2" stroke-dasharray="12 10"/>
+<rect x="750" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="720" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="686" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="656" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="622" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="592" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="558" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="528" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="494" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="464" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="430" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="400" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="366" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="336" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="302" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="272" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="238" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="208" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="174" y="67" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="144" y="88" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="770" y="64" width="34" height="17" fill="#c0392b" stroke="#7b1e12" stroke-width="2" rx="2"/>
+<text x="776" y="102" font-size="26">&#9888;</text>
+<text x="110" y="175" font-size="17" font-weight="600" fill="#1f3a63">08:05   the back of the queue is 1 km behind the truck.</text>
+<rect x="110" y="185" width="700" height="46" fill="#3a3a3a" rx="3"/>
+<line x1="110" y1="208" x2="810" y2="208" stroke="#ffd24d" stroke-width="2" stroke-dasharray="12 10"/>
+<rect x="764" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="764" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="740" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="740" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="716" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="716" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="692" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="692" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="668" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="668" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="644" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="644" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="620" y="192" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="620" y="213" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="575" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="545" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="511" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="481" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="447" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="417" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="383" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="353" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="319" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="289" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="255" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="225" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="191" y="192" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="161" y="213" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="770" y="189" width="34" height="17" fill="#c0392b" stroke="#7b1e12" stroke-width="2" rx="2"/>
+<text x="776" y="227" font-size="26">&#9888;</text>
+<line x1="615" y1="181" x2="615" y2="235" stroke="#ffffff" stroke-width="4"/>
+<line x1="615" y1="177" x2="615" y2="245" stroke="#1f3a63" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="609" y1="253" x2="541" y2="253" stroke="#1f3a63" stroke-width="2.5" marker-end="url(#la)"/>
+<text x="531" y="258" font-size="15" fill="#1f3a63" text-anchor="end">back of queue after 5 min</text>
+<text x="110" y="300" font-size="17" font-weight="600" fill="#1f3a63">08:10   the back of the queue is 2 km behind the truck.</text>
+<rect x="110" y="310" width="700" height="46" fill="#3a3a3a" rx="3"/>
+<line x1="110" y1="333" x2="810" y2="333" stroke="#ffd24d" stroke-width="2" stroke-dasharray="12 10"/>
+<rect x="764" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="764" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="740" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="740" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="716" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="716" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="692" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="692" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="668" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="668" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="644" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="644" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="620" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="620" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="596" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="596" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="572" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="572" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="548" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="548" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="524" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="524" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="500" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="500" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="476" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="476" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="452" y="317" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="452" y="338" width="15" height="11" fill="#c0392b" rx="2"/>
+<rect x="400" y="317" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="370" y="338" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="336" y="317" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="306" y="338" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="272" y="317" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="242" y="338" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="208" y="317" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="178" y="338" width="15" height="11" fill="#5b7fa6" rx="2"/>
+<rect x="770" y="314" width="34" height="17" fill="#c0392b" stroke="#7b1e12" stroke-width="2" rx="2"/>
+<text x="776" y="352" font-size="26">&#9888;</text>
+<line x1="440" y1="306" x2="440" y2="360" stroke="#ffffff" stroke-width="4"/>
+<line x1="440" y1="302" x2="440" y2="370" stroke="#1f3a63" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="434" y1="378" x2="366" y2="378" stroke="#1f3a63" stroke-width="2.5" marker-end="url(#la)"/>
+<text x="356" y="383" font-size="15" fill="#1f3a63" text-anchor="end">back of queue after 10 min</text>
+</svg>
+                  </div>
+ 
+                  <p class="figure-caption">Every vehicle in the picture is still moving forwards. The dashed line, the back of the queue, moves backwards.</p>
+ 
+                </section>
+ 
+ 
+                <!-- ============================================================ -->
+                <!-- DEFINITION                                                   -->
+                <!-- ============================================================ -->
+
+                <section id="definition">
+
+                  <h2>What is a shockwave?</h2>
+
+                  <div class="pull">
+                    <h4>Definition</h4>
+                    A shockwave is the moving boundary between two different traffic states. On one side of the boundary the traffic has one flow, density and speed. On the other side it has different ones. 
+                  </div>
+                  <a>The boundary is not static but it has speed, that we'll calculate as Traffic Engineers!</a>  
+                  
+                  <p class="l2"><a>By-product of traffic congestion: every change in traffic conditions creates a shockwave.</a></p>
+
+                  <p class="l2">This is why we also call them <a>kinematic waves</a>. The physics is the same as a wave in shallow water or a pressure wave in a gas pipe, and it comes from the same place: nothing is created and nothing disappears.</p>
+
+                </section>
+ 
+ 
+                <!-- ================= EQUATION ================= -->
+ 
+                <section id="equation">
+ 
+                  <h2>Speed of the shockwaves</h2>
+ 
+                  <div class="equation">
+                    \[ \omega_{AB} \;=\; \frac{q_B - q_A}{k_B - k_A} \qquad \text{km/h} \]
+                  </div>
+ 
+                  <p class="l2">A is the state traffic is coming <a>from</a>. B is the state it is going <a>into</a>.</p>
+ 
+                  <div class="arrow-row">
+                    <div class="step"><span class="v">$\omega &lt; 0$</span><span class="l">wave travels backwards, up the queue</span></div>
+                    <div class="arrow">|</div>
+                    <div class="step"><span class="v">$\omega = 0$</span><span class="l">wave stands still at a fixed bottleneck</span></div>
+                    <div class="arrow">|</div>
+                    <div class="step"><span class="v">$\omega &gt; 0$</span><span class="l">wave travels forwards, with the traffic</span></div>
+                  </div>
+  
+                </section>
+ 
+ 
+                <!-- ================= GREENSHIELDS ================= -->
+ 
+                <section id="green">
+ 
+                  <h2>Finding the states: the Greenshields curve</h2>
+ 
+                  <div class="two-col">
+                    <div class="katy-figure">
+                      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenshields flow-density curve with states A, B and C marked and the chords joining them.">
+<line x1="90" y1="380" x2="830" y2="380" stroke="#555" stroke-width="1.6"/>
+<line x1="90" y1="380" x2="90" y2="40" stroke="#555" stroke-width="1.6"/>
+<text x="455" y="415" font-size="18" fill="#555" text-anchor="middle">density k  (veh/km)</text>
+<text x="28" y="210" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 28 210)">flow q  (veh/h)</text>
+<path d="M 90 380 Q 440 -260 790 380" fill="none" stroke="#1f3a63" stroke-width="3.5"/>
+<g stroke="#ccc" stroke-width="1" stroke-dasharray="4 4">
+<line x1="90" y1="60" x2="440" y2="60"/>
+<line x1="440" y1="60" x2="440" y2="380"/>
+</g>
+<g font-size="14" fill="#777">
+<text x="84" y="65" text-anchor="end">4000</text>
+<text x="440" y="400" text-anchor="middle">100</text>
+<text x="790" y="400" text-anchor="middle">200</text>
+</g>
+<circle cx="265" cy="140" r="7" fill="#1e7f4f"/>
+<text x="251" y="126" font-size="19" font-weight="700" fill="#1e7f4f" text-anchor="end">A</text>
+<circle cx="720" cy="265" r="7" fill="#c0392b"/>
+<text x="736" y="271" font-size="19" font-weight="700" fill="#c0392b" text-anchor="start">B</text>
+<circle cx="440" cy="60" r="7" fill="#1f3a63"/>
+<text x="450" y="48" font-size="19" font-weight="700" fill="#1f3a63" text-anchor="start">C</text>
+</svg>
+                    </div>
+                    <div>
+                      <p class="l3">Greenshields assumed speed falls off in a straight line as the road fills up:</p>
+                      \[ v = v_f\left(1 - \frac{k}{k_j}\right) \]
+                     
+                    </div>
+                  </div>
+  <p class="l3">Multiply by $k$ and you get the familiar bell-shaped curve of flow against density:</p>
+                      \[ q = v_f\left(k - \frac{k^2}{k_j}\right) \]
+ 
+                </section>
+ 
+ 
+                <!-- ================= THE THREE STATES ================= -->
+ 
+                <section id="states" data-background-image="https://www.sice.com/wp-content/uploads/2023/10/THE-WATERVIEW-CONNECTION-TUNNEL_4_1.jpg">
+                 <div class="whitebackground2">
+ 
+                  <h4>Our three traffic states</h4>
+ 
+                  <p class="l3" style="margin-bottom:0.3em;">The truck blocks a lane at 08:00 and is towed away at 08:10. Before we can calculate anything, we name the states.</p>
+ 
+                  <div class="two-col flip">
+                    <div>
+                      <table class="wave-table">
+                        <tr><th>State</th><th>q</th><th>k</th><th>v</th></tr>
+                        <tr><td>A &nbsp; arriving traffic</td><td>3000</td><td>50</td><td>60</td></tr>
+                        <tr><td>B &nbsp; the queue</td><td>1440</td><td>180</td><td>8</td></tr>
+                        <tr><td>C &nbsp; moving off again</td><td>4000</td><td>100</td><td>40</td></tr>
+                      </table>
+                    </div>
+                    <div class="katy-figure">
+                      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenshields flow-density curve with states A, B and C marked and the chords joining them.">
+<line x1="90" y1="380" x2="830" y2="380" stroke="#555" stroke-width="1.6"/>
+<line x1="90" y1="380" x2="90" y2="40" stroke="#555" stroke-width="1.6"/>
+<text x="455" y="415" font-size="18" fill="#555" text-anchor="middle">density k  (veh/km)</text>
+<text x="28" y="210" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 28 210)">flow q  (veh/h)</text>
+<path d="M 90 380 Q 440 -260 790 380" fill="none" stroke="#1f3a63" stroke-width="3.5"/>
+<g stroke="#ccc" stroke-width="1" stroke-dasharray="4 4">
+<line x1="90" y1="60" x2="440" y2="60"/>
+<line x1="440" y1="60" x2="440" y2="380"/>
+</g>
+<g font-size="14" fill="#777">
+<text x="84" y="65" text-anchor="end">4000</text>
+<text x="440" y="400" text-anchor="middle">100</text>
+<text x="790" y="400" text-anchor="middle">200</text>
+</g>
+<line x1="265" y1="140" x2="720" y2="265" stroke="#c0392b" stroke-width="3" stroke-dasharray="9 5"/>
+<line x1="720" y1="265" x2="440" y2="60" stroke="#1e7f4f" stroke-width="3" stroke-dasharray="9 5"/>
+<text x="470" y="268" font-size="16" fill="#c0392b" text-anchor="end">slope = -12 km/h</text>
+<text x="548" y="152" font-size="16" fill="#1e7f4f" text-anchor="end">slope = -32 km/h</text>
+<circle cx="265" cy="140" r="7" fill="#1e7f4f"/>
+<text x="251" y="126" font-size="19" font-weight="700" fill="#1e7f4f" text-anchor="end">A</text>
+<circle cx="720" cy="265" r="7" fill="#c0392b"/>
+<text x="736" y="271" font-size="19" font-weight="700" fill="#c0392b" text-anchor="start">B</text>
+<circle cx="440" cy="60" r="7" fill="#1f3a63"/>
+<text x="450" y="48" font-size="19" font-weight="700" fill="#1f3a63" text-anchor="start">C</text>
+</svg>
+                    </div>
+                  </div>
+ 
+                  <p class="l3"><a>Shockwave speed is just the slope of the line joining two states on this curve</a>, so you can read both waves off the diagram before doing any algebra.</p>
+ 
+                 </div>
+                </section>
+ 
+ 
+                <!-- ================= STEP 1 ================= -->
+ 
+                <section id="step1">
+ 
+                  <h2>08:00 to 08:10 &nbsp; the queue forms</h2>
+ 
+                  <div class="two-col">
+                    <div class="katy-figure">
+                      <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time-space diagram of the truck breakdown, showing the queue growing backwards and then clearing.">
+<polygon points="100,100 340,260 340,100" fill="#fbe6e3"/>
+<line x1="100" y1="440" x2="850" y2="440" stroke="#555" stroke-width="1.6"/>
+<line x1="100" y1="440" x2="100" y2="50" stroke="#555" stroke-width="1.6"/>
+<g font-size="15" fill="#777" text-anchor="middle">
+<line x1="100" y1="440" x2="100" y2="447" stroke="#777"/>
+<text x="100" y="464">08:00</text>
+<line x1="340" y1="440" x2="340" y2="447" stroke="#777"/>
+<text x="340" y="464">08:10</text>
+</g>
+<text x="475" y="32" font-size="18" fill="#555" text-anchor="middle">time, minutes after the breakdown</text>
+<g font-size="15" fill="#777" text-anchor="end">
+<line x1="93" y1="100" x2="100" y2="100" stroke="#777"/>
+<text x="88" y="105">0</text>
+<line x1="93" y1="260" x2="100" y2="260" stroke="#777"/>
+<text x="88" y="265">-2</text>
+</g>
+<text x="36" y="250" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 36 250)">distance from the truck (km)</text>
+<line x1="100" y1="100" x2="340" y2="100" stroke="#c0392b" stroke-width="9"/>
+<text x="112" y="86" font-size="16" font-weight="700" fill="#c0392b">truck blocking the lane</text>
+<line x1="100" y1="100" x2="340" y2="260" stroke="#c0392b" stroke-width="4"/>
+<text x="138" y="198" font-size="16" font-weight="700" fill="#c0392b" transform="rotate(34 138 198)">back of queue, -12 km/h</text>
+</svg>
+                    </div>
+                    
+                    
+                                        <div class="katy-figure">
+                      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenshields flow-density curve with states A, B and C marked and the chords joining them.">
+<line x1="90" y1="380" x2="830" y2="380" stroke="#555" stroke-width="1.6"/>
+<line x1="90" y1="380" x2="90" y2="40" stroke="#555" stroke-width="1.6"/>
+<text x="455" y="415" font-size="18" fill="#555" text-anchor="middle">density k  (veh/km)</text>
+<text x="28" y="210" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 28 210)">flow q  (veh/h)</text>
+<path d="M 90 380 Q 440 -260 790 380" fill="none" stroke="#1f3a63" stroke-width="3.5"/>
+<g stroke="#ccc" stroke-width="1" stroke-dasharray="4 4">
+<line x1="90" y1="60" x2="440" y2="60"/>
+<line x1="440" y1="60" x2="440" y2="380"/>
+</g>
+<g font-size="14" fill="#777">
+<text x="84" y="65" text-anchor="end">4000</text>
+<text x="440" y="400" text-anchor="middle">100</text>
+<text x="790" y="400" text-anchor="middle">200</text>
+</g>
+<line x1="265" y1="140" x2="720" y2="265" stroke="#c0392b" stroke-width="3" stroke-dasharray="9 5"/>
+<line x1="720" y1="265" x2="440" y2="60" stroke="#1e7f4f" stroke-width="3" stroke-dasharray="9 5"/>
+<text x="470" y="268" font-size="16" fill="#c0392b" text-anchor="end">slope = -12 km/h</text>
+<text x="548" y="152" font-size="16" fill="#1e7f4f" text-anchor="end">slope = -32 km/h</text>
+<circle cx="265" cy="140" r="7" fill="#1e7f4f"/>
+<text x="251" y="126" font-size="19" font-weight="700" fill="#1e7f4f" text-anchor="end">A</text>
+<circle cx="720" cy="265" r="7" fill="#c0392b"/>
+<text x="736" y="271" font-size="19" font-weight="700" fill="#c0392b" text-anchor="start">B</text>
+<circle cx="440" cy="60" r="7" fill="#1f3a63"/>
+<text x="450" y="48" font-size="19" font-weight="700" fill="#1f3a63" text-anchor="start">C</text>
+</svg>
+                    </div>
+                    
+
+                  </div>
+                     <div>
+                      <p class="l3">Traffic goes from A into B, so:</p>
+                      <div class="equation" style="font-size:0.72em;">
+                        \[ \omega_{AB} = \frac{1440 - 3000}{180 - 50} = -12 \ \text{km/h} \]
+                      </div>
+                      <p class="l3">The minus sign means backwards. The red line on the diagram is the back of the queue, and it slopes down and to the right because it is moving upstream.</p>
+                      <p class="l3">After 10 minutes it has reached</p>
+                      <div class="equation" style="font-size:0.72em;">
+                        \[ 12 \times \tfrac{10}{60} = 2 \ \text{km} \]
+                      </div>
+                    </div>
+                </section>
+ 
+ 
+                <!-- ================= STEP 2 ================= -->
+ 
+                <section id="step2">
+ 
+                  <h2>08:10 &nbsp; the truck is towed away</h2>
+ 
+                  <div class="two-col">
+                    <div class="katy-figure">
+                      <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time-space diagram of the truck breakdown, showing the queue growing backwards and then clearing.">
+<polygon points="100,100 484,356 340,100" fill="#fbe6e3"/>
+<line x1="100" y1="440" x2="850" y2="440" stroke="#555" stroke-width="1.6"/>
+<line x1="100" y1="440" x2="100" y2="50" stroke="#555" stroke-width="1.6"/>
+<g font-size="15" fill="#777" text-anchor="middle">
+<line x1="100" y1="440" x2="100" y2="447" stroke="#777"/>
+<text x="100" y="464">08:00</text>
+<line x1="340" y1="440" x2="340" y2="447" stroke="#777"/>
+<text x="340" y="464">08:10</text>
+</g>
+<text x="475" y="32" font-size="18" fill="#555" text-anchor="middle">time, minutes after the breakdown</text>
+<g font-size="15" fill="#777" text-anchor="end">
+<line x1="93" y1="100" x2="100" y2="100" stroke="#777"/>
+<text x="88" y="105">0</text>
+<line x1="93" y1="260" x2="100" y2="260" stroke="#777"/>
+<text x="88" y="265">-2</text>
+</g>
+<text x="36" y="250" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 36 250)">distance from the truck (km)</text>
+<line x1="100" y1="100" x2="340" y2="100" stroke="#c0392b" stroke-width="9"/>
+<text x="112" y="86" font-size="16" font-weight="700" fill="#c0392b">truck blocking the lane</text>
+<line x1="100" y1="100" x2="484" y2="356" stroke="#c0392b" stroke-width="4"/>
+<text x="138" y="198" font-size="16" font-weight="700" fill="#c0392b" transform="rotate(34 138 198)">back of queue, -12 km/h</text>
+<line x1="340" y1="100" x2="484" y2="356" stroke="#1e7f4f" stroke-width="4"/>
+<text x="334" y="148" font-size="15" font-weight="700" fill="#1e7f4f" transform="rotate(60 334 148)">front of queue, -32 km/h</text>
+<text x="164" y="134" font-size="17" font-weight="700" fill="#c0392b">B  queued</text>
+</svg>
+                    </div>
+                    
+                                                            <div class="katy-figure">
+                      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenshields flow-density curve with states A, B and C marked and the chords joining them.">
+<line x1="90" y1="380" x2="830" y2="380" stroke="#555" stroke-width="1.6"/>
+<line x1="90" y1="380" x2="90" y2="40" stroke="#555" stroke-width="1.6"/>
+<text x="455" y="415" font-size="18" fill="#555" text-anchor="middle">density k  (veh/km)</text>
+<text x="28" y="210" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 28 210)">flow q  (veh/h)</text>
+<path d="M 90 380 Q 440 -260 790 380" fill="none" stroke="#1f3a63" stroke-width="3.5"/>
+<g stroke="#ccc" stroke-width="1" stroke-dasharray="4 4">
+<line x1="90" y1="60" x2="440" y2="60"/>
+<line x1="440" y1="60" x2="440" y2="380"/>
+</g>
+<g font-size="14" fill="#777">
+<text x="84" y="65" text-anchor="end">4000</text>
+<text x="440" y="400" text-anchor="middle">100</text>
+<text x="790" y="400" text-anchor="middle">200</text>
+</g>
+<line x1="265" y1="140" x2="720" y2="265" stroke="#c0392b" stroke-width="3" stroke-dasharray="9 5"/>
+<line x1="720" y1="265" x2="440" y2="60" stroke="#1e7f4f" stroke-width="3" stroke-dasharray="9 5"/>
+<text x="470" y="268" font-size="16" fill="#c0392b" text-anchor="end">slope = -12 km/h</text>
+<text x="548" y="152" font-size="16" fill="#1e7f4f" text-anchor="end">slope = -32 km/h</text>
+<circle cx="265" cy="140" r="7" fill="#1e7f4f"/>
+<text x="251" y="126" font-size="19" font-weight="700" fill="#1e7f4f" text-anchor="end">A</text>
+<circle cx="720" cy="265" r="7" fill="#c0392b"/>
+<text x="736" y="271" font-size="19" font-weight="700" fill="#c0392b" text-anchor="start">B</text>
+<circle cx="440" cy="60" r="7" fill="#1f3a63"/>
+<text x="450" y="48" font-size="19" font-weight="700" fill="#1f3a63" text-anchor="start">C</text>
+</svg>
+                    </div>
+                    
+                    
+
+                  </div>
+                     <div>
+                      <p class="l3">The front of the queue now moves off at capacity, so traffic goes from B into C:</p>
+                      <div class="equation" style="font-size:0.72em;">
+                        \[ \omega_{BC} = \frac{4000 - 1440}{100 - 180} = -32 \ \text{km/h} \]
+                      </div>
+                      <p class="l3">Also backwards, and <a>much faster than the wave behind it</a>. The green line is steeper than the red one.</p>
+                      <p class="l3">The truck has gone, but the back of the queue is still growing. Drivers arriving from upstream have no idea the road is clear.</p>
+                    </div>
+                </section>
+ 
+ 
+                <!-- ================= STEP 3 ================= -->
+ 
+                <section id="step3">
+ 
+                  <h2>08:16 &nbsp; the two waves meet</h2>
+ 
+                  <div class="two-col">
+                    <div class="katy-figure">
+                      <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time-space diagram of the truck breakdown, showing the queue growing backwards and then clearing.">
+<polygon points="100,100 484,356 340,100" fill="#fbe6e3"/>
+<line x1="100" y1="440" x2="850" y2="440" stroke="#555" stroke-width="1.6"/>
+<line x1="100" y1="440" x2="100" y2="50" stroke="#555" stroke-width="1.6"/>
+<g font-size="15" fill="#777" text-anchor="middle">
+<line x1="100" y1="440" x2="100" y2="447" stroke="#777"/>
+<text x="100" y="464">08:00</text>
+<line x1="340" y1="440" x2="340" y2="447" stroke="#777"/>
+<text x="340" y="464">08:10</text>
+<line x1="484" y1="440" x2="484" y2="447" stroke="#777"/>
+<text x="484" y="464">08:16</text>
+</g>
+<text x="475" y="32" font-size="18" fill="#555" text-anchor="middle">time, minutes after the breakdown</text>
+<g font-size="15" fill="#777" text-anchor="end">
+<line x1="93" y1="100" x2="100" y2="100" stroke="#777"/>
+<text x="88" y="105">0</text>
+<line x1="93" y1="260" x2="100" y2="260" stroke="#777"/>
+<text x="88" y="265">-2</text>
+<line x1="93" y1="356" x2="100" y2="356" stroke="#777"/>
+<text x="88" y="361">-3.2</text>
+</g>
+<text x="36" y="250" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 36 250)">distance from the truck (km)</text>
+<line x1="100" y1="100" x2="340" y2="100" stroke="#c0392b" stroke-width="9"/>
+<text x="112" y="86" font-size="16" font-weight="700" fill="#c0392b">truck blocking the lane</text>
+<line x1="100" y1="100" x2="484" y2="356" stroke="#c0392b" stroke-width="4"/>
+<text x="138" y="198" font-size="16" font-weight="700" fill="#c0392b" transform="rotate(34 138 198)">back of queue, -12 km/h</text>
+<line x1="340" y1="100" x2="484" y2="356" stroke="#1e7f4f" stroke-width="4"/>
+<text x="334" y="148" font-size="15" font-weight="700" fill="#1e7f4f" transform="rotate(60 334 148)">front of queue, -32 km/h</text>
+<circle cx="484" cy="356" r="8" fill="#1f3a63"/>
+<text x="498" y="382" font-size="16" font-weight="700" fill="#1f3a63">longest queue: 3.2 km</text>
+<text x="164" y="134" font-size="17" font-weight="700" fill="#c0392b">B  queued</text>
+</svg>
+                    </div>
+                    
+                                                            <div class="katy-figure">
+                      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenshields flow-density curve with states A, B and C marked and the chords joining them.">
+<line x1="90" y1="380" x2="830" y2="380" stroke="#555" stroke-width="1.6"/>
+<line x1="90" y1="380" x2="90" y2="40" stroke="#555" stroke-width="1.6"/>
+<text x="455" y="415" font-size="18" fill="#555" text-anchor="middle">density k  (veh/km)</text>
+<text x="28" y="210" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 28 210)">flow q  (veh/h)</text>
+<path d="M 90 380 Q 440 -260 790 380" fill="none" stroke="#1f3a63" stroke-width="3.5"/>
+<g stroke="#ccc" stroke-width="1" stroke-dasharray="4 4">
+<line x1="90" y1="60" x2="440" y2="60"/>
+<line x1="440" y1="60" x2="440" y2="380"/>
+</g>
+<g font-size="14" fill="#777">
+<text x="84" y="65" text-anchor="end">4000</text>
+<text x="440" y="400" text-anchor="middle">100</text>
+<text x="790" y="400" text-anchor="middle">200</text>
+</g>
+<line x1="265" y1="140" x2="720" y2="265" stroke="#c0392b" stroke-width="3" stroke-dasharray="9 5"/>
+<line x1="720" y1="265" x2="440" y2="60" stroke="#1e7f4f" stroke-width="3" stroke-dasharray="9 5"/>
+<text x="470" y="268" font-size="16" fill="#c0392b" text-anchor="end">slope = -12 km/h</text>
+<text x="548" y="152" font-size="16" fill="#1e7f4f" text-anchor="end">slope = -32 km/h</text>
+<circle cx="265" cy="140" r="7" fill="#1e7f4f"/>
+<text x="251" y="126" font-size="19" font-weight="700" fill="#1e7f4f" text-anchor="end">A</text>
+<circle cx="720" cy="265" r="7" fill="#c0392b"/>
+<text x="736" y="271" font-size="19" font-weight="700" fill="#c0392b" text-anchor="start">B</text>
+<circle cx="440" cy="60" r="7" fill="#1f3a63"/>
+<text x="450" y="48" font-size="19" font-weight="700" fill="#1f3a63" text-anchor="start">C</text>
+</svg>
+                    </div>                    
+                    
+
+                  </div>
+                     <div>
+                      <p class="l3">The green wave is closing on the red one at $32 - 12 = 20$ km/h, across a 2 km gap:</p>
+                      <div class="equation" style="font-size:0.72em;">
+                        \[ \frac{2}{20} = 0.1 \ \text{h} = 6 \ \text{min} \]
+                      </div>
+                      <p class="l3">So they meet 16 minutes in, at: $12 \times \tfrac{16}{60} = 3.2 \ \text{km}$</p>
+                      <p class="l3">Check it the other way: $32 \times 0.1 = 3.2$ km. The two waves must agree, and they do.</p>
+                      <p class="l3">That meeting point is <a>the longest the queue ever gets</a>. The last driver to be stopped is standing there.</p>
+                    </div>
+                </section>
+ 
+ 
+                <!-- ================= STEP 4 ================= -->
+ 
+                <section id="step4">
+ 
+                  <h2>08:26 &nbsp; back to normal</h2>
+ 
+                  <div class="two-col">
+                    <div class="katy-figure">
+                      <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time-space diagram of the truck breakdown, showing the queue growing backwards and then clearing.">
+<polygon points="100,100 484,356 340,100" fill="#fbe6e3"/>
+<polygon points="340,100 484,356 714,100" fill="#e8f3e9"/>
+<line x1="100" y1="440" x2="850" y2="440" stroke="#555" stroke-width="1.6"/>
+<line x1="100" y1="440" x2="100" y2="50" stroke="#555" stroke-width="1.6"/>
+<g font-size="15" fill="#777" text-anchor="middle">
+<line x1="100" y1="440" x2="100" y2="447" stroke="#777"/>
+<text x="100" y="464">08:00</text>
+<line x1="340" y1="440" x2="340" y2="447" stroke="#777"/>
+<text x="340" y="464">08:10</text>
+<line x1="484" y1="440" x2="484" y2="447" stroke="#777"/>
+<text x="484" y="464">08:16</text>
+<line x1="714" y1="440" x2="714" y2="447" stroke="#777"/>
+<text x="714" y="464">08:26</text>
+</g>
+<text x="475" y="32" font-size="18" fill="#555" text-anchor="middle">time, minutes after the breakdown</text>
+<g font-size="15" fill="#777" text-anchor="end">
+<line x1="93" y1="100" x2="100" y2="100" stroke="#777"/>
+<text x="88" y="105">0</text>
+<line x1="93" y1="260" x2="100" y2="260" stroke="#777"/>
+<text x="88" y="265">-2</text>
+<line x1="93" y1="356" x2="100" y2="356" stroke="#777"/>
+<text x="88" y="361">-3.2</text>
+</g>
+<text x="36" y="250" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 36 250)">distance from the truck (km)</text>
+<line x1="100" y1="100" x2="340" y2="100" stroke="#c0392b" stroke-width="9"/>
+<text x="112" y="86" font-size="16" font-weight="700" fill="#c0392b">truck blocking the lane</text>
+<line x1="100" y1="100" x2="484" y2="356" stroke="#c0392b" stroke-width="4"/>
+<text x="138" y="198" font-size="16" font-weight="700" fill="#c0392b" transform="rotate(34 138 198)">back of queue, -12 km/h</text>
+<line x1="340" y1="100" x2="484" y2="356" stroke="#1e7f4f" stroke-width="4"/>
+<text x="334" y="148" font-size="15" font-weight="700" fill="#1e7f4f" transform="rotate(60 334 148)">front of queue, -32 km/h</text>
+<circle cx="484" cy="356" r="8" fill="#1f3a63"/>
+<text x="498" y="382" font-size="16" font-weight="700" fill="#1f3a63">longest queue: 3.2 km</text>
+<line x1="484" y1="356" x2="714" y2="100" stroke="#1f3a63" stroke-width="3.5" stroke-dasharray="9 5"/>
+<text x="642" y="258" font-size="16" font-weight="700" fill="#1f3a63">back to normal, +20 km/h</text>
+<text x="164" y="134" font-size="17" font-weight="700" fill="#c0392b">B  queued</text>
+<text x="470" y="140" font-size="17" font-weight="700" fill="#1e7f4f">C  moving off</text>
+<text x="756" y="316" font-size="17" font-weight="700" fill="#555">A  free flow</text>
+</svg>
+                    </div>
+                    
+                                                            <div class="katy-figure">
+                      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenshields flow-density curve with states A, B and C marked and the chords joining them.">
+<line x1="90" y1="380" x2="830" y2="380" stroke="#555" stroke-width="1.6"/>
+<line x1="90" y1="380" x2="90" y2="40" stroke="#555" stroke-width="1.6"/>
+<text x="455" y="415" font-size="18" fill="#555" text-anchor="middle">density k  (veh/km)</text>
+<text x="28" y="210" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 28 210)">flow q  (veh/h)</text>
+<path d="M 90 380 Q 440 -260 790 380" fill="none" stroke="#1f3a63" stroke-width="3.5"/>
+<g stroke="#ccc" stroke-width="1" stroke-dasharray="4 4">
+<line x1="90" y1="60" x2="440" y2="60"/>
+<line x1="440" y1="60" x2="440" y2="380"/>
+</g>
+<g font-size="14" fill="#777">
+<text x="84" y="65" text-anchor="end">4000</text>
+<text x="440" y="400" text-anchor="middle">100</text>
+<text x="790" y="400" text-anchor="middle">200</text>
+</g>
+<line x1="265" y1="140" x2="720" y2="265" stroke="#c0392b" stroke-width="3" stroke-dasharray="9 5"/>
+<line x1="720" y1="265" x2="440" y2="60" stroke="#1e7f4f" stroke-width="3" stroke-dasharray="9 5"/>
+<text x="470" y="268" font-size="16" fill="#c0392b" text-anchor="end">slope = -12 km/h</text>
+<text x="548" y="152" font-size="16" fill="#1e7f4f" text-anchor="end">slope = -32 km/h</text>
+<circle cx="265" cy="140" r="7" fill="#1e7f4f"/>
+<text x="251" y="126" font-size="19" font-weight="700" fill="#1e7f4f" text-anchor="end">A</text>
+<circle cx="720" cy="265" r="7" fill="#c0392b"/>
+<text x="736" y="271" font-size="19" font-weight="700" fill="#c0392b" text-anchor="start">B</text>
+<circle cx="440" cy="60" r="7" fill="#1f3a63"/>
+<text x="450" y="48" font-size="19" font-weight="700" fill="#1f3a63" text-anchor="start">C</text>
+</svg>
+                    </div>                      
+
+                  </div>
+                     <div>
+                      <p class="l3">Once the queue is gone, traffic at the meeting point goes from C back to A. That is a third wave:</p>
+                      <div class="equation" style="font-size:0.72em;">
+                        \[ \omega_{CA} = \frac{3000 - 4000}{50 - 100} = +20 \ \text{km/h} \]
+                      </div>
+                      <p class="l3">Positive, so this one runs <a>forwards</a>, back towards the site. It covers the 3.2 km in</p>
+                      <div class="equation" style="font-size:0.72em;">
+                        \[ \tfrac{3.2}{20} \times 60 = 9.6 \ \text{min} \]
+                      </div>
+                      <p class="l3">The site is finally back to normal at 25.6 minutes. A ten minute breakdown impacted the motorway for over 25 minute.</p>
+                    </div>
+                </section>
+ 
+ 
+                <!-- ================= FULL PICTURE ================= -->
+ 
+                <section id="full">
+ 
+                  <h2>The whole story on one time-space diagram</h2>
+ 
+                  <div class="katy-figure">
+                    <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time-space diagram of the truck breakdown, showing the queue growing backwards and then clearing.">
+<polygon points="100,100 484,356 340,100" fill="#fbe6e3"/>
+<polygon points="340,100 484,356 714,100" fill="#e8f3e9"/>
+<line x1="100" y1="440" x2="850" y2="440" stroke="#555" stroke-width="1.6"/>
+<line x1="100" y1="440" x2="100" y2="50" stroke="#555" stroke-width="1.6"/>
+<g font-size="15" fill="#777" text-anchor="middle">
+<line x1="100" y1="440" x2="100" y2="447" stroke="#777"/>
+<text x="100" y="464">08:00</text>
+<line x1="340" y1="440" x2="340" y2="447" stroke="#777"/>
+<text x="340" y="464">08:10</text>
+<line x1="484" y1="440" x2="484" y2="447" stroke="#777"/>
+<text x="484" y="464">08:16</text>
+<line x1="714" y1="440" x2="714" y2="447" stroke="#777"/>
+<text x="714" y="464">08:26</text>
+</g>
+<text x="475" y="32" font-size="18" fill="#555" text-anchor="middle">time, minutes after the breakdown</text>
+<g font-size="15" fill="#777" text-anchor="end">
+<line x1="93" y1="100" x2="100" y2="100" stroke="#777"/>
+<text x="88" y="105">0</text>
+<line x1="93" y1="260" x2="100" y2="260" stroke="#777"/>
+<text x="88" y="265">-2</text>
+<line x1="93" y1="356" x2="100" y2="356" stroke="#777"/>
+<text x="88" y="361">-3.2</text>
+</g>
+<text x="36" y="250" font-size="18" fill="#555" text-anchor="middle" transform="rotate(-90 36 250)">distance from the truck (km)</text>
+<line x1="100" y1="100" x2="340" y2="100" stroke="#c0392b" stroke-width="9"/>
+<text x="112" y="86" font-size="16" font-weight="700" fill="#c0392b">truck blocking the lane</text>
+<g stroke="#666" stroke-width="2" fill="none" opacity="0.95">
+<path d="M100 420 L180 154 L300 100 L310 60"/>
+<path d="M196 420 L260 206 L372 157 L398 100 L412 60"/>
+<path d="M316 420 L360 274 L422 246 L488 100 L506 60"/>
+<path d="M412 420 L440 326 L462 317 L560 100 L578 60"/>
+<path d="M580 420 L657 164 L686 100 L704 60"/>
+<path d="M724 420 L820 100"/>
+</g>
+<line x1="100" y1="100" x2="484" y2="356" stroke="#c0392b" stroke-width="4"/>
+<text x="138" y="198" font-size="16" font-weight="700" fill="#c0392b" transform="rotate(34 138 198)">back of queue, -12 km/h</text>
+<line x1="340" y1="100" x2="484" y2="356" stroke="#1e7f4f" stroke-width="4"/>
+<text x="334" y="148" font-size="15" font-weight="700" fill="#1e7f4f" transform="rotate(60 334 148)">front of queue, -32 km/h</text>
+<circle cx="484" cy="356" r="8" fill="#1f3a63"/>
+<text x="498" y="382" font-size="16" font-weight="700" fill="#1f3a63">longest queue: 3.2 km</text>
+<line x1="484" y1="356" x2="714" y2="100" stroke="#1f3a63" stroke-width="3.5" stroke-dasharray="9 5"/>
+<text x="642" y="258" font-size="16" font-weight="700" fill="#1f3a63">back to normal, +20 km/h</text>
+<text x="164" y="134" font-size="17" font-weight="700" fill="#c0392b">B  queued</text>
+<text x="470" y="140" font-size="17" font-weight="700" fill="#1e7f4f">C  moving off</text>
+<text x="756" y="316" font-size="17" font-weight="700" fill="#555">A  free flow</text>
+</svg>
+                  </div>
+ 
+                  <p class="figure-caption">Grey lines are individual vehicles. Watch one: it runs in steeply, flattens almost to nothing inside the queue, then picks up again once the green wave passes it.</p>
+ 
+                </section>
+ 
+ 
+                <!-- ================= COST ================= -->
+ 
+                <section id="cost" data-background-image="../figures/Backgrounds/grass.jpg">
+ 
+ 
+                  <div class="stat-band">
+                    <div class="stat warn"><span class="num">3.2</span><span class="lbl">km, longest queue</span></div>
+                    <div class="stat warn"><span class="num">26</span><span class="lbl">min until traffic recovers</span></div>
+                    <div class="stat"><span class="num">1,280</span><span class="lbl">vehicles delayed</span></div>
+                    <div class="stat"><span class="num">55</span><span class="lbl">vehicle-hours lost</span></div>
+                  </div>
+ 
+ 
+                  <div class="pull">
+                    <h4>What those ten minutes cost</h4>
+                    Recovery took 26 minutes for a 10 minute blockage. Roughly <a>two and a half times the incident duration</a>. 
+                  </div>
+ 
+                </section>
+ 
+ 
+                <!-- ================= GETTING THE NUMBERS ================= -->
+ 
+                <section id="numbers" data-background-image="../figures/Backgrounds/grass.jpg">
+                  
+                  <div class="whitebackground">
+                                    <h2>Where the data come from?</h2>
+ 
+                  <div class="steps">
+                    <div class="box"><b>Arriving traffic, A: </b>Measured directly. Loop detectors or tube counts give the flow. Put that flow into the Greenshields equation and take the <em>free-flowing</em> root for density.</div>
+                    <div class="box"><b>The queue, B: </b>Set by what the blocked section can pass, not by demand. Take that flow and use the <em>congested</em> root for density.</div>
+                    <div class="box"><b>Moving off, C: </b>Always capacity, $q_c = v_f k_j / 4$ at $k_c = k_j/2$. A queue discharges as fast as the road allows.</div>
+                  </div>
+ 
+                  
+                  </div>
+ 
+                </section>
+ 
+                <!-- ================= RECAP ================= -->
+ 
+                <section id="Recap" data-transition="fade">
+                    <figure class="right">
+                        <img src="../figures/teaching/learning-outcomes.jpg" alt=" " />
+                    </figure>
+                    <h2>Learning outcomes: </h2>
+                    <p>	1. Explain what a shockwave is and why it forms </p>
+                    <p>	2. Draw a shockwave on a time-space diagram </p>
+                    <p>	3. Calculate wave speed, queue length and delay </p>
+                </section>
+ 
+ 
+                <!-- ================= REFERENCES ================= -->
+ 
+                <section id="ref" data-transition="fade">
+ 
+                    <h2>Recommended further read: </h2>
+ 
+                    <p class="l2">	1. Greenshields, B.D. (1935) A study of traffic capacity</p>
+                    <p class="l2">	2. Lighthill, M.J. and Whitham, G.B. (1955) On kinematic waves II: a theory of traffic flow on long crowded roads</p>
+                    <p class="l2">	3. Richards, P.I. (1956) Shock waves on the highway</p>
+                    <p class="l2">	4. Chap. 4 of Prof. Carlos Daganzo's book Fundamentals of Transportation and Traffic Operations (2007)</p>
+                    <p class="l2">	5. Lecture notes: Principles of Highway Engineering and Traffic Analysis by Mannering, Washburn and Kilareski</p>
+                    <p class="l2">	6. Transportation Engg Talks (Satish, IIT Roorkee), YouTube: <a href="https://www.youtube.com/watch?v=9QFy9iREWsY">shockwave analysis worked examples</a></p>
+                    <p class="l2"> 7. Austroads Guide to Traffic Management (Part 3 and Part 6)</p>
+ 
+                </section>
+ 
+ 
+                <!-- ================= THANKS ================= -->
+ 
+                <section class="title" id="thanks" data-background-image="../figures/Backgrounds/title-city.jpg">
+                    <div class="whitebackground2">
+                        <h5></h5>
+                       <hr/>
+                        <hr/>
+                        <h3>Contact me: Dr Minh Kieu</h3>
+                        <h4>Senior Lecturer</h4>
+                        <h3>minh.kieu@auckland.ac.nz</h3>
+                        <hr/>
+                      <h4 style="text-align:center">These slides:<br/><a href="https://leminhkieu.github.io/p/Civil303-shockwaves.html">http://bit.ly/303-shockwaves</a></h4>
+                    </div>
+                </section>
+ 
+ 
+            </div>
+ 
+		</div>
+ 
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+                slideNumber: true,
+				dependencies: [
+					{ src: 'reveal/plugin/markdown/marked.js' },
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+ 
+	</body>
+ 
+</html>
